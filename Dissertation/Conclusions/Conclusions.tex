@@ -1,0 +1,101 @@
+%!TEX root = ../Thesis.tex
+\chapter{Conclusions\label{ch:Conclusions}}
+In this dissertation I have developed the first Monte Carlo implementation of Arnoldi's method for neutron transport.  This implementation uses explicitly restarted Arnoldi's method to estimate multiple eigenvalues of the transport-fission operator of the Boltzmann transport equation \eqref{eq:BoltzmannEquation}.  
+
+Using Arnoldi's method for estimating eigenvalues is a new technique in the Monte Carlo particle transport field; traditionally, the power method has been used.  Arnoldi's method has been used in the numerical analysis community for many years to estimate multiple eigenvalues and eigenvectors of a linear operator, but this is the first time it has been used with a Monte Carlo application of the linear operator.
+
+I have demonstrated the ability to use Arnoldi's method to estimate up to three eigenvalues of the transport-fission operator for a variety of homogeneous and heterogeneous one-dimensional problems.  The eigenvalue estimates have been compared to and agree with published results and independent deterministic calculations within statistical uncertainty.  The eigenvectors have also been estimated and compared with deterministic calculations; again the results from Arnoldi's method are in harmony with the deterministic calculations.  In some situations, Arnoldi's estimated eigenvectors are improvements over the power method estimated eigenvectors.
+
+Arnoldi's method can be used to calculate more than three eigenmodes.  Calculating additional higher-order eigenmodes will require additional iterations in a restart, and it may be necessary to track more particles in an iteration or use a finer spatial discretization. 
+
+Arnoldi's method requires the fission source to be discretized.  The simplest way to discretize the fission source is to use a constant in space or first-order accurate spatial approximation of the fission source which can, unfortunately, cause an error in the eigenvalue estimate if too few spatial bins are used to discretize the source.  I have implemented a second order accurate approximation to the fission source and have used it to reduce the error in the eigenvalue calculation by an order of magnitude for the same number of particles tracked.  The eigenvector estimates from the second order accurate approximation are a great improvement over the first order accurate approximation.  Rather than a jagged, step-wise approximation to the eigenvector, the second-order accurate approximation is a smooth and nearly continuous function across bins.  In addition, the figure of merit for the second-order accurate approximation is 2--3 times larger than the first order accurate approximation.
+
+I have investigated relaxing the precision to which the transport-fission operator is applied at every Arnoldi iteration.  Studies have shown that relaxing Arnoldi's method has no effect on the convergence to the correct eigenvalues.  Relaxing Arnoldi's method in a Monte Carlo particle transport application simply involves tracking fewer particles in an iteration than was initially specified; tracking fewer particles is less computationally expensive and reduces the overall time for the simulation.  
+
+Relaxing Arnoldi's method for Monte Carlo criticality applications can save on computation time.  Relaxing too much, however,  can cause the eigenvalue estimates to be incorrect.  In addition, relaxing Arnoldi's method only a little can cause the figure of merit to be smaller than for a non-relaxed Arnoldi's method.  Relaxing Arnoldi's method turns out to be not a sufficient improvement to make it worthwhile to use in practice.  
+
+Two important topics currently being investigated in the Monte Carlo particle transport community are the underestimation of the variance of the mean eigenvalue estimate and the convergence of the fission source.  The power method \emph{under}estimates the variance because it ignores the correlation between power method iterations.  My implementation of Arnoldi's method also ignores the inter-iteration correlation, but the reported variance appears to be more conservative.  In one of the problems discussed in this dissertation, I have shown that Arnoldi's method \emph{over}estimates the uncertainty in the eigenvalue estimate by approximately 10\%.
+
+The power method can take a long time to converge the fission source---especially for problems with a large dominance ratio.  In Monte Carlo criticality calculations, both the eigenvalue estimate and the fission source must be converged before tallying begins.  If convergence is slow, more iterations must be discarded and computation wasted.  I have shown that Arnoldi's method is superior to the power method in converging both the eigenvalue estimate and the fission source.  Arnoldi's method appears to converge both the eigenvalue estimate and the fission source immediately, while the power method can require several hundreds of iterations.  
+
+\section{Future Work \label{sec:FutureWork}}
+Work on Monte Carlo Arnoldi's method for criticality calculations is far from complete.  This dissertation represents the first work performed in this field.  Some of the many topics that still need to be explored are described next.
+
+\subsection{Implicit Restarts} \label{sec:IRAM}
+One of the most intriguing ways that restarted Arnoldi's method could be improved is by implementing \emph{implicit} restarts.  Implicit restarts were developed by \citet{Sorensen:1992Impli-0} as a way to restart Arnoldi's method with an improved starting vector, and at the same time reduce the computational expense of the algorithm and increase the stability of maintaining orthogonality between Arnoldi vectors.  
+
+Implicitly restarted Arnoldi's method (IRAM), as it is called, performs iterations of the shifted \QR algorithm on the upper Hessenberg matrix, $H_m$, in the Arnoldi factorization in exchange of Arnoldi iterations.  It can be shown that performing these shifted \QR iterations allows Arnoldi's method to jump into the middle of the next restart, skipping several iterations.  IRAM is mathematically equivalent to picking a vector for the beginning of a new restart as a linear combination of the eigenvectors associated with the desired region of the spectrum of \A{} as we did in explicitly restarted Arnoldi's method.  The full derivation and proof of implicitly restarted Arnoldi's method is given in Appendix \ref{ch:IRAM}.
+
+In Arnoldi's method, applying the linear operator \A{} is the most computationally expensive part, using greater than 80\% of the computer cycles in a given iteration.  Since the number of iterations in an Arnoldi restart is small, performing \QR iterations on $H_m$ will be inexpensive.  Trading computationally expensive applications of \A{} for inexpensive \QR iterations on $H_m$ should significantly reduce the computational expense of Arnoldi's method.
+
+\subsection{Calculating Eigenvalue Estimates at Every Iteration}
+In \Fref{ch:ArnoldiMethod} it was suggested that an Arnoldi restart could be treated similarly to the power method; that is, at the end of an Arnoldi restart an estimate for the eigenvalues are calculated and stored.  In the power method, an eigenvalue estimate is calculated at every iteration; since multiple iterations make up one Arnoldi restart, the power method has many more eigenvalue estimates than does Arnoldi's method for the same number of iterations and number of particles tracked.
+
+The variance of the mean of the eigenvalue estimates goes as one over the square-root of the number of eigenvalue estimates.  Thus, the power method has an advantage over Arnoldi's method in that it has more eigenvalue estimates---the variance for the mean eigenvalue from the power method will almost certainly be smaller.  
+
+There is no reason why an eigenvalue estimate could not be calculated at every Arnoldi iteration instead of just at the end of a restart.  Of course, after the first iteration we could only estimate the fundamental eigenvalue; we would have to wait for additional iterations to estimate higher order eigenvalues.  It would be slightly more computationally expensive, but the decrease in the variance may be worth the extra expense.  In all of the calculations in which Arnoldi's method was directly compared to the power method, the figures of merit from the power method calculations were larger than the figures of merit for Arnoldi's method even though both methods took approximately the same amount of computational time.  The figure of merit is larger for the power method because the variance is smaller.  Calculating an eigenvalue estimate at every iteration would increase the number of estimates in Arnoldi's method, but is more computationally expensive.
+
+A preliminary test has been performed to see how estimating the eigenvalue at each iteration might work.  I have repeated the 20 mfp simulation in \Fref{ch:ArnoldiMethod} from Arnoldi's method, but instead of estimating three eigenvalues only the fundamental eigenvalue is estimated and only two iterations are done per restart.  In each iteration 1E5 particles are tracked.  The number of restarts are 125 inactive and 500 active.  The total number of particles tracked and the total number of iterations is the same for this simulation and the power method and Arnoldi's method from \Fref{ch:ArnoldiMethod}.
+
+The results of this simulation are given in \Fref{tab:N1Arnoldi}.  The results for the new simulation are given first and denoted with a star.  The eigenvalue estimate is within statistical uncertainty of the reference value of $\lambda_0 = 4.82780$.  We can see that the standard deviation of this simulation is identical to the power method simulation from \Fref{ch:ArnoldiMethod}, but that the figure of merit is larger.
+\begin{table}[h] \centering
+    \begin{tabular}{rccc}
+        \toprule
+        & $\lambda_0$ & $\sigma$ & FOM \\
+        \midrule
+        Arnoldi* & 4.82806 & 6.3\e{-4} & 6.6\e{3} \\
+        Power    & 4.82734 & 6.3\e{-4} & 5.4\e{3} \\
+        Arnoldi  &  4.8290 & 1.5\e{-3} & 1.1\e{3} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Eigenvalue estimate and figure of merit for Arnoldi's method (Arnoldi*) with just 2 iterations per restart and only saving the fundamental eigenmode.  Also included are results from \Fref{tab:BasicResults} for comparison.  (Reference $\lambda_0 = 4.82780$.)}
+    \label{tab:N1Arnoldi}
+\end{table}
+
+\Fref{fig:N1ArnoldiValues} shows the eigenvalue estimate convergence as well as the Shannon Entropy.  In this particular simulation, Arnoldi's method does not converge the eigenvalue estimate or the Shannon entropy immediately as we have seen previously, but it still only requires a few restarts to converge.  \Fref{fig:N1ArnoldiVectors} shows the estimated fundamental eigenvector along with the reference solution.  Again we see that Arnoldi's method can accurately estimate the fundamental eigenvector.  
+\begin{figure} \centering
+    \subfloat[Eigenvalue estimate and Shannon Entropy]{\label{fig:N1ArnoldiValues}\input{Conclusions/Data/N1ArnoldiValues}}
+
+    \subfloat[Eigenvector]{\label{fig:N1ArnoldiVectors}\input{Conclusions/Data/N1ArnoldiVectors}}
+    \caption{Preliminary calculation of eigenvalue estimates, eigenvector, and Shanon entropy from an Arnoldi's method with just 2 iterations per restart and only saving the fundamental eigenmode.  The black line is the reference solution.}
+\end{figure}
+
+These preliminary results show two important things.  First, if we are interested in just one eigenmode we should use a smaller Krylov subspace (fewer iterations per restart) and have more active restarts; this reduces the variance and increases the figure of merit. Second, we see that computing an eigenvalue estimate more frequently can reduce the variance for the mean eigenvalue.
+
+\subsection{Condensing Arnoldi's Method}
+One suggestion that has been made\footnote{very determinedly, in fact} for Arnoldi's method is to eliminate restarts and just do a few highly accurate iterations.  We have seen that Arnoldi's method does not need many inactive restarts to converge the fission source.  The only remaining reason to use many restarts is to obtain an estimation of the statistical uncertainty of the eigenvalue estimate.  However we also know that the estimate of the uncertainty is wrong.
+
+It has been proposed that rather than performing many Arnoldi restarts, it may be beneficial to track many more particles during just one or two Arnoldi restarts with sufficient Krylov subspace size.  The application of \A{} would be performed much more accurately and the eigenvalue estimates would be much better.
+
+With only one or two Arnoldi restarts the statistical uncertainty could not be calculated as described in this dissertation; the variance of just two estimates isn't helpful.  In principle the statistical uncertainty could be calculated by propagating the statistical error through the iterations of Arnoldi's method.  This would be a profound change in how statistical uncertainties are calculated in Monte Carlo eigenvalue computations, no one has done this before.  
+
+A preliminary simulation has been done using this idea.  We return to the 20 mfp slab geometry introduced in \Fref{ch:ArnoldiMethod}.  We will use the same total number of particles, but will put all of them into one inactive restart and one active restart; each restart has 10 iterations with 6.25\e{6} particles tracked in each iteration.  
+
+The eigenvalues from this simulation are given in \Fref{tab:CondensedArnoldi} and the estimated eigenvectors in \Fref{fig:CondensedArnoldiVectors}; the ``Condensed'' Arnoldi is Arnoldi's method with just two restarts, but many particles tracked in each iteration.  We see that the eigenvalue estimates are not exactly the same as the reference solution but that the eigenvector is an excellent estimate as with the regular Arnoldi's method.  However we do not have a way yet of estimating the statistical uncertainty of these values so we do not know if the eigenvalue estimates are within statistical uncertainty of the reference solution.
+\begin{table}[h] \centering
+    \begin{tabular}{rccc}
+        \toprule
+         & $\lambda_0$ & $\lambda_1$ & $\lambda_2$ \\
+         \midrule
+        Condensed Arnoldi & 4.8309 & 4.3824 & 3.8131 \\
+        Reference & 4.8278 & 4.3831 & 3.8174 \\
+        \bottomrule
+\end{tabular}
+    \caption{Eigenvalue estimates for 20 mfp thick slab geometry from a condensed Arnoldi's method and Reference eigenvalues from \cite{Garis:1991One-s-0}, and \cite{Dahl:1979Eigen-0}.}
+    \label{tab:CondensedArnoldi}
+\end{table}
+
+\begin{figure} \centering
+    \input{Conclusions/Data/CondensedArnoldiVectors}
+    \caption{Preliminary calculation of eigenvectors from condensed Arnoldi.}
+    \label{fig:CondensedArnoldiVectors}
+\end{figure}
+
+\subsection{Multi-dimensional and Real-world Problems}
+All of the simulations demonstrated in this dissertation have been one-dimensional.  Restricting a prolem to one-dimension is sufficient for a proof-of-concept but it certainly does not represent a real-world problem.  As of yet, there have been no attempts at using Arnoldi's method in a three-dimensional, production code such as MCNP; any estimates of how Arnoldi's method may operate in three-dimensions is just speculation.
+
+Most likely the biggest issue when moving to three-dimensions is the length of the Arnoldi vectors.  It is expected that the number of discretization bins necessary for three dimensions would be at least $N^3$ where $N$ is the number of bins for a one-dimensional problem.  Increasing the size of the Arnoldi vectors by this magnitude would increase the computational expense of orthogonalizing the Arnoldi vectors as well as the expense of sampling and scoring in and from a three-dimensional source.  
+
+The size of the Krylov subspace (number of iterations in a restart) necessary for a three-dimensional problem would seem to be greater than for a one-dimensional problem.  In this dissertation, the more difficult problems (i.e. problems with larger dominance ratios) required additional iterations for an accurate eigenvalue estimate.  A three-dimensional problem would almost certainly require more iterations than a one-dimensional problem and would therefore require more time.  
+
+Arnoldi's method, while having been used extensively in the numerical analysis community has yet to be incorporated in Monte Carlo particle transport algorithms.  This dissertation represents the first work in this area.  Arnoldi's method has many promising qualities; further investigation will determine the ability of Arnoldi's method to be used in production Monte Carlo codes.

@@ -1,0 +1,53 @@
+% Customize look of defense
+
+\mode<presentation>
+ \usetheme{AnnArbor}
+\usecolortheme{wolverine}
+ \useoutertheme{infolines}
+\useinnertheme[shadow=true]{rounded}
+
+\setbeamertemplate{navigation symbols}{}    % Remove navigation symbols
+
+\definecolor[named]{MBlue}{rgb}{0, 0, .8}
+\definecolor[named]{MMaize}{rgb}{1, .8, 0}
+
+\setbeamercolor*{palette primary}{fg=darkblue!60!black,bg=yellow!85!orange}
+\setbeamercolor*{palette secondary}{fg=darkblue!70!black,bg=yellow!60!orange}
+\setbeamercolor*{palette tertiary}{bg=darkblue!80!black,fg=yellow!50!orange}
+\setbeamercolor*{palette quaternary}{fg=darkblue,bg=yellow!20!orange}
+
+\setbeamerfont{block title}{size={}}
+\setbeamercolor{block title}{use=structure,bg=MBlue!80!black, fg=yellow!50!white}
+\setbeamercolor{block body}{parent=normal, bg=yellow!50!white, fg=MBlue!70!black}
+\setbeamercolor{titlelike}{parent=structure,bg=yellow!85!orange}
+%\setbeamercolor*{frametitle}{use=structure,bg=MBlue!80!black, fg=yellow!50!white}
+
+
+% Customize headline
+\defbeamertemplate*{headline}{}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in head/foot}%
+  \end{beamercolorbox}}%
+}
+
+% Customize footline
+\defbeamertemplate*{footline}{}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.25ex,dp=1ex,right]{block title}%
+      \usebeamerfont{author in head/foot}\insertauthor\hspace{3em} \insertshortdate{}\hspace{1em}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=0.25\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertdate
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=0.25\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{subsection in head/foot}\insertframenumber{}\hspace{1em}
+  \end{beamercolorbox}}%
+}
+\mode
+<all>

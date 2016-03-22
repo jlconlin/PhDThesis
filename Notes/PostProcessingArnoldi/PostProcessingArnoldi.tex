@@ -1,0 +1,209 @@
+% IRAM.tex
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+
+
+\title{Post-Processing Arnoldi's Method}
+\author{Jeremy L. Conlin}
+
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\qp}[1]{q'_{#1}}
+\newcommand{\qh}[1]{\hat{q}_{#1}}
+\newcommand{\qt}[1]{\tilde{q}_{#1}}
+\newcommand{\qc}[1]{\check{q}_{#1}}
+\newcommand{\Aq}[1]{\A q_{#1}}
+\newcommand{\Ap}[1]{\A \qp{#1}}
+\newcommand{\Ah}[1]{\A \qh{#1}}
+\newcommand{\At}[1]{\A \qt{#1}}
+\newcommand{\Ac}[1]{\A \qc{#1}}
+
+\begin{document}
+\maketitle
+
+The purpose of this document is to explore the possibility of performing an Arnoldi factorization by post-processing a set of Krylov vectors.
+
+\section{The beginning}
+Suppose we have the matrix
+\begin{equation*}
+    \A \equiv \begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
+                              0 & 2 & 0 & 0 & 0 \\
+                              0 & 1 & 3 & 0 & 0 \\
+                              0 & 0 & 0 & 4 & 0 \\
+                              0 & 0 & 0 & 0 & 5 \end{pmatrix}.
+\end{equation*}
+This problem is not specific to this matrix, but this matrix is easily studied.
+
+A Krylov subspace of dimension $k$ is defined as 
+\begin{equation}
+    \mathcal{K}_k \equiv \left\{q, \A q, \A^2, \ldots, A^{k-1}q\right\} = \left\{q_0, q_1, \ldots, q_k\right\}.
+    \label{eq:KrylovSubspace}
+\end{equation}
+The simplest way to construct a basis for a Krylov subspace is to repeatedly apply a linear operator (in our case the matrix $\A$) to a vector $q$.  This is what is done with the power method which is used to calculate the dominant eigenvalue of the linear operator.  
+
+\section{Arnoldi's Method}
+Arnoldi's method generates the same Krylov subspace found in Equation \ref{eq:KrylovSubspace} but orthonormalizes the basis vectors.  The question remains if we can begin with Krylov subspace and orthogonalize and normalize the vectors after the fact to create the Arnoldi factorization
+\begin{equation}
+    \A V = V H.
+    \label{eq:ArnoldiFactorization}
+\end{equation}
+
+To begin, let's rewrite Equation \ref{eq:KrylovSubspace} as
+\begin{equation}
+    \mathcal{K}'_k \equiv \left\{q, \A q, \A^2, \ldots, A^{k-1}q\right\} = \left\{\qp{0}, \qp{1}, \ldots, \qp{k}\right\}.
+\end{equation}
+This is merely to keep our notation straight.  Another way to write this is
+\begin{subequations}\begin{align}
+    \qp{0} &\equiv q_0 \\
+    \qp{1} &= \A \qp{0} \\
+    \qp{2} &= \A \qp{1} \\
+    &\ldots \\
+    \qp{k} &= \A \qp{k-1}.
+    \label{}
+\end{align}\end{subequations}
+
+We have already applied our linear operator $k$ times and have our $k$-dimensional Krylov subspace.  Can we then orthogonalize it and keep it mathematically equivalent to creating an Arnoldi factorization in the traditional fashion.
+
+Let's begin with the first iteration.
+
+\begin{align}
+    \qh{1} &= \Aq{0} \\
+    \qt{1} &= \qh{1} - h_{0,1}*q_0 \\
+    q_1 &= \qt{1}/\left|\qt{1}\right|.
+\end{align}
+
+There is nothing special here.  For a 1-dimensional subspace, we could create a post-Arnoldi factorization from a Krylov subspace.  Of course if that's all we can do, then it isn't very interesting.  Let's move onto the second iteration.
+
+\begin{subequations}
+    \begin{align}
+    \qh{2} &= \A q_1 \\
+    &= \frac{1}{\left|\qt{1}\right|}\At{1} \\
+    &= \frac{1}{\left|\qt{1}\right|}\A \left\{\qh{1}-h_{0,1}*q_0\right\} \\
+    &= \frac{1}{\left|\qt{1}\right|} \left\{\Ah{1}-h_{0,1}*\Aq{0}\right\} \\
+    &= \frac{1}{\left|\qt{1}\right|} \left\{\Ah{1}-h_{0,1}*\qh{1}\right\} \label{eq:2Ihat}.
+    \end{align}
+\end{subequations}
+Equation \ref{eq:2Ihat} contains only one application of the linear operator that hasn't already been performed.  Eliminating this operation is crucial if we are to use this technique since the time required to apply the linear operator is by far the most computationally expensive.  We will introduce a new variable $\qc{1} = \Ah{1}$ but leave discussion about this variable until later.  At this point, let's just assume we know what it is without applying the linear operator.
+
+Using $\qc{1}$ in Equation \ref{eq:2Ihat}, we define $\qh{2}$ in terms of known quantities without the need for additional applications of the linear operator
+\begin{equation}
+    \qh{2} = \frac{1}{\left|\qt{1}\right|} \left\{\qc{1}-h_{0,1}*\qh{1}\right\} 
+    \label{eq:2IhatFinal}.
+\end{equation}
+
+Continuing the iteration we find an expression of $q_2$ of all known quantities.  (Can you see a recurring pattern here?)
+\begin{subequations}
+    \begin{align}
+        \qt{2} &= \qh{2} - h_{0,2}*q_0 - h_{1,2}*q_1 \\
+        q_2 &= \qt{2}/\left|\qt{2}\right|.
+    \end{align}
+    \label{eq:2I}
+\end{subequations}
+
+We have remained in the realm of simple iterations.  Let's take this one more iteration to see if future iterations will cause a problem.
+\begin{subequations}
+    \begin{align}
+    \qh{3} &= \A q_2 \\
+    &= \frac{1}{\left|\qt{2}\right|}\At{2} \\
+    &= \frac{1}{\left|\qt{2}\right|}\A \left\{\qh{2} - h_{0,2}*q_0 - h_{1,2}*q_1 \right\} \\
+    &= \frac{1}{\left|\qt{2}\right|} \left\{\Ah{2} - h_{0,2}*\Aq{0} - h_{1,2}*\Aq{1} \right\} \\
+    &= \frac{1}{\left|\qt{2}\right|} \left\{\qc{2} - h_{0,2}*\qh{1} - h_{1,2}*\qh{2} \right\} \label{eq:3Ihat}
+    \end{align}
+\end{subequations}
+
+From Equation \ref{eq:3Ihat} (as well as Equation \ref{eq:2IhatFinal}) we see that we must store all the ``hat''vectors in addition to what we have already stored.  This shouldn't normally be a problem since the number we are storing should be relatively small.  Again I've taken the liberty of using $\qc{2}$ without further explanation.
+
+We can finish the iteration as usual.
+\begin{subequations}
+    \begin{align}
+    \qt{3} &= \qh{3} - h_{0,3}*q_0 - h_{1,3}*q_1 - h_{2,3}*q_2 \\
+    q_3 &= \qt{3}/\left|\qt{3}\right|.
+    \end{align}
+\end{subequations}
+
+\subsection{What about the $\qc{i}$'s?}
+Similarly to what we have already done, let's write out the $\qc{i}$ for the first few iterations to see if we can come up with something that works for every iteration.
+
+The first one is easy
+\begin{equation}
+    \qc{1} = \Ah{1} = \A \left(\Aq{0}\right) = \Ap{1} = \qp{2}
+    \label{eq:qc1}
+\end{equation}
+
+The second one takes a little more work,
+\begin{subequations}
+    \begin{align}
+        \qc{2} &= \Ah{2} \\
+        &= \A \left\{\frac{1}{\left|\qt{1}\right|} \left\{\qc{1}-h_{0,1}*\qh{1}\right\} \right\} \\
+        &= \frac{1}{\left|\qt{1}\right|} \left\{\Ac{1}-h_{0,1}*\Ah{1}\right\} \\
+        &= \frac{1}{\left|\qt{1}\right|} \left\{\Ac{1}-h_{0,1}*\qc{1}\right\}
+        \label{eq:qc2}
+    \end{align}
+\end{subequations}
+Let's expand $\Ac{1}$.
+\begin{equation}
+    \Ac{1} = \A \left(\qp{2}\right) = \qp{3}
+    \label{eq:qc2sub}
+\end{equation}
+Substituting Equation \ref{eq:qc2sub} into Equation \ref{eq:qc2} we obtain
+\begin{equation}
+    \qc{2} = \frac{1}{\left|\qt{1}\right|} \left\{\qp{3}-h_{0,1}*\qc{1}\right\}.
+    \label{eq:qc2final}
+\end{equation}
+
+Let's do another iteration (I'm not seeing a pattern yet).
+\begin{subequations}
+    \begin{align}
+        \qc{3} &= \Ah{3} \\
+        &= \A \left[ \frac{1}{\left|\qt{2}\right|} \left\{\qc{2} - h_{0,2}*\qh{1} - h_{1,2}*\qh{2} \right\} \right] \\
+        &= \frac{1}{\left|\qt{2}\right|} \left\{\Ac{2} - h_{0,2}*\Ah{1} - h_{1,2}*\Ah{2} \right\} \\
+        &= \frac{1}{\left|\qt{2}\right|} \left\{\Ac{2} - h_{0,2}*\qc{1} - h_{1,2}*\qc{2} \right\}
+        \label{eq:qc3}
+    \end{align}
+\end{subequations}
+Let's expand $\Ac{2}$.
+\begin{subequations}
+    \begin{align}
+        \Ac{2} &= \A \left[\frac{1}{\left|\qt{1}\right|} \left\{\qp{3}-h_{0,1}*\qc{1}\right\}\right] \\
+         &= \frac{1}{\left|\qt{1}\right|} \left\{\Ap{3}-h_{0,1}*\Ac{1}\right\} \\
+         &= \frac{1}{\left|\qt{1}\right|} \left\{\qp{4}-h_{0,1}*\qp{3}\right\}
+        \label{eq:qc3sub}
+    \end{align}
+\end{subequations}
+Substituting Equation \ref{eq:qc3sub} into Equation \ref{eq:qc3} followed by substituting in Equation \ref{eq:qc2final} we obtain
+\begin{subequations}
+    \begin{align}
+        \qc{3} &= \frac{1}{\left|\qt{2}\right|} \left\{\left[\frac{1}{\left|\qt{1}\right|} \left\{\qp{4}-h_{0,1}*\qp{3}\right\}\right] - h_{0,2}*\qc{1} - h_{1,2}*\qc{2} \right\} \\
+         &= \frac{1}{\left|\qt{2}\right|} \left\{\left[\frac{1}{\left|\qt{1}\right|} \left\{\qp{4}-h_{0,1}*\qp{3}\right\}\right] - h_{0,2}*\qc{1} - h_{1,2}*\left[\frac{1}{\left|\qt{1}\right|} \left\{\qp{3}-h_{0,1}*\qc{1}\right\}\right] \right\}
+    \end{align}
+\end{subequations}
+
+Well, this doesn't look good.  It is clear that there are no matrix-vector multiplications needed, but I can't yet see a recursive pattern.  I'm sure it's there, I just can't see it yet.  
+
+\section{General Format}
+Now let's try to write this in a general format.  We have already shown that it works for up to three iterations.  What if we are performing the $n+1$st iteration?
+
+\begin{subequations}
+    \begin{align}
+        \qh{n+1} &= \Aq{n} \\
+        &= \frac{1}{\qt{n}}\At{n} \\
+        &= \frac{1}{\qt{n}}\A 
+        \left\{\qh{n} - h_{0,n}*q_0 - h_{1,n}*q_1 \cdots h_{n-1,n}*q_{n-1}\right\} \\
+        &= \frac{1}{\qt{n}}
+        \left\{\Ah{n} - h_{0,n}*\Aq{0} - h_{1,n}*\Aq{1} \cdots h_{n-1,n}*\Aq{n-1}\right\} \\
+        &= \frac{1}{\qt{n}}
+        \left\{\qc{n} - h_{0,n}*\qh{1} - h_{1,n}*\qh{2} \cdots h_{n-1,n}*\qh{n}\right\}
+    \end{align}
+\end{subequations}
+\begin{subequations}
+    \begin{align}
+        \qt{n+1} &= \qh{n+1} - h_{0,n+1}*q_0 \cdots h_{n.n+1}*q_n \\
+        q_{n+1} &= \qt{n+1}/\left|\qt{n+1}\right|.
+    \end{align}
+\end{subequations}
+
+\section{Conclusion}
+So I think a post-processing Arnoldi's method is possible.  I just haven't yet found the inductive proof for the $\qc{i}$'s.
+\end{document}

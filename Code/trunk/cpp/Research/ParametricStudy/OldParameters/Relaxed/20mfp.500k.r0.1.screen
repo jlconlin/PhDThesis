@@ -1,0 +1,476 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = Relaxed/20mfp.500k.r0.1.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 0
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = true
+	arnoldimethod = explicit
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 20
+	bins = 50
+	acycles = 400
+	incycles = 40
+	active = 20
+	inactive = 2
+	Iterations = 20
+	numValues = 2
+	relaxed = 0.1
+	tracks = 50000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 575416992
+
+==============================
+---Running Explicit Arnoldi---
+==============================
+
+	Iteration #: 1, time: 0.2841 sec.
+	Iteration #: 2, time: 0.5239 sec.
+	Iteration #: 3, time: 0.7745 sec.
+	Iteration #: 4, time:  1.029 sec.
+	Iteration #: 5, time:  1.289 sec.
+	Iteration #: 6, time:  1.549 sec.
+	Iteration #: 7, time:  1.811 sec.
+	Iteration #: 8, time:   2.08 sec.
+	Iteration #: 9, time:  2.343 sec.
+	Iteration #: 10, time:  2.607 sec.
+	Iteration #: 11, time:  2.874 sec.
+	Iteration #: 12, time:  3.134 sec.
+	Iteration #: 13, time:  3.397 sec.
+	Iteration #: 14, time:  3.664 sec.
+	Iteration #: 15, time:  3.978 sec.
+	Iteration #: 16, time:  4.239 sec.
+	Iteration #: 17, time:    4.5 sec.
+	Iteration #: 18, time:  4.766 sec.
+	Iteration #: 19, time:   5.03 sec.
+Restart #: -2, mean eigvalue = (   0.98299,2.1765E-19), std.dev. eigvalue = (        0,        0), res = ( 1.47E-09,        0), time:  5.331 sec.
+	Iteration #: 1, time: 0.2794 sec.
+	Iteration #: 2, time: 0.5426 sec.
+	Iteration #: 3, time: 0.8142 sec.
+	Iteration #: 4, time:  1.076 sec.
+	Iteration #: 5, time:  1.337 sec.
+	Iteration #: 6, time:  1.595 sec.
+	Iteration #: 7, time:   1.85 sec.
+	Iteration #: 8, time:  2.111 sec.
+	Iteration #: 9, time:  2.374 sec.
+	Iteration #: 10, time:  2.639 sec.
+	Iteration #: 11, time:  2.901 sec.
+	Iteration #: 12, time:  3.166 sec.
+	Iteration #: 13, time:  3.427 sec.
+	Iteration #: 14, time:  3.681 sec.
+	Iteration #: 15, time:  3.943 sec.
+	Iteration #: 16, time:  4.208 sec.
+	Iteration #: 17, time:  4.471 sec.
+	Iteration #: 18, time:  4.747 sec.
+	Iteration #: 19, time:  5.011 sec.
+Restart #: -1, mean eigvalue = (    0.9863,7.3898E-19), std.dev. eigvalue = (        0,        0), res = ( 1.89E-09,        0), time:   10.6 sec.
+	Iteration #: 1, Residual = 1.8873E-09, N = 50000, time: 0.2823 sec.
+	Iteration #: 2, Residual =   0.025785, N = 12892, time: 0.5492 sec.
+	Iteration #: 3, Residual =   0.041145, N = 20572, time:  0.618 sec.
+	Iteration #: 4, Residual =   0.042055, N = 21027, time: 0.7273 sec.
+	Iteration #: 5, Residual =   0.016708, N = 8354, time:  0.841 sec.
+	Iteration #: 6, Residual =  0.0087004, N = 4350, time: 0.8852 sec.
+	Iteration #: 7, Residual =  0.0056621, N = 2831, time: 0.9084 sec.
+	Iteration #: 8, Residual =  0.0033517, N = 1675, time:  0.923 sec.
+	Iteration #: 9, Residual =  0.0018827, N = 941, time: 0.9318 sec.
+	Iteration #: 10, Residual = 0.00070283, N = 351, time: 0.9372 sec.
+	Iteration #: 11, Residual = 0.00044148, N = 220, time: 0.9395 sec.
+	Iteration #: 12, Residual =  0.0002966, N = 148, time: 0.9411 sec.
+	Iteration #: 13, Residual =  0.0001788, N = 89, time: 0.9424 sec.
+	Iteration #: 14, Residual = 0.00013058, N = 65, time: 0.9434 sec.
+	Iteration #: 15, Residual = 8.4789E-05, N = 42, time: 0.9446 sec.
+	Iteration #: 16, Residual = 0.00016511, N = 82, time: 0.9458 sec.
+	Iteration #: 17, Residual =  0.0046729, N = 2336, time: 0.9473 sec.
+	Iteration #: 18, Residual =  0.0043109, N = 2155, time: 0.9609 sec.
+	Iteration #: 19, Residual = 0.00061736, N = 308, time: 0.9735 sec.
+Restart #: 0, mean eigvalue = (    1.0078,1.8918E-18), std.dev. eigvalue = (        0,        0), res = ( 0.000199,        0), time:  11.58 sec.
+	Iteration #: 1, Residual = 0.00019946, N = 50000, time: 0.2709 sec.
+	Iteration #: 2, Residual =   0.016593, N = 8296, time: 0.5389 sec.
+	Iteration #: 3, Residual =  0.0085948, N = 4297, time: 0.5816 sec.
+	Iteration #: 4, Residual =  0.0040208, N = 2010, time: 0.6038 sec.
+	Iteration #: 5, Residual =  0.0026876, N = 1343, time: 0.6141 sec.
+	Iteration #: 6, Residual =    0.00437, N = 2185, time: 0.6213 sec.
+	Iteration #: 7, Residual =  0.0037473, N = 1873, time: 0.6329 sec.
+	Iteration #: 8, Residual =  0.0030472, N = 1523, time: 0.6431 sec.
+	Iteration #: 9, Residual =  0.0018382, N = 919, time: 0.6518 sec.
+	Iteration #: 10, Residual =  0.0011166, N = 558, time: 0.6569 sec.
+	Iteration #: 11, Residual = 0.00084365, N = 421, time: 0.6603 sec.
+	Iteration #: 12, Residual =  0.0010456, N = 522, time: 0.6629 sec.
+	Iteration #: 13, Residual =  0.0009195, N = 459, time: 0.6668 sec.
+	Iteration #: 14, Residual = 0.00055642, N = 278, time: 0.6697 sec.
+	Iteration #: 15, Residual = 0.00021309, N = 106, time: 0.6719 sec.
+	Iteration #: 16, Residual = 0.00016015, N = 80, time: 0.6734 sec.
+	Iteration #: 17, Residual = 0.00011722, N = 58, time: 0.6748 sec.
+	Iteration #: 18, Residual = 7.2162E-05, N = 36, time: 0.6773 sec.
+	Iteration #: 19, Residual = 5.2338E-05, N = 26, time: 0.6788 sec.
+Restart #: 1, mean eigvalue = (   0.99572,2.4337E-16), std.dev. eigvalue = (  0.00852,-1.71E-16), res = ( 4.32E-05,        0), time:  12.27 sec.
+	Iteration #: 1, Residual = 4.3185E-05, N = 50000, time:   0.28 sec.
+	Iteration #: 2, Residual =   0.032024, N = 16012, time: 0.5474 sec.
+	Iteration #: 3, Residual =   0.032137, N = 16068, time: 0.6313 sec.
+	Iteration #: 4, Residual =   0.018266, N = 9132, time: 0.7156 sec.
+	Iteration #: 5, Residual =   0.015873, N = 7936, time:  0.764 sec.
+	Iteration #: 6, Residual =   0.020216, N = 10107, time: 0.8069 sec.
+	Iteration #: 7, Residual =   0.012696, N = 6347, time: 0.8617 sec.
+	Iteration #: 8, Residual =  0.0060043, N = 3002, time: 0.8954 sec.
+	Iteration #: 9, Residual =  0.0030793, N = 1539, time: 0.9115 sec.
+	Iteration #: 10, Residual = 0.00071914, N = 359, time: 0.9198 sec.
+	Iteration #: 11, Residual = 0.00029983, N = 149, time: 0.9221 sec.
+	Iteration #: 12, Residual = 0.00017911, N = 89, time: 0.9235 sec.
+	Iteration #: 13, Residual =  0.0001416, N = 70, time: 0.9246 sec.
+	Iteration #: 14, Residual = 8.4633E-05, N = 42, time: 0.9255 sec.
+	Iteration #: 15, Residual = 6.4787E-05, N = 32, time: 0.9267 sec.
+	Iteration #: 16, Residual = 6.2932E-05, N = 31, time: 0.9278 sec.
+	Iteration #: 17, Residual = 4.4541E-05, N = 22, time: 0.9291 sec.
+	Iteration #: 18, Residual =  3.345E-05, N = 16, time: 0.9305 sec.
+	Iteration #: 19, Residual = 4.1667E-05, N = 20, time: 0.9319 sec.
+Restart #: 2, mean eigvalue = (   0.99006,2.0083E-16), std.dev. eigvalue = (  0.00732,-6.64E-17), res = ( 7.54E-05,        0), time:   13.2 sec.
+	Iteration #: 1, Residual = 7.5428E-05, N = 50000, time: 0.2593 sec.
+	Iteration #: 2, Residual =   0.019337, N = 9668, time: 0.5239 sec.
+	Iteration #: 3, Residual =   0.024474, N = 12236, time: 0.5762 sec.
+	Iteration #: 4, Residual =    0.02159, N = 10795, time: 0.6403 sec.
+	Iteration #: 5, Residual =  0.0096745, N = 4837, time: 0.6954 sec.
+	Iteration #: 6, Residual =   0.008685, N = 4342, time: 0.7223 sec.
+	Iteration #: 7, Residual =  0.0059543, N = 2977, time: 0.7477 sec.
+	Iteration #: 8, Residual =  0.0026995, N = 1349, time: 0.7671 sec.
+	Iteration #: 9, Residual = 0.00093901, N = 469, time: 0.7761 sec.
+	Iteration #: 10, Residual = 0.00036206, N = 181, time: 0.7788 sec.
+	Iteration #: 11, Residual = 0.00021997, N = 109, time: 0.7801 sec.
+	Iteration #: 12, Residual = 0.00011758, N = 58, time: 0.7811 sec.
+	Iteration #: 13, Residual = 9.4524E-05, N = 47, time:  0.782 sec.
+	Iteration #: 14, Residual = 9.3539E-05, N = 46, time:  0.783 sec.
+	Iteration #: 15, Residual = 8.2059E-05, N = 41, time: 0.7841 sec.
+	Iteration #: 16, Residual = 4.6652E-05, N = 23, time: 0.7854 sec.
+	Iteration #: 17, Residual = 7.1439E-05, N = 35, time: 0.7865 sec.
+	Iteration #: 18, Residual = 7.5738E-05, N = 37, time: 0.7879 sec.
+	Iteration #: 19, Residual = 6.2908E-05, N = 31, time: 0.7895 sec.
+Restart #: 3, mean eigvalue = (   0.99044,2.6047E-16), std.dev. eigvalue = (   0.0055,-4.67E-17), res = ( 8.81E-05,        0), time:  13.99 sec.
+	Iteration #: 1, Residual = 8.8113E-05, N = 50000, time: 0.2571 sec.
+	Iteration #: 2, Residual =   0.027746, N = 13873, time: 0.5205 sec.
+	Iteration #: 3, Residual =   0.034771, N = 17385, time: 0.5948 sec.
+	Iteration #: 4, Residual =   0.033833, N = 16916, time: 0.6871 sec.
+	Iteration #: 5, Residual =   0.019704, N = 9852, time: 0.7779 sec.
+	Iteration #: 6, Residual =   0.013118, N = 6559, time: 0.8294 sec.
+	Iteration #: 7, Residual =  0.0072315, N = 3615, time: 0.8638 sec.
+	Iteration #: 8, Residual =  0.0046367, N = 2318, time: 0.8828 sec.
+	Iteration #: 9, Residual =  0.0018038, N = 901, time: 0.8951 sec.
+	Iteration #: 10, Residual = 0.00068191, N = 340, time: 0.9001 sec.
+	Iteration #: 11, Residual = 0.00025666, N = 128, time: 0.9022 sec.
+	Iteration #: 12, Residual = 0.00013263, N = 66, time: 0.9034 sec.
+	Iteration #: 13, Residual = 8.2131E-05, N = 41, time: 0.9043 sec.
+	Iteration #: 14, Residual = 7.1959E-05, N = 35, time: 0.9052 sec.
+	Iteration #: 15, Residual = 6.3842E-05, N = 31, time: 0.9062 sec.
+	Iteration #: 16, Residual = 0.00014834, N = 74, time: 0.9074 sec.
+	Iteration #: 17, Residual = 9.5764E-05, N = 47, time: 0.9088 sec.
+	Iteration #: 18, Residual = 0.00046467, N = 232, time: 0.9103 sec.
+	Iteration #: 19, Residual =  0.0055938, N = 2796, time:  0.913 sec.
+Restart #: 4, mean eigvalue = (   0.99351,2.7721E-16), std.dev. eigvalue = (  0.00519,-2.37E-17), res = (  0.00153,        0), time:  14.93 sec.
+	Iteration #: 1, Residual =  0.0015291, N = 50000, time:  0.275 sec.
+	Iteration #: 2, Residual =   0.021135, N = 10567, time: 0.5443 sec.
+	Iteration #: 3, Residual =   0.014069, N = 7034, time: 0.6013 sec.
+	Iteration #: 4, Residual =  0.0094397, N = 4719, time: 0.6391 sec.
+	Iteration #: 5, Residual =  0.0086058, N = 4302, time: 0.6645 sec.
+	Iteration #: 6, Residual =  0.0059512, N = 2975, time: 0.6871 sec.
+	Iteration #: 7, Residual =  0.0045398, N = 2269, time: 0.7029 sec.
+	Iteration #: 8, Residual =  0.0022394, N = 1119, time: 0.7149 sec.
+	Iteration #: 9, Residual =  0.0018793, N = 939, time: 0.7213 sec.
+	Iteration #: 10, Residual =  0.0015376, N = 768, time: 0.7266 sec.
+	Iteration #: 11, Residual = 0.00060326, N = 301, time: 0.7319 sec.
+	Iteration #: 12, Residual = 0.00023637, N = 118, time: 0.7352 sec.
+	Iteration #: 13, Residual = 0.00010883, N = 54, time: 0.7364 sec.
+	Iteration #: 14, Residual = 7.2418E-05, N = 36, time: 0.7373 sec.
+	Iteration #: 15, Residual = 3.7403E-05, N = 18, time: 0.7384 sec.
+	Iteration #: 16, Residual = 7.4146E-05, N = 37, time: 0.7396 sec.
+	Iteration #: 17, Residual = 0.00010521, N = 52, time: 0.7409 sec.
+	Iteration #: 18, Residual = 0.00010069, N = 50, time: 0.7424 sec.
+	Iteration #: 19, Residual =  5.706E-05, N = 28, time: 0.7441 sec.
+Restart #: 5, mean eigvalue = (   0.99284,2.5279E-16), std.dev. eigvalue = (  0.00437,-1.64E-17), res = ( 0.000263,        0), time:  15.67 sec.
+	Iteration #: 1, Residual = 0.00026283, N = 50000, time: 0.2732 sec.
+	Iteration #: 2, Residual =    0.01961, N = 9805, time:  0.545 sec.
+	Iteration #: 3, Residual =   0.014181, N = 7090, time: 0.5971 sec.
+	Iteration #: 4, Residual =   0.013385, N = 6692, time:  0.636 sec.
+	Iteration #: 5, Residual =   0.012504, N = 6251, time: 0.6713 sec.
+	Iteration #: 6, Residual =  0.0087595, N = 4379, time: 0.7045 sec.
+	Iteration #: 7, Residual =  0.0044858, N = 2242, time: 0.7282 sec.
+	Iteration #: 8, Residual =  0.0033935, N = 1696, time: 0.7408 sec.
+	Iteration #: 9, Residual =  0.0018448, N = 922, time: 0.7501 sec.
+	Iteration #: 10, Residual =  0.0010582, N = 529, time: 0.7554 sec.
+	Iteration #: 11, Residual = 0.00040731, N = 203, time: 0.7587 sec.
+	Iteration #: 12, Residual = 0.00020662, N = 103, time: 0.7602 sec.
+	Iteration #: 13, Residual = 0.00012352, N = 61, time:  0.762 sec.
+	Iteration #: 14, Residual =    0.00011, N = 55, time:  0.763 sec.
+	Iteration #: 15, Residual = 7.5762E-05, N = 37, time: 0.7642 sec.
+	Iteration #: 16, Residual = 4.6139E-05, N = 23, time: 0.7654 sec.
+	Iteration #: 17, Residual = 4.9064E-05, N = 24, time: 0.7666 sec.
+	Iteration #: 18, Residual = 4.4093E-05, N = 22, time: 0.7679 sec.
+	Iteration #: 19, Residual = 2.9313E-05, N = 14, time: 0.7695 sec.
+Restart #: 6, mean eigvalue = (     0.992,2.2488E-16), std.dev. eigvalue = (  0.00383,-8.52E-18), res = ( 2.42E-05,        0), time:  16.45 sec.
+	Iteration #: 1, Residual = 2.4178E-05, N = 50000, time: 0.2808 sec.
+	Iteration #: 2, Residual =   0.026877, N = 13438, time: 0.5497 sec.
+	Iteration #: 3, Residual =   0.041527, N = 20763, time: 0.6203 sec.
+	Iteration #: 4, Residual =   0.039004, N = 19502, time: 0.7309 sec.
+	Iteration #: 5, Residual =   0.029041, N = 14520, time: 0.8334 sec.
+	Iteration #: 6, Residual =   0.016643, N = 8321, time: 0.9095 sec.
+	Iteration #: 7, Residual =  0.0070605, N = 3530, time: 0.9542 sec.
+	Iteration #: 8, Residual =  0.0033991, N = 1699, time: 0.9735 sec.
+	Iteration #: 9, Residual =  0.0022434, N = 1121, time: 0.9827 sec.
+	Iteration #: 10, Residual =  0.0014906, N = 745, time: 0.9891 sec.
+	Iteration #: 11, Residual = 0.00067879, N = 339, time: 0.9935 sec.
+	Iteration #: 12, Residual = 0.00031245, N = 156, time: 0.9959 sec.
+	Iteration #: 13, Residual = 0.00015226, N = 76, time: 0.9973 sec.
+	Iteration #: 14, Residual = 8.3004E-05, N = 41, time: 0.9983 sec.
+	Iteration #: 15, Residual = 4.4038E-05, N = 22, time: 0.9994 sec.
+	Iteration #: 16, Residual = 4.7196E-05, N = 23, time:  1.001 sec.
+	Iteration #: 17, Residual =  6.643E-05, N = 33, time:  1.002 sec.
+	Iteration #: 18, Residual = 5.0934E-05, N = 25, time:  1.004 sec.
+	Iteration #: 19, Residual = 3.8823E-05, N = 19, time:  1.005 sec.
+Restart #: 7, mean eigvalue = (   0.99097,2.1867E-16), std.dev. eigvalue = (  0.00348,-5.57E-18), res = ( 3.13E-05,        0), time:  17.46 sec.
+	Iteration #: 1, Residual = 3.1287E-05, N = 50000, time: 0.2827 sec.
+	Iteration #: 2, Residual =   0.027685, N = 13842, time: 0.5567 sec.
+	Iteration #: 3, Residual =   0.061367, N = 30683, time: 0.6285 sec.
+	Iteration #: 4, Residual =   0.035913, N = 17956, time: 0.7942 sec.
+	Iteration #: 5, Residual =   0.014477, N = 7238, time: 0.8906 sec.
+	Iteration #: 6, Residual =   0.010253, N = 5126, time: 0.9286 sec.
+	Iteration #: 7, Residual =  0.0071333, N = 3566, time: 0.9557 sec.
+	Iteration #: 8, Residual =  0.0033053, N = 1652, time: 0.9744 sec.
+	Iteration #: 9, Residual =  0.0013629, N = 681, time: 0.9833 sec.
+	Iteration #: 10, Residual = 0.00048682, N = 243, time: 0.9873 sec.
+	Iteration #: 11, Residual = 0.00026425, N = 132, time: 0.9889 sec.
+	Iteration #: 12, Residual = 0.00012466, N = 62, time: 0.9901 sec.
+	Iteration #: 13, Residual = 9.9301E-05, N = 49, time:  0.991 sec.
+	Iteration #: 14, Residual = 9.9303E-05, N = 49, time: 0.9919 sec.
+	Iteration #: 15, Residual = 4.2543E-05, N = 21, time: 0.9931 sec.
+	Iteration #: 16, Residual =  3.536E-05, N = 17, time: 0.9942 sec.
+	Iteration #: 17, Residual = 3.2203E-05, N = 16, time: 0.9954 sec.
+	Iteration #: 18, Residual = 0.00058532, N = 292, time: 0.9967 sec.
+	Iteration #: 19, Residual =   0.075644, N = 37821, time: 0.9995 sec.
+Restart #: 8, mean eigvalue = (    1.0084,1.1094E-16), std.dev. eigvalue = (   0.0168,-1.01E-16), res = (   0.0131,        0), time:  18.65 sec.
+	Iteration #: 1, Residual =    0.01314, N = 50000, time: 0.2718 sec.
+	Iteration #: 2, Residual =    0.06808, N = 34039, time: 0.5253 sec.
+	Iteration #: 3, Residual =   0.043603, N = 21801, time: 0.6964 sec.
+	Iteration #: 4, Residual =   0.020975, N = 10487, time: 0.8072 sec.
+	Iteration #: 5, Residual =   0.013855, N = 6927, time: 0.8632 sec.
+	Iteration #: 6, Residual =   0.010327, N = 5163, time: 0.9005 sec.
+	Iteration #: 7, Residual =  0.0065872, N = 3293, time: 0.9275 sec.
+	Iteration #: 8, Residual =  0.0049612, N = 2480, time: 0.9448 sec.
+	Iteration #: 9, Residual =  0.0027052, N = 1352, time: 0.9583 sec.
+	Iteration #: 10, Residual =  0.0019756, N = 987, time: 0.9658 sec.
+	Iteration #: 11, Residual =  0.0017575, N = 878, time: 0.9714 sec.
+	Iteration #: 12, Residual = 0.00087179, N = 435, time: 0.9764 sec.
+	Iteration #: 13, Residual = 0.00058332, N = 291, time: 0.9792 sec.
+	Iteration #: 14, Residual = 0.00039727, N = 198, time: 0.9813 sec.
+	Iteration #: 15, Residual = 0.00016506, N = 82, time: 0.9831 sec.
+	Iteration #: 16, Residual = 8.0636E-05, N = 40, time: 0.9846 sec.
+	Iteration #: 17, Residual = 4.3878E-05, N = 21, time: 0.9858 sec.
+	Iteration #: 18, Residual = 4.4447E-05, N = 22, time: 0.9872 sec.
+	Iteration #: 19, Residual = 3.6634E-05, N = 18, time: 0.9887 sec.
+Restart #: 9, mean eigvalue = (    1.0062,8.4333E-17), std.dev. eigvalue = (   0.0152,-8.63E-17), res = ( 4.03E-05,        0), time:  19.64 sec.
+	Iteration #: 1, Residual = 4.0325E-05, N = 50000, time: 0.2884 sec.
+	Iteration #: 2, Residual =   0.025974, N = 12986, time: 0.5633 sec.
+	Iteration #: 3, Residual =   0.040155, N = 20077, time: 0.6328 sec.
+	Iteration #: 4, Residual =    0.03422, N = 17109, time: 0.7384 sec.
+	Iteration #: 5, Residual =   0.030626, N = 15313, time: 0.8299 sec.
+	Iteration #: 6, Residual =   0.018326, N = 9163, time: 0.9118 sec.
+	Iteration #: 7, Residual =  0.0092308, N = 4615, time: 0.9608 sec.
+	Iteration #: 8, Residual =  0.0069459, N = 3472, time: 0.9846 sec.
+	Iteration #: 9, Residual =  0.0040745, N = 2037, time:  1.003 sec.
+	Iteration #: 10, Residual =  0.0012491, N = 624, time:  1.014 sec.
+	Iteration #: 11, Residual = 0.00047013, N = 235, time:  1.019 sec.
+	Iteration #: 12, Residual = 0.00034039, N = 170, time:  1.021 sec.
+	Iteration #: 13, Residual = 0.00017647, N = 88, time:  1.022 sec.
+	Iteration #: 14, Residual = 0.00012984, N = 64, time:  1.023 sec.
+	Iteration #: 15, Residual = 0.00013216, N = 66, time:  1.024 sec.
+	Iteration #: 16, Residual =  8.812E-05, N = 44, time:  1.026 sec.
+	Iteration #: 17, Residual = 4.4727E-05, N = 22, time:  1.027 sec.
+	Iteration #: 18, Residual = 3.4355E-05, N = 17, time:  1.028 sec.
+	Iteration #: 19, Residual = 4.1456E-05, N = 20, time:   1.03 sec.
+Restart #: 10, mean eigvalue = (    1.0046,6.8643E-17), std.dev. eigvalue = (   0.0139,-7.63E-17), res = ( 0.000126,        0), time:  20.68 sec.
+	Iteration #: 1, Residual = 0.00012627, N = 50000, time: 0.2843 sec.
+	Iteration #: 2, Residual =   0.033622, N = 16811, time: 0.5565 sec.
+	Iteration #: 3, Residual =    0.03723, N = 18614, time: 0.6481 sec.
+	Iteration #: 4, Residual =   0.028598, N = 14299, time:  0.748 sec.
+	Iteration #: 5, Residual =   0.015335, N = 7667, time: 0.8236 sec.
+	Iteration #: 6, Residual =   0.012466, N = 6233, time: 0.8641 sec.
+	Iteration #: 7, Residual =  0.0081949, N = 4097, time: 0.8966 sec.
+	Iteration #: 8, Residual =  0.0037795, N = 1889, time: 0.9185 sec.
+	Iteration #: 9, Residual =  0.0011814, N = 590, time: 0.9284 sec.
+	Iteration #: 10, Residual = 0.00065976, N = 329, time: 0.9319 sec.
+	Iteration #: 11, Residual = 0.00047346, N = 236, time:  0.934 sec.
+	Iteration #: 12, Residual =  0.0001786, N = 89, time: 0.9357 sec.
+	Iteration #: 13, Residual = 0.00011533, N = 57, time: 0.9367 sec.
+	Iteration #: 14, Residual = 6.5127E-05, N = 32, time: 0.9379 sec.
+	Iteration #: 15, Residual = 6.0165E-05, N = 30, time: 0.9389 sec.
+	Iteration #: 16, Residual = 5.9722E-05, N = 29, time: 0.9401 sec.
+	Iteration #: 17, Residual = 4.3531E-05, N = 21, time: 0.9413 sec.
+	Iteration #: 18, Residual = 5.5219E-05, N = 27, time: 0.9427 sec.
+	Iteration #: 19, Residual = 6.9325E-05, N = 34, time: 0.9442 sec.
+Restart #: 11, mean eigvalue = (    1.0028,5.3161E-17), std.dev. eigvalue = (   0.0129,-6.73E-17), res = ( 0.000124,        0), time:  21.62 sec.
+	Iteration #: 1, Residual = 0.00012424, N = 50000, time: 0.2805 sec.
+	Iteration #: 2, Residual =   0.045191, N = 22595, time: 0.5519 sec.
+	Iteration #: 3, Residual =   0.048238, N = 24119, time: 0.6696 sec.
+	Iteration #: 4, Residual =   0.021361, N = 10680, time:  0.796 sec.
+	Iteration #: 5, Residual =  0.0078928, N = 3946, time: 0.8535 sec.
+	Iteration #: 6, Residual =  0.0051137, N = 2556, time: 0.8747 sec.
+	Iteration #: 7, Residual =  0.0050278, N = 2513, time: 0.8886 sec.
+	Iteration #: 8, Residual =  0.0054079, N = 2703, time:  0.902 sec.
+	Iteration #: 9, Residual =  0.0029368, N = 1468, time: 0.9163 sec.
+	Iteration #: 10, Residual =  0.0017001, N = 850, time:  0.924 sec.
+	Iteration #: 11, Residual =  0.0012463, N = 623, time: 0.9289 sec.
+	Iteration #: 12, Residual = 0.00052667, N = 263, time: 0.9326 sec.
+	Iteration #: 13, Residual = 0.00022942, N = 114, time: 0.9345 sec.
+	Iteration #: 14, Residual = 0.00012967, N = 64, time: 0.9357 sec.
+	Iteration #: 15, Residual = 0.00010644, N = 53, time: 0.9369 sec.
+	Iteration #: 16, Residual = 0.00013335, N = 66, time: 0.9381 sec.
+	Iteration #: 17, Residual =  0.0064847, N = 3242, time: 0.9396 sec.
+	Iteration #: 18, Residual =   0.010975, N = 5487, time: 0.9574 sec.
+	Iteration #: 19, Residual =  0.0015335, N = 766, time: 0.9879 sec.
+Restart #: 12, mean eigvalue = (    1.0044,5.4768E-17), std.dev. eigvalue = (    0.012,-6.14E-17), res = ( 0.000305,        0), time:  22.62 sec.
+	Iteration #: 1, Residual = 0.00030485, N = 50000, time: 0.2766 sec.
+	Iteration #: 2, Residual =   0.032014, N = 16007, time: 0.5386 sec.
+	Iteration #: 3, Residual =   0.010867, N = 5433, time: 0.6223 sec.
+	Iteration #: 4, Residual =  0.0063384, N = 3169, time: 0.6504 sec.
+	Iteration #: 5, Residual =  0.0043969, N = 2198, time: 0.6671 sec.
+	Iteration #: 6, Residual =  0.0026253, N = 1312, time: 0.6791 sec.
+	Iteration #: 7, Residual =  0.0016416, N = 820, time:  0.686 sec.
+	Iteration #: 8, Residual = 0.00082836, N = 414, time: 0.6904 sec.
+	Iteration #: 9, Residual = 0.00062045, N = 310, time: 0.6929 sec.
+	Iteration #: 10, Residual = 0.00069778, N = 348, time: 0.6948 sec.
+	Iteration #: 11, Residual = 0.00029524, N = 147, time: 0.6972 sec.
+	Iteration #: 12, Residual = 0.00033763, N = 168, time: 0.6984 sec.
+	Iteration #: 13, Residual = 0.00015297, N = 76, time: 0.6998 sec.
+	Iteration #: 14, Residual = 8.5698E-05, N = 42, time: 0.7009 sec.
+	Iteration #: 15, Residual = 5.8349E-05, N = 29, time:  0.702 sec.
+	Iteration #: 16, Residual = 5.3724E-05, N = 26, time: 0.7032 sec.
+	Iteration #: 17, Residual = 6.6334E-05, N = 33, time: 0.7044 sec.
+	Iteration #: 18, Residual = 5.5465E-05, N = 27, time: 0.7059 sec.
+	Iteration #: 19, Residual =  4.162E-05, N = 20, time: 0.7074 sec.
+Restart #: 13, mean eigvalue = (    1.0031,3.2707E-17), std.dev. eigvalue = (   0.0112,-5.42E-17), res = ( 9.97E-05,        0), time:  23.33 sec.
+	Iteration #: 1, Residual = 9.9714E-05, N = 50000, time: 0.2781 sec.
+	Iteration #: 2, Residual =   0.038315, N = 19157, time: 0.5354 sec.
+	Iteration #: 3, Residual =   0.026703, N = 13351, time: 0.6434 sec.
+	Iteration #: 4, Residual =   0.023144, N = 11572, time: 0.7109 sec.
+	Iteration #: 5, Residual =   0.022422, N = 11210, time: 0.7717 sec.
+	Iteration #: 6, Residual =   0.017222, N = 8610, time: 0.8304 sec.
+	Iteration #: 7, Residual =  0.0088425, N = 4421, time: 0.8765 sec.
+	Iteration #: 8, Residual =   0.005349, N = 2674, time: 0.9001 sec.
+	Iteration #: 9, Residual =  0.0030667, N = 1533, time: 0.9145 sec.
+	Iteration #: 10, Residual =   0.001157, N = 578, time: 0.9228 sec.
+	Iteration #: 11, Residual =  0.0005787, N = 289, time: 0.9261 sec.
+	Iteration #: 12, Residual = 0.00045049, N = 225, time: 0.9281 sec.
+	Iteration #: 13, Residual = 0.00021095, N = 105, time: 0.9298 sec.
+	Iteration #: 14, Residual = 0.00016015, N = 80, time: 0.9309 sec.
+	Iteration #: 15, Residual = 7.7375E-05, N = 38, time: 0.9321 sec.
+	Iteration #: 16, Residual = 5.6485E-05, N = 28, time: 0.9333 sec.
+	Iteration #: 17, Residual = 6.3819E-05, N = 31, time: 0.9345 sec.
+	Iteration #: 18, Residual = 5.1057E-05, N = 25, time: 0.9359 sec.
+	Iteration #: 19, Residual = 7.0989E-05, N = 35, time: 0.9373 sec.
+Restart #: 14, mean eigvalue = (    1.0017,3.8847E-17), std.dev. eigvalue = (   0.0106, -5.1E-17), res = ( 2.27E-05,        0), time:  24.27 sec.
+	Iteration #: 1, Residual = 2.2669E-05, N = 50000, time: 0.2533 sec.
+	Iteration #: 2, Residual =    0.04012, N = 20060, time: 0.5134 sec.
+	Iteration #: 3, Residual =    0.04111, N = 20555, time: 0.6194 sec.
+	Iteration #: 4, Residual =   0.025446, N = 12723, time: 0.7277 sec.
+	Iteration #: 5, Residual =    0.01914, N = 9569, time: 0.7955 sec.
+	Iteration #: 6, Residual =  0.0092882, N = 4644, time: 0.8459 sec.
+	Iteration #: 7, Residual =  0.0062564, N = 3128, time: 0.8706 sec.
+	Iteration #: 8, Residual =  0.0044415, N = 2220, time: 0.8876 sec.
+	Iteration #: 9, Residual =  0.0027429, N = 1371, time: 0.8996 sec.
+	Iteration #: 10, Residual =  0.0010657, N = 532, time: 0.9072 sec.
+	Iteration #: 11, Residual = 0.00048788, N = 243, time: 0.9104 sec.
+	Iteration #: 12, Residual =  0.0001696, N = 84, time: 0.9121 sec.
+	Iteration #: 13, Residual = 0.00010027, N = 50, time: 0.9132 sec.
+	Iteration #: 14, Residual = 4.8487E-05, N = 24, time: 0.9141 sec.
+	Iteration #: 15, Residual = 6.4964E-05, N = 32, time:  0.915 sec.
+	Iteration #: 16, Residual = 0.00023861, N = 119, time: 0.9161 sec.
+	Iteration #: 17, Residual =   0.069853, N = 34926, time: 0.9178 sec.
+	Iteration #: 18, Residual =   0.014915, N = 7457, time:  1.103 sec.
+	Iteration #: 19, Residual =   0.002555, N = 1277, time:  1.142 sec.
+Restart #: 15, mean eigvalue = (     1.004,3.4016E-17), std.dev. eigvalue = (   0.0102,-4.76E-17), res = ( 0.000472,        0), time:  25.42 sec.
+	Iteration #: 1, Residual = 0.00047213, N = 50000, time: 0.2692 sec.
+	Iteration #: 2, Residual =   0.056564, N = 28282, time:  0.549 sec.
+	Iteration #: 3, Residual =   0.024443, N = 12221, time: 0.7025 sec.
+	Iteration #: 4, Residual =  0.0074333, N = 3716, time: 0.7677 sec.
+	Iteration #: 5, Residual =  0.0037613, N = 1880, time: 0.7874 sec.
+	Iteration #: 6, Residual =  0.0028753, N = 1437, time: 0.7976 sec.
+	Iteration #: 7, Residual =    0.00296, N = 1480, time: 0.8054 sec.
+	Iteration #: 8, Residual =  0.0022956, N = 1147, time: 0.8133 sec.
+	Iteration #: 9, Residual =  0.0012585, N = 629, time: 0.8196 sec.
+	Iteration #: 10, Residual = 0.00070271, N = 351, time: 0.8233 sec.
+	Iteration #: 11, Residual = 0.00065123, N = 325, time: 0.8257 sec.
+	Iteration #: 12, Residual = 0.00033585, N = 167, time: 0.8279 sec.
+	Iteration #: 13, Residual = 0.00019888, N = 99, time: 0.8293 sec.
+	Iteration #: 14, Residual = 0.00013447, N = 67, time: 0.8306 sec.
+	Iteration #: 15, Residual = 8.3211E-05, N = 41, time: 0.8318 sec.
+	Iteration #: 16, Residual = 7.2643E-05, N = 36, time: 0.8331 sec.
+	Iteration #: 17, Residual = 6.2164E-05, N = 31, time: 0.8343 sec.
+	Iteration #: 18, Residual = 4.5225E-05, N = 22, time: 0.8357 sec.
+	Iteration #: 19, Residual = 6.1179E-05, N = 30, time: 0.8372 sec.
+Restart #: 16, mean eigvalue = (    1.0028,2.2277E-17), std.dev. eigvalue = (  0.00963,-4.31E-17), res = ( 5.42E-05,        0), time:  26.26 sec.
+	Iteration #: 1, Residual = 5.4198E-05, N = 50000, time:  0.258 sec.
+	Iteration #: 2, Residual =   0.049573, N = 24786, time:  0.518 sec.
+	Iteration #: 3, Residual =    0.04341, N = 21705, time: 0.6497 sec.
+	Iteration #: 4, Residual =   0.030506, N = 15252, time: 0.7641 sec.
+	Iteration #: 5, Residual =   0.036173, N = 18086, time: 0.8449 sec.
+	Iteration #: 6, Residual =    0.04118, N = 20590, time: 0.9396 sec.
+	Iteration #: 7, Residual =   0.032666, N = 16333, time:  1.047 sec.
+	Iteration #: 8, Residual =     0.0187, N = 9349, time:  1.132 sec.
+	Iteration #: 9, Residual =   0.011495, N = 5747, time:  1.181 sec.
+	Iteration #: 10, Residual =  0.0087376, N = 4368, time:  1.212 sec.
+	Iteration #: 11, Residual =  0.0032828, N = 1641, time:  1.236 sec.
+	Iteration #: 12, Residual =  0.0019434, N = 971, time:  1.245 sec.
+	Iteration #: 13, Residual = 0.00095835, N = 479, time:   1.25 sec.
+	Iteration #: 14, Residual = 0.00035596, N = 177, time:  1.253 sec.
+	Iteration #: 15, Residual = 9.4704E-05, N = 47, time:  1.255 sec.
+	Iteration #: 16, Residual = 5.4858E-05, N = 27, time:  1.256 sec.
+	Iteration #: 17, Residual =  4.745E-05, N = 23, time:  1.257 sec.
+	Iteration #: 18, Residual = 3.3033E-05, N = 16, time:  1.259 sec.
+	Iteration #: 19, Residual = 3.3433E-05, N = 16, time:   1.26 sec.
+Restart #: 17, mean eigvalue = (    1.0017, 3.181E-17), std.dev. eigvalue = (  0.00916,-4.16E-17), res = ( 2.17E-05,        0), time:  27.53 sec.
+	Iteration #: 1, Residual = 2.1666E-05, N = 50000, time: 0.2597 sec.
+	Iteration #: 2, Residual =   0.028065, N = 14032, time: 0.5325 sec.
+	Iteration #: 3, Residual =   0.054114, N = 27056, time: 0.6071 sec.
+	Iteration #: 4, Residual =   0.018496, N = 9248, time: 0.7497 sec.
+	Iteration #: 5, Residual =  0.0053076, N = 2653, time: 0.7984 sec.
+	Iteration #: 6, Residual =  0.0022652, N = 1132, time: 0.8121 sec.
+	Iteration #: 7, Residual =  0.0011519, N = 575, time: 0.8182 sec.
+	Iteration #: 8, Residual = 0.00073004, N = 365, time: 0.8214 sec.
+	Iteration #: 9, Residual = 0.00059839, N = 299, time: 0.8236 sec.
+	Iteration #: 10, Residual = 0.00052501, N = 262, time: 0.8255 sec.
+	Iteration #: 11, Residual = 0.00034804, N = 174, time: 0.8272 sec.
+	Iteration #: 12, Residual = 0.00014333, N = 71, time: 0.8287 sec.
+	Iteration #: 13, Residual = 0.00015241, N = 76, time: 0.8296 sec.
+	Iteration #: 14, Residual = 0.00015855, N = 79, time: 0.8307 sec.
+	Iteration #: 15, Residual = 0.00010158, N = 50, time: 0.8319 sec.
+	Iteration #: 16, Residual = 4.0007E-05, N = 20, time: 0.8333 sec.
+	Iteration #: 17, Residual = 7.9546E-05, N = 39, time: 0.8345 sec.
+	Iteration #: 18, Residual = 0.00031001, N = 155, time:  0.836 sec.
+	Iteration #: 19, Residual = 7.7129E-05, N = 38, time: 0.8381 sec.
+Restart #: 18, mean eigvalue = (    1.0008,3.2121E-17), std.dev. eigvalue = (  0.00872,-3.92E-17), res = ( 6.35E-05,        0), time:  28.37 sec.
+	Iteration #: 1, Residual = 6.3505E-05, N = 50000, time: 0.2744 sec.
+	Iteration #: 2, Residual =   0.056602, N = 28300, time: 0.5423 sec.
+	Iteration #: 3, Residual =   0.038422, N = 19211, time: 0.6953 sec.
+	Iteration #: 4, Residual =   0.021424, N = 10712, time: 0.7982 sec.
+	Iteration #: 5, Residual =   0.016499, N = 8249, time: 0.8549 sec.
+	Iteration #: 6, Residual =  0.0096873, N = 4843, time: 0.8988 sec.
+	Iteration #: 7, Residual =  0.0075384, N = 3769, time: 0.9239 sec.
+	Iteration #: 8, Residual =  0.0074945, N = 3747, time: 0.9433 sec.
+	Iteration #: 9, Residual =  0.0046248, N = 2312, time:  0.963 sec.
+	Iteration #: 10, Residual =  0.0023595, N = 1179, time: 0.9754 sec.
+	Iteration #: 11, Residual =  0.0016243, N = 812, time:  0.982 sec.
+	Iteration #: 12, Residual = 0.00057082, N = 285, time: 0.9868 sec.
+	Iteration #: 13, Residual = 0.00029818, N = 149, time:  0.989 sec.
+	Iteration #: 14, Residual = 0.00016596, N = 82, time: 0.9904 sec.
+	Iteration #: 15, Residual = 8.9044E-05, N = 44, time: 0.9918 sec.
+	Iteration #: 16, Residual = 6.7897E-05, N = 33, time:  0.993 sec.
+	Iteration #: 17, Residual = 4.4225E-05, N = 22, time: 0.9943 sec.
+	Iteration #: 18, Residual = 2.6097E-05, N = 13, time: 0.9956 sec.
+	Iteration #: 19, Residual = 3.9303E-05, N = 19, time:  0.997 sec.
+Restart #: 19, mean eigvalue = (    1.0001,-2.4135E-17), std.dev. eigvalue = (  0.00832,-3.24E-17), res = ( 3.15E-05,        0), time:  29.37 sec.
+
+

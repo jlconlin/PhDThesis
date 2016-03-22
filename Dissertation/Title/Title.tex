@@ -1,0 +1,83 @@
+%!TEX root = ../Thesis.tex
+
+\degree{Doctor of Philosophy}
+\program{Nuclear Engineering and Radiological Sciences}
+
+% Define committee
+\chaircommitteemember{James Paul Holloway}{Professor}
+\committeemember{Edward W. Larsen}{Professor}
+\committeemember{William R. Martin}{Professor}
+\committeemember{Martin Strauss}{Associate Professor}
+
+% Title page
+\maketitle
+
+%%%%% the finalabstract environment typesets the abstract as it should be
+% for the copies that go to Rackham separate of the actual dissertation. 
+\begin{finalabstract}
+    A Monte Carlo implementation of explicitly restarted Arnoldi's method is developed for estimating eigenvalues and eigenvectors of the transport-fission operator in the Boltzmann transport equation.  Arnoldi's method is an improvement over the power method which has been used for decades.  Arnoldi's method can estimate multiple eigenvalues by orthogonalising the resulting fission sources from the application of the transport-fission operator.  As part of implementing Arnoldi's method, a solution to the physically impossible---but mathematically real---negative fission sources is developed.  The fission source is discretized using a first order accurate spatial approximation to allow for orthogonalization and normalization of the fission source required for Arnoldi's method.  The eigenvalue estimates from Arnoldi's method are compared with published results for homogeneous, one-dimensional geometries, and it is found that the eigenvalue and eigenvector estimates are accurate within statistical uncertainty.
+
+    The discretization of the fission sources creates an error in the eigenvalue estimates.  A second order accurate spatial approximation is created to reduce the error in eigenvalue estimates.  An inexact application of the transport-fission operator is also investigated to reduce the computational expense of estimating the eigenvalues and eigenvectors.  
+
+    The convergence of the fission source and eigenvalue in Arnoldi's method is analysed and compared with the power method.  Arnoldi's method is superior to the power method for convergence of the fission source and eigenvalue because both converge nearly instantly for Arnoldi's method while the power method may require hundreds of iterations to converge.  This is shown using both homogeneous and heterogeneous one-dimensional geometries with dominance ratios close to 1.
+\end{finalabstract}
+
+% Copyright Page (optional, but recommended)
+\makecopyright
+
+% Dedication (optional)
+\begin{dedication}
+  To: Annie, Brigham, Lily, and Emma
+  
+  Here is the black book I promised.
+\end{dedication}
+
+% Acknowledgements (optional)
+\begin{acknowledgments}
+    I have been fortunate during my time at the University of Michigan to have been associated with many remarkable, talented, and brilliant people.  I have been educated by the best Nuclear Engineering professors.  I have been peers with very bright students who have assisted me throughout my endeavours.  
+    
+    First is my advisor and friend Professor James Paul Holloway.  You have been an example to me in all aspects of life.  You have been very patient while helping me and many others who have struggled to do what was expected.  My work has been improved because you have never been satisified with ``good enough'', but have demanded work of the highest quality.  I have learned that if I was stuck on a problem, all I needed to do was make you sufficiently interested that you couldn't put it down until it was solved.  You have learned to not become sufficiently interested so that I would be forced to solve the problem on my own.  I have enjoyed teaching under you and learning while watching you teach.  I have watched you in your interactions with others and have learned a greater respect for people as individuals, \emph{not} as professors, janitors, secretaries, watiresses, graduate students, or deans.
+
+    Professor Bill Martin has been a great resource to me during my time at the University of Michigan.  You were my first advisor and made it much easier for me to go through graduate school with a young and growing family.  Through your connections I was able to have a fulfilling summer internship at Los Alamos National Laboratory which eventually led to my employment after finishing school.  I am grateful for your confidence in my abilities to let me try many times to pass the candidacy exam; I finally did it!  During times when you were not my advisor, your door was always open (on the rare occasion when you were in town) and you were always willing to help.
+
+    Professor Larsen is the greatest teacher for advanced nuclear reactor theory.  Your careful, step-by-step approach makes learning these difficult concepts possible.  Your seemingly infinite knowledge and experience of reactor theory never overshadowed your desire to help students learn.  
+
+    I'm grateful to Professor Martin Strauss who agreed to be on my PhD thesis committee without knowing me or anyone else in the Nuclear Engineering department.  You are a brave man.
+
+    I have associated with many students with abilities far greater than my own.  Their assistance on homework assignments, studying for the candidacy exam, and programming have been invaluable.  David Griesheimer, Greg Davidson, Troy Becker, Jesse Cheatham, Scott Kiff, Seth Johnson, and Allan Wollaber; you have made it possible for me to make it through.
+
+    I would not have made it to graduate school (or anywhere else in life) without my parents Scott and Geri Conlin.  It is your emphasis on the importance of a good education that led me to pursue a college education and eventually graduate school.  Certainly your influence goes far beyond my educational pursuits.   Mom, I'm glad we enjoyed (suffered?) through graduate school together.  Now there will be two doctors in the house.
+
+    As important as my professors and fellow students have been at school, my family has been a greater support than all.  Annie, Brigham, Lily, and Emma, you have made everything I do worthwhile.  Regardless of how hard my day at school has been or how unimportant I feel, when I came home you were always there with a smile, and a hug to show me I was loved and always needed.  Your endless supply of tickle bugs has brought music to my ears.
+
+    Trisha, my beautiful wife.  You have been an incalculable strength to me.  Your ability to take care of all the other aspects of my life has allowed me to succeed in my educational and professional endeavors.  Your patience has helped me to become the man I should be.  Your love has been a comfort and a joy.  I'm glad we have enjoyed life together for ten years.  I'm sure the next million will be even greater.
+
+    Finally I wish to express gratitude to my Savior, Jesus Christ.  ``I know that I am nothing; as to my strength I am weak; therefore I will not boast of myself, but I will boast of my God, for in his strength I can do all things''.
+\end{acknowledgments}
+
+% Preface/Forward/Prologue (optional)
+% \begin{preface}
+% \end{preface}
+
+% Table of Contents (mandatory)
+\tableofcontents
+
+% List of Figures, Tables, Illustrations, Maps, Appendices, Etc.
+% (required if more than one figure, table, appendix, etc.)
+\newlength{\origitemsep}
+\setlength{\origitemsep}{\itemsep}
+\setlength{\itemsep}{2\origitemsep}
+  \listoffigures
+  \listoftables
+% \listofappendices
+\setlength{\itemsep}{\origitemsep}
+
+% the normal abstract is formatted the same as preface and acknowledgements,
+% and is listed in the table of contents
+\begin{abstract}
+    A Monte Carlo implementation of explicitly restarted Arnoldi's method is developed for estimating eigenvalues and eigenvectors of the transport-fission operator in the Boltzmann transport equation.  Arnoldi's method is an improvement over the power method which has been used for decades.  Arnoldi's method can estimate multiple eigenvalues by orthogonalising the resulting fission sources from the application of the transport-fission operator.  As part of implementing Arnoldi's method, a solution to the physically impossible---but mathematically real---negative fission sources is developed.  The fission source is discretized using a first order accurate spatial approximation to allow for orthogonalization and normalization of the fission source required for Arnoldi's method.  The eigenvalue estimates from Arnoldi's method are compared with published results for homogeneous, one-dimensional geometries, and it is found that the eigenvalue and eigenvector estimates are accurate within statistical uncertainty.
+
+    The discretization of the fission sources creates an error in the eigenvalue estimates.  A second order accurate spatial approximation is created to reduce the error in eigenvalue estimates.  An inexact application of the transport-fission operator is also investigated to reduce the computational expense of estimating the eigenvalues and eigenvectors.  
+
+    The convergence of the fission source and eigenvalue in Arnoldi's method is analysed and compared with the power method.  Arnoldi's method is superior to the power method for convergence of the fission source and eigenvalue because both converge nearly instantly for Arnoldi's method while the power method may require hundreds of iterations to converge.  This is shown using both homogeneous and heterogeneous one-dimensional geometries with dominance ratios close to 1.
+\end{abstract}

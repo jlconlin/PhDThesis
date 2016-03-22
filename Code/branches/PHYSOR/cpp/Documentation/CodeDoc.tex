@@ -1,0 +1,45 @@
+%$Author: jlconlin $
+%$Date: 2007-11-20 11:23:01 -0700 (Tue, 20 Nov 2007) $
+%$Revision: 192 $
+%$Id: CodeDoc.tex 192 2007-11-20 18:23:01Z jlconlin $
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[algo2e, ruled, linesnumbered]{algorithm2e}
+
+\SetKwComment{Comment}{$\triangleright$ }{}
+\dontprintsemicolon
+
+% Define some new commands so document is uniform throughout
+\newcommand{\type}[1]{\texttt{#1}}
+\author{Jeremy Conlin}
+\title{Code Documentation}
+
+\begin{document}
+\maketitle
+\section{Class \type{Particle}}
+\subsection{Methods}
+\subsubsection{\texttt{move()}}
+\texttt{move} is perhaps the workhorse of the \type{Particle} class.  This method is responsible for moving the particle in the \type{Field}.
+\begin{algorithm2e}
+    \SetVline
+    \caption{\texttt{move} method for \type{Particle} class.}
+    Calculate distance to collision, 
+    $d = \frac{1}{\Sigma_T}$\;
+    \While{Still in geometry}{
+        \eIf{\type{Particle} has left \type{Zone}}{
+            \eIf{\type{Particle} has left geometry}{
+                Throw NoZoneConnected Error \Comment*[f]{Must be caught by caller function!}
+            }
+            {
+                Increment pointer to \type{Zone} so \type{Particle} knows which \type{Zone} it is in.\;
+                Move \type{Particle} to \type{Zone} edge.\;
+            }
+            }
+            {
+            Update \type{Particle} position.
+}
+}
+\end{algorithm2e}
+Note: it is the responsibility of the caller function to \texttt{move} to make sure \texttt{collision} and other methods are also called.
+
+\end{document}

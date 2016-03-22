@@ -1,0 +1,77 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = Iterations/20mfp.I40.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 0
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = false
+	arnoldimethod = explicit
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 20
+	bins = 75
+	acycles = 200
+	incycles = 20
+	active = 30
+	inactive = 2
+	Iterations = 40
+	numValues = 2
+	relaxed = 0
+	tracks = 500000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 4277851970
+
+==============================
+---Running Explicit Arnoldi---
+==============================
+
+	Iteration #: 1, time:  1.849 sec.
+	Iteration #: 2, time:  3.368 sec.
+	Iteration #: 3, time:  4.974 sec.
+	Iteration #: 4, time:  6.609 sec.
+	Iteration #: 5, time:  8.286 sec.
+	Iteration #: 6, time:  9.992 sec.
+	Iteration #: 7, time:   11.7 sec.
+	Iteration #: 8, time:  13.42 sec.
+	Iteration #: 9, time:  15.13 sec.
+	Iteration #: 10, time:  16.91 sec.
+	Iteration #: 11, time:  18.68 sec.
+	Iteration #: 12, time:  20.43 sec.
+	Iteration #: 13, time:  22.17 sec.
+	Iteration #: 14, time:  23.91 sec.
+	Iteration #: 15, time:  25.66 sec.
+	Iteration #: 16, time:  27.41 sec.
+	Iteration #: 17, time:  29.11 sec.
+	Iteration #: 18, time:  30.85 sec.
+	Iteration #: 19, time:  32.64 sec.
+	Iteration #: 20, time:   34.4 sec.
+	Iteration #: 21, time:  36.13 sec.
+	Iteration #: 22, time:  37.83 sec.
+	Iteration #: 23, time:  39.59 sec.
+	Iteration #: 24, time:  41.37 sec.
+	Iteration #: 25, time:  43.15 sec.
+	Iteration #: 26, time:  44.92 sec.
+	Iteration #: 27, time:  46.71 sec.
+	Iteration #: 28, time:  48.48 sec.
+	Iteration #: 29, time:  50.21 sec.
+	Iteration #: 30, time:   51.9 sec.
+	Iteration #: 31, time:  53.64 sec.
+	Iteration #: 32, time:  55.45 sec.
+	Iteration #: 33, time:  57.21 sec.
+	Iteration #: 34, time:  58.96 sec.
+	Iteration #: 35, time:  60.72 sec.
+	Iteration #: 36, time:   62.5 sec.
+	Iteration #: 37, time:  64.29 sec.
+	Iteration #: 38, time:  66.01 sec.
+	Iteration #: 39, time:  67.76 sec.
+Restart #: -2, mean eigvalue = (   0.98561,-2.4443E-19), std.dev. eigvalue = (        0,        0), res = ( 1.34E-30,        0), time:  69.54 sec.
+Stopping because residual = (1.344E-30,0) < 2.22E-16
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  St9bad_alloc

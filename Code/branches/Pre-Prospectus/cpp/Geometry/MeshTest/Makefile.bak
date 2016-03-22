@@ -1,0 +1,98 @@
+############################ Makefile ##############################
+## Makefile for the MeshTest test program for the DDMC Project
+####################################################################
+
+#-------------------- Configuration Flags ------------------------#
+SHELL = /bin/sh
+
+## Root directory of code
+srcdir = ../
+
+## Root directory of documentation files
+docdir = ./doc
+
+## Name of this makefile
+MAKEFILE = Makefile
+
+## Name of target executable
+TARGET = MeshTest
+
+## Type of target to create (release or debug=default)
+TYPE   = release
+
+#-------------------- Code and Object Files ----------------------#
+CFILES = \
+	$(srcdir)$/OneDMesh/OneDCartMesh.cc \
+	$(srcdir)$/OneDMesh/OneDNode.cc \
+	$(srcdir)$/OneDMesh/OneDZone.cc \
+	./$(TARGET).cc 
+	#$(srcdir)$/OneDMesh/ZoneIterator.cc \
+	
+
+OFILES := ${subst .cc,.o,${CFILES}}
+
+#----------------------- Compilation Flags -----------------------#
+C++	= g++
+
+# Full-on debugging
+C++FLAGS_DEBUG = -ggdb3 -pedantic -Wall -W -Wfloat-equal -fnon-call-exceptions\
+	   -fcheck-new 
+# Release
+C++FLAGS_RELEASE = -O3 
+
+# Set the C++ flags depending target type
+ifeq ($(TYPE), release)
+  C++FLAGS = $(C++FLAGS_RELEASE)
+else   # default is debug  
+  C++FLAGS= $(C++FLAGS_DEBUG)
+endif
+
+# List of include directories
+INCLUDES = -I$(srcdir)$/OneDMesh/ -I$(srcdir)/OneDMesh/Iterators -I$(srcdir)$/Misc/ -I$(srcdir)$/Exception \
+	   -I$(srcdir)$. 
+
+# List of libraries
+LIBS = $(C++FLAGS) -L. -lm
+
+
+#------------------------- Rules -------------------------#
+$(TARGET) : $(OFILES) $(MAKEFILE)
+	$(C++) $(C++FLAGS) -o $@ $(OFILES) $(LIBS) $(INCLUDES) 
+	@echo
+
+# Rule to make *.o from *.cc
+%.o : %.cc
+	@echo Compiling $<  
+	${C++} ${C++FLAGS} ${INCLUDES} -c $< -o $@
+	@echo
+
+# Delete all object files, core files, exec files, etc...
+clean:
+	rm -rf *~ core *.o $(OFILES) $(TARGET) 
+
+depend:
+	makedepend $(INCLUDES) $(CFILES)
+	
+# DO NOT DELETE THIS LINE -- make depend depends on it.
+
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/OneDCartMesh.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/OneDZone.hh ../OneDMesh/OneDNode.hh
+../OneDMesh/OneDCartMesh.o: ../Exception/MeshExcept.hh
+../OneDMesh/OneDCartMesh.o: ../Exception/ExceptionBase.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/MeshTraits.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/Iterators/GeomIterator.hh
+../OneDMesh/OneDCartMesh.o: ../Exception/IteratorExcept.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/Iterators/SweepIter.hh
+../OneDMesh/OneDCartMesh.o: ../Misc/ReverseIterator.hh ../Misc/Assert.hh
+../OneDMesh/OneDNode.o: ../OneDMesh/OneDNode.hh ../OneDMesh/OneDZone.hh
+../OneDMesh/OneDNode.o: ../Exception/MeshExcept.hh
+../OneDMesh/OneDNode.o: ../Exception/ExceptionBase.hh ../Misc/Assert.hh
+../OneDMesh/OneDZone.o: ../OneDMesh/OneDZone.hh ../OneDMesh/OneDNode.hh
+../OneDMesh/OneDZone.o: ../Exception/MeshExcept.hh
+../OneDMesh/OneDZone.o: ../Exception/ExceptionBase.hh ../Misc/Assert.hh
+./MeshTest.o: ../OneDMesh/OneDCartMesh.hh ../OneDMesh/OneDZone.hh
+./MeshTest.o: ../OneDMesh/OneDNode.hh ../Exception/MeshExcept.hh
+./MeshTest.o: ../Exception/ExceptionBase.hh ../OneDMesh/MeshTraits.hh
+./MeshTest.o: ../OneDMesh/Iterators/GeomIterator.hh
+./MeshTest.o: ../Exception/IteratorExcept.hh
+./MeshTest.o: ../OneDMesh/Iterators/SweepIter.hh ../Misc/ReverseIterator.hh

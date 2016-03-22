@@ -1,0 +1,115 @@
+#! /usr/local/bin/python
+""" This script/code will perform a trivial, infinite homogeneous Monte Carlo eigenvalue calculation.
+    It will calculate the effective infinite multiplication factor, kInf.
+
+    Original Code: September 21, 2006
+    By: Jeremy Conlin
+"""
+
+import math, random, Gnuplot
+
+def main():
+    from optparse import OptionParser
+
+    Version = '0.1'
+    Modified = 'September 21, 2006'
+
+    # Prepare parser
+#   usage = 'usage: %prog [options] output_file[s] data_file'
+#   parser = OptionParser(usage=usage, version='Version #: %s' %Version)
+
+    # Parse output to see what the user wants to do
+#   (options, args) = parser.parse_args()
+
+    Answer1 = kInfinity(1000, 100, 0.0, 1.0, 1.0, 2.5, 1)
+    Answer2 = kInfinity(1000, 100, 0.0, 1.0, 1.0, 2.5, 2)
+    Plotk(Answer1, Answer2)
+#   print "The 'Answer' is: %s" %Answer
+
+
+
+
+def kInfinity(HistoriesPerCycle, Cycles, SigmaS, SigmaG, SigmaF, nu, method):
+    """
+    This function will return the infinite effective multiplication factor, kInf.
+    There are no dead cycles because the system is an infinite
+    medium, so we don't need to get a critical fission source
+    shape set up
+
+    HistoriesPerCycle: number of histories to sample from fission source during each cycle
+    Cycles: number of cycles to run
+    SigmaS, SigmaG, SigmaF: Macroscopic cross sections for scattering, radiative capture, and fission
+    nu: mean number of fission neutrons born per fission
+    method: a flag to select a method to use
+    """
+    kInf = 1.0
+    # Initialize Data
+    SigmaA = SigmaG + SigmaF  # Absorption cross section
+    SigmaT = SigmaA + SigmaS  # Total cross section
+
+    random.seed(1)  # Initialize random number generator
+    kHistory = [random.random()]
+    for x in xrange(Cycles):
+        kHistory.append(computeK(kHistory[x], HistoriesPerCycle, SigmaS, SigmaG, SigmaF,
+                                    nu, SigmaT, SigmaA, method))
+    
+#   print kHistory
+    return kHistory
+
+def computeK(kOld, Histories, SigmaS, SigmaG, SigmaF, nu, SigmaT, SigmaA, method):
+    if method == 1:
+        return kMethod1(kOld, Histories, SigmaS, SigmaG, SigmaF, nu, SigmaT, SigmaA, method)
+    elif method == 2:
+        return kMethod2(kOld, Histories, SigmaS, SigmaG, SigmaF, nu, SigmaT, SigmaA, method)
+
+def kMethod1(kOld, Histories, SigmaS, SigmaG, SigmaF, nu, SigmaT, SigmaA, method):
+    newFissionSource = 0
+    """
+    Sample histories particles from the fissionSource.  Note that
+    since we are infinite dimensional the old fissionSource is
+    not really used for sampling, becasue we don't need any phase
+    space data.  Each particle is followed until it is absorbed,
+    at which point we either add particles to the newFissionSource
+    or not, depending on the probability of fission capture.
+    """
+
+    for i in xrange(Histories):
+        # Track particle to absorption
+
+        interaction = random.random()
+        if interaction*SigmaA > SigmaG:   # fission interaction
+            newParticles = math.floor(nu/kOld + random.random())
+            newFissionSource = newFissionSource + newParticles
+#       else    # absorption
+    return kOld*newFissionSource/Histories
+
+def kMethod2(kOld, Histories, SigmaS, SigmaG, SigmaF, nu, SigmaT, SigmaA, method):
+    newFissionSource = 0
+    """
+    Sample histories particles from the fissionSource.  Note that
+    since we are infinite dimensional the old fissionSource is
+    not really used for sampling, becasue we don't need any phase
+    space data.  Each particle is followed until it is absorbed,
+    at which point we always add particles to the newFissionSource
+    """
+
+    for i in xrange(Histories):
+        # Track particle to absorption
+
+        interaction = random.random()
+        newParticles = math.floor(nu/kOld*SigmaF/SigmaA + random.random())
+        newFissionSource = newFissionSource + newParticles
+#       else    # absorption
+    return kOld*newFissionSource/Histories
+
+def Plotk(kHistory1, kHistory2):
+    """
+    Plot the Data
+    """
+    Gplot1 = Gnuplot.Data(kHistory1, with="lines", title='method1')
+    Gplot2 = Gnuplot.Data(kHistory2, with="lines", title='method2')
+    G = Gnuplot.Gnuplot(debug=1)
+#   G.set_range('yrange',(1.1,1.4))
+    G.plot(Gplot1, Gplot2)
+
+main()

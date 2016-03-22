@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[margin=1in]{geometry}
+
+\title{An inner product space of sampled fission sources}
+\author{James Holloway and Jeremy Conlin}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\maketitle
+
+\section{Source vectors}
+
+We need a vector space that can contain all possible sampled fission sources.  The purpose of this document is to define such a vector space.  A vector space provides a notion of scalar multiplication and a notion of vector addition, with certain properties.  The key properties are that addition is commutative and distributive, there is a zero vector, for every vector there is an additive inverse that when summed with that vector will yield zero, and the scalar multiplication is associative and distributive over vector addition.
+
+\subsection{Source vectors}
+
+First, we define a source point as a location in space combined with a weight, which can be positive, negative or zero.
+\begin{definition} A \emph{source point} $s$ is a pair $s = (w, \mathbf{x})$ where $w \in \mathbf{R}\backslash0$ is a non-zero real number called the \emph{weight}, and $\mathbf{x} \in \Gamma$ is a point in a subset of 3-space, $\Gamma \subset \mathbf{R}^3$.  Note that the weight cannot be zero, but can be positive or negative.   We denote by $w(s)$ the weight of a source point, $s$, and by $\mathbf{x}(s)$ the location of the source point. 
+\end{definition}
+We will need a notion of equality for source points; two source points are equal if they are at the same location and have equal weight.
+\begin{definition}
+Two source points, $s_1, s_2$, are equal, written as $s_1 = s_2$ if and only if $w(s_1) = w(s_2)$ as real numbers and $\mathbf{x}(s_1) = \mathbf{x}(s_2)$ as points in $\Gamma$.  
+\end{definition}
+For convenience of notation it will be useful to define multiplication of a source point $s$ by a non-zero real number $\alpha$ as
+\begin{definition}
+For $\alpha \in \mathbf{R}\backslash 0$ and source point $s$, multiplication $\alpha s$ is defined as producing the new source point $\alpha s = (\alpha w(s), \mathbf{x}(s))$ at the same location, but with weight scaled by $\alpha$.
+\end{definition}
+Note that there is no meaning to adding source points together.  A notion of this sort will be the heart of defining a vector space whose elements are lists of source points. In addition, we will need a sense of scalar multiplication that includes multiplication by zero.
+
+Now we define a collection,  $S$, of source points that can represent a fission source as a finite collection of source points.
+\begin{definition}
+Let $N$ be a non-negative integer.  A \emph{source} $S$ is a set of $N$ non-zero-weight source points, $S = \{s_1, s_2, \ldots, s_N\}$, $w(s_i) \ne 0$ $i = 1, 2, \ldots N$, with distinct locations $\mathbf{x}(s_i) \ne \mathbf{x}(s_j)$, $i \ne j$.  $N$ is called the number of source points, and will also be written as $N(S)$.
+\end{definition}
+It is very important that $S$ is a set, and so we do not allow repeated source point locations $\mathbf{x}(s_i) \ne \mathbf{x}(s_j)$. Note that sets are un-ordered (by definition), so the order of the source points does not matter; $\{s_1, s_2\}$ is the same source as $\{s_2, s_1\}$.  Note also that a source does not just have distinct source points, but rather has source points with distinct locations.
+
+There is a very interesting source, namely the source with $0$ source points.  There is only one such source, since it is simply the empty set.  This special source is very important to defining a vector space of sources, and it is physically important too.
+\begin{definition}
+The unique source with no source points is called the \emph{zero source, and will be denoted $0$}.
+\end{definition}
+
+Let's discuss equality of any two source $S_1, S_2$.  This is simply the set equality imposed by our previous definition of equality of source points.   For $S_1$ and $S_2$ to be equal they must:
+\begin{enumerate}
+\item Have the same number of source points, $N = N(S_1) = N(S_2)$
+\item If $N > 0$, then for each source point $s_1 \in S_1$ there must exist a source point $s_2 \in S_2$ (and there can be only one because $S_1$ and $S_2$ are sets) such that $s_1 = s_2$. 
+\end{enumerate}
+
+We are finally ready to define a vector space of sources.
+Let $\mathcal{S}$ be the set of all sources (including sources of any number of source points from zero on up).  
+We can give $\mathcal{S}$ a vector space structure by defining scalar multiplication (over the real numbers) and by defining the addition of sources, with the appropriate properties.  Let's define scalar multiplication first, basically as scaling the source weights by a scalar.
+\begin{definition}
+Let $S \in \mathcal{S}$, and $\alpha \in \mathbf{R}$ be a real number.  If $S$ has no source points, or if $\alpha = 0$, then $\alpha S = 0$.   Otherwise, with $M = N(S)$ the number of source points, there exist source points $s_i$, $i = 1, \ldots, M$ such that $S = \{s_1, \ldots, s_M\}$, and $\alpha S$ is defined to be the source $\alpha S = \{\alpha s_1, \ldots, \alpha s_M\}$.
+\end{definition}
+Note that $\alpha S$ is still a good source.  It's either a zero source, or else a set of non-zero-weight source points all at distinct locations.  Scalar multiplication is properly associative $(\alpha \beta) S = \alpha (\beta S)$, and that $\alpha = 1$ is the identity.  Note also that multiplication by a non-zero scalar does not change the number of source points, but multiplication by zero does.
+
+Next we must define vector addition, and in doing so we wish to capture the physical notion of adding together two sources.
+\begin{definition}
+Given any two sources $S_1, S_2 \in \mathcal{S}$, the sum $S_1 + S_2 \in \mathcal{S}$ is defined as the source consisting of all source points from $S_1$ and $S_2$ that are at distinct locations, and for every pair of source points $s_1 \in S_1$ and $s_2 \in S_2$ that share a common location, $\mathbf{x}(s_1) = \mathbf{x}(s_2)$, the sum $S_1 + S_2$ will contain only the single source point $(w(s_1) + w(s_2), \mathbf{x}(s_1))$ at the same location but with weight equal to the sum total weight of the two originals.  If this combined weight is zero, there is no source point at that location, and that location is not included in the source points of the final sum vector.
+\end{definition}
+This definition is well posed; by construction $S_1 + S_2$ will contain a finite number of source points all of which are at distinct locations and none of which has zero weight.  Note that the number of source points in $S_1 + S_2$ will be between 0 and $N(S_1) + N(S_2)$, inclusive; the sum will have fewer source points if there were points in $S_1$ and $S_2$ at common locations, and will have no source points if every point in $S_1$ has a partner of opposite weight in $S_2$.
+
+We want now to show that this definition of addition makes $\mathcal{S}$ into a vector space.  
+\begin{theorem}
+With the scalar multiplication and addition just defined, $\mathcal{S}$ is a vector space.
+\end{theorem}
+
+\begin{proof}
+Note first that the zero source is the additive identity element, $S + 0 = S$ because $0$ contains no source points.  Further, note that $-1 S$ is an additive inverse because every source point from $-1 S$ is at the same location as a source point in $S$, but the sum of the weights of these paired points will be zero.  Hence $-1 S + S = 0$.
+
+Next, we must check the distributive property $\alpha (S_1 + S_2) = \alpha S_1 + \alpha S_2$.  If $\alpha$ is zero this is trivially true, and if either $S_1$ or $S_2$ is zero, it's also trivially true.  Otherwise, we must show that that $\alpha(S_1 + S_2)$ and $\alpha S_1 + \alpha S_2$ contain the same source points.  Scalar multiplication does not alter any source points locations, it just changes the source point weights; therefore for points in $S_1$ and $S_2$ at distinct points  $\alpha S_1 + \alpha S_2$ contains the same source points as $\alpha (S_1 + S_2)$.  For points in $S_1$ and $S_2$ at the same source locations there are two cases to consider: 1) either they sum to zero weight and are removed, or 2) they do not.  In the first case, corresponding points in $\alpha S_1 + \alpha S_2$ will also sum to zero (if $w(s_1) + w(s_2) = 0$ then $\alpha w(s_1) + \alpha w(s_2) = 0$), and in both  $\alpha (S_1 + S_2)$ and $\alpha S_1 + \alpha S_2$ the point in the sum will be eliminated.  In the second case, $\alpha(S_1 + S_2)$ will contain a point at the common location with weight $\alpha(w(s_1) + w(s_2)) = \alpha w(s_1) + \alpha w(s_2)$ and this is the same weight and location as a particle in $\alpha S_1 + \alpha S_2$.
+
+Now we must show that $(\alpha + \beta) S = \alpha S + \beta S$.  If $\alpha + \beta = 0$ then both sides are the zero source, and the statement is true. Similarly if either $\alpha$ or $\beta$ is zero.  So we assume now that $\alpha \ne0$, $\beta \ne 0$, and $\alpha + \beta \ne 0$ and note that $(\alpha + \beta)S$ will contain the same source locations as $S$, and that $S$, $\alpha S$, $\beta S$ and hence $\alpha S + \beta S$ will also all contain the same source locations.  The weight for the source point $s$ in $S$ becomes $(\alpha + \beta) w(s)$ in $(\alpha + \beta) S$, and this same source point generates a point with weight $\alpha w(s) + \beta w(s) = (\alpha + \beta) w(s)$ in the sum $\alpha S + \beta S$.  This establishes that $(\alpha + \beta) S = \alpha S + \beta S$ in all cases.
+
+Next we must show the commutative property $S_1 + S_2 = S_2 + S_1$.   The commutative property is obvious if either source is zero, so we now focus on the non-zero case.  If $s \in S_1 + S_2$ then there exists a point $s'$ in either $S_1$ or $S_2$ or both, such that $\mathbf{x}(s) = \mathbf{x}{s'}$.  Suppose this point $s'$ appears only in $S_1$; then $s = s'$ and this point is also in $S_2 + S_1$.  Similarly if the point $s'$ appears only in $S_2$.  Finally if there is an $s' \in S_1$ and $s'' \in S_3$ such that $\mathbf{x}(s) = \mathbf{x}(s') = \mathbf{x}(s'')$ then $w(s) = w(s') + w(s'') = w(s'') + w(s')$ and this point also appears in $S_2 + S_1$.  Thus, addition is commutative.
+
+Finally, we must show that addition is associative, $(S_1 + S_2) + S_3 = S_1 + (S_2 + S+3)$.  The thinking that leads to this is identical to that showing that addition is commutative.  It does not matter in what order we collect source points into the sum, and if multiple source points share a common location it does not matter in what order we add up their weights. 
+\end{proof}
+
+\subsection{Mapping sources to functions}
+
+Let $S \in \mathcal{S}$ be a source vector.  We can, in a non-unique way, map this vector to a function $q(x)$ over $\Gamma$.  Let $h(\mathbf{x}, \mathbf{y})$ be any non-negative function (a kernel) from $\Gamma \times \Gamma \to \mathcal{R}$ with the property 
+\begin{equation}
+1 = \int_{\Gamma} h(\mathbf{x}, \mathbf{y}) \, d\mathbf{x} \,.
+\end{equation} 
+Let $\{s_1, \ldots, s_M\}$ be the source points in $S$.  Then 
+\begin{equation}
+Q(S, \mathbf{x}) = \sum_{i=1}^M w(s_i) h(x, \mathbf{x}(s_i))
+\end{equation}
+is a physical representation of the source as a function of space.   Normally we would also want the function $h$ to be zero outside of $\Gamma$ (so for example, there is no source outside $\Gamma$).  Obviously we define $Q(0, \mathbf{x})$ as the zero function.  Most importantly,
+\begin{equation}
+Q(\alpha S, \mathbf{x}) = \sum_{i=1}^M \alpha w(s_i) h(x, \mathbf{x}(s_i)) = \alpha Q(s, \mathbf{x})
+\end{equation}
+so the mapping from $\mathcal{S}$ to the space of functions is linear over scalar multiplication, and indeed, scalar multiplication in $\mathcal{S}$ maps to scalar multiplication of functions.  (Exercise for the reader: show that the mapping is a vector space isomorphism, that is, the vector addition of vectors in $\mathcal{S}$ maps to the vector addition of functions.  This is needed in order to have a well defined inner product below.)
+
+This construction is fairly general.  Note for example that if we want a histogram (in 1-D) then we can define a set of bins and
+\begin{equation}
+h(x,y) = \begin{cases}
+1/\Delta & \text{if $x$ and $y$ are in the same bin}\\
+0 & \text{otherwise} 
+\end{cases}
+\end{equation}
+where $\Delta$ is the width of the bin in which $x$ and $y$ lie.
+
+Note: It might have been easier to start here and work out the properties needed to add vectors in $\mathcal{S}$ in order to create this vector space isomorphism.
+
+\subsection{An inner product space}
+
+Finally, we want to discuss equipping $\mathcal{S}$ with an inner product; with this in hand $\mathcal{S}$ becomes an inner product space and we can define a norm and orthogonality.  We can also carry out the Arnoldi process, although we should note that $\mathcal{S}$ will be an infinite dimensional inner product space (a Hilbert space), and we don't know much about Arnoldi for infinite dimensional problems.
+
+There is no unique way to attach an inner product to $\mathcal{S}$, but a general approach is to map $\mathcal{S}$ to a space of functions, and use the natural $L^2$ inner product.  So we pick kernel functions $h$ as the the previous section and define
+\begin{equation}
+\langle S_1, S_2 \rangle = \int_{\Gamma} Q(S_1, \mathbf{x}) Q(S_2, \mathbf{x}) \, d\mathbf{x}
+\end{equation}
+This inner product is symmetric, and linear in each argument because mapping $\mathcal{S}$ to the space of finite expansions in kernels is a vector space isomorphism.
+
+The inner product is positive-definite 
+\begin{equation}
+\langle S, S \rangle = \int_{\Gamma} Q(S, \mathbf{x}) Q(S, \mathbf{x}) \, d\mathbf{x} \geq 0
+\end{equation}
+with equality if and only if $S = 0$.
+
+\section{Practical issues}
+
+Because $\mathbf{S}$ is an inner product space, all the steps in Arnoldi can be done by working on source vectors $S \in \mathcal{S}$.   Doing this in practice is problematic because the vectors will contain more and more source points as we orthogonalize.  However, maybe we do not need to explicitly construct vectors of the form $S_1 + \beta S_2$.  Rather we simply need to track of $S_1$, $\beta$, and $S_2$.   A simple data structure can keep this formation.   Then we need a way to sample from the vector $S_1 + \beta S_2$ without explicitly constructing it.  Is there a way to do this?
+
+This is important, because explicitly adding two vectors $S_1$ and $S_2$ could be a very expensive process: to accomplish it we must find any points in the two vectors that share a single source location (of course the probability of this is so small we might neglect it).
+
+\end{document}

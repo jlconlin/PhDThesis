@@ -1,0 +1,228 @@
+%$Id: Oral.tex 82 2007-06-08 14:32:56Z jlconlin $
+%$Author: jlconlin $
+%$Date: 2007-06-08 08:32:56 -0600 (Fri, 08 Jun 2007) $
+%$Revision: 82 $
+
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage[algo2e, ruled, linesnumbered]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\SetKwComment{Comment}{$\triangleright$ }{}
+\dontprintsemicolon
+
+%\renewcommand{\span}{\mathrm{span}}
+
+\author{Jeremy Conlin}
+\title{Oral Thesis Prospectus}
+\date{June 6, 2007}
+
+\begin{document}
+\maketitle
+\abstract{
+    The power method, or source iteration, has been the staple of Monte Carlo particle transport eigenvalue calculations for more than fifty years.  This method is easy to implement and provides the dominant eigenvalue and eigenfunction, however, this method is slow.  The rate of convergence is proportional to the dominance ratio, the ratio of the second largest eigenvalue to the largest eigenvalue.
+
+    For this thesis, I propose using an alternative to the power method, Arnoldi's Method of Minimized Iterations.  Arnoldi's method is an improvement over the power method; it uses information from all previous iterations---instead of only the last iteration---to calculate the eigenfunction. 
+    
+    Preliminary results indicate that Arnoldi's method is less noisy than the Power method and the eigenvalue and the eigenfunction are converged more quickly.  However, the RMS error of the eigenfunction---compared to a deterministic SN calculation---calculated with Arnoldi's method is larger than the RMS error from a power method calculation for the same number of Monte Carlo histories.  Other results show that Arnoldi's method can calculate higher eigenmodes which the power method is unable to do without additional calculations.
+
+    Several questions must be explored before the use Arnoldi's method in Monte Carlo particle transport can be accepted.  Most importantly, how can the uncertainty be calculated?  Without a measure of the statistical uncertainty, the answer is meaningless.  A simple solution is to restart the method after a few iterations and find the mean and variance of the eigenvalues after each restart.  I believe there is a better and more efficient way; this is one aspect of my thesis research.
+
+    Arnoldi's method requires the calculation of an inner product between two functions.  In Monte Carlo particle transport, these functions are fission sources.  In initial studies, these fission sources were spatially binned; the height of these bins are the elements of a vector.  Discretizing a fission source in this manner introduces bias to the calculation.  The inner product of two vectors is a simple dot product.  Is there a way to calculate the inner product of two fission sources without resorting to binning the sources?  Can we use basis functions other than histogram step functions to expand the fission source?  These are additional questions I plan on addressing in my thesis.
+
+    All calculations so far have been performed in 1-D homogeneous slab geometries.  What will happen in heterogeneous and multi-dimensional geometries?  Is Arnoldi's method still valid and does it still offer the same benefits?  Although unknown for certain at this time, I propose the answer is yes.  The reduced noise when using Arnoldi's method may lead to dramatic improvements in calculating eigenfunctions of geometries where highly absorbing materials are separated by highly scattering materials (e.g. the eigenvalue of the world type problems).  No mathematical obstacles---other than lack of experience of the author---immediately present themselves as problems to using Arnoldi's method in higher dimensions.  
+}
+
+%\end{document}
+\section{Power Method---Source Iteration}
+The particle transport equation
+\begin{equation}
+    \mathbf{\Omega}\cdot\mathbf{\nabla}\psi(\mathbf{r},\mathbf{\Omega})+\Sigma_t\psi(\mathbf{r},\mathbf{\Omega}) = \Sigma_s\psi(\mathbf{r},\mathbf{\Omega}) + \frac{1}{k}\nu\Sigma_f\psi(\mathbf{r},\mathbf{\Omega}),
+\end{equation}
+can be written in operator form
+\begin{subequations}\begin{align}
+    (\mathbf{L} + \mathbf{C} - \mathbf{S})\psi &= \frac{1}{k}\mathbf{F}\psi \\
+    \mathbf{T}\psi &= \frac{1}{k}\mathbf{F}\psi. \label{eq:Opr}
+\end{align}\end{subequations}
+where $\mathbf{L}, \mathbf{C},$ and $\mathbf{S}$ are the leakage, collision, and scattering operators respectively; and $\mathbf{F}$ is the fission operator.  The operator $\mathbf{T}$ is the transport-collision operator.  The left-hand side represents the neutron loss mechanisms and the right-hand side represents the neutron gain mechanism.
+
+Let us define
+\begin{align}
+    q &\equiv \mathbf{F}\psi, \\
+    \mathbf{A} &\equiv \mathbf{F}\,\mathbf{T}^{-1}
+\end{align}
+and manipulate Eq. \ref{eq:Opr} to find
+\begin{equation}
+    q = \frac{1}{k}\mathbf{A}q. \label{eq:evalue}
+\end{equation}
+This is a standard eigenvalue problem with eigenvalue $k$ and eigenvector $q$.  The linear operator $\mathbf{A}$ first transports source particles and then computes a fission source from the resulting particle population.
+
+We can use Eq. \ref{eq:evalue} in an iterative manner
+\begin{equation}
+    q^{(n+1)} = \frac{1}{k^{(n)}}\mathbf{A}q^{(n)}. 
+\end{equation}
+given an initial eigenvector $q$ and eigenvalue $k$ (usually $k=1$.)  Each iteration consists of calculating a new estimate of the eigenvector and eigenvalue,
+\begin{equation}
+    k^{(n+1)} = \frac{Aq^{(n)}}{q^{(n)}} = \frac{q^{(n+1)}}{q^{(n)}}.
+\end{equation}
+
+\section{Krylov Subspaces}
+A careful reader will notice Power Method generates a series of vectors
+\begin{equation}
+    \{v, Av, A^2v, \ldots, A^{m-1}v\} = \{q_0, q_1, q_2, \ldots, q_{m-1}\}.
+\end{equation}
+The vectors $\{q\}$ form a basis of the Krylov subspace denoted
+\begin{equation}
+    \mathcal{K}_m(A,v) = \mathrm{span} \{q_0, q_1, \ldots, q_{m-1}\}.
+\end{equation}
+Any Monte Carlo based particle transport code will create a Krylov subspace.  One starts with the initial source distribution, $q_0$, and transports it defined by the operator, $A$.  This generates a new source distribution, $q_1$ which is then transported.  
+
+Power Method has been used for greater than 50 years, but isn't there a better way?  Deterministic numerical methods researchers have found eigenvalue methods that are faster than Power Method.  Can these be applied in a Monte Carlo code?  The answer is a resounding ``We think so.''
+
+\section{Minimized Iteration---Arnoldi's Method}
+In contrast to the Power Method, Arnoldi's Method uses all the vectors previously calculated; after $k$ steps, we have $k+1$ vectors $\{q, Aq, A^2,\ldots, A^kq\}$.  In practice, these vectors usually are an ill-conditioned basis for the space they span.  The vector $A^jq$ points more and more in the direction of a dominant eigenveactor for $A$ as $j$ is increased.  \marginpar{Why is this a problem?  Is it because we get little information about the other vectors?}
+
+Arnoldi's method creates an orthonormal set of basis vectors $\{q_1, \ldots, q_{k+1}\}$ that spans the same Krylov subspace, $\mathcal{K}(A, q)$.  This orthonormal basis can be built up one vector at a time.  At the $k+1$st step we could simply multiply $A^{k-1}q$ by $A$ to get $A$.  It is inefficient to raise the matrix to a high poer, but we dont' have to.  To get $q_{k+1}$ we operate on $q_k$ by $A$ and orthogonalize against the previous vectors.  
+
+The details of the Arnoldi process follow.  We begin with the normalization of the original vector
+\begin{equation}
+    q_1 = q/\|q\|_2.    \label{eq:begin}
+\end{equation}
+At all subsequent steps we take
+\begin{equation}
+    \tilde{q}_{k+1} = Aq_k - \sum_{j=1}^k q_j h_{jk}.   \label{eq:mvOrtho}
+\end{equation}
+where
+\begin{equation}
+    h_{jk} = \langle Aq_k, q_j \rangle.
+\end{equation}
+Lastly, the vector is normalized
+\begin{equation}
+    q_{k+1} = \frac{\tilde{q}_{k+1}}{h_{k+1,k}},
+\end{equation}
+where
+\begin{equation}
+    h_{k+1,k} = \|\tilde{q}_{k+1}\|_2. \label{eq:end}
+\end{equation}
+
+Eqs. \ref{eq:begin}-\ref{eq:end} are summarized in Algorithm \ref{alg:Arnoldi}.  The matrix/operator $A$ itself is never used, only the matrix-vector product (see line \ref{algln:MonteCarlo}).  This is what allows us to use this method in a Monte Carlo code.  The Monte Carlo particle transport solves $\tilde{q}_{k+1} = Aq_k$.
+
+\begin{algorithm2e}
+    \label{alg:Arnoldi}
+    \SetVline
+    \caption{Arnoldi Process (freely borrowed from Watkins(2002))}
+    $q_1 = q/\left\|q\right\|_2$ \;
+    \For{$k=1,\ldots,m-1$}{
+        $\tilde{q}_{k+1} \gets Aq_k$\;  \nllabel{algln:MonteCarlo}
+        \For(\Comment*[f]{Orthogonalize}){$j=1, \ldots, k$}{ 
+            $h_{jk} \gets \left<q_j,q_{k+1}\right>$\;
+            $q_{k+1} \gets q_{k+1} - q_jh_{jk}$}
+        $h_{k+1,k} \gets \left\|q_{k+1}\right\|_2$\;
+        \If(\Comment*[f]{Span \{$q_1, \ldots, q_k$\} is invariant under $A$}){$h_{k+1,k} = 0$}{
+            quit.}
+        $q_{k+1} \gets q_{k+1}/h_{k+1,k}$\;
+    }
+\end{algorithm2e}
+
+\subsection{Finding Eigenvalues with Arnoldi's Method}
+The orthonormal vectors can be combined into a single matrix
+\begin{equation}
+    Q_m = \left[q_1 \cdots q_m\right] \in \mathbb{C}^{n\times m}.
+\end{equation}
+The inner products 
+\begin{equation}
+    h_{jk} = \langle Aq_k, q_j\rangle
+\end{equation}
+form an upper Hessenberg matrix, 
+\begin{equation}
+    H = 
+    \begin{bmatrix}
+        h_{11} & h_{12} & \cdots & h_{1,m-1} & h_{1m} \\
+        h_{21} & h_{22} & \cdots & h_{2,m-1} & h_{2m} \\
+        0 & h_{32} & \cdots & h_{3,m-1} & h_{3m} \\
+        \vdots & \ddots & \ddots & & \vdots \\
+        0 & \cdots & 0 & h_{m,m-1} & h_{mm} \\
+        0 & 0 & \cdots & 0 & h_{m+1,m}
+    \end{bmatrix}
+    \in \mathbb{C}^{m+1 \times m}.
+\end{equation}
+
+We can rewrite Eq. \ref{eq:mvOrtho} in terms of $A$, $Q$, and $H$,
+\begin{equation}
+    AQ_m = Q_{m+1}H_{m+1,m},    \label{eq:MatrixRep}
+\end{equation}
+or by separating the last column of $Q_{m+1}$ and the bottom row of $H_{m+1,m}$
+\begin{equation}
+    AQ_m = Q_{m}H_{m} + q_{m+1}h_{m+1,m}e_m^T   \label{eq:MRepmthIter}
+\end{equation}
+where $e_m$ is the $m$th standard basis vector in $\mathbb{R}^m$.  Writing the equation in this way shows how the result of Arnoldi's process proceeds at each step.
+
+If the vectors $q_j, \;j = 1, \ldots, k$ are linearly independent then $h_{m+1,m} \neq 0$.  If they are dependent, $h_{m+1,m} = 0$ and Eq. \ref{eq:MatrixRep} becomes
+\begin{subequations}\begin{gather}
+    AQ_m = Q_mH_m \\
+    H_m = Q_m^{-1}AQ_m
+\end{gather}\end{subequations}
+and the Krylov space spanned by the columns of $Q$, $\mathcal{K}_m(q,A)$, is invariant under $A$; that is for any vector $x \in \mathcal{K}_m$, $Ax$ is also in $\mathcal{K}_m$.  It can be shown that the eigenvalues of $H_m$ are the eigenvalues of $A$ and the eigenvectors of $A$ are related to the eigenvectors of $H$ as
+\begin{equation}
+    x = Q_mv
+\end{equation}
+where $x$ is an eigenvector of $A$ and $v$ is the associated eigenvector of $H_m$.  
+
+If carried out to completion, Arnoldi's method computes a similarity transform of the matrix $A$ to an upper Hessenberg matrix, $H$.  However, unless a very clever choice of the initial vector $q_1$ is used, one rarely finds an invariant subspace and must estimate the eigenvalues and eigenvectors of A from just a few steps of the Arnoldi process.
+
+We can show that the eigenvalues of $H$ are estimates of the eigenvalues of $A$ with some residual error at any step of the Arnoldi process.  We begin by finding an eigenpair of $H$, $(\mu,v)$.  If we multiply Eq. \ref{eq:MRepmthIter} by $v$ we obtain
+\begin{subequations}\begin{gather}
+    AQ_mv = Q_{m}H_{m}v + q_{m+1}h_{m+1,m}e_m^Tv   \\
+    AQ_mv = \mu Q_mv + q_{m+1}h_{m+1,m}e_m^Tv      \\[4mm]  \label{eq:FullResidual}
+    Ax = \mu x + r.
+\end{gather}\end{subequations}
+Here $x = Q_mv$ and $r = q_{m+1}h_{m+1,m}e_m^Tv$, the residual vector.  
+
+We can quantify how close the eigenpair $(\mu,x)$ is to a true eigenpair of $A$ by taking the 2-norm of the difference $Ax-\mu x$
+\begin{equation}
+    \|Ax - \mu x\|_2 = |h_{m+1,m}||e_m^Tv|
+\end{equation}
+where we have implicitly remembered $\|q_{m+1}\|_2 = 1$.  This difference is called the residual.  A small residual guarantees that $(\mu, x)$ is an exact eigenpair of a matrix that is close to $A$ thus one can monitor the residual to determine convergence of the calculation.
+
+\subsection{Restarted Arnoldi}
+Previously I mentioned that unless a careful choice of the initial vector $q_1$ is made, one rarely finds an invariant subspace.  One can make a careful choice by taking a few Arnoldi iterations and use the estimated eigenvector as the initial vector for a new calculation.  This is how Arnoldi's method is restarted.  Arnoldi's method can be restarted many times, each time with a better estimate of the eigenvector.
+
+Restarting Arnoldi's method has several benefits including memory management and processing time of which I will not focus on at this time.  Performing restarts is a naive and simple way of duplicating the cycle in the power method.  The calculation of the eigenvalue and eigenvector after each restart can be compared to the eigenvalues and eigenvectors of the power method.  These eigenpairs can be evaluated to find their mean and variance, just like with the power method.  
+
+\section{Questions to Answer}
+\begin{enumerate}
+    \item \emph{What is the uncertainty?  Is the answer biased?}  This is the question of greatest import.  A Monte Carlo calculation is useless without some measure of its statistical uncertainty.  The easiest way to get this is to do restarted Arnoldi and find the mean and variance of of the eigenvalues and eigenvectors after each restart.  I think there is a better way.  There must also be some analysis of the bias (if one exists) in the answer.
+    \item \emph{Is there a better way to evaluate the inner product $\langle q_k, q_j \rangle$?}  We know the definition of the inner product
+    \begin{equation}
+        \langle q_k, q_j \rangle \equiv \int q_j(x)q_k(x) dx.   \label{eq:InnerProduct}
+    \end{equation}
+    For vectors, this is a simple dot-product.  While this is simple, it requires biasing our results by spatial binning the fission source.  It should be possible to sample from a (semi-)continuous source distribution $q_j$ and finding the corresponding value from $q_k$
+    \begin{equation}
+        \langle q_k, q_j \rangle  = \frac{1}{N}\sum_{i=1}^N q_k(x_i).
+    \end{equation}
+    This is more of a Monte Carlo way of doing things and should reduce the bias in the calculation.
+    \item \emph{Beyond Histograms---Other Functional Expansions}  Our fission source vectors are histogram sources
+    \begin{equation}
+        q(x) = \sum_{i=1}^B a_if_i(x)
+    \end{equation}
+    where $B$ is the number of spatial bins and
+    \begin{equation}
+        f_i(x) = \left \{
+            \begin{array}{ccc}
+                1 &,& x_{i} \leq x < x_{i+1} \\
+                0 &,& \mathrm{otherwise}
+            \end{array}\right. .
+    \end{equation}
+    We can, however choose a different set of basis vectors, $f_i(x)$, about which we can expand. One choice to pursue is a linear inspace across each spatial bin, but I'm not going to show how this is done.
+
+\end{enumerate}
+
+\section{Tasks to Complete}
+\begin{itemize}
+    \item Heterogeneity
+    \item Multi-dimensional
+\end{itemize}
+
+
+\end{document}

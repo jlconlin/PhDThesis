@@ -1,0 +1,372 @@
+%!TEX root = ../Thesis.tex
+\chapter{Implicitly Restarted Arnoldi's Method\label{ch:IRAM} }
+A good restart vector is one where the undesired region of the spectrum of our linear operator is suppressed while the desired region is enhanced.  This is done by zeroing out the Ritz vectors associated with the Ritz values from the undesired region of the spectrum.  This is done explicitly in \fref{eq:ExplicitRestartVector} and repeated here for clarity;
+\begin{equation}
+    \hat{v} = c_1y_1 + \cdots + c_jy_j + 0\,y_{j+1} + \cdots + 0\,y_n;
+    \label{eq:RestartVector}
+\end{equation} 
+In addition to saving computational expense the improved restarts \emph{implicitly} restart Arnoldi's method with an improved restart vector and is thus called an implicit restart or implicitly restarted Arnoldi's method (IRAM).  To see how this is done, a brief discussion of the \QR algorithm will first be presented and then IRAM will be shown.
+
+\section*{\QR Algorithm} \label{sec:QRAlgorithm}
+A matrix $A \in \mathbb{R}^{n \times n}$can be decomposed into two matrices
+\begin{equation}
+    A = \QR
+    \label{eq:QRDecomposition}
+\end{equation}
+where $Q, R \in \mathbb{C}^{n \times n}$ with $Q$ unitary (orthonormal columns) and $R$ upper triangular.  The \QR decomposition (\fref{eq:QRDecomposition}) is unique \citep[see][Chapter 3, pg. 204]{Watkins:2002Funda-0} for nonsingular matrices and $R$ with positive main diagonal entries.  The \QR factors can be recombined in reverse order to form a new matrix 
+\begin{equation}
+    \hat{A} = RQ.
+\end{equation}
+
+The decomposition of a matrix and the recombination of the factors is typically performed iteratively.  A simple change of notation makes this illustration clear
+\begin{subequations}
+    \label{eq:QRIteration}
+    \begin{align}
+        A_{n-1} &= Q_nR_n \label{eq:QRFactIter} \\
+        A_{n} &= R_nQ_n. \label{eq:QRRecombineIter}
+    \end{align}
+\end{subequations}
+Using this notation $A_0 = A$.  The decomposition of $A_{n-1}$ and formation of $A_n$ constitutes one \QR iteration.
+
+We can see from \fref{eq:QRFactIter} that $R_n = Q_n^*A_{n-1}$.  Substituting this in \fref{eq:QRRecombineIter} we obtain an alternative form for $A_n$
+\begin{equation}
+    A_{n} = Q_n^*A_{n-1}Q_n.
+    \label{eq:QRIterationAlternate}
+\end{equation}
+
+\section*{Shifted \QR Iteration} \label{sec:ShiftedQR}
+The \QR iteration can be shifted by subtracting the identity matrix multiplied by some scalar shift.  The factors in the shifted \QR iteration can be recombined similarly to the non-shifted counterpart
+\begin{subequations}
+    \label{eq:ShiftedQRIteration}
+\begin{gather}
+    A_{n-1} - \nu_n I = Q_nR_n \label{eq:ShiftedQRDecomposition} \\
+    A_n = R_nQ_n + \nu_nI \label{eq:ShiftedQRRecombine}
+\end{gather}
+\end{subequations}
+where $Q_n$ and $R_n$ are the same as in the non-shifted \QR iteration, $I$ is the identity matrix, and $\nu_n$ is the shift being applied.  Similarly to the non-shifted \QR iteration, we can form $A_n$ alternatively.  To see this first note from \fref{eq:ShiftedQRDecomposition} that \[R_n = Q_n^*A_{n-1} - \nu_nQ_n^*.\]  Substituting this into \fref{eq:ShiftedQRRecombine} we obtain
+\begin{equation}
+    \begin{split}
+        A_n &= \left[ Q_n^*A_{n-1} - \nu_nQ_n^* \right]Q_n + \nu_nI \\
+         &= Q_n^*A_{n-1}Q_n - \nu_nQ_n^*Q_n + \nu_nI \\
+         &= Q_n^*A_{n-1}Q_n - \nu_nI + \nu_nI \\
+         A_n &= Q_n^*A_{n-1}Q_n
+    \end{split}
+    \label{eq:ShiftedQRIterationAlternative}
+\end{equation}
+Equation \eqref{eq:ShiftedQRIterationAlternative} generalizes the alternative form of $A_m$ from \fref{eq:QRIterationAlternate} to the shifted \QR algorithm.  
+
+Now that the basic \QR algorithm has been given we will proceed to to develop some identities that will be of use to us in analyzing implicit restarts for Arnoldi's method.
+\begin{lem} 
+    Let $Q_n$, $A_n$ be defined by equations \eqref{eq:ShiftedQRIteration} and let
+\begin{equation}
+    \hat{Q}_n \equiv Q_1Q_2\cdots Q_n,
+    \label{eq:QhatDefined}
+\end{equation}
+then
+\begin{align}
+    A_n &= \hat{Q}_n^*A\hat{Q}_n  \label{eq:QRRecombined} \\
+    \hat{Q}_nA_n &= A\hat{Q}_n. \label{eq:QnAn}
+\end{align}
+\label{lem:QRRecombined}
+\end{lem}
+
+\begin{proof}
+    For $n=1$, we know from \fref{eq:ShiftedQRIteration} 
+    \begin{equation}
+        A_1 = Q_1^*A_0Q_1 = \hat{Q}_1^*A \hat{Q}_1.
+    \end{equation}
+    For $n=2$, after a second iteration, we have
+    \begin{equation}
+        \begin{split}
+            A_2 &= Q_2^*A_1Q_2 \\
+             &= Q_2^*\left( Q_1^*A Q_1 \right)Q_2 \\
+             &= \hat{Q}_2^*A \hat{Q}_2
+        \end{split}
+    \end{equation}
+    where $\hat{Q}_2 = Q_1Q_2$.  We can prove this in general by induction on $n$:
+    \begin{equation}
+        \begin{split}
+            A_n &= Q_n^*A_{n-1}Q_n \\
+            &= Q_n^*\left( \hat{Q}_{n-1}^*A_{n-2} \hat{Q}_{n-1} \right)Q_n \\
+             &= Q_n^*Q_{n-1}^*\cdots Q_1 A Q_1\cdots Q_{n-1}Q_n \\
+             &= \hat{Q}_n^*A \hat{Q}_n
+        \end{split}
+    \end{equation}
+    where $\hat{Q}_n = Q_1Q_2\cdots Q_n$, as defined in \fref{eq:QhatDefined}.  Equation \eqref{eq:QnAn} immediately follows from \fref{eq:QRRecombined} since $\hat{Q}_n$ is a unitary matrix.
+\end{proof}
+
+\begin{lem}
+    Let $Q_n$, $A_n$ be defined by \fref{eq:ShiftedQRDecomposition} and let $\left\{\nu_1,\ldots, \nu_m\right\}$ be the shifts, then
+    \begin{equation}
+        \left(A-\nu_nI\right)\hat{Q}_n = \hat{Q}_n\left(A_n - \nu_nI\right),
+    \end{equation}
+    where $\hat{Q}_n \equiv Q_1Q_2\cdots Q_n$.
+\end{lem}
+
+\begin{proof}
+    Using \fref{eq:QnAn} this becomes trivial:
+    \begin{equation}
+        \begin{split}
+            \left(A-\nu_nI\right)\hat{Q}_n &= A\hat{Q}_n - \nu_n\hat{Q}_n \\
+             &= \hat{Q}_nA_n - \nu_n\hat{Q}_n \\
+             \left(A-\nu_nI\right)\hat{Q}_n &= \hat{Q}_n\left( A_n - \nu_nI \right).
+        \end{split}
+    \end{equation}
+\end{proof}
+
+With these two lemmas we now proceed to the theorem that is important to showing how IRAM restarts with the ideal restart vector.
+\begin{thm} \label{thm:QRPolynomial}
+    Let $\hat{Q}_n$ be defined as in \fref{eq:QhatDefined} and
+    \begin{equation}
+        \hat{R}_n \equiv R_nR_{n-1}\cdots R_1
+        \label{eq:RhatDefined}
+    \end{equation}
+    and using $\left\{\nu_1,\nu_2,\ldots\nu_n\right\}$ as the shifts of a shifted \QR algorithm, then
+\begin{equation}
+    \poly{j}{A} = \hat{Q}_j\hat{R}_j,
+    \label{eq:QRPolynomial}
+\end{equation}
+    where $\p_j$ is a polynomial of degree $j$ with zeros $\nu_1,\ldots,\nu_j$
+    \begin{equation}
+        \poly{j}{z} = \left(z-\nu_1I\right)\left(z-\nu_2I\right)\cdots\left(z-\nu_jI\right).
+        \label{eq:Polynomial}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    For $n=1$ \fref{eq:QRPolynomial} is true by definition of the shifted \QR decomposition given in \fref{eq:ShiftedQRDecomposition}
+    \begin{equation}
+        \left(A - \nu_1I\right) = Q_1R_1 = \hat{Q}_1\hat{R}_1.
+    \end{equation}
+    In general we can prove this by induction
+    \begin{equation}
+        \begin{split}
+            \left(A-\nu_nI\right)\left[\left(A-\nu_{n-1}I\right)\cdots\left(A-\nu_1I\right)\right] &= \left(A-\nu_nI\right)\left[\hat{Q}_{n-1}\hat{R}_{n-1}\right] \\
+            &=\left[A\hat{Q}_{n-1} - \nu_n\hat{Q}_{n-1}\right]\hat{R}_{n-1} \\
+            &=\left[\hat{Q}_{n-1}A_{n-1} - \nu_n\hat{Q}_{n-1}\right]\hat{R}_{n-1} \\
+            &=\hat{Q}_{n-1}\left(A_{n-1} - \nu_nI\right)\hat{R}_{n-1} \\
+            &=\hat{Q}_{n-1}\left(Q_nR_n\right)\hat{R}_{n-1} \\
+            \left(A-\nu_nI\right)\left[\left(A-\nu_{n-1}I\right)\cdots\left(A-\nu_1I\right)\right] &=\hat{Q}_n\hat{R}_n.
+        \end{split}
+    \end{equation}
+\end{proof}
+
+Equation \eqref{eq:QRPolynomial} shows that the product of the unitary ($\hat{Q}_n$) and upper triangular ($\hat{R}_n$) matrices from the \QR algorithm are equivalent to a polynomial of $A$ of degree $n$ with the shifts as the zeros of the polynomial.  This is an important point in IRAM.
+
+\section*{Updating Arnoldi Factorization by Shifted \QR Iterations}
+To show how IRAM uses the \QR algorithm we begin with the Arnoldi factorization first introduced in \fref{eq:ArnoldiFactorization}
+\begin{equation}
+    A V_m = V_mH_m + v_{m+1}h_{m+1,m}e_m^T.
+    \label{eq:ArnoldiFactorizationIRAM}
+\end{equation}
+Implicitly restarted Arnoldi's method performs shifted \QR iterations on $H_m$ using the eigenvalues estimates from the undesired region of the spectrum of $A$.  For Monte Carlo reactor analysis the eigenvalues largest in magnitude are of particular interest however, the following treatment is independent of what region of the spectrum is desired.
+
+We note that the Arnoldi factorization in \fref{eq:ArnoldiFactorizationIRAM} is shown after $m$ Arnoldi iterations.  For this discussion we assume that $k$ eigenvalues are desired and $m=k+j$ iterations are performed in each restart where $k \sim j$.  After $m$ Arnoldi iterations we have $m$ Ritz values---eigenvalue estimates---of $A$; $k$ of them are the eigenvalues of interest and the other $j$ values are used as shifts for the shifted \QR algorithm.
+
+IRAM performs $j$ iterations of the shifted \QR algorithm on $H_m$ using the undesired Ritz values as described previously.  After $j$ iterations we obtain
+\begin{equation}
+    \hat{H}_j = \hat{Q}_j^*H_m\hat{Q}_j
+    \label{eq:Hhat}
+\end{equation}
+where $\hat{Q}_j$ is defined in \fref{eq:QhatDefined}.  Because $H_m$ is upper Hessenberg, we can show that $Q_i$ is upper Hessenberg and $\hat{Q}_j$ is properly $j$-Hessenberg.  
+
+\begin{thm}
+    Let $j$ be a non-negative integer.  A matrix $H$ is called $j$-Hessenberg if $h_{rc} = 0$ whenever $(r-c)>j$.  An Hessenberg matrix is said to be properly $j$-Hessenberg if $h_{rc} \neq 0$ whenever $\left(r-c\right) = j$,
+    \begin{equation}
+        h_{rc} = \begin{cases}
+            0 & r-c > j \\
+            x & \text{otherwise}.
+        \end{cases}
+        \label{eq:hrcDefined}
+    \end{equation}
+    Then the product of a properly $j$-Hessenberg matrix ($H_j$) and a properly $k$-Hessenberg matrix $H_k$ is properly $(j+k)$-Hessenberg ($H_{j+k}$).
+    \label{thm:jkHessenberg}
+\end{thm}
+\begin{proof}
+    The $r$th row of a properly $j$-Hessenberg matrix has $\max\left[r-j-1,0\right]$ leading zeros.  The $c$th column of a properly $k$-Hessenberg matrix has $\max\left[m-\left(c+k\right),0\right]$ trailing zeros. The elements of $H_{j+k}$, $h_{rc}$, are zero if the sum of the leading zeros of the $r$th row of $H_j$ is greater than or equal to the difference of the size of the matrix $m$ and the trailing zeros of the $c$th column of $H_k$; \mbox{$h_{rc} = 0$} if \mbox{$\left( r-j-1 \right) \geq m-\left[m-\left(c+k\right)\right]$}.  Simplifying we obtain \mbox{$\left( r-j-1 \right) \geq \left(c+k\right)$} or equivalently
+    \begin{equation}
+        h_{rc} = \begin{cases}
+            0 & r-c > \left(j+k\right) \\
+            x & \text{otherwise}.
+        \end{cases}
+        \label{eq:hrcProved}
+    \end{equation}
+    We see that \fref{eq:hrcProved} is equivalent to \fref{eq:hrcDefined} for a $\left(j+k\right)$-Hessenberg matrix.
+\end{proof}
+
+When performing the \QR decomposition on an upper Hessenberg matrix we obtain
+\begin{equation}
+    H_m = Q_1R_1
+    \label{eq:HQR}
+\end{equation}
+with $Q_1$ and $R_1$ defined in \fref{eq:QRDecomposition}.  This can be re-written as
+\begin{equation}
+    Q_1 = H_mR_1^{-1}
+\end{equation}
+where we note that the inverse of an upper triangular matrix is an upper triangular matrix.  An upper triangular matrix is properly $0$-Hessenberg and $H_m$ is $1$-Hessenberg so we can apply \fref{thm:jkHessenberg} to show that $Q_1$ is properly $1$-Hessenberg.  
+
+\begin{col}
+    Let $\hat{Q}_n \in \mathbb{C}^{m \times m}$ be the combined unitary matrix resulting from $n$ iterations of the \QR iteration on an upper Hessenberg matrix, $H$.  
+    \begin{comment}
+        Define a \emph{properly $j$-Hessenberg} $B$ if $b_{ik} = 0$ whenever $\left(i-k\right)>j$ and when $b_{ij} \neq 0$ whenever $\left(i-k\right)=j$.  
+    \end{comment}
+    Then $\hat{Q}_n$ is a properly $n$-Hessenberg matrix and that the row vector $e_m^T\hat{Q}_n$ has $m-n-1$ leading zeros.
+    \label{thm:QRHessenberg}
+\end{col}
+
+\begin{proof}
+    We know that the unitary matrix from the \QR decomposition of an upper Hessenberg matrix is also upper Hessenberg.  $\hat{Q}_n$ is the product of $n$ upper Hessenberg matrices, therefore $\hat{Q}_n$ is properly $n$-Hessenberg.
+
+    The elements of product $e_m^T\hat{Q}_n$ are non-zero when the element of the $m$th or last row of $\hat{Q}_n$ is also non-zero.  The last row of $\hat{Q}_n$ has $m-n-1$ leading zeros as given in \fref{thm:jkHessenberg}.
+\end{proof}
+
+Let's return to the Arnoldi method.  Solving \fref{eq:Hhat} for $H_m$ and substituting into \fref{eq:ArnoldiFactorizationIRAM} we obtain
+\begin{align}
+    A V_m &= V_m\left(\hat{Q}_j\hat{H}_j\hat{Q}_j^*\right) + v_{m+1}h_{m+1,m}e_m^T. \\
+    \intertext{Now operate on the right by $\hat{Q}_j$,}
+    \begin{split}
+        A V_m\hat{Q}_j &= V_m\hat{Q}_j\hat{H}_j\hat{Q}_j^*\hat{Q}_j + v_{m+1}h_{m+1,m}e_m^T\hat{Q}_j \\
+        A \hat{V}_m &= \hat{V}_m\hat{H}_m + v_{m+1}h_{m+1,m}e_m^T\hat{Q}_j, \label{eq:UpdatedIRAM}
+    \end{split}
+\end{align}
+where
+\begin{equation}
+    \hat{V}_m = V_m\hat{Q}_j.
+\end{equation}
+
+The row vector \mbox{$e_m^T\hat{Q}_j$} in \fref{eq:UpdatedIRAM} has \mbox{$\left( m-j-1 \right)$} leading zeros according to \fref{thm:QRHessenberg}.  If we drop the first $j$ columns of \fref{eq:UpdatedIRAM} we obtain
+\begin{equation}
+    \begin{split}
+        A \hat{V}_k &= \hat{V}_{k+1}\hat{H}_{k+1,k} + v_{m+1}h_{m+1,m}\beta e_k^T \\
+        &= \hat{V}_k\hat{H}_k + \left( \check{v}_{k+1}\check{h}_{k+1,k} + v_{m+1}h_{m+1,m}\beta \right) e_k^T
+    \end{split}
+    \label{eq:IRAMcheck}
+\end{equation}
+where $\beta e_k^T$ is the first $k+1$ columns of $e_m^T\hat{Q}_j$ and we have defined 
+\begin{align}
+    \hat{v}_{k+1} &= \gamma\left(\check{v}_{m+1}\check{h}_{m+1,m} + v_{m+1}h_{m+1,m}\beta \right)
+\end{align}
+where $\gamma$ is chosen to normalize $\hat{v}_{k+1}$, $\|\hat{v}_{k+1}\|_2 = 1$.  If we let $\hat{h}_{k+1,k} = 1/\gamma$ then \fref{eq:IRAMcheck} becomes
+\begin{equation}
+    A \hat{V}_k = \hat{V}_k\hat{H}_k + \hat{v}_{k+1}\hat{h}_{k+1,k} e_k^T
+    \label{eq:IRAMhat}
+\end{equation}
+which is exactly like \fref{eq:ArnoldiFactorizationIRAM} except we have added some hats on some symbols and replaced $m$ with $k$.  It can be shown \citep[see][]{Watkins:2002Funda-0} that the Arnoldi vectors contained as the columns of $\hat{V}_k$ are exactly those that would have been generated by explicitly starting with $\hat{v}_1$.  Thus with IRAM we don't have have to start at the beginning of a restart, therefore we can jump right in at the $k$th iteration of the restart.  After $j$ additional steps we will have a Krylov subspace of size $m$, exactly as we would have had after $m$ iterations in explicit Arnoldi.
+
+Being able to jump into the middle of an Arnoldi restart can save considerable computational expense by reducing the number applications of the linear operator A required.  (The application of the linear operator in Monte Carlo particle transport is responsible for > 80\% of the computational runtime.)  In short, IRAM exchanges Arnoldi iterations for shifted \QR iterations.  Shifted \QR iterations are faster than Arnoldi iterations because $H_m$ is small.
+
+\section*{How Implicit Restarts Suppresses Unwanted Eigenvalue Information}
+We have just shown that implicit restarts can be computationally more efficient.  Here we show that implicit restarts are mathematically equivalent to restarting with a linear combination of the Ritz vectors from the desired region of the spectrum of $A$ \citep[see][Chapter~5,~pg.~456]{Watkins:2002Funda-0}.
+
+\begin{thm}\label{thm:ArnoldiPolynomial}
+    Suppose we have the Arnoldi factorization
+    \begin{equation}
+        AV_m = V_mH_m + v_{m+1}h_{m+1,m}e_m^T
+    \end{equation}
+    and let $\p_j$ be a polynomial of degree $j < m$ as shown in \fref{eq:Polynomial}.  Then
+    \begin{equation}
+        \poly{j}{A}V_m = V_m\poly{j}{H_m} + E_j,
+        \label{eq:PolyAPolyHDefined}
+    \end{equation}
+    where $E_j \in \mathbb{C}^{n \times m}$ is identically zero, except in the last $j$ columns.
+\end{thm}
+
+\begin{proof}
+For $m=1$ we can just apply a shift $\nu_1$ to the Arnoldi factorization, \fref{eq:ArnoldiFactorizationIRAM},
+\begin{equation}
+    \left(A-\nu_1 I\right)V_m = V_m\left(H_m - \nu_1 I\right) + E_1
+    \label{eq:ArnoldiPolynomialDegree1}
+\end{equation}
+where $E_1 = h_{m+1,m}v_{m+1}e_m^T$.  We can see that $E_1$ is zero except for the last column by the product $ v_{m+1}e_m^T$.  $\left(A-\nu_1 I\right)$ and $\left(H_m - \nu_1 I\right)$ are polynomials of $A$ and $H_m$ respectively with degree $j=1$, both with root $\nu_1$.
+
+Assuming this theorem holds for polynomials of degree $j-1$ (we have just shown this to be true for $j-1=1$) we can now show it is valid for polynomials of degree $j$.  We know:
+\begin{equation}
+        \left(A-\nu_{j-1}I\right)\cdots\left(A-\nu_1I\right)V_m = V_m\left(H_m-\nu_{j-1}I\right)\cdots\left(H_m-\nu_1I\right) + E_{j-1}
+\end{equation}
+operate on the left by $\left( A-\nu_jI \right)$
+\begin{multline}
+    \left(A-\nu_jI\right)\left(A-\nu_{j-1}I\right)\cdots\left(A-\nu_1I\right)V_m =  \\
+    \left(A-\nu_jI\right)V_m\left(H_m-\nu_{j-1}I\right)\cdots\left(H_m-\nu_1I\right) + \left(A-\nu_jI\right)E_{j-1}.
+\end{multline}
+Substituting $\nu_j$ for $\nu_1$ in \fref{eq:ArnoldiPolynomialDegree1} we see that
+\begin{equation}
+    \left(A-\nu_j I\right)V_m = V_m\left(H_m - \nu_j I\right) E_1
+    \label{eq:ArnoldiPolynomialDegreej}
+\end{equation}
+which can be inserted into the previous equation
+\begin{align}
+    \lefteqn{\left(A-\nu_jI\right)\cdots\left(A-\nu_1I\right)V_m} \qquad \nonumber \\
+    \begin{split}
+    &= \left[ \left(A-\nu_jI\right)V_m \right]\left(H_m-\nu_{j-1}I\right)\cdots\left(H_m-\nu_1I\right) + \left(A-\nu_jI\right)E_{j-1} \\
+     &= \left[ V_m\left(H_m-\nu_jI\right)+E_1 \right]\left(H_m-\nu_{j-1}I\right)\cdots\left(H_m-\nu_1I\right) + \left(A-\nu_jI\right)E_{j-1} \\
+     &= V_m\left(H_m-\nu_jI\right)\cdots\left(H_m-\nu_1I\right) + E_1\left(H_m - \nu_{j-1}I\right)\cdots\left(H_m - \nu_1I\right) \\
+     &\qquad + \left(A-\nu_jI\right)E_{j-1} \\
+     &= V_m\left(H_m-\nu_jI\right)\cdots\left(H_m-\nu_1I\right) + E_j
+     \label{eq:PolyAPolyHProof}
+    \end{split}
+\end{align}
+where 
+\begin{equation}
+    \label{eq:Ej}
+    E_j = E_1\left(H_m - \nu_{j-1}I\right)\cdots\left(H_m - \nu_1I\right) + \left(A-\nu_jI\right)E_{j-1}.
+\end{equation}
+We can simplify \fref{eq:PolyAPolyHProof} further and write
+\begin{equation}
+    \poly{j}{A}V_m = V_m\poly{j}{H_m} + E_j,
+    \label{eq:PolyAPolyHProved}
+\end{equation}
+where \[\poly{j}{A} = \left(A-\nu_jI\right)\cdots\left(A-\nu_1I\right)\] is a polynomial of degree $j$ on $A$ and \[\poly{j}{H_m} = \left(H_m-\nu_jI\right)\cdots\left(H_m-\nu_1I\right)\] is a polynomial of degree $j$ on $H_m$.  Equation \eqref{eq:PolyAPolyHProved} is exactly what we want to prove \fref{eq:PolyAPolyHDefined}.
+
+We know that the columns of $E_{j-1}$ are zero except the last $j-1$ columns.  We can see by inspection that the second term on the right hand side of \fref{eq:Ej} has the same structure.  From \fref{thm:jkHessenberg} we know that the product $\left(H_m - \nu_{j-1}I\right)\cdots\left(H_m - \nu_1I\right)$ is properly $j$-Hessenberg.  Multiply this by $E_1$ on the left and we obtain a zero matrix except in the last $j$ columns.  The right hand side of \fref{eq:Ej} is therefore as we expected.
+\end{proof}
+
+Now that we have the necessary mathematical basis to understand what happens with an implicit Arnoldi restart we can investigate how IRAM generates it's starting vector.    In IRAM the shifts $\nu_1$, $\nu_2$, \ldots, $\nu_j$ are chosen from the region of the eigenvalue spectrum that is to be suppressed.  These shifts are then used in $j$ iterations of the shifted \QR algorithm on $H_m$ resulting in $\hat{H}_j = \hat{Q}_j^*H_m\hat{Q}_j$ where $\hat{Q}_j$ is the combined unitary factor in the \QR factorization
+\begin{equation}
+    \poly{j}{H_m} = \hat{Q}_j\hat{R}_j
+    \label{eq:HmPolynomial}
+\end{equation}
+where $j$ indicates the number of shifted \QR iterations performed and $\poly{j}{z}$ is defined in \fref{eq:Polynomial}.  When we apply \fref{thm:ArnoldiPolynomial} and substitute \fref{eq:HmPolynomial} we obtain
+\begin{equation}
+    \poly{j}{A}V_m = V_m\hat{Q}_j\hat{R}_m + E_j.
+    \label{eq:PolyArnoldiFactAllColumns}
+\end{equation}
+The Arnoldi factorization is uniquely defined by the starting vector and the linear operator.  If we multiply \fref{eq:PolyArnoldiFactAllColumns} by $e_1$ we get
+\begin{equation}
+    \poly{j}{A}V_me_1 = V_m\hat{Q}_j\hat{R}_je_1 + E_je_1.
+    \label{eq:PolyArnoldiFactColumn1}
+\end{equation}
+$E_je_1 = 0$ because the first column of $E_j$ is zero.  Since $\hat{R}_j$ is upper triangular \mbox{$\hat{R}_je_1 = r_{11}e_1 = \alpha e_1$} and the first term on the right hand side is \mbox{$\alpha V_m\hat{Q}_m = \alpha \hat{v}_1$}.  The left hand side of \fref{eq:PolyArnoldiFactColumn1} is just a polynomial of degree $j$ of $A$ multiplied by $v_1$ the starting vector for this Arnoldi process.  From \fref{eq:PolyArnoldiFactColumn1} we can deduce
+\begin{equation}
+    \hat{v}_1 = \frac{1}{\alpha}\poly{j}{A}v_1.
+    \label{eq:IRAMRestartVector}
+\end{equation}
+
+Let's return to the starting vector for an Arnoldi procedure.  We can write the vector as a linear combination of a set of basis vectors
+\begin{equation}
+    v_1 = c_1x_1 + c_2x_2 + \cdots + c_nx_n,
+\end{equation}
+where the $x_i$'s are the basis vectors and the $c_i$'s are some expansion coefficients.  If we choose the eigenvectors of our linear operator $A$ as our basis vectors then things become interesting with respect to IRAM.  To see this, multiply $v_1$ by a polynomial of degree $1$ of $A$
+\begin{equation}
+    \begin{split}
+        \poly{1}{A}v_1 &= \left(A-\nu_1I\right)\left(c_1x_1 + c_2x_2 + \cdots + c_nx_n\right) \\
+         &= c_1\left(Ax_1 - \nu_1x_1\right) + \cdots c_n\left(Ax_n - \nu_1x_n\right)
+    \end{split}
+        \label{eq:PolyStartingVectorTerm1}
+\end{equation}
+where we remember the $x_i$'s are the eigenvectors of $A$ and that $\nu_1$ is the first undesired eigenvalue, $\lambda_{k+1}$.  Equation \eqref{eq:PolyStartingVectorTerm1} becomes
+\begin{multline}
+    \poly{1}{A}v_1 = c_1\left(\lambda_1x_1 - \nu_1x_1\right) + \cdots \\
+    +c_{k+1}\underbrace{\left(\lambda_{k+1}x_{k+1} - \nu_1x_{k+1}\right)}_{=0} + \\
+    \cdots + c_n\left(\lambda_nx_n - \nu_1x_n\right)
+\end{multline}
+where the vector $x_{k+1}$ has been completely eliminated.  
+
+If we include all the terms of the polynomial $\poly{j}{A}$ then all $j$ eigenvectors from the undesired region of the spectrum are removed from our restart vector
+\begin{multline}
+    \poly{j}{A}v_1 = c_1\left(\lambda_1x_1 - \nu_1x_1\right)\left(\lambda_1x_1 - \nu_2x_1\right)\cdots\left(\lambda_1x_1 - \nu_jx_1\right) + \cdots \\
+    + c_k\left(\lambda_kx_k - \nu_kx_k\right)\cdots\left(\lambda_kx_k - \nu_kx_k\right) + 0.
+\end{multline}
+We can plug this result into \fref{eq:IRAMRestartVector} and get our optimal restart vector as described in \fref{eq:RestartVector}.
+
+Thus we see that implicitly restarted Arnoldi's method is mathematically equivalent to explicitly restarted Arnoldi's method but can skip into the restart after $k$ iterations.  IRAM can save computational expense by trading expensive applications of the linear operator for cheap shifted \QR iterations.
+
+%\section*{Monte Carlo Implementation} \label{sec:MCIRAM}

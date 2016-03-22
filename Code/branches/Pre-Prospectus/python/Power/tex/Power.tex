@@ -1,0 +1,84 @@
+% How does my Power Method proceed
+%
+\documentclass[11pt]{article}
+\usepackage[marginparwidth=1.0in]{geometry}
+\usepackage[usenames]{color}
+\usepackage{amsmath}
+
+\title{How Does My Power Method Proceed?\\\large{(or: Why Doesn't it Work?)}}
+\author{Jeremy L. Conlin}
+\begin{document}
+\maketitle
+
+
+\section{Setup}
+
+\section{Power Method}
+
+\subsection{Sample fissionBank}
+When sampling from a fissionBank, to create a new fissionBank I select a particle at random, remove it from the bank.  I set its weight to 1 and give it a random direction.\marginpar{If I don't set a random direction, $k_{eff}$ is much higer.  0.43 vs. 0.36.}
+
+If I need more neutrons than are in the bank I sample from, I pick neutrons randomly from the bank, without removing them until the number of particles I need is the length of the current bank.  Then I proceed as described in proceeding paragraph.
+
+\subsection{Transport}
+This is (I suppose) the meat of the Power Method, also where most things could possibly go wrong.
+
+For ecah neutron in the fissionBank, I do the following
+
+\subsubsection{Move}\label{sec:Move} I move my particle using the following equations:
+\begin{subequations}
+    \begin{eqnarray}
+        d = -\frac{1}{\Sigma_t}\ln(\xi) \\
+        x = x + d*u \\
+        y = y + d*v \\
+        z = z + d*w \\
+    \end{eqnarray}
+\end{subequations}
+where $d$ is the distance traveled between collisions and $(u,v,w)$ is the direction-vector of travel and, of course, $(x,y,z)$ is the position of the particle before moving.
+
+\subsubsection{Check if still inside}  If the particle is still inside my geometry (slab) I collide it as follows.
+\begin{itemize}
+    \item Add neutrons to next fissionBank.
+
+    Th number of neutrons I add to the next fissionBank is:
+    \begin{equation}
+        N = \left\lfloor \omega'\left( \frac{1}{k}*\frac{\nu\Sigma_f}{\Sigma_t}\right) +  \xi \right\rfloor,
+    \end{equation}
+    where $\omega^{\prime}$ is the weight of the neutron before the collision.
+
+    \item Calculate new weight.
+
+    I play implicit capture so I need to change the weight of my particle at each collision.  The weight, after a collision is:
+    \begin{equation}
+        \omega = \omega'\left(1 - \frac{\Sigma_a}{\Sigma_t}\right) = \omega^{\prime}\left(\frac{\Sigma_s}{\Sigma_t}\right).
+    \end{equation}
+
+    \item Change Direction.
+
+    I sample uniformly over $4\pi$ my new travel direction;
+    \begin{subequations}
+        \begin{gather}
+            \phi = 2\pi\xi \\
+            u = 2\xi - 1 \\
+            v = \sqrt{1-u^2}\cos{\phi} \\
+            w = \sqrt{1-u^2}\sin{\phi}
+        \end{gather}
+    \end{subequations}
+\end{itemize}
+
+\subsubsection{Weight Cutoff Game(s)}  If my particle weight happens to become zero or less, I kill it.  This won't happen unless $\Sigma_s$ is zero.  If the particle weight is less than some cutoff weight, $\omega < \omega_c$, I play Russian Roulette.
+
+In Russian Roulette, I pick a random number, $\xi$.  If $\xi < p_{kill}$ I kill the particle; otherwise I increase the weight of the particle like:
+\begin{equation}
+    \omega = \frac{\omega^{''}}{1 - p_{kill}}
+\end{equation}
+and return to Section \ref{sec:Move}.
+
+\subsection{Calculate $k_{eff}$}
+After one iteration is complete, I calculate a new estimate of $k_{eff}$ as:
+\begin{equation}
+    k^{n+1} = k^n\frac{Q^{n+1}}{N},
+\end{equation}
+where $Q^{n+1}$ is the number of fission neutrons in the fissionBank for the next cycle and $N$ is the number of histories followed in the current cycle.
+
+\end{document}

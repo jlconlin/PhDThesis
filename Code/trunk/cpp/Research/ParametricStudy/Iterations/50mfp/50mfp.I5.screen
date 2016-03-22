@@ -1,0 +1,46 @@
+
+------------------------------------------
+Don't Forget the following two commands:
+
+kinit -5 jlconlin
+aklog
+------------------------------------------
+
+I ran on:  /var/spool/PBS/aux//2485309.nyx.engin.umich.edu
+Running ArnoldiResearch.
+
+Arguments:
+	source = Histogram
+	method = explicit
+	Iterations = 5
+	eigenvalues = 3
+	relaxed = 0
+	run = true
+	filename = Iterations/50mfp/50mfp.I5.dat
+	terminal = dumb
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 50
+	bins = 75
+	active = 30
+	inactive = 10
+	tracks = 500000
+	ignore_rest = false
+	version = false
+	help = false
+
+Running Arnoldi's Method
+Master seed: 1930525704
+Material: [(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+
+==============================
+---Running Explicit Arnoldi---
+==============================
+
+	Iteration #: 1, H = 2.711E-312, time:  4.156 sec.
+	Iteration #: 2, H = 2.711E-312, time:  6.557 sec.
+	Iteration #: 3, H = 2.711E-312, time:  9.067 sec.
+	Iteration #: 4, H = 2.711E-312, time:  11.68 sec.
+*** glibc detected *** double free or corruption (out): 0x00000000005bccf0 ***
+/var/spool/PBS/mom_priv/jobs/2485309.nyx.engin.umich.edu.SC: line 35: 10436 Aborted                 ./../ArnoldiResearch --verbose 2 --width 50 --relaxed 0 --eigenvalues 3 --tracks 500000 --inactive 10 --source Histogram --active 30 --seed 0 --bins 75 --run --Iterations 5 -f Iterations/50mfp/50mfp.I5.dat

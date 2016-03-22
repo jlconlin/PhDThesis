@@ -1,0 +1,280 @@
+% IRAM.tex
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{palatino}
+
+% Stuff for the algorithm package
+\usepackage[algo2e, ruled, linesnumbered]{algorithm2e}
+\SetKwComment{Comment}{$\triangleright$ }{}
+\dontprintsemicolon
+
+\newcommand{\A}{\mathbf{A}}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+
+\title{Implicitly Restarted Arnoldi's Method}
+\author{Jeremy L. Conlin}
+
+\begin{document}
+\maketitle
+\section{IRAM from ``The Source''}
+Here I will try to reconstruct the description of Implicitly Restarted Arnoldi's Method from the original paper by D.C. Sorensen.
+
+\subsection{The Arnoldi factorization}
+The Arnoldi factorization may be viewed as a truncated reduction of an $n \times n$ matrix $\A$ to upper Hessenberg form.  After $k$ steps of the factorization one has
+\begin{equation}
+    \A V = VH + re_k^T,
+    \label{eq:ArnoldiFactorization}
+\end{equation}
+where $V \in \mathbb{R}^{n \times k}$, $V^TV = I_k$, $H \in \mathbb{R}^{k \times k}$ is upper Hessenberg, $r \in \mathbb{R}^n$ with $\mathbf{0} = V^Tr$.  An alternative [and better in the views of the summarizer] way to write Eq. \ref{eq:ArnoldiFactorization} is
+\begin{equation}
+    \A V = \begin{pmatrix}V & v\end{pmatrix}\begin{pmatrix} H \\ \beta e_k^T \end{pmatrix} \mathrm{ where } \beta = \left| r \right| \mathrm{ and } v = \frac{1}{\beta}r.
+    \label{}
+\end{equation}
+
+Approximate eigenvalues and eigenvectors are readily available through this factorization.  If $Hy = y\theta$ is an eigenpair for $H$, then the vector $x = Vy$ satisfies
+\begin{equation}
+    \left\|Ax-x\theta\right\| = \left\|\left(\A V - VH\right)y\right\| = \left|\beta e_k^Ty\right|.
+    \label{}
+\end{equation}
+We call the vector $x$ a Ritz vector and the approximate eignvalue $\theta$ a Ritz value and note that the smaller $\left|\beta e_k^T\right|$ is, the better these approximations are.
+
+The factorization Eq. \ref{eq:ArnoldiFactorization} may be advanced one step through the following recursion formulas:
+\begin{subequations}\begin{gather}
+    \beta = \|r\|, \hspace{0.25in} v = \frac{1}{\beta}r, \\ \label{eq:ArnoldiRecursion-1}
+    V_+ = \begin{pmatrix}V & v\end{pmatrix}, \\
+    w = \A v, \hspace{0.25in} \begin{pmatrix}H \\ \alpha \end{pmatrix} = V_+^Tw, \\
+    H_+ = \begin{pmatrix} H & h \\ \beta e_k^T & \alpha \end{pmatrix}, \\
+    r_+ = w - V_+\begin{pmatrix}h \\ \alpha \end{pmatrix} = \left(I-V_+V_+^T\right)w.  \label{eq:ArnoldiRecursion-4}
+\end{gather}\end{subequations}
+From this development it is easily seen that
+\begin{equation}
+    \A V_+ = V_+H_+ + r_+e_{k+1}^T,\hspace{.25in} V_+^TV_+ = I_{k+1}, V_+^Tr_+ = \mathbf{0}.
+    \label{}
+\end{equation}
+
+\begin{thm}
+    Let $\A V_k - V_kH_k = r_ke_k^T$ be a $k$-step Arnoldi factorization of $\A$, with $H$ unreduced (this is seen in Eq. \ref{eq:ArnoldiFactorization}).  Then $r_k = 0$ if and only if $v_1 = Qy$ where $\A Q = QR$ with $Q^HQ = I_k$ and $R$ upper triangular order of $k$.
+    \label{thm:ArnoldiInvariant}
+\end{thm}
+Theorem \ref{thm:ArnoldiInvariant} provides the motivation for the algorithms we shall develop.  It suggests that one might find an invariant subspace by iteratively replacing the starting vector with a linear combination of approximate eigenvectors corresponding to eigenvalues of interest.
+
+\subsection{Updating the Arnoldi factorization via QR-iterations}
+In this section a direct analogue of th implicitly shifted QR-iteration will be derived in the context of the $k$-step Arnoldi factorization.
+
+Throughout this discussion, the integer $k$ should be thought of as a fixed pre-specified integer of modest size.  Let $p$ be another positive integer, and consider the result of $k+p$ steps of the Arnoldi process appled to $\A$ , which has resulted in the construction of an orthogonal matrix $V_{k+p}$ such that
+\begin{equation}
+    \begin{split}
+        \A V_{k+p} &= V_{k+p}H_{k+p} + r_{k+p}e_{k+p}^T \\
+        &= \begin{pmatrix}V_{k+p} & v_{k+p+1} \end{pmatrix} \begin{pmatrix}H_{k+p} \\ \beta_{k+p}e_{k+p}^T \end{pmatrix}.
+    \end{split}
+    \label{eq:ArnoldiFactorization-k+p}
+\end{equation}
+An analogy of the explicitly shifte QR-algorithm may be applied to this truncated factorization of $\A$.  It consists of the following four steps.  Let $\mu$ be a shift and let $\left(H-\mu I\right) = QR$ with $Q$ orthogonal and $R$ upper triangular.  Then (putting $V = V_{k+p}$, $H = H_{k+p}$)
+\begin{subequations}\begin{align}
+    \left(\A - \mu I\right)V - V\left(H - \mu I\right) &= r_{k+p}e_{k+p}^T, \\
+    \left(\A - \mu I\right)V - VQR &= r_{k+p}e_{k+p}^T, \\ \label{eq:IRAM-2}
+    \left(\A - \mu I\right)\left(VQ\right) - \left(VQ\right)\left(RQ\right) &= r_{k+p}e_{k+p}^TQ, \\
+    \A\left(VQ\right) - \left(VQ\right)\left(RQ + \mu I\right) &= r_{k+p}e_{k+p}^TQ, \\
+\end{align}\end{subequations}
+Let $V_+ = VQ$ and $H_+ = RQ + \mu I$.  Then $H_+$ is upper Hessenberg and applying the matrices in Eq. \ref{eq:IRAM-2} to the vector $e_1$ to expose the relationship of their first columns gives
+\begin{equation}
+    \left(\A - \mu I\right)v_1 = v_1^+\rho_{11}
+    \label{}
+\end{equation}
+where $\rho_{11} = e_1^TRe_1$, $v_1^+ = V_+e_1$.
+
+This idea may be extended for up to $p$ shifts being applied successively.  The application of a QR-iteration corresponding to an implicit shift $\mu$ produces an upper Hessenberg orthogonal  $Q \in \mathbb{R}^{k+p}$ such that
+\begin{equation}
+    \A V_{k+p}Q = \begin{pmatrix}V_{k+p}Q & v_{k+p+1}\end{pmatrix}\begin{pmatrix} Q^TH_{k+p}Q \\ \beta_{k+p}e_{k+p}^TQ \end{pmatrix}
+    \label{}
+\end{equation}
+An application of $p$ implicit shifts therefore results in
+\begin{equation}
+    \A V_{k+p}^+ = \begin{pmatrix}V_{k+p}^+ & v_{k+p+1} \end{pmatrix}\begin{pmatrix}H_{k+p}^+ \\ \beta_{k+p}e_{k+p}^T\hat{Q} \end{pmatrix}
+    \label{eq:pImplicitShifts}
+\end{equation}
+where $V_{k+p}^+ = V_{k+p}\hat{Q}$, $H_{k+p}^+ = \hat{Q}^TH_{k+p}\hat{Q}$, and $\hat{Q} = Q_1Q_2 \cdots Q_p$, with $Q_j$ the orthogonal matrix associated with the shift $\mu_j$.
+
+Now, partition
+\begin{equation}
+    V_{k+p}^+ = \begin{pmatrix}V_k^+ & \hat{V}_p\end{pmatrix},\hspace{.25in} H_{k+p}^+ = \begin{pmatrix} H_k^+ & M \\ \hat{\beta}_{k+p}e_1e_k^T & \hat{H}_p \end{pmatrix},
+    \label{}
+\end{equation}
+and note
+\begin{equation}
+    \beta_{k+p}e_{k+p}^T\hat{Q} = \left(\underbrace{0,0 \cdots \tilde{\beta}_{k+p} }_k,\underbrace{b^T}_p\right).
+    \label{}
+\end{equation}
+Substituting into Eq. \ref{eq:pImplicitShifts} gives
+\begin{equation}
+    \A \left( V_k^+ , \hat{V}_p \right) = \left(V_k^+, \hat{V}_p, v_{k+p+1}\right)
+    \begin{bmatrix}
+        H_k^+ & M \\
+        \hat{\beta}_ke_1e_k^T & \hat{H}_p \\
+        \tilde{\beta}_{k+p}e_k^T & b^T
+    \end{bmatrix}.
+    \label{eq:Substituted}
+\end{equation}
+Equating the first $k$ columns on both sides of Eq. \ref{eq:Substituted} gives
+\begin{equation}
+    \A V_k^+ = V_k^+H_k^+ + r_k^+e_k^T
+    \label{}
+\end{equation}
+so that
+\begin{equation}
+    \A V_k^+ = \left(V_k^+, v_{k+1}^+\right)
+    \begin{pmatrix}
+        H_k^+ \\
+        \beta_k^+e_k^+
+    \end{pmatrix}
+    \label{eq:ArnoldiNewFactorization}
+\end{equation}
+where $v_{k+1}^+ = \left(1/\beta_K^+\right)r_k^+$, $r_k^+ \equiv \left(\hat{V}_pe_1\hat{\beta}_k + v_{k+p+1}\tilde{\beta}_{k+p} \right)$, and $\beta_k^+ = \left\|r_k^+\right\|$.  Note that $\left(V_k^+\right)^+\hat{V}_pe_1 = 0$ and $\left(V_k^+\right)^Tv_{k+p+1} = 0$, so $\left(V_k^+\right)^Tv_{k+1}^+ = 0$.  Thus Eq. \ref{eq:ArnoldiNewFactorization} is a legitimate Arnoldi factorization of $\A$.  Using this as a starting point it is possible to use $p$ additional steps of the Arnoldi recursions to Eqs. \ref{eq:ArnoldiRecursion-1}---\ref{eq:ArnoldiRecursion-4} to return to the original form Eq. \ref{eq:ArnoldiFactorization-k+p}.  This requires only $p$ evaluations of a matrix-vector product involving the matrix $\A$ and the $p$-new Arnoldi vectors.  This is to be contrasted with the [explicitly restarted Arnoldi's method by Saad] where the entire Arnoldi sequence is restarted.  
+
+\subsection{Algorithms}
+In this section I will show the Arnoldi algorithm and the implicitly restarted Arnoldi's method for comparison.
+
+\begin{algorithm2e}[H]
+    \label{alg:Arnoldi}
+    \SetVline
+    \caption{Traditional Arnoldi's Method}
+
+    \KwIn{$\A V - VH = re_k^T$ with $V^TV = I_k$, and $V^Tr = 0$.}
+    \KwOut{$\A V - VH = re_{k+p}^T$ with $V^TV = I_{k+p}$, and $V^Tr = 0$.}
+
+    $\left[H, V, r\right] = \mathtt{Arnoldi}\left( \A, H, V, r, k, p \right)$
+    
+    \BlankLine
+    \For{$j=1,2,\ldots,p$}{
+    $\beta \leftarrow \|r\|$; \hspace{.25in} if $\left( \beta < \mathrm{Tol} \right)$ stop;\;
+    $H \leftarrow \begin{pmatrix}
+        H \\ \beta e_{k+j+1}^T
+    \end{pmatrix}$   \hspace{0.15in} \tcp{Add row to $H$}\;
+    $v \leftarrow \frac{1}{\beta}r$  \hspace{0.75in} \tcp{Normalize $v$}\;
+    $V \leftarrow \left(V, v\right)$ \hspace{0.5in} \tcp{Add column to $V$}\;
+    $w \leftarrow \A v$\;
+    $h \leftarrow V^Tw$\;
+    $H \leftarrow \left(H, h\right)$\;
+    $r \leftarrow w - Vh$\;
+    Reorthogonalize if necessary\;
+    }
+\end{algorithm2e}
+
+The basic or traditional Arnoldi's (Algorithm \ref{alg:Arnoldi}) method is used in the restarted version as shown in Algorithm \ref{alg:IRAM}.
+
+\begin{algorithm2e}[H]
+    \label{alg:IRAM}
+    \SetVline
+    \caption{Implicitly Restarted Arnoldi's Method}
+
+    $\left[V, H, r\right] = \mathtt{IRAM}\left(\A, k, p, tol\right)$
+
+    \BlankLine
+    \emph{initialize} $V(:,1) = v_1$\;
+    \hspace{0.6in} $H \leftarrow\left(v_1^T\A v_1\right)$\;
+    \hspace{0.6in} $r \leftarrow \A v_1 - v_1H$\;
+    $\left[H, V, r\right] = \mathtt{Arnoldi}\left( \A, H, V, r, 1, k \right)$ \hspace{0.32in} \tcp{Take $k$ steps of Arnoldi}\;
+    \For{$m = 1,2,\cdots$}{
+        if $\left(\|r\| < tol\right)$ stop;\;
+        $\left[H, V, r\right] = \mathtt{Arnoldi}\left( \A, H, V, r, k, p \right)$ \hspace{0.05in} \tcp{Take $p$ more steps of Arnoldi}\;
+        \BlankLine
+        \tcp{Shifted QR algorithm}
+        $u = \mathtt{Shifts}\left(H,p\right)$\;
+        $Q \leftarrow I_{k+p}$ \hspace{0.75in} \tcp{Initialize $Q$}\;
+        \For{$j=1,2,\cdots, p$}{ 
+            $H \leftarrow Q_j^T H Q_j$\;
+            $Q \leftarrow Q Q_j$\;
+        }
+        $v\leftarrow \left(VQ\right)e{k+1}$\;
+        $V \leftarrow \left(VQ\right)\begin{pmatrix} I_k \\ 0 \end{pmatrix}$\;
+            $r \leftarrow \left(v\beta_k + r\sigma_k\right)$ where $\beta_k = e_{k+1}^THe_k$, $\sigma_k = e_{k+p}^TQe_k$\;
+    }
+\end{algorithm2e}
+
+Each application of an implicit shift $\mu_j$ will replace the starting vector $v_1$ with $\left(\A-\mu_jI\right)v_1$.  Thus after completion of each loop in Algorithm \ref{alg:IRAM}:
+\begin{equation}
+    Ve_1 = v_1  \leftarrow \psi(\A)v_1;
+    \label{}
+\end{equation}
+where $\psi(\lambda) = \left(1/\tau\right) \prod_{j=1}^p\left(\lambda - \mu_j\right)$ with $\tau$ a normalization factor.  Numerous choices are possible for the selection of these $p$ shifts.  One possibility is to choose $p$ ``exact'' shifts with respect to $H$.  One could find the eigenvalues of $H$---this is simple because $H$ is small---and sort them according to largest real part or largest modulus.  The shifts would then be the $p$ smallest eigenvalues.  Selecting these exact shifts has interesting consequences in the iteration.
+
+\begin{lem}
+    Let $\lambda(H) = \left\{\theta_1,\cdots,\theta_k\right\}\cup\left\{\mu_1, \cdots, \mu_p\right\}$ be a disjoint partition of the spectrum of $H$ and let
+    \begin{equation}
+        H_+ = Q^THQ,
+        \label{}
+    \end{equation}
+    where $Q = Q_1Q_2\cdots Q_p$ with $Q_j$ implicitly determined by the shift $\mu_j$.  If $\beta_j\neq 0, 1 \leq j \leq k-1$, then $\beta_k = 0$ and
+    \begin{equation}
+        H_+ \begin{pmatrix}
+            H_k^+ & M^+ \\
+            0 R_p
+        \end{pmatrix},
+        \label{}
+    \end{equation}
+    where $\lambda\left(H_k^+\right) = \left\{\theta_1,\cdots,\theta_k\right\}$, $\lambda\left(R_p\right) = \left\{\mu_1, \mu_2,\cdots, \mu_p\right\}$. Moreover,
+    \begin{equation}
+        v_1^+ = VQe_1 = \sum x_j,
+        \label{}
+    \end{equation}
+    where each $x_j$ is a Ritz vector corresponding to the Ritz value $\theta_j$, i.e., $x_j = Vy_j$ where $Hy_j = y_j\theta_j, 1 \leq j \leq k$.
+\end{lem}
+
+This lemma provides a very nice interpretation of the iteration when exact shifts are chosen.  Casting out the unwanted set of eigenvalues using exact shifts is mathematically equivalent to restarting the Arnoldi factorization from the beginning after updating $v_1 \leftarrow \sum x_j\xi_j$, a linear combination of Ritz vectors associated with the ``wanted'' eigenvalues.  Thus the updated starting vector has been implicitly replaced by the sum of $k$ approximate eigenvectors.  Approximate eigenvectors from a Krylov subspace of dimension $k+p$ are available at each iteration for a cost of $p$ rather than $k+p$ matrix-vector products per iteration.
+
+
+\section{IRAM from ``Fundamental of Matrix Computaions''}
+After $m$ steps of the Arnoldi process we have generated $Q_m = \left[q_1 \cdots q_m\right]$.  The columns of $Q_m$ are orthonormal.  An upper Hessenberg matrix, $H_m$, is also generated.  The relationship between $Q_m$, $H_m$, and the linear operator $\A$ is formed:
+\begin{equation}
+    \A Q_m = Q_mH_m + q_{m+1}h_{m+1,m}e_m^T.
+    \label{eq:start}
+\end{equation}
+The eigenvalues of $H_m$ are the Ritz values of $\A$ associated with the subspace spanned by the columns of $Q_m$.  These eigenvalues can be ordered with the smallest $j$ eigenvalues used as shifts in the QR algorithm.  These eigenvalues approximate the region of the spectrum we are not interested in and want to suppress.
+
+IRAM performs $j$ iterations of the QR algorithm on the upper Hessenberg matrix $H_m$ using the $j$ smallest eigenvalues.  This is computationally cheap because $m$, the size of $H_m$ is small.  The effect of the QR iterations is a unitary similarity transformation
+\begin{equation}
+    \hat{H_m} = V^{-1}H_mV_m,
+    \label{eq:simTransform}
+\end{equation}
+where
+\begin{equation}
+    p(H_m) = V_mR_m,
+\end{equation}
+$V_m$ is the unitary matrix usually called $Q$ in the QR algorithm; $R_m$ is upper triangular and $p$ is a polynomial of degree $j$ with zeros equal to the shifts we previously chose.\footnote{I need to be able to show this.}
+
+The QR algorithm preserves upper Hessenberg form so $\hat{H}_m$ is also upper Hessenberg.  Let $\hat{Q}_m = Q_mV_m$, and let $\hat{q}_1$ be the first column of $\hat{Q}_m$.
+
+The next iteration of IRAM consists of $m$ more Arnoldi steps, but these don't have to be started from scratch.  To see this, multiply Eq. \ref{eq:start} by $V_m$ on the right side and use Eq. \ref{eq:simTransform} we obtain
+\begin{subequations}\begin{align}
+    \A Q_mV_m &= Q_mH_mV_m + q_{m+1}h_{m+1,m}e_m^TV_m \\
+    \A \left(Q_mV_m\right) &= Q_m\left(V_m\hat{H}_m\right) + q_{m+1}h_{m+1,m}e_m^TV_m \\
+    \A \hat{Q}_m &= \left(Q_mV_m\right)\hat{H}_m + q_{m+1}h_{m+1,m}e_m^TV_m \\
+    \A \hat{Q}_m &= \hat{Q}_m\hat{H}_m + q_{m+1}h_{m+1,m}e_m^TV_m  \label{eq:middle}
+\end{align}\end{subequations}
+One can show that $e_m^TV_m$ has $m-j-1$ leading zeros (after performing $j$ exact shifts).  If we drop the last $j$ entries from this vector we obtain $\beta e_k^T$ where $\beta$ is some non-zero scalar.  Dropping the last $j$ columns from Eq. \ref{eq:middle} we obtain
+\begin{equation}
+    \A \hat{Q}_k = \hat{Q}_k\hat{H}_k + \check{q}_{m+1}\check{h}_{k+1,k}e_k^T + q_{m+1}h_{m+1,m}\beta e_k^T.
+    \label{eq:midCheck}
+\end{equation}
+Here $\check{q}_{k+1}$ is the $(k+1)$st column of $\hat{Q}_m$ and $\check{h}_{k+1,k}$ is the $(k+1,k)$ entry of $\hat{H}_{l+1,k}$.
+
+Now we define 
+\begin{equation}
+    \hat{q}_{k+1} = \gamma\left(\check{q}_{k+1}\check{h}_{k+1,k} + q_{m+1}h_{m+1,m}\beta\right)
+\end{equation}
+with $\gamma$ such that $\|\hat{q}_{k+1}\|_2 = 1$.
+
+If we let $\hat{h}_{k+1,k} = 1/\gamma$ then Eq. \ref{eq:midCheck} becomes 
+\begin{equation}
+    \A \hat{Q}_k = \hat{Q}_k\hat{H}_k + \hat{q}_{k+1}\hat{h}_{k+1,k}e_k^T,
+\end{equation}
+which is identical to Eq. \ref{eq:start}, except for the hats on the symbols and $m$ being replaced by $k$.  Since we know that the Arnoldi vectors (the orthonormal columns of $Q$) are uniquely determined by the first column, we can conclude that this is the same equation that would have been created if Arnoldi's method had been run as usual.  Thus IRAM can start at step $k$ saving $k-1$ steps, a potentially dramatic decrease in runtime.
+
+\subsection{Why IRAM works}
+In this subsection I will describe how the shifts suppress that region of the spectrum of $\A$.
+\end{document}
+

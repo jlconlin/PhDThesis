@@ -1,0 +1,67 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = Iterations/20mfp.I30.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 0
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = false
+	arnoldimethod = explicit
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 20
+	bins = 75
+	acycles = 200
+	incycles = 20
+	active = 30
+	inactive = 2
+	Iterations = 30
+	numValues = 2
+	relaxed = 0
+	tracks = 500000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 2129521181
+
+==============================
+---Running Explicit Arnoldi---
+==============================
+
+	Iteration #: 1, time:  1.791 sec.
+	Iteration #: 2, time:  3.308 sec.
+	Iteration #: 3, time:    4.9 sec.
+	Iteration #: 4, time:  6.531 sec.
+	Iteration #: 5, time:  8.199 sec.
+	Iteration #: 6, time:  9.889 sec.
+	Iteration #: 7, time:  11.59 sec.
+	Iteration #: 8, time:  13.31 sec.
+	Iteration #: 9, time:  15.04 sec.
+	Iteration #: 10, time:  16.77 sec.
+	Iteration #: 11, time:   18.5 sec.
+	Iteration #: 12, time:  20.23 sec.
+	Iteration #: 13, time:  21.93 sec.
+	Iteration #: 14, time:  23.68 sec.
+	Iteration #: 15, time:  25.43 sec.
+	Iteration #: 16, time:  27.16 sec.
+	Iteration #: 17, time:  28.91 sec.
+	Iteration #: 18, time:  30.66 sec.
+	Iteration #: 19, time:  32.38 sec.
+	Iteration #: 20, time:  34.13 sec.
+	Iteration #: 21, time:   35.9 sec.
+	Iteration #: 22, time:  37.66 sec.
+	Iteration #: 23, time:  39.42 sec.
+	Iteration #: 24, time:  41.18 sec.
+	Iteration #: 25, time:  42.92 sec.
+	Iteration #: 26, time:  44.64 sec.
+	Iteration #: 27, time:  46.36 sec.
+	Iteration #: 28, time:   48.1 sec.
+	Iteration #: 29, time:  49.87 sec.
+Restart #: -2, mean eigvalue = (   0.98579,         0), std.dev. eigvalue = (        0,        0), res = ( 1.33E-18,        0), time:  51.65 sec.
+Stopping because residual = (1.329E-18,0) < 2.22E-16
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  St9bad_alloc

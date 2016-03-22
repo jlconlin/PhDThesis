@@ -1,0 +1,54 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = BigArnoldi-w50.Relaxed93.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 0
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = false
+	arnoldimethod = implicit
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 50
+	bins = 75
+	acycles = 200
+	incycles = 20
+	active = 1
+	inactive = 0
+	Iterations = 10
+	numValues = 2
+	relaxed = 0.1
+	tracks = 10000000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 3294502457
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+
+==============================
+---Running Implicit Arnoldi---
+==============================
+
+	Iteration #: 1, Residual =          0, N = 10000000, H = -1.997, time:   49.9 sec.
+	Iteration #: 2, Residual =   0.029648, N = 2964797, H = -1.997, time:  94.38 sec.
+	Iteration #: 3, Residual =   0.019525, N = 1952496, H = -1.997, time:  108.3 sec.
+	Iteration #: 4, Residual =   0.014333, N = 1433283, H = -1.997, time:  117.7 sec.
+	Iteration #: 5, Residual =   0.010886, N = 1088647, H = -1.997, time:  124.8 sec.
+	Iteration #: 6, Residual =  0.0085045, N = 850447, H = -1.997, time:  130.4 sec.
+	Iteration #: 7, Residual =   0.006966, N = 696602, H = -1.997, time:  134.6 sec.
+	Iteration #: 8, Residual =  0.0056754, N = 567536, H = -1.997, time:  138.2 sec.
+	Iteration #: 9, Residual =  0.0046753, N = 467533, H = -1.997, time:    141 sec.
+Restart #: 0, mean = ( 0.99723,         0), std.dev. = (      0,        0), res =   0.00384, time:  143.5 sec, FOM:        0
+
+
+Warning: empty x range [3.00213e+07:3.00213e+07], adjusting to [2.97211e+07:3.03215e+07]
+Warning: empty y range [0.997229:0.997229], adjusting to [0.987257:1.0072]
+Warning: empty x range [3.00213e+07:3.00213e+07], adjusting to [2.97211e+07:3.03215e+07]

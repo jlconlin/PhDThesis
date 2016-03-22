@@ -1,0 +1,119 @@
+%!TEX root = ../Thesis.tex
+
+\chapter{Introduction \label{ch:Introduction}}
+
+For decades \citep[see][]{Kaplan:1958Monte-0,Goad:1959A-Mon-0,Lieberoth:1968A-Mon-0,Mendelson:1968Monte-0}, the power method has been the technique of choice for calculating eigenvalues and eigenvectors of the transport-fission operator of the Boltzmann transport equation in Monte Carlo particle transport applications.  The power method is useful for estimating the fundamental or largest eigenvalue and associated eigenvector.  The fundamental eigenmode describes the reactivity of a nuclear reactor operating in steady-state conditions.
+
+The higher-order eigenmodes of the transport-fission operator are necessary to calculate the space and time dependent reactivity where there are significant changes in the flux \cite{Vashaee:2008Refer-0}.  When performing time and space dependent reactor kinetics, the shape of the neutron flux is approximated by an expansion with the eigenfunctions.  The difference between the eigenvalues defines how quickly the contributions from the higher order eigenmodes decay away \cite{Akcasu:5-0}.  Estimating the higher-order eigenmodes with computer simulation provides the reactor designer with a tool to predict the behavior of the reactor.
+
+Recently, some work has been done to estimate higher-order eigenmodes using the power method \citep{Booth:2003Compu-0}.  This dissertation will explore a heretofore unexplored approach to estimating both the fundamental and higher-order eigenmodes of the transport-fission operator: Arnoldi's method \cite{Arnoldi:1951The-P-0}.  Arnoldi's method can estimate multiple eigenvalues of a linear operator, but is particularly useful when the linear operator is large, sparse, or has no explicit form.
+
+\section{Particle Transport \label{sec:ParticleTransport}}
+The one-speed Boltzmann transport equation describing neutron transport for criticality problems,
+\begin{equation}
+    \mathbf{\Omega}\cdot\mathbf{\nabla}\psi(\mathbf{r},\mathbf{\Omega})+\Sigma_t\psi(\mathbf{r},\mathbf{\Omega}) = \frac{\Sigma_s}{4\pi}\int \psi(\mathbf{r},\mathbf{\Omega'})\;\dd\Omega' + \frac{1}{k}\frac{\nu\Sigma_f}{4\pi}\int \psi(\mathbf{r},\mathbf{\Omega'})\;\dd\Omega',
+    \label{eq:BoltzmannEquation}
+\end{equation}
+can be written in operator form
+\begin{subequations}
+    \begin{align}
+    (\mathbf{L} + \mathbf{C} - \mathbf{S})\psi &= \frac{1}{k}\mathbf{F}\psi \\
+    \intertext{or}
+    \mathbf{T}\psi &= \frac{1}{k}\mathbf{F}\psi, \label{eq:BoltzmannOperatorForm}
+\end{align}\end{subequations}
+where $\mathbf{L}, \mathbf{C},$ and $\mathbf{S}$ are the leakage, collision, and scattering operators respectively, and $\mathbf{F}$ is the fission multiplication operator; $\mathbf{T} = \mathbf{L} + \mathbf{C} - \mathbf{S}$ is the transport-collision operator.  The left-hand side of \Fref{eq:BoltzmannOperatorForm} represents the neutron loss and scattering mechanisms, and the right-hand side represents the neutron gain mechanism.  
+
+If we define
+\begin{subequations}\begin{align}
+    v &\equiv \mathbf{F}\psi, \\
+    \intertext{as the fission source and define}
+    \A &\equiv \mathbf{F}\,\mathbf{T}^{-1}  \label{eq:FissionTransportOperator}
+\end{align}\end{subequations}
+as the transport-fission operator and manipulate \Fref{eq:BoltzmannOperatorForm}, we find
+\begin{equation}
+    \A v = kv. \label{eq:evalue}
+\end{equation}
+This is a standard eigenvalue problem with eigenvalue $k$ and eigenvector $v$ for the transport-fission operator, \A.  The eigenvalue, $k$, is just the multiplication or criticality factor and the eigenvector, $v$, is the fission source.
+
+The application of \A{} in Monte Carlo calculations is conceptually simple.  Particles are sampled from the fission source and transported in the medium until they initiate a fission reaction.  Sampling and transporting particles is repeated many times and the fission sites are stored, creating a new fission source.
+
+\section{Krylov Methods \label{sec:KrylovMethods}}
+There is a class of techniques which approximate eigenvalues and eigenvectors from a subspace of the form
+\begin{equation}
+    \mathcal{K}_m(\A, v) \equiv \mathspan\left\{v, \A v, \A^2v, \ldots, \A^{m-1}v\right\};
+    \label{eq:KrylovSubspace}
+\end{equation}
+$\mathcal{K}_m(\A, v)$ is called a \emph{Krylov subspace} \citep[see][chapter VI]{Saad:1992Numer-0}.  The basis vectors of a Krylov subspace are calculated by repeated application of a linear operator \A{} on an initial starting vector $v$.  
+
+The basis vectors defining a Krylov subspace are constructed iteratively. The linear operator \A{} is applied to the starting vector $v$, getting \[v_1 = \A v.\]  In later iterations, rather than applying \A{} multiple times, the operator is applied to the result of the previous iteration 
+\begin{equation}
+    v_i = \A v_{i-1}, \qquad \mathrm{for}\; i=1,2,\ldots, m-1,
+    \label{eq:KrylovLinearOperation}
+\end{equation}
+with $v_0 = v$, the starting vector.  The vectors $\left\{v_i\right\}_{i=1}^{m-1}$ are the basis vectors for the Krylov subspace.  \Fref{eq:KrylovSubspace} can thus be written as
+\begin{equation}
+    \mathcal{K}_m(\A, v) \equiv \mathspan\left\{v_0, v_1, \ldots, v_{m-1}\right\}
+    \label{eq:KrylovSubspaceBasisVectors}
+\end{equation}
+
+It is important to note that the linear operator used to construct a Krylov subspace does not need to be known explicitly; rather, the repeated application of the operator on a vector must be known.  This characteristic is sometimes referred to as a \emph{matrix-free method} and makes Krylov subspace methods particularly attractive to Monte Carlo criticality applications, where an explicit form for the transport-fission operator does not exist.  To illustrate how Krylov subspace methods can estimate the eigenvalues and eigenvectors of \A{}, the power method---a straightforward implementation of a Krylov subspace method---will first be described.
+
+\section{Power Method \label{sec:PowerMethod}}
+The power method is ideally suited for calculating eigenvalues and eigenvectors of \A{} with Monte Carlo particle transport.  The process of sampling and transporting particles can be performed iteratively.  To do this we begin with an initial estimate of the fundamental eigenvalue and fission source, $\left(k_0, v_0\right)$, and apply the linear operator, \A.  The resulting fission source can then be sampled for the next iteration.
+
+To illustrate this iterative procedure we rearrange \Fref{eq:evalue} and add subscripts obtaining
+\begin{equation}
+    v_{j+1} = \frac{1}{k_{j}}\A v_j. \label{eq:eVectorIterative}
+\end{equation}
+Neutron positions are sampled from $v_j$ and transported by the application of \A, forming a new fission source $v_{j+1}$.  The fission source $v_{j+1}$ is a new estimate of the fundamental eigenvector.  A new estimate of the fundamental eigenvalue can be calculated as
+\begin{equation}
+    k_{j+1} = k_j\frac{\int \A v_j}{\int v_j} = k_j \frac{\int v_{j+1}}{\int v_j}.
+    \label{eq:eValueIterative}
+\end{equation}
+The integral of the fission source $\int v_j$ is the fission rate.  In Monte Carlo calculations it is the number of fission sites in the fission source, $v_j$.
+
+If \A{} has a dominant eigenvalue $\lambda_1$, that is if $\lambda_1 > \lambda_2 \geq \lambda_3 \cdots $ then the eigenpair $\left(k_j, v_j\right)$ approaches the fundamental eigenpair ($\lambda_1$ and associated eigenvector) as $j$ becomes large.  To see how this happens let us write the initial estimate of the fundamental eigenvector as a linear combination of the eigenvectors of \A
+\begin{equation}
+    v_0 = c_1y_1 + c_2y_2 + \cdots + c_ny_n,
+    \label{eq:PowerStartingVector}
+\end{equation}
+where $y_1, \ldots, y_n$ are the eigenvectors of \A{} and $c_1, \ldots, c_n$ are scalar constants.  When we apply \A{} to $v_0$, we get
+\begin{equation}\begin{split}
+    \A v_0 &= c_1\A y_1 + c_2\A y_2 + \cdots + c_n\A y_n \\
+     &= c_1\lambda_1y_1 + c_2\lambda_2y_2 + \cdots + c_n\lambda_ny_n.
+    \label{eq:FirstApplicationofA}
+\end{split}\end{equation}
+After $j$ applications of \A{} (iterations), \Fref{eq:FirstApplicationofA} becomes
+\begin{equation}\begin{split}
+    \A^j v_0 &= c_1\A^j y_1 + c_2\A^j y_2 + \cdots + c_n\A^j y_n \\
+     &= c_1\lambda_1^jy_1 + c_2\lambda_2^jy_2 + \cdots + c_n\lambda_n^jy_n.
+    \label{eq:jthApplicationofA}
+\end{split}\end{equation}
+We can factor the dominant or fundamental eigenvalue $\lambda_1$ out of \Fref{eq:jthApplicationofA} to obtain
+\begin{equation}
+    \A^j v_0 = \lambda_1^j\left[c_1y_1 + c_2\left(\frac{\lambda_2}{\lambda_1}\right)^jy_2 + \cdots + c_n\left(\frac{\lambda_n}{\lambda_1}\right)^jy_n\right].
+    \label{eq:Factorl_1}
+\end{equation}
+Note that every multiple of an eigenvector is also an eigenvector---the magnitude does not matter.  We can simplify \Fref{eq:Factorl_1} by letting $v_j = \A^jv_0/\lambda_1^j$.  Using this in \Fref{eq:Factorl_1} we have
+\begin{equation}
+    v_j = c_1y_1 + c_2\left(\frac{\lambda_2}{\lambda_1}\right)^jy_2 + \cdots + c_n\left(\frac{\lambda_n}{\lambda_1}\right)^jy_n.
+    \label{eq:Simplified}
+\end{equation}
+Since $\lambda_1$ is larger than the other eigenvalues, the factors $\left(\lambda_i/\lambda_1\right)^j$ decrease as $j$ increases and \Fref{eq:Simplified} becomes
+\begin{equation}
+    v_j = c_1y_1 + \mathcal{O}\left(\frac{\lambda_2}{\lambda_1}\right)^j.
+    \label{eq:FinalPowerFundamental}
+\end{equation}
+
+The power method generally requires many iterations before it has converged to the fundamental eigenvalue.  We can see from \Fref{eq:FinalPowerFundamental} that $v_j$ approaches the fundamental eigenvector as $\left(\lambda_2/\lambda_1\right)^j$ goes to zero; the ratio $\lambda_2/\lambda_1$ is called the dominance ratio.
+
+In Monte Carlo particle transport, while the eigenvalue is converging to the fundamental eigenvalue the results of the iterations are discarded.  These iterations are called \emph{inactive} iterations.  Once the power method has converged to the fundamental eigenvalue, \emph{active} iterations are begun.  The eigenvalue estimate calculated during each active iteration is stored.  We can calculate the mean and standard deviation of the active eigenvalue estimates.  The standard deviation can be used to estimate the statistical uncertainty in the estimate of the mean.  
+
+One major problem with the power method is the slow rate of convergence to the fundamental eigenvalue.  When \mbox{$\lambda_2 \approx \lambda_1$}---as it often is for an optically thick system---then the dominance ratio is large (close to 1) and the power method converges slowly.  When the dominance ratio is large, many inactive iterations must be performed and discarded.  It is clear that needing fewer inactive iterations is computationally more efficient than when more inactive iterations are required.  Unfortunately for the power method the number of inactive cycles required is dependent on the dominance ratio of the problem.
+
+\section{Alternatives to the Power Method \label{sec:PowerMethodAlternatives}}
+Krylov subspace alternatives to the power method exist, including the Lanczos and Arnoldi's method of minimized iterations\cite{Arnoldi:1951The-P-0}.  The Lanczos method is Arnoldi's method applied to hermitian matrices.  Arnoldi's method was chosen as the focus of this dissertation because it can estimate multiple eigenpairs of any linear operator.
+
+Like the power method, Arnoldi's method only needs to know the application of the linear operator on a vector.  The operator is still applied iteratively, but the resulting vectors are orthogonalized against all previously calculated basis vectors.  Arnoldi's method can calculate multiple eigenmodes with little additional computational expense than is required for estimating the fundamental eigenmode.
+
+This dissertation explores using Arnoldi's method instead of the power method for estimating eigenvalues and eigenvectors of the transport-fission operator \A.  In \Fref{ch:ArnoldiMethod}, the basic Arnoldi's method is presented and implementation in a Monte Carlo particle transport code is descrived.  Some new techniques used to transport unphysical, but nevertheless important, negative sources are also defined.  In \Fref{ch:SpatialDiscretization}, some challenges associated with the spatial discretization required for orthogonalization of the Krylov subspace vectors is discussed.  In \Fref{ch:RelaxedArnoldi}, a strategy used to reduce the computational expense of Arnoldi's method is shown.  In \Fref{ch:AdvancedArnoldi}, the convergence of the fission source and the accuracy of the estimated uncertainty using Arnoldi's method is discussed, both issues of current interest in the Monte Carlo particle transport community.  Finally, in \Fref{ch:Conclusions},  this work is summarized and introduces research and enhancements to Monte Carlo Arnoldi's method that needs to be investigated.

@@ -1,0 +1,1391 @@
+
+------------------------------------------
+Don't Forget the following two commands:
+
+kinit -5 jlconlin
+aklog
+------------------------------------------
+
+I ran on:  /var/spool/PBS/aux//2485295.nyx.engin.umich.edu
+Running ArnoldiResearch.
+
+Arguments:
+	source = Histogram
+	method = explicit
+	Iterations = 30
+	eigenvalues = 3
+	relaxed = 0
+	run = true
+	filename = Bins/50mfp/50mfp.b60.dat
+	terminal = dumb
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 50
+	bins = 60
+	active = 30
+	inactive = 10
+	tracks = 500000
+	ignore_rest = false
+	version = false
+	help = false
+
+Running Arnoldi's Method
+Master seed: 3158415842
+Material: [(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+
+==============================
+---Running Explicit Arnoldi---
+==============================
+
+	Iteration #: 1, H = 2.711E-312, time:  2.714 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.076 sec.
+	Iteration #: 3, H = 2.711E-312, time:  7.591 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.22 sec.
+	Iteration #: 5, H = 2.711E-312, time:  12.91 sec.
+	Iteration #: 6, H = 2.711E-312, time:  15.61 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.34 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.08 sec.
+	Iteration #: 9, H = 2.711E-312, time:  23.84 sec.
+	Iteration #: 10, H = 2.711E-312, time:  26.58 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.35 sec.
+	Iteration #: 12, H = 2.711E-312, time:   32.1 sec.
+	Iteration #: 13, H = 2.711E-312, time:  34.87 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.62 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.37 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.13 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.87 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.64 sec.
+	Iteration #: 19, H = 2.711E-312, time:   51.4 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.15 sec.
+	Iteration #: 21, H = 2.711E-312, time:   56.9 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.65 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.39 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.13 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.81 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.52 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.26 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.99 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.71 sec.
+Restart #: -10, mean = ( 0.99709,         0), std.dev. = (      0,        0), res =  4.53E-07, time:  81.45 sec
+	Iteration #: 1, H = 2.711E-312, time:  2.707 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.443 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.151 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.83 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.51 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.18 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.87 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.56 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.23 sec.
+	Iteration #: 10, H = 2.711E-312, time:  26.92 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.59 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.28 sec.
+	Iteration #: 13, H = 2.711E-312, time:  34.95 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.61 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.34 sec.
+	Iteration #: 16, H = 2.711E-312, time:  42.98 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.71 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.41 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.13 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.85 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.53 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.23 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.95 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.66 sec.
+	Iteration #: 25, H = 2.711E-312, time:   67.4 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.14 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.86 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.53 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.27 sec.
+Restart #: -9, mean = ( 0.99863,         0), std.dev. = (      0,        0), res =   1.5E-07, time:  162.4 sec
+	Iteration #: 1, H = 2.711E-312, time:  2.731 sec.
+	Iteration #: 2, H = 2.711E-312, time:   5.47 sec.
+	Iteration #: 3, H = 2.711E-312, time:   8.19 sec.
+	Iteration #: 4, H = 2.711E-312, time:   10.9 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.58 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.27 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.95 sec.
+	Iteration #: 8, H = 2.711E-312, time:   21.6 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.29 sec.
+	Iteration #: 10, H = 2.711E-312, time:  26.96 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.67 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.33 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.02 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.74 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.45 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.14 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.81 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.51 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.19 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.88 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.58 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.19 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.86 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.53 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.22 sec.
+	Iteration #: 26, H = 2.711E-312, time:  69.95 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.68 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.41 sec.
+	Iteration #: 29, H = 2.711E-312, time:   78.1 sec.
+Restart #: -8, mean = ( 0.99746,         0), std.dev. = (      0,        0), res =  2.47E-07, time:  243.2 sec
+	Iteration #: 1, H = 2.711E-312, time:  2.743 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.429 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.141 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.83 sec.
+	Iteration #: 5, H = 2.711E-312, time:   13.5 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.16 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.86 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.52 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.25 sec.
+	Iteration #: 10, H = 2.711E-312, time:  26.91 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.58 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.31 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.02 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.73 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.43 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.15 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.84 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.56 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.28 sec.
+	Iteration #: 20, H = 2.711E-312, time:     54 sec.
+	Iteration #: 21, H = 2.711E-312, time:   56.7 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.43 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.11 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.83 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.57 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.28 sec.
+	Iteration #: 27, H = 2.711E-312, time:     73 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.71 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.42 sec.
+Restart #: -7, mean = ( 0.99583,         0), std.dev. = (      0,        0), res =  1.02E-06, time:  324.3 sec
+	Iteration #: 1, H = 2.711E-312, time:   2.76 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.471 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.206 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.91 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.63 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.32 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.99 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.71 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.43 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.16 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.88 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.59 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.29 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.97 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.71 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.44 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.14 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.85 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.57 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.28 sec.
+	Iteration #: 21, H = 2.711E-312, time:  57.02 sec.
+	Iteration #: 22, H = 2.711E-312, time:   59.7 sec.
+	Iteration #: 23, H = 2.711E-312, time:   62.4 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.11 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.77 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.46 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.16 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.87 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.53 sec.
+Restart #: -6, mean = ( 0.99848,         0), std.dev. = (      0,        0), res =  5.15E-07, time:  405.6 sec
+	Iteration #: 1, H = 2.711E-312, time:  2.784 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.553 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.275 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.96 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.65 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.35 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.03 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.74 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.45 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.15 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.85 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.52 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.22 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.93 sec.
+	Iteration #: 15, H = 2.711E-312, time:   40.6 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.29 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.01 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.69 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.36 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.03 sec.
+	Iteration #: 21, H = 2.711E-312, time:   56.7 sec.
+	Iteration #: 22, H = 2.711E-312, time:   59.4 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.12 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.83 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.55 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.28 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.98 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.67 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.41 sec.
+Restart #: -5, mean = ( 0.99834,         0), std.dev. = (      0,        0), res =  2.15E-07, time:  486.7 sec
+	Iteration #: 1, H = 2.711E-312, time:  2.734 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.444 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.166 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.85 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.51 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.25 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.95 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.66 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.39 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.06 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.74 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.42 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.11 sec.
+	Iteration #: 14, H = 2.711E-312, time:   37.8 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.47 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.15 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.76 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.43 sec.
+	Iteration #: 19, H = 2.711E-312, time:   51.1 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.76 sec.
+	Iteration #: 21, H = 2.711E-312, time:   56.5 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.27 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.99 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.71 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.41 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.14 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.79 sec.
+	Iteration #: 28, H = 2.711E-312, time:   75.5 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.22 sec.
+Restart #: -4, mean = ( 0.99811,         0), std.dev. = (      0,        0), res =  1.41E-07, time:  567.7 sec
+	Iteration #: 1, H = 2.711E-312, time:   2.78 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.527 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.264 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.98 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.68 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.42 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.09 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.81 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.51 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.17 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.89 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.61 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.34 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.07 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.77 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.49 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.18 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.88 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.55 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.27 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.92 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.65 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.39 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.05 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.75 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.45 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.11 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.84 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.54 sec.
+Restart #: -3, mean = ( 0.99817,         0), std.dev. = (      0,        0), res =  1.64E-07, time:  648.9 sec
+	Iteration #: 1, H = 2.711E-312, time:  2.779 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.517 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.237 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.94 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.64 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.36 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.05 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.74 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.42 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.14 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.81 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.53 sec.
+	Iteration #: 13, H = 2.711E-312, time:   35.2 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.85 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.54 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.24 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.91 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.62 sec.
+	Iteration #: 19, H = 2.711E-312, time:   51.3 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.98 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.66 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.38 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.11 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.84 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.56 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.27 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.95 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.63 sec.
+	Iteration #: 29, H = 2.711E-312, time:   78.3 sec.
+Restart #: -2, mean = ( 0.99755,         0), std.dev. = (      0,        0), res =  1.77E-07, time:  729.9 sec
+	Iteration #: 1, H = 2.711E-312, time:   2.73 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.463 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.197 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.94 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.67 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.43 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.15 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.83 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.57 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.26 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.97 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.68 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.42 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.16 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.87 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.57 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.25 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.93 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.63 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.33 sec.
+	Iteration #: 21, H = 2.711E-312, time:  57.04 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.77 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.46 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.17 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.84 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.58 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.23 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.92 sec.
+	Iteration #: 29, H = 2.711E-312, time:   78.6 sec.
+Restart #: -1, mean = ( 0.99567,         0), std.dev. = (      0,        0), res =  5.18E-07, time:  811.2 sec
+	Iteration #: 1, H = 2.711E-312, time:  2.778 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.535 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.245 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.95 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.68 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.38 sec.
+	Iteration #: 7, H = 2.711E-312, time:   19.1 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.83 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.54 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.27 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.97 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.65 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.35 sec.
+	Iteration #: 14, H = 2.711E-312, time:   38.1 sec.
+	Iteration #: 15, H = 2.711E-312, time:   40.8 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.48 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.13 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.75 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.44 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.16 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.88 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.55 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.24 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.95 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.55 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.29 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.96 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.67 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.35 sec.
+Restart #: 0, mean = ( 0.99614,         0), std.dev. = (      0,        0), res =  7.12E-07, time:  892.3 sec, FOM:        0
+	Iteration #: 1, H = 2.711E-312, time:  2.801 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.561 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.271 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.98 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.67 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.36 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.05 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.76 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.44 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.12 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.83 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.53 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.23 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.91 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.61 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.28 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.93 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.53 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.18 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.86 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.56 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.19 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.85 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.56 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.24 sec.
+	Iteration #: 26, H = 2.711E-312, time:  69.93 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.62 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.29 sec.
+	Iteration #: 29, H = 2.711E-312, time:  77.97 sec.
+Restart #: 1, mean = (  0.9969,         0), std.dev. = (0.00054,        0), res =  1.96E-07, time:  972.9 sec, FOM:     3521
+	Iteration #: 1, H = 2.711E-312, time:  2.744 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.432 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.131 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.86 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.56 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.25 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.98 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.69 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.42 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.09 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.78 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.43 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.11 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.76 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.44 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.09 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.73 sec.
+	Iteration #: 18, H = 2.711E-312, time:   48.4 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.05 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.75 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.47 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.16 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.88 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.55 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.18 sec.
+	Iteration #: 26, H = 2.711E-312, time:  69.86 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.58 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.28 sec.
+	Iteration #: 29, H = 2.711E-312, time:  77.97 sec.
+Restart #: 2, mean = ( 0.99699,         0), std.dev. = (0.000368,        0), res =  2.37E-07, time:   1054 sec, FOM:     7024
+	Iteration #: 1, H = 2.711E-312, time:  2.745 sec.
+	Iteration #: 2, H = 2.711E-312, time:   5.44 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.121 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.85 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.51 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.17 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.88 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.59 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.28 sec.
+	Iteration #: 10, H = 2.711E-312, time:     27 sec.
+	Iteration #: 11, H = 2.711E-312, time:   29.7 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.41 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.11 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.81 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.51 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.22 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.94 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.64 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.32 sec.
+	Iteration #: 20, H = 2.711E-312, time:     54 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.67 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.36 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.99 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.69 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.34 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.04 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.71 sec.
+	Iteration #: 28, H = 2.711E-312, time:   75.4 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.07 sec.
+Restart #: 3, mean = ( 0.99653,         0), std.dev. = (0.000487,        0), res =  4.13E-07, time:   1134 sec, FOM:     3710
+	Iteration #: 1, H = 2.711E-312, time:  2.735 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.453 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.175 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.89 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.59 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.31 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.01 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.71 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.39 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.09 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.81 sec.
+	Iteration #: 12, H = 2.711E-312, time:   32.5 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.17 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.88 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.54 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.23 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.87 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.61 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.29 sec.
+	Iteration #: 20, H = 2.711E-312, time:     54 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.72 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.48 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.17 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.86 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.57 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.31 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.03 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.74 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.42 sec.
+Restart #: 4, mean = (  0.9968,         0), std.dev. = (0.000459,        0), res =  3.21E-07, time:   1215 sec, FOM:     3900
+	Iteration #: 1, H = 2.711E-312, time:  2.784 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.537 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.256 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.96 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.64 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.31 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.03 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.71 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.37 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.05 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.73 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.39 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.04 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.71 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.34 sec.
+	Iteration #: 16, H = 2.711E-312, time:  42.99 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.69 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.36 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.05 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.77 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.46 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.19 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.89 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.57 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.27 sec.
+	Iteration #: 26, H = 2.711E-312, time:  69.99 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.71 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.43 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.12 sec.
+Restart #: 5, mean = ( 0.99691,         0), std.dev. = (0.000396,        0), res =  1.37E-07, time:   1296 sec, FOM:     4922
+	Iteration #: 1, H = 2.711E-312, time:  2.706 sec.
+	Iteration #: 2, H = 2.711E-312, time:    5.4 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.114 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.81 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.51 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.19 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.89 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.57 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.29 sec.
+	Iteration #: 10, H = 2.711E-312, time:  26.99 sec.
+	Iteration #: 11, H = 2.711E-312, time:   29.7 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.41 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.09 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.77 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.45 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.14 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.78 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.46 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.14 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.81 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.55 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.25 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.95 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.61 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.35 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.06 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.75 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.39 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.12 sec.
+Restart #: 6, mean = (  0.9969,         0), std.dev. = (0.000339,        0), res =  3.49E-07, time:   1377 sec, FOM:     6303
+	Iteration #: 1, H = 2.711E-312, time:  2.743 sec.
+	Iteration #: 2, H = 2.711E-312, time:   5.45 sec.
+	Iteration #: 3, H = 2.711E-312, time:    8.2 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.92 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.65 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.37 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.06 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.77 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.47 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.16 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.87 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.59 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.29 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.01 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.73 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.42 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.09 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.82 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.51 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.17 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.88 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.56 sec.
+	Iteration #: 23, H = 2.711E-312, time:   62.3 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.93 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.58 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.24 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.89 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.59 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.21 sec.
+Restart #: 7, mean = (   0.997,         0), std.dev. = (0.00031,        0), res =  4.13E-07, time:   1458 sec, FOM:     7116
+	Iteration #: 1, H = 2.711E-312, time:  2.724 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.479 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.183 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.93 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.63 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.31 sec.
+	Iteration #: 7, H = 2.711E-312, time:     19 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.68 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.36 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.08 sec.
+	Iteration #: 11, H = 2.711E-312, time:   29.8 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.53 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.22 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.88 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.54 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.21 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.86 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.55 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.24 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.92 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.62 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.35 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.05 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.74 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.42 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.14 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.84 sec.
+	Iteration #: 28, H = 2.711E-312, time:   75.5 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.19 sec.
+Restart #: 8, mean = ( 0.99705,         0), std.dev. = (0.000281,        0), res =  4.34E-07, time:   1539 sec, FOM:     8245
+	Iteration #: 1, H = 2.711E-312, time:  2.783 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.542 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.242 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.93 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.64 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.32 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.02 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.73 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.41 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.11 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.79 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.48 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.22 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.94 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.63 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.32 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.02 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.72 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.42 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.12 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.81 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.48 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.14 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.86 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.55 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.25 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.96 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.63 sec.
+	Iteration #: 29, H = 2.711E-312, time:   78.3 sec.
+Restart #: 9, mean = ( 0.99712,         0), std.dev. = (0.000261,        0), res =  8.23E-08, time:   1620 sec, FOM:     9082
+	Iteration #: 1, H = 2.711E-312, time:  2.721 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.451 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.179 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.87 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.54 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.26 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.93 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.63 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.33 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.05 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.76 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.45 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.16 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.86 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.57 sec.
+	Iteration #: 16, H = 2.711E-312, time:   43.2 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.89 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.58 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.28 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.03 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.76 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.45 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.13 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.83 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.52 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.18 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.87 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.53 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.21 sec.
+Restart #: 10, mean = ( 0.99719,         0), std.dev. = (0.000246,        0), res =  2.69E-07, time:   1701 sec, FOM:     9737
+	Iteration #: 1, H = 2.711E-312, time:  2.784 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.555 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.295 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.99 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.65 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.35 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.01 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.68 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.32 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.03 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.71 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.38 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.04 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.69 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.42 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.12 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.83 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.55 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.34 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.11 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.83 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.54 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.21 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.89 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.58 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.27 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.01 sec.
+	Iteration #: 28, H = 2.711E-312, time:   75.7 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.38 sec.
+Restart #: 11, mean = ( 0.99717,         0), std.dev. = (0.000226,        0), res =  3.96E-07, time:   1782 sec, FOM: 1.101E+04
+	Iteration #: 1, H = 2.711E-312, time:  2.707 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.425 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.131 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.83 sec.
+	Iteration #: 5, H = 2.711E-312, time:   13.5 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.18 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.91 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.59 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.29 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.01 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.71 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.36 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.05 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.73 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.44 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.13 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.79 sec.
+	Iteration #: 18, H = 2.711E-312, time:   48.5 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.21 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.94 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.64 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.29 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.91 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.59 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.28 sec.
+	Iteration #: 26, H = 2.711E-312, time:  69.98 sec.
+	Iteration #: 27, H = 2.711E-312, time:   72.7 sec.
+	Iteration #: 28, H = 2.711E-312, time:   75.4 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.09 sec.
+Restart #: 12, mean = ( 0.99725,         0), std.dev. = (0.000222,        0), res =  1.85E-07, time:   1862 sec, FOM: 1.092E+04
+	Iteration #: 1, H = 2.711E-312, time:  2.745 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.467 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.193 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.92 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.62 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.26 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.96 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.63 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.31 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.03 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.73 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.44 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.16 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.86 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.58 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.27 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.93 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.66 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.34 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.08 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.74 sec.
+	Iteration #: 22, H = 2.711E-312, time:   59.4 sec.
+	Iteration #: 23, H = 2.711E-312, time:   62.1 sec.
+	Iteration #: 24, H = 2.711E-312, time:   64.8 sec.
+	Iteration #: 25, H = 2.711E-312, time:   67.5 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.16 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.84 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.52 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.18 sec.
+Restart #: 13, mean = ( 0.99723,         0), std.dev. = (0.000207,        0), res =  1.49E-07, time:   1943 sec, FOM: 1.205E+04
+	Iteration #: 1, H = 2.711E-312, time:  2.771 sec.
+	Iteration #: 2, H = 2.711E-312, time:   5.52 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.238 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.93 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.62 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.27 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.99 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.74 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.45 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.18 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.89 sec.
+	Iteration #: 12, H = 2.711E-312, time:   32.6 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.31 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.05 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.78 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.47 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.23 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.95 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.64 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.35 sec.
+	Iteration #: 21, H = 2.711E-312, time:  57.03 sec.
+	Iteration #: 22, H = 2.711E-312, time:   59.7 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.43 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.13 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.85 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.49 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.15 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.84 sec.
+	Iteration #: 29, H = 2.711E-312, time:   78.5 sec.
+Restart #: 14, mean = ( 0.99709,         0), std.dev. = (0.000238,        0), res =  5.39E-07, time:   2025 sec, FOM:     8750
+	Iteration #: 1, H = 2.711E-312, time:  2.756 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.485 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.212 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.93 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.64 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.35 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.06 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.78 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.46 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.17 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.83 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.52 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.16 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.85 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.52 sec.
+	Iteration #: 16, H = 2.711E-312, time:   43.2 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.93 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.66 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.37 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.06 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.78 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.47 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.16 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.86 sec.
+	Iteration #: 25, H = 2.711E-312, time:   67.6 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.28 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.97 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.68 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.33 sec.
+Restart #: 15, mean = ( 0.99705,         0), std.dev. = (0.000225,        0), res =  4.63E-07, time:   2105 sec, FOM:     9343
+	Iteration #: 1, H = 2.711E-312, time:  2.767 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.533 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.255 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.97 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.69 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.41 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.11 sec.
+	Iteration #: 8, H = 2.711E-312, time:   21.8 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.49 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.16 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.89 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.55 sec.
+	Iteration #: 13, H = 2.711E-312, time:   35.2 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.91 sec.
+	Iteration #: 15, H = 2.711E-312, time:   40.6 sec.
+	Iteration #: 16, H = 2.711E-312, time:   43.3 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.03 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.74 sec.
+	Iteration #: 19, H = 2.711E-312, time:   51.4 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.11 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.79 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.49 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.19 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.89 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.63 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.33 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.09 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.78 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.45 sec.
+Restart #: 16, mean = ( 0.99718,         0), std.dev. = (0.000247,        0), res =  7.36E-08, time:   2187 sec, FOM:     7497
+	Iteration #: 1, H = 2.711E-312, time:  2.795 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.539 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.254 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.92 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.62 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.31 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.03 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.72 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.48 sec.
+	Iteration #: 10, H = 2.711E-312, time:   27.2 sec.
+	Iteration #: 11, H = 2.711E-312, time:   29.9 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.63 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.37 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.08 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.83 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.56 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.26 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.95 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.69 sec.
+	Iteration #: 20, H = 2.711E-312, time:   54.4 sec.
+	Iteration #: 21, H = 2.711E-312, time:  57.11 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.82 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.57 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.32 sec.
+	Iteration #: 25, H = 2.711E-312, time:  68.05 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.75 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.48 sec.
+	Iteration #: 28, H = 2.711E-312, time:  76.16 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.89 sec.
+Restart #: 17, mean = ( 0.99715,         0), std.dev. = (0.000235,        0), res =  3.72E-07, time:   2268 sec, FOM:     7993
+	Iteration #: 1, H = 2.711E-312, time:  2.758 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.511 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.228 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.93 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.62 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.33 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.09 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.81 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.53 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.22 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.93 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.61 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.32 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.02 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.73 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.39 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.12 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.82 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.52 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.22 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.93 sec.
+	Iteration #: 22, H = 2.711E-312, time:   59.6 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.33 sec.
+	Iteration #: 24, H = 2.711E-312, time:     65 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.71 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.37 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.04 sec.
+	Iteration #: 28, H = 2.711E-312, time:   75.7 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.38 sec.
+Restart #: 18, mean = ( 0.99716,         0), std.dev. = (0.000223,        0), res =  3.25E-07, time:   2349 sec, FOM:     8598
+	Iteration #: 1, H = 2.711E-312, time:   2.75 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.465 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.176 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.88 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.55 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.28 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.98 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.71 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.44 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.12 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.84 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.52 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.23 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.98 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.75 sec.
+	Iteration #: 16, H = 2.711E-312, time:   43.5 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.24 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.94 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.69 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.41 sec.
+	Iteration #: 21, H = 2.711E-312, time:  57.12 sec.
+	Iteration #: 22, H = 2.711E-312, time:   59.8 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.51 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.22 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.94 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.62 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.33 sec.
+	Iteration #: 28, H = 2.711E-312, time:  76.06 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.79 sec.
+Restart #: 19, mean = ( 0.99722,         0), std.dev. = (0.000221,        0), res =  2.06E-07, time:   2431 sec, FOM:     8392
+	Iteration #: 1, H = 2.711E-312, time:  2.797 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.537 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.262 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.94 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.62 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.31 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.03 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.71 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.41 sec.
+	Iteration #: 10, H = 2.711E-312, time:   27.1 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.78 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.48 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.19 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.94 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.68 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.42 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.12 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.83 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.52 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.22 sec.
+	Iteration #: 21, H = 2.711E-312, time:     57 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.72 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.47 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.16 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.87 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.57 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.28 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.94 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.63 sec.
+Restart #: 20, mean = (  0.9972,         0), std.dev. = (0.000212,        0), res =  2.96E-07, time:   2512 sec, FOM:     8853
+	Iteration #: 1, H = 2.711E-312, time:   2.76 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.452 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.162 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.88 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.56 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.25 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.95 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.64 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.31 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.03 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.73 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.49 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.22 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.94 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.67 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.39 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.13 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.81 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.53 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.19 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.95 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.68 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.38 sec.
+	Iteration #: 24, H = 2.711E-312, time:   65.1 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.86 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.57 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.31 sec.
+	Iteration #: 28, H = 2.711E-312, time:  76.04 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.76 sec.
+Restart #: 21, mean = ( 0.99731,         0), std.dev. = (0.000231,        0), res =  1.98E-07, time:   2593 sec, FOM:     7252
+	Iteration #: 1, H = 2.711E-312, time:  2.748 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.496 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.209 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.89 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.59 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.31 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.98 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.69 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.41 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.11 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.83 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.57 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.29 sec.
+	Iteration #: 14, H = 2.711E-312, time:     38 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.73 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.44 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.15 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.88 sec.
+	Iteration #: 19, H = 2.711E-312, time:   51.6 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.29 sec.
+	Iteration #: 21, H = 2.711E-312, time:     57 sec.
+	Iteration #: 22, H = 2.711E-312, time:   59.7 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.41 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.11 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.79 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.46 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.14 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.82 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.54 sec.
+Restart #: 22, mean = (  0.9973,         0), std.dev. = (0.000221,        0), res =   1.6E-07, time:   2675 sec, FOM:     7665
+	Iteration #: 1, H = 2.711E-312, time:  2.757 sec.
+	Iteration #: 2, H = 2.711E-312, time:   5.52 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.252 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.95 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.66 sec.
+	Iteration #: 6, H = 2.711E-312, time:   16.4 sec.
+	Iteration #: 7, H = 2.711E-312, time:   19.1 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.77 sec.
+	Iteration #: 9, H = 2.711E-312, time:   24.5 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.19 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.92 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.61 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.37 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.07 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.79 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.54 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.26 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.97 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.66 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.37 sec.
+	Iteration #: 21, H = 2.711E-312, time:  57.09 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.81 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.49 sec.
+	Iteration #: 24, H = 2.711E-312, time:  65.16 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.87 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.59 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.31 sec.
+	Iteration #: 28, H = 2.711E-312, time:  76.03 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.73 sec.
+Restart #: 23, mean = ( 0.99728,         0), std.dev. = (0.000213,        0), res =  2.48E-07, time:   2756 sec, FOM:     8016
+	Iteration #: 1, H = 2.711E-312, time:  2.716 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.413 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.154 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.83 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.54 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.24 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.91 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.63 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.33 sec.
+	Iteration #: 10, H = 2.711E-312, time:     27 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.72 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.41 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.11 sec.
+	Iteration #: 14, H = 2.711E-312, time:   37.8 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.47 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.18 sec.
+	Iteration #: 17, H = 2.711E-312, time:  45.87 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.54 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.22 sec.
+	Iteration #: 20, H = 2.711E-312, time:  53.91 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.59 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.29 sec.
+	Iteration #: 23, H = 2.711E-312, time:  61.98 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.66 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.36 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.07 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.77 sec.
+	Iteration #: 28, H = 2.711E-312, time:   75.5 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.19 sec.
+Restart #: 24, mean = (  0.9973,         0), std.dev. = (0.000205,        0), res =  1.53E-07, time:   2837 sec, FOM:     8396
+	Iteration #: 1, H = 2.711E-312, time:  2.755 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.478 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.203 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.91 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.61 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.28 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.98 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.67 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.38 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.08 sec.
+	Iteration #: 11, H = 2.711E-312, time:   29.8 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.53 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.28 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.99 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.68 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.37 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.11 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.86 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.57 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.27 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.96 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.61 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.28 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.97 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.68 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.39 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.08 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.82 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.51 sec.
+Restart #: 25, mean = ( 0.99732,         0), std.dev. = (0.000199,        0), res =  1.55E-07, time:   2918 sec, FOM:     8672
+	Iteration #: 1, H = 2.711E-312, time:  2.693 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.383 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.107 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.82 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.54 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.26 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.97 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.67 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.42 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.11 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.81 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.52 sec.
+	Iteration #: 13, H = 2.711E-312, time:   35.2 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.92 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.61 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.32 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.03 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.71 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.45 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.12 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.78 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.46 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.17 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.82 sec.
+	Iteration #: 25, H = 2.711E-312, time:   67.5 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.19 sec.
+	Iteration #: 27, H = 2.711E-312, time:  72.91 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.61 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.26 sec.
+Restart #: 26, mean = (  0.9973,         0), std.dev. = (0.000193,        0), res =  3.09E-07, time:   2999 sec, FOM:     8950
+	Iteration #: 1, H = 2.711E-312, time:  2.768 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.489 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.208 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.93 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.62 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.35 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.05 sec.
+	Iteration #: 8, H = 2.711E-312, time:   21.8 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.49 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.18 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.87 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.62 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.32 sec.
+	Iteration #: 14, H = 2.711E-312, time:  38.05 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.73 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.43 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.13 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.86 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.57 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.27 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.99 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.68 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.37 sec.
+	Iteration #: 24, H = 2.711E-312, time:   65.1 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.82 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.53 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.23 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.95 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.66 sec.
+Restart #: 27, mean = ( 0.99726,         0), std.dev. = (0.000189,        0), res =  6.07E-07, time:   3081 sec, FOM:     9086
+	Iteration #: 1, H = 2.711E-312, time:   2.75 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.486 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.203 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.86 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.53 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.24 sec.
+	Iteration #: 7, H = 2.711E-312, time:  18.94 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.64 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.35 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.07 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.81 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.53 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.24 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.94 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.62 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.29 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.02 sec.
+	Iteration #: 18, H = 2.711E-312, time:   48.7 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.39 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.09 sec.
+	Iteration #: 21, H = 2.711E-312, time:   56.8 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.46 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.19 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.87 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.56 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.26 sec.
+	Iteration #: 27, H = 2.711E-312, time:     73 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.67 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.37 sec.
+Restart #: 28, mean = ( 0.99724,         0), std.dev. = (0.000184,        0), res =  4.31E-07, time:   3162 sec, FOM:     9362
+	Iteration #: 1, H = 2.711E-312, time:  2.782 sec.
+	Iteration #: 2, H = 2.711E-312, time:  5.544 sec.
+	Iteration #: 3, H = 2.711E-312, time:  8.279 sec.
+	Iteration #: 4, H = 2.711E-312, time:  10.97 sec.
+	Iteration #: 5, H = 2.711E-312, time:  13.67 sec.
+	Iteration #: 6, H = 2.711E-312, time:  16.41 sec.
+	Iteration #: 7, H = 2.711E-312, time:  19.11 sec.
+	Iteration #: 8, H = 2.711E-312, time:  21.78 sec.
+	Iteration #: 9, H = 2.711E-312, time:  24.46 sec.
+	Iteration #: 10, H = 2.711E-312, time:  27.16 sec.
+	Iteration #: 11, H = 2.711E-312, time:  29.84 sec.
+	Iteration #: 12, H = 2.711E-312, time:  32.52 sec.
+	Iteration #: 13, H = 2.711E-312, time:  35.27 sec.
+	Iteration #: 14, H = 2.711E-312, time:  37.96 sec.
+	Iteration #: 15, H = 2.711E-312, time:  40.68 sec.
+	Iteration #: 16, H = 2.711E-312, time:  43.35 sec.
+	Iteration #: 17, H = 2.711E-312, time:  46.07 sec.
+	Iteration #: 18, H = 2.711E-312, time:  48.78 sec.
+	Iteration #: 19, H = 2.711E-312, time:  51.49 sec.
+	Iteration #: 20, H = 2.711E-312, time:  54.22 sec.
+	Iteration #: 21, H = 2.711E-312, time:  56.92 sec.
+	Iteration #: 22, H = 2.711E-312, time:  59.63 sec.
+	Iteration #: 23, H = 2.711E-312, time:  62.29 sec.
+	Iteration #: 24, H = 2.711E-312, time:  64.98 sec.
+	Iteration #: 25, H = 2.711E-312, time:  67.66 sec.
+	Iteration #: 26, H = 2.711E-312, time:  70.34 sec.
+	Iteration #: 27, H = 2.711E-312, time:  73.03 sec.
+	Iteration #: 28, H = 2.711E-312, time:  75.75 sec.
+	Iteration #: 29, H = 2.711E-312, time:  78.47 sec.
+Restart #: 29, mean = ( 0.99721,         0), std.dev. = (0.00018,        0), res =  3.25E-07, time:   3243 sec, FOM:     9484
+set terminal dumb
+
+r: [10]((0.99709,0),(0.998634,0),(0.997463,0),(0.99583,0),(0.998477,0),(0.99834,0),(0.998109,0),(0.998173,0),(0.997548,0),(0.995666,0))
+
+r: [10]((0.989134,0),(0.989854,0),(0.989097,0),(0.990915,0),(0.989111,0),(0.988419,0),(0.988884,0),(0.987607,0),(0.989808,0),(0.98939,0))
+
+r: [10]((0.977978,0),(0.975867,0),(0.97736,0),(0.977453,0),(0.976979,0),(0.976162,0),(0.977794,0),(0.974842,0),(0.976382,0),(0.976495,0))
+                                   Eigenvectors
+./../ArnoldiResearch --verbose 2 --width 50 --relaxed 0 --eigenvalues 3 --track
+ --Iterations 30 --active 30 --seed 0 --run --bins 60 -f Bins/50mfp/50mfp.b60.d
+
+     0 *+-----+------+------+------+------+-----+------+------+------+-----+*
+       **     +      +      +      +      +     +      +     RAM l-0 ********
+ -0.02 +**                                                                **+
+       | ****                                                            ** |
+ -0.04 ++   **                                                         *** ++
+       |     **                                                       **    |
+ -0.06 ++     ***                                                   ***    ++
+       |        **                                                 **       |
+ -0.08 ++        ****                                             **       ++
+  -0.1 ++           **                                          ***        ++
+       |             ***                                      ***           |
+ -0.12 ++              **                                    **            ++
+       |                ****                               ***              |
+ -0.14 ++                  ***                            **               ++
+       |                     ***                      *****                 |
+ -0.16 ++                      ***                  ***                    ++
+       +      +      +      +    ******   +     *****  +      +      +      +
+ -0.18 ++-----+------+------+------+--***********------+------+------+-----++
+       0      5      10     15     20     25    30     35     40     45     50
+
+                                   Eigenvectors
+./../ArnoldiResearch --verbose 2 --width 50 --relaxed 0 --eigenvalues 3 --track
+ --Iterations 30 --active 30 --seed 0 --run --bins 60 -f Bins/50mfp/50mfp.b60.d
+
+   0.2 ++-----+------+------+------+------+-----+------+------+------+-----++
+       +      +    ###########     +      +     +      +     RAM l-0 ****** +
+  0.15 ++       ####         ###                             RAM l-1 ######++
+       |      ###              ###                                          |
+   0.1 ++    ##                  ####                                      ++
+       |  ####                      ##                                      |
+  0.05 ++##                          ##                                    ++
+       ###                            ###                                   |
+     0 *+                               ###                                +*
+       ***                                ##                               **
+       | *****                             ###                         *****|
+ -0.05 ++    ****                            ##                     **** ##++
+       |        *****                         ###               ***** ####  |
+  -0.1 ++           *****                       ###          ****   ###    ++
+       |                ******                    ###     ****    ###       |
+ -0.15 ++                    *******                *******   #####        ++
+       +      +      +      +      ******************  ########      +      +
+  -0.2 ++-----+------+------+------+------+-----+------+------+------+-----++
+       0      5      10     15     20     25    30     35     40     45     50
+
+                                   Eigenvectors
+./../ArnoldiResearch --verbose 2 --width 50 --relaxed 0 --eigenvalues 3 --track
+ --Iterations 30 --active 30 --seed 0 --run --bins 60 -f Bins/50mfp/50mfp.b60.d
+
+   0.2 ++-----+------+------+------+------+-----+------+------+------+-----++
+       +      +$$$$###########     +      +     +      +     RAM l-0$****** +
+  0.15 ++    $$$#### $$$     ###                            $RAM l-1$######++
+       |    $$###      $$      ###                         $$RAM l-2 $$$$$$ |
+   0.1 ++ $$$##         $$       ####                     $$           $$$ ++
+       | $####           $$$        ##                  $$$              $$ |
+  0.05 +$##                $$        ##                $$                 $$+
+       ###                  $$        ###             $$                   $$
+     0 *+                    $$         ###          $$                    +*
+       ***                    $           ##        $$                     **
+       | *****                $$           ###     $$                  *****|
+ -0.05 ++    ****              $$            ##    $                **** ##++
+       |        *****           $$            ### $$            ***** ####  |
+  -0.1 ++           *****        $$$            ###          ****   ###    ++
+       |                ******     $$         $$$ ###     ****    ###       |
+ -0.15 ++                    *******$$$      $$     *******   #####        ++
+       +      +      +      +      ******************  ########      +      +
+  -0.2 ++-----+------+------+------+------+-----+------+------+------+-----++
+       0      5      10     15     20     25    30     35     40     45     50
+
+                                     Eigenvalues
+./../ArnoldiResearch --verbose 2 --width 50 --relaxed 0 --eigenvalues 3 --track
+ --Iterations 30 --active 30 --seed 0 --run --bins 60 -f Bins/50mfp/50mfp.b60.d
+Mean Eigenvalues
+   0.999 ++---------+----------+-----------+----------+----------+---------++
+         +          +          +           +          +      RAM l-0 **A*** +
+  0.9985 ++ A    A                                                         ++
+         |         A                                                        |
+         |           AA                                                     |
+   0.998 ++                                                                ++
+         |                                                                  |
+  0.9975 ++   A         A    *             ** * **    * * ** * ** * ** * **+*
+         |                   * *  * ** * * *A A AA * *A A AA A AA A AA A AA A
+   0.997 ++A                 * A* * ** A A A* * ** A A* * ** * ** * ** * **+*
+         |                   A ** A AA * * *       * *  *                   |
+  0.9965 ++                  * *A * ** *                                   ++
+         |                   *  * *                                         |
+         |                 A    *                                           |
+   0.996 ++     A               *                                          ++
+         +          +     A    +           +          +          +          +
+  0.9955 ++---------+----------+-----------+----------+----------+---------++
+         0        1e+08      2e+08       3e+08      4e+08      5e+08      6e+08
+                                  Histories Tracked
+
+                                     Eigenvalues
+./../ArnoldiResearch --verbose 2 --width 50 --relaxed 0 --eigenvalues 3 --track
+ --Iterations 30 --active 30 --seed 0 --run --bins 60 -f Bins/50mfp/50mfp.b60.d
+Mean Eigenvalues
+      1 ++---------+-----------+----------+----------+-----------+---------++
+        +          +           +          +          +       RAM l-0 **A*** +
+  0.998 ++ A     AA A A                                      RAM l-1 ##B###++
+        | A  A         A    * A * ** * AA A AA A A AA A AA A AA A A AA A AA A
+        |                  AA * A AA A ** *        ** * **                  |
+  0.996 ++     A         A      *                                          ++
+        |                                                                   |
+  0.994 ++                                                                 ++
+        |                                                                   |
+  0.992 ++                                                                 ++
+        |      B                                                            |
+   0.99 ++                 B#   #       # # #B B # ##   #    ## #          ++
+        | BB B   B     B B  B B B BB B BB B B# # B BB B BB B BB B B BB B BB B
+        |         B B                                                       |
+  0.988 ++            B                                                    ++
+        +          +           +          +          +           +          +
+  0.986 ++---------+-----------+----------+----------+-----------+---------++
+        0        1e+08       2e+08      3e+08      4e+08       5e+08      6e+08
+                                  Histories Tracked
+
+                                     Eigenvalues
+./../ArnoldiResearch --verbose 2 --width 50 --relaxed 0 --eigenvalues 3 --track
+ --Iterations 30 --active 30 --seed 0 --run --bins 60 -f Bins/50mfp/50mfp.b60.d
+Mean Eigenvalues
+      1 ++---------+-----------+----------+----------+-----------+---------++
+        +  A A   AA+A AA    * *+  ** * ** * ** A A **+* ** A RAM l-0AA*A*AA A
+        | A    A         A AA A A AA A AA A AA * * AA A AA * RAM l-1**#B#** *
+  0.995 ++                                                   RAM l-2 $$C$$$++
+        |                                                                   |
+   0.99 ++ B   B       B   BB # B ## # #B B BB B B BB B BB B BB B B ## # B#+#
+        | B  B   BB B    B  # B # BB B B# # #    # ## # ## # ## # # BB B #B B
+        |             B                                                     |
+  0.985 ++                                                                 ++
+        |                                                                   |
+        |                                                                   |
+   0.98 ++                                                                 ++
+        | C  C C C  C      C$ C $ $$ $ $$ $ $$     $$ $ $$ C $$ $ $ $$ $ $$ $
+  0.975 ++ C      C   CC C  C $ C CC C CC C CC C C CC C CC $ CC C C CC C CC+C
+        |                                                                   |
+        +          +           +          +          +           +          +
+   0.97 ++---------+-----------+----------+----------+-----------+---------++
+        0        1e+08       2e+08      3e+08      4e+08       5e+08      6e+08
+                                  Histories Tracked
+

@@ -1,0 +1,57 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = Desired/20mfp.n7.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 2
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = true
+	arnoldimethod = implicit
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 20
+	bins = 50
+	acycles = 200
+	incycles = 20
+	active = 20
+	inactive = 0
+	Iterations = 15
+	numValues = 7
+	tracks = 500000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 3711289163
+
+==============================
+---Running Implicit Arnoldi---
+==============================
+
+	Iteration #: 1, time:  2.661 sec.
+	Iteration #: 2, time:  5.048 sec.
+	Iteration #: 3, time:  7.513 sec.
+	Iteration #: 4, time:  10.04 sec.
+	Iteration #: 5, time:  12.59 sec.
+	Iteration #: 6, time:  15.18 sec.
+	Iteration #: 7, time:  17.78 sec.
+	Iteration #: 8, time:  20.39 sec.
+	Iteration #: 9, time:  23.02 sec.
+	Iteration #: 10, time:  25.66 sec.
+	Iteration #: 11, time:  28.33 sec.
+	Iteration #: 12, time:  30.99 sec.
+	Iteration #: 13, time:  33.58 sec.
+	Iteration #: 14, time:  36.18 sec.
+Restart #: 0, mean eigvalue = (   0.98499,         0), std.dev. eigvalue = (        0,        0), res = ( 2.19E-06,        0), time:  38.84 sec.
+	Iteration #: 8, time:  4E-06 sec.
+	Iteration #: 9, time:  2.613 sec.
+	Iteration #: 10, time:  5.242 sec.
+	Iteration #: 11, time:  7.896 sec.
+	Iteration #: 12, time:  10.52 sec.
+	Iteration #: 13, time:  13.15 sec.
+	Iteration #: 14, time:  15.79 sec.
+Restart #: 1, mean eigvalue = (   0.98499,-8.4663E-17), std.dev. eigvalue = ( 7.85E-17, 7.85E-17), res = ( 1.58E-21,        0), time:  57.27 sec.
+Stopping because residual = (1.579E-21,0) < 2.22E-16

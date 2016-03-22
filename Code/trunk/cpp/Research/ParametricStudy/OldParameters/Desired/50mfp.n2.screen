@@ -1,0 +1,53 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = Desired/50mfp.n2.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 2
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = true
+	arnoldimethod = implicit
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 50
+	bins = 75
+	acycles = 200
+	incycles = 20
+	active = 20
+	inactive = 0
+	Iterations = 15
+	numValues = 2
+	tracks = 500000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 3732526513
+
+==============================
+---Running Implicit Arnoldi---
+==============================
+
+	Iteration #: 1, time:  3.334 sec.
+	Iteration #: 2, time:  6.359 sec.
+	Iteration #: 3, time:  9.435 sec.
+	Iteration #: 4, time:   12.6 sec.
+	Iteration #: 5, time:  15.81 sec.
+	Iteration #: 6, time:  19.06 sec.
+	Iteration #: 7, time:  22.36 sec.
+	Iteration #: 8, time:  25.66 sec.
+	Iteration #: 9, time:  28.95 sec.
+	Iteration #: 10, time:  32.26 sec.
+	Iteration #: 11, time:  35.58 sec.
+	Iteration #: 12, time:  38.92 sec.
+	Iteration #: 13, time:  42.24 sec.
+	Iteration #: 14, time:  45.56 sec.
+Restart #: 0, mean eigvalue = (   0.99798,         0), std.dev. eigvalue = (        0,        0), res = ( 0.000723,        0), time:  48.87 sec.
+	Iteration #: 13, time:  3E-06 sec.
+	Iteration #: 14, time:  3.326 sec.
+Restart #: 1, mean eigvalue = (   0.99798,        -0), std.dev. eigvalue = (        0,        0), res = (  4.9E-20,        0), time:   55.5 sec.
+Stopping because residual = (4.904E-20,0) < 2.22E-16
+Warning: empty y range [0.997981:0.997981], adjusting to [0.988001:1.00796]

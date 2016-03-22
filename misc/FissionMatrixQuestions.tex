@@ -1,0 +1,47 @@
+% Questions about the Fission Matrix initiated by Prof. Holloway's paper.
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+
+\title{Questions Regarding Fission Matrix ideas}
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\begin{enumerate}
+    \item Why do we need $PGPq = kq$ when we already have $Gq = kq$?  What is the difference?  What about $T$, how does he play into all this?
+     
+    I think the need for this is to map $G$ to the Monte Carlo space from ``reality'' space.  So when Holloway writes $P:Q\rightarrow T$, this means that we take a particle in ``reality'' space and map it into a ``binned'' Monte Carlo space or some other space that the computer can understand and manipulate.  \\[2in]
+
+    \item Is the $T$ in 
+    \begin{equation}
+        \left(T\psi = \frac{1}{k}F\psi\right)
+    \end{equation}
+    the same as in $P:Q\rightarrow T$?
+
+\end{enumerate}
+\subsection{The fission matrix}
+\begin{enumerate}
+    \item What is $\{p_n\}$?  How are $p_n$ related to $P$?
+
+    I think $p_n$'s are the basis functions (e.g., histograms, Legendre, etc.).  The expansion coefficients are the $x_n$'s.  Using $x$'s and $p$'s we can write any $q$ as $q = \sum_n x_np_n$.\\[1in]
+
+    \item What is the difference between $p_n$ and $p_n^{\dagger}$?  Why do we need a \emph{biorthonormal} basis instead of a simple orthonormal basis?
+
+    \item How can I calculate $p_n$, $p_n^{\dagger}$, and $x_n$?  They all seem to depend on each other.  
+
+    If $p_n$ is one of the expansion functions, then $x_n$ is calculated during the Markov Chain.  If this is the case then we know $p_n$ and $x_n$, but how to we find $p_n^{\dagger}$?
+\end{enumerate}
+
+\section{Working with A}
+No specific questions here, but I don't fully understand how one might generate the matrix $\mathbf{A}$ using FET modes. 
+\section{General Questions}
+\begin{enumerate}
+    \item Why is this different from a typical Monte Carlo kcode calculation? \\[1in]
+
+    \item Can I really do just a simple dot product of $q$'s?
+
+    If I understand correctly, the elements of $q$ are the expansion coefficients.  When I perform the inner product $\left\langle q_n, q_m\right\rangle$ is this really just a simple dot product?
+\end{enumerate}
+\end{document}
+

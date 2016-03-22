@@ -1,0 +1,23 @@
+
+------------------------------------------
+Don't Forget the following two commands:
+
+kinit -5 jlconlin
+aklog
+------------------------------------------
+
+I ran on:  /var/spool/PBS/aux//2530847.nyx.engin.umich.edu
+Running ArnoldiResearch.
+PARSE ERROR: Argument: -t (--tracks)
+             Couldn't read argument value from string '1000000.0'
+
+Brief USAGE: 
+   ./../ArnoldiResearch  [-c <Histogram|Linear>] [-I <I>] [-n <n>] [-x <x>]
+                         [--run] -f <f> [-m] [--terminal <term>] [--tol
+                         <tol>] [-v <v>] [-s <Random seed>] [-w <Width>]
+                         [-b <b>] [-a <a>] [-i <i>] [-t <N>] [--]
+                         [--version] [-h]
+
+For complete USAGE and HELP type: 
+   ./../ArnoldiResearch --help
+

@@ -1,0 +1,149 @@
+\documentclass[11pt,onecolumn]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\newcommand{\fm}{A}
+\newcommand{\FM}{\mathbf{A}}
+\newcommand{\x}{\mathbf{x}}
+
+\title{Notes on FET for fission eigenvalue computations}
+\author{James Paul Holloway}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The $k$-eigenvalue problem is 
+\begin{equation}
+T \psi = \frac{1}{k} F \psi
+\end{equation}
+where $T$ is transport, removal, inscatter and boundary conditions, and $F$ is the fission operator.  This can be written as $\psi = (1/k) T^{-1} F \psi$, and applying $F$ to this gives $F \psi = (1/k) F T^{-1} F \psi$.
+
+So let the $k$-eigenvalue problem be written as
+\begin{equation}
+G q = k q
+\end{equation}
+where $q$ is the fission source and the linear operator $G = F T^{-1}$ first transports source particles and then computes a fission source from the resulting particle population.  The action of $G$ can be computed, in some sense, using Monte Carlo.  What Monte Carlo really can do is sample a fission source $q$ and from this compute a sample of the distribution $G q$.  Typically this sample is a set of locations stored in a ``fission bank'', from which the outgoing, next generation, fission neutrons can again be sampled.
+
+The fission source $q$ lives in a linear space $Q$, and $G: Q \to Q$.
+Let $P: Q \to T$ be a projection operator onto a finite dimensional linear subspace $T$ of $Q$.  Because this operator is to be a projection, $P^2 = I$, and because it is a projection onto $T$, $P q = q$ for any function $q \in T$.  The space $T$ might be a set of piecewise constant functions on a uniform grid, which we normally call the histogram tally.  Or $T$ might represent the span of some other set of basis functions that give another functional expansion tally.  For example, $T$ might be spanned by a set of Legendre polynomials.  More usefully, $T$ might be a space of piecewise linear functions in space, each of which is a fission spectrum in energy.\footnote{Because we are only going to expand the fission source, we do not need much richness to expand in energy.  It could be a generic fission spectrum, or a linear combination of fission spectra from key fissioners, e.g. U-235, U-238 and Pu-240.}
+
+We can use the projection $P$ to approximate the eigenvalue problem as
+\begin{equation}
+PGP q = k q
+\end{equation}
+where $PGP = \fm : T \to T$.  We call the linear operator $A$ the \emph{fission matrix} (at some danger of confusing the operator with any particular matrix representation of it).
+
+The quality of this approximation is apparently determined by the error in approximating the fundamental eigenmode by an element of $T$.  If $q_0$ is the fundamental, and if $q_0 \in T$, then $PGP q_0 = PGq_0 = k_0 P q_0 = k q_0$ and so $PGP$ has the fundamental mode as an eigenfunction, with the correct eigenvalue.  Less clear is the question: is $k_0$ the fundamental (largest) eigenvalue of $PGP$ just because it is the largest eigenvalue of $G$?  (Lots of unanswered questions here about truncation error and related issues on eigenvalue.)
+
+\subsection{The fission matrix}
+
+Let $\{p_n\}$ be a basis for $T$, and let $\{p^\dagger_n\}$ be the biorthonormal basis defined such that $\langle p^\dagger_n, p_m\rangle = \delta_{n,m}$.  Then we can construct the action of $P: G \to T$ as $Pq = \sum_n p_n \langle p_n^\dagger, q \rangle$.  For any $q \in T$ we can write $q = \sum_n x_n p_n$ for scalars $x_n= \langle p_n^\dagger, q\rangle$, and so for $q \in T$
+\begin{align}
+\fm q &= PGP q = P G q = P \sum_n x_n G p_n \\
+&= \sum_m p_m \bigl\langle p_m^\dagger, \sum_n x_n G p_n \bigr\rangle \\
+&= \sum_m p_m \sum_n x_n \langle p_m^\dagger, G p_n \rangle
+\end{align} 
+The inner sum is a matrix multiply of the matrix with elements $A_{m,n} = \langle p_m^\dagger, G p_n \rangle$ on the vector with elements $x_n$.  This inner sum
+\begin{equation}
+y_m = \sum_n x_n \langle p_m^\dagger, G p_n \rangle
+\end{equation}
+gives the vector elements $y_m$ that represent the value of $A q$ in the basis.
+So now define the matrix $\FM$ with matrix elements $A_{m,n} = \langle p_m^\dagger, G p_n \rangle$, and consider the vector $\x$ whose elements are $x_n$.  Then the action of $\fm$ on $q$ is contained in the matrix multiplication $\FM  \x$.
+
+\subsection{Interpretation of the fission matrix}
+
+Consider the case where $T$ is spanned by a histogram basis (and we ignore energy for the moment). In this case the dual basis functions are selected to be
+\begin{equation}
+ p_n^\dagger = 
+ \begin{cases} 
+   1 & x \in \text{bin $n$}\\
+   0 & x \notin \text{bin $n$}
+ \end{cases}
+\end{equation} 
+and the basis functions
+\begin{equation}
+ p_n = \frac{p_n^\dagger}{\text{Vol}(n)}
+\end{equation} 
+where $\text{Vol}(n)$ is the volume of bin $n$. The source $q$ is thereby represented by the bin values $x_n$, which can be interpreted physically as the number of fission neutrons born into a bin $n$ because $\langle p_n^\dagger, q\rangle$ is just the integral of the fission source $q$ over the bin.  
+
+Suppose all $x_{n'} = 0$ for $n' = 1, 2 \ldots, n' \ne n $, except for one bin with unit source $x_n = 1$; then $\FM \x$ gives the binned fission source due to the unit strength fission source in bin $n$.  In this fission source $A_{m,n}$ is the fission source induced in bin $m$ by a unit fission source in bin $n$. Column $n$ of the fission matrix $\FM$ is the fission source induced by a unit strength fission source in bin $n$.  All of these matrix elements are non-negative.
+
+Note that $A_{m,n}$ \emph{is not} the probability of a fission neutron being born in cell $m$ due to a fission neutron born in cell $n$.   That probability is
+\begin{equation}
+P_{m,n} = \frac{A_{m,n}}{\sum_m A_{m,n}} \,,
+\end{equation}
+with the understanding that $P_{m,n} = 0$ if the numerator is zero (the issue arises only if $\sum_m A_{m,n} = 0$).
+Introducing the diagonal matrix $\mathbf{N}$ with diagonal elements
+\begin{equation}
+N_{n,n} = {\sum_m A_{m,n}} = \text{total number of fiss. neutrons induced by a fiss. neutron from bin $n$}
+\end{equation}
+we can write $\FM = \mathbf{P} \mathbf{N}$.  
+
+It's not immediately clear to me what $\mathbf{P}$ is good for, that $\FM$ is not.
+
+It's tempting to try to relate $N_{n,n} = {\sum_m A_{m,n}}$ to $\nu$, the mean number of neutrons produced in fission, but that does lot look fruitful.  $\nu$ can vary with space, so which value of $\nu$ would be relevant?  $\nu$ is the number of neutrons produced \emph{if a fission occurs}.  By contrast, $N_{n,n}$ is the number of fission neutrons induced by one source neutron; it includes the probability that a fission occurs, and could in principle be zero.  A small bit of fissile material that's 10 km away from the core will yield a very small value for $N_{n,n}$!
+
+\subsection{Interpretation of the fission matrix--Redux}
+
+More generally, $A_{m,n}$ is a coefficient in the FET expansion of one generation's fission source in mode $m$, induced by a unit expansion coefficient for mode $n$ in the previous generation.   As such, $A_{m,n}$ can be positive or negative, and cannot be scaled to be interpreted as a probability.  It does not seem fruitful to try.
+
+\section{Working with $\FM$}
+
+Suppose we need to compute $\FM \x$, as we do in eigenvalue iterations like the power method and Arnoldi's method.  If we had precomputed all the matrix elements then we could do this by a matrix-vector multiply.  But if we have a fine mesh with $N$ modes per dimension, then this matrix may be very large, some matrix elements may be hard to estimate well.  But we can compute $\FM x$ in another way, without storing the matrix.
+
+Observe that we can sample the distribution $q = \sum_n x_n p_n$.  We can then transport this source particle, accumulating its contributions to a FET expasion of a fission source $q'$ at each interaction.  The expansion coefficients of this are unbiased estimates of the elements $y_n$ of the vector $\mathbf{y} = \FM \x$.  
+
+In this way, we can compute the action of the matrix on a vector, without ever computing or storing the matrix.  FET modes that are statistically not significantly different from zero can be automatically dropped.
+
+If we compute the matrix elements, using $M$ FET modes, then we must do $M$ Monte Carlo runs with $M$ tallies each, and store $M \times M$ matrix elements.  Further, some of the coefficients may not be well computed because they are not easily excited by the source $q$.  The eigenvalue iteration will then require $M^2$ work for the matrix-vector multiply, per iteration.  So the cost will be like (ignoring constants)
+\begin{equation}
+M \times \text{Monte Carlo Cost} + I (M^2 + \text{iteration cost})
+\end{equation}
+where $I$ is the number of eigenvalue iterations and ``iteration cost'' is the rest of the cost of an iteration (exclusive of the cost of computing $\FM \x$).
+For example, in Arnoldi, ``iteration cost'' is the cost of orthogonalizing the latest matrix-vector product against the previous basis vectors.
+In contrast,
+if we compute the action of $\FM$ directly, we need to do only one Monte Carlo run with $M$ tallies per iteration.   We will save the cost $M^2$ of matrix-vector multiplies on each iteration, and the cost will be
+\begin{equation}
+I (\text{Monte Carlo Cost} + \text{iteration cost})
+\end{equation}
+We want to use direct Monte Carlo computation of $\FM \x$ when
+\begin{equation}
+I (\text{Monte Carlo Cost} + \text{iteration cost})
+< M \times \text{Monte Carlo Cost} + I (M^2 + \text{iteration cost})
+\end{equation}
+or, equivalently,
+\begin{equation}
+I (\text{Monte Carlo Cost} - M^2)
+< M \times \text{Monte Carlo Cost}
+\end{equation}
+If the cost of the Monte Carlo is less than the cost of a matrix-vector multiply ($\text{Monte Carlo Cost} < M^2$), then we win.  In the more likely case where the Monte Carlo is very expensive compared to one matrix-vector multiply ($\text{Monte Carlo Cost} \gg M^2$) and $I \ll M$ then we again win.  The intermediate case is not so clear.  Arnoldi requires at worst $I = M$, in which case we win; but the impact of statistical noise and roundoff makes this case unclear.
+
+\section{The Arnoldi Algorithm}
+
+The Arnoldi algorithm is a way to generate a Krylov subspace, a set of orthogonal basis vectors for it, and a projection of a matrix onto the subspace in the form of a upper Hessenburg matrix $H$.   The eigenvalues of $H$ often approximate the extreme eigenvalues of $\FM$.  The algorithm could be driven by Monte Carlo like this:
+
+\begin{itemize}
+\item Select initial fission source $q_0$
+\item Repeat for $k = 2, 3, 4 \ldots $
+
+\begin{itemize}
+\item Compute new fission source $q_k = \FM q_0$ by Monte Carlo (sample $q_0$ from its FET and compute the FET expansion coefficients of the new fission source)
+\item for $j$ from $1$ to $k - 1$
+\begin{itemize}
+  \item $h_{j, k-1} = \langle q_j, q_k \rangle$ (Compute matrix elements)
+  \item $q_k = q_k - h_{j,k-1} q_j$ (Orthoganalize)
+\end{itemize}
+\item $h_{k,k-1} = \| q_k \|$
+\item $q_k = \frac{q_k}{h_{k,k-1}}$
+\end{itemize}
+
+\end{itemize}
+
+This is exactly the standard Arnolid process.  Only one step, computing $\FM q_k$ requires Monte Carlo.  It requires sampling an arbitrary source (which will contain both positive and negative source densities) that is described in terms of its FET coefficients (the components of the vector $q_k$).  The result should be the FET coefficients of the new fission source.   In the case of a binned FET with constant or linear expansions within each bin it is easy to tell where the source is positive or negative, and so easy to carry out the needed sampling.
+
+The eigenvalues of $H$ are then used to approximate the eigenvalues of $\FM$.
+
+\end{document}
+

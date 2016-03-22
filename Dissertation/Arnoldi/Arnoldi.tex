@@ -1,0 +1,437 @@
+%!TEX root = ../Thesis.tex
+\chapter{Arnoldi's Method for Monte Carlo Particle Transport \label{ch:ArnoldiMethod}}
+As described in the introduction, the power method has been the method of choice for calculating eigenvalues and eigenvectors for Monte Carlo criticality applications.  The power method is suited well for this type of calculation because of its simple, matrix-free implementation.
+
+The power method, however, has a few drawbacks.  The rate of convergence to the fundamental eigenvalue---determined by the dominance ratio of the first higher-order eigenvalue to the fundamental eigenvalue---can be too small.  It is also limited to calculating one eigenvalue at a time.  Other Krylov subspace methods exist that have some of the same positive benefits of the power method, but also address the negative aspects that make the power method slow and limited.  Chief among these is Arnoldi's method.
+
+Arnoldi's method \cite{Arnoldi:1951The-P-0} is just one such method from the class of Krylov subspace methods.  While its implementation is not as straightforward as with the power method, an explicit form of the transport-fission operator remains unnecessary; we only need to know how to apply the operator to a fission source.  In this sense, Arnoldi's method is as equally suited to Monte Carlo criticality applications as the power method, but it has never been studied in this application.  In this dissertation, the first Monte Carlo application of Arnoldi's method for particle transport is demonstrated.
+
+Arnoldi's method has advantages over the power method that may prove to make the difficulty in its implementation a small matter.  One benefit Arnoldi's method brings to Monte Carlo particle transport is the ability to calculate multiple eigenvalues and eigenvectors with minimal extra computational expense over what is required to calculate the fundamental mode.  In addition, the fission source converges faster in Arnoldi's method than in the power method, reducing the number of inactive iterations required.  In this chapter the basic Arnoldi method and the Monte Carlo implementation for particle transport is introduced.   The ability of Monte Carlo Arnoldi's method to calculate multiple eigenpairs of the fission-transport operator is also demonstrated.  Arnoldi's superior performance in converging the eigenvalue and the fission source is shown in \Fref{ch:AdvancedArnoldi}.
+
+\section{Arnoldi's Method \label{sec:ArnoldiMethod}}
+Arnoldi's method generates a Krylov subspace similar to \Fref{eq:KrylovSubspaceBasisVectors} except at each iteration the basis vectors $\left\{v_i\right\}_{i=1}^m$ are orthogonalized against all the previously calculated Arnoldi vectors and normalized.  The basis vectors that form the Krylov subspace are called Arnoldi vectors \citep[see][pp. 435-438]{Watkins:2002Funda-0}.
+
+An Arnoldi process begins with a normalized vector
+\begin{equation}
+    v_1 = \frac{v}{\left\|v\right\|_2},
+\end{equation}
+where 
+\begin{equation}
+    \left\|v\right\|_2 = \left(\sum_{i=1}^n\left|v_i\right|^2\right)^{1/2}
+\end{equation}
+is the Euclidean norm.  We then apply the linear operator to $v_1$ and orthogonalize the result against $v_1$, yielding
+\begin{equation}
+    \tilde{v}_2 = \A v_1 - \langle\A v_1, v_1\rangle v_1 = \A v_1 - h_{1,1} v_1.
+\end{equation}
+where
+\begin{equation}
+    h_{jm} = \langle \A v_m, v_j\rangle
+    \label{eq:ArnoldiInnerProduct}
+\end{equation}
+is the inner product between the vectors $v_m$ and $v_j$ \[\int v_m(x)v_j(x) \dd x.\]  Then we normalize $\tilde{v}_2$
+\begin{equation}
+    v_2 = \frac{\tilde{v}_2}{\left\|\tilde{v}_2\right\|_2} = \frac{\tilde{v}_2}{h_{2,1}}.
+\end{equation}
+This process continues iteratively; at the $m$-th iteration we have
+\begin{subequations}\begin{gather}
+    \tilde{v}_{m+1} = \A v_m - \sum_{j=1}^m h_{jm} v_j \qquad \mathrm{(Orthogonalization)} \label{eq:ArnoldiOrthogonalization} \\[2ex]
+    v_{m+1} = \frac{\tilde{v}_{m+1}}{h_{m,m+1}} \qquad \mathrm{(Normalization)}. \label{eq:ArnoldiNormalization}
+\end{gather}\end{subequations}
+
+
+The process of orthogonalization and normalization involves the calculation of the values $h_{jm}$.  These values are the elements of an upper-Hessenberg matrix, $H_{m+1,m}$.  (An upper Hessenberg matrix is upper triangular except that the first subdiagonal is non-zero.)  We can write the $m$-th Arnoldi iteration in matrix form as
+\begin{equation}
+    \A V_m = V_{m+1}H_{m+1,m}, 
+    \label{eq:ArnoldiMatrixFormulation}
+\end{equation}
+where the columns of $V_m$ are the Arnoldi vectors and the elements of $H_{m+1,m}$ are the results of the inner products of Arnoldi vectors as described in \Fref{eq:ArnoldiInnerProduct}.  If we separate the last column of $V_{m+1}$ and the last row of $H_{m+1,m}$ we obtain from \Fref{eq:ArnoldiMatrixFormulation}
+\begin{equation}
+    \A V_m = V_mH_m + v_{m+1}h_{m+1,m}e_m^T
+    \label{eq:ArnoldiFactorization}
+\end{equation}
+where $e_m$ is the $m$-th standard basis vector, $v_{m+1}$ is the Arnoldi vector calculated during the $m$-th Arnoldi iteration and $h_{m+1,m}$ is the normalization factor for the new Arnoldi vector.  Thus we see that at the $m$-th Arnoldi iteration we add a row and a column to $V_mH_m$.  
+
+Equation \eqref{eq:ArnoldiFactorization} is called the \emph{Arnoldi factorization} and is an important equation in further analysis of Arnoldi's method.  
+
+\subsection{Finding Ritz Pairs from Arnoldi Factorization \label{sec:RitzPairs}}
+The Arnoldi process generates an upper-Hessenberg matrix $H_m$ which is the projection of \A{} onto the Krylov subspace defined by the Arnoldi vectors.  Since $H_m$ is generated after a small number of iterations its size is small and we can find its eigenvalues and eigenvectors with relative ease.  The eigenpairs of $H_m$, \mbox{$\left(\mu_i, x_i\right)$} can be used to find Ritz pairs---approximate eigenpairs---of \A.  To see this multiply the Arnoldi factorization, \Fref{eq:ArnoldiFactorization} on the right by an eigenvector of $H_m$, $x_i$
+\begin{equation}
+    \begin{split}
+        \A V_mx_i &= V_m\left( H_mx_i \right) + v_{m+1}h_{m+1,m}e_m^Tx_i \\
+        \A V_mx_i &= V_m\left( \mu_ix_i \right) + v_{m+1}h_{m+1,m}e_m^Tx_i \\
+        \A y_i &= \mu_iy_i + v_{m+1}h_{m+1,m}e_m^Tx_i,
+    \end{split}
+    \label{eq:ArnoldiFactorizationRitzPair}
+\end{equation}
+where $y_i = V_mx_i$. \mbox{$\left(\mu_i, y_i\right)$} is a Ritz pair of \A{} or an approximation to an eigenpair of \A.  The Ritz vector $y_i$ is just the product of the Arnoldi vectors and an eigenvector of $H_m$.
+
+The residual is defined as
+\begin{equation}
+    r_m \equiv \A y - \mu y.
+\end{equation}
+We can see from \Fref{eq:ArnoldiFactorizationRitzPair} that the magnitude of the residual is just the magnitude of the last element of the eigenvector $x_i$ times $h_{m+1,m}$
+\begin{equation}
+    \left|r_m\right| = \left\|\A y - \mu y\right\| = \left|h_{m+1,m}\right|\left|e_mx_i\right|.
+    \label{eq:Residual}
+\end{equation}
+It is easy to see that if the residual is zero, then the Ritz pair is an eigenpair of \A.  The residual is therefore a good indication---but not a guarantee---of the quality of the eigenpair approximation; in fact a small residual guarantees that \mbox{$\left(\mu, x\right)$} is an exact eigenpair of a matrix close to \A{} \citep[see][]{Watkins:2002Funda-0}.
+
+\subsection{Explicitly Restarted Arnoldi \label{sec:ERAM}}
+\begin{comment}
+The rate at which Arnoldi's method converges to good approximations of eigenpairs depends upon the starting vector.  Take for example starting with the eigenvector associated with the desired eigenvalue, i.e. largest eigenvalue in magnitude.  If we are so fortunate to know this in advance, the Krylov subspace calculated by Arnoldi's method will become invariant after just one iteration and the eigenpair will have been found exactly.  If we desire multiple, say $j$, eigenpairs and the starting vector is a linear combination of the $j$ eigenvectors associated with the desired eigenvalues then Arnoldi's method will be complete (the Krylov subspace will become invariant) in $j$ steps with all the desired eigenpairs known.
+
+Unfortunately we don't know \emph{a priori} the desired eigenvector(s) and eigenvalue(s); if we did, we wouldn't need to perform the calculation.  We may not know beforehand a good guess to the solution, but after a few iterations of Arnoldi's method we have a better estimate of the desired solution than with what we started.  We could start Arnoldi's method over using the estimate of our desired eigenvectors (Arnoldi's Ritz vectors) as the new initial guess.
+\end{comment}
+As Arnoldi's method proceeds, each iteration adds one Arnoldi vector, and the size of Krylov subspace expands.  The increase in the number of Arnoldi vectors and the size of the Krylov subspace is problematic.  First, the memory requirements increase and second, it is computationally more expensive  because there are more vectors that the newest Arnoldi vector must be orthogonalized against.
+
+Arnoldi's method begins with an estimate of the fundamental eigenvector  After a few Arnoldi iterations we have a better estimate of the fundamental eigenvector than what we started with.  We can therefore restart Arnoldi's method using the better estimate of the eigenvector as the starting vector for the Arnoldi process.  The idea of starting Arnoldi's method using the results of several previous iterations of Arnoldi's method is known as Restarted Arnoldi's method (RAM) and was first proposed by \citet{Saad:1980Varia-0}.  
+
+Arnoldi's method can be restarted repeatedly, each time starting with an improved starting vector that is a linear combination of the estimates of the desired eigenvectors of $\A$.  Each sequence of several iterations and a calculation of the Ritz pairs of \A{} is called a \emph{restart}.  Restarting Arnoldi's method saves computational expense by reducing the number of Arnoldi vectors that we must orthogonalize against and reduces memory requirements as fewer Arnoldi vectors must be stored.  Each iteration adds one basis vector to the Krylov subspace so the size of the Krylov subspace is the same as the number Arnoldi vectors.  The size, $m$, of the Krylov subspace is also the size of the upper-Hessenberg matrix \mbox{$H_m \in \mathbb{R}^{m \times m}$} and is therefore the number of eigenpairs that can be estimated in one restart.  Although not necessary, the number of iterations in each restart is generally the same.
+
+The estimated eigenvectors of $\A$ form a basis that we can use in a linear expansion to represent a vector,
+\begin{equation}
+    \hat{v} = c_1y_1 + c_2y_2 + \cdots + c_ny_n,
+\end{equation}
+where the $y_i$'s are the estimated eigenvectors of the linear operator $\A$ and the $c_i$'s are some expansion coefficients.  If the $j$ eigenvalues largest in magnitude are desired, then we would like to have our initial vector be
+\begin{equation}
+    \hat{v} = c_1y_1 + \cdots + c_jy_j + 0\,y_{j+1} + \cdots + 0\,y_n;
+\end{equation} 
+i.e., we want to suppress any information from the undesired portion of the spectrum of $\A$.
+
+The initial vector will most likely contain significant components of all the eigenvectors.  We can reduce the components from eigenvectors from the undesired region of the spectrum by forcing \mbox{$c_{j+1} = \cdots = c_n = 0$}.  The initial vector then becomes
+\begin{equation}
+    \hat{v} = c_1y_1 + \cdots + c_jy_j.
+    \label{eq:ExplicitRestartVector}
+\end{equation} 
+The value of the coefficients \mbox{$c_1, c_2, \ldots, c_j$} are not important and are conveniently chosen to be 1.  When Arnoldi's method is restarted using $\hat{v}$ from \Fref{eq:ExplicitRestartVector} as the initial vector for a new Arnoldi restart, it is an explicit restart and will be referred to as \emph{explicitly} restarted Arnoldi's method (ERAM).  It is implemented by only summing the vectors \mbox{$x_1 + \cdots + x_j$} and ignoring the other eigenvectors.
+
+\section{Monte Carlo Implementation of Explicitly Restarted Arnoldi's Method \label{sec:MCERAM}}
+Now that the basic restarted Arnoldi's method has been described, we can proceed to show how it can be implemented in a Monte Carlo particle transport application.  First we note that eigenvalue estimates are made at the end of every restart.  Eigenvalue estimates could have been made at every iteration, but that takes additional computational expense.  A choice was made to calculate and store the eigenvalue estimates at the end of every restart to reduce this cost.  The mean and standard deviation of these stored eigenvalue estimates can be calculated.  In this sense, an Arnoldi restart is similar to a power method iteration.  
+
+In conjunction with the eigenvalues, the eigenvectors of the transport-fission operator are estimated at the end of each restart.  The eigenvectors ($y_i$) are normalized such that 
+\begin{equation}
+    \int y_i(x)^2 \dd x = 1
+    \label{eq:NormalizedEigenvectors}
+\end{equation}
+and stored.  The mean of the eigenvectors can also be calculated, but we must be careful that we sum appropriate values of the eigenvectors.  For example, suppose the fundamental eigenvector estimate from one restart has the opposite sign as the fundamental eigenvector estimate from another restart.  (Eigenvectors are unique only up to a multiplicative constant so both estimates are valid.)  Prior to adding a new eigenvector estimate when calculating the mean, the dot product of the new eigenvector estimate with the previous eigenvector estimate is calculated.  If the dot product is negative, the new eigenvector is multiplied by $-1$.  This preserves the normalization given in \Fref{eq:NormalizedEigenvectors}.
+
+The application of the linear operator in \Fref{eq:ArnoldiOrthogonalization} was described in \Fref{sec:ParticleTransport}.  In brief, neutrons are sampled from the fission source $v_k$, transported and the position of the neutrons at the time they initiate fission is stored, creating a new fission source, $\tilde{v}_{k+1}$.  
+
+\subsection{Negative Sources \label{sec:NegativeSource}}
+When using the power method to calculate the fundamental eigenmode for criticality calculations, we are guaranteed that the solution is everywhere positive and the vectors that are sampled from at each iteration are also everywhere positive.  With Arnoldi's method we are not so fortunate.  The process of orthogonalization guarantees that some of the Arnoldi vectors will be partially negative.  This presents two challenges to Monte Carlo particle transport: first, a negative source means a negative flux which is not physical and second, to sample from a source it must be assumed to be everywhere positive.  
+
+To sample from a distribution, it must be everywhere positive and integrate to 1.  If $p(x)$ is a probability distribution function, the quantity $p(x)\dd x$ is the probability of choosing a point in $\dd x$ about $x$.  For a fission source $v(x)$ which may have negative regions it is first normalized such that
+\begin{subequations}\begin{align}
+    \int \left|v(x)\right| \dd x &= q \\
+    p(x) = \frac{\left|v(x)\right|}{q}.
+    \label{eq:FissionSourceNormalization}
+\end{align}\end{subequations}
+With this normalization, the quantity $p(x) \dd x$ is the probability of choosing a point in $\dd x$ about $x$.  A neutron position $x_s$ is sampled from $p(x)$ and is given an initial weight of
+\begin{equation}
+    \omega = \frac{v(x_s)}{\left|v(x_s)\right|}, 
+    \label{eq:InitialWeight}
+\end{equation}
+or, alternatively
+\begin{equation}
+    \omega = \begin{cases}
+        1, & v(x_s) > 0 \\
+        -1, & v(x_s) < 1.
+    \end{cases}
+    \label{eq:OtherInitialWeight}
+\end{equation}
+Neutrons sampled where \mbox{$v(x_s) < 0$} reduce the tally where they score; neutrons sampled where \mbox{$v(x_s) > 0$} contribute positively to the tally where they score.  A neutron is never sampled where \mbox{$v(x_s) = 0$} because there the probability of choosing this point is exactly zero.
+
+Once a particle has been sampled, Monte Carlo transport proceeds as usual, with the neutron scoring $\omega\left(\nu\Sigma_f/\Sigma_T\right)$ in the proper bin at each collision.  If non-analog Monte Carlo is being done, particle weight is reduced at each collision and Russian Roulette is played if the absolute value of the weight becomes small.  Giving a neutron a signed weight does not interfere with any variance reduction or tallying techniques.
+
+At alternative approach to applying \A{} to $v(x)$ this way is to separate $v(x)$ into its positive and negative parts, \vp{} and \vm{} respectively, and apply the transport-fission operator to each part independently
+\begin{equation}
+    \A v(x) = \A\vp - \A\left|\vm\right|.
+\end{equation}
+The first approach does this directly by assigning the weights as described.  The first approach is also superior because it samples the positive and negative parts proportionately to the magnitude of the positive or negative part; the second approach would use the same number of particles to apply the linear operator for both the positive and negative part, even if one part is significantly larger than the other.  
+
+Once the sampling of a fission source, transporting particles, and creation of a new fission source is completed the new fission source is normalized per source particle and multiplied by integral of the absolute value of the previous source
+\begin{equation}
+    v_{j+1}(x) = \A v_j(x) \frac{1}{N} \int |v_j(x)| \dd x,
+    \label{eq:SourceScaling}
+\end{equation}
+where $v_j(x)$ is the source we sample from and $\A v(x)$ is the new source created after sampling from $v_j(x)$ and transporting.  This scaling is similar to the scaling performed in the power method shown in \Fref{eq:eVectorIterative} and \Fref{eq:eValueIterative}.  After the vector has been properly scaled, Arnoldi's method continues with orthogonalization and normalization of the newest Arnoldi vector.
+
+\subsection{Spatial Discretization \label{sec:SpatialDiscretization}}
+The orthogonalization and normalization of the basis vectors in Arnoldi's method requires taking the inner product of two vectors
+\begin{equation}
+    \langle v_j,v_k\rangle = \int v_j(x)v_k(x) \dd x.
+    \label{eq:InnerProduct}
+\end{equation}
+In Monte Carlo Arnoldi's method we must take the inner product of two fission sources.  To do this, the fission source is represented as a linear combination of piecewise constant functions
+\begin{equation}
+    \vP(x) = \sum_{b=1}^B a_b \Pi_b(x),
+    \label{eq:source_function}
+\end{equation}
+where $B$ is the number of spatial bins and 
+\begin{equation}
+    \Pi_b(x) = \begin{cases}
+        \left(\frac{1}{\Delta x_b}\right)^{1/2}, & x_b \leq x < x_{b+1} \\
+        0, & \mathrm{otherwise},
+    \end{cases}
+    \label{eq:PiFunction}
+\end{equation}
+where $\Delta x_b = \left(x_{b+1}-x_b\right)$ is the width of bin $b$.  The term $a_b\sqrt{\Delta x_b}$ is the number of fission neutrons generated in the spatial bin $b$, \mbox{$x \in \left[x_b, x_{b+1}\right)$}.  Note that, to sample from $\vP(x)$, we first sample a bin and then sample uniformly within the bin to determine the position of the particle.
+
+Representing the fission source with a piecewise-constant-in-space approximation, the elements of the Arnoldi vectors are just the expansion coefficients 
+\begin{equation}
+    \vP = \left[a_1, a_2, \ldots, a_B\right]^T,
+\end{equation}
+and the inner product between two fission sources is defined as
+\begin{equation}
+    \langle \vP^{(j)},\vP^{(k)}\rangle = \sum_{b=1}^B a_b^{(j)}a_b^{(k)},
+    \label{eq:InnerProductFissionSources}
+\end{equation}
+where $a_b^{(j)}$ and $a_b^{(k)}$ are the expansion coefficients from the fission sources $\vP^{(j)}$ and $\vP^{(k)}$ respectively.
+
+Applying $\A$ to a vector of coefficients $\{a_b\}_{b=1}^B$ simply requires sampling the piecewise constant source function $\vP(x)$ in \Fref{eq:source_function}, transporting these neutrons until they cause another fission, and tallying the resulting fission neutrons over the bins \citep[see][]{Conlin:2008Arnol-0}.  This generates a truncation error.
+
+With this representation of the fission source, the sampling techniques described in \Fref{sec:NegativeSource} can be used and the inner product between two fission sources have been defined.  To estimate the mean eigenvector, we can  simply calculate the mean value of the coefficient in each bin.  
+
+\section{Numerical Results \label{sec:ArnoldiResults}}
+Everything necessary for a Monte Carlo application of explicitly restarted Arnoldi's method has been described.  To demonstrate how Monte Carlo Arnoldi's method can calculate multiple eigenvalues and eigenvectors of the transport-fission operatorm a few simulations of a homogeneous, semi-infinite slab of multiplying material are shown.  The simulations shown here were chosen to match results published by \cite{Garis:1991One-s-0,Modak:1995Evalu-0} and \cite{Dahl:1979Eigen-0}.  The cross sections are: \mbox{$\nu\Sigma_f = 1.0$}, \mbox{$\Sigma_a = 0.2$}, \mbox{$\Sigma_s = 0.8$} with \mbox{$\Sigma_t = 1.0$}, thus the mean free path for this geometry is $1/\Sigma_t = 1.0$.  I will show the results of slabs with width 0.2, 2.0 or 20 mfp.
+
+For each slab width I have run two simulations; one simulation using Arnoldi's method and the other simulation using the power method for comparison.  In every simulation $10^5$ particles are tracked in an iteration.  The power method has 250 inactive and 1000 active iterations while Arnoldi's method has 25 inactive and 100 active restarts with 10 iterations in each restart.  Therefore the Krylov subspace size is 10.  The number of inactive and active iterations in each method is the same.  The total number of particles tracked in each simulation is also the same.  The slab is discretized into 50 spatial bins for the 0.2 mfp problem and 75 spatial bins for the 2.0 and 20 mfp problems.
+
+\begin{comment}
+\begin{table}[h] \centering
+    \begin{tabular}{ccccccc}
+        \toprule
+        Width & Spatial & Particles &\multirow{2}{*}{Method} &  \multirow{2}{*}{Iterations} & Inactive & Active \\
+        (mfp) & Bins & per Iteration &&  & Cycles & Cycles \\
+        \midrule
+        \multirow{2}{*}{0.2} & \multirow{2}{*}{50} & \multirow{2}{*}{$1 \times 10^5$} & Power & -- & 250 & 1000 \\
+         & & & Arnoldi & 10 & 25 & 100 \\
+        \midrule
+        \multirow{2}{*}{2.0} & \multirow{2}{*}{75} & \multirow{2}{*}{$1 \times 10^5$} & Power & -- & 250 & 1000 \\
+         & & & Arnoldi & 10 & 25 & 100 \\
+        \midrule
+        \multirow{2}{*}{20} & \multirow{2}{*}{75} & \multirow{2}{*}{$1 \times 10^5$} & Power & -- & 250 & 1000 \\
+         & & & Arnoldi & 10 & 25 & 100 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Problem Parameters.  Power method cycles are power iterations while Arnoldi method cycles are explicit restarts.}
+    \label{tab:BasicParameters}
+\end{table}
+\end{comment}
+
+The results of these simulations are shown in \Fref{tab:BasicResults}, along with the dominance ratio (DR) for each of the three slab widths.  The fundamental eigenvalue estimates are shown for both the power method and Arnoldi's as well as the first and second harmonic eigenvalue estimates from Arnoldi's method.  The published results from \cite{Garis:1991One-s-0,Modak:1995Evalu-0} and \cite{Dahl:1979Eigen-0} are given as the reference.  Almost all the eigenvalue estimates are within one standard deviation of the reference solution.  The only exceptions are the second harmonic estimates for the 2.0 and 20 mfp thick problems and they are both within two standard deviations of the reference solution.
+
+\begin{table}[h]\centering
+    \begin{tabular}{cccccc}
+        \toprule
+        Width & \multirow{2}{*}{Method} & \multirow{2}{*}{Eigenvalue} & Standard & \multirow{2}{*}{Reference} & \multirow{2}{*}{Error} \\
+        (mfp) & & & Deviation & \\
+        \midrule
+        \multirow{2}{*}{0.2} & Power    & 0.329979 & 6.3\e{-5} & 0.330000 & 2.1\e{-5} \\
+        \cmidrule{2-6}                    
+        & \multirow{3}{*}{Arnoldi}      &  0.33008 & 1.8\e{-4} &  0.33000 & 8.3\e{-5} \\
+        \multirow{2}{*}{DR = 0.23997} & &  0.07911 & 1.5\e{-4} &  0.07919 & 7.6\e{-5} \\
+        &                               &  0.04493 & 1.6\e{-4} &  0.04499 & 5.8\e{-5} \\
+        \midrule                          
+        \multirow{2}{*}{2.0} & Power    &  2.09593 & 2.7\e{-4} &  2.09599 & 6.0\e{-5} \\
+        \cmidrule{2-6}                    
+        & \multirow{3}{*}{Arnoldi}      &  2.09652 & 6.9\e{-4} &  2.09599 & 5.3\e{-4} \\
+        \multirow{2}{*}{DR = 0.4015} &  &  0.84183 & 5.8\e{-4} &  0.84150 & 3.3\e{-4} \\
+        &                               &  0.48279 & 4.5\e{-4} &  0.48230 & 4.9\e{-4} \\
+        \midrule                          
+        \multirow{2}{*}{20} & Power     &  4.82734 & 6.3\e{-4} &  4.82780 & 4.6\e{-4} \\
+        \cmidrule{2-6}                    
+        & \multirow{3}{*}{Arnoldi}      &   4.8290 & 1.5\e{-3} &   4.8278 & 1.2\e{-3} \\
+        \multirow{2}{*}{DR = 0.9079}&   &   4.3827 & 1.4\e{-3} &   4.3831 & 4.2\e{-4} \\
+        &                               &   3.8152 & 1.4\e{-3} &   3.8174 & 2.2\e{-3} \\
+         \bottomrule
+     \end{tabular}
+     \caption{Eigenvalue estimates from power method and Arnoldi's method for slab geometries of width 0.2, 2.0 and 20 mfp.  Reference values taken from \cite{Garis:1991One-s-0}, and \cite{Dahl:1979Eigen-0}. }
+     \label{tab:BasicResults}
+\end{table}
+
+The figure of merit (FOM) and computational time for each simulation is given in \Fref{tab:BasicFOM}.  The figure of merit is a measure of the efficiency of a Monte Carlo calculation.  The variance of a Monte Carlo eigenvalue calculation goes as $\sqrt{1/N}$, where $N$ is the number of eigenvalue estimates.  The computational expense should be directly proportional to the number of eigenvalue estimates.  The figure of merit is therefore defined to be
+\begin{equation}
+    \mathrm{FOM} \equiv \frac{1}{\sigma^2 T}
+    \label{eq:FOM}
+\end{equation}
+where $\sigma^2$ is the variance and $T$ is the time required to perform the Monte Carlo calculation.  
+
+\begin{table}[h] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        Width & \multirow{2}{*}{Method} & Fundamental & Standard & \multirow{2}{*}{FOM} & Time \\
+        (mfp) & & Eigenvalue & Deviation & & (sec)\\
+        \midrule
+        \multirow{2}{*}{0.2}    & Power   & 0.329979 & 6.3\e{-5} & 1.7\e{6} &  149.0 \\
+                                & Arnoldi &  0.33008 & 1.8\e{-4} & 3.3\e{5} &   95.3 \\ 
+        \cmidrule{2-6}            
+        \multirow{2}{*}{2.0}    & Power   &  2.09593 & 2.7\e{-4} & 5.5\e{4} &  258.1 \\
+                                & Arnoldi &  2.09652 & 6.9\e{-4} & 9.8\e{3} &  212.5 \\ 
+        \cmidrule{2-6}            
+        \multirow{2}{*}{20}     & Power   &  4.82734 & 6.3\e{-4} & 5.4\e{3} &  463.0 \\
+                                & Arnoldi &   4.8290 & 1.5\e{-3} & 1.1\e{3} &  378.5 \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{Eigenvalue estimates, figure of merit for fundamental eigenvalue from the power method and Arnoldi's method for slab geometries of width 0.2, 2.0, and 20 mfp.}
+    \label{tab:BasicFOM}
+\end{table}
+
+We see that the figure of merit is always larger for the power method than for Arnoldi's method, but that the Arnoldi simulations run faster.  The figure of merit for the power method is larger than the figure of merit for Arnoldi's method by a factor of 5 while the computational time for the power method is 1.6 times larger than Arnoldi's method for the 0.2 mfp simulation and 1.2 times larger than Arnoldi's method for the 2.0 and 20 mfp simulations.  
+
+The power method has many (10 times for these simulations) more eigenvalue estimates because it calculates an estimate after every iteration while Arnoldi's method calculates an estimate after each restart consisting of many iterations.  Thus for the same number of particles tracked (computational expense, $T$) the power method has many more eigenvalue estimates and therefore its variance is smaller, and the FOM is larger.  
+
+We can calculate the spread of the eigenvalue estimates from each method.  The spread is the root mean sqared difference of the eigenvalue estimates, $x_i$, from $\overline{x}$, the mean eigenvalue estimate; \[\mathscr{s} \equiv \sqrt{\frac{1}{N}\sum_{i=1}^N \left(x_i - \overline{x}\right)^2}.\]  This should not be confused with the \emph{population} standard deviation \[\sigma \equiv \sqrt{\frac{1}{N-1}\left(\frac{1}{N}\sum_{i=1}^N \left(x_i - \overline{x}\right)^2\right)}\] which is called simply the standard deviation in this dissertation.  The spread of the fundamental eigenvalue estimates from the active iterations/restarts for the three slab widths is shown in \Fref{tab:BasicSpread}.  We can see that even though the standard deviation of the mean is larger in Arnoldi's method than in the power method, the spread of the eigenvalue estimates is smaller in Arnold's method than in the power method.  From this we can conclude that the estimate of the standard deviation (and thus the figure of merit) is dominated by the number of eigenvalue estimates.  
+
+The figure of merit isn't a complete comparison between these two methods.  It only measures the efficiency of estimating one eigenvalue, but in Arnoldi's method we have estimates of the first three eigenvalues at no additional cost.  Furthermore, because we are electing to compare multiple eigenvalues, we have fewer eigenvalue estimates to average together in Arnoldi's method.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        & 0.2 mfp & 2.0 mfp & 20 mfp \\
+        \midrule
+        Power    & 0.0020 & 0.0084 & 0.0201 \\
+        Arnoldi  & 0.0018 & 0.0069 & 0.0153 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Spread of active fundamental eigenvalue estimates from the power method and Arnoldi's method for slab geometries of width 0.2, 2.0, and 20 mfp.}
+    \label{tab:BasicSpread}
+\end{table}
+
+Graphical results for the 20 mfp thick slab are shown in figures \ref{fig:BasicValuesW20}--\ref{fig:BasicFundamentalW20}.  In \Fref{fig:BasicValuesW20} we see the eigenvalue convergence for the fundamental and first two harmonic eigenvalue estimates.  Both inactive and active iterations are shown; the active iterations are the running average of the active eigenvalue estimates.  We can see that the spread of the estimates of the fundamental eigenvalue from Arnoldi's method is smaller than the estimates from the power method.  Black lines are drawn indicating the reference values published in \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}.  It appears that all three eigenvalue estimates agree with the reference solution.  However we know from \Fref{tab:BasicResults} that the estimate of the second harmonic is just outside of one standard deviation.
+
+\Fref{fig:BasicFundamentalW20} shows the fundamental eigenvector estimate from the power method and Arnoldi's method as well as a reference solution from an S$_\mathrm{N}$ code.  We see that both the power method and Arnoldi's method accurately estimate the fundamental eigenmode.  \Fref{fig:BasicVectorsW20} shows the fundamental eigenvector and the first two harmonics all calculated by Arnoldi's method.  The higher-order eigenmodes of a semi-infinite slab are similar to the higher modes of the cosine function as expected \citep[see][pg. 173]{Duderstadt:1976Nucle-0}.  
+
+The results of the 0.2 and 2.0 mfp simulations are shown  in Figures \ref{fig:BasicValuesW02}--\ref{fig:BasicVectorsW2}.  The results are similar to what we have seen for the 20 mfp problem.
+
+\begin{sidewaysfigure}[hp]\centering
+    \input{Arnoldi/Data/BasicValues-w20}
+    \caption{Eigenvalue estimates for the power method and Arnoldi's method for the 20 mfp thick slab.  The heavy lines indicate the reference eigenvalues.}
+    \label{fig:BasicValuesW20}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[hp]\centering
+    \input{Arnoldi/Data/BasicFundamental-w20}
+    \caption{Fundamental eigenvector estimates from the power method and Arnoldi's method for the 20 mfp thick slab.  The heavy line shows the S$_\mathrm{N}$ solution.}
+    \label{fig:BasicFundamentalW20}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[hp]\centering
+    \input{Arnoldi/Data/BasicVectors-w20}
+    \caption{Fundamental and first and second harmonic eigenvector estimates from Arnoldi's method for the 20 mfp thick slab.}
+    \label{fig:BasicVectorsW20}
+\end{sidewaysfigure}
+
+\begin{figure}\centering
+    \subfloat[Eigenvalue estimates]{\label{fig:BasicValuesW02}\input{Arnoldi/Data/BasicValues-w0.2}}
+
+    \subfloat[Eigenvector Estimates]{\label{fig:BasicVectorsW02}\input{Arnoldi/Data/BasicVectors-w0.2}}
+    \caption{Eigenvalue and eigenvector estimates from power method and Arnoldi's method for the 0.2 mfp thick slab.  Heavy lines show reference solution from \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}.}
+\end{figure}
+
+\begin{comment}
+\begin{sidewaysfigure}[hp]\centering
+%    \includegraphics[width=\textwidth, keepaspectratio]{Arnoldi/Data/BasicFundamental-w02}
+    \input{Arnoldi/Data/BasicFundamental-w0.2}
+    \caption{Fundamental eigenvector estimates from the power method and Arnoldi's method for the 0.2 mfp wide slab.  The heavy line shows the S$_\mathrm{N}$ solution.}
+    \label{fig:BasicFundamentalW02}
+\end{sidewaysfigure}
+\end{comment}
+
+\begin{figure}\centering
+    \subfloat[Eigenvalue estimates]{\label{fig:BasicValuesW2}\input{Arnoldi/Data/BasicValues-w2}}
+    
+    \subfloat[Eigenvector estimates]{\label{fig:BasicVectorsW2}\input{Arnoldi/Data/BasicVectors-w2}}
+    \caption{Eigenvalue and eigenvector estimates from power method and Arnoldi's method for the 2.0 mfp thick slab.  Heavy lines show reference solution from \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}.}
+    
+\end{figure}
+
+\begin{comment}
+\begin{sidewaysfigure}[hp]\centering
+%    \includegraphics[width=\textwidth, keepaspectratio]{Arnoldi/Data/BasicFundamental-w2}
+    \input{Arnoldi/Data/BasicFundamental-w2}
+    \caption{Fundamental eigenvector estimates from the power method and Arnoldi's method for the 2.0 mfp wide slab.  The heavy line shows the S$_\mathrm{N}$ solution.}
+    \label{fig:BasicFundamentalW2}
+\end{sidewaysfigure}
+\end{comment}
+
+\clearpage
+\subsection{Discretization Error \label{sec:DiscretizationBias}} 
+
+One of the benefits of Monte Carlo particle transport is the ability to use exact geometry without discretization.  This is true for the transport of particles in the power method, but the fission source must be discretized for tallying.  Arnoldi's method, on the other hand, must have a discretized source  in order to orthogonalize the Arnoldi vectors, as described in \Fref{sec:SpatialDiscretization}.
+
+The discretization of the fission source can lead to an error in the estimated eigenvalue if an insufficient number of spatial bins are used to represent the fission source.  To illustrate this effect a series of simulations is shown using the same slab of multiplying material with varying number of spatial bins.  The slab here is exactly the same as for the 20 mfp problem shown earlier (\mbox{$\nu\Sigma_f = 1.0$}, \mbox{$\Sigma_a = 0.2$}, \mbox{$\Sigma_s = 0.8$} with \mbox{$\Sigma_t = 1.0$}).  This time $10^5$ histories are tracked per iteration with 50 inactive restarts and 500 active restarts.  The increase in the number of histories and restarts is to reduce the statistical uncertainty to ensure the error can be seen outside the noise.  This simulation was performed eleven times varying the number of spatial discretization bins from 10 to 150.  
+
+The results of these simulations are shown in \Fref{tab:Discretization} for the fundamental eigenvalue.  We can see that the uncertainty in the eigenvalue estimate (standard deviation) is relatively independent of the number of spatial bins.  The error in the eigenvalue estimate is the absolute value of the difference between the eigenvalue estimate and the reference solution.  We see that the error in the eigenvalue estimate is larger than the statistical uncertainty for bin widths \mbox{$\leq 0.5$} mfp thick.  For bin widths greater than 0.5 mfp thick the error is less than the statistical uncertainty. 
+
+The data from \Fref{tab:Discretization} is shown graphically in \Fref{fig:BasicBias}.  The error in the eigenvalue estimate for the first two harmonics are also shown in \Fref{fig:BasicBias}.  The error in the eigenvalue estimate is denoted marked as $\mathcal{B}$ for each of the eigenvalue estimates.  Best fit lines are drawn through the points on the graph.  We see that there is a very good linear fit to these data points.  
+
+\begin{table}[h] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# of Bins & Bin Width (mfp) & Eigenvalue & Uncertainty & Error & FOM\\
+        \midrule
+         10 & 2.00 & 4.8003 & 6.6\e{-4} & 2.7\e{-2} & 831.2 \\
+         25 & 0.80 & 4.8224 & 6.8\e{-4} & 5.3\e{-3} & 773.2 \\
+         40 & 0.50 & 4.8251 & 6.3\e{-4} & 2.6\e{-3} & 872.0 \\
+         50 & 0.40 & 4.8273 & 6.5\e{-4} & 4.2\e{-4} & 829.0 \\
+         60 & 0.33 & 4.8258 & 6.9\e{-4} & 2.0\e{-3} & 704.3 \\
+         75 & 0.27 & 4.8275 & 6.7\e{-4} & 2.4\e{-4} & 753.0 \\
+         90 & 0.22 & 4.8277 & 6.7\e{-4} & 4.2\e{-5} & 746.1 \\
+        105 & 0.19 & 4.8277 & 6.9\e{-4} & 5.2\e{-5} & 698.3 \\
+        120 & 0.17 & 4.8282 & 6.5\e{-4} & 4.1\e{-4} & 767.8 \\
+        135 & 0.15 & 4.8274 & 7.0\e{-4} & 3.1\e{-4} & 656.9 \\
+        150 & 0.13 & 4.8285 & 6.4\e{-4} & 7.5\e{-4} & 792.0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Eigenvalue estimates of the fundamental eigenvalue from Arnoldi's method and the error in the estimate.  The error is the difference between the estimate and the reference value ($\lambda_0 = 4.8278$, see \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}).}
+    \label{tab:Discretization}
+\end{table}
+
+\begin{sidewaysfigure}[h] \centering
+    \input{Arnoldi/Data/BiasHistogram}
+    \caption{Discretization error for Arnoldi's method.  The error is the difference between the eigenvalue estimate from Arnoldi's method and the reference value given in \Fref{tab:BasicResults}.}
+    \label{fig:BasicBias}
+\end{sidewaysfigure}
+
+\section{Variance}
+One of the problems with Monte Carlo particle transport is the underestimation of the variance of the mean eigenvalue estimate.  This topic has received considerable attention lately \cite{Brown:2009A-Rev-0}.  In this section I will investigate how this issue manifests itself in Arnoldi's method.
+
+The process of using the fission source calculated in a previous iteration as the source of neutrons for the current iteration causes the uncertainty in the eigenvalue (or some other tally) to be too small.  The mean $\overline{X}$ and standard deviation $\sigma_{\overline{X}}$ for some tally $X$ are calculated as
+\begin{subequations}
+    \begin{gather}
+        \overline{X} = \frac{1}{N}\sum_{n=1}^N X_n, \label{eq:Mean} \\
+        \sigma_{\overline{X}} = \left[\frac{1}{N-1}\left(\frac{1}{N}\sum_{n=1}^NX_n^2\right) - \overline{X}^2\right]^{\sfrac{1}{2}}, \label{eq:StD}
+    \end{gather}
+    \label{eq:MeanStD}
+\end{subequations}
+where $X_n$ is one estimate of the tally and $N$ is the number of estimates.  Equations \eqref{eq:MeanStD} assume that each estimate is independent of all the others.  Because of the procedure of using previous sources to generate the next source, the sources are correlated.  \citet{Kiedrowski:1009An-In-0} explain it best, ``If the concentration of fission neutrons at a location within a cycle [iteration] is statistically high, the concentration of fission neutrons in the next cycle is likely to be higher than average as well.  The same applies if the concentration is statistically low.  This implies a positive correlation between the fission source distributions.''
+
+Using \Fref{eq:StD} to estimate the standard deviation with correlated estimates causes the calculated standard deviation to be too small \cite[see][]{Brown:2009A-Rev-0}.  A standard deviation that is too small would give immoderate confidence in the eigenvalue.  
+
+\subsection{Numerical Results}
+While there is no immediate way to reduce or eliminate the correlation between iterations, we can calculate the true standard deviation by running many independent, identical simulations and compute the mean and standard deviation of all of these.  This can then be compared to the standard deviation of an individual run.  
+
+For this calculation a 50 mfp thick, homogeneous slab is used with cross sections: \mbox{$\nu\Sigma_f = 1.0$}, \mbox{$\Sigma_a = 0.2$}, and \mbox{$\Sigma_s = 0.8$}; \mbox{$\Sigma_t = 1.0$}.  The fundamental eigenvalue for this geometry is 0.997520.  Both the power method and Arnoldi's method are run so as to compare the results.  In Arnoldi's method, 100 inactive and 100 active restarts are used with 25 iterations per restart.  For the power method 2500 inactive and 2500 active iterations are used.  Both methods track 500,000 particles per iteration.  Each method has 100 independent simulations.
+
+The results of this study are shown in \Fref{tab:TrueVariance}.  I show the mean of the eigenvalue estimate from the 100 simulations, the mean of the standard deviations from the simulations and the true standard deviation.  The true standard deviation is the standard deviation of eigenvalue estimates from all the simulations, while the mean reported standard deviation is the mean of the reported standard deviations from the simulations.
+\begin{table}[h]\centering
+    \begin{tabular}{ccccc}
+        \toprule
+        \multirow{2}{*}{Method} & Mean & Mean Reported & True Standard & Percent\\
+        & Eigenvalue & Standard Deviation & Deviation & Difference \\
+        \midrule
+        Power   &  0.99752 & 2.4\e{-5} & 2.7\e{-5} & -11.1 \\
+        Arnoldi &  0.9974  & 1.1\e{-4} & 9.7\e{-5} &  13.4 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Mean eigenvalue estimate of fundamental eigenvalue from Arnoldi's method and the power method from 100 independent simulations.  The mean reported standard deviation is the mean of the standard deviation from the 100 independent simulations.  The true standard deviation is the standard deviation of the eigenvalue estimates from the 100 independent simulations.  The difference is (Reported-True)/True.}
+    \label{tab:TrueVariance}
+\end{table}
+
+We see from these results that both Arnoldi's method and the power method report a standard deviation that is different from the true standard deviation by about 10\%.  The problem is that the power method underpredicts the standard deviation.  For Arnoldi's method we can have confidence that---at least for this problem---the reported standard deviation is larger than true standard deviation.
+
+\section{Summary}
+In this chapter the basic explicitly restarted Arnoldi's method for Monte Carlo particle transport has been described.  It has been shown that Monte Carlo Arnoldi's method estimates the fundamental eigenvalue as well as first two higher-order eigenmodes within statistical uncertainty of published results; the eigenvectors are similar to cosine functions as they are expected to be.
+
+Arnoldi's method suffers from two problems; the discretization of the fission source causes an error in the estimate of the eigenvalue, and a smaller figure of merit than the power method.  These issues are addressed in \Fref{ch:SpatialDiscretization} and \Fref{ch:RelaxedArnoldi} respectively.  

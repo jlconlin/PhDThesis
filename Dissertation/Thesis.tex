@@ -1,0 +1,140 @@
+% Thesis.tex
+\documentclass[12pt]{JLCthesis}
+\usepackage[T1]{fontenc}
+\usepackage[tbtags]{amsmath} %tbtags makes split equation numbers align on bottom
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[colorinlistoftodos, shadow]{todonotes}  % For todos
+\usepackage{verbatim}
+\usepackage{paralist}   % For better control of itemizations
+\usepackage[plain]{fancyref}
+\usepackage{layouts}    % Display layout
+\usepackage[numbers, square]{natbib}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{rotating}   % For rotating images
+\usepackage[section]{placeins}
+\usepackage{xfrac}      % For split level fractions.
+\usepackage[lofdepth=2]{subfig}
+
+\DeclareMathAlphabet{\mathscr}{OT1}{pzc}{m}{it} % make \matscr command with Zapf Chancery font
+
+\title{Explicitly Restarted Arnoldi's Method for Monte Carlo Nuclear Criticality Calculations}
+\author{Jeremy Lloyd Conlin}
+
+% Reference formatting
+\renewcommand{\fancyrefdefaultformat}{plain}    % Make plain formatting the default
+\fancyrefchangeprefix{\fancyrefchaplabelprefix}{ch}
+\newcommand*{\fancyrefthmlabelprefix}{thm}
+\newcommand*{\fancyreflemlabelprefix}{lem}
+\fancyrefaddcaptions{english}{% 
+    \newcommand*{\Frefthmname}{Theorem}% 
+    \newcommand*{\frefthmname}{% 
+        \MakeLowercase{\Frefthmname}% 
+    }% 
+}% 
+
+\frefformat{plain}{\fancyrefthmlabelprefix}{% 
+    \Frefthmname\fancyrefdefaultspacing#1#3% 
+} 
+\Frefformat{plain}{\fancyrefthmlabelprefix}{% 
+    \Frefthmname\fancyrefdefaultspacing#1#3% 
+} 
+
+% New commands
+\newcommand{\A}{\ensuremath{\mathcal{A}}}
+\newcommand{\DA}{\ensuremath{\mathbf{\Delta}\A}}
+\newcommand{\QR}{\ensuremath{QR} }
+\newcommand{\p}{\ensuremath{\bm{p}}}
+\newcommand{\poly}[2]{\ensuremath{\bm{p}_#1(#2)}}
+\newcommand{\vp}{\ensuremath{v^{(+)}(x)}}
+\newcommand{\vm}{\ensuremath{v^{(-)}(x)}}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\E}[1]{\ensuremath{\,\mathrm{E#1}}}
+\newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\newcommand{\xmax}{\ensuremath{x_{\mathrm{max}}}}
+\newcommand{\xmin}{\ensuremath{x_{\mathrm{min}}}}
+\newcommand{\xmid}{\ensuremath{x_{b,\mathrm{mid}}}}
+\newcommand{\Lin}{\ensuremath{\mathcal{L}}}
+\newcommand{\vP}{\ensuremath{v_{\Pi}}}
+\newcommand{\vL}{\ensuremath{v_{\Lin}}}
+\newcommand{\Lx}{\ensuremath{\Lin_b(x, \alpha_b, \beta_b)}}
+\newcommand{\Px}{\ensuremath{\Pi_b(x)}}
+
+\DeclareMathOperator{\mathspan}{span}
+
+\setlength\delimitershortfall{-2pt} % make delimiters grow
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+% Todo notes commands
+\reversemarginpar
+\setlength{\marginparwidth}{1.25in}
+\let\origtodo\todo      % rename original todo command
+\renewcommand\todo[1]{\origtodo[backgroundcolor=blue, caption={#1}]{\color{Yellow}#1}}
+\newcommand\todoinline[1]{\origtodo[color=green, inline]{#1}}
+\newcommand\todooption[1]{\origtodo[color=blue!25]{#1}}
+\newcommand\todoalarm[1]{\origtodo[color=red]{#1}}
+
+% Custom theorem environments
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{col}[thm]{Corollary}
+
+\doublespacing
+% \includeonly{Introduction/Introduction}
+% \includeonly{Introduction/Introduction, Arnoldi/Arnoldi}
+% \includeonly{Arnoldi/Arnoldi}
+% \includeonly{SpatialDiscretization/SpatialDiscretization}
+% \includeonly{Arnoldi/Arnoldi, RelaxedArnoldi/RelaxedArnoldi}
+% \includeonly{RelaxedArnoldi/RelaxedArnoldi}
+% \includeonly{EntropyandVariance/EntropyandVariance}
+% \includeonly{SpatialDiscretization/SpatialDiscretization, Arnoldi/Arnoldi}
+% \includeonly{SpatialDiscretization/SpatialDiscretization, Title/Title}
+% \includeonly{Conclusions/Conclusions, QRAlgorithm/QRAlgorithm}
+% \includeonly{Conclusions/Conclusions}
+% \includeonly{Title/Title}
+
+\begin{document}
+\frontmatter
+
+\include{Title/Title}
+
+\mainmatter
+\begin{comment}
+\pagediagram
+\currentpage
+\reversemarginpartrue
+\pagedesign
+
+The textwidth is \printinunitsof{pt}\prntlen{\textwidth} which is also \printinunitsof{in}\prntlen{\textwidth} or \printinunitsof{mm}\prntlen{\textwidth}. 
+
+The textheight is \printinunitsof{pt}\prntlen{\textheight} which is also \printinunitsof{in}\prntlen{\textheight} or \printinunitsof{mm}\prntlen{\textheight}. 
+\end{comment}
+\include{Introduction/Introduction}
+
+\include{Arnoldi/Arnoldi}
+
+\include{SpatialDiscretization/SpatialDiscretization}
+
+\include{RelaxedArnoldi/RelaxedArnoldi}
+
+\include{EntropyandVariance/EntropyandVariance}
+
+\include{Conclusions/Conclusions}
+
+% Appendices (clearly)
+\appendix
+\renewcommand{\chaptername}{\appendixname}
+
+\include{QRAlgorithm/QRAlgorithm}
+
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{Bibliography}
+
+\end{document}

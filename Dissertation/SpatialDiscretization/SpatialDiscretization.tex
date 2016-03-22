@@ -1,0 +1,435 @@
+%!TEX root = ../Thesis.tex
+\chapter{Spatial Discretization \label{ch:SpatialDiscretization}}
+In \Fref{ch:ArnoldiMethod} necessity of spatially discretizing the fission source in order to take the inner product was introduced.  The inner product is necessary for orthogonalizing and normalizing the Arnoldi vectors.  The discretization causes an error in the eigenvalue estimate if the discretization is too coarse.  
+ 
+The effect of discretization was demonstrated in \Fref{sec:ArnoldiResults} and in \Fref{fig:BasicBias} the error in the eigenvalue estimate is shown as a function of the spatial bin width.   We see from this figure the importance of having a sufficient number of spatial bins to eliminate discretization errors.  Using a large number of spatial bins will remove the error in the eigenvalue estimate associated with discretization, but can increase the computational expense of sampling from and scoring in a fission source, as well as taking the inner product of two fission sources if too many bins are used.
+
+When sampling from a discretized fission source, or tallying in a discretized fission source, the bin to sample/tally must be determined.  The time required to find the appropriate bin is proportional to the number of spatial bins used, so as the number of spatial bins increases, the time required for sampling or tallying increases and the figure of merit decreases.
+
+When choosing a discretization strategy, it is important to find the smallest number of spatial bins that will reduce the eigenvalue error due to spatial discretization smaller than the statistical uncertainty.  We must be careful not to use too many spatial bins or the efficiency will suffer.
+
+In \Fref{fig:BasicBias} we see that the slopes of the linear best fit approximations have values ranging from 1.8 to 1.9.  This indicates there is a nearly quadratic or second-order relationship between the spatial discretization and the error in the eigenvalue estimate.  In this chapter I will demonstrate a higher order accurate approximation to the spatial discretization and show how it reduces the error caused by the discretization of the fission source.  This idea is based on work performed by \citet{Griesheimer:2005Funct-0} on Functional Expansion Tallies.
+
+\section{Second-Order Accurate Approximation---Linear in Space  \label{sec:LinearSpace}}
+The spatial approximation used in \Fref{ch:ArnoldiMethod} is a first-order accurate approximation, i.e. constant in space.  The fission source was approximated as
+\begin{equation}
+    \vP(x) = \sum_{b=1}^B a_b \Px,
+    \label{eq:ApproximatedSource}
+\end{equation}
+where $B$ is the number of spatial bins and 
+\begin{equation}
+    \Pi_b(x) = \begin{cases}
+        \left(\frac{1}{x_{b+1}-x_b}\right)^{1/2}, & x_b \leq x < x_{b+1} \\
+        0, & \mathrm{otherwise}.
+    \end{cases}
+    \label{eq:FirstOrderApproximation}
+\end{equation}
+The fission source, $\vP(x)$ is represented in Arnoldi's method as a vector of the form
+\begin{equation}
+    \vP = \left[a_1, a_2, \ldots, a_B\right]^T.
+    \label{eq:ConstantSpaceArnoldiVector}
+\end{equation}
+
+A spatial discretization of order 2 is not very different from the first-order accurate approximation given in \Fref{eq:ApproximatedSource} and \Fref{eq:FirstOrderApproximation}.  We approximate the fission source as a linear combination of functions
+\begin{equation}
+    \vL(x) = \sum_{b=1}^B \Lx,
+    \label{eq:LinearSource}
+\end{equation}
+where $B$ is the number of spatial bins.  The fission source in each bin is approximated by a linear function, \Lx, over the range of the bin:
+\begin{equation}
+    \Lx = \begin{cases}
+        \alpha_b + \beta_b x, & x_b \leq x < x_{b+1} \\
+        0, & \mathrm{otherwise}.
+    \end{cases}
+    \label{eq:SecondOrderApproximation}
+\end{equation}
+In this second-order accurate approximation the term $\beta_b x$ is included which preserves some of the spatial information ignored in a first-order accurate approximation.  Similarly to the first-order accurate approximation, the Arnoldi vector representation of \vL{} is a vector of the form
+\begin{equation}
+    \vL = \left[\alpha_1, \beta_1, \alpha_2, \beta_2, \ldots, \alpha_n, \beta_B\right]^T.
+    \label{eq:LinearSpaceArnoldiVector}
+\end{equation}
+The inner product between two piecewise linear in space fission sources is defined to be
+\begin{equation}
+    \langle \vP^{(j)},\vP^{(k)}\rangle = \sum_{b=1}^B \left(\alpha_b^{(j)}\alpha_b^{(k)} + \beta_b^{(j)}\beta_b^{(k)} \right).
+    \label{eq:InnerProductLinearSources}
+\end{equation}
+
+\subsection{Sampling} \label{sec:SecondOrderSample}
+The integral 
+\begin{equation}
+    q_b = \int \left|\Lx\right| \dd x 
+    \label{eq:IntegratedSourceBin}
+\end{equation}
+represents the rate of fission neutrons generated in the range $\left[x_b, x_{b+1}\right)$ and its magnitude---relative to the integrals over every other bin---is the probability of sampling a neutron from that bin.  We can create a normalized, discrete distribution $p(x) = \left\{p_b\right\}_{b=1}^B$ where $p_b = q_b/Q$ and $Q = \sum_{b=1}^B q_b$ is the total source strength.  We can sample a bin from $p(x)$ as we did for a first-order fission source.  Once a bin has been chosen, the position of the neutron is sampled from within the bin with the distribution function defined as
+\begin{equation}
+    p_b(x) = \frac{1}{q_b} \left|\Lx\right|
+    \label{eq:BinPDF}
+\end{equation}
+where $q_b$ is from \Fref{eq:IntegratedSourceBin}.  Once the position of the neutron has been sampled we give it a weight just as in \Fref{sec:NegativeSource}
+\begin{equation}
+    \omega = \begin{cases}
+        1 & v(x_s) > 0 \\
+        -1 & v(x_s) < 1.
+    \end{cases}
+    \label{eq:SecondOrderInitialWeight}
+\end{equation}
+
+\subsection{Determining the Expansion Coefficients $\alpha$ and $\beta$}
+With the fission source being approximated by the function in \Fref{eq:SecondOrderApproximation} we turn our attention to determining the expansion coefficients $\alpha$ and $\beta$.  To do this we must evaluate two integrals, something that is is well suited for Monte Carlo methods.  We first define the midpoint of bin $b$
+\begin{equation}
+    \xmid = \frac{x_{b+1}+x_b}{2}.
+    \label{eq:xmid}
+\end{equation}
+Taking the zeroth and first spatial moments over the bin
+\begin{subequations}\label{eq:SpatialMoments}\begin{align}
+        \int_{x_b}^{x_{b+1}} \Lx \dd x  &= \frac{1}{2}\left(x_{b+1} - x_b\right)\left[2\alpha_b + \beta_b\left(x_{b+1} + x_b\right)\right] \label{eq:ZerothMoment} \\[2ex]
+        \int_{x_b}^{x_{b+1}} \left(x-\xmid\right)\Lx \dd x &= \frac{\beta_b}{12}\left(x_{b+1} - x_b\right)^3 \label{eq:FirstMoment}
+    \end{align}
+\end{subequations}
+gives two equations for $\alpha_b$ and $\beta_b$.  The left-hand side of \Fref{eq:SpatialMoments} can be evaluated via Monte Carlo
+\begin{subequations}\label{eq:SpatialMomentsMC}\begin{align}
+    \int_{x_b}^{x_{b+1}} \Lx \dd x &= \frac{1}{N}\sum_{i=1}^N \omega_i  \label{eq:ZerothMomentMC} \\[2ex]
+    \int_{x_b}^{x_{b+1}} \left(x_i-\xmid\right)\Lx \dd x &= \frac{1}{N}\sum_{i=1}^N \left(x-\xmid\right)\omega_i \label{eq:FirstMomentMC}
+    \end{align}
+\end{subequations}
+where $N$ is the number of source particles and $\omega_i$ and $x_i$ are the weight and position of the particle that induces fission in bin $b$.  Note that $\omega_i$ can be negative.  By equating \Fref{eq:ZerothMoment} with \Fref{eq:ZerothMomentMC} and \Fref{eq:FirstMoment} with \Fref{eq:FirstMomentMC} we can obtain expressions for $\alpha_b$ and $\beta_b$
+\begin{subequations}
+    \begin{align}
+        \alpha_b &= \frac{1}{x_{b+1}-x_b}\frac{1}{N} \sum_{i=1}^N \omega_i - \frac{\beta_b}{2}\left(x_{b+1}+x_b\right) \label{eq:alpha_b} \\
+        \beta_b &= \frac{12}{\left(x_{b+1}-x_b\right)^3}\frac{1}{N} \sum_{i=1}^N \left(x_i-\xmid\right)\omega_i \label{eq:beta_b}
+    \end{align}
+    \label{eq:ExpansionCoefficients}
+\end{subequations}
+For Monte Carlo particle transport this means every time a fission is caused in bin $b$ the tallies $\omega_i$ and  $\left(x_i - \xmid\right)\omega_i$ are recorded.  At the end of the iteration, when the sampling and tallying are finished, the fission source is normalized similarly to the constant in space approximated source (\Fref{eq:SourceScaling})
+\begin{equation}
+    \vL^{(j+1)}(x) = \A \vL^{(j)}(x) \int |\vL^{(j)}(x)| \dd x.
+    \label{eq:SecondOrderSourceScaling}
+\end{equation}
+Notice the difference between \Fref{eq:SecondOrderSourceScaling} and \Fref{eq:SourceScaling} is the term $1/N$ is missing here.  The source is still scaled by the number of source particles in \Fref{eq:alpha_b} and \Fref{eq:beta_b}.
+
+\section{Numerical Results}
+To demonstrate the difference between a first and second-order accurate approximation to the fission source a series of simulations, similar to those given in \Fref{sec:DiscretizationBias} has been performed.  In \Fref{sec:DiscretizationBias} the effect of the coarseness of the spatial discretization on the bias of the eigenvalue estimate was shown by performing the same calculation but varying the number of spatial bins.  Here, the same set of calculations is performed,  a second-order accurate, linear in space approximation is used to the fission source.  The results will be compared with the results from \Fref{sec:DiscretizationBias}.
+
+The problem is a 20 mfp thick semi-infinite homogeneous slab of multiplying material with cross sections \mbox{$\nu\Sigma_f = 1.0$}, \mbox{$\Sigma_a = 0.2$}, and \mbox{$\Sigma_s = 0.8$}; \mbox{$\Sigma_t = 1.0$}.  In each iteration $10^5$ histories are tracked, 10 iterations per restart with 50 inactive restarts and 500 active restarts.  The number of spatial bins range from 10 to 150.  Both first and second order approximations start with a uniform source across the entire slab.  First-order accurate results are denoted with a subscript $\Pi$ and second-order accurate results are denoted with a subscript $\Lin$.
+
+On the following pages I present tables showing the numerical results of the bias and uncertainty of the estimated eigenvalues.  Tables \ref{tab:Bias0Histogram} and \ref{tab:Bias0Linear} show the results for the fundamental eigenvalue for the first and second-order accurate approximations, respectively.  In each of these tables is the eigenvalue estimate ($\lambda$), the standard deviation ($\sigma$), the error in the eigenvalue estimate ($\mathcal{B}$) and the figure of merit (FOM).  The error is the absolute value of the difference between the estimated eigenvalue and the published reference values from \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}.
+
+\begin{table} \centering
+    \subfloat[First-order accurate ($\Pi$) spatial discretization]{%
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Pi}$ & $\sigma_{\Pi}$ & $\mathcal{B}_{\Pi}$ & FOM ($\Pi$) \\
+        \midrule
+         10 & 2.00 & 4.8003 & 6.6\e{-4} & 2.7\e{-2} & 831.2 \\
+         25 & 0.80 & 4.8224 & 6.8\e{-4} & 5.3\e{-3} & 773.2 \\
+         40 & 0.50 & 4.8251 & 6.3\e{-4} & 2.6\e{-3} & 872.0 \\
+         50 & 0.40 & 4.8273 & 6.5\e{-4} & 4.2\e{-4} & 829.0 \\
+         60 & 0.33 & 4.8258 & 6.9\e{-4} & 2.0\e{-3} & 704.3 \\
+         75 & 0.27 & 4.8275 & 6.7\e{-4} & 2.4\e{-4} & 753.0 \\
+         90 & 0.22 & 4.8277 & 6.7\e{-4} & 4.2\e{-5} & 746.1 \\
+        105 & 0.19 & 4.8277 & 6.9\e{-4} & 5.2\e{-5} & 698.3 \\
+        120 & 0.17 & 4.8282 & 6.5\e{-4} & 4.1\e{-4} & 767.8 \\
+        135 & 0.15 & 4.8274 & 7.0\e{-4} & 3.1\e{-4} & 656.9 \\
+        150 & 0.13 & 4.8285 & 6.4\e{-4} & 7.5\e{-4} & 792.0 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:Bias0Histogram}}
+
+    \subfloat[Second-order accurate ($\Lin$) spatial discretization]{%
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Lin}$ & $\sigma_{\Lin}$ & $\mathcal{B}_{\Lin}$ & FOM ($\Lin$) \\
+        \midrule
+         10 & 2.00 & 4.8302 & 1.2\e{-3} & 2.5\e{-3} & 259.5 \\
+         25 & 0.80 & 4.8280 & 4.4\e{-4} & 2.1\e{-4} & 1765.7 \\
+         40 & 0.50 & 4.8283 & 4.5\e{-4} & 5.7\e{-4} & 1675.6 \\
+         50 & 0.40 & 4.8277 & 4.5\e{-4} & 6.2\e{-5} & 1470.6 \\
+         60 & 0.33 & 4.8283 & 3.9\e{-4} & 5.4\e{-4} & 2171.6 \\
+         75 & 0.27 & 4.8276 & 4.0\e{-4} & 1.5\e{-4} & 2069.3 \\
+         90 & 0.22 & 4.8275 & 3.8\e{-4} & 2.0\e{-4} & 2251.3 \\
+        105 & 0.19 & 4.8259 & 5.9\e{-4} & 1.8\e{-3} & 877.1 \\
+        120 & 0.17 & 4.8172 & 1.3\e{-3} & 1.1\e{-2} & 189.4 \\
+        135 & 0.15 & 4.8110 & 2.1\e{-3} & 1.7\e{-2} & 66.2 \\
+        150 & 0.13 & 4.8102 & 2.0\e{-3} & 1.8\e{-2} & 73.0 \\        
+        \bottomrule
+    \end{tabular}
+    \label{tab:Bias0Linear}}
+    \caption{Error ($\mathcal{B}$) in the fundamental eigenvalue estimate ($\lambda$) for first-order accurate \subref{tab:Bias0Histogram} and second-order accurate \subref{tab:Bias0Linear} discretization as a function of the bin width.  Figure of merit is also given for first and second-order accurate spatial discretizations.  1E5 particles were tracked in each iteration.}
+\end{table}
+
+\begin{comment}
+\begin{table}[p] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Pi}$ & $\sigma_{\Pi}$ & $\mathcal{B}_{\Pi}$ & FOM ($\Pi$) \\
+        \midrule
+         10 & 2.00 & 4.2839 & 6.4\e{-4} & 2.7\e{-2} & 831.2 \\
+         25 & 0.80 & 4.3652 & 6.5\e{-4} & 5.3\e{-3} & 773.2 \\
+         40 & 0.50 & 4.3754 & 6.1\e{-4} & 2.6\e{-3} & 872.0 \\
+         50 & 0.40 & 4.3794 & 5.8\e{-4} & 4.2\e{-4} & 829.0 \\
+         60 & 0.33 & 4.3796 & 6.3\e{-4} & 2.0\e{-3} & 704.3 \\
+         75 & 0.27 & 4.3807 & 6.4\e{-4} & 2.4\e{-4} & 753.0 \\
+         90 & 0.22 & 4.3819 & 6.3\e{-4} & 4.2\e{-5} & 746.1 \\
+        105 & 0.19 & 4.3805 & 6.3\e{-4} & 5.2\e{-5} & 698.3 \\
+        120 & 0.17 & 4.3819 & 6.1\e{-4} & 4.1\e{-4} & 767.8 \\
+        135 & 0.15 & 4.3810 & 6.3\e{-4} & 3.1\e{-4} & 656.9 \\
+        150 & 0.13 & 4.3827 & 6.3\e{-4} & 7.5\e{-4} & 792.0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue bias for first-order accurate ($\Pi$) spatial discretization.  }
+    \label{tab:Bias1Histogram}
+\end{table}
+\begin{table}[p] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Lin}$ & $\sigma_{\Lin}$ & $\mathcal{B}_{\Lin}$ & FOM ($\Lin$) \\
+        \midrule
+         10 & 2.00 & 4.3867 & 2.3\e{-3} & 2.5\e{-3} & 259.5 \\
+         25 & 0.80 & 4.3832 & 6.6\e{-4} & 2.1\e{-4} & 1765.7 \\
+         40 & 0.50 & 4.3825 & 6.6\e{-4} & 5.7\e{-4} & 1675.6 \\
+         50 & 0.40 & 4.3839 & 6.0\e{-4} & 6.2\e{-5} & 1470.6 \\
+         60 & 0.33 & 4.3835 & 6.2\e{-4} & 5.4\e{-4} & 2171.6 \\
+         75 & 0.27 & 4.3814 & 8.7\e{-4} & 1.5\e{-4} & 2069.3 \\
+         90 & 0.22 & 4.3744 & 2.1\e{-3} & 2.0\e{-4} & 2251.3 \\
+        105 & 0.19 & 4.3544 & 1.7\e{-3} & 1.8\e{-3} & 877.1 \\
+        120 & 0.17 & 4.2712 & 5.2\e{-3} & 1.1\e{-2} & 189.4 \\
+        135 & 0.15 & 4.1913 & 1.0\e{-2} & 1.7\e{-2} & 66.2 \\
+        150 & 0.13 & 3.9961 & 1.2\e{-2} & 1.8\e{-2} & 73.0 \\        
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue bias for second-order accurate ($\Lin$) spatial discretization.  }
+    \label{tab:Bias1Linear}
+\end{table}
+
+\begin{table}[p] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Pi}$ & $\sigma_{\Pi}$ & $\mathcal{B}_{\Pi}$ & FOM ($\Pi$) \\
+        \midrule
+         10 & 2.00 & 3.6321 & 5.4\e{-4} & 2.7\e{-2} & 831.2 \\
+         25 & 0.80 & 3.7826 & 6.2\e{-4} & 5.3\e{-3} & 773.2 \\
+         40 & 0.50 & 3.8032 & 5.9\e{-4} & 2.6\e{-3} & 872.0 \\
+         50 & 0.40 & 3.8091 & 5.8\e{-4} & 4.2\e{-4} & 829.0 \\
+         60 & 0.33 & 3.8108 & 5.9\e{-4} & 2.0\e{-3} & 704.3 \\
+         75 & 0.27 & 3.8127 & 6.1\e{-4} & 2.4\e{-4} & 753.0 \\
+         90 & 0.22 & 3.8151 & 5.4\e{-4} & 4.2\e{-5} & 746.1 \\
+        105 & 0.19 & 3.8148 & 5.7\e{-4} & 5.2\e{-5} & 698.3 \\
+        120 & 0.17 & 3.8171 & 5.8\e{-4} & 4.1\e{-4} & 767.8 \\
+        135 & 0.15 & 3.8167 & 5.6\e{-4} & 3.1\e{-4} & 656.9 \\
+        150 & 0.13 & 3.8167 & 6.1\e{-4} & 7.5\e{-4} & 792.0 \\        
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue bias for first-order accurate ($\Pi$) spatial discretization.  }
+    \label{tab:Bias2Histogram}
+\end{table}
+\begin{table}[p] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Lin}$ & $\sigma_{\Lin}$ & $\mathcal{B}_{\Lin}$ & FOM ($\Lin$) \\
+        \midrule
+         10 & 2.00 & 3.8330 & 4.3\e{-3} & 2.5\e{-3} & 259.5 \\
+         25 & 0.80 & 3.8192 & 1.0\e{-3} & 2.1\e{-4} & 1765.7 \\
+         40 & 0.50 & 3.8157 & 1.0\e{-3} & 5.7\e{-4} & 1675.6 \\
+         50 & 0.40 & 3.8155 & 1.1\e{-3} & 6.2\e{-5} & 1470.6 \\
+         60 & 0.33 & 3.8162 & 1.2\e{-3} & 5.4\e{-4} & 2171.6 \\
+         75 & 0.27 & 3.8089 & 2.0\e{-3} & 1.5\e{-4} & 2069.3 \\
+         90 & 0.22 & 3.2808 & 4.6\e{-3} & 2.0\e{-4} & 2251.3 \\
+        105 & 0.19 & 3.1759 & 4.3\e{-3} & 1.8\e{-3} & 877.1 \\
+        120 & 0.17 & 2.8474 & 1.7\e{-2} & 1.1\e{-2} & 189.4 \\
+        135 & 0.15 & 1.7544 & 2.0\e{-2} & 1.7\e{-2} & 66.2 \\
+        150 & 0.13 & 1.4275 & 3.6\e{-3} & 1.8\e{-2} & 73.0 \\        
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue bias for second-order accurate ($\Lin$) spatial discretization.  }
+    \label{tab:Bias2Linear}
+\end{table}
+\end{comment}
+
+The purpose of going to a second-order accurate accurate approximation to the fission source is to reduce the error in the eigenvalue estimate associated with discretizing the fission source.  We can see from tables \ref{tab:Bias0Histogram} and \ref{tab:Bias0Linear} that for bin widths between 0.4 and 2.0 mfp thick the error in the eigenvalue estimate from the second-order accurate approximation is an order of magnitude smaller than the error from the first-order accurate approximation.  Thus, moving to a second-order accurate approximation to the fission source can greatly reduce the error.  
+
+The second-order accurate approximation has a smaller statistical uncertainty than the first-order accurate approximation for bin widths between 0.8 and 0.22 mfp and is fairly independent of the bin width in this range.  The uncertainty for the first-order accurate approximation appears to be independent of the size of the bin width over the whole range of bin widths.  The largest and three smallest bin widths from the second-order accurate approximation however have large errors in the eigenvalue estimate and large statistical uncertainties.  For thin bins, the number of neutrons that are born in those bins is small, causing the Monte Carlo noise to dominate the results.  The behavior of the linear-in-space approximation in the 2 mfp wide bins is a mystery.
+
+The figure of merit is 2-3 times larger for the second-order accurate approximation than the first-order for bin widths between 0.8 and 0.22 mfp.  For very small bin widths or for the largest bin width, the figure of merit is smaller for the second-order accurate approximation than the first-order.  The figure of merit as a function of bin width is shown graphically in \Fref{fig:BiasFOM}.
+\begin{sidewaysfigure} \centering
+    \input{SpatialDiscretization/Data/BiasFOM}
+    \caption{Figure of merit as a function of bin width for a slab of width 20 mfp and tracking 1E5 particles per iteration.  Included are results from a first-order ($\Pi$) and second-order ($\Lin$) approximation to the fission source.}
+    \label{fig:BiasFOM}
+\end{sidewaysfigure}
+
+In the first-order accurate approximation, the shape of the eigenvectors were limited by the flat approximation in each bin.  Since the second-order accurate approximation is a linear approximation in each bin, we expect the second-order accurate approximation to have an improved eigenvector than the first-order accurate approximation.  In \Fref{fig:LinearVectors} the eigenvectors from the second-order accurate approximation with 60 spatial bins are shown.  In \Fref{fig:SpatialDiscretizationVectors}, the same eigenvectors are plotted along with the eigenvectors from the first-order accurate approximation to show they have the same shape.  From these figures we see that the second-order accurate approximation is a smooth approximation to the fission source and appears continuous across the bin boundaries.
+\begin{sidewaysfigure} \centering
+    \input{SpatialDiscretization/Data/LinearVectors}
+    \caption{Estimates of the fundamental and first two harmonic eigenvectors, tracking 1E5 particles per iteration and, using 60 spatial bins with a second-order accurate approximation to the fission source.}
+    \label{fig:LinearVectors}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure} \centering
+    \input{SpatialDiscretization/Data/Vectors}
+    \caption{Estimates of the fundamental and first two harmonic eigenvectors tracking 1E5 particles per iteration and using 60 spatial bins.  The sawtooth shaped curves use a  first-order accurate approximation while the smooth curves use a second-order accurate approximation to the fission source.}
+    \label{fig:SpatialDiscretizationVectors}
+\end{sidewaysfigure}
+
+For small bin widths the second-order accurate approximation seems to have difficulties due to too few particles scoring in a bin.  If more particles were tracked in an iteration we expect more particles to score in each bin and the statistical uncertainty to improve.  The above simulations have been repeated, but have tracked 1E6 particles in each iteration---ten times more particles---to improve the statistics in each simulation.  The results for the first-order accurate approximation are given in \Fref{tab:Bias0Histogram1E6} and the results for the second-order accurate approximation  are given in \Fref{tab:Bias0Linear1E6}.
+
+Tracking more particles in an iteration seems to have made a big improvement for the second-order accurate approximation with very small bin widths.  Now all the results, except the large bin width of 2 mfp, estimates the fundamental eigenvalue within statistical uncertainty.  Tracking ten times more particles per iteration has improved the poor results from the simulation with small bins and has reduced the standard deviation by approximately one-third, as we expect for the second-order accurate approximation.  The standard deviation was also reduced for the first-order accurate approximation simulations.  The error in the eigenvalue estimate is also significantly smaller for the second-order accurate approximation but remains essentially unchanged for the first-order accurate approximation.
+
+In \Fref{fig:BiasFOM1E6} the figure of merit is shown for the first and second-order spatial approximations, where 1 million particles are tracked for each iteration.  We see that when tracking more particles in an iteration, the figure of merit improves for second-order accurate approximations with small bin widths.  This is because now we have an accurate estimate of the eigenvalue as well as a reduced standard deviation.  With the exception of simulations with very large bin widths, the figure of merit for second-order accurate approximations are two times larger than that for first-order accurate approximations.  It should be noted that the linear-in-space approximation is not only more efficient than the power method, but it is in fact computing 3 eigenpairs compared to the power methods single eigenvector. 
+
+The anomaly in these results is the second-order accurate approximation with a bin width of 2.0 mfp.  The error in the eigenvalue estimate is smaller than the error for the same problem but with a first-order accurate approximation, but the eigenvalue estimate is not within statistical uncertainty regardless of the number of particles tracked.  In addition, the error in the eigenvalue estimate is larger than for any other bin width.
+
+\begin{comment}
+\begin{sidewaysfigure} \centering
+    \input{SpatialDiscretization/Data/BiasLinear1E6}
+    \caption{Eigenvalue bias for second-order spatial discretization with 1 million particles tracked.}
+    \label{fig:BiasSecondOrder1E6}
+\end{sidewaysfigure}
+\end{comment}
+
+\begin{table}[p] \centering
+    \subfloat[First-order ($\Pi$) spatial discretization]{%
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Pi}$ & $\sigma_{\Pi}$ & $\mathcal{B}_{\Pi}$ & FOM ($\Pi$) \\
+        \midrule
+         10 & 2.00 & 4.8003 & 2.1\e{-4} & 2.7\e{-2} & 838.5 \\
+         25 & 0.80 & 4.8232 & 2.2\e{-4} & 4.5\e{-3} & 751.1 \\
+         40 & 0.50 & 4.8258 & 2.1\e{-4} & 1.9\e{-3} & 832.9 \\
+         50 & 0.40 & 4.8267 & 2.1\e{-4} & 1.1\e{-3} & 796.1 \\
+         60 & 0.33 & 4.8270 & 2.1\e{-4} & 7.3\e{-4} & 751.0 \\
+         75 & 0.27 & 4.8269 & 2.1\e{-4} & 8.3\e{-4} & 787.5 \\
+         90 & 0.22 & 4.8275 & 2.2\e{-4} & 2.7\e{-4} & 694.3 \\
+        105 & 0.19 & 4.8274 & 2.1\e{-4} & 3.4\e{-4} & 768.8 \\
+        120 & 0.17 & 4.8276 & 2.0\e{-4} & 1.6\e{-4} & 846.8 \\
+        135 & 0.15 & 4.8275 & 2.0\e{-4} & 2.6\e{-4} & 793.9 \\
+        150 & 0.13 & 4.8280 & 2.1\e{-4} & 2.7\e{-4} & 746.8 \\        
+        \bottomrule
+    \end{tabular}
+    \label{tab:Bias0Histogram1E6} }
+
+    \subfloat[Second-order ($\Lin$) spatial discretization]{%
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Lin}$ & $\sigma_{\Lin}$ & $\mathcal{B}_{\Lin}$ & FOM ($\Lin$) \\
+        \midrule
+         10 & 2.00 & 4.8329 & 4.1\e{-3} & 5.1\e{-3} & 2.0 \\
+         25 & 0.80 & 4.8274 & 1.5\e{-4} & 3.1\e{-4} & 1607.8 \\
+         40 & 0.50 & 4.8278 & 1.4\e{-4} & 6.8\e{-5} & 1742.0 \\
+         50 & 0.40 & 4.8276 & 1.5\e{-4} & 1.7\e{-4} & 1512.8 \\
+         60 & 0.33 & 4.8276 & 1.3\e{-4} & 1.1\e{-4} & 1832.8 \\
+         75 & 0.27 & 4.8277 & 1.4\e{-4} & 5.2\e{-5} & 1692.6 \\
+         90 & 0.22 & 4.8278 & 1.4\e{-4} & 7.8\e{-5} & 1730.6 \\
+        105 & 0.19 & 4.8279 & 1.4\e{-4} & 1.1\e{-4} & 1701.9 \\
+        120 & 0.17 & 4.8278 & 1.3\e{-4} & 4.8\e{-5} & 1985.2 \\
+        135 & 0.15 & 4.8279 & 1.3\e{-4} & 1.9\e{-4} & 1757.3 \\
+        150 & 0.13 & 4.8277 & 1.2\e{-4} & 6.2\e{-5} & 2015.0 \\        
+        \bottomrule
+    \end{tabular}
+    \label{tab:Bias0Linear1E6} }
+    \caption{Error ($\mathcal{B}$) in the fundamental eigenvalue estimate ($\lambda$) for first-order \subref{tab:Bias0Histogram} and second-order \subref{tab:Bias0Linear} discretization as a function of the bin width.  Figure of merit is also given for first and second-order spatial discretizations.  1E6 particles were tracked in each iteration.}
+\end{table}
+
+\begin{comment}
+\begin{table}[ht] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Pi}$ & $\sigma_{\Pi}$ & $\mathcal{B}_{\Pi}$ & FOM ($\Pi$) \\
+        \midrule
+         10 & 2.00 & 4.2853 & 2.0\e{-4} & 2.7\e{-2} & 838.5 \\
+         25 & 0.80 & 4.3658 & 1.9\e{-4} & 4.5\e{-3} & 751.1 \\
+         40 & 0.50 & 4.3758 & 1.9\e{-4} & 1.9\e{-3} & 832.9 \\
+         50 & 0.40 & 4.3784 & 1.9\e{-4} & 1.1\e{-3} & 796.1 \\
+         60 & 0.33 & 4.3802 & 2.0\e{-4} & 7.3\e{-4} & 751.0 \\
+         75 & 0.27 & 4.3811 & 2.1\e{-4} & 8.3\e{-4} & 787.5 \\
+         90 & 0.22 & 4.3818 & 1.9\e{-4} & 2.7\e{-4} & 694.3 \\
+        105 & 0.19 & 4.3820 & 2.1\e{-4} & 3.4\e{-4} & 768.8 \\
+        120 & 0.17 & 4.3821 & 2.0\e{-4} & 1.6\e{-4} & 846.8 \\
+        135 & 0.15 & 4.3823 & 2.0\e{-4} & 2.6\e{-4} & 793.9 \\
+        150 & 0.13 & 4.3824 & 2.0\e{-4} & 2.7\e{-4} & 746.8 \\        
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue bias for first-order ($\Pi$) spatial discretization with 1 million particles tracked.  }
+    \label{tab:Bias1Histogram1E6}
+\end{table}
+\begin{table}[hb] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Lin}$ & $\sigma_{\Lin}$ & $\mathcal{B}_{\Lin}$ & FOM ($\Lin$) \\
+        \midrule
+         10 & 2.00 & 4.3854 & 1.6\e{-3} & 5.1\e{-3} & 2.0 \\
+         25 & 0.80 & 4.3830 & 2.1\e{-4} & 3.1\e{-4} & 1607.8 \\
+         40 & 0.50 & 4.3834 & 2.1\e{-4} & 6.8\e{-5} & 1742.0 \\
+         50 & 0.40 & 4.3829 & 2.0\e{-4} & 1.7\e{-4} & 1512.8 \\
+         60 & 0.33 & 4.3830 & 2.1\e{-4} & 1.1\e{-4} & 1832.8 \\
+         75 & 0.27 & 4.3831 & 2.2\e{-4} & 5.2\e{-5} & 1692.6 \\
+         90 & 0.22 & 4.3833 & 2.1\e{-4} & 7.8\e{-5} & 1730.6 \\
+        105 & 0.19 & 4.3830 & 2.1\e{-4} & 1.1\e{-4} & 1701.9 \\
+        120 & 0.17 & 4.3828 & 2.0\e{-4} & 4.8\e{-5} & 1985.2 \\
+        135 & 0.15 & 4.3832 & 2.1\e{-4} & 1.9\e{-4} & 1757.3 \\
+        150 & 0.13 & 4.3832 & 2.5\e{-4} & 6.2\e{-5} & 2015.0 \\        
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue bias for second-order ($\Lin$) spatial discretization with 1 million particles tracked.  }
+    \label{tab:Bias1Linear1E6}
+\end{table}
+
+\begin{table}[ht] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Pi}$ & $\sigma_{\Pi}$ & $\mathcal{B}_{\Pi}$ & FOM ($\Pi$) \\
+        \midrule
+         10 & 2.00 & 3.6321 & 1.7\e{-4} & 2.7\e{-2} & 838.5 \\
+         25 & 0.80 & 3.7830 & 1.8\e{-4} & 4.5\e{-3} & 751.1 \\
+         40 & 0.50 & 3.8037 & 1.8\e{-4} & 1.9\e{-3} & 832.9 \\
+         50 & 0.40 & 3.8081 & 1.8\e{-4} & 1.1\e{-3} & 796.1 \\
+         60 & 0.33 & 3.8111 & 1.9\e{-4} & 7.3\e{-4} & 751.0 \\
+         75 & 0.27 & 3.8133 & 1.9\e{-4} & 8.3\e{-4} & 787.5 \\
+         90 & 0.22 & 3.8148 & 1.9\e{-4} & 2.7\e{-4} & 694.3 \\
+        105 & 0.19 & 3.8151 & 1.9\e{-4} & 3.4\e{-4} & 768.8 \\
+        120 & 0.17 & 3.8159 & 1.8\e{-4} & 1.6\e{-4} & 846.8 \\
+        135 & 0.15 & 3.8164 & 1.8\e{-4} & 2.6\e{-4} & 793.9 \\
+        150 & 0.13 & 3.8166 & 1.9\e{-4} & 2.7\e{-4} & 746.8 \\        
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue bias for first-order ($\Pi$) spatial discretization with 1 million particles tracked.  }
+    \label{tab:Bias2Histogram1E6}
+\end{table}
+\begin{table}[hb] \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \# Bins & Bin Width (mfp) & $\lambda_{\Lin}$ & $\sigma_{\Lin}$ & $\mathcal{B}_{\Lin}$ & FOM ($\Lin$) \\
+        \midrule
+         10 & 2.00 & 3.8234 & 3.1\e{-3} & 5.1\e{-3} & 2.0 \\
+         25 & 0.80 & 3.8171 & 3.2\e{-4} & 3.1\e{-4} & 1607.8 \\
+         40 & 0.50 & 3.8177 & 3.1\e{-4} & 6.8\e{-5} & 1742.0 \\
+         50 & 0.40 & 3.8174 & 3.1\e{-4} & 1.7\e{-4} & 1512.8 \\
+         60 & 0.33 & 3.8169 & 3.2\e{-4} & 1.1\e{-4} & 1832.8 \\
+         75 & 0.27 & 3.8168 & 3.2\e{-4} & 5.2\e{-5} & 1692.6 \\
+         90 & 0.22 & 3.8174 & 3.4\e{-4} & 7.8\e{-5} & 1730.6 \\
+        105 & 0.19 & 3.8179 & 3.4\e{-4} & 1.1\e{-4} & 1701.9 \\
+        120 & 0.17 & 3.8172 & 3.7\e{-4} & 4.8\e{-5} & 1985.2 \\
+        135 & 0.15 & 3.8178 & 4.2\e{-4} & 1.9\e{-4} & 1757.3 \\
+        150 & 0.13 & 3.8165 & 5.8\e{-4} & 6.2\e{-5} & 2015.0 \\        
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue bias for second-order ($\Lin$) spatial discretization with 1 million particles tracked.  }
+    \label{tab:Bias2Linear1E6}
+\end{table}
+\end{comment}
+
+\begin{sidewaysfigure} \centering
+    \input{SpatialDiscretization/Data/BiasFOM1E6}
+    \caption{Figure of merit as a function of bin width for a slab of width 20 mfp and tracking 1E6 particles per iteration.  Included are results from a first-order ($\Pi$) and second-order ($\Lin$) approximation to the fission source.}
+    \label{fig:BiasFOM1E6}
+\end{sidewaysfigure}
+
+\section{Summary} \label{sec:SpatialDiscretizationSummary}
+In this chapter first and second-order accurate approximations to the fission source have been investigated.  These were demonstrated on a semi-infinite, homogeneous slab of multiplying material of width 20 mfp.  Both techniques have an error associated with the discretization.  The power method does not suffer from this kind of error.  It has been shown that for a sufficient number of spatial bins the error in the eigenvalue estimate is smaller than the standard deviation of the eigenvalue estimates.  
+
+Using a second-order accurate approximation for the fission source is a significant improvement over the first-order accurate approximation; the standard deviation is smaller and the error in the eigenvalue estimate is an order of magnitude smaller when a sufficient number of particles is used.  The standard deviation becomes smaller for both first and second-order accurate approximations as the number of particles tracked in an iteration increases.  The error in the eigenvalue estimate is not significantly improved for the first-order accurate approximation as the number of particles tracked increases, while the error decreases for the second-order accurate approximation.
+
+The second-order accurate approximation has much better approximation to the eigenvectors.  Because the approximation is linear in space, the eigenvector approximation is smoother in the second-order accurate approximation than in the first-order accurate approximation.  The results shown in this chapter show that the eigenvectors are nearly continuous across bin boundaries for the second-order accurate approximation.
+
+Both the first and second-order accurate approximations have errors in the eigenvalue estimate that are less than the statistical uncertainty for bin widths in the 0.5--0.2 mfp range.  If the spatial discretization is too coarse, too much information is lost; if the discretization is too fine, the Monte Carlo transport is too noisy within each bin to give good results.  In both extreme cases an error eigenvalue estimates arises.  In the second-order accurate approximation, the figure of merit significantly decreases in these extreme case because the variance of the mean of the eigenvalue estimates is larger.  
+
+Using a moderate number of spatial bins can give excellent results.  When tracking more particles per iteration, a finer discretization can be used.  Further work needs to be performed to identify---if possible---a general rule for the granularity of the discretization.  
+

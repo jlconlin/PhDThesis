@@ -1,0 +1,1384 @@
+
+------------------------------------------
+Don't Forget the following two commands:
+
+kinit -5 jlconlin
+aklog
+------------------------------------------
+
+I ran on:  /var/spool/PBS/aux//2666750.nyx.engin.umich.edu
+Running ArnoldiResearch.
+
+Arguments:
+	source = Histogram
+	Iterations = 2
+	eigenvalues = 1
+	relaxed = 0
+	run = true
+	filename = N1Arnoldi.dat
+	multimedia = false
+	terminal = dumb
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 20
+	bins = 75
+	active = 500
+	inactive = 125
+	tracks = 100000
+	ignore_rest = false
+	version = false
+	help = false
+
+Running Arnoldi's Method
+Master seed: 4004098477
+Materials:
+[(nu: 5, xF: 0.2, xG: 0, xS: 0.8) , xA: 0.2, xT: 1]
+	Iteration #:  1, H =  1.849, time:  0.147 sec.
+Restart #: -125, H =  1.849, mean = (  2.3685,     0), std.dev. = (      0,     0), res =      1.18, time: 0.3786 sec
+	Iteration #:  1, H =  2.905, time: 0.2264 sec.
+Restart #: -124, H =  2.905, mean = (  3.6247,     0), std.dev. = (      0,     0), res =     0.935, time: 0.8716 sec
+	Iteration #:  1, H =  3.483, time:  0.263 sec.
+Restart #: -123, H =  3.483, mean = (  4.1196,     0), std.dev. = (      0,     0), res =     0.738, time:  1.409 sec
+	Iteration #:  1, H =  3.669, time: 0.2779 sec.
+Restart #: -122, H =  3.669, mean = (  4.3529,     0), std.dev. = (      0,     0), res =     0.546, time:  1.969 sec
+	Iteration #:  1, H =  3.907, time: 0.2874 sec.
+Restart #: -121, H =  3.907, mean = (  4.5296,     0), std.dev. = (      0,     0), res =     0.476, time:  2.536 sec
+	Iteration #:  1, H =  3.883, time: 0.2927 sec.
+Restart #: -120, H =  3.883, mean = (  4.6304,     0), std.dev. = (      0,     0), res =     0.345, time:  3.114 sec
+	Iteration #:  1, H =  4.018, time:  0.295 sec.
+Restart #: -119, H =  4.018, mean = (  4.6778,     0), std.dev. = (      0,     0), res =     0.359, time:  3.697 sec
+	Iteration #:  1, H =  4.008, time: 0.2991 sec.
+Restart #: -118, H =  4.008, mean = (  4.7026,     0), std.dev. = (      0,     0), res =     0.294, time:  4.287 sec
+	Iteration #:  1, H =  4.035, time: 0.3004 sec.
+Restart #: -117, H =  4.035, mean = (  4.7625,     0), std.dev. = (      0,     0), res =     0.252, time:  4.876 sec
+	Iteration #:  1, H =  4.097, time: 0.3011 sec.
+Restart #: -116, H =  4.097, mean = (  4.7611,     0), std.dev. = (      0,     0), res =     0.202, time:  5.471 sec
+	Iteration #:  1, H =  4.038, time: 0.3037 sec.
+Restart #: -115, H =  4.038, mean = (  4.7965,     0), std.dev. = (      0,     0), res =     0.198, time:  6.069 sec
+	Iteration #:  1, H =  4.031, time: 0.3052 sec.
+Restart #: -114, H =  4.031, mean = (  4.8085,     0), std.dev. = (      0,     0), res =     0.117, time:  6.671 sec
+	Iteration #:  1, H =  4.055, time: 0.3059 sec.
+Restart #: -113, H =  4.055, mean = (  4.8117,     0), std.dev. = (      0,     0), res =     0.109, time:  7.276 sec
+	Iteration #:  1, H =  3.984, time: 0.3063 sec.
+Restart #: -112, H =  3.984, mean = (   4.809,     0), std.dev. = (      0,     0), res =    0.0832, time:  7.882 sec
+	Iteration #:  1, H =  4.037, time: 0.3055 sec.
+Restart #: -111, H =  4.037, mean = (  4.8339,     0), std.dev. = (      0,     0), res =    0.0715, time:  8.486 sec
+	Iteration #:  1, H =  3.985, time:  0.306 sec.
+Restart #: -110, H =  3.985, mean = (  4.8292,     0), std.dev. = (      0,     0), res =    0.0808, time:  9.096 sec
+	Iteration #:  1, H =  4.058, time: 0.3045 sec.
+Restart #: -109, H =  4.058, mean = (  4.7752,     0), std.dev. = (      0,     0), res =    0.0854, time:  9.702 sec
+	Iteration #:  1, H =  3.999, time: 0.3075 sec.
+Restart #: -108, H =  3.999, mean = (  4.8218,     0), std.dev. = (      0,     0), res =    0.0544, time:  10.31 sec
+	Iteration #:  1, H =  4.007, time: 0.3048 sec.
+Restart #: -107, H =  4.007, mean = (  4.8009,     0), std.dev. = (      0,     0), res =    0.0579, time:  10.92 sec
+	Iteration #:  1, H =      4, time: 0.3067 sec.
+Restart #: -106, H =      4, mean = (  4.8204,     0), std.dev. = (      0,     0), res =    0.0519, time:  11.53 sec
+	Iteration #:  1, H =  3.996, time: 0.3071 sec.
+Restart #: -105, H =  3.996, mean = (  4.8134,     0), std.dev. = (      0,     0), res =    0.0388, time:  12.14 sec
+	Iteration #:  1, H =   4.04, time: 0.3071 sec.
+Restart #: -104, H =   4.04, mean = (  4.8353,     0), std.dev. = (      0,     0), res =    0.0339, time:  12.75 sec
+	Iteration #:  1, H =  4.064, time:  0.306 sec.
+Restart #: -103, H =  4.064, mean = (  4.8121,     0), std.dev. = (      0,     0), res =    0.0763, time:  13.36 sec
+	Iteration #:  1, H =  4.001, time: 0.3072 sec.
+Restart #: -102, H =  4.001, mean = (  4.8315,     0), std.dev. = (      0,     0), res =    0.0588, time:  13.97 sec
+	Iteration #:  1, H =   4.05, time:  0.305 sec.
+Restart #: -101, H =   4.05, mean = (   4.817,     0), std.dev. = (      0,     0), res =     0.034, time:  14.58 sec
+	Iteration #:  1, H =  4.066, time: 0.3071 sec.
+Restart #: -100, H =  4.066, mean = (  4.8299,     0), std.dev. = (      0,     0), res =    0.0308, time:  15.19 sec
+	Iteration #:  1, H =  3.989, time: 0.3059 sec.
+Restart #: -99, H =  3.989, mean = (  4.8046,     0), std.dev. = (      0,     0), res =    0.0212, time:  15.79 sec
+	Iteration #:  1, H =  3.998, time:  0.306 sec.
+Restart #: -98, H =  3.998, mean = (  4.8251,     0), std.dev. = (      0,     0), res =    0.0235, time:   16.4 sec
+	Iteration #:  1, H =  4.068, time: 0.3063 sec.
+Restart #: -97, H =  4.068, mean = (  4.8214,     0), std.dev. = (      0,     0), res =     0.043, time:  17.01 sec
+	Iteration #:  1, H =  4.014, time: 0.3065 sec.
+Restart #: -96, H =  4.014, mean = (  4.8392,     0), std.dev. = (      0,     0), res =    0.0349, time:  17.62 sec
+	Iteration #:  1, H =  4.014, time: 0.3054 sec.
+Restart #: -95, H =  4.014, mean = (  4.8197,     0), std.dev. = (      0,     0), res =    0.0207, time:  18.23 sec
+	Iteration #:  1, H =  3.995, time: 0.3075 sec.
+Restart #: -94, H =  3.995, mean = (  4.8402,     0), std.dev. = (      0,     0), res =    0.0233, time:  18.84 sec
+	Iteration #:  1, H =  3.974, time: 0.3055 sec.
+Restart #: -93, H =  3.974, mean = (  4.8446,     0), std.dev. = (      0,     0), res =    0.0322, time:  19.45 sec
+	Iteration #:  1, H =  4.033, time: 0.3057 sec.
+Restart #: -92, H =  4.033, mean = (  4.8065,     0), std.dev. = (      0,     0), res =    0.0306, time:  20.06 sec
+	Iteration #:  1, H =  4.055, time:  0.307 sec.
+Restart #: -91, H =  4.055, mean = (  4.8473,     0), std.dev. = (      0,     0), res =    0.0357, time:  20.66 sec
+	Iteration #:  1, H =  4.001, time: 0.3053 sec.
+Restart #: -90, H =  4.001, mean = (  4.8116,     0), std.dev. = (      0,     0), res =    0.0196, time:  21.27 sec
+	Iteration #:  1, H =  3.915, time: 0.3075 sec.
+Restart #: -89, H =  3.915, mean = (  4.8219,     0), std.dev. = (      0,     0), res =    0.0254, time:  21.89 sec
+	Iteration #:  1, H =  3.966, time: 0.3076 sec.
+Restart #: -88, H =  3.966, mean = (  4.8326,     0), std.dev. = (      0,     0), res =    0.0297, time:   22.5 sec
+	Iteration #:  1, H =  4.018, time:  0.309 sec.
+Restart #: -87, H =  4.018, mean = (  4.8512,     0), std.dev. = (      0,     0), res =    0.0205, time:  23.12 sec
+	Iteration #:  1, H =  3.973, time: 0.3089 sec.
+Restart #: -86, H =  3.973, mean = (  4.8203,     0), std.dev. = (      0,     0), res =    0.0304, time:  23.73 sec
+	Iteration #:  1, H =  4.072, time: 0.3085 sec.
+Restart #: -85, H =  4.072, mean = (  4.8277,     0), std.dev. = (      0,     0), res =    0.0279, time:  24.35 sec
+	Iteration #:  1, H =  4.076, time: 0.3096 sec.
+Restart #: -84, H =  4.076, mean = (  4.8201,     0), std.dev. = (      0,     0), res =    0.0336, time:  24.96 sec
+	Iteration #:  1, H =  3.989, time: 0.3099 sec.
+Restart #: -83, H =  3.989, mean = (  4.8486,     0), std.dev. = (      0,     0), res =     0.037, time:  25.58 sec
+	Iteration #:  1, H =  3.964, time: 0.3091 sec.
+Restart #: -82, H =  3.964, mean = (  4.8174,     0), std.dev. = (      0,     0), res =    0.0266, time:   26.2 sec
+	Iteration #:  1, H =  4.011, time: 0.3143 sec.
+Restart #: -81, H =  4.011, mean = (  4.8092,     0), std.dev. = (      0,     0), res =    0.0247, time:  26.82 sec
+	Iteration #:  1, H =  3.954, time: 0.3113 sec.
+Restart #: -80, H =  3.954, mean = (  4.8499,     0), std.dev. = (      0,     0), res =    0.0337, time:  27.44 sec
+	Iteration #:  1, H =  4.039, time: 0.3082 sec.
+Restart #: -79, H =  4.039, mean = (  4.8082,     0), std.dev. = (      0,     0), res =    0.0414, time:  28.05 sec
+	Iteration #:  1, H =  3.965, time: 0.3088 sec.
+Restart #: -78, H =  3.965, mean = (  4.8206,     0), std.dev. = (      0,     0), res =    0.0152, time:  28.66 sec
+	Iteration #:  1, H =  4.015, time: 0.3087 sec.
+Restart #: -77, H =  4.015, mean = (  4.8374,     0), std.dev. = (      0,     0), res =    0.0171, time:  29.28 sec
+	Iteration #:  1, H =  3.988, time:  0.311 sec.
+Restart #: -76, H =  3.988, mean = (  4.8358,     0), std.dev. = (      0,     0), res =    0.0178, time:   29.9 sec
+	Iteration #:  1, H =  4.059, time: 0.3096 sec.
+Restart #: -75, H =  4.059, mean = (  4.8239,     0), std.dev. = (      0,     0), res =     0.035, time:  30.52 sec
+	Iteration #:  1, H =  3.991, time: 0.3094 sec.
+Restart #: -74, H =  3.991, mean = (  4.8251,     0), std.dev. = (      0,     0), res =    0.0263, time:  31.14 sec
+	Iteration #:  1, H =  4.048, time: 0.3095 sec.
+Restart #: -73, H =  4.048, mean = (  4.8217,     0), std.dev. = (      0,     0), res =    0.0286, time:  31.75 sec
+	Iteration #:  1, H =  4.053, time: 0.3129 sec.
+Restart #: -72, H =  4.053, mean = (  4.8505,     0), std.dev. = (      0,     0), res =    0.0161, time:  32.37 sec
+	Iteration #:  1, H =  3.974, time:   0.31 sec.
+Restart #: -71, H =  3.974, mean = (  4.8358,     0), std.dev. = (      0,     0), res =    0.0346, time:  32.98 sec
+	Iteration #:  1, H =      4, time: 0.3113 sec.
+Restart #: -70, H =      4, mean = (  4.8457,     0), std.dev. = (      0,     0), res =    0.0339, time:   33.6 sec
+	Iteration #:  1, H =  4.034, time: 0.3086 sec.
+Restart #: -69, H =  4.034, mean = (  4.8263,     0), std.dev. = (      0,     0), res =    0.0354, time:  34.22 sec
+	Iteration #:  1, H =   3.97, time: 0.3107 sec.
+Restart #: -68, H =   3.97, mean = (  4.8277,     0), std.dev. = (      0,     0), res =    0.0323, time:  34.83 sec
+	Iteration #:  1, H =   3.93, time: 0.3099 sec.
+Restart #: -67, H =   3.93, mean = (   4.835,     0), std.dev. = (      0,     0), res =    0.0187, time:  35.45 sec
+	Iteration #:  1, H =  4.108, time: 0.3101 sec.
+Restart #: -66, H =  4.108, mean = (  4.8365,     0), std.dev. = (      0,     0), res =    0.0183, time:  36.06 sec
+	Iteration #:  1, H =  4.108, time: 0.3092 sec.
+Restart #: -65, H =  4.108, mean = (  4.8239,     0), std.dev. = (      0,     0), res =    0.0255, time:  36.67 sec
+	Iteration #:  1, H =  4.049, time: 0.3099 sec.
+Restart #: -64, H =  4.049, mean = (  4.8184,     0), std.dev. = (      0,     0), res =    0.0254, time:  37.29 sec
+	Iteration #:  1, H =  4.068, time: 0.3083 sec.
+Restart #: -63, H =  4.068, mean = (  4.7993,     0), std.dev. = (      0,     0), res =    0.0349, time:  37.91 sec
+	Iteration #:  1, H =  4.009, time: 0.3104 sec.
+Restart #: -62, H =  4.009, mean = (  4.8482,     0), std.dev. = (      0,     0), res =    0.0218, time:  38.53 sec
+	Iteration #:  1, H =  4.038, time: 0.3073 sec.
+Restart #: -61, H =  4.038, mean = (  4.8156,     0), std.dev. = (      0,     0), res =    0.0263, time:  39.14 sec
+	Iteration #:  1, H =  4.065, time: 0.3104 sec.
+Restart #: -60, H =  4.065, mean = (  4.8392,     0), std.dev. = (      0,     0), res =    0.0368, time:  39.76 sec
+	Iteration #:  1, H =  3.963, time: 0.3108 sec.
+Restart #: -59, H =  3.963, mean = (    4.83,     0), std.dev. = (      0,     0), res =    0.0371, time:  40.38 sec
+	Iteration #:  1, H =  4.006, time: 0.3103 sec.
+Restart #: -58, H =  4.006, mean = (   4.838,     0), std.dev. = (      0,     0), res =     0.035, time:     41 sec
+	Iteration #:  1, H =  4.022, time: 0.3106 sec.
+Restart #: -57, H =  4.022, mean = (  4.8395,     0), std.dev. = (      0,     0), res =    0.0282, time:  41.61 sec
+	Iteration #:  1, H =  4.023, time:  0.311 sec.
+Restart #: -56, H =  4.023, mean = (  4.8273,     0), std.dev. = (      0,     0), res =    0.0251, time:  42.23 sec
+	Iteration #:  1, H =  3.997, time: 0.3106 sec.
+Restart #: -55, H =  3.997, mean = (  4.8421,     0), std.dev. = (      0,     0), res =    0.0549, time:  42.85 sec
+	Iteration #:  1, H =  4.006, time: 0.3091 sec.
+Restart #: -54, H =  4.006, mean = (  4.8055,     0), std.dev. = (      0,     0), res =    0.0286, time:  43.47 sec
+	Iteration #:  1, H =  3.991, time: 0.3084 sec.
+Restart #: -53, H =  3.991, mean = (  4.8086,     0), std.dev. = (      0,     0), res =    0.0234, time:  44.09 sec
+	Iteration #:  1, H =   4.02, time: 0.3114 sec.
+Restart #: -52, H =   4.02, mean = (  4.8586,     0), std.dev. = (      0,     0), res =    0.0193, time:   44.7 sec
+	Iteration #:  1, H =  3.996, time: 0.3099 sec.
+Restart #: -51, H =  3.996, mean = (  4.8259,     0), std.dev. = (      0,     0), res =    0.0478, time:  45.32 sec
+	Iteration #:  1, H =  3.997, time: 0.3104 sec.
+Restart #: -50, H =  3.997, mean = (  4.8497,     0), std.dev. = (      0,     0), res =    0.0142, time:  45.94 sec
+	Iteration #:  1, H =  3.989, time: 0.3108 sec.
+Restart #: -49, H =  3.989, mean = (  4.8424,     0), std.dev. = (      0,     0), res =     0.024, time:  46.55 sec
+	Iteration #:  1, H =  3.926, time:  0.312 sec.
+Restart #: -48, H =  3.926, mean = (  4.8395,     0), std.dev. = (      0,     0), res =    0.0501, time:  47.18 sec
+	Iteration #:  1, H =  3.918, time: 0.3118 sec.
+Restart #: -47, H =  3.918, mean = (  4.8432,     0), std.dev. = (      0,     0), res =    0.0211, time:   47.8 sec
+	Iteration #:  1, H =  4.069, time: 0.3093 sec.
+Restart #: -46, H =  4.069, mean = (   4.819,     0), std.dev. = (      0,     0), res =    0.0416, time:  48.42 sec
+	Iteration #:  1, H =  3.965, time: 0.3097 sec.
+Restart #: -45, H =  3.965, mean = (  4.8548,     0), std.dev. = (      0,     0), res =     0.045, time:  49.03 sec
+	Iteration #:  1, H =  3.986, time: 0.3097 sec.
+Restart #: -44, H =  3.986, mean = (  4.8116,     0), std.dev. = (      0,     0), res =    0.0499, time:  49.65 sec
+	Iteration #:  1, H =  3.897, time: 0.3116 sec.
+Restart #: -43, H =  3.897, mean = (  4.8105,     0), std.dev. = (      0,     0), res =    0.0321, time:  50.26 sec
+	Iteration #:  1, H =  3.904, time:  0.314 sec.
+Restart #: -42, H =  3.904, mean = (  4.8317,     0), std.dev. = (      0,     0), res =    0.0267, time:  50.89 sec
+	Iteration #:  1, H =  3.976, time: 0.3134 sec.
+Restart #: -41, H =  3.976, mean = (   4.819,     0), std.dev. = (      0,     0), res =    0.0203, time:  51.52 sec
+	Iteration #:  1, H =  3.986, time: 0.3146 sec.
+Restart #: -40, H =  3.986, mean = (  4.8562,     0), std.dev. = (      0,     0), res =    0.0233, time:  52.14 sec
+	Iteration #:  1, H =  4.036, time: 0.3153 sec.
+Restart #: -39, H =  4.036, mean = (  4.8488,     0), std.dev. = (      0,     0), res =    0.0157, time:  52.77 sec
+	Iteration #:  1, H =  4.023, time: 0.3145 sec.
+Restart #: -38, H =  4.023, mean = (  4.8359,     0), std.dev. = (      0,     0), res =    0.0216, time:  53.39 sec
+	Iteration #:  1, H =  4.085, time: 0.3128 sec.
+Restart #: -37, H =  4.085, mean = (  4.8396,     0), std.dev. = (      0,     0), res =    0.0337, time:  54.02 sec
+	Iteration #:  1, H =  4.033, time: 0.3135 sec.
+Restart #: -36, H =  4.033, mean = (  4.8163,     0), std.dev. = (      0,     0), res =    0.0518, time:  54.64 sec
+	Iteration #:  1, H =  4.066, time:  0.315 sec.
+Restart #: -35, H =  4.066, mean = (  4.8323,     0), std.dev. = (      0,     0), res =    0.0175, time:  55.27 sec
+	Iteration #:  1, H =  3.972, time: 0.3144 sec.
+Restart #: -34, H =  3.972, mean = (  4.8361,     0), std.dev. = (      0,     0), res =    0.0325, time:  55.89 sec
+	Iteration #:  1, H =  3.939, time: 0.3154 sec.
+Restart #: -33, H =  3.939, mean = (  4.8667,     0), std.dev. = (      0,     0), res =    0.0198, time:  56.52 sec
+	Iteration #:  1, H =  4.059, time: 0.3141 sec.
+Restart #: -32, H =  4.059, mean = (  4.8418,     0), std.dev. = (      0,     0), res =    0.0217, time:  57.15 sec
+	Iteration #:  1, H =  3.953, time: 0.3146 sec.
+Restart #: -31, H =  3.953, mean = (  4.8314,     0), std.dev. = (      0,     0), res =    0.0238, time:  57.77 sec
+	Iteration #:  1, H =  3.988, time: 0.3127 sec.
+Restart #: -30, H =  3.988, mean = (  4.8268,     0), std.dev. = (      0,     0), res =    0.0249, time:   58.4 sec
+	Iteration #:  1, H =  3.991, time:  0.312 sec.
+Restart #: -29, H =  3.991, mean = (   4.828,     0), std.dev. = (      0,     0), res =    0.0283, time:  59.01 sec
+	Iteration #:  1, H =  3.967, time: 0.3155 sec.
+Restart #: -28, H =  3.967, mean = (  4.8559,     0), std.dev. = (      0,     0), res =    0.0181, time:  59.64 sec
+	Iteration #:  1, H =   3.97, time: 0.3144 sec.
+Restart #: -27, H =   3.97, mean = (  4.8183,     0), std.dev. = (      0,     0), res =    0.0476, time:  60.26 sec
+	Iteration #:  1, H =  3.977, time: 0.3107 sec.
+Restart #: -26, H =  3.977, mean = (  4.8173,     0), std.dev. = (      0,     0), res =    0.0379, time:  60.88 sec
+	Iteration #:  1, H =  4.065, time: 0.3094 sec.
+Restart #: -25, H =  4.065, mean = (  4.8169,     0), std.dev. = (      0,     0), res =    0.0215, time:  61.49 sec
+	Iteration #:  1, H =  3.923, time: 0.3112 sec.
+Restart #: -24, H =  3.923, mean = (  4.8427,     0), std.dev. = (      0,     0), res =    0.0173, time:  62.11 sec
+	Iteration #:  1, H =  4.034, time: 0.3091 sec.
+Restart #: -23, H =  4.034, mean = (  4.8263,     0), std.dev. = (      0,     0), res =    0.0251, time:  62.72 sec
+	Iteration #:  1, H =  4.026, time: 0.3105 sec.
+Restart #: -22, H =  4.026, mean = (  4.8356,     0), std.dev. = (      0,     0), res =    0.0357, time:  63.34 sec
+	Iteration #:  1, H =  3.975, time: 0.3088 sec.
+Restart #: -21, H =  3.975, mean = (   4.829,     0), std.dev. = (      0,     0), res =    0.0123, time:  63.96 sec
+	Iteration #:  1, H =  3.985, time: 0.3102 sec.
+Restart #: -20, H =  3.985, mean = (  4.8173,     0), std.dev. = (      0,     0), res =    0.0479, time:  64.58 sec
+	Iteration #:  1, H =  4.061, time: 0.3096 sec.
+Restart #: -19, H =  4.061, mean = (   4.809,     0), std.dev. = (      0,     0), res =    0.0222, time:  65.19 sec
+	Iteration #:  1, H =  4.013, time: 0.3112 sec.
+Restart #: -18, H =  4.013, mean = (  4.8211,     0), std.dev. = (      0,     0), res =    0.0287, time:  65.81 sec
+	Iteration #:  1, H =  4.026, time: 0.3095 sec.
+Restart #: -17, H =  4.026, mean = (  4.8314,     0), std.dev. = (      0,     0), res =    0.0319, time:  66.43 sec
+	Iteration #:  1, H =  3.947, time: 0.3117 sec.
+Restart #: -16, H =  3.947, mean = (  4.8462,     0), std.dev. = (      0,     0), res =    0.0348, time:  67.05 sec
+	Iteration #:  1, H =  3.843, time:  0.311 sec.
+Restart #: -15, H =  3.843, mean = (  4.8302,     0), std.dev. = (      0,     0), res =    0.0378, time:  67.67 sec
+	Iteration #:  1, H =  4.117, time: 0.3102 sec.
+Restart #: -14, H =  4.117, mean = (  4.8337,     0), std.dev. = (      0,     0), res =    0.0217, time:  68.29 sec
+	Iteration #:  1, H =  3.975, time: 0.3095 sec.
+Restart #: -13, H =  3.975, mean = (   4.842,     0), std.dev. = (      0,     0), res =    0.0264, time:   68.9 sec
+	Iteration #:  1, H =  4.035, time: 0.3095 sec.
+Restart #: -12, H =  4.035, mean = (  4.8251,     0), std.dev. = (      0,     0), res =    0.0376, time:  69.52 sec
+	Iteration #:  1, H =  4.043, time: 0.3106 sec.
+Restart #: -11, H =  4.043, mean = (  4.8226,     0), std.dev. = (      0,     0), res =    0.0321, time:  70.14 sec
+	Iteration #:  1, H =  3.987, time: 0.3108 sec.
+Restart #: -10, H =  3.987, mean = (  4.8303,     0), std.dev. = (      0,     0), res =    0.0318, time:  70.76 sec
+	Iteration #:  1, H =  4.026, time: 0.3097 sec.
+Restart #: -9, H =  4.026, mean = (  4.8159,     0), std.dev. = (      0,     0), res =    0.0295, time:  71.38 sec
+	Iteration #:  1, H =  3.982, time: 0.3107 sec.
+Restart #: -8, H =  3.982, mean = (  4.8324,     0), std.dev. = (      0,     0), res =    0.0259, time:     72 sec
+	Iteration #:  1, H =      4, time: 0.3092 sec.
+Restart #: -7, H =      4, mean = (  4.8165,     0), std.dev. = (      0,     0), res =    0.0657, time:  72.62 sec
+	Iteration #:  1, H =   4.05, time: 0.3086 sec.
+Restart #: -6, H =   4.05, mean = (  4.7891,     0), std.dev. = (      0,     0), res =    0.0443, time:  73.23 sec
+	Iteration #:  1, H =  4.003, time: 0.3082 sec.
+Restart #: -5, H =  4.003, mean = (  4.8094,     0), std.dev. = (      0,     0), res =     0.017, time:  73.84 sec
+	Iteration #:  1, H =  4.028, time: 0.3126 sec.
+Restart #: -4, H =  4.028, mean = (  4.8523,     0), std.dev. = (      0,     0), res =    0.0241, time:  74.46 sec
+	Iteration #:  1, H =  4.052, time: 0.3097 sec.
+Restart #: -3, H =  4.052, mean = (  4.8193,     0), std.dev. = (      0,     0), res =    0.0245, time:  75.08 sec
+	Iteration #:  1, H =  4.075, time: 0.3099 sec.
+Restart #: -2, H =  4.075, mean = (  4.8269,     0), std.dev. = (      0,     0), res =    0.0212, time:   75.7 sec
+	Iteration #:  1, H =  3.961, time: 0.3104 sec.
+Restart #: -1, H =  3.961, mean = (  4.8269,     0), std.dev. = (      0,     0), res =    0.0431, time:  76.32 sec
+	Iteration #:  1, H =  3.941, time: 0.3114 sec.
+Restart #: 0, H =  3.941, mean = (  4.8398,     0), std.dev. = (      0,     0), res =    0.0208, time:  76.94 sec, FOM:        0
+	Iteration #:  1, H =  3.953, time:  0.309 sec.
+Restart #: 1, H =  3.953, mean = (  4.8272,     0), std.dev. = (0.00891,     0), res =    0.0153, time:  77.55 sec, FOM:    162.5
+	Iteration #:  1, H =  4.045, time: 0.3085 sec.
+Restart #: 2, H =  4.045, mean = (  4.8257,     0), std.dev. = (0.00606,     0), res =     0.042, time:  78.17 sec, FOM:    347.9
+	Iteration #:  1, H =  4.022, time: 0.3105 sec.
+Restart #: 3, H =  4.022, mean = (  4.8317,     0), std.dev. = (0.00692,     0), res =    0.0302, time:  78.78 sec, FOM:      265
+	Iteration #:  1, H =  4.001, time: 0.3096 sec.
+Restart #: 4, H =  4.001, mean = (  4.8299,     0), std.dev. = (0.00578,     0), res =    0.0548, time:   79.4 sec, FOM:    377.3
+	Iteration #:  1, H =  4.033, time: 0.3102 sec.
+Restart #: 5, H =  4.033, mean = (  4.8282,     0), std.dev. = (0.00505,     0), res =    0.0215, time:  80.02 sec, FOM:    490.4
+	Iteration #:  1, H =  4.069, time: 0.3099 sec.
+Restart #: 6, H =  4.069, mean = (   4.826,     0), std.dev. = (0.00479,     0), res =    0.0511, time:  80.63 sec, FOM:    540.3
+	Iteration #:  1, H =  4.051, time: 0.3102 sec.
+Restart #: 7, H =  4.051, mean = (  4.8251,     0), std.dev. = (0.00428,     0), res =    0.0193, time:  81.25 sec, FOM:    670.8
+	Iteration #:  1, H =  4.031, time: 0.3104 sec.
+Restart #: 8, H =  4.031, mean = (  4.8265,     0), std.dev. = (0.00404,     0), res =    0.0424, time:  81.87 sec, FOM:    748.3
+	Iteration #:  1, H =  4.025, time: 0.3099 sec.
+Restart #: 9, H =  4.025, mean = (  4.8266,     0), std.dev. = (0.00364,     0), res =    0.0309, time:  82.49 sec, FOM:    916.2
+	Iteration #:  1, H =  4.079, time: 0.3105 sec.
+Restart #: 10, H =  4.079, mean = (  4.8268,     0), std.dev. = (0.00331,     0), res =    0.0223, time:   83.1 sec, FOM:     1096
+	Iteration #:  1, H =  4.041, time: 0.3096 sec.
+Restart #: 11, H =  4.041, mean = (  4.8263,     0), std.dev. = (0.00308,     0), res =    0.0284, time:  83.71 sec, FOM:     1260
+	Iteration #:  1, H =  3.991, time: 0.3126 sec.
+Restart #: 12, H =  3.991, mean = (  4.8267,     0), std.dev. = (0.00287,     0), res =     0.042, time:  84.33 sec, FOM:     1439
+	Iteration #:  1, H =  3.996, time: 0.3109 sec.
+Restart #: 13, H =  3.996, mean = (  4.8278,     0), std.dev. = (0.00285,     0), res =    0.0313, time:  84.95 sec, FOM:     1454
+	Iteration #:  1, H =  4.035, time: 0.3113 sec.
+Restart #: 14, H =  4.035, mean = (  4.8275,     0), std.dev. = (0.00267,     0), res =    0.0419, time:  85.57 sec, FOM:     1642
+	Iteration #:  1, H =  3.994, time: 0.3102 sec.
+Restart #: 15, H =  3.994, mean = (  4.8269,     0), std.dev. = (0.00257,     0), res =    0.0484, time:  86.18 sec, FOM:     1753
+	Iteration #:  1, H =  3.996, time: 0.3078 sec.
+Restart #: 16, H =  3.996, mean = (   4.827,     0), std.dev. = (0.00243,     0), res =    0.0338, time:   86.8 sec, FOM:     1958
+	Iteration #:  1, H =  4.015, time: 0.3086 sec.
+Restart #: 17, H =  4.015, mean = (  4.8273,     0), std.dev. = (0.00231,     0), res =    0.0375, time:  87.41 sec, FOM:     2147
+	Iteration #:  1, H =  3.968, time:   0.31 sec.
+Restart #: 18, H =  3.968, mean = (  4.8283,     0), std.dev. = ( 0.0024,     0), res =    0.0283, time:  88.02 sec, FOM:     1980
+	Iteration #:  1, H =  4.022, time: 0.3094 sec.
+Restart #: 19, H =  4.022, mean = (   4.827,     0), std.dev. = ( 0.0026,     0), res =    0.0352, time:  88.64 sec, FOM:     1669
+	Iteration #:  1, H =  3.945, time:  0.309 sec.
+Restart #: 20, H =  3.945, mean = (  4.8262,     0), std.dev. = ( 0.0026,     0), res =    0.0367, time:  89.26 sec, FOM:     1656
+	Iteration #:  1, H =  4.019, time: 0.3095 sec.
+Restart #: 21, H =  4.019, mean = (  4.8259,     0), std.dev. = ( 0.0025,     0), res =    0.0503, time:  89.87 sec, FOM:     1784
+	Iteration #:  1, H =   4.01, time: 0.3095 sec.
+Restart #: 22, H =   4.01, mean = (  4.8251,     0), std.dev. = (0.00253,     0), res =    0.0261, time:  90.49 sec, FOM:     1722
+	Iteration #:  1, H =  3.963, time: 0.3099 sec.
+Restart #: 23, H =  3.963, mean = (  4.8251,     0), std.dev. = (0.00243,     0), res =    0.0496, time:  91.11 sec, FOM:     1862
+	Iteration #:  1, H =  4.024, time:  0.311 sec.
+Restart #: 24, H =  4.024, mean = (  4.8251,     0), std.dev. = (0.00233,     0), res =    0.0384, time:  91.72 sec, FOM:     2007
+	Iteration #:  1, H =  3.936, time: 0.3096 sec.
+Restart #: 25, H =  3.936, mean = (  4.8254,     0), std.dev. = (0.00226,     0), res =    0.0175, time:  92.34 sec, FOM:     2121
+	Iteration #:  1, H =  3.949, time:   0.31 sec.
+Restart #: 26, H =  3.949, mean = (  4.8256,     0), std.dev. = (0.00219,     0), res =    0.0299, time:  92.95 sec, FOM:     2252
+	Iteration #:  1, H =  3.981, time: 0.3117 sec.
+Restart #: 27, H =  3.981, mean = (  4.8259,     0), std.dev. = (0.00214,     0), res =    0.0311, time:  93.57 sec, FOM:     2333
+	Iteration #:  1, H =  4.015, time: 0.3123 sec.
+Restart #: 28, H =  4.015, mean = (  4.8256,     0), std.dev. = (0.00209,     0), res =    0.0184, time:  94.19 sec, FOM:     2420
+	Iteration #:  1, H =  3.976, time: 0.3098 sec.
+Restart #: 29, H =  3.976, mean = (  4.8254,     0), std.dev. = (0.00203,     0), res =    0.0251, time:  94.81 sec, FOM:     2559
+	Iteration #:  1, H =  4.043, time:  0.312 sec.
+Restart #: 30, H =  4.043, mean = (   4.826,     0), std.dev. = (0.00204,     0), res =    0.0255, time:  95.43 sec, FOM:     2515
+	Iteration #:  1, H =  4.049, time: 0.3084 sec.
+Restart #: 31, H =  4.049, mean = (  4.8252,     0), std.dev. = (0.00212,     0), res =    0.0262, time:  96.04 sec, FOM:     2314
+	Iteration #:  1, H =   3.99, time:  0.309 sec.
+Restart #: 32, H =   3.99, mean = (  4.8251,     0), std.dev. = (0.00206,     0), res =    0.0326, time:  96.66 sec, FOM:     2435
+	Iteration #:  1, H =  3.967, time: 0.3095 sec.
+Restart #: 33, H =  3.967, mean = (  4.8247,     0), std.dev. = (0.00204,     0), res =    0.0279, time:  97.28 sec, FOM:     2475
+	Iteration #:  1, H =  3.984, time: 0.3112 sec.
+Restart #: 34, H =  3.984, mean = (  4.8251,     0), std.dev. = (0.00203,     0), res =    0.0203, time:   97.9 sec, FOM:     2484
+	Iteration #:  1, H =   4.01, time: 0.3102 sec.
+Restart #: 35, H =   4.01, mean = (  4.8254,     0), std.dev. = (0.00198,     0), res =    0.0276, time:  98.52 sec, FOM:     2579
+	Iteration #:  1, H =  4.076, time: 0.3083 sec.
+Restart #: 36, H =  4.076, mean = (   4.825,     0), std.dev. = (0.00196,     0), res =    0.0284, time:  99.13 sec, FOM:     2628
+	Iteration #:  1, H =  3.991, time: 0.3099 sec.
+Restart #: 37, H =  3.991, mean = (  4.8248,     0), std.dev. = (0.00192,     0), res =    0.0198, time:  99.75 sec, FOM:     2718
+	Iteration #:  1, H =  3.934, time: 0.3083 sec.
+Restart #: 38, H =  3.934, mean = (  4.8244,     0), std.dev. = (0.00192,     0), res =    0.0168, time:  100.4 sec, FOM:     2701
+	Iteration #:  1, H =  3.996, time: 0.3088 sec.
+Restart #: 39, H =  3.996, mean = (   4.824,     0), std.dev. = ( 0.0019,     0), res =    0.0377, time:    101 sec, FOM:     2733
+	Iteration #:  1, H =  3.996, time: 0.3104 sec.
+Restart #: 40, H =  3.996, mean = (  4.8244,     0), std.dev. = (0.00189,     0), res =    0.0256, time:  101.6 sec, FOM:     2753
+	Iteration #:  1, H =  4.024, time: 0.3113 sec.
+Restart #: 41, H =  4.024, mean = (  4.8248,     0), std.dev. = (0.00188,     0), res =    0.0241, time:  102.2 sec, FOM:     2755
+	Iteration #:  1, H =  4.018, time: 0.3086 sec.
+Restart #: 42, H =  4.018, mean = (  4.8248,     0), std.dev. = (0.00184,     0), res =    0.0225, time:  102.8 sec, FOM:     2865
+	Iteration #:  1, H =  3.959, time: 0.3098 sec.
+Restart #: 43, H =  3.959, mean = (  4.8253,     0), std.dev. = (0.00185,     0), res =      0.02, time:  103.4 sec, FOM:     2838
+	Iteration #:  1, H =  4.013, time: 0.3085 sec.
+Restart #: 44, H =  4.013, mean = (  4.8252,     0), std.dev. = ( 0.0018,     0), res =    0.0253, time:    104 sec, FOM:     2950
+	Iteration #:  1, H =  4.045, time: 0.3106 sec.
+Restart #: 45, H =  4.045, mean = (  4.8253,     0), std.dev. = (0.00177,     0), res =    0.0225, time:  104.7 sec, FOM:     3062
+	Iteration #:  1, H =  4.006, time: 0.3104 sec.
+Restart #: 46, H =  4.006, mean = (  4.8256,     0), std.dev. = (0.00175,     0), res =    0.0147, time:  105.3 sec, FOM:     3097
+	Iteration #:  1, H =  4.085, time:   0.31 sec.
+Restart #: 47, H =  4.085, mean = (  4.8255,     0), std.dev. = (0.00172,     0), res =    0.0283, time:  105.9 sec, FOM:     3203
+	Iteration #:  1, H =  3.998, time: 0.3111 sec.
+Restart #: 48, H =  3.998, mean = (  4.8255,     0), std.dev. = (0.00168,     0), res =    0.0318, time:  106.5 sec, FOM:     3317
+	Iteration #:  1, H =  3.966, time: 0.3109 sec.
+Restart #: 49, H =  3.966, mean = (  4.8257,     0), std.dev. = (0.00166,     0), res =    0.0241, time:  107.1 sec, FOM:     3381
+	Iteration #:  1, H =  4.004, time: 0.3096 sec.
+Restart #: 50, H =  4.004, mean = (  4.8256,     0), std.dev. = (0.00163,     0), res =    0.0285, time:  107.7 sec, FOM:     3491
+	Iteration #:  1, H =  4.046, time: 0.3109 sec.
+Restart #: 51, H =  4.046, mean = (  4.8259,     0), std.dev. = (0.00163,     0), res =    0.0346, time:  108.4 sec, FOM:     3492
+	Iteration #:  1, H =  3.975, time: 0.3092 sec.
+Restart #: 52, H =  3.975, mean = (  4.8259,     0), std.dev. = ( 0.0016,     0), res =    0.0227, time:    109 sec, FOM:     3604
+	Iteration #:  1, H =  4.066, time: 0.3105 sec.
+Restart #: 53, H =  4.066, mean = (  4.8258,     0), std.dev. = (0.00157,     0), res =    0.0232, time:  109.6 sec, FOM:     3702
+	Iteration #:  1, H =  4.095, time: 0.3102 sec.
+Restart #: 54, H =  4.095, mean = (  4.8253,     0), std.dev. = ( 0.0016,     0), res =    0.0455, time:  110.2 sec, FOM:     3552
+	Iteration #:  1, H =  4.069, time: 0.3106 sec.
+Restart #: 55, H =  4.069, mean = (  4.8256,     0), std.dev. = (0.00159,     0), res =    0.0155, time:  110.8 sec, FOM:     3575
+	Iteration #:  1, H =  4.032, time: 0.3104 sec.
+Restart #: 56, H =  4.032, mean = (  4.8256,     0), std.dev. = (0.00156,     0), res =    0.0133, time:  111.5 sec, FOM:     3681
+	Iteration #:  1, H =  3.996, time:  0.313 sec.
+Restart #: 57, H =  3.996, mean = (  4.8256,     0), std.dev. = (0.00153,     0), res =    0.0245, time:  112.1 sec, FOM:     3787
+	Iteration #:  1, H =  3.993, time:   0.31 sec.
+Restart #: 58, H =  3.993, mean = (  4.8256,     0), std.dev. = (0.00151,     0), res =    0.0161, time:  112.7 sec, FOM:     3894
+	Iteration #:  1, H =  4.011, time: 0.3099 sec.
+Restart #: 59, H =  4.011, mean = (  4.8258,     0), std.dev. = (0.00149,     0), res =    0.0377, time:  113.3 sec, FOM:     3956
+	Iteration #:  1, H =  4.032, time: 0.3093 sec.
+Restart #: 60, H =  4.032, mean = (  4.8258,     0), std.dev. = (0.00147,     0), res =    0.0286, time:  113.9 sec, FOM:     4066
+	Iteration #:  1, H =  4.027, time:   0.31 sec.
+Restart #: 61, H =  4.027, mean = (  4.8258,     0), std.dev. = (0.00145,     0), res =    0.0216, time:  114.5 sec, FOM:     4174
+	Iteration #:  1, H =  3.984, time: 0.3107 sec.
+Restart #: 62, H =  3.984, mean = (  4.8259,     0), std.dev. = (0.00143,     0), res =    0.0338, time:  115.2 sec, FOM:     4228
+	Iteration #:  1, H =  4.021, time: 0.3084 sec.
+Restart #: 63, H =  4.021, mean = (  4.8256,     0), std.dev. = (0.00145,     0), res =    0.0353, time:  115.8 sec, FOM:     4098
+	Iteration #:  1, H =  3.999, time: 0.3084 sec.
+Restart #: 64, H =  3.999, mean = (  4.8254,     0), std.dev. = (0.00144,     0), res =    0.0309, time:  116.4 sec, FOM:     4163
+	Iteration #:  1, H =  3.973, time: 0.3095 sec.
+Restart #: 65, H =  3.973, mean = (  4.8256,     0), std.dev. = (0.00142,     0), res =    0.0526, time:    117 sec, FOM:     4226
+	Iteration #:  1, H =  3.974, time: 0.3116 sec.
+Restart #: 66, H =  3.974, mean = (  4.8256,     0), std.dev. = ( 0.0014,     0), res =    0.0481, time:  117.6 sec, FOM:     4332
+	Iteration #:  1, H =  4.056, time: 0.3097 sec.
+Restart #: 67, H =  4.056, mean = (  4.8254,     0), std.dev. = (0.00139,     0), res =    0.0388, time:  118.2 sec, FOM:     4368
+	Iteration #:  1, H =  4.016, time: 0.3084 sec.
+Restart #: 68, H =  4.016, mean = (   4.825,     0), std.dev. = (0.00143,     0), res =    0.0235, time:  118.9 sec, FOM:     4131
+	Iteration #:  1, H =  3.998, time: 0.3089 sec.
+Restart #: 69, H =  3.998, mean = (  4.8252,     0), std.dev. = (0.00142,     0), res =    0.0415, time:  119.5 sec, FOM:     4126
+	Iteration #:  1, H =  3.993, time: 0.3108 sec.
+Restart #: 70, H =  3.993, mean = (  4.8252,     0), std.dev. = ( 0.0014,     0), res =    0.0206, time:  120.1 sec, FOM:     4223
+	Iteration #:  1, H =  4.029, time: 0.3134 sec.
+Restart #: 71, H =  4.029, mean = (  4.8256,     0), std.dev. = (0.00143,     0), res =    0.0236, time:  120.7 sec, FOM:     4035
+	Iteration #:  1, H =  3.969, time: 0.3142 sec.
+Restart #: 72, H =  3.969, mean = (  4.8258,     0), std.dev. = (0.00143,     0), res =     0.022, time:  121.3 sec, FOM:     4008
+	Iteration #:  1, H =  4.028, time: 0.3158 sec.
+Restart #: 73, H =  4.028, mean = (   4.826,     0), std.dev. = (0.00142,     0), res =    0.0423, time:    122 sec, FOM:     4076
+	Iteration #:  1, H =  4.027, time: 0.3137 sec.
+Restart #: 74, H =  4.027, mean = (   4.826,     0), std.dev. = ( 0.0014,     0), res =    0.0371, time:  122.6 sec, FOM:     4153
+	Iteration #:  1, H =  4.034, time: 0.3142 sec.
+Restart #: 75, H =  4.034, mean = (  4.8258,     0), std.dev. = (0.00141,     0), res =    0.0452, time:  123.2 sec, FOM:     4101
+	Iteration #:  1, H =  4.036, time: 0.3127 sec.
+Restart #: 76, H =  4.036, mean = (  4.8258,     0), std.dev. = (0.00139,     0), res =    0.0282, time:  123.8 sec, FOM:     4188
+	Iteration #:  1, H =   4.09, time: 0.3117 sec.
+Restart #: 77, H =   4.09, mean = (  4.8258,     0), std.dev. = (0.00137,     0), res =    0.0435, time:  124.5 sec, FOM:     4276
+	Iteration #:  1, H =  4.063, time: 0.3141 sec.
+Restart #: 78, H =  4.063, mean = (  4.8257,     0), std.dev. = (0.00136,     0), res =    0.0105, time:  125.1 sec, FOM:     4348
+	Iteration #:  1, H =   3.98, time: 0.3173 sec.
+Restart #: 79, H =   3.98, mean = (  4.8259,     0), std.dev. = (0.00135,     0), res =    0.0384, time:  125.7 sec, FOM:     4343
+	Iteration #:  1, H =   4.06, time: 0.3139 sec.
+Restart #: 80, H =   4.06, mean = (  4.8258,     0), std.dev. = (0.00134,     0), res =    0.0219, time:  126.3 sec, FOM:     4411
+	Iteration #:  1, H =  4.025, time: 0.3141 sec.
+Restart #: 81, H =  4.025, mean = (  4.8258,     0), std.dev. = (0.00132,     0), res =    0.0219, time:    127 sec, FOM:     4491
+	Iteration #:  1, H =  4.003, time: 0.3139 sec.
+Restart #: 82, H =  4.003, mean = (  4.8255,     0), std.dev. = (0.00134,     0), res =    0.0235, time:  127.6 sec, FOM:     4341
+	Iteration #:  1, H =  3.927, time: 0.3134 sec.
+Restart #: 83, H =  3.927, mean = (  4.8254,     0), std.dev. = (0.00133,     0), res =    0.0276, time:  128.2 sec, FOM:     4403
+	Iteration #:  1, H =  4.014, time: 0.3137 sec.
+Restart #: 84, H =  4.014, mean = (  4.8254,     0), std.dev. = (0.00132,     0), res =    0.0269, time:  128.8 sec, FOM:     4463
+	Iteration #:  1, H =  4.058, time: 0.3117 sec.
+Restart #: 85, H =  4.058, mean = (  4.8253,     0), std.dev. = (0.00131,     0), res =    0.0402, time:  129.5 sec, FOM:     4534
+	Iteration #:  1, H =  3.986, time: 0.3134 sec.
+Restart #: 86, H =  3.986, mean = (  4.8251,     0), std.dev. = (0.00131,     0), res =    0.0373, time:  130.1 sec, FOM:     4480
+	Iteration #:  1, H =  4.078, time: 0.3125 sec.
+Restart #: 87, H =  4.078, mean = (  4.8249,     0), std.dev. = ( 0.0013,     0), res =    0.0359, time:  130.7 sec, FOM:     4501
+	Iteration #:  1, H =  4.048, time: 0.3101 sec.
+Restart #: 88, H =  4.048, mean = (  4.8248,     0), std.dev. = (0.00129,     0), res =    0.0272, time:  131.3 sec, FOM:     4541
+	Iteration #:  1, H =  4.023, time: 0.3108 sec.
+Restart #: 89, H =  4.023, mean = (  4.8247,     0), std.dev. = (0.00128,     0), res =    0.0226, time:  131.9 sec, FOM:     4611
+	Iteration #:  1, H =  4.009, time: 0.3096 sec.
+Restart #: 90, H =  4.009, mean = (  4.8247,     0), std.dev. = (0.00127,     0), res =     0.029, time:  132.6 sec, FOM:     4686
+	Iteration #:  1, H =  3.995, time: 0.3098 sec.
+Restart #: 91, H =  3.995, mean = (  4.8247,     0), std.dev. = (0.00126,     0), res =     0.027, time:  133.2 sec, FOM:     4756
+	Iteration #:  1, H =  4.032, time: 0.3101 sec.
+Restart #: 92, H =  4.032, mean = (  4.8247,     0), std.dev. = (0.00124,     0), res =     0.023, time:  133.8 sec, FOM:     4833
+	Iteration #:  1, H =  3.995, time: 0.3093 sec.
+Restart #: 93, H =  3.995, mean = (  4.8248,     0), std.dev. = (0.00123,     0), res =    0.0195, time:  134.4 sec, FOM:     4880
+	Iteration #:  1, H =  4.017, time: 0.3105 sec.
+Restart #: 94, H =  4.017, mean = (  4.8249,     0), std.dev. = (0.00122,     0), res =    0.0253, time:    135 sec, FOM:     4950
+	Iteration #:  1, H =  3.996, time: 0.3102 sec.
+Restart #: 95, H =  3.996, mean = (  4.8249,     0), std.dev. = (0.00121,     0), res =    0.0346, time:  135.7 sec, FOM:     5024
+	Iteration #:  1, H =  4.036, time: 0.3107 sec.
+Restart #: 96, H =  4.036, mean = (  4.8249,     0), std.dev. = ( 0.0012,     0), res =    0.0302, time:  136.3 sec, FOM:     5105
+	Iteration #:  1, H =  4.033, time: 0.3102 sec.
+Restart #: 97, H =  4.033, mean = (   4.825,     0), std.dev. = (0.00119,     0), res =    0.0248, time:  136.9 sec, FOM:     5183
+	Iteration #:  1, H =  4.035, time: 0.3087 sec.
+Restart #: 98, H =  4.035, mean = (  4.8247,     0), std.dev. = ( 0.0012,     0), res =    0.0216, time:  137.5 sec, FOM:     5083
+	Iteration #:  1, H =  4.029, time: 0.3098 sec.
+Restart #: 99, H =  4.029, mean = (  4.8245,     0), std.dev. = ( 0.0012,     0), res =    0.0218, time:  138.1 sec, FOM:     5006
+	Iteration #:  1, H =  4.024, time: 0.3114 sec.
+Restart #: 100, H =  4.024, mean = (  4.8245,     0), std.dev. = (0.00119,     0), res =    0.0308, time:  138.7 sec, FOM:     5082
+	Iteration #:  1, H =  3.993, time: 0.3108 sec.
+Restart #: 101, H =  3.993, mean = (  4.8248,     0), std.dev. = (0.00122,     0), res =     0.019, time:  139.4 sec, FOM:     4841
+	Iteration #:  1, H =  4.021, time: 0.3114 sec.
+Restart #: 102, H =  4.021, mean = (  4.8249,     0), std.dev. = (0.00121,     0), res =    0.0208, time:    140 sec, FOM:     4913
+	Iteration #:  1, H =  3.882, time: 0.3104 sec.
+Restart #: 103, H =  3.882, mean = (  4.8248,     0), std.dev. = ( 0.0012,     0), res =    0.0232, time:  140.6 sec, FOM:     4970
+	Iteration #:  1, H =  3.965, time: 0.3109 sec.
+Restart #: 104, H =  3.965, mean = (  4.8248,     0), std.dev. = (0.00119,     0), res =    0.0216, time:  141.2 sec, FOM:     5043
+	Iteration #:  1, H =  4.024, time: 0.3108 sec.
+Restart #: 105, H =  4.024, mean = (  4.8248,     0), std.dev. = (0.00117,     0), res =    0.0351, time:  141.8 sec, FOM:     5112
+	Iteration #:  1, H =   4.09, time: 0.3088 sec.
+Restart #: 106, H =   4.09, mean = (  4.8247,     0), std.dev. = (0.00117,     0), res =    0.0367, time:  142.4 sec, FOM:     5149
+	Iteration #:  1, H =  3.982, time: 0.3097 sec.
+Restart #: 107, H =  3.982, mean = (  4.8247,     0), std.dev. = (0.00116,     0), res =    0.0328, time:  143.1 sec, FOM:     5214
+	Iteration #:  1, H =  3.967, time: 0.3121 sec.
+Restart #: 108, H =  3.967, mean = (  4.8249,     0), std.dev. = (0.00117,     0), res =    0.0199, time:  143.7 sec, FOM:     5093
+	Iteration #:  1, H =  4.071, time: 0.3096 sec.
+Restart #: 109, H =  4.071, mean = (  4.8249,     0), std.dev. = (0.00116,     0), res =    0.0293, time:  144.3 sec, FOM:     5163
+	Iteration #:  1, H =  3.993, time: 0.3109 sec.
+Restart #: 110, H =  3.993, mean = (   4.825,     0), std.dev. = (0.00115,     0), res =    0.0209, time:  144.9 sec, FOM:     5206
+	Iteration #:  1, H =  3.977, time: 0.3095 sec.
+Restart #: 111, H =  3.977, mean = (   4.825,     0), std.dev. = (0.00114,     0), res =    0.0213, time:  145.5 sec, FOM:     5275
+	Iteration #:  1, H =  3.968, time:  0.311 sec.
+Restart #: 112, H =  3.968, mean = (   4.825,     0), std.dev. = (0.00113,     0), res =    0.0298, time:  146.2 sec, FOM:     5327
+	Iteration #:  1, H =  3.984, time: 0.3106 sec.
+Restart #: 113, H =  3.984, mean = (  4.8251,     0), std.dev. = (0.00113,     0), res =    0.0172, time:  146.8 sec, FOM:     5366
+	Iteration #:  1, H =  4.012, time: 0.3102 sec.
+Restart #: 114, H =  4.012, mean = (  4.8251,     0), std.dev. = (0.00112,     0), res =    0.0268, time:  147.4 sec, FOM:     5435
+	Iteration #:  1, H =  4.052, time:  0.312 sec.
+Restart #: 115, H =  4.052, mean = (  4.8253,     0), std.dev. = (0.00112,     0), res =    0.0181, time:    148 sec, FOM:     5339
+	Iteration #:  1, H =   4.03, time: 0.3103 sec.
+Restart #: 116, H =   4.03, mean = (  4.8254,     0), std.dev. = (0.00112,     0), res =    0.0498, time:  148.6 sec, FOM:     5347
+	Iteration #:  1, H =  4.027, time: 0.3104 sec.
+Restart #: 117, H =  4.027, mean = (  4.8255,     0), std.dev. = (0.00112,     0), res =    0.0303, time:  149.2 sec, FOM:     5381
+	Iteration #:  1, H =  4.054, time: 0.3093 sec.
+Restart #: 118, H =  4.054, mean = (  4.8253,     0), std.dev. = (0.00113,     0), res =    0.0449, time:  149.9 sec, FOM:     5205
+	Iteration #:  1, H =  3.989, time: 0.3115 sec.
+Restart #: 119, H =  3.989, mean = (  4.8253,     0), std.dev. = (0.00113,     0), res =    0.0251, time:  150.5 sec, FOM:     5244
+	Iteration #:  1, H =  3.986, time: 0.3127 sec.
+Restart #: 120, H =  3.986, mean = (  4.8256,     0), std.dev. = (0.00116,     0), res =    0.0476, time:  151.1 sec, FOM:     4958
+	Iteration #:  1, H =  3.947, time: 0.3167 sec.
+Restart #: 121, H =  3.947, mean = (  4.8257,     0), std.dev. = (0.00115,     0), res =    0.0301, time:  151.7 sec, FOM:     4995
+	Iteration #:  1, H =  4.055, time: 0.3109 sec.
+Restart #: 122, H =  4.055, mean = (  4.8257,     0), std.dev. = (0.00114,     0), res =    0.0331, time:  152.3 sec, FOM:     5056
+	Iteration #:  1, H =  4.055, time: 0.3114 sec.
+Restart #: 123, H =  4.055, mean = (  4.8256,     0), std.dev. = (0.00113,     0), res =    0.0468, time:    153 sec, FOM:     5080
+	Iteration #:  1, H =  3.995, time: 0.3107 sec.
+Restart #: 124, H =  3.995, mean = (  4.8255,     0), std.dev. = (0.00113,     0), res =    0.0265, time:  153.6 sec, FOM:     5086
+	Iteration #:  1, H =  4.015, time: 0.3099 sec.
+Restart #: 125, H =  4.015, mean = (  4.8254,     0), std.dev. = (0.00113,     0), res =    0.0343, time:  154.2 sec, FOM:     5072
+	Iteration #:  1, H =  3.987, time:  0.312 sec.
+Restart #: 126, H =  3.987, mean = (  4.8256,     0), std.dev. = (0.00114,     0), res =    0.0258, time:  154.8 sec, FOM:     5011
+	Iteration #:  1, H =  4.047, time: 0.3105 sec.
+Restart #: 127, H =  4.047, mean = (  4.8254,     0), std.dev. = (0.00113,     0), res =    0.0265, time:  155.4 sec, FOM:     5025
+	Iteration #:  1, H =  4.033, time: 0.3131 sec.
+Restart #: 128, H =  4.033, mean = (  4.8256,     0), std.dev. = (0.00114,     0), res =    0.0179, time:  156.1 sec, FOM:     4966
+	Iteration #:  1, H =  3.992, time: 0.3115 sec.
+Restart #: 129, H =  3.992, mean = (  4.8256,     0), std.dev. = (0.00113,     0), res =    0.0256, time:  156.7 sec, FOM:     5021
+	Iteration #:  1, H =  4.055, time: 0.3114 sec.
+Restart #: 130, H =  4.055, mean = (  4.8256,     0), std.dev. = (0.00112,     0), res =    0.0231, time:  157.3 sec, FOM:     5078
+	Iteration #:  1, H =  3.976, time: 0.3107 sec.
+Restart #: 131, H =  3.976, mean = (  4.8256,     0), std.dev. = (0.00111,     0), res =    0.0179, time:  157.9 sec, FOM:     5135
+	Iteration #:  1, H =  3.949, time: 0.3111 sec.
+Restart #: 132, H =  3.949, mean = (  4.8256,     0), std.dev. = ( 0.0011,     0), res =    0.0257, time:  158.5 sec, FOM:     5191
+	Iteration #:  1, H =  4.043, time: 0.3123 sec.
+Restart #: 133, H =  4.043, mean = (  4.8257,     0), std.dev. = ( 0.0011,     0), res =    0.0536, time:  159.2 sec, FOM:     5213
+	Iteration #:  1, H =  4.026, time: 0.3127 sec.
+Restart #: 134, H =  4.026, mean = (   4.826,     0), std.dev. = (0.00112,     0), res =    0.0244, time:  159.8 sec, FOM:     5008
+	Iteration #:  1, H =  4.036, time: 0.3094 sec.
+Restart #: 135, H =  4.036, mean = (  4.8259,     0), std.dev. = (0.00111,     0), res =    0.0246, time:  160.4 sec, FOM:     5061
+	Iteration #:  1, H =  4.011, time: 0.3124 sec.
+Restart #: 136, H =  4.011, mean = (   4.826,     0), std.dev. = ( 0.0011,     0), res =    0.0321, time:    161 sec, FOM:     5116
+	Iteration #:  1, H =  3.981, time: 0.3117 sec.
+Restart #: 137, H =  3.981, mean = (   4.826,     0), std.dev. = (0.00109,     0), res =    0.0272, time:  161.6 sec, FOM:     5169
+	Iteration #:  1, H =  4.016, time: 0.3104 sec.
+Restart #: 138, H =  4.016, mean = (  4.8259,     0), std.dev. = (0.00109,     0), res =    0.0605, time:  162.2 sec, FOM:     5213
+	Iteration #:  1, H =  4.004, time: 0.3103 sec.
+Restart #: 139, H =  4.004, mean = (  4.8259,     0), std.dev. = (0.00108,     0), res =    0.0322, time:  162.9 sec, FOM:     5262
+	Iteration #:  1, H =  4.018, time: 0.3116 sec.
+Restart #: 140, H =  4.018, mean = (  4.8258,     0), std.dev. = (0.00108,     0), res =    0.0401, time:  163.5 sec, FOM:     5290
+	Iteration #:  1, H =  4.008, time: 0.3105 sec.
+Restart #: 141, H =  4.008, mean = (  4.8259,     0), std.dev. = (0.00107,     0), res =     0.029, time:  164.1 sec, FOM:     5279
+	Iteration #:  1, H =   3.96, time: 0.3092 sec.
+Restart #: 142, H =   3.96, mean = (  4.8258,     0), std.dev. = (0.00107,     0), res =    0.0283, time:  164.7 sec, FOM:     5257
+	Iteration #:  1, H =  3.998, time: 0.3097 sec.
+Restart #: 143, H =  3.998, mean = (  4.8258,     0), std.dev. = (0.00107,     0), res =    0.0514, time:  165.3 sec, FOM:     5308
+	Iteration #:  1, H =  4.012, time: 0.3114 sec.
+Restart #: 144, H =  4.012, mean = (  4.8258,     0), std.dev. = (0.00106,     0), res =    0.0329, time:    166 sec, FOM:     5362
+	Iteration #:  1, H =  3.994, time: 0.3114 sec.
+Restart #: 145, H =  3.994, mean = (  4.8258,     0), std.dev. = (0.00105,     0), res =    0.0343, time:  166.6 sec, FOM:     5414
+	Iteration #:  1, H =  4.026, time: 0.3106 sec.
+Restart #: 146, H =  4.026, mean = (  4.8259,     0), std.dev. = (0.00105,     0), res =    0.0333, time:  167.2 sec, FOM:     5399
+	Iteration #:  1, H =  3.971, time: 0.3106 sec.
+Restart #: 147, H =  3.971, mean = (   4.826,     0), std.dev. = (0.00105,     0), res =    0.0286, time:  167.8 sec, FOM:     5446
+	Iteration #:  1, H =  3.963, time: 0.3121 sec.
+Restart #: 148, H =  3.963, mean = (  4.8261,     0), std.dev. = (0.00104,     0), res =    0.0328, time:  168.4 sec, FOM:     5459
+	Iteration #:  1, H =  4.058, time: 0.3101 sec.
+Restart #: 149, H =  4.058, mean = (  4.8261,     0), std.dev. = (0.00104,     0), res =     0.025, time:  169.1 sec, FOM:     5513
+	Iteration #:  1, H =   4.01, time:  0.309 sec.
+Restart #: 150, H =   4.01, mean = (   4.826,     0), std.dev. = (0.00103,     0), res =    0.0191, time:  169.7 sec, FOM:     5558
+	Iteration #:  1, H =  4.022, time:  0.309 sec.
+Restart #: 151, H =  4.022, mean = (  4.8259,     0), std.dev. = (0.00103,     0), res =    0.0448, time:  170.3 sec, FOM:     5588
+	Iteration #:  1, H =  4.016, time: 0.3101 sec.
+Restart #: 152, H =  4.016, mean = (   4.826,     0), std.dev. = (0.00102,     0), res =      0.03, time:  170.9 sec, FOM:     5633
+	Iteration #:  1, H =  4.073, time: 0.3119 sec.
+Restart #: 153, H =  4.073, mean = (  4.8263,     0), std.dev. = (0.00105,     0), res =    0.0237, time:  171.5 sec, FOM:     5262
+	Iteration #:  1, H =   4.01, time: 0.3106 sec.
+Restart #: 154, H =   4.01, mean = (  4.8263,     0), std.dev. = (0.00105,     0), res =      0.05, time:  172.1 sec, FOM:     5311
+	Iteration #:  1, H =  4.002, time: 0.3101 sec.
+Restart #: 155, H =  4.002, mean = (  4.8262,     0), std.dev. = (0.00105,     0), res =    0.0288, time:  172.8 sec, FOM:     5297
+	Iteration #:  1, H =   4.01, time: 0.3103 sec.
+Restart #: 156, H =   4.01, mean = (  4.8261,     0), std.dev. = (0.00104,     0), res =    0.0343, time:  173.4 sec, FOM:     5346
+	Iteration #:  1, H =  4.034, time: 0.3119 sec.
+Restart #: 157, H =  4.034, mean = (  4.8261,     0), std.dev. = (0.00103,     0), res =    0.0284, time:    174 sec, FOM:     5386
+	Iteration #:  1, H =  4.061, time: 0.3104 sec.
+Restart #: 158, H =  4.061, mean = (  4.8261,     0), std.dev. = (0.00103,     0), res =    0.0316, time:  174.6 sec, FOM:     5435
+	Iteration #:  1, H =  4.026, time: 0.3097 sec.
+Restart #: 159, H =  4.026, mean = (  4.8262,     0), std.dev. = (0.00102,     0), res =     0.055, time:  175.2 sec, FOM:     5432
+	Iteration #:  1, H =  3.988, time: 0.3122 sec.
+Restart #: 160, H =  3.988, mean = (  4.8261,     0), std.dev. = (0.00103,     0), res =     0.051, time:  175.9 sec, FOM:     5394
+	Iteration #:  1, H =  3.987, time: 0.3102 sec.
+Restart #: 161, H =  3.987, mean = (   4.826,     0), std.dev. = (0.00102,     0), res =     0.015, time:  176.5 sec, FOM:     5395
+	Iteration #:  1, H =  4.011, time: 0.3124 sec.
+Restart #: 162, H =  4.011, mean = (  4.8263,     0), std.dev. = (0.00106,     0), res =    0.0422, time:  177.1 sec, FOM:     5052
+	Iteration #:  1, H =  4.028, time: 0.3102 sec.
+Restart #: 163, H =  4.028, mean = (  4.8262,     0), std.dev. = (0.00105,     0), res =    0.0405, time:  177.7 sec, FOM:     5086
+	Iteration #:  1, H =  3.922, time: 0.3102 sec.
+Restart #: 164, H =  3.922, mean = (  4.8262,     0), std.dev. = (0.00105,     0), res =    0.0374, time:  178.3 sec, FOM:     5130
+	Iteration #:  1, H =  4.074, time: 0.3129 sec.
+Restart #: 165, H =  4.074, mean = (  4.8264,     0), std.dev. = (0.00106,     0), res =    0.0244, time:  178.9 sec, FOM:     4967
+	Iteration #:  1, H =  4.043, time: 0.3114 sec.
+Restart #: 166, H =  4.043, mean = (  4.8265,     0), std.dev. = (0.00106,     0), res =    0.0504, time:  179.6 sec, FOM:     4993
+	Iteration #:  1, H =  4.095, time: 0.3102 sec.
+Restart #: 167, H =  4.095, mean = (  4.8265,     0), std.dev. = (0.00105,     0), res =     0.026, time:  180.2 sec, FOM:     5019
+	Iteration #:  1, H =  3.969, time: 0.3093 sec.
+Restart #: 168, H =  3.969, mean = (  4.8264,     0), std.dev. = (0.00105,     0), res =    0.0223, time:  180.8 sec, FOM:     4970
+	Iteration #:  1, H =  4.064, time: 0.3128 sec.
+Restart #: 169, H =  4.064, mean = (  4.8266,     0), std.dev. = (0.00107,     0), res =    0.0241, time:  181.4 sec, FOM:     4830
+	Iteration #:  1, H =   4.04, time: 0.3114 sec.
+Restart #: 170, H =   4.04, mean = (  4.8268,     0), std.dev. = (0.00107,     0), res =    0.0311, time:    182 sec, FOM:     4756
+	Iteration #:  1, H =  3.959, time: 0.3097 sec.
+Restart #: 171, H =  3.959, mean = (  4.8266,     0), std.dev. = (0.00108,     0), res =    0.0191, time:  182.7 sec, FOM:     4670
+	Iteration #:  1, H =  4.098, time: 0.3109 sec.
+Restart #: 172, H =  4.098, mean = (  4.8266,     0), std.dev. = (0.00108,     0), res =    0.0412, time:  183.3 sec, FOM:     4706
+	Iteration #:  1, H =  3.985, time: 0.3109 sec.
+Restart #: 173, H =  3.985, mean = (  4.8267,     0), std.dev. = (0.00107,     0), res =      0.04, time:  183.9 sec, FOM:     4709
+	Iteration #:  1, H =  4.024, time: 0.3126 sec.
+Restart #: 174, H =  4.024, mean = (  4.8268,     0), std.dev. = (0.00107,     0), res =    0.0401, time:  184.5 sec, FOM:     4714
+	Iteration #:  1, H =  4.035, time:  0.309 sec.
+Restart #: 175, H =  4.035, mean = (  4.8267,     0), std.dev. = (0.00107,     0), res =     0.032, time:  185.1 sec, FOM:     4711
+	Iteration #:  1, H =  4.014, time: 0.3097 sec.
+Restart #: 176, H =  4.014, mean = (  4.8267,     0), std.dev. = (0.00107,     0), res =    0.0158, time:  185.7 sec, FOM:     4738
+	Iteration #:  1, H =  4.001, time: 0.3095 sec.
+Restart #: 177, H =  4.001, mean = (  4.8266,     0), std.dev. = (0.00106,     0), res =    0.0303, time:  186.4 sec, FOM:     4769
+	Iteration #:  1, H =  3.945, time: 0.3111 sec.
+Restart #: 178, H =  3.945, mean = (  4.8266,     0), std.dev. = (0.00105,     0), res =    0.0205, time:    187 sec, FOM:     4807
+	Iteration #:  1, H =  4.023, time: 0.3108 sec.
+Restart #: 179, H =  4.023, mean = (  4.8266,     0), std.dev. = (0.00105,     0), res =    0.0175, time:  187.6 sec, FOM:     4845
+	Iteration #:  1, H =  3.973, time:  0.309 sec.
+Restart #: 180, H =  3.973, mean = (  4.8265,     0), std.dev. = (0.00105,     0), res =    0.0225, time:  188.2 sec, FOM:     4827
+	Iteration #:  1, H =  3.997, time: 0.3103 sec.
+Restart #: 181, H =  3.997, mean = (  4.8265,     0), std.dev. = (0.00104,     0), res =    0.0312, time:  188.8 sec, FOM:     4860
+	Iteration #:  1, H =  3.987, time: 0.3109 sec.
+Restart #: 182, H =  3.987, mean = (  4.8265,     0), std.dev. = (0.00104,     0), res =     0.028, time:  189.5 sec, FOM:     4894
+	Iteration #:  1, H =  3.973, time: 0.3107 sec.
+Restart #: 183, H =  3.973, mean = (  4.8265,     0), std.dev. = (0.00103,     0), res =    0.0149, time:  190.1 sec, FOM:     4929
+	Iteration #:  1, H =  4.011, time: 0.3133 sec.
+Restart #: 184, H =  4.011, mean = (  4.8265,     0), std.dev. = (0.00103,     0), res =    0.0244, time:  190.7 sec, FOM:     4964
+	Iteration #:  1, H =  3.959, time: 0.3125 sec.
+Restart #: 185, H =  3.959, mean = (  4.8264,     0), std.dev. = (0.00103,     0), res =    0.0303, time:  191.3 sec, FOM:     4913
+	Iteration #:  1, H =  4.025, time: 0.3136 sec.
+Restart #: 186, H =  4.025, mean = (  4.8264,     0), std.dev. = (0.00103,     0), res =    0.0172, time:  191.9 sec, FOM:     4949
+	Iteration #:  1, H =  4.003, time: 0.3145 sec.
+Restart #: 187, H =  4.003, mean = (  4.8263,     0), std.dev. = (0.00103,     0), res =    0.0192, time:  192.6 sec, FOM:     4942
+	Iteration #:  1, H =   3.99, time: 0.3139 sec.
+Restart #: 188, H =   3.99, mean = (  4.8263,     0), std.dev. = (0.00102,     0), res =    0.0168, time:  193.2 sec, FOM:     4977
+	Iteration #:  1, H =  4.083, time: 0.3131 sec.
+Restart #: 189, H =  4.083, mean = (  4.8263,     0), std.dev. = (0.00102,     0), res =    0.0183, time:  193.8 sec, FOM:     5007
+	Iteration #:  1, H =  4.012, time: 0.3134 sec.
+Restart #: 190, H =  4.012, mean = (  4.8263,     0), std.dev. = (0.00101,     0), res =    0.0352, time:  194.4 sec, FOM:     5031
+	Iteration #:  1, H =   3.97, time:  0.315 sec.
+Restart #: 191, H =   3.97, mean = (  4.8263,     0), std.dev. = (0.00101,     0), res =    0.0302, time:  195.1 sec, FOM:     5054
+	Iteration #:  1, H =  4.027, time: 0.3146 sec.
+Restart #: 192, H =  4.027, mean = (  4.8263,     0), std.dev. = (  0.001,     0), res =    0.0353, time:  195.7 sec, FOM:     5090
+	Iteration #:  1, H =  4.017, time: 0.3129 sec.
+Restart #: 193, H =  4.017, mean = (  4.8262,     0), std.dev. = (  0.001,     0), res =    0.0302, time:  196.3 sec, FOM:     5091
+	Iteration #:  1, H =   3.97, time: 0.3149 sec.
+Restart #: 194, H =   3.97, mean = (  4.8262,     0), std.dev. = (0.000995,     0), res =    0.0281, time:  196.9 sec, FOM:     5124
+	Iteration #:  1, H =  3.976, time: 0.3171 sec.
+Restart #: 195, H =  3.976, mean = (  4.8264,     0), std.dev. = (0.000996,     0), res =    0.0158, time:  197.6 sec, FOM:     5100
+	Iteration #:  1, H =  3.981, time: 0.3148 sec.
+Restart #: 196, H =  3.981, mean = (  4.8263,     0), std.dev. = (0.000995,     0), res =    0.0229, time:  198.2 sec, FOM:     5101
+	Iteration #:  1, H =  4.026, time: 0.3129 sec.
+Restart #: 197, H =  4.026, mean = (  4.8261,     0), std.dev. = (0.000998,     0), res =    0.0291, time:  198.8 sec, FOM:     5050
+	Iteration #:  1, H =  3.954, time:  0.315 sec.
+Restart #: 198, H =  3.954, mean = (  4.8263,     0), std.dev. = (  0.001,     0), res =    0.0152, time:  199.4 sec, FOM:     5010
+	Iteration #:  1, H =  3.994, time: 0.3152 sec.
+Restart #: 199, H =  3.994, mean = (  4.8262,     0), std.dev. = (0.000996,     0), res =    0.0257, time:  200.1 sec, FOM:     5041
+	Iteration #:  1, H =  4.002, time: 0.3136 sec.
+Restart #: 200, H =  4.002, mean = (  4.8262,     0), std.dev. = (0.000991,     0), res =    0.0291, time:  200.7 sec, FOM:     5072
+	Iteration #:  1, H =  4.027, time: 0.3111 sec.
+Restart #: 201, H =  4.027, mean = (  4.8261,     0), std.dev. = (0.000989,     0), res =    0.0345, time:  201.3 sec, FOM:     5075
+	Iteration #:  1, H =  3.987, time: 0.3108 sec.
+Restart #: 202, H =  3.987, mean = (  4.8261,     0), std.dev. = (0.000985,     0), res =    0.0192, time:  201.9 sec, FOM:     5102
+	Iteration #:  1, H =  3.925, time:   0.31 sec.
+Restart #: 203, H =  3.925, mean = (  4.8261,     0), std.dev. = (0.000981,     0), res =    0.0188, time:  202.5 sec, FOM:     5130
+	Iteration #:  1, H =  4.065, time: 0.3115 sec.
+Restart #: 204, H =  4.065, mean = (  4.8261,     0), std.dev. = (0.000976,     0), res =     0.021, time:  203.2 sec, FOM:     5164
+	Iteration #:  1, H =  3.998, time:  0.313 sec.
+Restart #: 205, H =  3.998, mean = (  4.8263,     0), std.dev. = (0.000993,     0), res =    0.0433, time:  203.8 sec, FOM:     4981
+	Iteration #:  1, H =  4.026, time: 0.3082 sec.
+Restart #: 206, H =  4.026, mean = (  4.8261,     0), std.dev. = (  0.001,     0), res =    0.0271, time:  204.4 sec, FOM:     4859
+	Iteration #:  1, H =  3.953, time: 0.3083 sec.
+Restart #: 207, H =  3.953, mean = (  4.8261,     0), std.dev. = (0.000999,     0), res =    0.0368, time:    205 sec, FOM:     4888
+	Iteration #:  1, H =  3.962, time: 0.3105 sec.
+Restart #: 208, H =  3.962, mean = (   4.826,     0), std.dev. = (0.000999,     0), res =    0.0234, time:  205.6 sec, FOM:     4868
+	Iteration #:  1, H =  3.959, time: 0.3114 sec.
+Restart #: 209, H =  3.959, mean = (   4.826,     0), std.dev. = (0.000997,     0), res =    0.0332, time:  206.3 sec, FOM:     4880
+	Iteration #:  1, H =  3.983, time: 0.3099 sec.
+Restart #: 210, H =  3.983, mean = (   4.826,     0), std.dev. = (0.000993,     0), res =    0.0222, time:  206.9 sec, FOM:     4903
+	Iteration #:  1, H =  4.081, time: 0.3103 sec.
+Restart #: 211, H =  4.081, mean = (  4.8259,     0), std.dev. = (0.000991,     0), res =    0.0268, time:  207.5 sec, FOM:     4910
+	Iteration #:  1, H =  4.044, time:  0.311 sec.
+Restart #: 212, H =  4.044, mean = (  4.8259,     0), std.dev. = (0.000986,     0), res =    0.0245, time:  208.1 sec, FOM:     4941
+	Iteration #:  1, H =  4.007, time: 0.3128 sec.
+Restart #: 213, H =  4.007, mean = (   4.826,     0), std.dev. = (0.000986,     0), res =    0.0435, time:  208.7 sec, FOM:     4929
+	Iteration #:  1, H =  3.958, time:   0.31 sec.
+Restart #: 214, H =  3.958, mean = (   4.826,     0), std.dev. = (0.000982,     0), res =    0.0259, time:  209.3 sec, FOM:     4951
+	Iteration #:  1, H =  3.974, time: 0.3096 sec.
+Restart #: 215, H =  3.974, mean = (   4.826,     0), std.dev. = (0.00098,     0), res =    0.0437, time:    210 sec, FOM:     4959
+	Iteration #:  1, H =  4.041, time: 0.3102 sec.
+Restart #: 216, H =  4.041, mean = (  4.8259,     0), std.dev. = (0.000979,     0), res =    0.0186, time:  210.6 sec, FOM:     4954
+	Iteration #:  1, H =  3.973, time: 0.3124 sec.
+Restart #: 217, H =  3.973, mean = (   4.826,     0), std.dev. = (0.000975,     0), res =    0.0229, time:  211.2 sec, FOM:     4978
+	Iteration #:  1, H =  4.074, time: 0.3119 sec.
+Restart #: 218, H =  4.074, mean = (   4.826,     0), std.dev. = (0.000971,     0), res =    0.0354, time:  211.8 sec, FOM:     5008
+	Iteration #:  1, H =  4.025, time: 0.3122 sec.
+Restart #: 219, H =  4.025, mean = (   4.826,     0), std.dev. = (0.000967,     0), res =    0.0246, time:  212.4 sec, FOM:     5035
+	Iteration #:  1, H =  4.057, time: 0.3127 sec.
+Restart #: 220, H =  4.057, mean = (   4.826,     0), std.dev. = (0.000963,     0), res =    0.0356, time:  213.1 sec, FOM:     5063
+	Iteration #:  1, H =  4.007, time: 0.3124 sec.
+Restart #: 221, H =  4.007, mean = (  4.8261,     0), std.dev. = (0.00096,     0), res =     0.022, time:  213.7 sec, FOM:     5081
+	Iteration #:  1, H =  3.975, time: 0.3106 sec.
+Restart #: 222, H =  3.975, mean = (   4.826,     0), std.dev. = (0.000958,     0), res =    0.0309, time:  214.3 sec, FOM:     5085
+	Iteration #:  1, H =  4.063, time: 0.3113 sec.
+Restart #: 223, H =  4.063, mean = (  4.8261,     0), std.dev. = (0.000957,     0), res =    0.0173, time:  214.9 sec, FOM:     5083
+	Iteration #:  1, H =  4.022, time: 0.3118 sec.
+Restart #: 224, H =  4.022, mean = (   4.826,     0), std.dev. = (0.000954,     0), res =    0.0194, time:  215.6 sec, FOM:     5098
+	Iteration #:  1, H =  4.052, time: 0.3113 sec.
+Restart #: 225, H =  4.052, mean = (   4.826,     0), std.dev. = (0.00095,     0), res =    0.0473, time:  216.2 sec, FOM:     5126
+	Iteration #:  1, H =  4.085, time: 0.3132 sec.
+Restart #: 226, H =  4.085, mean = (  4.8261,     0), std.dev. = (0.000953,     0), res =    0.0205, time:  216.8 sec, FOM:     5081
+	Iteration #:  1, H =  4.031, time: 0.3128 sec.
+Restart #: 227, H =  4.031, mean = (  4.8261,     0), std.dev. = (0.000949,     0), res =    0.0389, time:  217.4 sec, FOM:     5107
+	Iteration #:  1, H =  4.038, time: 0.3107 sec.
+Restart #: 228, H =  4.038, mean = (  4.8261,     0), std.dev. = (0.000945,     0), res =    0.0186, time:    218 sec, FOM:     5137
+	Iteration #:  1, H =  3.935, time: 0.3118 sec.
+Restart #: 229, H =  3.935, mean = (  4.8262,     0), std.dev. = (0.000944,     0), res =    0.0331, time:  218.7 sec, FOM:     5131
+	Iteration #:  1, H =  4.041, time: 0.3121 sec.
+Restart #: 230, H =  4.041, mean = (  4.8263,     0), std.dev. = (0.000941,     0), res =    0.0255, time:  219.3 sec, FOM:     5148
+	Iteration #:  1, H =  4.079, time: 0.3119 sec.
+Restart #: 231, H =  4.079, mean = (  4.8264,     0), std.dev. = (0.000947,     0), res =    0.0179, time:  219.9 sec, FOM:     5075
+	Iteration #:  1, H =  3.952, time: 0.3129 sec.
+Restart #: 232, H =  3.952, mean = (  4.8265,     0), std.dev. = (0.000946,     0), res =    0.0297, time:  220.5 sec, FOM:     5062
+	Iteration #:  1, H =  4.013, time: 0.3155 sec.
+Restart #: 233, H =  4.013, mean = (  4.8266,     0), std.dev. = (0.000956,     0), res =    0.0363, time:  221.1 sec, FOM:     4952
+	Iteration #:  1, H =  4.003, time: 0.3125 sec.
+Restart #: 234, H =  4.003, mean = (  4.8267,     0), std.dev. = (0.000955,     0), res =    0.0683, time:  221.8 sec, FOM:     4943
+	Iteration #:  1, H =  4.017, time: 0.3126 sec.
+Restart #: 235, H =  4.017, mean = (  4.8267,     0), std.dev. = (0.000951,     0), res =    0.0182, time:  222.4 sec, FOM:     4971
+	Iteration #:  1, H =  3.951, time: 0.3117 sec.
+Restart #: 236, H =  3.951, mean = (  4.8268,     0), std.dev. = (0.000949,     0), res =    0.0157, time:    223 sec, FOM:     4980
+	Iteration #:  1, H =  4.083, time: 0.3107 sec.
+Restart #: 237, H =  4.083, mean = (  4.8268,     0), std.dev. = (0.000946,     0), res =    0.0195, time:  223.6 sec, FOM:     4996
+	Iteration #:  1, H =  3.951, time: 0.3127 sec.
+Restart #: 238, H =  3.951, mean = (  4.8269,     0), std.dev. = (0.000945,     0), res =    0.0264, time:  224.2 sec, FOM:     4998
+	Iteration #:  1, H =  3.995, time: 0.3121 sec.
+Restart #: 239, H =  3.995, mean = (  4.8269,     0), std.dev. = (0.000943,     0), res =    0.0173, time:  224.9 sec, FOM:     5006
+	Iteration #:  1, H =  4.094, time: 0.3114 sec.
+Restart #: 240, H =  4.094, mean = (  4.8269,     0), std.dev. = (0.000939,     0), res =    0.0231, time:  225.5 sec, FOM:     5034
+	Iteration #:  1, H =  4.044, time: 0.3131 sec.
+Restart #: 241, H =  4.044, mean = (   4.827,     0), std.dev. = (0.000936,     0), res =    0.0301, time:  226.1 sec, FOM:     5045
+	Iteration #:  1, H =  4.031, time: 0.3128 sec.
+Restart #: 242, H =  4.031, mean = (   4.827,     0), std.dev. = (0.000932,     0), res =    0.0309, time:  226.7 sec, FOM:     5072
+	Iteration #:  1, H =  4.043, time: 0.3101 sec.
+Restart #: 243, H =  4.043, mean = (  4.8269,     0), std.dev. = (0.00094,     0), res =    0.0541, time:  227.3 sec, FOM:     4976
+	Iteration #:  1, H =  4.036, time: 0.3119 sec.
+Restart #: 244, H =  4.036, mean = (  4.8269,     0), std.dev. = (0.00094,     0), res =    0.0287, time:    228 sec, FOM:     4969
+	Iteration #:  1, H =  3.988, time: 0.3114 sec.
+Restart #: 245, H =  3.988, mean = (  4.8269,     0), std.dev. = (0.000936,     0), res =     0.045, time:  228.6 sec, FOM:     4995
+	Iteration #:  1, H =  4.056, time: 0.3106 sec.
+Restart #: 246, H =  4.056, mean = (  4.8269,     0), std.dev. = (0.000935,     0), res =    0.0491, time:  229.2 sec, FOM:     4993
+	Iteration #:  1, H =  4.012, time: 0.3104 sec.
+Restart #: 247, H =  4.012, mean = (  4.8268,     0), std.dev. = (0.000931,     0), res =    0.0251, time:  229.8 sec, FOM:     5016
+	Iteration #:  1, H =  3.988, time: 0.3105 sec.
+Restart #: 248, H =  3.988, mean = (  4.8267,     0), std.dev. = (0.000934,     0), res =    0.0323, time:  230.4 sec, FOM:     4970
+	Iteration #:  1, H =   4.08, time: 0.3129 sec.
+Restart #: 249, H =   4.08, mean = (  4.8268,     0), std.dev. = (0.000931,     0), res =    0.0251, time:  231.1 sec, FOM:     4989
+	Iteration #:  1, H =  3.995, time: 0.3118 sec.
+Restart #: 250, H =  3.995, mean = (  4.8269,     0), std.dev. = (0.000935,     0), res =    0.0485, time:  231.7 sec, FOM:     4937
+	Iteration #:  1, H =  4.014, time: 0.3127 sec.
+Restart #: 251, H =  4.014, mean = (   4.827,     0), std.dev. = (0.000935,     0), res =    0.0173, time:  232.3 sec, FOM:     4927
+	Iteration #:  1, H =  4.092, time: 0.3138 sec.
+Restart #: 252, H =  4.092, mean = (   4.827,     0), std.dev. = (0.000935,     0), res =    0.0292, time:  232.9 sec, FOM:     4906
+	Iteration #:  1, H =  4.096, time: 0.3134 sec.
+Restart #: 253, H =  4.096, mean = (  4.8271,     0), std.dev. = (0.000932,     0), res =    0.0276, time:  233.5 sec, FOM:     4930
+	Iteration #:  1, H =   4.02, time: 0.3121 sec.
+Restart #: 254, H =   4.02, mean = (   4.827,     0), std.dev. = (0.000929,     0), res =    0.0174, time:  234.2 sec, FOM:     4952
+	Iteration #:  1, H =  4.059, time: 0.3103 sec.
+Restart #: 255, H =  4.059, mean = (   4.827,     0), std.dev. = (0.000927,     0), res =    0.0275, time:  234.8 sec, FOM:     4953
+	Iteration #:  1, H =  4.068, time: 0.3112 sec.
+Restart #: 256, H =  4.068, mean = (   4.827,     0), std.dev. = (0.000924,     0), res =    0.0264, time:  235.4 sec, FOM:     4976
+	Iteration #:  1, H =  3.977, time: 0.3088 sec.
+Restart #: 257, H =  3.977, mean = (   4.827,     0), std.dev. = (0.000921,     0), res =     0.023, time:    236 sec, FOM:     4999
+	Iteration #:  1, H =  3.927, time: 0.3089 sec.
+Restart #: 258, H =  3.927, mean = (   4.827,     0), std.dev. = (0.000917,     0), res =    0.0248, time:  236.6 sec, FOM:     5024
+	Iteration #:  1, H =  3.987, time: 0.3096 sec.
+Restart #: 259, H =  3.987, mean = (  4.8269,     0), std.dev. = (0.000918,     0), res =    0.0153, time:  237.3 sec, FOM:     4998
+	Iteration #:  1, H =  4.029, time: 0.3121 sec.
+Restart #: 260, H =  4.029, mean = (  4.8269,     0), std.dev. = (0.000915,     0), res =    0.0318, time:  237.9 sec, FOM:     5018
+	Iteration #:  1, H =  3.946, time: 0.3129 sec.
+Restart #: 261, H =  3.946, mean = (  4.8269,     0), std.dev. = (0.000912,     0), res =    0.0121, time:  238.5 sec, FOM:     5040
+	Iteration #:  1, H =  4.035, time: 0.3131 sec.
+Restart #: 262, H =  4.035, mean = (   4.827,     0), std.dev. = (0.000911,     0), res =    0.0261, time:  239.1 sec, FOM:     5043
+	Iteration #:  1, H =  4.041, time:  0.311 sec.
+Restart #: 263, H =  4.041, mean = (  4.8269,     0), std.dev. = (0.000908,     0), res =    0.0312, time:  239.7 sec, FOM:     5054
+	Iteration #:  1, H =  3.999, time: 0.3109 sec.
+Restart #: 264, H =  3.999, mean = (   4.827,     0), std.dev. = (0.000905,     0), res =    0.0283, time:  240.3 sec, FOM:     5075
+	Iteration #:  1, H =   3.96, time: 0.3094 sec.
+Restart #: 265, H =   3.96, mean = (  4.8269,     0), std.dev. = (0.000903,     0), res =    0.0247, time:    241 sec, FOM:     5084
+	Iteration #:  1, H =  3.999, time: 0.3084 sec.
+Restart #: 266, H =  3.999, mean = (  4.8269,     0), std.dev. = (0.000902,     0), res =    0.0384, time:  241.6 sec, FOM:     5089
+	Iteration #:  1, H =  3.947, time: 0.3119 sec.
+Restart #: 267, H =  3.947, mean = (  4.8269,     0), std.dev. = (0.000899,     0), res =    0.0224, time:  242.2 sec, FOM:     5110
+	Iteration #:  1, H =  4.075, time: 0.3116 sec.
+Restart #: 268, H =  4.075, mean = (  4.8269,     0), std.dev. = (0.000896,     0), res =    0.0133, time:  242.8 sec, FOM:     5135
+	Iteration #:  1, H =  4.057, time: 0.3098 sec.
+Restart #: 269, H =  4.057, mean = (  4.8268,     0), std.dev. = (0.000895,     0), res =    0.0132, time:  243.4 sec, FOM:     5123
+	Iteration #:  1, H =  4.028, time: 0.3128 sec.
+Restart #: 270, H =  4.028, mean = (  4.8269,     0), std.dev. = (0.000893,     0), res =    0.0195, time:    244 sec, FOM:     5133
+	Iteration #:  1, H =  3.976, time: 0.3112 sec.
+Restart #: 271, H =  3.976, mean = (  4.8268,     0), std.dev. = (0.00089,     0), res =    0.0268, time:  244.7 sec, FOM:     5158
+	Iteration #:  1, H =   3.98, time: 0.3112 sec.
+Restart #: 272, H =   3.98, mean = (  4.8269,     0), std.dev. = (0.000888,     0), res =    0.0357, time:  245.3 sec, FOM:     5169
+	Iteration #:  1, H =  4.001, time: 0.3122 sec.
+Restart #: 273, H =  4.001, mean = (   4.827,     0), std.dev. = (0.000893,     0), res =    0.0229, time:  245.9 sec, FOM:     5105
+	Iteration #:  1, H =  4.035, time: 0.3101 sec.
+Restart #: 274, H =  4.035, mean = (  4.8271,     0), std.dev. = (0.000895,     0), res =    0.0602, time:  246.5 sec, FOM:     5059
+	Iteration #:  1, H =  4.048, time: 0.3113 sec.
+Restart #: 275, H =  4.048, mean = (  4.8272,     0), std.dev. = (0.000902,     0), res =    0.0277, time:  247.1 sec, FOM:     4973
+	Iteration #:  1, H =  4.054, time: 0.3109 sec.
+Restart #: 276, H =  4.054, mean = (  4.8272,     0), std.dev. = (0.000899,     0), res =    0.0235, time:  247.8 sec, FOM:     4995
+	Iteration #:  1, H =  4.023, time: 0.3118 sec.
+Restart #: 277, H =  4.023, mean = (  4.8272,     0), std.dev. = (0.000897,     0), res =    0.0501, time:  248.4 sec, FOM:     5007
+	Iteration #:  1, H =  3.978, time: 0.3104 sec.
+Restart #: 278, H =  3.978, mean = (  4.8272,     0), std.dev. = (0.000895,     0), res =    0.0301, time:    249 sec, FOM:     5016
+	Iteration #:  1, H =  4.033, time: 0.3103 sec.
+Restart #: 279, H =  4.033, mean = (  4.8273,     0), std.dev. = (0.000892,     0), res =     0.023, time:  249.6 sec, FOM:     5030
+	Iteration #:  1, H =  4.096, time: 0.3106 sec.
+Restart #: 280, H =  4.096, mean = (  4.8273,     0), std.dev. = (0.000889,     0), res =    0.0344, time:  250.2 sec, FOM:     5053
+	Iteration #:  1, H =  3.998, time:   0.31 sec.
+Restart #: 281, H =  3.998, mean = (  4.8273,     0), std.dev. = (0.000886,     0), res =    0.0253, time:  250.8 sec, FOM:     5075
+	Iteration #:  1, H =  4.035, time: 0.3088 sec.
+Restart #: 282, H =  4.035, mean = (  4.8272,     0), std.dev. = (0.000884,     0), res =     0.023, time:  251.5 sec, FOM:     5089
+	Iteration #:  1, H =  3.997, time:   0.31 sec.
+Restart #: 283, H =  3.997, mean = (  4.8272,     0), std.dev. = (0.000883,     0), res =    0.0216, time:  252.1 sec, FOM:     5090
+	Iteration #:  1, H =  3.961, time: 0.3096 sec.
+Restart #: 284, H =  3.961, mean = (  4.8272,     0), std.dev. = (0.00088,     0), res =    0.0298, time:  252.7 sec, FOM:     5113
+	Iteration #:  1, H =  3.955, time: 0.3103 sec.
+Restart #: 285, H =  3.955, mean = (  4.8272,     0), std.dev. = (0.000877,     0), res =    0.0283, time:  253.3 sec, FOM:     5134
+	Iteration #:  1, H =  3.982, time: 0.3113 sec.
+Restart #: 286, H =  3.982, mean = (  4.8271,     0), std.dev. = (0.000874,     0), res =    0.0203, time:  253.9 sec, FOM:     5152
+	Iteration #:  1, H =  3.984, time: 0.3115 sec.
+Restart #: 287, H =  3.984, mean = (  4.8272,     0), std.dev. = (0.000872,     0), res =    0.0303, time:  254.5 sec, FOM:     5170
+	Iteration #:  1, H =  3.915, time: 0.3107 sec.
+Restart #: 288, H =  3.915, mean = (  4.8272,     0), std.dev. = (0.00087,     0), res =    0.0187, time:  255.2 sec, FOM:     5177
+	Iteration #:  1, H =  4.053, time: 0.3107 sec.
+Restart #: 289, H =  4.053, mean = (  4.8272,     0), std.dev. = (0.000867,     0), res =    0.0231, time:  255.8 sec, FOM:     5199
+	Iteration #:  1, H =   3.94, time: 0.3111 sec.
+Restart #: 290, H =   3.94, mean = (  4.8272,     0), std.dev. = (0.000864,     0), res =    0.0624, time:  256.4 sec, FOM:     5222
+	Iteration #:  1, H =   4.06, time: 0.3103 sec.
+Restart #: 291, H =   4.06, mean = (  4.8272,     0), std.dev. = (0.000862,     0), res =    0.0122, time:    257 sec, FOM:     5240
+	Iteration #:  1, H =  4.013, time: 0.3106 sec.
+Restart #: 292, H =  4.013, mean = (  4.8272,     0), std.dev. = (0.000859,     0), res =    0.0149, time:  257.6 sec, FOM:     5259
+	Iteration #:  1, H =   3.99, time: 0.3096 sec.
+Restart #: 293, H =   3.99, mean = (  4.8271,     0), std.dev. = (0.000858,     0), res =    0.0188, time:  258.2 sec, FOM:     5266
+	Iteration #:  1, H =   3.99, time: 0.3104 sec.
+Restart #: 294, H =   3.99, mean = (  4.8271,     0), std.dev. = (0.000855,     0), res =    0.0281, time:  258.9 sec, FOM:     5279
+	Iteration #:  1, H =  3.951, time: 0.3107 sec.
+Restart #: 295, H =  3.951, mean = (  4.8271,     0), std.dev. = (0.000853,     0), res =    0.0409, time:  259.5 sec, FOM:     5297
+	Iteration #:  1, H =  4.081, time: 0.3101 sec.
+Restart #: 296, H =  4.081, mean = (  4.8272,     0), std.dev. = (0.000852,     0), res =    0.0336, time:  260.1 sec, FOM:     5301
+	Iteration #:  1, H =  4.063, time: 0.3127 sec.
+Restart #: 297, H =  4.063, mean = (  4.8272,     0), std.dev. = (0.000849,     0), res =    0.0348, time:  260.7 sec, FOM:     5317
+	Iteration #:  1, H =  4.026, time: 0.3149 sec.
+Restart #: 298, H =  4.026, mean = (  4.8272,     0), std.dev. = (0.000848,     0), res =    0.0464, time:  261.3 sec, FOM:     5321
+	Iteration #:  1, H =  3.938, time: 0.3139 sec.
+Restart #: 299, H =  3.938, mean = (  4.8271,     0), std.dev. = (0.000847,     0), res =    0.0253, time:    262 sec, FOM:     5320
+	Iteration #:  1, H =  4.028, time:  0.315 sec.
+Restart #: 300, H =  4.028, mean = (  4.8271,     0), std.dev. = (0.000844,     0), res =    0.0234, time:  262.6 sec, FOM:     5341
+	Iteration #:  1, H =  4.019, time: 0.3169 sec.
+Restart #: 301, H =  4.019, mean = (  4.8272,     0), std.dev. = (0.000846,     0), res =    0.0142, time:  263.2 sec, FOM:     5313
+	Iteration #:  1, H =  4.049, time: 0.3151 sec.
+Restart #: 302, H =  4.049, mean = (  4.8272,     0), std.dev. = (0.000843,     0), res =    0.0227, time:  263.9 sec, FOM:     5332
+	Iteration #:  1, H =  4.011, time: 0.3163 sec.
+Restart #: 303, H =  4.011, mean = (  4.8272,     0), std.dev. = (0.00084,     0), res =    0.0354, time:  264.5 sec, FOM:     5353
+	Iteration #:  1, H =  3.946, time: 0.3143 sec.
+Restart #: 304, H =  3.946, mean = (  4.8272,     0), std.dev. = (0.000838,     0), res =    0.0453, time:  265.1 sec, FOM:     5375
+	Iteration #:  1, H =  4.031, time: 0.3134 sec.
+Restart #: 305, H =  4.031, mean = (  4.8272,     0), std.dev. = (0.000835,     0), res =    0.0212, time:  265.7 sec, FOM:     5395
+	Iteration #:  1, H =  3.954, time: 0.3142 sec.
+Restart #: 306, H =  3.954, mean = (  4.8272,     0), std.dev. = (0.000832,     0), res =    0.0306, time:  266.4 sec, FOM:     5417
+	Iteration #:  1, H =  3.953, time: 0.3142 sec.
+Restart #: 307, H =  3.953, mean = (  4.8271,     0), std.dev. = (0.000831,     0), res =    0.0204, time:    267 sec, FOM:     5424
+	Iteration #:  1, H =  4.043, time: 0.3134 sec.
+Restart #: 308, H =  4.043, mean = (  4.8271,     0), std.dev. = (0.000828,     0), res =    0.0262, time:  267.6 sec, FOM:     5445
+	Iteration #:  1, H =   4.01, time: 0.3149 sec.
+Restart #: 309, H =   4.01, mean = (  4.8271,     0), std.dev. = (0.000826,     0), res =      0.03, time:  268.2 sec, FOM:     5459
+	Iteration #:  1, H =  4.045, time: 0.3136 sec.
+Restart #: 310, H =  4.045, mean = (  4.8271,     0), std.dev. = (0.000828,     0), res =    0.0189, time:  268.9 sec, FOM:     5423
+	Iteration #:  1, H =  4.003, time: 0.3145 sec.
+Restart #: 311, H =  4.003, mean = (  4.8271,     0), std.dev. = (0.000826,     0), res =     0.038, time:  269.5 sec, FOM:     5435
+	Iteration #:  1, H =  3.979, time: 0.3139 sec.
+Restart #: 312, H =  3.979, mean = (  4.8271,     0), std.dev. = (0.000824,     0), res =     0.026, time:  270.1 sec, FOM:     5457
+	Iteration #:  1, H =  4.081, time:  0.312 sec.
+Restart #: 313, H =  4.081, mean = (  4.8271,     0), std.dev. = (0.000821,     0), res =    0.0387, time:  270.7 sec, FOM:     5474
+	Iteration #:  1, H =  4.028, time: 0.3098 sec.
+Restart #: 314, H =  4.028, mean = (  4.8271,     0), std.dev. = (0.000819,     0), res =    0.0161, time:  271.4 sec, FOM:     5495
+	Iteration #:  1, H =  4.063, time: 0.3127 sec.
+Restart #: 315, H =  4.063, mean = (  4.8271,     0), std.dev. = (0.000817,     0), res =     0.021, time:    272 sec, FOM:     5511
+	Iteration #:  1, H =   4.01, time: 0.3119 sec.
+Restart #: 316, H =   4.01, mean = (  4.8271,     0), std.dev. = (0.000814,     0), res =    0.0239, time:  272.6 sec, FOM:     5532
+	Iteration #:  1, H =  3.919, time: 0.3105 sec.
+Restart #: 317, H =  3.919, mean = (  4.8271,     0), std.dev. = (0.000812,     0), res =    0.0251, time:  273.2 sec, FOM:     5553
+	Iteration #:  1, H =  4.029, time: 0.3109 sec.
+Restart #: 318, H =  4.029, mean = (  4.8271,     0), std.dev. = (0.000809,     0), res =     0.022, time:  273.8 sec, FOM:     5574
+	Iteration #:  1, H =  4.036, time: 0.3119 sec.
+Restart #: 319, H =  4.036, mean = (   4.827,     0), std.dev. = (0.000808,     0), res =    0.0322, time:  274.5 sec, FOM:     5586
+	Iteration #:  1, H =  3.996, time: 0.3107 sec.
+Restart #: 320, H =  3.996, mean = (   4.827,     0), std.dev. = (0.000805,     0), res =    0.0192, time:  275.1 sec, FOM:     5608
+	Iteration #:  1, H =  4.026, time: 0.3115 sec.
+Restart #: 321, H =  4.026, mean = (   4.827,     0), std.dev. = (0.000803,     0), res =    0.0311, time:  275.7 sec, FOM:     5629
+	Iteration #:  1, H =   4.02, time: 0.3103 sec.
+Restart #: 322, H =   4.02, mean = (   4.827,     0), std.dev. = ( 0.0008,     0), res =     0.022, time:  276.3 sec, FOM:     5651
+	Iteration #:  1, H =  3.958, time: 0.3124 sec.
+Restart #: 323, H =  3.958, mean = (  4.8271,     0), std.dev. = ( 0.0008,     0), res =    0.0342, time:  276.9 sec, FOM:     5649
+	Iteration #:  1, H =   4.05, time: 0.3107 sec.
+Restart #: 324, H =   4.05, mean = (  4.8271,     0), std.dev. = (0.000798,     0), res =     0.027, time:  277.6 sec, FOM:     5656
+	Iteration #:  1, H =  4.038, time: 0.3118 sec.
+Restart #: 325, H =  4.038, mean = (  4.8272,     0), std.dev. = ( 0.0008,     0), res =    0.0161, time:  278.2 sec, FOM:     5616
+	Iteration #:  1, H =  3.947, time: 0.3117 sec.
+Restart #: 326, H =  3.947, mean = (  4.8272,     0), std.dev. = (0.000799,     0), res =    0.0222, time:  278.8 sec, FOM:     5620
+	Iteration #:  1, H =  4.001, time: 0.3124 sec.
+Restart #: 327, H =  4.001, mean = (  4.8273,     0), std.dev. = (0.000798,     0), res =    0.0222, time:  279.4 sec, FOM:     5619
+	Iteration #:  1, H =  4.032, time:  0.313 sec.
+Restart #: 328, H =  4.032, mean = (  4.8273,     0), std.dev. = (0.000796,     0), res =     0.017, time:    280 sec, FOM:     5630
+	Iteration #:  1, H =  3.955, time: 0.3092 sec.
+Restart #: 329, H =  3.955, mean = (  4.8273,     0), std.dev. = (0.000796,     0), res =    0.0287, time:  280.7 sec, FOM:     5629
+	Iteration #:  1, H =  4.006, time: 0.3074 sec.
+Restart #: 330, H =  4.006, mean = (  4.8272,     0), std.dev. = (0.000797,     0), res =      0.03, time:  281.3 sec, FOM:     5599
+	Iteration #:  1, H =  4.043, time: 0.3102 sec.
+Restart #: 331, H =  4.043, mean = (  4.8272,     0), std.dev. = (0.000795,     0), res =    0.0203, time:  281.9 sec, FOM:     5613
+	Iteration #:  1, H =  4.005, time: 0.3106 sec.
+Restart #: 332, H =  4.005, mean = (  4.8271,     0), std.dev. = (0.000793,     0), res =    0.0344, time:  282.5 sec, FOM:     5627
+	Iteration #:  1, H =  4.058, time: 0.3105 sec.
+Restart #: 333, H =  4.058, mean = (  4.8271,     0), std.dev. = (0.000792,     0), res =    0.0181, time:  283.1 sec, FOM:     5633
+	Iteration #:  1, H =  3.994, time: 0.3118 sec.
+Restart #: 334, H =  3.994, mean = (  4.8271,     0), std.dev. = (0.000791,     0), res =    0.0322, time:  283.7 sec, FOM:     5639
+	Iteration #:  1, H =  4.008, time: 0.3101 sec.
+Restart #: 335, H =  4.008, mean = (  4.8271,     0), std.dev. = (0.000793,     0), res =    0.0462, time:  284.3 sec, FOM:     5593
+	Iteration #:  1, H =  3.981, time: 0.3106 sec.
+Restart #: 336, H =  3.981, mean = (   4.827,     0), std.dev. = (0.000791,     0), res =    0.0314, time:    285 sec, FOM:     5608
+	Iteration #:  1, H =  4.019, time: 0.3105 sec.
+Restart #: 337, H =  4.019, mean = (   4.827,     0), std.dev. = (0.000789,     0), res =    0.0208, time:  285.6 sec, FOM:     5629
+	Iteration #:  1, H =  3.985, time: 0.3085 sec.
+Restart #: 338, H =  3.985, mean = (   4.827,     0), std.dev. = (0.000788,     0), res =    0.0205, time:  286.2 sec, FOM:     5630
+	Iteration #:  1, H =  3.985, time: 0.3123 sec.
+Restart #: 339, H =  3.985, mean = (   4.827,     0), std.dev. = (0.000786,     0), res =    0.0167, time:  286.8 sec, FOM:     5646
+	Iteration #:  1, H =  4.004, time: 0.3113 sec.
+Restart #: 340, H =  4.004, mean = (   4.827,     0), std.dev. = (0.000784,     0), res =    0.0202, time:  287.4 sec, FOM:     5664
+	Iteration #:  1, H =  4.014, time: 0.3105 sec.
+Restart #: 341, H =  4.014, mean = (   4.827,     0), std.dev. = (0.000781,     0), res =     0.035, time:    288 sec, FOM:     5685
+	Iteration #:  1, H =  4.067, time: 0.3119 sec.
+Restart #: 342, H =  4.067, mean = (   4.827,     0), std.dev. = (0.000783,     0), res =    0.0208, time:  288.7 sec, FOM:     5648
+	Iteration #:  1, H =  4.024, time: 0.3117 sec.
+Restart #: 343, H =  4.024, mean = (  4.8271,     0), std.dev. = (0.000782,     0), res =    0.0341, time:  289.3 sec, FOM:     5657
+	Iteration #:  1, H =  4.025, time: 0.3097 sec.
+Restart #: 344, H =  4.025, mean = (   4.827,     0), std.dev. = (0.000781,     0), res =     0.022, time:  289.9 sec, FOM:     5655
+	Iteration #:  1, H =  3.939, time:  0.312 sec.
+Restart #: 345, H =  3.939, mean = (  4.8271,     0), std.dev. = (0.000784,     0), res =    0.0271, time:  290.5 sec, FOM:     5601
+	Iteration #:  1, H =  3.997, time: 0.3103 sec.
+Restart #: 346, H =  3.997, mean = (  4.8272,     0), std.dev. = (0.000783,     0), res =    0.0167, time:  291.1 sec, FOM:     5600
+	Iteration #:  1, H =  4.074, time: 0.3114 sec.
+Restart #: 347, H =  4.074, mean = (  4.8272,     0), std.dev. = (0.000781,     0), res =    0.0352, time:  291.8 sec, FOM:     5620
+	Iteration #:  1, H =  3.987, time: 0.3121 sec.
+Restart #: 348, H =  3.987, mean = (  4.8272,     0), std.dev. = (0.000782,     0), res =    0.0423, time:  292.4 sec, FOM:     5587
+	Iteration #:  1, H =  4.065, time: 0.3122 sec.
+Restart #: 349, H =  4.065, mean = (  4.8273,     0), std.dev. = (0.00078,     0), res =    0.0353, time:    293 sec, FOM:     5605
+	Iteration #:  1, H =  4.001, time: 0.3097 sec.
+Restart #: 350, H =  4.001, mean = (  4.8272,     0), std.dev. = (0.000779,     0), res =    0.0112, time:  293.6 sec, FOM:     5617
+	Iteration #:  1, H =  3.967, time: 0.3117 sec.
+Restart #: 351, H =  3.967, mean = (  4.8272,     0), std.dev. = (0.000777,     0), res =    0.0154, time:  294.2 sec, FOM:     5633
+	Iteration #:  1, H =  3.914, time: 0.3111 sec.
+Restart #: 352, H =  3.914, mean = (  4.8272,     0), std.dev. = (0.000775,     0), res =    0.0299, time:  294.9 sec, FOM:     5653
+	Iteration #:  1, H =  4.024, time: 0.3106 sec.
+Restart #: 353, H =  4.024, mean = (  4.8272,     0), std.dev. = (0.000773,     0), res =    0.0227, time:  295.5 sec, FOM:     5657
+	Iteration #:  1, H =  4.012, time:  0.309 sec.
+Restart #: 354, H =  4.012, mean = (  4.8272,     0), std.dev. = (0.000771,     0), res =      0.02, time:  296.1 sec, FOM:     5675
+	Iteration #:  1, H =  4.037, time: 0.3117 sec.
+Restart #: 355, H =  4.037, mean = (  4.8272,     0), std.dev. = (0.000769,     0), res =     0.026, time:  296.7 sec, FOM:     5695
+	Iteration #:  1, H =  4.046, time: 0.3115 sec.
+Restart #: 356, H =  4.046, mean = (  4.8272,     0), std.dev. = (0.000768,     0), res =    0.0351, time:  297.3 sec, FOM:     5708
+	Iteration #:  1, H =  3.907, time:  0.311 sec.
+Restart #: 357, H =  3.907, mean = (  4.8272,     0), std.dev. = (0.000765,     0), res =    0.0233, time:  297.9 sec, FOM:     5728
+	Iteration #:  1, H =  4.058, time: 0.3109 sec.
+Restart #: 358, H =  4.058, mean = (  4.8272,     0), std.dev. = (0.000763,     0), res =     0.028, time:  298.6 sec, FOM:     5748
+	Iteration #:  1, H =   4.08, time: 0.3107 sec.
+Restart #: 359, H =   4.08, mean = (  4.8272,     0), std.dev. = (0.000761,     0), res =    0.0344, time:  299.2 sec, FOM:     5767
+	Iteration #:  1, H =  4.038, time: 0.3106 sec.
+Restart #: 360, H =  4.038, mean = (  4.8272,     0), std.dev. = (0.000759,     0), res =    0.0434, time:  299.8 sec, FOM:     5787
+	Iteration #:  1, H =  4.039, time:  0.311 sec.
+Restart #: 361, H =  4.039, mean = (  4.8272,     0), std.dev. = (0.000758,     0), res =    0.0207, time:  300.4 sec, FOM:     5798
+	Iteration #:  1, H =  3.992, time: 0.3111 sec.
+Restart #: 362, H =  3.992, mean = (  4.8272,     0), std.dev. = (0.000758,     0), res =    0.0407, time:    301 sec, FOM:     5780
+	Iteration #:  1, H =  4.033, time: 0.3114 sec.
+Restart #: 363, H =  4.033, mean = (  4.8273,     0), std.dev. = (0.000756,     0), res =    0.0377, time:  301.7 sec, FOM:     5799
+	Iteration #:  1, H =  4.094, time: 0.3114 sec.
+Restart #: 364, H =  4.094, mean = (  4.8273,     0), std.dev. = (0.000755,     0), res =    0.0235, time:  302.3 sec, FOM:     5805
+	Iteration #:  1, H =  4.039, time: 0.3106 sec.
+Restart #: 365, H =  4.039, mean = (  4.8273,     0), std.dev. = (0.000753,     0), res =    0.0271, time:  302.9 sec, FOM:     5823
+	Iteration #:  1, H =  3.976, time: 0.3129 sec.
+Restart #: 366, H =  3.976, mean = (  4.8274,     0), std.dev. = (0.000753,     0), res =    0.0438, time:  303.5 sec, FOM:     5804
+	Iteration #:  1, H =  4.035, time:  0.311 sec.
+Restart #: 367, H =  4.035, mean = (  4.8274,     0), std.dev. = (0.000752,     0), res =    0.0132, time:  304.1 sec, FOM:     5820
+	Iteration #:  1, H =  4.011, time: 0.3106 sec.
+Restart #: 368, H =  4.011, mean = (  4.8274,     0), std.dev. = (0.00075,     0), res =     0.036, time:  304.7 sec, FOM:     5836
+	Iteration #:  1, H =  4.047, time: 0.3102 sec.
+Restart #: 369, H =  4.047, mean = (  4.8274,     0), std.dev. = (0.000748,     0), res =    0.0264, time:  305.4 sec, FOM:     5855
+	Iteration #:  1, H =  3.957, time: 0.3094 sec.
+Restart #: 370, H =  3.957, mean = (  4.8274,     0), std.dev. = (0.000746,     0), res =    0.0331, time:    306 sec, FOM:     5870
+	Iteration #:  1, H =  3.978, time: 0.3094 sec.
+Restart #: 371, H =  3.978, mean = (  4.8274,     0), std.dev. = (0.000744,     0), res =    0.0282, time:  306.6 sec, FOM:     5890
+	Iteration #:  1, H =  3.932, time: 0.3092 sec.
+Restart #: 372, H =  3.932, mean = (  4.8274,     0), std.dev. = (0.000743,     0), res =    0.0313, time:  307.2 sec, FOM:     5900
+	Iteration #:  1, H =  3.986, time: 0.3108 sec.
+Restart #: 373, H =  3.986, mean = (  4.8274,     0), std.dev. = (0.000742,     0), res =    0.0283, time:  307.8 sec, FOM:     5902
+	Iteration #:  1, H =  3.847, time: 0.3109 sec.
+Restart #: 374, H =  3.847, mean = (  4.8274,     0), std.dev. = (0.00074,     0), res =     0.036, time:  308.5 sec, FOM:     5921
+	Iteration #:  1, H =  4.036, time: 0.3103 sec.
+Restart #: 375, H =  4.036, mean = (  4.8274,     0), std.dev. = (0.000738,     0), res =    0.0328, time:  309.1 sec, FOM:     5941
+	Iteration #:  1, H =  4.016, time: 0.3107 sec.
+Restart #: 376, H =  4.016, mean = (  4.8275,     0), std.dev. = (0.000737,     0), res =    0.0329, time:  309.7 sec, FOM:     5946
+	Iteration #:  1, H =  4.012, time: 0.3112 sec.
+Restart #: 377, H =  4.012, mean = (  4.8275,     0), std.dev. = (0.000738,     0), res =    0.0311, time:  310.3 sec, FOM:     5910
+	Iteration #:  1, H =  3.996, time: 0.3099 sec.
+Restart #: 378, H =  3.996, mean = (  4.8276,     0), std.dev. = (0.000737,     0), res =    0.0271, time:  310.9 sec, FOM:     5922
+	Iteration #:  1, H =  4.007, time: 0.3119 sec.
+Restart #: 379, H =  4.007, mean = (  4.8276,     0), std.dev. = (0.000736,     0), res =    0.0446, time:  311.5 sec, FOM:     5925
+	Iteration #:  1, H =  3.999, time: 0.3107 sec.
+Restart #: 380, H =  3.999, mean = (  4.8276,     0), std.dev. = (0.000734,     0), res =    0.0225, time:  312.2 sec, FOM:     5939
+	Iteration #:  1, H =  4.112, time: 0.3115 sec.
+Restart #: 381, H =  4.112, mean = (  4.8277,     0), std.dev. = (0.000735,     0), res =    0.0208, time:  312.8 sec, FOM:     5914
+	Iteration #:  1, H =  3.949, time: 0.3123 sec.
+Restart #: 382, H =  3.949, mean = (  4.8277,     0), std.dev. = (0.000734,     0), res =    0.0486, time:  313.4 sec, FOM:     5929
+	Iteration #:  1, H =   4.02, time: 0.3111 sec.
+Restart #: 383, H =   4.02, mean = (  4.8277,     0), std.dev. = (0.000732,     0), res =    0.0292, time:    314 sec, FOM:     5944
+	Iteration #:  1, H =   3.92, time: 0.3106 sec.
+Restart #: 384, H =   3.92, mean = (  4.8277,     0), std.dev. = (0.00073,     0), res =    0.0282, time:  314.6 sec, FOM:     5962
+	Iteration #:  1, H =  4.002, time: 0.3096 sec.
+Restart #: 385, H =  4.002, mean = (  4.8277,     0), std.dev. = (0.000728,     0), res =    0.0305, time:  315.3 sec, FOM:     5981
+	Iteration #:  1, H =  4.031, time: 0.3087 sec.
+Restart #: 386, H =  4.031, mean = (  4.8276,     0), std.dev. = (0.000727,     0), res =     0.027, time:  315.9 sec, FOM:     5984
+	Iteration #:  1, H =  4.061, time: 0.3097 sec.
+Restart #: 387, H =  4.061, mean = (  4.8276,     0), std.dev. = (0.000726,     0), res =    0.0386, time:  316.5 sec, FOM:     6003
+	Iteration #:  1, H =  3.988, time: 0.3116 sec.
+Restart #: 388, H =  3.988, mean = (  4.8276,     0), std.dev. = (0.000724,     0), res =    0.0502, time:  317.1 sec, FOM:     6018
+	Iteration #:  1, H =  3.994, time: 0.3099 sec.
+Restart #: 389, H =  3.994, mean = (  4.8276,     0), std.dev. = (0.000722,     0), res =    0.0339, time:  317.7 sec, FOM:     6032
+	Iteration #:  1, H =  4.044, time: 0.3104 sec.
+Restart #: 390, H =  4.044, mean = (  4.8277,     0), std.dev. = (0.000721,     0), res =    0.0183, time:  318.3 sec, FOM:     6036
+	Iteration #:  1, H =  4.056, time: 0.3091 sec.
+Restart #: 391, H =  4.056, mean = (  4.8276,     0), std.dev. = (0.00072,     0), res =    0.0308, time:    319 sec, FOM:     6046
+	Iteration #:  1, H =  4.059, time: 0.3103 sec.
+Restart #: 392, H =  4.059, mean = (  4.8277,     0), std.dev. = (0.00072,     0), res =    0.0274, time:  319.6 sec, FOM:     6039
+	Iteration #:  1, H =  3.971, time: 0.3101 sec.
+Restart #: 393, H =  3.971, mean = (  4.8277,     0), std.dev. = (0.000719,     0), res =    0.0284, time:  320.2 sec, FOM:     6046
+	Iteration #:  1, H =  4.022, time: 0.3089 sec.
+Restart #: 394, H =  4.022, mean = (  4.8277,     0), std.dev. = (0.000717,     0), res =    0.0127, time:  320.8 sec, FOM:     6059
+	Iteration #:  1, H =  4.028, time: 0.3099 sec.
+Restart #: 395, H =  4.028, mean = (  4.8277,     0), std.dev. = (0.000716,     0), res =    0.0313, time:  321.4 sec, FOM:     6071
+	Iteration #:  1, H =  4.014, time: 0.3103 sec.
+Restart #: 396, H =  4.014, mean = (  4.8277,     0), std.dev. = (0.000714,     0), res =    0.0322, time:    322 sec, FOM:     6089
+	Iteration #:  1, H =  4.031, time:   0.31 sec.
+Restart #: 397, H =  4.031, mean = (  4.8276,     0), std.dev. = (0.000714,     0), res =    0.0462, time:  322.7 sec, FOM:     6088
+	Iteration #:  1, H =  3.997, time: 0.3078 sec.
+Restart #: 398, H =  3.997, mean = (  4.8276,     0), std.dev. = (0.000716,     0), res =    0.0205, time:  323.3 sec, FOM:     6041
+	Iteration #:  1, H =  4.032, time:  0.309 sec.
+Restart #: 399, H =  4.032, mean = (  4.8275,     0), std.dev. = (0.000715,     0), res =     0.025, time:  323.9 sec, FOM:     6033
+	Iteration #:  1, H =  3.937, time: 0.3114 sec.
+Restart #: 400, H =  3.937, mean = (  4.8275,     0), std.dev. = (0.000714,     0), res =    0.0209, time:  324.5 sec, FOM:     6051
+	Iteration #:  1, H =  3.962, time: 0.3103 sec.
+Restart #: 401, H =  3.962, mean = (  4.8275,     0), std.dev. = (0.000712,     0), res =    0.0335, time:  325.1 sec, FOM:     6068
+	Iteration #:  1, H =   3.99, time: 0.3094 sec.
+Restart #: 402, H =   3.99, mean = (  4.8275,     0), std.dev. = (0.000711,     0), res =    0.0301, time:  325.7 sec, FOM:     6066
+	Iteration #:  1, H =  4.058, time: 0.3095 sec.
+Restart #: 403, H =  4.058, mean = (  4.8275,     0), std.dev. = (0.00071,     0), res =    0.0319, time:  326.3 sec, FOM:     6084
+	Iteration #:  1, H =  4.012, time: 0.3077 sec.
+Restart #: 404, H =  4.012, mean = (  4.8274,     0), std.dev. = (0.000714,     0), res =    0.0311, time:    327 sec, FOM:     6002
+	Iteration #:  1, H =  4.038, time: 0.3096 sec.
+Restart #: 405, H =  4.038, mean = (  4.8274,     0), std.dev. = (0.000712,     0), res =    0.0256, time:  327.6 sec, FOM:     6016
+	Iteration #:  1, H =  4.002, time: 0.3104 sec.
+Restart #: 406, H =  4.002, mean = (  4.8274,     0), std.dev. = (0.000711,     0), res =    0.0269, time:  328.2 sec, FOM:     6034
+	Iteration #:  1, H =  3.969, time: 0.3115 sec.
+Restart #: 407, H =  3.969, mean = (  4.8275,     0), std.dev. = (0.000711,     0), res =    0.0304, time:  328.8 sec, FOM:     6012
+	Iteration #:  1, H =  4.005, time: 0.3102 sec.
+Restart #: 408, H =  4.005, mean = (  4.8275,     0), std.dev. = (0.00071,     0), res =    0.0335, time:  329.4 sec, FOM:     6030
+	Iteration #:  1, H =  4.005, time: 0.3096 sec.
+Restart #: 409, H =  4.005, mean = (  4.8275,     0), std.dev. = (0.000708,     0), res =    0.0335, time:    330 sec, FOM:     6048
+	Iteration #:  1, H =  4.061, time: 0.3092 sec.
+Restart #: 410, H =  4.061, mean = (  4.8275,     0), std.dev. = (0.000706,     0), res =    0.0185, time:  330.7 sec, FOM:     6066
+	Iteration #:  1, H =  3.971, time: 0.3129 sec.
+Restart #: 411, H =  3.971, mean = (  4.8275,     0), std.dev. = (0.000705,     0), res =    0.0411, time:  331.3 sec, FOM:     6075
+	Iteration #:  1, H =  4.049, time: 0.3139 sec.
+Restart #: 412, H =  4.049, mean = (  4.8275,     0), std.dev. = (0.000704,     0), res =    0.0183, time:  331.9 sec, FOM:     6080
+	Iteration #:  1, H =  3.934, time: 0.3121 sec.
+Restart #: 413, H =  3.934, mean = (  4.8275,     0), std.dev. = (0.000702,     0), res =    0.0155, time:  332.5 sec, FOM:     6096
+	Iteration #:  1, H =  4.011, time: 0.3134 sec.
+Restart #: 414, H =  4.011, mean = (  4.8275,     0), std.dev. = (0.000702,     0), res =    0.0308, time:  333.2 sec, FOM:     6091
+	Iteration #:  1, H =   4.01, time: 0.3138 sec.
+Restart #: 415, H =   4.01, mean = (  4.8275,     0), std.dev. = (0.000701,     0), res =    0.0364, time:  333.8 sec, FOM:     6096
+	Iteration #:  1, H =  3.971, time: 0.3131 sec.
+Restart #: 416, H =  3.971, mean = (  4.8276,     0), std.dev. = (0.000701,     0), res =    0.0199, time:  334.4 sec, FOM:     6090
+	Iteration #:  1, H =  4.009, time: 0.3121 sec.
+Restart #: 417, H =  4.009, mean = (  4.8276,     0), std.dev. = (0.000699,     0), res =    0.0275, time:    335 sec, FOM:     6108
+	Iteration #:  1, H =  4.086, time:  0.311 sec.
+Restart #: 418, H =  4.086, mean = (  4.8276,     0), std.dev. = (0.000698,     0), res =    0.0268, time:  335.6 sec, FOM:     6121
+	Iteration #:  1, H =  4.015, time: 0.3142 sec.
+Restart #: 419, H =  4.015, mean = (  4.8276,     0), std.dev. = (0.000696,     0), res =    0.0481, time:  336.3 sec, FOM:     6131
+	Iteration #:  1, H =  3.994, time: 0.3131 sec.
+Restart #: 420, H =  3.994, mean = (  4.8276,     0), std.dev. = (0.000695,     0), res =    0.0434, time:  336.9 sec, FOM:     6143
+	Iteration #:  1, H =  4.047, time: 0.3121 sec.
+Restart #: 421, H =  4.047, mean = (  4.8276,     0), std.dev. = (0.000694,     0), res =    0.0371, time:  337.5 sec, FOM:     6153
+	Iteration #:  1, H =  4.039, time: 0.3138 sec.
+Restart #: 422, H =  4.039, mean = (  4.8276,     0), std.dev. = (0.000692,     0), res =    0.0194, time:  338.1 sec, FOM:     6171
+	Iteration #:  1, H =  3.968, time: 0.3128 sec.
+Restart #: 423, H =  3.968, mean = (  4.8276,     0), std.dev. = (0.000691,     0), res =    0.0195, time:  338.8 sec, FOM:     6178
+	Iteration #:  1, H =  4.059, time: 0.3136 sec.
+Restart #: 424, H =  4.059, mean = (  4.8275,     0), std.dev. = (0.000691,     0), res =    0.0328, time:  339.4 sec, FOM:     6165
+	Iteration #:  1, H =  3.985, time: 0.3132 sec.
+Restart #: 425, H =  3.985, mean = (  4.8275,     0), std.dev. = (0.00069,     0), res =    0.0344, time:    340 sec, FOM:     6183
+	Iteration #:  1, H =  4.004, time: 0.3119 sec.
+Restart #: 426, H =  4.004, mean = (  4.8275,     0), std.dev. = (0.000688,     0), res =    0.0395, time:  340.6 sec, FOM:     6199
+	Iteration #:  1, H =  3.998, time: 0.3106 sec.
+Restart #: 427, H =  3.998, mean = (  4.8275,     0), std.dev. = (0.000687,     0), res =    0.0234, time:  341.3 sec, FOM:     6213
+	Iteration #:  1, H =  4.077, time: 0.3097 sec.
+Restart #: 428, H =  4.077, mean = (  4.8275,     0), std.dev. = (0.000685,     0), res =    0.0453, time:  341.9 sec, FOM:     6228
+	Iteration #:  1, H =  4.017, time: 0.3113 sec.
+Restart #: 429, H =  4.017, mean = (  4.8275,     0), std.dev. = (0.000684,     0), res =    0.0498, time:  342.5 sec, FOM:     6241
+	Iteration #:  1, H =  3.935, time: 0.3101 sec.
+Restart #: 430, H =  3.935, mean = (  4.8275,     0), std.dev. = (0.000683,     0), res =    0.0641, time:  343.1 sec, FOM:     6255
+	Iteration #:  1, H =  3.979, time: 0.3114 sec.
+Restart #: 431, H =  3.979, mean = (  4.8275,     0), std.dev. = (0.000681,     0), res =    0.0349, time:  343.7 sec, FOM:     6269
+	Iteration #:  1, H =   4.06, time: 0.3095 sec.
+Restart #: 432, H =   4.06, mean = (  4.8275,     0), std.dev. = (0.00068,     0), res =    0.0272, time:  344.3 sec, FOM:     6286
+	Iteration #:  1, H =  3.929, time: 0.3116 sec.
+Restart #: 433, H =  3.929, mean = (  4.8276,     0), std.dev. = (0.000682,     0), res =    0.0249, time:    345 sec, FOM:     6227
+	Iteration #:  1, H =  4.065, time: 0.3085 sec.
+Restart #: 434, H =  4.065, mean = (  4.8276,     0), std.dev. = (0.000682,     0), res =    0.0123, time:  345.6 sec, FOM:     6230
+	Iteration #:  1, H =  3.936, time: 0.3107 sec.
+Restart #: 435, H =  3.936, mean = (  4.8276,     0), std.dev. = (0.00068,     0), res =    0.0264, time:  346.2 sec, FOM:     6240
+	Iteration #:  1, H =  4.055, time: 0.3112 sec.
+Restart #: 436, H =  4.055, mean = (  4.8276,     0), std.dev. = (0.00068,     0), res =    0.0235, time:  346.8 sec, FOM:     6242
+	Iteration #:  1, H =  4.019, time: 0.3103 sec.
+Restart #: 437, H =  4.019, mean = (  4.8276,     0), std.dev. = (0.000679,     0), res =    0.0375, time:  347.4 sec, FOM:     6249
+	Iteration #:  1, H =  3.878, time: 0.3102 sec.
+Restart #: 438, H =  3.878, mean = (  4.8276,     0), std.dev. = (0.000677,     0), res =    0.0205, time:  348.1 sec, FOM:     6266
+	Iteration #:  1, H =  4.002, time: 0.3116 sec.
+Restart #: 439, H =  4.002, mean = (  4.8276,     0), std.dev. = (0.000676,     0), res =    0.0241, time:  348.7 sec, FOM:     6281
+	Iteration #:  1, H =  4.077, time: 0.3103 sec.
+Restart #: 440, H =  4.077, mean = (  4.8276,     0), std.dev. = (0.000675,     0), res =    0.0392, time:  349.3 sec, FOM:     6288
+	Iteration #:  1, H =  4.069, time: 0.3092 sec.
+Restart #: 441, H =  4.069, mean = (  4.8276,     0), std.dev. = (0.000673,     0), res =    0.0393, time:  349.9 sec, FOM:     6305
+	Iteration #:  1, H =   3.97, time: 0.3098 sec.
+Restart #: 442, H =   3.97, mean = (  4.8276,     0), std.dev. = (0.000673,     0), res =    0.0319, time:  350.5 sec, FOM:     6305
+	Iteration #:  1, H =  4.056, time: 0.3092 sec.
+Restart #: 443, H =  4.056, mean = (  4.8276,     0), std.dev. = (0.000672,     0), res =    0.0304, time:  351.1 sec, FOM:     6310
+	Iteration #:  1, H =      4, time: 0.3117 sec.
+Restart #: 444, H =      4, mean = (  4.8277,     0), std.dev. = (0.000677,     0), res =    0.0204, time:  351.8 sec, FOM:     6208
+	Iteration #:  1, H =  4.059, time: 0.3113 sec.
+Restart #: 445, H =  4.059, mean = (  4.8277,     0), std.dev. = (0.000675,     0), res =    0.0198, time:  352.4 sec, FOM:     6225
+	Iteration #:  1, H =  4.004, time: 0.3108 sec.
+Restart #: 446, H =  4.004, mean = (  4.8277,     0), std.dev. = (0.000674,     0), res =    0.0158, time:    353 sec, FOM:     6242
+	Iteration #:  1, H =  4.099, time: 0.3105 sec.
+Restart #: 447, H =  4.099, mean = (  4.8277,     0), std.dev. = (0.000672,     0), res =    0.0465, time:  353.6 sec, FOM:     6254
+	Iteration #:  1, H =  3.992, time: 0.3108 sec.
+Restart #: 448, H =  3.992, mean = (  4.8277,     0), std.dev. = (0.000671,     0), res =    0.0234, time:  354.2 sec, FOM:     6263
+	Iteration #:  1, H =  3.984, time: 0.3106 sec.
+Restart #: 449, H =  3.984, mean = (  4.8278,     0), std.dev. = (0.000672,     0), res =    0.0528, time:  354.8 sec, FOM:     6236
+	Iteration #:  1, H =  4.004, time: 0.3093 sec.
+Restart #: 450, H =  4.004, mean = (  4.8278,     0), std.dev. = (0.000671,     0), res =    0.0386, time:  355.5 sec, FOM:     6253
+	Iteration #:  1, H =  3.979, time: 0.3108 sec.
+Restart #: 451, H =  3.979, mean = (  4.8278,     0), std.dev. = (0.00067,     0), res =    0.0159, time:  356.1 sec, FOM:     6265
+	Iteration #:  1, H =  3.992, time: 0.3111 sec.
+Restart #: 452, H =  3.992, mean = (  4.8279,     0), std.dev. = (0.000672,     0), res =    0.0248, time:  356.7 sec, FOM:     6211
+	Iteration #:  1, H =  4.052, time: 0.3107 sec.
+Restart #: 453, H =  4.052, mean = (  4.8279,     0), std.dev. = (0.000671,     0), res =    0.0353, time:  357.3 sec, FOM:     6220
+	Iteration #:  1, H =  4.012, time: 0.3107 sec.
+Restart #: 454, H =  4.012, mean = (  4.8279,     0), std.dev. = (0.000669,     0), res =    0.0336, time:  357.9 sec, FOM:     6236
+	Iteration #:  1, H =  4.036, time: 0.3118 sec.
+Restart #: 455, H =  4.036, mean = (  4.8279,     0), std.dev. = (0.000669,     0), res =    0.0244, time:  358.6 sec, FOM:     6226
+	Iteration #:  1, H =  4.051, time: 0.3094 sec.
+Restart #: 456, H =  4.051, mean = (  4.8279,     0), std.dev. = (0.000669,     0), res =    0.0204, time:  359.2 sec, FOM:     6229
+	Iteration #:  1, H =  4.051, time: 0.3104 sec.
+Restart #: 457, H =  4.051, mean = (  4.8279,     0), std.dev. = (0.000667,     0), res =    0.0298, time:  359.8 sec, FOM:     6240
+	Iteration #:  1, H =  3.884, time: 0.3085 sec.
+Restart #: 458, H =  3.884, mean = (  4.8279,     0), std.dev. = (0.000666,     0), res =    0.0182, time:  360.4 sec, FOM:     6256
+	Iteration #:  1, H =  4.002, time:  0.311 sec.
+Restart #: 459, H =  4.002, mean = (  4.8279,     0), std.dev. = (0.000665,     0), res =    0.0304, time:    361 sec, FOM:     6265
+	Iteration #:  1, H =  3.956, time: 0.3114 sec.
+Restart #: 460, H =  3.956, mean = (   4.828,     0), std.dev. = (0.000664,     0), res =    0.0209, time:  361.6 sec, FOM:     6263
+	Iteration #:  1, H =   3.98, time: 0.3091 sec.
+Restart #: 461, H =   3.98, mean = (  4.8279,     0), std.dev. = (0.000663,     0), res =     0.024, time:  362.3 sec, FOM:     6274
+	Iteration #:  1, H =  4.043, time: 0.3105 sec.
+Restart #: 462, H =  4.043, mean = (  4.8279,     0), std.dev. = (0.000662,     0), res =    0.0348, time:  362.9 sec, FOM:     6291
+	Iteration #:  1, H =  4.042, time: 0.3119 sec.
+Restart #: 463, H =  4.042, mean = (   4.828,     0), std.dev. = (0.000661,     0), res =    0.0235, time:  363.5 sec, FOM:     6293
+	Iteration #:  1, H =  4.056, time: 0.3088 sec.
+Restart #: 464, H =  4.056, mean = (  4.8279,     0), std.dev. = (0.00066,     0), res =    0.0275, time:  364.1 sec, FOM:     6303
+	Iteration #:  1, H =  4.006, time: 0.3093 sec.
+Restart #: 465, H =  4.006, mean = (  4.8279,     0), std.dev. = (0.000659,     0), res =    0.0339, time:  364.7 sec, FOM:     6319
+	Iteration #:  1, H =  3.963, time: 0.3101 sec.
+Restart #: 466, H =  3.963, mean = (   4.828,     0), std.dev. = (0.000658,     0), res =    0.0275, time:  365.3 sec, FOM:     6331
+	Iteration #:  1, H =  4.028, time: 0.3112 sec.
+Restart #: 467, H =  4.028, mean = (   4.828,     0), std.dev. = (0.000657,     0), res =    0.0292, time:    366 sec, FOM:     6336
+	Iteration #:  1, H =  3.945, time: 0.3101 sec.
+Restart #: 468, H =  3.945, mean = (   4.828,     0), std.dev. = (0.000655,     0), res =    0.0356, time:  366.6 sec, FOM:     6352
+	Iteration #:  1, H =  4.004, time: 0.3096 sec.
+Restart #: 469, H =  4.004, mean = (  4.8279,     0), std.dev. = (0.000655,     0), res =    0.0236, time:  367.2 sec, FOM:     6342
+	Iteration #:  1, H =  3.963, time: 0.3094 sec.
+Restart #: 470, H =  3.963, mean = (  4.8279,     0), std.dev. = (0.000654,     0), res =    0.0227, time:  367.8 sec, FOM:     6352
+	Iteration #:  1, H =  3.968, time: 0.3092 sec.
+Restart #: 471, H =  3.968, mean = (  4.8279,     0), std.dev. = (0.000653,     0), res =     0.036, time:  368.4 sec, FOM:     6366
+	Iteration #:  1, H =  4.043, time:  0.312 sec.
+Restart #: 472, H =  4.043, mean = (  4.8279,     0), std.dev. = (0.000652,     0), res =    0.0213, time:    369 sec, FOM:     6376
+	Iteration #:  1, H =  4.055, time: 0.3098 sec.
+Restart #: 473, H =  4.055, mean = (  4.8279,     0), std.dev. = (0.000651,     0), res =    0.0363, time:  369.7 sec, FOM:     6387
+	Iteration #:  1, H =  4.077, time:  0.309 sec.
+Restart #: 474, H =  4.077, mean = (  4.8279,     0), std.dev. = (0.000649,     0), res =    0.0354, time:  370.3 sec, FOM:     6403
+	Iteration #:  1, H =  3.918, time: 0.3117 sec.
+Restart #: 475, H =  3.918, mean = (  4.8279,     0), std.dev. = (0.000648,     0), res =    0.0268, time:  370.9 sec, FOM:     6413
+	Iteration #:  1, H =  3.938, time: 0.3089 sec.
+Restart #: 476, H =  3.938, mean = (  4.8279,     0), std.dev. = (0.000647,     0), res =    0.0425, time:  371.5 sec, FOM:     6425
+	Iteration #:  1, H =  3.999, time: 0.3103 sec.
+Restart #: 477, H =  3.999, mean = (  4.8279,     0), std.dev. = (0.000646,     0), res =    0.0438, time:  372.1 sec, FOM:     6438
+	Iteration #:  1, H =  4.007, time: 0.3143 sec.
+Restart #: 478, H =  4.007, mean = (  4.8279,     0), std.dev. = (0.000645,     0), res =    0.0173, time:  372.7 sec, FOM:     6444
+	Iteration #:  1, H =  4.007, time: 0.3107 sec.
+Restart #: 479, H =  4.007, mean = (  4.8279,     0), std.dev. = (0.000644,     0), res =    0.0206, time:  373.4 sec, FOM:     6460
+	Iteration #:  1, H =  4.009, time: 0.3108 sec.
+Restart #: 480, H =  4.009, mean = (  4.8279,     0), std.dev. = (0.000643,     0), res =     0.031, time:    374 sec, FOM:     6467
+	Iteration #:  1, H =  3.886, time:  0.313 sec.
+Restart #: 481, H =  3.886, mean = (  4.8279,     0), std.dev. = (0.000643,     0), res =    0.0311, time:  374.6 sec, FOM:     6466
+	Iteration #:  1, H =  4.003, time: 0.3082 sec.
+Restart #: 482, H =  4.003, mean = (  4.8279,     0), std.dev. = (0.000642,     0), res =    0.0262, time:  375.2 sec, FOM:     6458
+	Iteration #:  1, H =  4.037, time: 0.3105 sec.
+Restart #: 483, H =  4.037, mean = (  4.8279,     0), std.dev. = (0.000641,     0), res =     0.025, time:  375.8 sec, FOM:     6466
+	Iteration #:  1, H =  4.048, time:   0.31 sec.
+Restart #: 484, H =  4.048, mean = (  4.8279,     0), std.dev. = (0.00064,     0), res =    0.0343, time:  376.5 sec, FOM:     6479
+	Iteration #:  1, H =  3.915, time: 0.3099 sec.
+Restart #: 485, H =  3.915, mean = (  4.8279,     0), std.dev. = (0.000639,     0), res =    0.0184, time:  377.1 sec, FOM:     6495
+	Iteration #:  1, H =  3.951, time: 0.3104 sec.
+Restart #: 486, H =  3.951, mean = (  4.8279,     0), std.dev. = (0.000639,     0), res =    0.0279, time:  377.7 sec, FOM:     6479
+	Iteration #:  1, H =  4.042, time: 0.3095 sec.
+Restart #: 487, H =  4.042, mean = (  4.8279,     0), std.dev. = (0.000638,     0), res =    0.0285, time:  378.3 sec, FOM:     6495
+	Iteration #:  1, H =  3.982, time: 0.3117 sec.
+Restart #: 488, H =  3.982, mean = (   4.828,     0), std.dev. = (0.000639,     0), res =    0.0285, time:  378.9 sec, FOM:     6464
+	Iteration #:  1, H =  3.946, time: 0.3104 sec.
+Restart #: 489, H =  3.946, mean = (   4.828,     0), std.dev. = (0.000639,     0), res =    0.0173, time:  379.5 sec, FOM:     6456
+	Iteration #:  1, H =  3.931, time: 0.3114 sec.
+Restart #: 490, H =  3.931, mean = (   4.828,     0), std.dev. = (0.000638,     0), res =    0.0337, time:  380.1 sec, FOM:     6472
+	Iteration #:  1, H =  4.053, time: 0.3098 sec.
+Restart #: 491, H =  4.053, mean = (   4.828,     0), std.dev. = (0.000636,     0), res =    0.0272, time:  380.8 sec, FOM:     6487
+	Iteration #:  1, H =  3.987, time: 0.3096 sec.
+Restart #: 492, H =  3.987, mean = (   4.828,     0), std.dev. = (0.000636,     0), res =    0.0256, time:  381.4 sec, FOM:     6492
+	Iteration #:  1, H =  3.959, time: 0.3117 sec.
+Restart #: 493, H =  3.959, mean = (  4.8281,     0), std.dev. = (0.000637,     0), res =     0.013, time:    382 sec, FOM:     6450
+	Iteration #:  1, H =  4.009, time: 0.3104 sec.
+Restart #: 494, H =  4.009, mean = (  4.8281,     0), std.dev. = (0.000636,     0), res =    0.0244, time:  382.6 sec, FOM:     6466
+	Iteration #:  1, H =  4.059, time: 0.3107 sec.
+Restart #: 495, H =  4.059, mean = (  4.8281,     0), std.dev. = (0.000635,     0), res =    0.0361, time:  383.2 sec, FOM:     6479
+	Iteration #:  1, H =   4.04, time: 0.3112 sec.
+Restart #: 496, H =   4.04, mean = (  4.8281,     0), std.dev. = (0.000634,     0), res =    0.0252, time:  383.8 sec, FOM:     6485
+	Iteration #:  1, H =  3.987, time: 0.3114 sec.
+Restart #: 497, H =  3.987, mean = (  4.8281,     0), std.dev. = (0.000633,     0), res =    0.0291, time:  384.5 sec, FOM:     6500
+	Iteration #:  1, H =  4.001, time: 0.3108 sec.
+Restart #: 498, H =  4.001, mean = (  4.8281,     0), std.dev. = (0.000632,     0), res =    0.0256, time:  385.1 sec, FOM:     6499
+	Iteration #:  1, H =  4.012, time:  0.309 sec.
+Restart #: 499, H =  4.012, mean = (  4.8281,     0), std.dev. = (0.000634,     0), res =    0.0225, time:  385.7 sec, FOM:     6458
+set terminal dumb
+
+                                   Eigenvectors
+./Research/ArnoldiResearch -f N1Arnoldi.dat -t 100000 -i 125 -a 500 -I 2 -w 20.
+                                    = 4004098477
+
+  0.16 ++-----+------+------+------+-**********-+------+------+------+-----++
+       +      +      +      +   ******    +   ******   +     RAM l-0 ****** +
+  0.14 ++                    ****                  ****                    ++
+       |                  ****                        ****                  |
+  0.12 ++               ***                              ***               ++
+       |               **                                  **               |
+   0.1 ++            ***                                    ***            ++
+       |           ***                                        ***           |
+  0.08 ++        ***                                            ***        ++
+       |       ***                                                ***       |
+       |      **                                                    **      |
+  0.06 ++    **                                                      **    ++
+       |   ***                                                        ***   |
+  0.04 ++ **                                                            ** ++
+       |***                                                              ***|
+  0.02 **                                                                  **
+       +      +      +      +      +      +     +      +      +      +      +
+     0 ++-----+------+------+------+------+-----+------+------+------+-----++
+       0      2      4      6      8      10    12     14     16     18     20
+
+                                    Eigenvalues
+./Research/ArnoldiResearch -f N1Arnoldi.dat -t 100000 -i 125 -a 500 -I 2 -w 20.
+                                    = 4004098477
+Mean Eigenvalues
+    5 ++--------+---------+---------+---------+---------+---------+--------++
+      +AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAM l-0AA*A*** +
+      |A                                                                    |
+  4.5 AA                                                                   ++
+      |                                                                     |
+    4 A+                                                                   ++
+      |                                                                     |
+      A                                                                     |
+  3.5 ++                                                                   ++
+      |                                                                     |
+      |                                                                     |
+    3 ++                                                                   ++
+      |                                                                     |
+  2.5 ++                                                                   ++
+      A                                                                     |
+      +         +         +         +         +         +         +         +
+    2 ++--------+---------+---------+---------+---------+---------+--------++
+      0       2e+07     4e+07     6e+07     8e+07     1e+08    1.2e+08  1.4e+08
+                                 Histories Tracked
+
+                                      Entropy
+./Research/ArnoldiResearch -f N1Arnoldi.dat -t 100000 -i 125 -a 500 -I 2 -w 20.
+                                    = 4004098477
+
+  4.5 ++--------+---------+---------+---------+---------+---------+--------++
+      +         +         +         +         +   Entropy-Iterations ****** +
+      |**** ********* *** ** **   *** ******** ** *  *** ** ****  * *       |
+    4 +***************************************************************     ++
+      |*         *           *                          *     *             |
+      *                                                                     |
+  3.5 *+                                                                   ++
+      *                                                                     |
+    3 *+                                                                   ++
+      *                                                                     |
+      *                                                                     |
+  2.5 *+                                                                   ++
+      *                                                                     |
+      *                                                                     |
+    2 *+                                                                   ++
+      *                                                                     |
+      +         +         +         +         +         +         +         +
+  1.5 ++--------+---------+---------+---------+---------+---------+--------++
+      0       1e+07     2e+07     3e+07     4e+07     5e+07     6e+07     7e+07
+
+                                      Entropy
+./Research/ArnoldiResearch -f N1Arnoldi.dat -t 100000 -i 125 -a 500 -I 2 -w 20.
+                                    = 4004098477
+
+  4.5 ++--------+---------+---------+---------+---------+---------+--------++
+      +         +         +         +         +   Entropy-Iterations ****** +
+      |************#******************######## ## # Entropy-Restarts####### |
+    4 ********************************################################     ++
+      *#    *    *           # *  *                     #     #             |
+      *                                                                     |
+  3.5 *+                                                                   ++
+      *                                                                     |
+    3 *+                                                                   ++
+      *                                                                     |
+      *                                                                     |
+  2.5 *+                                                                   ++
+      *                                                                     |
+      *                                                                     |
+    2 *+                                                                   ++
+      *                                                                     |
+      +         +         +         +         +         +         +         +
+  1.5 ++--------+---------+---------+---------+---------+---------+--------++
+      0       2e+07     4e+07     6e+07     8e+07     1e+08    1.2e+08  1.4e+08
+

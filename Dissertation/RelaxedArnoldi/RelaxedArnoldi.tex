@@ -1,0 +1,702 @@
+%!TEX root = ../Thesis.tex
+
+\chapter{Relaxed Arnoldi \label{ch:RelaxedArnoldi}}
+In Monte Carlo particle transport the figure of merit (FOM) is a measure of efficiency of a particular algorithm or simulation.  FOM was given in \Fref{eq:FOM} and again here for clarity
+\begin{equation}
+    \mathrm{FOM} \equiv \frac{1}{\sigma_{\lambda}^2T}.
+    \label{eq:FOMRelaxed}
+\end{equation}
+The variance of an estimated eigenvalue $\lambda$ in a Monte Carlo approach is
+\begin{equation}
+    \sigma_{\lambda}^2 = \frac{1}{N}\sigma^2,
+    \label{eq:SampleVariance}
+\end{equation}
+where $N$ is the number of estimates of the eigenvalue and $\sigma^2$ is the variance of the distribution of the estimates.  A larger FOM indicates a more efficient calculation, i.e. the variance is smaller for a given amount of computer time or number of particles tracked.  To increase the FOM, one must increase $N$ while keeping $T$ as small as possible which, in turn, will decrease $\sigma$.
+
+In this thesis the focus has been on estimating the eigenvalues of the fission-transport operator \A. In \Fref{ch:ArnoldiMethod}, I compared the figure of merit for Arnoldi's method to that produced by the power method for estimating the fundamental eigenvalue.  The power method had a FOM that was much larger than that of Arnoldi's method, even though both methods tracked the same number of particles in each iteration.  
+
+The power method calculates an estimate of the fundamental eigenvalues at the end of every iteration, while in Arnoldi's method it was chosen to calculate an eigenvalue estimate at the end of an Arnoldi restart.  The simulations used in \Fref{ch:ArnoldiMethod} had ten iterations in each Arnoldi restart.  Even though the power method and Arnoldi's method used the same number of particles to apply the linear operator at each iteration, the power method had ten times more eigenvalue estimates than Arnoldi's method---for the same number of particles tracked.  The FOM shown in \Fref{tab:BasicResults} is nearly exactly ten times larger for the power method than for Arnoldi's method.  This indicates that the variance is driven primarily by the number of eigenvalue estimates.  
+
+\section{Relaxed Arnoldi's Method}
+Recently \cite{Eshof:2004Inexa-0,Sleijpen:2005Resta-0,Simoncini:2003Theor-0,Freitag:2007Inner-0} there has been some interest in Krylov subspace methods where the application of the linear operator is performed inexactly; for example when the application of the operator \A{} is an iterative process and the iterations are terminated before the calculation converges. By terminating early, computation time is saved at the expense of the precision of the application of \A{}.
+
+A group of researchers \citep{Bouras:2000A-rel-1} discovered experimentally that under certain circumstances the inexact application of the linear operator has little or no effect upon the convergence of the eigenpair calculation. They discovered that, as Arnoldi's method proceeds and the size of the Krylov subspace increases, the precision to which the matrix-vector product is calculated can be decreased, or relaxed.  Their results have been further investigated leading to more formal theories and proofs (see \cite{Bouras:2005Inexa-0} and \cite{Simoncini:2005Varia-0}).
+
+When a linear operator is applied inexactly  we can obtain the inexact vector $\hat{v}_k$ by computing
+\begin{equation}
+    \hat{v}_k = \left(\A + \DA_k\right)\hat{v}_{k-1}, 
+    \label{eq:InexactApplication}
+\end{equation}
+where $\DA_k$ is some perturbation matrix.  Of course, when the linear operator is applied inexactly, we are no longer forming a true Krylov subspace as shown in \Fref{eq:KrylovSubspace} but have rather
+\begin{equation}
+    \hat{\mathcal{K}} = \mathspan\left\{v_0, \hat{v}_1, \hat{v}_2, \ldots, \hat{v}_{m-1}\right\},
+    \label{eq:RelaxedKrylovVectors}
+\end{equation}
+where $\hat{v}_k$ is given in \Fref{eq:InexactApplication} and is orthogonalized against the previously calculated Arnoldi vectors $\hat{V}_k = \left[v_0\, \hat{v}_1\, \ldots\, \hat{v}_{k-1}\right]$.
+
+The basic idea presented by Bouras and Frayss\'{e} is to reduce the precision to which the linear operator is applied in an iteration of Arnoldi's method, but limit the size of $\DA_k$ to some fraction of \A.  To show how this is done, let $\eta$ be the final tolerance required and let $\alpha_k$ be a scalar defined by
+\begin{equation}
+    \alpha_k = \frac{1}{\min\left(\left\|r_{k-1}\right\|,1\right)},
+    \label{eq:RelaxedAlpha}
+\end{equation}
+where $\left\|r_{k-1}\right\|$ is the magnitude of the residual as given in \Fref{eq:Residual}.  The limit to $\DA_k$'s size is defined as
+\begin{gather}
+    \left\|\DA_k\right\| = \varepsilon_k\left\|\A\right\| \label{eq:PerturbationMatrix}
+    \intertext{where}
+    \varepsilon_k = \min\left(\alpha_k\eta, 1\right). \label{eq:RelaxedEpsilon}
+\end{gather}.
+
+If we put together \Fref{eq:RelaxedAlpha}, \Fref{eq:PerturbationMatrix}, and \Fref{eq:RelaxedEpsilon} we see that as the residual decreases the size of $\DA_k$ is allowed to become larger---the precision to which the linear operator \A{} is applied is \emph{relaxed}.
+
+\subsubsection{Relaxed Monte Carlo Application of Fission-Transport Operator}
+In Monte Carlo particle transport the magnitude of the perturbation matrix, $\left\|\DA\right\|$ is proportional to $1/\sqrt{N}$ where $N$ is the number of particles tracked when applying the fission-transport operator.  Relaxing the application of the fission-transport operator means simply reducing the number of particles used in applying the operator
+\begin{equation}
+    N_k = f\left(\left\|r_{k-1}\right\|\right) N_0,
+    \label{eq:RelaxedN}
+\end{equation}
+where $N_k$ is the number of particles to be used in iteration $k$ and $N_0$ is the number of particles tracked when not relaxed.  The scalar \mbox{$f\left(\left\|r_{k-1}\right\|\right)$} is the fraction of the number of particles $N_0$ that should be tracked in iteration $k$.  
+
+In Monte Carlo particle transport the parameter $\eta < 1$ is some input value defining when relaxing can occur.  We want to relax the application of \A{} when the residual is smaller than $\eta$ and to track $N_0$ particles when the residual is larger than $\eta$.  To do this we define 
+\begin{equation}
+    \varepsilon_k = \begin{cases}
+        \eta/\left\|r_{k-1}\right\| & \left\|r_{k-1}\right\| < \eta \\
+        1 & \left\|r_{k-1}\right\| \geq \eta.
+    \end{cases}
+    \label{eq:epsilonMC}
+\end{equation}
+and insert into \Fref{eq:PerturbationMatrix}.  We note that \[\left\|\DA\right\| = \frac{\bm{C}}{\sqrt{N_k}}\] where $\bm{C}$ is just some constant of proportionality, we can obtain an equation for $N_k$,
+\begin{equation}
+    N_k = \frac{1}{\varepsilon_k^2}\left(\frac{\bm{C}}{\left\|\A\right\|}\right)^2.
+    \label{eq:Nk}
+\end{equation}
+
+To determine the fraction of particles to be tracked in iteration $k$ we equate the right-hand sides of \Fref{eq:Nk} and \Fref{eq:RelaxedN}, 
+\begin{equation}
+    f\left(\left\|r_{k-1}\right\|\right) N_0 = \frac{1}{\varepsilon_k^2} \left(\frac{\bm{C}}{\left\|\A\right\|}\right)^2 .
+\end{equation}
+The term $\left(\sfrac{\bm{C}}{\left\|\A\right\|}\right)^2$ is just some constant which we conveniently choose to be $N_0$.  Therefore the fraction we are seeking must be
+\begin{equation}
+    f\left(\left\|r_{k-1}\right\|\right) = \frac{1}{\varepsilon_k^2} = 
+    \begin{cases}
+        \left(\left\|r_{k-1}\right\|/\eta\right)^2 & \left\|r_{k-1}\right\| < \eta \\
+        1 & \left\|r_{k-1}\right\| \geq \eta.
+    \end{cases}
+    \label{eq:NFraction}
+\end{equation}
+So if the residual is less than $\eta$ the number of particles tracked in an iteration is reduced, but the number of particles tracked in an iteration will never be more than $N_0$.  From \Fref{eq:RelaxedN} we then have
+\begin{equation}
+    N_k = 
+    \begin{cases}
+        \left(\left\|r_{k-1}\right\|/\eta\right)^2N_0 & \left\|r_{k-1}\right\| < \eta \\
+        N_0 & \left\|r_{k-1}\right\| \geq \eta.
+    \end{cases}
+    \label{eq:NkFinal}
+\end{equation}
+
+This method of relaxation is not the only strategy that can be used.  Here we have a quadratic function.  A less aggressive strategy would be a linear function where
+\begin{equation}
+    f\left(\left\|r_{k-1}\right\|\right) = \frac{1}{\varepsilon_k} = 
+    \begin{cases}
+        \left\|r_{k-1}\right\|/\eta & \left\|r_{k-1}\right\| < \eta \\
+        1 & \left\|r_{k-1}\right\| \geq \eta.
+    \end{cases}
+    \label{eq:NkFinalLessAggressive}
+\end{equation}
+What is important is that as the residual decreases, relaxation increases and fewer particles are tracked in that iteration.  
+
+With the number of particles used in an iteration defined by \Fref{eq:NkFinal} we have a procedure for relaxing the precision to which the fission-transport operator is applied; as the residual decreases---the estimate of the eigenvalue improves---fewer particles are tracked in an iteration.  We expect this relaxation to have no negative effect on the convergence of the eigenvalue estimate and therefore have a positive effect on the figure of merit as the computational expense required to apply the linear operator is decreased with the decrease in the number of particles tracked.
+
+\section{Numerical Results} \label{sec:RelaxedNumericalResults}
+To demonstrate the effect of relaxing Arnoldi's method, a similar problem to those already displayed in this thesis is shown.  I will keep the same cross sections (\mbox{$\nu\Sigma_f = 1.0$}, \mbox{$\Sigma_a = 0.2$}, and \mbox{$\Sigma_s = 0.8$}; \mbox{$\Sigma_t = 1.0$}) but the width of the slab will be 50 mfp.  This is a more difficult problem than the thinner slabs because the dominance ratio is 0.9924, which is larger than for the thinner geometries previously used.  
+
+For these simulations the more aggressive relaxation shown in \Fref{eq:NkFinal}  is used and the  relaxation parameter, $\eta$, is varied from 1E-8 to 1.0.  As $\eta$ increases, the number of particles tracked in an iteration/restart decreases.  To keep the total number of particles the same among all simulations, the number of active restarts was increased when necessary.  (The number of inactive restarts is 100 for all the simulations.  Relaxation is done during inactive restarts as well as active restarts.)  This means that for larger values of $\eta$ there will be more eigenvalue estimates and a lower uncertainty in the eigenvalue estimate.  When the uncertainty decreases the figure of merit increases.  
+
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/Relaxed}
+    \caption{Eigenvalue estimates for the fundamental and first two harmonics for varying values of the relaxation parameter $\eta$.  The number of particles tracked in a non-relaxed iteration is 5E5.  The heavy lines are the reference eigenvalues from \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}.}
+    \label{fig:RelaxedArnoldi}
+\end{sidewaysfigure}
+
+If what Bouras and Frayss\'{e} suggest for relaxed Arnoldi is valid for Monte Carlo criticality calculations, we expect to see the estimates of the eigenvalue unaffected by relaxation.  In addition, we expect the figure of merit to increase when relaxation increases (i.e. $\eta$ becomes larger) because fewer particles are being tracked in an iteration and therefore less time required to calculate an eigenvalue estimate.  This doesn't hold for every value of $\eta$; eventually it will become so large the application of \A{} is so imprecise---too relaxed---the eigenvalue estimate is just wrong.  
+
+The eigenvalue estimates as a function of relaxation parameter are graphed in \Fref{fig:RelaxedArnoldi}.  The heavy lines are the eigenvalue estimates when no relaxation is used.    We see that the eigenvalue estimates all fall within one standard deviation of the estimate calculated without any relaxation (shown in the dark heavy lines) until the relaxation becomes too great at around \mbox{$\eta = 0.005$}.  
+
+In \Fref{fig:MoreAggFOM} the fundamental eigenvalue estimates are plotted along with the FOM for varying values of $\eta$.  The dashed line in the \Fref{fig:MoreAggFOM} is the figure of merit when Arnoldi's method is not relaxed.  It appears that no relaxation ($\eta = 0.0$) is better than a little bit of relaxation ($\eta = $ small).  There are a few values for $\eta$ which show about a 50\% increase in the figure of merit.  However the range of $\eta$ where there is an improvement over no relaxation is small.  Also, at the same value of $\eta$ where the eigenvalue estimate starts to diverge from the true value we see the figure of merit decrease by 1--2 orders of magnitude.  
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/MoreAggFOM}
+    \caption{Fundamental eigenvalue estimate and figure of merit for varying values of the relaxation parameter $\eta$.  The dashed line is the value of the figure of merit when there is no relaxation.  The number of particles tracked in a non-relaxed iteration is 5E5.}
+    \label{fig:MoreAggFOM}
+\end{sidewaysfigure}
+
+In \Fref{tab:Relaxed0} the eigenvalue estimates, standard deviation and the figure of merit are shown for these simulations.  For \mbox{$\eta \leq 0.0025$} the standard deviation is constant, \mbox{$\sim 1\e{-4}$}.  When \mbox{$\eta > 0.0025$} the eigenvalue estimates diverge and the standard deviation increases.  This is what causes the figure of merit to drop.  
+
+% More aggressive
+\begin{table}\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+09 & 0.9973 $\pm$  1.0\e{-4} &  12427.9 & 7776.7 \\
+           1E-08 &   100 & 2.500e+09 & 0.9974 $\pm$  1.0\e{-4} &  12861.4 & 7741.5 \\
+         2.5E-08 &   100 & 2.500e+09 & 0.9974 $\pm$  1.2\e{-4} &   8371.5 & 7732.8 \\
+           5E-08 &   100 & 2.500e+09 & 0.9974 $\pm$  1.1\e{-4} &  10072.6 & 7734.8 \\
+         7.5E-08 &   100 & 2.500e+09 & 0.9974 $\pm$  1.0\e{-4} &  11854.2 & 7809.2 \\
+           1E-07 &   100 & 2.500e+09 & 0.9974 $\pm$  1.0\e{-4} &  12249.2 & 7727.9 \\
+         2.5E-07 &   100 & 2.500e+09 & 0.9975 $\pm$  1.1\e{-4} &  11235.8 & 7734.2 \\
+           5E-07 &   100 & 2.500e+09 & 0.9974 $\pm$  1.1\e{-4} &  11123.8 & 7757.4 \\
+         7.5E-07 &   100 & 2.500e+09 & 0.9974 $\pm$  9.8\e{-5} &  13221.0 & 7835.0 \\
+         2.5E-06 &   100 & 2.500e+09 & 0.9974 $\pm$  1.0\e{-4} &  12407.1 & 7753.4 \\
+         7.5E-06 &   100 & 2.499e+09 & 0.9974 $\pm$  9.5\e{-5} &  14125.4 & 7817.1 \\
+           1E-05 &   100 & 2.500e+09 & 0.9975 $\pm$  1.1\e{-4} &  10430.4 & 7741.5 \\
+         2.5E-05 &   105 & 2.555e+09 & 0.9975 $\pm$  1.1\e{-4} &  10501.4 & 7910.3 \\
+           5E-05 &   112 & 2.621e+09 & 0.9973 $\pm$  8.2\e{-5} &  18382.2 & 8122.4 \\
+         7.5E-05 &   109 & 2.565e+09 & 0.9972 $\pm$  1.0\e{-4} &  12444.6 & 8006.8 \\
+          0.0001 &   110 & 2.544e+09 & 0.9973 $\pm$  1.1\e{-4} &  11280.2 & 7871.7 \\
+         0.00025 &   124 & 2.541e+09 & 0.9973 $\pm$  8.2\e{-5} &  19072.5 & 7853.4 \\
+          0.0005 &   140 & 2.554e+09 & 0.9974 $\pm$  1.0\e{-4} &  12433.1 & 7909.4 \\
+         0.00075 &   150 & 2.562e+09 & 0.9973 $\pm$  8.9\e{-5} &  15879.3 & 7945.2 \\
+           0.001 &   160 & 2.585e+09 & 0.9973 $\pm$  8.1\e{-5} &  19017.0 & 8010.1 \\
+          0.0025 &   187 & 2.551e+09 & 0.9973 $\pm$  7.7\e{-5} &  21433.5 & 7899.2 \\
+           0.005 &   220 & 2.498e+09 & 0.9978 $\pm$  3.5\e{-4} &   1069.1 & 7754.7 \\
+          0.0075 &   270 & 2.559e+09 & 0.9980 $\pm$  2.3\e{-4} &   2437.4 & 7938.2 \\
+            0.01 &   316 & 2.537e+09 & 0.9983 $\pm$  3.6\e{-4} &    962.5 & 7879.3 \\
+            0.05 &  1250 & 2.476e+09 & 1.0028 $\pm$  3.5\e{-4} &   1042.8 & 7724.8 \\
+             0.1 &  1800 & 2.520e+09 & 1.0084 $\pm$  3.9\e{-4} &    851.8 & 7872.8 \\
+             0.5 &  2300 & 2.506e+09 & 1.0281 $\pm$  4.2\e{-4} &    710.5 & 7854.4 \\
+       1 &  2350 & 2.502e+09 & 1.0460 $\pm$  4.2\e{-4} &    710.3 & 7824.0 \\
+                \bottomrule
+    \end{tabular}
+    \caption{Eigenvalue estimates for fundamental eigenvalue, figure of merit, and time for a relaxed Arnoldi simulation of a 20mfp thick slab.  Also shown is the number of  active restarts and the total number of particles tracked in the simulation.  5E5 particles were tracked in each non-relaxed iteration.}
+    \label{tab:Relaxed0}
+\end{table}
+
+% Harmonics
+\begin{comment}
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+09 & 0.9899 $\pm$  1.0\e{-4} &  11703.7 & 7776.7 \\
+           1E-08 &   100 & 2.500e+09 & 0.9898 $\pm$  1.0\e{-4} &  11769.3 & 7741.5 \\
+         2.5E-08 &   100 & 2.500e+09 & 0.9897 $\pm$  1.0\e{-4} &  11864.9 & 7732.8 \\
+           5E-08 &   100 & 2.500e+09 & 0.9898 $\pm$  9.1\e{-5} &  15485.8 & 7734.8 \\
+         7.5E-08 &   100 & 2.500e+09 & 0.9896 $\pm$  1.0\e{-4} &  11768.9 & 7809.2 \\
+           1E-07 &   100 & 2.500e+09 & 0.9898 $\pm$  9.9\e{-5} &  13117.8 & 7727.9 \\
+         2.5E-07 &   100 & 2.500e+09 & 0.9897 $\pm$  1.1\e{-4} &  11301.2 & 7734.2 \\
+           5E-07 &   100 & 2.500e+09 & 0.9897 $\pm$  1.1\e{-4} &  10732.1 & 7757.4 \\
+         7.5E-07 &   100 & 2.500e+09 & 0.9896 $\pm$  1.2\e{-4} &   9545.0 & 7835.0 \\
+         2.5E-06 &   100 & 2.500e+09 & 0.9895 $\pm$  1.1\e{-4} &  10118.3 & 7753.4 \\
+         7.5E-06 &   100 & 2.499e+09 & 0.9895 $\pm$  9.9\e{-5} &  12927.3 & 7817.1 \\
+           1E-05 &   100 & 2.500e+09 & 0.9897 $\pm$  1.2\e{-4} &   9526.8 & 7741.5 \\
+         2.5E-05 &   105 & 2.555e+09 & 0.9898 $\pm$  1.1\e{-4} &  11105.9 & 7910.3 \\
+           5E-05 &   112 & 2.621e+09 & 0.9897 $\pm$  1.0\e{-4} &  12146.8 & 8122.4 \\
+         7.5E-05 &   109 & 2.565e+09 & 0.9899 $\pm$  1.1\e{-4} &  10722.2 & 8006.8 \\
+          0.0001 &   110 & 2.544e+09 & 0.9896 $\pm$  1.0\e{-4} &  11645.9 & 7871.7 \\
+         0.00025 &   124 & 2.541e+09 & 0.9898 $\pm$  1.0\e{-4} &  11710.7 & 7853.4 \\
+          0.0005 &   140 & 2.554e+09 & 0.9896 $\pm$  1.0\e{-4} &  12022.0 & 7909.4 \\
+         0.00075 &   150 & 2.562e+09 & 0.9897 $\pm$  9.2\e{-5} &  14981.4 & 7945.2 \\
+           0.001 &   160 & 2.585e+09 & 0.9896 $\pm$  7.9\e{-5} &  20123.4 & 8010.1 \\
+          0.0025 &   187 & 2.551e+09 & 0.9897 $\pm$  9.4\e{-5} &  14469.3 & 7899.2 \\
+           0.005 &   220 & 2.498e+09 & 0.9898 $\pm$  1.1\e{-4} &  10404.2 & 7754.7 \\
+          0.0075 &   270 & 2.559e+09 & 0.9898 $\pm$  1.7\e{-4} &   4557.0 & 7938.2 \\
+            0.01 &   316 & 2.537e+09 & 0.9902 $\pm$  1.4\e{-4} &   6526.0 & 7879.3 \\
+            0.05 &  1250 & 2.476e+09 & 0.9921 $\pm$  8.5\e{-5} &  18012.3 & 7724.8 \\
+             0.1 &  1800 & 2.520e+09 & 0.9942 $\pm$  7.6\e{-5} &  21848.3 & 7872.8 \\
+             0.5 &  2300 & 2.506e+09 & 1.0068 $\pm$  1.1\e{-4} &  10089.1 & 7854.4 \\
+       1 &  2350 & 2.502e+09 & 1.0185 $\pm$  1.9\e{-4} &   3714.0 & 7824.0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue estimates with relaxation.}
+    \label{tab:Relaxed1}
+\end{table}
+
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+09 & 0.9773 $\pm$  1.1\e{-4} &  10398.5 & 7776.7 \\
+           1E-08 &   100 & 2.500e+09 & 0.9772 $\pm$  9.0\e{-5} &  15897.9 & 7741.5 \\
+         2.5E-08 &   100 & 2.500e+09 & 0.9772 $\pm$  9.4\e{-5} &  14496.4 & 7732.8 \\
+           5E-08 &   100 & 2.500e+09 & 0.9771 $\pm$  1.0\e{-4} &  12311.8 & 7734.8 \\
+         7.5E-08 &   100 & 2.500e+09 & 0.9772 $\pm$  1.1\e{-4} &  11541.0 & 7809.2 \\
+           1E-07 &   100 & 2.500e+09 & 0.9771 $\pm$  9.7\e{-5} &  13886.4 & 7727.9 \\
+         2.5E-07 &   100 & 2.500e+09 & 0.9772 $\pm$  1.0\e{-4} &  12340.2 & 7734.2 \\
+           5E-07 &   100 & 2.500e+09 & 0.9771 $\pm$  1.1\e{-4} &  10260.1 & 7757.4 \\
+         7.5E-07 &   100 & 2.500e+09 & 0.9773 $\pm$  9.8\e{-5} &  13304.6 & 7835.0 \\
+         2.5E-06 &   100 & 2.500e+09 & 0.9771 $\pm$  1.2\e{-4} &   9143.5 & 7753.4 \\
+         7.5E-06 &   100 & 2.499e+09 & 0.9771 $\pm$  8.8\e{-5} &  16636.0 & 7817.1 \\
+           1E-05 &   100 & 2.500e+09 & 0.9773 $\pm$  1.0\e{-4} &  12113.0 & 7741.5 \\
+         2.5E-05 &   105 & 2.555e+09 & 0.9769 $\pm$  9.7\e{-5} &  13327.1 & 7910.3 \\
+           5E-05 &   112 & 2.621e+09 & 0.9772 $\pm$  1.0\e{-4} &  11808.5 & 8122.4 \\
+         7.5E-05 &   109 & 2.565e+09 & 0.9772 $\pm$  9.5\e{-5} &  13856.7 & 8006.8 \\
+          0.0001 &   110 & 2.544e+09 & 0.9773 $\pm$  7.9\e{-5} &  20303.5 & 7871.7 \\
+         0.00025 &   124 & 2.541e+09 & 0.9772 $\pm$  1.1\e{-4} &  11242.6 & 7853.4 \\
+          0.0005 &   140 & 2.554e+09 & 0.9772 $\pm$  1.2\e{-4} &   8134.5 & 7909.4 \\
+         0.00075 &   150 & 2.562e+09 & 0.9773 $\pm$  8.5\e{-5} &  17608.8 & 7945.2 \\
+           0.001 &   160 & 2.585e+09 & 0.9771 $\pm$  8.0\e{-5} &  19293.4 & 8010.1 \\
+          0.0025 &   187 & 2.551e+09 & 0.9773 $\pm$  1.0\e{-4} &  12740.4 & 7899.2 \\
+           0.005 &   220 & 2.498e+09 & 0.9774 $\pm$  1.7\e{-4} &   4415.6 & 7754.7 \\
+          0.0075 &   270 & 2.559e+09 & 0.9779 $\pm$  1.9\e{-4} &   3350.6 & 7938.2 \\
+            0.01 &   316 & 2.537e+09 & 0.9780 $\pm$  2.0\e{-4} &   3050.0 & 7879.3 \\
+            0.05 &  1250 & 2.476e+09 & 0.9787 $\pm$  1.1\e{-4} &  11365.8 & 7724.8 \\
+             0.1 &  1800 & 2.520e+09 & 0.9797 $\pm$  1.3\e{-4} &   7252.4 & 7872.8 \\
+             0.5 &  2300 & 2.506e+09 & 0.9881 $\pm$  1.5\e{-4} &   5872.1 & 7854.4 \\
+               1 &  2350 & 2.502e+09 & 0.9957 $\pm$  1.4\e{-4} &   6202.1 & 7824.0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue estimates with relaxation.}
+    \label{tab:Relaxed2}
+\end{table}
+\end{comment}
+
+\citet{Bouras:2000A-rel-1} suggest that the first few Arnoldi vectors need to be known with ``full accuracy'' and that Arnoldi vectors calculated in later iterations can be relaxed.  Given that Monte Carlo Arnoldi can never really apply \A{} with full precision it is important to know how accurately the first Arnoldi vectors really need to be applied.  In the next set of results, an attempt to come closer to full accuracy for the initial applications of the fission-transport operator by repeating the simulations but increasing the number of particles tracked in a non-relaxed iteration to 5E6---ten times more than in the previous simulations.
+
+In \Fref{fig:RelaxedArnoldi5E6} and in \Fref{tab:Relaxed5E60} the results of these simulations are shown.  We see a similar pattern for these as we did with the simulations tracking 5E5 particles per iteration; the eigenvalue estimates are unaffected by relaxation until the relaxation parameter becomes too large at which point the eigenvalue estimate diverges.  
+
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/Relaxed5E6}
+    \caption{Eigenvalue estimates for the fundamental and first two harmonics for varying values of the relaxation parameter $\eta$.  The number of particles tracked in a non-relaxed iteration is 5E6.  The heavy lines are the reference eigenvalues from \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}.}
+    \label{fig:RelaxedArnoldi5E6}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/MoreAggFOM5E6}
+    \caption{Fundamental eigenvalue estimate and figure of merit for varying values of the relaxation parameter $\eta$.  The dashed line is the value of the figure of merit when there is no relaxation.  The number of particles tracked in a non-relaxed iteration is 5E6.}
+    \label{fig:MoreAggFOM5E6}
+\end{sidewaysfigure}
+
+% More aggressive
+\begin{table}\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+10 & 0.9974 $\pm$  3.3\e{-5} &  11697.8 & 78476.2 \\
+           1E-08 &   100 & 2.500e+10 & 0.9974 $\pm$  3.5\e{-5} &  10452.8 & 78779.5 \\
+         2.5E-08 &   100 & 2.500e+10 & 0.9974 $\pm$  3.1\e{-5} &  13470.2 & 78307.7 \\
+           5E-08 &   100 & 2.500e+10 & 0.9974 $\pm$  3.2\e{-5} &  12606.0 & 77916.5 \\
+         7.5E-08 &   100 & 2.500e+10 & 0.9974 $\pm$  3.1\e{-5} &  13150.2 & 78104.0 \\
+           1E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  3.1\e{-5} &  13628.3 & 78784.8 \\
+         2.5E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  3.1\e{-5} &  12913.8 & 78219.4 \\
+           5E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  3.2\e{-5} &  12823.6 & 77835.0 \\
+         7.5E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  3.8\e{-5} &   8847.1 & 78099.9 \\
+         2.5E-06 &   100 & 2.500e+10 & 0.9974 $\pm$  3.3\e{-5} &  11857.0 & 78717.5 \\
+         7.5E-06 &   100 & 2.497e+10 & 0.9975 $\pm$  3.0\e{-5} &  13944.0 & 78135.7 \\
+           1E-05 &   100 & 2.492e+10 & 0.9973 $\pm$  3.1\e{-5} &  13334.8 & 77898.4 \\
+         2.5E-05 &   100 & 2.452e+10 & 0.9974 $\pm$  3.2\e{-5} &  12592.5 & 76967.0 \\
+           5E-05 &   118 & 2.544e+10 & 0.9975 $\pm$  2.8\e{-5} &  16472.7 & 79677.3 \\
+         7.5E-05 &   125 & 2.550e+10 & 0.9974 $\pm$  3.1\e{-5} &  12717.2 & 79890.8 \\
+          0.0001 &   129 & 2.544e+10 & 0.9974 $\pm$  2.9\e{-5} &  15565.5 & 78825.1 \\
+         0.00025 &   153 & 2.560e+10 & 0.9974 $\pm$  2.3\e{-5} &  24056.5 & 79514.8 \\
+          0.0005 &   172 & 2.556e+10 & 0.9974 $\pm$  2.6\e{-5} &  19015.5 & 79022.0 \\
+         0.00075 &   186 & 2.548e+10 & 0.9974 $\pm$  2.4\e{-5} &  22290.5 & 78981.0 \\
+           0.001 &   194 & 2.515e+10 & 0.9974 $\pm$  2.1\e{-5} &  28311.4 & 78137.4 \\
+          0.0025 &   237 & 2.523e+10 & 0.9974 $\pm$  2.0\e{-5} &  33610.1 & 77832.7 \\
+           0.005 &   272 & 2.534e+10 & 0.9978 $\pm$  3.2\e{-4} &    121.7 & 78369.7 \\
+          0.0075 &   307 & 2.470e+10 & 0.9975 $\pm$  8.3\e{-5} &   1906.6 & 76614.9 \\
+            0.01 &   395 & 2.525e+10 & 0.9977 $\pm$  1.3\e{-4} &    758.7 & 78486.7 \\
+            0.05 &  1571 & 2.515e+10 & 0.9991 $\pm$  2.2\e{-4} &    256.2 & 81338.9 \\
+             0.1 &  2024 & 2.487e+10 & 1.0012 $\pm$  1.8\e{-4} &    389.9 & 77344.4 \\
+            0.25 &  2291 & 2.497e+10 & 1.0065 $\pm$  3.3\e{-4} &    113.5 & 78881.1 \\
+             0.5 &  2361 & 2.504e+10 & 1.0123 $\pm$  3.1\e{-4} &    132.7 & 78254.0 \\
+            0.75 &  2377 & 2.503e+10 & 1.0165 $\pm$  2.7\e{-4} &    175.2 & 78251.1 \\
+               1 &  2385 & 2.503e+10 & 1.0201 $\pm$  3.9\e{-4} &     81.1 & 79328.2 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Eigenvalue estimates for fundamental eigenvalue, figure of merit, and time for a relaxed Arnoldi simulation of a 20mfp thick slab.  Also shown is the number of  active restarts and the total number of particles tracked in the simulation.  In non-relaxed iterations, 5E6 particles were tracked.}
+    \label{tab:Relaxed5E60}
+\end{table}
+
+% Harmonics 5E6
+\begin{comment}
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+10 & 0.9897 $\pm$  3.5\e{-5} &  10203.7 & 78476.2 \\
+           1E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  3.6\e{-5} &   9928.0 & 78779.5 \\
+         2.5E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  3.5\e{-5} &  10709.4 & 78307.7 \\
+           5E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  3.3\e{-5} &  11706.9 & 77916.5 \\
+         7.5E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  3.3\e{-5} &  12000.6 & 78104.0 \\
+           1E-07 &   100 & 2.500e+10 & 0.9897 $\pm$  3.2\e{-5} &  12430.3 & 78784.8 \\
+         2.5E-07 &   100 & 2.500e+10 & 0.9896 $\pm$  3.1\e{-5} &  13423.0 & 78219.4 \\
+           5E-07 &   100 & 2.500e+10 & 0.9897 $\pm$  3.3\e{-5} &  11913.4 & 77835.0 \\
+         7.5E-07 &   100 & 2.500e+10 & 0.9897 $\pm$  3.4\e{-5} &  10990.8 & 78099.9 \\
+         2.5E-06 &   100 & 2.500e+10 & 0.9897 $\pm$  3.5\e{-5} &  10623.5 & 78717.5 \\
+         7.5E-06 &   100 & 2.497e+10 & 0.9897 $\pm$  3.6\e{-5} &  10132.8 & 78135.7 \\
+           1E-05 &   100 & 2.492e+10 & 0.9897 $\pm$  3.6\e{-5} &   9673.3 & 77898.4 \\
+         2.5E-05 &   100 & 2.452e+10 & 0.9897 $\pm$  3.3\e{-5} &  11754.6 & 76967.0 \\
+           5E-05 &   118 & 2.544e+10 & 0.9897 $\pm$  3.0\e{-5} &  13696.3 & 79677.3 \\
+         7.5E-05 &   125 & 2.550e+10 & 0.9897 $\pm$  2.7\e{-5} &  16722.2 & 79890.8 \\
+          0.0001 &   129 & 2.544e+10 & 0.9897 $\pm$  2.8\e{-5} &  16545.6 & 78825.1 \\
+         0.00025 &   153 & 2.560e+10 & 0.9897 $\pm$  2.5\e{-5} &  20918.1 & 79514.8 \\
+          0.0005 &   172 & 2.556e+10 & 0.9896 $\pm$  2.5\e{-5} &  19990.5 & 79022.0 \\
+         0.00075 &   186 & 2.548e+10 & 0.9897 $\pm$  2.3\e{-5} &  23668.1 & 78981.0 \\
+           0.001 &   194 & 2.515e+10 & 0.9897 $\pm$  2.3\e{-5} &  23767.6 & 78137.4 \\
+          0.0025 &   237 & 2.523e+10 & 0.9897 $\pm$  2.3\e{-5} &  24527.5 & 77832.7 \\
+           0.005 &   272 & 2.534e+10 & 0.9898 $\pm$  6.5\e{-5} &   2990.9 & 78369.7 \\
+          0.0075 &   307 & 2.470e+10 & 0.9897 $\pm$  4.6\e{-5} &   6096.3 & 76614.9 \\
+            0.01 &   395 & 2.525e+10 & 0.9898 $\pm$  6.1\e{-5} &   3402.1 & 78486.7 \\
+            0.05 &  1571 & 2.515e+10 & 0.9906 $\pm$  8.8\e{-5} &   1600.9 & 81338.9 \\
+             0.1 &  2024 & 2.487e+10 & 0.9913 $\pm$  5.2\e{-5} &   4872.7 & 77344.4 \\
+            0.25 &  2291 & 2.497e+10 & 0.9933 $\pm$  6.8\e{-5} &   2758.2 & 78881.1 \\
+             0.5 &  2361 & 2.504e+10 & 0.9964 $\pm$  6.3\e{-5} &   3196.7 & 78254.0 \\
+            0.75 &  2377 & 2.503e+10 & 0.9989 $\pm$  8.0\e{-5} &   2001.2 & 78251.1 \\
+               1 &  2385 & 2.503e+10 & 1.0010 $\pm$  8.6\e{-5} &   1698.6 & 79328.2 \\
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue estimates with relaxation tracking 5E6 particles.}
+    \label{tab:Relaxed5E61}
+\end{table}
+
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+           0 &   100 & 2.500e+10 & 0.9772 $\pm$  3.0\e{-5} &  13952.9 & 78476.2 \\
+       1E-08 &   100 & 2.500e+10 & 0.9772 $\pm$  3.2\e{-5} &  12249.8 & 78779.5 \\
+     2.5E-08 &   100 & 2.500e+10 & 0.9772 $\pm$  2.7\e{-5} &  17217.9 & 78307.7 \\
+       5E-08 &   100 & 2.500e+10 & 0.9772 $\pm$  2.9\e{-5} &  15078.3 & 77916.5 \\
+     7.5E-08 &   100 & 2.500e+10 & 0.9772 $\pm$  2.7\e{-5} &  18139.6 & 78104.0 \\
+       1E-07 &   100 & 2.500e+10 & 0.9772 $\pm$  3.0\e{-5} &  14585.1 & 78784.8 \\
+     2.5E-07 &   100 & 2.500e+10 & 0.9772 $\pm$  3.1\e{-5} &  13397.8 & 78219.4 \\
+       5E-07 &   100 & 2.500e+10 & 0.9771 $\pm$  2.6\e{-5} &  19720.2 & 77835.0 \\
+     7.5E-07 &   100 & 2.500e+10 & 0.9771 $\pm$  3.1\e{-5} &  13764.1 & 78099.9 \\
+     2.5E-06 &   100 & 2.500e+10 & 0.9772 $\pm$  2.9\e{-5} &  15404.6 & 78717.5 \\
+     7.5E-06 &   100 & 2.497e+10 & 0.9772 $\pm$  2.8\e{-5} &  16578.1 & 78135.7 \\
+       1E-05 &   100 & 2.492e+10 & 0.9772 $\pm$  3.0\e{-5} &  14525.6 & 77898.4 \\
+     2.5E-05 &   100 & 2.452e+10 & 0.9771 $\pm$  3.1\e{-5} &  13807.7 & 76967.0 \\
+       5E-05 &   118 & 2.544e+10 & 0.9772 $\pm$  2.6\e{-5} &  18452.0 & 79677.3 \\
+     7.5E-05 &   125 & 2.550e+10 & 0.9772 $\pm$  2.4\e{-5} &  20911.3 & 79890.8 \\
+      0.0001 &   129 & 2.544e+10 & 0.9772 $\pm$  2.6\e{-5} &  18588.6 & 78825.1 \\
+     0.00025 &   153 & 2.560e+10 & 0.9772 $\pm$  2.5\e{-5} &  19495.1 & 79514.8 \\
+      0.0005 &   172 & 2.556e+10 & 0.9772 $\pm$  2.4\e{-5} &  22469.2 & 79022.0 \\
+     0.00075 &   186 & 2.548e+10 & 0.9772 $\pm$  2.4\e{-5} &  21277.2 & 78981.0 \\
+       0.001 &   194 & 2.515e+10 & 0.9772 $\pm$  2.1\e{-5} &  27720.5 & 78137.4 \\
+      0.0025 &   237 & 2.523e+10 & 0.9772 $\pm$  6.1\e{-5} &   3404.0 & 77832.7 \\
+       0.005 &   272 & 2.534e+10 & 0.9776 $\pm$  1.3\e{-4} &    786.0 & 78369.7 \\
+      0.0075 &   307 & 2.470e+10 & 0.9778 $\pm$  1.4\e{-4} &    681.0 & 76614.9 \\
+        0.01 &   395 & 2.525e+10 & 0.9777 $\pm$  1.3\e{-4} &    707.5 & 78486.7 \\
+        0.05 &  1571 & 2.515e+10 & 0.9782 $\pm$  1.0\e{-4} &   1122.4 & 81338.9 \\
+         0.1 &  2024 & 2.487e+10 & 0.9784 $\pm$  6.1\e{-5} &   3467.4 & 77344.4 \\
+        0.25 &  2291 & 2.497e+10 & 0.9795 $\pm$  9.3\e{-5} &   1461.2 & 78881.1 \\
+         0.5 &  2361 & 2.504e+10 & 0.9819 $\pm$  1.2\e{-4} &    818.2 & 78254.0 \\
+        0.75 &  2377 & 2.503e+10 & 0.9831 $\pm$  1.3\e{-4} &    792.8 & 78251.1 \\
+           1 &  2385 & 2.503e+10 & 0.9849 $\pm$  1.3\e{-4} &    765.6 & 79328.2 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue estimates with relaxation tracking 5E6 particles.}
+    \label{tab:Relaxed5E62}
+\end{table}
+\end{comment}
+
+\begin{comment}     % Less aggressive
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+10 & 0.9974 $\pm$  2.9\e{-5} &  14588.8 & 81199.5 \\
+           1E-08 &   100 & 2.500e+10 & 0.9974 $\pm$  3.3\e{-5} &  11793.6 & 78304.7 \\
+         2.5E-08 &   100 & 2.500e+10 & 0.9974 $\pm$  2.9\e{-5} &  14992.3 & 78540.6 \\
+           5E-08 &   100 & 2.500e+10 & 0.9975 $\pm$  3.2\e{-5} &  12544.8 & 78433.4 \\
+         7.5E-08 &   100 & 2.500e+10 & 0.9973 $\pm$  3.5\e{-5} &  10337.1 & 78848.5 \\
+           1E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  2.9\e{-5} &  14828.1 & 78526.8 \\
+         2.5E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  3.2\e{-5} &  12258.9 & 78066.4 \\
+           5E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  3.3\e{-5} &  12228.5 & 77405.3 \\
+         7.5E-07 &   100 & 2.500e+10 & 0.9974 $\pm$  3.1\e{-5} &  13344.0 & 79346.7 \\
+         2.5E-06 &   100 & 2.500e+10 & 0.9974 $\pm$  3.2\e{-5} &  12278.4 & 78020.9 \\
+         7.5E-06 &   100 & 2.496e+10 & 0.9974 $\pm$  3.2\e{-5} &  12790.1 & 78677.4 \\
+           1E-05 &   100 & 2.495e+10 & 0.9974 $\pm$  3.3\e{-5} &  11382.5 & 78321.1 \\
+         2.5E-05 &   100 & 2.464e+10 & 0.9974 $\pm$  3.3\e{-5} &  12069.1 & 77446.8 \\
+           5E-05 &   100 & 2.390e+10 & 0.9974 $\pm$  3.5\e{-5} &  11043.7 & 75064.0 \\
+         7.5E-05 &   114 & 2.490e+10 & 0.9974 $\pm$  3.1\e{-5} &  13771.0 & 77773.5 \\
+          0.0001 &   118 & 2.498e+10 & 0.9974 $\pm$  3.0\e{-5} &  14004.8 & 77735.2 \\
+         0.00025 &   135 & 2.485e+10 & 0.9974 $\pm$  3.0\e{-5} &  14748.3 & 77769.5 \\
+          0.0005 &   152 & 2.487e+10 & 0.9974 $\pm$  2.4\e{-5} &  22222.6 & 77335.2 \\
+         0.00075 &   163 & 2.478e+10 & 0.9974 $\pm$  2.2\e{-5} &  26096.1 & 77428.2 \\
+           0.001 &   172 & 2.481e+10 & 0.9974 $\pm$  2.4\e{-5} &  20251.0 & 83281.9 \\
+          0.0025 &   209 & 2.496e+10 & 0.9974 $\pm$  2.2\e{-5} &  26145.8 & 77802.5 \\
+           0.005 &   246 & 2.519e+10 & 0.9974 $\pm$  2.0\e{-5} &  30368.7 & 78527.0 \\
+          0.0075 &   277 & 2.493e+10 & 0.9974 $\pm$  1.9\e{-5} &  32501.4 & 83692.5 \\
+            0.01 &   326 & 2.486e+10 & 0.9974 $\pm$  1.9\e{-5} &  36465.4 & 77694.0 \\
+            0.05 &   940 & 2.484e+10 & 0.9974 $\pm$  1.9\e{-5} &  35696.0 & 77564.5 \\
+             0.1 &  1348 & 2.511e+10 & 0.9974 $\pm$  2.2\e{-5} &  26515.8 & 78792.5 \\
+            0.25 &  1793 & 2.498e+10 & 0.9974 $\pm$  3.2\e{-5} &  12268.6 & 78116.6 \\
+             0.5 &  2022 & 2.484e+10 & 0.9975 $\pm$  4.9\e{-5} &   5406.4 & 77177.2 \\
+            0.75 &  2124 & 2.489e+10 & 0.9976 $\pm$  6.1\e{-5} &   3466.4 & 77363.6 \\
+               1 &  2190 & 2.503e+10 & 0.9978 $\pm$  8.2\e{-5} &   1817.0 & 82681.7 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Fundamental eigenvalue estimates with relaxation tracking 5E6 particles.}
+    \label{tab:Relaxed5E60}
+\end{table}
+
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+10 & 0.9897 $\pm$  3.5\e{-5} &   9805.6 & 81199.5 \\
+           1E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  3.1\e{-5} &  13352.1 & 78304.7 \\
+         2.5E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  2.9\e{-5} &  15343.7 & 78540.6 \\
+           5E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  3.0\e{-5} &  13708.2 & 78433.4 \\
+         7.5E-08 &   100 & 2.500e+10 & 0.9897 $\pm$  3.3\e{-5} &  11648.9 & 78848.5 \\
+           1E-07 &   100 & 2.500e+10 & 0.9897 $\pm$  3.2\e{-5} &  12170.2 & 78526.8 \\
+         2.5E-07 &   100 & 2.500e+10 & 0.9897 $\pm$  3.3\e{-5} &  12015.4 & 78066.4 \\
+           5E-07 &   100 & 2.500e+10 & 0.9897 $\pm$  3.3\e{-5} &  11598.0 & 77405.3 \\
+         7.5E-07 &   100 & 2.500e+10 & 0.9897 $\pm$  3.4\e{-5} &  10670.7 & 79346.7 \\
+         2.5E-06 &   100 & 2.500e+10 & 0.9897 $\pm$  3.6\e{-5} &  10124.9 & 78020.9 \\
+         7.5E-06 &   100 & 2.496e+10 & 0.9897 $\pm$  3.3\e{-5} &  11831.9 & 78677.4 \\
+           1E-05 &   100 & 2.495e+10 & 0.9897 $\pm$  3.2\e{-5} &  12677.8 & 78321.1 \\
+         2.5E-05 &   100 & 2.464e+10 & 0.9896 $\pm$  2.9\e{-5} &  15304.8 & 77446.8 \\
+           5E-05 &   100 & 2.390e+10 & 0.9897 $\pm$  3.0\e{-5} &  14510.2 & 75064.0 \\
+         7.5E-05 &   114 & 2.490e+10 & 0.9897 $\pm$  2.8\e{-5} &  16190.9 & 77773.5 \\
+          0.0001 &   118 & 2.498e+10 & 0.9897 $\pm$  3.1\e{-5} &  13036.2 & 77735.2 \\
+         0.00025 &   135 & 2.485e+10 & 0.9897 $\pm$  2.8\e{-5} &  16892.1 & 77769.5 \\
+          0.0005 &   152 & 2.487e+10 & 0.9897 $\pm$  2.6\e{-5} &  19591.2 & 77335.2 \\
+         0.00075 &   163 & 2.478e+10 & 0.9896 $\pm$  2.4\e{-5} &  22133.0 & 77428.2 \\
+           0.001 &   172 & 2.481e+10 & 0.9897 $\pm$  2.6\e{-5} &  17426.9 & 83281.9 \\
+          0.0025 &   209 & 2.496e+10 & 0.9897 $\pm$  2.3\e{-5} &  24879.5 & 77802.5 \\
+           0.005 &   246 & 2.519e+10 & 0.9897 $\pm$  1.9\e{-5} &  34125.2 & 78527.0 \\
+          0.0075 &   277 & 2.493e+10 & 0.9897 $\pm$  2.2\e{-5} &  25467.6 & 83692.5 \\
+            0.01 &   326 & 2.486e+10 & 0.9897 $\pm$  2.1\e{-5} &  29011.9 & 77694.0 \\
+            0.05 &   940 & 2.484e+10 & 0.9897 $\pm$  2.6\e{-5} &  19482.0 & 77564.5 \\
+             0.1 &  1348 & 2.511e+10 & 0.9896 $\pm$  3.0\e{-5} &  14078.9 & 78792.5 \\
+            0.25 &  1793 & 2.498e+10 & 0.9897 $\pm$  4.8\e{-5} &   5589.8 & 78116.6 \\
+             0.5 &  2022 & 2.484e+10 & 0.9897 $\pm$  7.5\e{-5} &   2333.8 & 77177.2 \\
+            0.75 &  2124 & 2.489e+10 & 0.9897 $\pm$  8.5\e{-5} &   1776.0 & 77363.6 \\
+               1 &  2190 & 2.503e+10 & 0.9896 $\pm$  9.1\e{-5} &   1464.7 & 82681.7 \\
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue estimates with relaxation tracking 5E6 particles.}
+    \label{tab:Relaxed5E61}
+\end{table}
+
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+10 & 0.9772 $\pm$  2.9\e{-5} &  14528.6 & 81199.5 \\
+           1E-08 &   100 & 2.500e+10 & 0.9772 $\pm$  2.8\e{-5} &  15915.5 & 78304.7 \\
+         2.5E-08 &   100 & 2.500e+10 & 0.9771 $\pm$  2.9\e{-5} &  14812.2 & 78540.6 \\
+           5E-08 &   100 & 2.500e+10 & 0.9771 $\pm$  3.3\e{-5} &  11756.7 & 78433.4 \\
+         7.5E-08 &   100 & 2.500e+10 & 0.9772 $\pm$  3.1\e{-5} &  13367.4 & 78848.5 \\
+           1E-07 &   100 & 2.500e+10 & 0.9772 $\pm$  2.6\e{-5} &  19080.7 & 78526.8 \\
+         2.5E-07 &   100 & 2.500e+10 & 0.9772 $\pm$  2.8\e{-5} &  16309.2 & 78066.4 \\
+           5E-07 &   100 & 2.500e+10 & 0.9772 $\pm$  3.2\e{-5} &  12518.9 & 77405.3 \\
+         7.5E-07 &   100 & 2.500e+10 & 0.9772 $\pm$  2.9\e{-5} &  15143.0 & 79346.7 \\
+         2.5E-06 &   100 & 2.500e+10 & 0.9771 $\pm$  3.0\e{-5} &  14608.4 & 78020.9 \\
+         7.5E-06 &   100 & 2.496e+10 & 0.9772 $\pm$  3.0\e{-5} &  14007.1 & 78677.4 \\
+           1E-05 &   100 & 2.495e+10 & 0.9772 $\pm$  2.7\e{-5} &  16977.8 & 78321.1 \\
+         2.5E-05 &   100 & 2.464e+10 & 0.9772 $\pm$  2.9\e{-5} &  14846.6 & 77446.8 \\
+           5E-05 &   100 & 2.390e+10 & 0.9772 $\pm$  2.5\e{-5} &  21554.5 & 75064.0 \\
+         7.5E-05 &   114 & 2.490e+10 & 0.9772 $\pm$  3.0\e{-5} &  13981.5 & 77773.5 \\
+          0.0001 &   118 & 2.498e+10 & 0.9772 $\pm$  2.6\e{-5} &  19106.1 & 77735.2 \\
+         0.00025 &   135 & 2.485e+10 & 0.9772 $\pm$  2.7\e{-5} &  17691.3 & 77769.5 \\
+          0.0005 &   152 & 2.487e+10 & 0.9772 $\pm$  2.4\e{-5} &  21919.0 & 77335.2 \\
+         0.00075 &   163 & 2.478e+10 & 0.9772 $\pm$  2.5\e{-5} &  21508.5 & 77428.2 \\
+           0.001 &   172 & 2.481e+10 & 0.9772 $\pm$  2.2\e{-5} &  25879.4 & 83281.9 \\
+          0.0025 &   209 & 2.496e+10 & 0.9772 $\pm$  1.9\e{-5} &  34091.5 & 77802.5 \\
+           0.005 &   246 & 2.519e+10 & 0.9772 $\pm$  2.0\e{-5} &  31219.7 & 78527.0 \\
+          0.0075 &   277 & 2.493e+10 & 0.9772 $\pm$  1.8\e{-5} &  36500.0 & 83692.5 \\
+            0.01 &   326 & 2.486e+10 & 0.9772 $\pm$  1.7\e{-5} &  43478.8 & 77694.0 \\
+            0.05 &   940 & 2.484e+10 & 0.9772 $\pm$  1.7\e{-5} &  45754.9 & 77564.5 \\
+             0.1 &  1348 & 2.511e+10 & 0.9772 $\pm$  2.2\e{-5} &  27421.1 & 78792.5 \\
+            0.25 &  1793 & 2.498e+10 & 0.9773 $\pm$  3.7\e{-5} &   9560.7 & 78116.6 \\
+             0.5 &  2022 & 2.484e+10 & 0.9772 $\pm$  5.5\e{-5} &   4217.4 & 77177.2 \\
+            0.75 &  2124 & 2.489e+10 & 0.9769 $\pm$  7.1\e{-5} &   2596.2 & 77363.6 \\
+               1 &  2190 & 2.503e+10 & 0.9768 $\pm$  9.0\e{-5} &   1495.3 & 82681.7 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue estimates with relaxation tracking 5E6 particles.}
+    \label{tab:Relaxed5E62}
+\end{table}
+\end{comment}
+
+These simulations have been repeated using 1E5 and 5E4 particles per iteration.  The data is not given here in tables, but it has been plotted.  In \Fref{fig:RelaxedArnoldiComboValues} I show the effect of relaxation on the eigenvalue estimates similar to \Fref{fig:RelaxedArnoldi} and \Fref{fig:RelaxedArnoldi5E6}, but have plotted for the different numbers of particles per iteration each with a different line dashing.  Plotting these together helps to identify the effect of running more or fewer particles per iteration.  We see that all cases can accurately estimate the eigenvalues for small values of $\eta$, but as $\eta$ becomes large the eigenvalue estimate will diverge.  The value of $\eta$ at the point where the eigenvalue estimate diverges ($\eta \approx 0.005$) depends upon the number of particles tracked in an iteration; the greater the number of particles tracked, the larger $\eta$ can be and still obtain a good estimate of the eigenvalue.  
+
+In \Fref{fig:RelaxedArnoldiComboFOM} the figures of merit for calculating the fundamental eigenvalue for the four cases of different particles tracked per iteration have been plotted.  We see what we have already seen previously, that at roughly the same value of $\eta$ where the eigenvalue estimate begins to diverge, the figure of merit becomes small.  The highest figure of merit occurs for values of $\eta$ just smaller than that for which the eigenvalue estimate diverges.  This is not too surprising; as $\eta$ increases, the number of particles tracked in an iteration decreases and the computational time decreases.  Eventually the increase in variance due to poor estimates of the eigenvalue become the dominate factor in the figure of merit.  
+
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/RelaxedComboValues}
+    \caption{Eigenvalue estimates for the fundamental and first two harmonics for varying values of the relaxation parameter $\eta$.  The different curves indicate the number of particles tracked in a non-relaxed iteration.}
+    \label{fig:RelaxedArnoldiComboValues}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/RelaxedComboFOM}
+    \caption{Figure of merit for varying values of the relaxation parameter $\eta$.  The different curves indicate the number of particles tracked in a non-relaxed iteration.}
+    \label{fig:RelaxedArnoldiComboFOM}
+\end{sidewaysfigure}
+
+\clearpage
+\subsection{Linear relaxation \label{sec:LinearRelaxation} }
+With \Fref{eq:NkFinalLessAggressive} it was mentioned that different relaxation strategies could be employed.  All the results shown so far have used a quadratic relaxation as given in \Fref{eq:NkFinal}.  To demonstrate the effect using a different relaxation strategy, I have performed simulations using a linear relaxation strategy for the same problems that have already been shown using the quadratic relaxation.  (See also \citet{Conlin:2009Relax-0}.)  In this section is shown the results of this strategy and a brief comparison between the two methods.  
+
+Any relaxation strategy begins to relax at the same time, whenever the residual is less than $\eta$.  A quadratic strategy will reduce the number of particles tracked in an iteration more aggressively than will a linear strategy.  \Fref{fig:MoreandLessValue} shows the eigenvalue estimates for both linear and quadratic relaxation strategies.  (The data for the linear strategy is given in \Fref{tab:Linear0}.)  The quadratic results are shown with the solid, colored lines while the linear results used the dashed lines.  We see that for the quadratic strategy for relaxation the eigenvalue estimates begin to diverge from the true eigenvalue for smaller values of $\eta$ as compared to the linear strategy.  
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/MoreandLessValue}
+    \caption{Eigenvalue estimates for the fundamental and first two harmonics for varying values of the relaxation parameter $\eta$.  The number of particles tracked in a non-relaxed iteration is 5E5.  The solid lines show a quadratic approach to relaxing and the dashed lines show a linear approach.  The black lines are the reference eigenvalues from \cite{Garis:1991One-s-0} and \cite{Dahl:1979Eigen-0}.}
+    \label{fig:MoreandLessValue}
+\end{sidewaysfigure}
+
+\Fref{fig:MoreandLessFOM} shows the figure of merit for both strategies.  The dashed lines show the figure of merit for an Arnoldi calculation with no relaxation.  Both strategies demonstrate similar behavior in that a small amount of relaxation is actually worse than no relaxation at all.  The range of values of $\eta$ for which relaxation may benefit the calculation is larger for the linear strategy.  
+
+
+\begin{sidewaysfigure}\centering
+    \input{RelaxedArnoldi/Data/MoreandLessFOM}
+    \caption{Fundamental eigenvalue estimate and figure of merit for varying values of the relaxation parameter $\eta$.  The red lines show a quadratic approach to relaxing and the blue lines show a linear approach.  The dashed lines is the value of the figure of merit when there is no relaxation.  The number of particles tracked in a non-relaxed iteration is 5E5.}
+    \label{fig:MoreandLessFOM}
+\end{sidewaysfigure}
+
+% Less aggressive
+\begin{table}\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+09 & 0.9975 $\pm$  1.0\e{-4} &  11799.5 & 7806.2 \\
+           1E-08 &   100 & 2.500e+09 & 0.9974 $\pm$  1.0\e{-4} &  11845.8 & 7795.1 \\
+         2.5E-08 &   100 & 2.500e+09 & 0.9973 $\pm$  1.1\e{-4} &  10801.6 & 7812.4 \\
+           5E-08 &   100 & 2.500e+09 & 0.9974 $\pm$  1.2\e{-4} &   9595.2 & 7817.4 \\
+         7.5E-08 &   100 & 2.500e+09 & 0.9974 $\pm$  9.8\e{-5} &  13357.0 & 7790.3 \\
+           1E-07 &   100 & 2.500e+09 & 0.9974 $\pm$  1.1\e{-4} &  10614.9 & 7796.8 \\
+         2.5E-07 &   100 & 2.500e+09 & 0.9975 $\pm$  1.1\e{-4} &  10629.2 & 7793.8 \\
+           5E-07 &   100 & 2.500e+09 & 0.9973 $\pm$  1.1\e{-4} &  10606.7 & 7818.0 \\
+         7.5E-07 &   100 & 2.500e+09 & 0.9973 $\pm$  1.0\e{-4} &  12324.6 & 7917.3 \\
+         2.5E-06 &   100 & 2.500e+09 & 0.9974 $\pm$  1.2\e{-4} &   9345.4 & 7809.8 \\
+         7.5E-06 &   100 & 2.500e+09 & 0.9974 $\pm$  1.2\e{-4} &   8686.7 & 7801.4 \\
+           1E-05 &   100 & 2.500e+09 & 0.9973 $\pm$  1.3\e{-4} &   8029.7 & 7803.3 \\
+         2.5E-05 &   100 & 2.497e+09 & 0.9974 $\pm$  9.8\e{-5} &  13247.9 & 7800.2 \\
+           5E-05 &   100 & 2.484e+09 & 0.9972 $\pm$  1.2\e{-4} &   9080.7 & 7764.0 \\
+         7.5E-05 &   100 & 2.471e+09 & 0.9972 $\pm$  1.1\e{-4} &  10451.4 & 7706.1 \\
+          0.0001 &   100 & 2.437e+09 & 0.9975 $\pm$  1.2\e{-4} &   9302.1 & 7596.6 \\
+         0.00025 &   114 & 2.493e+09 & 0.9976 $\pm$  9.2\e{-5} &  15038.1 & 7785.9 \\
+          0.0005 &   124 & 2.481e+09 & 0.9974 $\pm$  9.3\e{-5} &  14997.3 & 7766.4 \\
+         0.00075 &   133 & 2.505e+09 & 0.9974 $\pm$  9.0\e{-5} &  15698.0 & 7889.1 \\
+           0.001 &   140 & 2.491e+09 & 0.9973 $\pm$  9.1\e{-5} &  15544.8 & 7781.8 \\
+          0.0025 &   166 & 2.492e+09 & 0.9974 $\pm$  8.0\e{-5} &  20047.8 & 7783.3 \\
+           0.005 &   194 & 2.472e+09 & 0.9974 $\pm$  8.0\e{-5} &  20003.4 & 7728.1 \\
+          0.0075 &   224 & 2.475e+09 & 0.9974 $\pm$  7.5\e{-5} &  22830.9 & 7746.0 \\
+            0.01 &   262 & 2.501e+09 & 0.9975 $\pm$  7.6\e{-5} &  22131.4 & 7840.6 \\
+            0.05 &   817 & 2.520e+09 & 0.9975 $\pm$  9.3\e{-5} &  14582.1 & 7871.5 \\
+             0.1 &  1173 & 2.483e+09 & 0.9979 $\pm$  1.1\e{-4} &  10302.1 & 7832.0 \\
+            0.25 &  1649 & 2.503e+09 & 0.9992 $\pm$  1.6\e{-4} &   5219.9 & 7918.0 \\
+             0.5 &  1917 & 2.506e+09 & 1.0004 $\pm$  1.7\e{-4} &   4533.4 & 7921.6 \\
+            0.75 &  2037 & 2.515e+09 & 1.0016 $\pm$  2.0\e{-4} &   3143.8 & 7944.6 \\
+               1 &  2090 & 2.496e+09 & 1.0028 $\pm$  2.2\e{-4} &   2609.6 & 7953.4 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Eigenvalue estimates for fundamental eigenvalue, figure of merit, and time for a relaxed Arnoldi simulation of a 20mfp thick slab.  The relaxation for this simulation is linear.  Also shown is the number of  active restarts and the total number of particles tracked in the simulation.  5E5 particles were tracked in each non-relaxed iteration.}
+    \label{tab:Linear0}
+\end{table}
+
+% Harmonics
+\begin{comment}
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+09 & 0.9897 $\pm$  1.1\e{-4} &  11271.5 & 7806.2 \\
+           1E-08 &   100 & 2.500e+09 & 0.9899 $\pm$  9.8\e{-5} &  13455.9 & 7795.1 \\
+         2.5E-08 &   100 & 2.500e+09 & 0.9899 $\pm$  1.1\e{-4} &   9879.8 & 7812.4 \\
+           5E-08 &   100 & 2.500e+09 & 0.9897 $\pm$  1.1\e{-4} &  10855.8 & 7817.4 \\
+         7.5E-08 &   100 & 2.500e+09 & 0.9898 $\pm$  9.7\e{-5} &  13556.7 & 7790.3 \\
+           1E-07 &   100 & 2.500e+09 & 0.9897 $\pm$  1.0\e{-4} &  12269.7 & 7796.8 \\
+         2.5E-07 &   100 & 2.500e+09 & 0.9897 $\pm$  1.1\e{-4} &  10059.1 & 7793.8 \\
+           5E-07 &   100 & 2.500e+09 & 0.9897 $\pm$  9.6\e{-5} &  13919.7 & 7818.0 \\
+         7.5E-07 &   100 & 2.500e+09 & 0.9898 $\pm$  1.1\e{-4} &  10784.9 & 7917.3 \\
+         2.5E-06 &   100 & 2.500e+09 & 0.9896 $\pm$  1.1\e{-4} &  11422.1 & 7809.8 \\
+         7.5E-06 &   100 & 2.500e+09 & 0.9897 $\pm$  1.0\e{-4} &  12867.6 & 7801.4 \\
+           1E-05 &   100 & 2.500e+09 & 0.9899 $\pm$  1.0\e{-4} &  12645.4 & 7803.3 \\
+         2.5E-05 &   100 & 2.497e+09 & 0.9899 $\pm$  9.4\e{-5} &  14554.0 & 7800.2 \\
+           5E-05 &   100 & 2.484e+09 & 0.9899 $\pm$  1.1\e{-4} &  11227.4 & 7764.0 \\
+         7.5E-05 &   100 & 2.471e+09 & 0.9898 $\pm$  9.8\e{-5} &  13498.3 & 7706.1 \\
+          0.0001 &   100 & 2.437e+09 & 0.9896 $\pm$  1.1\e{-4} &  10791.6 & 7596.6 \\
+         0.00025 &   114 & 2.493e+09 & 0.9896 $\pm$  1.0\e{-4} &  12260.7 & 7785.9 \\
+          0.0005 &   124 & 2.481e+09 & 0.9898 $\pm$  9.2\e{-5} &  15349.2 & 7766.4 \\
+         0.00075 &   133 & 2.505e+09 & 0.9895 $\pm$  9.1\e{-5} &  15449.2 & 7889.1 \\
+           0.001 &   140 & 2.491e+09 & 0.9896 $\pm$  9.3\e{-5} &  15006.1 & 7781.8 \\
+          0.0025 &   166 & 2.492e+09 & 0.9895 $\pm$  1.1\e{-4} &  10929.5 & 7783.3 \\
+           0.005 &   194 & 2.472e+09 & 0.9897 $\pm$  8.4\e{-5} &  18344.5 & 7728.1 \\
+          0.0075 &   224 & 2.475e+09 & 0.9897 $\pm$  8.8\e{-5} &  16614.6 & 7746.0 \\
+            0.01 &   262 & 2.501e+09 & 0.9896 $\pm$  8.2\e{-5} &  18759.5 & 7840.6 \\
+            0.05 &   817 & 2.520e+09 & 0.9896 $\pm$  1.2\e{-4} &   8864.6 & 7871.5 \\
+             0.1 &  1173 & 2.483e+09 & 0.9894 $\pm$  1.3\e{-4} &   7807.2 & 7832.0 \\
+            0.25 &  1649 & 2.503e+09 & 0.9900 $\pm$  1.2\e{-4} &   9157.9 & 7918.0 \\
+             0.5 &  1917 & 2.506e+09 & 0.9905 $\pm$  1.1\e{-4} &   9889.5 & 7921.6 \\
+            0.75 &  2037 & 2.515e+09 & 0.9910 $\pm$  1.2\e{-4} &   9284.7 & 7944.6 \\
+               1 &  2090 & 2.496e+09 & 0.9916 $\pm$  1.1\e{-4} &  10935.1 & 7953.4 \\
+        \bottomrule
+    \end{tabular}
+    \caption{First higher order eigenvalue estimates with relaxation.}
+    \label{tab:Linear1}
+\end{table}
+
+\begin{table}[ht]\centering
+    \begin{tabular}{ccccrr}
+        \toprule
+        \multirow{2}{*}{$\eta$} & Active & Total \# & \multirow{2}{*}{$\lambda$} & \multicolumn{1}{c}{\multirow{2}{*}{FOM}} & \multicolumn{1}{c}{Time} \\
+        & Restarts & Particles & & & \multicolumn{1}{c}{(s)} \\
+        \midrule
+               0 &   100 & 2.500e+09 & 0.9770 $\pm$  1.0\e{-4} &  12926.0 & 7806.2 \\
+           1E-08 &   100 & 2.500e+09 & 0.9771 $\pm$  9.1\e{-5} &  15488.9 & 7795.1 \\
+         2.5E-08 &   100 & 2.500e+09 & 0.9770 $\pm$  1.1\e{-4} &  11117.8 & 7812.4 \\
+           5E-08 &   100 & 2.500e+09 & 0.9772 $\pm$  1.1\e{-4} &  11558.2 & 7817.4 \\
+         7.5E-08 &   100 & 2.500e+09 & 0.9773 $\pm$  1.1\e{-4} &  10344.3 & 7790.3 \\
+           1E-07 &   100 & 2.500e+09 & 0.9771 $\pm$  9.9\e{-5} &  13189.6 & 7796.8 \\
+         2.5E-07 &   100 & 2.500e+09 & 0.9772 $\pm$  1.1\e{-4} &  10406.1 & 7793.8 \\
+           5E-07 &   100 & 2.500e+09 & 0.9771 $\pm$  1.1\e{-4} &   9930.0 & 7818.0 \\
+         7.5E-07 &   100 & 2.500e+09 & 0.9772 $\pm$  1.2\e{-4} &   9142.7 & 7917.3 \\
+         2.5E-06 &   100 & 2.500e+09 & 0.9772 $\pm$  1.1\e{-4} &  11393.0 & 7809.8 \\
+         7.5E-06 &   100 & 2.500e+09 & 0.9772 $\pm$  1.0\e{-4} &  11976.8 & 7801.4 \\
+           1E-05 &   100 & 2.500e+09 & 0.9772 $\pm$  1.0\e{-4} &  11704.1 & 7803.3 \\
+         2.5E-05 &   100 & 2.497e+09 & 0.9771 $\pm$  1.0\e{-4} &  12906.4 & 7800.2 \\
+           5E-05 &   100 & 2.484e+09 & 0.9772 $\pm$  9.9\e{-5} &  13101.2 & 7764.0 \\
+         7.5E-05 &   100 & 2.471e+09 & 0.9771 $\pm$  1.1\e{-4} &  10422.3 & 7706.1 \\
+          0.0001 &   100 & 2.437e+09 & 0.9770 $\pm$  1.1\e{-4} &  11902.0 & 7596.6 \\
+         0.00025 &   114 & 2.493e+09 & 0.9772 $\pm$  1.0\e{-4} &  11887.8 & 7785.9 \\
+          0.0005 &   124 & 2.481e+09 & 0.9771 $\pm$  9.8\e{-5} &  13476.7 & 7766.4 \\
+         0.00075 &   133 & 2.505e+09 & 0.9773 $\pm$  8.0\e{-5} &  19901.5 & 7889.1 \\
+           0.001 &   140 & 2.491e+09 & 0.9772 $\pm$  8.3\e{-5} &  18802.3 & 7781.8 \\
+          0.0025 &   166 & 2.492e+09 & 0.9772 $\pm$  7.9\e{-5} &  20801.4 & 7783.3 \\
+           0.005 &   194 & 2.472e+09 & 0.9771 $\pm$  7.1\e{-5} &  25648.4 & 7728.1 \\
+          0.0075 &   224 & 2.475e+09 & 0.9772 $\pm$  7.5\e{-5} &  23183.8 & 7746.0 \\
+            0.01 &   262 & 2.501e+09 & 0.9772 $\pm$  6.8\e{-5} &  27836.6 & 7840.6 \\
+            0.05 &   817 & 2.520e+09 & 0.9771 $\pm$  1.0\e{-4} &  11794.3 & 7871.5 \\
+             0.1 &  1173 & 2.483e+09 & 0.9768 $\pm$  1.3\e{-4} &   7982.5 & 7832.0 \\
+            0.25 &  1649 & 2.503e+09 & 0.9766 $\pm$  1.5\e{-4} &   6002.6 & 7918.0 \\
+             0.5 &  1917 & 2.506e+09 & 0.9766 $\pm$  1.5\e{-4} &   5904.3 & 7921.6 \\
+            0.75 &  2037 & 2.515e+09 & 0.9766 $\pm$  1.5\e{-4} &   5354.7 & 7944.6 \\
+               1 &  2090 & 2.496e+09 & 0.9767 $\pm$  1.5\e{-4} &   5320.2 & 7953.4 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Second higher order eigenvalue estimates with relaxation.}
+    \label{tab:Linear2}
+\end{table}
+\end{comment}
+
+\section{Summary}
+Relaxing the precision to which a linear operator is applied to a vector is an interesting topic.  Bouras and Frayss\`{e} have shown---as well as many others citing their work---that relaxing Arnoldi's method can reduce the computational expense of Arnoldi's method while maintaining the convergence properties.  
+
+We have also seen that relaxation can reduce computational expense for Monte Carlo Arnoldi's method.  This allows us to perform more restarts and calculate more eigenvalue estimates for a relaxed Arnoldi's method in the same amount of time required for a non-relaxed Arnoldi's method.  The problem however is that it can be difficult to determine the optimal value for the relaxation parameter $\eta$.  For the problems shown here, the range of values that gives better results than a non-relaxed Arnoldi calculation is small.  If a poor value of $\eta$ is chosen, it can cause the calculation to be slow or even wrong.
+
+We have seen that for a variety of particles tracked in an iteration, the eigenvalue estimate still diverges and the figure of merit plummets when $\eta$ becomes too large, but with more particles tracked $\eta$ can be larger than with fewer particles tracked without any problems in calculating the eigenvalue estimate.  The figure of merit can be larger when tracking more particles.  Even so the range of good values of $\eta$ is relatively small.  

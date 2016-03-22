@@ -1,0 +1,115 @@
+############################ Makefile ##############################
+## Makefile for the MeshTest test program for the DDMC Project
+####################################################################
+
+#-------------------- Configuration Flags ------------------------#
+SHELL = /bin/sh
+
+## Root directory of code
+srcdir = ../
+
+## Root directory of documentation files
+docdir = ./doc
+
+## Name of this makefile
+MAKEFILE = Makefile
+
+## Name of target executable
+TARGET = FieldTest
+
+## Type of target to create (release or debug=default)
+TYPE   = release
+
+## Version of GCC
+GCCVERSION = 4.0
+
+
+#-------------------- Code and Object Files ----------------------#
+CFILES = \
+	$(srcdir)$/OneDMesh/OneDCartMesh.cc \
+	$(srcdir)$/OneDMesh/OneDNode.cc \
+	$(srcdir)$/OneDMesh/OneDZone.cc \
+	./FieldTest.cc 
+	#$(srcdir)$/OneDMesh/ZoneIterator.cc \
+	
+
+OFILES := ${subst .cc,.o,${CFILES}}
+
+#----------------------- Compilation Flags -----------------------#
+C++	= g++-$(GCCVERSION)
+
+# Full-on debugging
+C++FLAGS_DEBUG = -ggdb3 -Wall -W -Wfloat-equal -fnon-call-exceptions -fcheck-new 
+# Release
+C++FLAGS_RELEASE = -O3
+#C++FLAGS_RELEASE = -O1 -H -DBZ_DISABLE_XOPEN_SOURCE 
+
+
+
+# Set the C++ flags depending target type
+ifeq ($(TYPE), release)
+  C++FLAGS = $(C++FLAGS_RELEASE)
+else   # default is debug  
+  C++FLAGS= $(C++FLAGS_DEBUG)
+endif
+
+# List of include directories
+INCLUDES = -I$(srcdir)$/OneDMesh/ -I$(srcdir)$/Misc/ -I$(srcdir)$/Exception \
+	   -I$(srcdir)$. -I$(srcdir)/Field -I$(srcdir)/OneDMesh/Iterators
+
+# List of libraries
+LIBS = $(C++FLAGS) -L. -lm
+
+# List of include directories for makedepend
+MDINCLUDES = -I/usr/include/gcc/darwin/ 
+#	-I/usr/include/gcc/darwin/$(GCCVERSION)/c++ \
+#        -I/usr/include/gcc/darwin/4.0/c++/powerpc-apple-darwin8/ \
+#	-I/usr/include/gcc/darwin/$(GCCVERSION)/\
+#	-I/usr/lib/gcc/powerpc-apple-darwin8/4.0.0/include
+#
+#	-I/usr/include/gcc/darwin/3.3/c++/ppc-darwin/ \
+#	-I/usr/include/gcc/darwin/3.3/
+
+
+#------------------------- Rules -------------------------#
+$(TARGET) : $(OFILES) $(MAKEFILE)
+	$(C++) $(C++FLAGS) -o $@ $(OFILES) $(LIBS) $(INCLUDES) 
+	@echo
+
+# Rule to make *.o from *.cc
+%.o : %.cc
+	@echo Compiling $<  
+	${C++} ${C++FLAGS} ${INCLUDES} -c $< -o $@
+	@echo
+
+# Delete all object files, core files, exec files, etc...
+clean:
+	rm -rf *~ core *.o $(OFILES) $(TARGET)
+
+depend:
+	makedepend $(INCLUDES) $(MDINCLUDES) $(CFILES) 
+	
+# DO NOT DELETE THIS LINE -- make depend depends on it.
+
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/OneDCartMesh.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/OneDZone.hh ../OneDMesh/OneDNode.hh
+../OneDMesh/OneDCartMesh.o: ../Exception/MeshExcept.hh
+../OneDMesh/OneDCartMesh.o: ../Exception/ExceptionBase.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/MeshTraits.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/Iterators/GeomIterator.hh
+../OneDMesh/OneDCartMesh.o: ../Exception/IteratorExcept.hh
+../OneDMesh/OneDCartMesh.o: ../OneDMesh/Iterators/SweepIter.hh
+../OneDMesh/OneDCartMesh.o: ../Misc/ReverseIterator.hh ../Misc/Assert.hh
+../OneDMesh/OneDNode.o: ../OneDMesh/OneDNode.hh ../OneDMesh/OneDZone.hh
+../OneDMesh/OneDNode.o: ../Exception/MeshExcept.hh
+../OneDMesh/OneDNode.o: ../Exception/ExceptionBase.hh ../Misc/Assert.hh
+../OneDMesh/OneDZone.o: ../OneDMesh/OneDZone.hh ../OneDMesh/OneDNode.hh
+../OneDMesh/OneDZone.o: ../Exception/MeshExcept.hh
+../OneDMesh/OneDZone.o: ../Exception/ExceptionBase.hh ../Misc/Assert.hh
+./FieldTest.o: ../OneDMesh/OneDCartMesh.hh ../OneDMesh/OneDZone.hh
+./FieldTest.o: ../OneDMesh/OneDNode.hh ../Exception/MeshExcept.hh
+./FieldTest.o: ../Exception/ExceptionBase.hh ../OneDMesh/MeshTraits.hh
+./FieldTest.o: ../OneDMesh/Iterators/GeomIterator.hh
+./FieldTest.o: ../Exception/IteratorExcept.hh
+./FieldTest.o: ../OneDMesh/Iterators/SweepIter.hh ../Misc/ReverseIterator.hh
+./FieldTest.o: ../Field/Field.hh ../Misc/Assert.hh ../Misc/Iterator.hh

@@ -1,0 +1,4 @@
+export SRCDIR=/Users/wollaber/Thesis/trunk
+swig -c++ -python -I$SRCDIR/Misc -I$SRCDIR/Geometry/OneDMesh/Iterators OneDCartMesh.i
+g++ -c -Wall OneDCartMesh_wrap.cxx -I/Library/Frameworks/Python.framework/Versions/2.4/include/python2.4 -I$SRCDIR/Geometry/OneDMesh/Iterators -I$SRCDIR/Geometry/OneDMesh  -I$SRCDIR/Geometry/Exception -I$SRCDIR/Geometry/Misc
+g++ -bundle -undefined suppress -flat_namespace *.o  -o _Mesh.so

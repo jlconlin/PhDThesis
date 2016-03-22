@@ -1,0 +1,45 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = BigKrylov.Relaxed20.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 0
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = false
+	arnoldimethod = implicit
+	tol = 2.22045e-16
+	verbose = 1
+	seed = 0
+	width = 20
+	bins = 75
+	acycles = 200
+	incycles = 20
+	active = 1
+	inactive = 0
+	Iterations = 20
+	numValues = 2
+	relaxed = 0.1
+	tracks = 5000000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 3834902499
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+
+==============================
+---Running Implicit Arnoldi---
+==============================
+
+Restart #: 0, mean = ( 0.98582,         0), std.dev. = (      0,        0), res =  1.13E-06, time:  70.33 sec, FOM:        0
+
+
+Warning: empty x range [1.55416e+07:1.55416e+07], adjusting to [1.53862e+07:1.5697e+07]
+Warning: empty y range [0.985824:0.985824], adjusting to [0.975966:0.995682]
+Warning: empty x range [1.55416e+07:1.55416e+07], adjusting to [1.53862e+07:1.5697e+07]

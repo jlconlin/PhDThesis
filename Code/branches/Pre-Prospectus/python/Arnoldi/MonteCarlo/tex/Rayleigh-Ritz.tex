@@ -1,0 +1,134 @@
+%$Id: Rayleigh-Ritz.tex 68 2007-05-09 19:01:47Z jlconlin $
+%$Author: jlconlin $
+%$Date: 2007-05-09 13:01:47 -0600 (Wed, 09 May 2007) $
+%$Revision: 68 $
+
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{theorem}
+\usepackage[longnamesfirst]{natbib}
+\usepackage{paralist}
+
+\newtheorem{thm}{Theorem}[section]
+
+\author{Jeremy Conlin}
+\title{How Arnoldi's Method Estimates Eigenvalues of $A$}
+
+\begin{document}
+\maketitle
+\abstract{In an effort to better understand the Mathematics behind Arnoldi's method, I am creating this document to write down some of the things I have discovered.  }
+
+\section{Exercises}
+Here I show the results of some exercises taken from \cite{Watkins2002:Funda}.  These exercises show how one can estimate eigenvalues with Ritz pairs.
+\begin{description}
+    \item[Exercise 6.1.4]\emph{Let $S$ be an invariant subspace of $A$ with basis $x_1, \ldots , x_k$, and let $\hat{X} = [x_1 \ldots]$.  By Theorem 6.1.3 there exists $\hat{B} \in \mathbb{F}^{k \times k}$ such that $A\hat{X} = \hat{X}\hat{B}$.}
+
+    \begin{thm}[6.1.3 from \cite{Watkins2002:Funda}]
+    Let $S$ be a subspace of $\mathbb{F}^n$ with a basis $x_1, \ldots , x_k$.  Thus $S = \mathrm{span}\{x_1, \ldots , x_k\}$.  Let $\hat{X} = [x_1 \ldots x_k] \in \mathbb{F}^{n\times k}$. Then $S$ is invariante under $A \in \mathbb{F}^{k \times k}$ such that 
+    \begin{equation}
+        A\hat{X} = \hat{X}\hat{B}.
+    \end{equation}
+    \end{thm}
+
+    \begin{itemize}[\textbf{Part }\bfseries a)]
+    \item \emph{Show that if $\hat{v} \in \mathbb{F}^k$ is an eigenvector of $B$ with eigenvalue $\lambda$, then $v = \hat{X}\hat{v}$ is an eigenvector of $A$ with eigenvalue $\lambda$.  In particular, every eigenvalue of $\hat{B}$ is an eigenvalue of $A$.  What role does the linear independence of $x_1, \ldots , x_k$ play?}
+
+    \begin{equation}
+        \hat{B}\hat{v} = \lambda\hat{v}
+    \end{equation}
+    \begin{subequations}\begin{align}
+        A\hat{X} &= \hat{X}\hat{B} \\
+        A\hat{X}\hat{v} &= \hat{X}\hat{B}\hat{v} \\
+        A\hat{x}\hat{v} &= \lambda \hat{x}\hat{v} \\[4mm]
+        Av &= \lambda v.
+    \end{align}\end{subequations}
+
+    \item \emph{Show that $V \in S$.  Thus $v$ is an eigenvector of $A|_S$.}
+
+    The columns of$\hat{x}$ span the space $S$,
+    \begin{equation}
+        S = \mathrm{span}\{x_1, \ldots , x_k\}
+    \end{equation}
+    so we can write any vector $v \in S$ as a linear combination of the basis vectors of $S$.
+    \begin{equation}
+        \hat{X}\hat{v} = v = x_1\hat{v_1}+\ldots+x_k\hat{v_k}.
+    \end{equation}
+
+    \end{itemize}
+
+    \item[Exercise 6.3.35] \emph{Let $A \in \mathbb{C}^{n\times n}$, and let $S$ be a $k$-dimensional subspace of $\mathbb{C}^n$.  Then a vector $v \in S$ is called a {\em Ritz vector} of $A$ from $S$ if and only if there is a $\mu \in \mathbb{C}$ such that the {\em Rayleigh-Ritz-Galerkin} condition}
+    \begin{equation}
+        Av - \mu v \perp S
+    \end{equation}
+    \emph{holds, that is, $\langle Av - \mu v,s\rangle = 0$ for all $s \in S$.  The scalar $\mu$ is called the {\em Ritz value} of $A$ associated with $v$. Let $q_1, \ldots , q_k$ be an orthonormal basis of $S$, let $Q = [q_1 \ldots q_k]$, and let $B = Q^*AQ \in \mathbb{C}^{k\times k}$.}
+
+    \begin{itemize}[\textbf{Part }\bfseries a)]
+    \item \emph{Since $v \in S$, there is a uniqute $x \in \mathbb{C}^k$ such that $v = Qx$.  Show that $v$ is a Ritz vector of $A$ with associated Ritz value $\mu$ if and only if $x$ is an eigenvector of $B$ with associated eigenvalue $\mu$.  In particular, there are $k$ Ritz values of $A$ associated with $S$, namely the $k$ eigenvalues of $B$.}
+
+    The vector $v$ is a linear combination of the columns of $Q$ (basis vectors of $S$);
+    \begin{equation}
+        v = Qx = x_1q_1+ \ldots +x_kq_k.
+    \end{equation}
+    Assume $(\mu,x)$ is an eigenpair of $B$,
+    \begin{equation}
+        Bx = \mu x
+    \end{equation}
+    \begin{subequations}\begin{align}
+        Q^*AQ &= B \\
+        A^*AQx &= Bx = \mu x \\
+        AQx &= \mu x = \mu Qx \\
+        Av &= \mu v.
+    \end{align}\end{subequations}
+
+    Now we go the other direction and begin by assuming $(v,\mu)$ is an eigenpair of $A$.
+    \begin{equation}
+        Av = \mu v
+    \end{equation}
+    \begin{subequations}\begin{align}
+        AQx &= \mu Qx \\
+        Q^*AQx &= \mu x \\
+        Q^*AQx &= Bx \\
+        \mu x = Q^*&AQ = Bx \\[4mm]
+        Bx &= \mu x
+    \end{align}\end{subequations}
+
+    \item \emph{Show that if $v$ is a Ritz vector with Ritz value $\mu$, then$\mu = v^*Av/v^*v$.  That is, $\mu$ is the Rayleigh quotient of $v$.}
+
+    \begin{subequations}\begin{align}
+        Av &= \mu v \\
+        v^*Av &= \mu v^*v \\[4mm]
+        \mu &= \frac{v^*Av}{v^*v}
+    \end{align}\end{subequations}
+    \end{itemize}
+
+    \item[Exercise 6.3.36] \emph{Let $(\mu, v)$ be an approzimate eigenpair of $A$ with $\|v\|_2 = 1$, and let $r = Av - \mu v$ (the residual).  Let $\epsilon = \|r\|_2$ and $E = -rv^*$.  Show that $(\mu, v)$ is an eigenpait of $A + E$, and $\|E\|_2 = \epsilon$.  This shows that if the residual norm $\|r\|_2$ is small, then $(\mu,v)$ is an exact eigenpair of a matrix that is close to $A$.  Thus $(\mu, v)$ is a good approximate eigenpair of $A$ in the sense of backward error.}
+
+    \begin{equation}
+        A + E = A - rv^*
+    \end{equation}
+    \begin{subequations}\begin{align}
+        (A + E)v &= \mu v \\
+        Av + Ev &= \mu v \\
+        Av - \mu v &= -Ev \\
+        r &= -Ev \\[4mm]
+        E &= -rv^*
+    \end{align}\end{subequations}
+
+    \begin{equation}
+        \|E\|_2 = \|rv^*\|_2 = \|r\|_2\|v^*\|_2 = \epsilon (1).
+    \end{equation}
+
+\end{description}
+\bibliographystyle{plainnat}
+\begin{thebibliography}{10}
+\bibitem{Watkins2002:Funda}
+D.~S. Watkins.
+\newblock {\em Fundamentals of Matrix Computations}.
+\newblock Wiley-Interscience, New York, second edition, 2002.
+\end{thebibliography}
+
+
+\end{document}

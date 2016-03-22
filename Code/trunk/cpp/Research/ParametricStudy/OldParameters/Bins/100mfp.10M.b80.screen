@@ -1,0 +1,66 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = Bins/100mfp.10M.b80.dat
+	run = true
+	power = false
+	Arnoldi = true
+	storevectors = 0
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = true
+	arnoldimethod = explicit
+	tol = 2.22045e-16
+	verbose = 1
+	seed = 3676908131
+	width = 100
+	bins = 80
+	acycles = 200
+	incycles = 20
+	active = 25
+	inactive = 5
+	Iterations = 30
+	numValues = 2
+	relaxed = 0
+	tracks = 10000000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 3676908131
+
+==============================
+---Running Explicit Arnoldi---
+==============================
+
+Restart #: -5, mean eigvalue = (   0.99992, 4.996E-16), std.dev. eigvalue = (        0,        0), res = ( 0.000798,        0), time:   2230 sec.
+Restart #: -4, mean eigvalue = (   0.99853, -0.001722), std.dev. eigvalue = (        0,        0), res = (  0.00229,        0), time:   4452 sec.
+Restart #: -3, mean eigvalue = (     1.038, -0.098155), std.dev. eigvalue = (        0,        0), res = (    0.136,        0), time:   6679 sec.
+Restart #: -2, mean eigvalue = (   0.99934,         0), std.dev. eigvalue = (        0,        0), res = ( 8.88E-05,        0), time:   8909 sec.
+Restart #: -1, mean eigvalue = (         1, 0.0026279), std.dev. eigvalue = (        0,        0), res = (  0.00384,        0), time: 1.114E+04 sec.
+Restart #: 0, mean eigvalue = (   0.99848,-0.00069911), std.dev. eigvalue = (        0,        0), res = (  0.00158,        0), time: 1.339E+04 sec.
+Restart #: 1, mean eigvalue = (    1.0197,-0.00034956), std.dev. eigvalue = (    0.015, 0.000247), res = (   0.0535,        0), time: 1.564E+04 sec.
+Restart #: 2, mean eigvalue = (    1.0128,-0.00023304), std.dev. eigvalue = (   0.0114, 9.74E-05), res = ( 0.000247,        0), time: 1.788E+04 sec.
+Restart #: 3, mean eigvalue = (    1.0096,-0.00017478), std.dev. eigvalue = (  0.00901, 5.42E-05), res = ( 0.000829,        0), time: 2.012E+04 sec.
+Restart #: 4, mean eigvalue = (    1.0078,0.00051204), std.dev. eigvalue = (  0.00738,-9.77E-05), res = (  0.00421,        0), time: 2.237E+04 sec.
+Restart #: 5, mean eigvalue = (    1.0144,  0.015905), std.dev. eigvalue = (  0.00656,   0.0129), res = (    0.133,        0), time: 2.462E+04 sec.
+Restart #: 6, mean eigvalue = (    1.0122,  0.013633), std.dev. eigvalue = (  0.00592,   0.0112), res = (  0.00016,        0), time: 2.684E+04 sec.
+Restart #: 7, mean eigvalue = (    1.0108,  0.011929), std.dev. eigvalue = (  0.00533,  0.00993), res = (  0.00219,        0), time: 2.906E+04 sec.
+Restart #: 8, mean eigvalue = (    1.0207,  0.010603), std.dev. eigvalue = (  0.00699,  0.00431), res = (    0.134,        0), time: 3.13E+04 sec.
+Restart #: 9, mean eigvalue = (    1.0185,  0.009543), std.dev. eigvalue = (  0.00662,    0.004), res = ( 0.000255,        0), time: 3.353E+04 sec.
+Restart #: 10, mean eigvalue = (     1.021,-0.00062862), std.dev. eigvalue = ( 5.96E-05, -0.00811), res = (    0.146,        0), time: 3.576E+04 sec.
+Restart #: 11, mean eigvalue = (    1.0191,-0.00057623), std.dev. eigvalue = ( 6.86E-05, -0.00722), res = ( 0.000674,        0), time: 3.796E+04 sec.
+Restart #: 12, mean eigvalue = (    1.0176,-0.00069284), std.dev. eigvalue = ( 3.96E-05,  -0.0065), res = (  0.00267,        0), time: 4.018E+04 sec.
+Restart #: 13, mean eigvalue = (    1.0244,  0.017286), std.dev. eigvalue = (  0.00624,   0.0182), res = (    0.374,        0), time: 4.242E+04 sec.
+Restart #: 14, mean eigvalue = (    1.0227,  0.016134), std.dev. eigvalue = (  0.00594,    0.017), res = ( 0.000175,        0), time: 4.465E+04 sec.
+Restart #: 15, mean eigvalue = (    1.0212,  0.015125), std.dev. eigvalue = (  0.00565,   0.0159), res = ( 0.000327,        0), time: 4.691E+04 sec.
+Restart #: 16, mean eigvalue = (      1.02,  0.014236), std.dev. eigvalue = (  0.00539,    0.015), res = (  0.00206,        0), time: 4.911E+04 sec.
+Restart #: 17, mean eigvalue = (    1.0189,  0.013445), std.dev. eigvalue = (  0.00515,   0.0142), res = (  0.00124,        0), time: 5.131E+04 sec.
+Restart #: 18, mean eigvalue = (    1.0194,  0.012737), std.dev. eigvalue = (  0.00485,   0.0134), res = (   0.0373,        0), time: 5.35E+04 sec.
+Restart #: 19, mean eigvalue = (    1.0184,    0.0121), std.dev. eigvalue = (  0.00466,   0.0128), res = ( 0.000454,        0), time: 5.571E+04 sec.
+Restart #: 20, mean eigvalue = (     1.019,  0.011524), std.dev. eigvalue = (  0.00441,   0.0121), res = (   0.0426,        0), time: 5.794E+04 sec.
+Restart #: 21, mean eigvalue = (    1.0181,     0.011), std.dev. eigvalue = (  0.00425,   0.0116), res = ( 4.05E-05,        0), time: 6.016E+04 sec.
+Restart #: 22, mean eigvalue = (    1.0173,   0.01057), std.dev. eigvalue = (   0.0041,   0.0111), res = (  0.00164,        0), time: 6.242E+04 sec.
+Restart #: 23, mean eigvalue = (    1.0165,   0.01013), std.dev. eigvalue = (  0.00396,   0.0106), res = ( 0.000114,        0), time: 6.468E+04 sec.
+Restart #: 24, mean eigvalue = (    1.0176, 0.0061741), std.dev. eigvalue = (  0.00325,   0.0106), res = (    0.128,        0), time: 6.694E+04 sec.
+
+

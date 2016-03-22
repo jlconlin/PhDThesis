@@ -1,0 +1,2812 @@
+
+------------------------------------------
+Don't Forget the following two commands:
+
+kinit -5 jlconlin
+aklog
+------------------------------------------
+
+I ran on:  /var/spool/PBS/aux//2590918.nyx.engin.umich.edu
+Running ArnoldiResearch.
+
+Arguments:
+	source = Histogram
+	Iterations = 20
+	eigenvalues = 2
+	relaxed = 0
+	run = true
+	filename = Multimedia/Iterations/ArnoldiMulti.I20.dat
+	multimedia = true
+	terminal = dumb
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 20
+	bins = 300
+	active = 100
+	inactive = 25
+	tracks = 500000
+	ignore_rest = false
+	version = false
+	help = false
+
+Running Arnoldi's Method
+Master seed: 56235249
+Materials:
+[(nu: 3, xF: 0.1, xG: 0.1, xS: 0.8) , xA: 0.2, xT: 1]
+[(nu: 0, xF: 0, xG: 0.2, xS: 0.8) , xA: 0.2, xT: 1]
+[(nu: 0, xF: 0, xG: 0.9, xS: 0.1) , xA: 0.9, xT: 1]
+[(nu: 0, xF: 0, xG: 0.2, xS: 0.8) , xA: 0.2, xT: 1]
+[(nu: 3, xF: 0.1, xG: 0.1, xS: 0.8) , xA: 0.2, xT: 1]
+	Iteration #:  1, H =  2.201, time: 0.7081 sec.
+	Iteration #:  2, H =  2.222, time:  1.743 sec.
+	Iteration #:  3, H =  2.128, time:  2.841 sec.
+	Iteration #:  4, H =  2.216, time:  3.916 sec.
+	Iteration #:  5, H =   2.28, time:  5.007 sec.
+	Iteration #:  6, H =  2.365, time:  6.322 sec.
+	Iteration #:  7, H =  2.783, time:  7.724 sec.
+	Iteration #:  8, H =  3.035, time:  8.929 sec.
+	Iteration #:  9, H =   3.57, time:   10.3 sec.
+	Iteration #: 10, H =   3.87, time:  11.72 sec.
+	Iteration #: 11, H =  3.951, time:  13.01 sec.
+	Iteration #: 12, H =   3.93, time:  14.41 sec.
+	Iteration #: 13, H =  3.991, time:  15.78 sec.
+	Iteration #: 14, H =  3.986, time:  17.14 sec.
+	Iteration #: 15, H =  3.985, time:  18.52 sec.
+	Iteration #: 16, H =  3.967, time:   19.9 sec.
+	Iteration #: 17, H =  3.918, time:  21.35 sec.
+	Iteration #: 18, H =  3.993, time:  22.77 sec.
+	Iteration #: 19, H =  3.955, time:  24.15 sec.
+Restart #: -25, H =  3.955, mean = ( 0.42465,0.0001), std.dev. = (      0,     0), res =  8.17E-22, time:  25.48 sec
+Stopping because residual = (8.168E-22,0) < 2.22E-16
+	Iteration #:  1, H =  3.873, time:  1.217 sec.
+	Iteration #:  2, H =  3.894, time:  2.467 sec.
+	Iteration #:  3, H =  3.925, time:  3.869 sec.
+	Iteration #:  4, H =  3.949, time:  5.217 sec.
+	Iteration #:  5, H =  3.914, time:   6.47 sec.
+	Iteration #:  6, H =  3.972, time:   7.79 sec.
+	Iteration #:  7, H =  3.932, time:  9.177 sec.
+	Iteration #:  8, H =  3.908, time:  10.56 sec.
+	Iteration #:  9, H =  3.956, time:  11.95 sec.
+	Iteration #: 10, H =  3.935, time:   13.4 sec.
+	Iteration #: 11, H =  3.859, time:  14.73 sec.
+	Iteration #: 12, H =  3.891, time:  16.09 sec.
+	Iteration #: 13, H =  3.893, time:  17.33 sec.
+	Iteration #: 14, H =  3.844, time:  18.65 sec.
+	Iteration #: 15, H =  3.764, time:  20.07 sec.
+	Iteration #: 16, H =  3.843, time:  21.45 sec.
+	Iteration #: 17, H =  3.902, time:  22.84 sec.
+	Iteration #: 18, H =  3.903, time:  24.26 sec.
+	Iteration #: 19, H =   3.91, time:  25.64 sec.
+Restart #: -24, H =   3.91, mean = ( 0.42377,     0), std.dev. = (      0,     0), res =  3.45E-25, time:  52.46 sec
+Stopping because residual = (3.446E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.866, time:  1.317 sec.
+	Iteration #:  2, H =  3.943, time:  2.626 sec.
+	Iteration #:  3, H =   3.92, time:  4.017 sec.
+	Iteration #:  4, H =  3.938, time:  5.322 sec.
+	Iteration #:  5, H =  3.887, time:   6.73 sec.
+	Iteration #:  6, H =   3.83, time:  8.114 sec.
+	Iteration #:  7, H =  3.911, time:  9.441 sec.
+	Iteration #:  8, H =  3.937, time:  10.79 sec.
+	Iteration #:  9, H =  3.942, time:  12.14 sec.
+	Iteration #: 10, H =  3.967, time:  13.46 sec.
+	Iteration #: 11, H =  3.944, time:  14.85 sec.
+	Iteration #: 12, H =  3.971, time:  16.16 sec.
+	Iteration #: 13, H =  3.972, time:  17.52 sec.
+	Iteration #: 14, H =  3.961, time:  18.93 sec.
+	Iteration #: 15, H =  3.892, time:  20.35 sec.
+	Iteration #: 16, H =  3.901, time:  21.76 sec.
+	Iteration #: 17, H =  3.877, time:  23.14 sec.
+	Iteration #: 18, H =   3.93, time:  24.53 sec.
+	Iteration #: 19, H =  3.932, time:  25.96 sec.
+Restart #: -23, H =  3.932, mean = ( 0.42437,     0), std.dev. = (      0,     0), res =  5.51E-25, time:  79.81 sec
+Stopping because residual = (5.511E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.929, time:  1.598 sec.
+	Iteration #:  2, H =  3.947, time:  3.023 sec.
+	Iteration #:  3, H =  3.974, time:  4.339 sec.
+	Iteration #:  4, H =  3.939, time:  5.599 sec.
+	Iteration #:  5, H =  3.888, time:  6.966 sec.
+	Iteration #:  6, H =  3.866, time:  8.412 sec.
+	Iteration #:  7, H =  3.876, time:  9.785 sec.
+	Iteration #:  8, H =  3.857, time:  11.12 sec.
+	Iteration #:  9, H =  3.857, time:  12.51 sec.
+	Iteration #: 10, H =  3.973, time:  13.87 sec.
+	Iteration #: 11, H =  3.943, time:  15.23 sec.
+	Iteration #: 12, H =   3.89, time:  16.56 sec.
+	Iteration #: 13, H =  3.878, time:   17.9 sec.
+	Iteration #: 14, H =  3.838, time:  19.28 sec.
+	Iteration #: 15, H =  3.845, time:  20.72 sec.
+	Iteration #: 16, H =  3.821, time:  22.12 sec.
+	Iteration #: 17, H =  3.871, time:  23.52 sec.
+	Iteration #: 18, H =   3.92, time:  24.86 sec.
+	Iteration #: 19, H =  3.981, time:   26.2 sec.
+Restart #: -22, H =  3.981, mean = ( 0.42383,     0), std.dev. = (      0,     0), res =  3.71E-25, time:  107.4 sec
+Stopping because residual = (3.708E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.892, time:  1.427 sec.
+	Iteration #:  2, H =  3.873, time:  2.898 sec.
+	Iteration #:  3, H =  3.898, time:  4.158 sec.
+	Iteration #:  4, H =  3.863, time:  5.549 sec.
+	Iteration #:  5, H =  3.894, time:  6.894 sec.
+	Iteration #:  6, H =  3.803, time:  8.385 sec.
+	Iteration #:  7, H =  3.839, time:  9.732 sec.
+	Iteration #:  8, H =  3.869, time:  11.12 sec.
+	Iteration #:  9, H =  3.892, time:  12.59 sec.
+	Iteration #: 10, H =  3.896, time:  14.05 sec.
+	Iteration #: 11, H =  3.885, time:  15.48 sec.
+	Iteration #: 12, H =  3.851, time:  16.93 sec.
+	Iteration #: 13, H =  3.869, time:   18.4 sec.
+	Iteration #: 14, H =  3.832, time:  19.99 sec.
+	Iteration #: 15, H =  3.824, time:   21.6 sec.
+	Iteration #: 16, H =  3.843, time:     23 sec.
+	Iteration #: 17, H =  3.905, time:  24.28 sec.
+	Iteration #: 18, H =  3.922, time:  25.64 sec.
+	Iteration #: 19, H =  3.912, time:     27 sec.
+Restart #: -21, H =  3.912, mean = ( 0.42406,     0), std.dev. = (      0,     0), res =  1.49E-25, time:  135.8 sec
+Stopping because residual = (1.494E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.917, time:  1.403 sec.
+	Iteration #:  2, H =  3.912, time:  2.827 sec.
+	Iteration #:  3, H =  3.916, time:  4.239 sec.
+	Iteration #:  4, H =  3.943, time:  5.641 sec.
+	Iteration #:  5, H =   3.92, time:  7.168 sec.
+	Iteration #:  6, H =  3.861, time:  8.688 sec.
+	Iteration #:  7, H =  3.901, time:  10.13 sec.
+	Iteration #:  8, H =  3.923, time:  11.39 sec.
+	Iteration #:  9, H =   3.95, time:  12.74 sec.
+	Iteration #: 10, H =  3.933, time:  14.08 sec.
+	Iteration #: 11, H =  3.894, time:   15.4 sec.
+	Iteration #: 12, H =  3.911, time:  16.76 sec.
+	Iteration #: 13, H =  3.961, time:  18.06 sec.
+	Iteration #: 14, H =  3.947, time:  19.39 sec.
+	Iteration #: 15, H =  4.006, time:   20.8 sec.
+	Iteration #: 16, H =  3.989, time:  22.23 sec.
+	Iteration #: 17, H =  3.946, time:  23.63 sec.
+	Iteration #: 18, H =  3.924, time:  25.06 sec.
+	Iteration #: 19, H =  3.946, time:  26.41 sec.
+Restart #: -20, H =  3.946, mean = ( 0.42509,     0), std.dev. = (      0,     0), res =  6.04E-25, time:  163.6 sec
+Stopping because residual = (6.045E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.926, time:  1.545 sec.
+	Iteration #:  2, H =  3.943, time:  2.968 sec.
+	Iteration #:  3, H =  3.945, time:  4.366 sec.
+	Iteration #:  4, H =   3.97, time:  5.646 sec.
+	Iteration #:  5, H =  3.972, time:  7.053 sec.
+	Iteration #:  6, H =  3.966, time:  8.463 sec.
+	Iteration #:  7, H =   3.97, time:  9.808 sec.
+	Iteration #:  8, H =   3.98, time:  11.09 sec.
+	Iteration #:  9, H =  3.995, time:  12.41 sec.
+	Iteration #: 10, H =  3.919, time:  13.77 sec.
+	Iteration #: 11, H =  3.909, time:  15.14 sec.
+	Iteration #: 12, H =  3.946, time:  16.46 sec.
+	Iteration #: 13, H =  3.917, time:  17.77 sec.
+	Iteration #: 14, H =  3.938, time:  19.13 sec.
+	Iteration #: 15, H =  4.002, time:  20.55 sec.
+	Iteration #: 16, H =  3.984, time:  21.95 sec.
+	Iteration #: 17, H =  3.961, time:  23.39 sec.
+	Iteration #: 18, H =  3.944, time:  24.78 sec.
+	Iteration #: 19, H =  3.917, time:  26.17 sec.
+Restart #: -19, H =  3.917, mean = ( 0.42533,     0), std.dev. = (      0,     0), res =  1.46E-25, time:  191.1 sec
+Stopping because residual = (1.457E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.899, time:  1.326 sec.
+	Iteration #:  2, H =  3.899, time:  2.699 sec.
+	Iteration #:  3, H =  3.876, time:  4.113 sec.
+	Iteration #:  4, H =  3.939, time:  5.617 sec.
+	Iteration #:  5, H =  3.957, time:  7.019 sec.
+	Iteration #:  6, H =  3.949, time:  8.384 sec.
+	Iteration #:  7, H =  3.954, time:  9.787 sec.
+	Iteration #:  8, H =  3.941, time:  11.18 sec.
+	Iteration #:  9, H =   3.94, time:   12.5 sec.
+	Iteration #: 10, H =  3.901, time:  13.87 sec.
+	Iteration #: 11, H =  3.897, time:  15.24 sec.
+	Iteration #: 12, H =  3.888, time:  16.61 sec.
+	Iteration #: 13, H =  3.869, time:  18.02 sec.
+	Iteration #: 14, H =  3.785, time:  19.42 sec.
+	Iteration #: 15, H =  3.882, time:  20.78 sec.
+	Iteration #: 16, H =  3.947, time:  22.13 sec.
+	Iteration #: 17, H =  3.955, time:  23.46 sec.
+	Iteration #: 18, H =  3.941, time:  24.77 sec.
+	Iteration #: 19, H =  3.881, time:  26.14 sec.
+Restart #: -18, H =  3.881, mean = ( 0.42409,0.0002), std.dev. = (      0,     0), res =  1.99E-25, time:  218.6 sec
+Stopping because residual = (1.99E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.789, time:  1.442 sec.
+	Iteration #:  2, H =  3.765, time:  2.879 sec.
+	Iteration #:  3, H =  3.764, time:  4.122 sec.
+	Iteration #:  4, H =  3.748, time:  5.444 sec.
+	Iteration #:  5, H =  3.764, time:  6.812 sec.
+	Iteration #:  6, H =  3.774, time:  8.118 sec.
+	Iteration #:  7, H =  3.846, time:  9.521 sec.
+	Iteration #:  8, H =  3.847, time:  10.94 sec.
+	Iteration #:  9, H =    3.9, time:  12.31 sec.
+	Iteration #: 10, H =  3.856, time:  13.74 sec.
+	Iteration #: 11, H =  3.825, time:  15.16 sec.
+	Iteration #: 12, H =  3.873, time:  16.63 sec.
+	Iteration #: 13, H =   3.86, time:  18.01 sec.
+	Iteration #: 14, H =  3.823, time:   19.4 sec.
+	Iteration #: 15, H =  3.815, time:  20.77 sec.
+	Iteration #: 16, H =   3.91, time:  22.16 sec.
+	Iteration #: 17, H =  3.897, time:  23.57 sec.
+	Iteration #: 18, H =  3.908, time:     25 sec.
+	Iteration #: 19, H =    3.9, time:  26.41 sec.
+Restart #: -17, H =    3.9, mean = ( 0.42485,     0), std.dev. = (      0,     0), res =  2.87E-25, time:  246.5 sec
+Stopping because residual = (2.866E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.979, time:  1.483 sec.
+	Iteration #:  2, H =  3.982, time:  2.904 sec.
+	Iteration #:  3, H =  3.958, time:  4.197 sec.
+	Iteration #:  4, H =  3.909, time:  5.516 sec.
+	Iteration #:  5, H =  3.909, time:  6.914 sec.
+	Iteration #:  6, H =  3.942, time:  8.354 sec.
+	Iteration #:  7, H =   3.98, time:  9.721 sec.
+	Iteration #:  8, H =  3.965, time:  11.11 sec.
+	Iteration #:  9, H =  3.949, time:  12.49 sec.
+	Iteration #: 10, H =  3.917, time:  13.87 sec.
+	Iteration #: 11, H =  3.926, time:  15.21 sec.
+	Iteration #: 12, H =  3.948, time:  16.55 sec.
+	Iteration #: 13, H =  3.983, time:  17.86 sec.
+	Iteration #: 14, H =  3.957, time:  19.22 sec.
+	Iteration #: 15, H =  3.939, time:  20.59 sec.
+	Iteration #: 16, H =   3.92, time:  21.94 sec.
+	Iteration #: 17, H =  3.887, time:  23.28 sec.
+	Iteration #: 18, H =  3.894, time:  24.58 sec.
+	Iteration #: 19, H =  3.882, time:   25.9 sec.
+Restart #: -16, H =  3.882, mean = ( 0.42429,     0), std.dev. = (      0,     0), res =  4.15E-25, time:  273.9 sec
+Stopping because residual = (4.151E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.929, time:  1.185 sec.
+	Iteration #:  2, H =  3.919, time:  2.507 sec.
+	Iteration #:  3, H =  3.951, time:  3.867 sec.
+	Iteration #:  4, H =  3.944, time:   5.39 sec.
+	Iteration #:  5, H =  3.898, time:  6.782 sec.
+	Iteration #:  6, H =  3.924, time:  8.106 sec.
+	Iteration #:  7, H =  3.959, time:  9.429 sec.
+	Iteration #:  8, H =  3.953, time:  10.67 sec.
+	Iteration #:  9, H =  4.017, time:  11.98 sec.
+	Iteration #: 10, H =  3.968, time:  13.29 sec.
+	Iteration #: 11, H =  3.943, time:  14.56 sec.
+	Iteration #: 12, H =  3.941, time:  15.86 sec.
+	Iteration #: 13, H =  3.899, time:  17.23 sec.
+	Iteration #: 14, H =  3.915, time:  18.58 sec.
+	Iteration #: 15, H =  3.911, time:  20.02 sec.
+	Iteration #: 16, H =  3.907, time:  21.43 sec.
+	Iteration #: 17, H =  3.874, time:  22.83 sec.
+	Iteration #: 18, H =   3.82, time:  24.22 sec.
+	Iteration #: 19, H =  3.818, time:  25.62 sec.
+Restart #: -15, H =  3.818, mean = ( 0.42481,     0), std.dev. = (      0,     0), res =  3.21E-25, time:  300.9 sec
+Stopping because residual = (3.206E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.992, time:  1.304 sec.
+	Iteration #:  2, H =  3.936, time:  2.598 sec.
+	Iteration #:  3, H =  3.891, time:  3.996 sec.
+	Iteration #:  4, H =  3.945, time:  5.305 sec.
+	Iteration #:  5, H =  3.941, time:  6.613 sec.
+	Iteration #:  6, H =  3.976, time:  7.964 sec.
+	Iteration #:  7, H =   3.98, time:  9.369 sec.
+	Iteration #:  8, H =  3.953, time:  10.78 sec.
+	Iteration #:  9, H =  3.853, time:   12.2 sec.
+	Iteration #: 10, H =  3.842, time:  13.57 sec.
+	Iteration #: 11, H =  3.873, time:  14.84 sec.
+	Iteration #: 12, H =  3.908, time:   16.1 sec.
+	Iteration #: 13, H =  3.959, time:  17.35 sec.
+	Iteration #: 14, H =  3.935, time:  18.64 sec.
+	Iteration #: 15, H =  3.954, time:  19.91 sec.
+	Iteration #: 16, H =  3.948, time:  21.23 sec.
+	Iteration #: 17, H =  3.995, time:  22.57 sec.
+	Iteration #: 18, H =  4.002, time:  23.97 sec.
+	Iteration #: 19, H =  3.992, time:  25.34 sec.
+Restart #: -14, H =  3.992, mean = ( 0.42465, 0.001), std.dev. = (      0,     0), res =  8.33E-26, time:  327.6 sec
+Stopping because residual = (8.326E-26,0) < 2.22E-16
+	Iteration #:  1, H =  4.005, time:  1.465 sec.
+	Iteration #:  2, H =  3.994, time:  2.805 sec.
+	Iteration #:  3, H =  3.946, time:  4.039 sec.
+	Iteration #:  4, H =  3.975, time:  5.474 sec.
+	Iteration #:  5, H =  3.989, time:  6.905 sec.
+	Iteration #:  6, H =  3.964, time:  8.302 sec.
+	Iteration #:  7, H =  3.961, time:  9.671 sec.
+	Iteration #:  8, H =  3.917, time:  11.02 sec.
+	Iteration #:  9, H =  3.942, time:  12.42 sec.
+	Iteration #: 10, H =  3.927, time:  13.89 sec.
+	Iteration #: 11, H =   3.92, time:  15.32 sec.
+	Iteration #: 12, H =  3.931, time:  16.71 sec.
+	Iteration #: 13, H =  3.885, time:  18.07 sec.
+	Iteration #: 14, H =  3.873, time:  19.41 sec.
+	Iteration #: 15, H =  3.912, time:  20.67 sec.
+	Iteration #: 16, H =  3.945, time:  21.98 sec.
+	Iteration #: 17, H =   3.92, time:  23.27 sec.
+	Iteration #: 18, H =  3.918, time:  24.57 sec.
+	Iteration #: 19, H =  3.942, time:  25.85 sec.
+Restart #: -13, H =  3.942, mean = ( 0.42409,0.0008), std.dev. = (      0,     0), res =  2.66E-25, time:  354.8 sec
+Stopping because residual = (2.657E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.907, time:  1.308 sec.
+	Iteration #:  2, H =  3.917, time:  2.679 sec.
+	Iteration #:  3, H =  3.955, time:  4.144 sec.
+	Iteration #:  4, H =   3.91, time:  5.553 sec.
+	Iteration #:  5, H =  3.973, time:  6.965 sec.
+	Iteration #:  6, H =  3.999, time:  8.391 sec.
+	Iteration #:  7, H =  4.024, time:  9.824 sec.
+	Iteration #:  8, H =  4.019, time:  11.07 sec.
+	Iteration #:  9, H =  3.983, time:  12.47 sec.
+	Iteration #: 10, H =  3.934, time:  13.88 sec.
+	Iteration #: 11, H =  3.839, time:  15.27 sec.
+	Iteration #: 12, H =  3.921, time:  16.59 sec.
+	Iteration #: 13, H =  3.974, time:  17.85 sec.
+	Iteration #: 14, H =   3.94, time:  19.24 sec.
+	Iteration #: 15, H =  3.942, time:  20.59 sec.
+	Iteration #: 16, H =  3.958, time:  21.91 sec.
+	Iteration #: 17, H =  3.955, time:  23.22 sec.
+	Iteration #: 18, H =   3.93, time:  24.48 sec.
+	Iteration #: 19, H =  3.888, time:  25.81 sec.
+Restart #: -12, H =  3.888, mean = ( 0.42408,     0), std.dev. = (      0,     0), res =  1.08E-24, time:  381.9 sec
+Stopping because residual = (1.075E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.872, time:  1.184 sec.
+	Iteration #:  2, H =  3.874, time:  2.472 sec.
+	Iteration #:  3, H =  3.849, time:  3.883 sec.
+	Iteration #:  4, H =  3.833, time:  5.342 sec.
+	Iteration #:  5, H =  3.889, time:  6.707 sec.
+	Iteration #:  6, H =  3.919, time:  8.015 sec.
+	Iteration #:  7, H =  3.943, time:  9.314 sec.
+	Iteration #:  8, H =  3.997, time:  10.57 sec.
+	Iteration #:  9, H =  3.962, time:  11.83 sec.
+	Iteration #: 10, H =  3.932, time:  13.16 sec.
+	Iteration #: 11, H =  3.954, time:   14.5 sec.
+	Iteration #: 12, H =  3.967, time:  15.83 sec.
+	Iteration #: 13, H =  3.922, time:  17.14 sec.
+	Iteration #: 14, H =  4.002, time:  18.48 sec.
+	Iteration #: 15, H =  4.013, time:  19.84 sec.
+	Iteration #: 16, H =  3.977, time:  21.24 sec.
+	Iteration #: 17, H =  3.932, time:  22.67 sec.
+	Iteration #: 18, H =  3.865, time:   24.1 sec.
+	Iteration #: 19, H =  3.865, time:  25.52 sec.
+Restart #: -11, H =  3.865, mean = ( 0.42386,0.0003), std.dev. = (      0,     0), res =  1.03E-24, time:  408.9 sec
+Stopping because residual = (1.034E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.933, time:  1.263 sec.
+	Iteration #:  2, H =  3.894, time:  2.592 sec.
+	Iteration #:  3, H =  3.924, time:  4.078 sec.
+	Iteration #:  4, H =  3.984, time:  5.431 sec.
+	Iteration #:  5, H =  3.958, time:  6.776 sec.
+	Iteration #:  6, H =  3.984, time:  8.033 sec.
+	Iteration #:  7, H =      4, time:  9.392 sec.
+	Iteration #:  8, H =   3.99, time:  10.74 sec.
+	Iteration #:  9, H =  3.991, time:  12.04 sec.
+	Iteration #: 10, H =  3.957, time:  13.39 sec.
+	Iteration #: 11, H =  3.958, time:  14.73 sec.
+	Iteration #: 12, H =  3.961, time:  16.15 sec.
+	Iteration #: 13, H =  3.971, time:  17.55 sec.
+	Iteration #: 14, H =  3.899, time:  18.93 sec.
+	Iteration #: 15, H =  3.921, time:  20.32 sec.
+	Iteration #: 16, H =  3.954, time:  21.68 sec.
+	Iteration #: 17, H =  3.959, time:  23.03 sec.
+	Iteration #: 18, H =  3.977, time:  24.42 sec.
+	Iteration #: 19, H =  3.982, time:  25.81 sec.
+Restart #: -10, H =  3.982, mean = ( 0.42395,0.0004), std.dev. = (      0,     0), res =  3.65E-25, time:    436 sec
+Stopping because residual = (3.653E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.919, time:  1.555 sec.
+	Iteration #:  2, H =  3.853, time:      3 sec.
+	Iteration #:  3, H =  3.805, time:  4.385 sec.
+	Iteration #:  4, H =   3.86, time:  5.655 sec.
+	Iteration #:  5, H =   3.86, time:  7.076 sec.
+	Iteration #:  6, H =  3.927, time:  8.514 sec.
+	Iteration #:  7, H =  3.993, time:  9.971 sec.
+	Iteration #:  8, H =  4.018, time:  11.38 sec.
+	Iteration #:  9, H =  4.008, time:   12.7 sec.
+	Iteration #: 10, H =  3.919, time:  14.07 sec.
+	Iteration #: 11, H =  3.926, time:  15.46 sec.
+	Iteration #: 12, H =  3.931, time:  16.85 sec.
+	Iteration #: 13, H =   3.92, time:  18.09 sec.
+	Iteration #: 14, H =   3.98, time:   19.4 sec.
+	Iteration #: 15, H =   3.94, time:  20.75 sec.
+	Iteration #: 16, H =  3.918, time:  22.06 sec.
+	Iteration #: 17, H =  3.898, time:   23.4 sec.
+	Iteration #: 18, H =  3.877, time:  24.74 sec.
+	Iteration #: 19, H =  3.905, time:  26.02 sec.
+Restart #: -9, H =  3.905, mean = ( 0.42513,     0), std.dev. = (      0,     0), res =  1.17E-24, time:  463.4 sec
+Stopping because residual = (1.172E-24,0) < 2.22E-16
+	Iteration #:  1, H =    3.9, time:  1.165 sec.
+	Iteration #:  2, H =  3.896, time:  2.459 sec.
+	Iteration #:  3, H =  3.884, time:  3.684 sec.
+	Iteration #:  4, H =   3.94, time:  5.119 sec.
+	Iteration #:  5, H =  3.958, time:  6.482 sec.
+	Iteration #:  6, H =  3.909, time:  7.826 sec.
+	Iteration #:  7, H =  3.916, time:  9.212 sec.
+	Iteration #:  8, H =  3.981, time:  10.62 sec.
+	Iteration #:  9, H =  4.004, time:  11.99 sec.
+	Iteration #: 10, H =  3.976, time:  13.32 sec.
+	Iteration #: 11, H =  3.984, time:  14.67 sec.
+	Iteration #: 12, H =  4.005, time:  16.03 sec.
+	Iteration #: 13, H =  4.013, time:  17.43 sec.
+	Iteration #: 14, H =  4.017, time:  18.87 sec.
+	Iteration #: 15, H =   4.01, time:  20.26 sec.
+	Iteration #: 16, H =  4.028, time:  21.65 sec.
+	Iteration #: 17, H =  4.028, time:  22.99 sec.
+	Iteration #: 18, H =  4.029, time:  24.32 sec.
+	Iteration #: 19, H =  4.001, time:   25.7 sec.
+Restart #: -8, H =  4.001, mean = ( 0.42428,0.0002), std.dev. = (      0,     0), res =  1.37E-24, time:  490.4 sec
+Stopping because residual = (1.375E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.777, time:  1.123 sec.
+	Iteration #:  2, H =  3.788, time:  2.367 sec.
+	Iteration #:  3, H =  3.811, time:  3.725 sec.
+	Iteration #:  4, H =  3.804, time:  5.178 sec.
+	Iteration #:  5, H =  3.831, time:  6.432 sec.
+	Iteration #:  6, H =  3.871, time:  7.677 sec.
+	Iteration #:  7, H =  3.897, time:  8.993 sec.
+	Iteration #:  8, H =  3.864, time:  10.35 sec.
+	Iteration #:  9, H =  3.859, time:  11.74 sec.
+	Iteration #: 10, H =  3.897, time:  13.06 sec.
+	Iteration #: 11, H =  3.869, time:  14.35 sec.
+	Iteration #: 12, H =  3.862, time:  15.67 sec.
+	Iteration #: 13, H =  3.782, time:     17 sec.
+	Iteration #: 14, H =  3.715, time:  18.42 sec.
+	Iteration #: 15, H =  3.765, time:  19.82 sec.
+	Iteration #: 16, H =  3.854, time:  21.16 sec.
+	Iteration #: 17, H =  3.828, time:  22.55 sec.
+	Iteration #: 18, H =  3.912, time:  23.98 sec.
+	Iteration #: 19, H =  3.941, time:  25.34 sec.
+Restart #: -7, H =  3.941, mean = ( 0.42464,     0), std.dev. = (      0,     0), res =     3E-24, time:  517.2 sec
+Stopping because residual = (2.996E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.947, time:   1.27 sec.
+	Iteration #:  2, H =  3.937, time:   2.59 sec.
+	Iteration #:  3, H =  3.924, time:  4.047 sec.
+	Iteration #:  4, H =   3.94, time:  5.325 sec.
+	Iteration #:  5, H =  3.956, time:  6.588 sec.
+	Iteration #:  6, H =  3.958, time:   7.93 sec.
+	Iteration #:  7, H =  3.948, time:   9.37 sec.
+	Iteration #:  8, H =  3.921, time:  10.77 sec.
+	Iteration #:  9, H =  3.972, time:  12.13 sec.
+	Iteration #: 10, H =  3.908, time:  13.42 sec.
+	Iteration #: 11, H =  3.904, time:  14.68 sec.
+	Iteration #: 12, H =  3.918, time:  15.96 sec.
+	Iteration #: 13, H =  3.932, time:  17.23 sec.
+	Iteration #: 14, H =  3.973, time:  18.58 sec.
+	Iteration #: 15, H =  3.951, time:  19.96 sec.
+	Iteration #: 16, H =  3.905, time:  21.27 sec.
+	Iteration #: 17, H =  3.921, time:  22.58 sec.
+	Iteration #: 18, H =  3.885, time:     24 sec.
+	Iteration #: 19, H =  3.889, time:   25.4 sec.
+Restart #: -6, H =  3.889, mean = ( 0.42377,0.0004), std.dev. = (      0,     0), res =  2.85E-25, time:    544 sec
+Stopping because residual = (2.847E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.91, time:  1.523 sec.
+	Iteration #:  2, H =  3.915, time:  2.921 sec.
+	Iteration #:  3, H =  3.909, time:  4.209 sec.
+	Iteration #:  4, H =  3.941, time:  5.418 sec.
+	Iteration #:  5, H =  3.948, time:   6.78 sec.
+	Iteration #:  6, H =   4.03, time:    8.1 sec.
+	Iteration #:  7, H =      4, time:   9.48 sec.
+	Iteration #:  8, H =      4, time:  10.94 sec.
+	Iteration #:  9, H =  4.012, time:  12.42 sec.
+	Iteration #: 10, H =  3.995, time:   13.8 sec.
+	Iteration #: 11, H =   4.01, time:  15.14 sec.
+	Iteration #: 12, H =  3.994, time:  16.54 sec.
+	Iteration #: 13, H =  3.946, time:  17.91 sec.
+	Iteration #: 14, H =  3.931, time:  19.29 sec.
+	Iteration #: 15, H =  3.874, time:  20.63 sec.
+	Iteration #: 16, H =  3.928, time:  21.97 sec.
+	Iteration #: 17, H =   3.96, time:  23.36 sec.
+	Iteration #: 18, H =  3.932, time:  24.76 sec.
+	Iteration #: 19, H =  3.899, time:  26.08 sec.
+Restart #: -5, H =  3.899, mean = ( 0.42442,     0), std.dev. = (      0,     0), res =  3.63E-25, time:  571.4 sec
+Stopping because residual = (3.628E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.887, time:  1.544 sec.
+	Iteration #:  2, H =   3.87, time:  3.013 sec.
+	Iteration #:  3, H =  3.871, time:  4.353 sec.
+	Iteration #:  4, H =  3.843, time:  5.649 sec.
+	Iteration #:  5, H =  3.842, time:   7.13 sec.
+	Iteration #:  6, H =  3.932, time:  8.592 sec.
+	Iteration #:  7, H =  3.938, time:  9.975 sec.
+	Iteration #:  8, H =  3.939, time:  11.32 sec.
+	Iteration #:  9, H =  3.899, time:  12.63 sec.
+	Iteration #: 10, H =  3.957, time:  13.88 sec.
+	Iteration #: 11, H =  3.918, time:  15.25 sec.
+	Iteration #: 12, H =  3.819, time:  16.67 sec.
+	Iteration #: 13, H =  3.869, time:  18.08 sec.
+	Iteration #: 14, H =  3.871, time:  19.53 sec.
+	Iteration #: 15, H =  3.849, time:  20.95 sec.
+	Iteration #: 16, H =  3.773, time:   22.3 sec.
+	Iteration #: 17, H =  3.854, time:  23.66 sec.
+	Iteration #: 18, H =   3.87, time:  25.02 sec.
+	Iteration #: 19, H =    3.9, time:  26.29 sec.
+Restart #: -4, H =    3.9, mean = ( 0.42526,     0), std.dev. = (      0,     0), res =  1.13E-24, time:  599.1 sec
+Stopping because residual = (1.132E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.998, time:  1.323 sec.
+	Iteration #:  2, H =  3.993, time:  2.686 sec.
+	Iteration #:  3, H =  3.979, time:  4.124 sec.
+	Iteration #:  4, H =  3.971, time:  5.434 sec.
+	Iteration #:  5, H =   3.95, time:  6.734 sec.
+	Iteration #:  6, H =  3.911, time:  8.153 sec.
+	Iteration #:  7, H =  3.861, time:  9.509 sec.
+	Iteration #:  8, H =  3.877, time:  10.93 sec.
+	Iteration #:  9, H =  3.945, time:  12.39 sec.
+	Iteration #: 10, H =  3.997, time:  13.72 sec.
+	Iteration #: 11, H =  3.979, time:  15.01 sec.
+	Iteration #: 12, H =  3.884, time:  16.26 sec.
+	Iteration #: 13, H =  3.933, time:  17.59 sec.
+	Iteration #: 14, H =  3.964, time:  18.94 sec.
+	Iteration #: 15, H =  3.918, time:  20.29 sec.
+	Iteration #: 16, H =  3.824, time:  21.74 sec.
+	Iteration #: 17, H =   3.84, time:  23.13 sec.
+	Iteration #: 18, H =  3.874, time:  24.54 sec.
+	Iteration #: 19, H =  3.897, time:  25.98 sec.
+Restart #: -3, H =  3.897, mean = ( 0.42386,0.0009), std.dev. = (      0,     0), res =  2.47E-25, time:  626.4 sec
+Stopping because residual = (2.466E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.885, time:  1.205 sec.
+	Iteration #:  2, H =  3.884, time:   2.54 sec.
+	Iteration #:  3, H =  3.877, time:  3.942 sec.
+	Iteration #:  4, H =  3.889, time:  5.309 sec.
+	Iteration #:  5, H =  3.857, time:  6.576 sec.
+	Iteration #:  6, H =   3.85, time:  7.969 sec.
+	Iteration #:  7, H =  3.855, time:  9.379 sec.
+	Iteration #:  8, H =  3.915, time:  10.81 sec.
+	Iteration #:  9, H =  3.902, time:  12.22 sec.
+	Iteration #: 10, H =  3.922, time:  13.65 sec.
+	Iteration #: 11, H =  3.891, time:  15.09 sec.
+	Iteration #: 12, H =  3.893, time:  16.45 sec.
+	Iteration #: 13, H =  3.943, time:  17.82 sec.
+	Iteration #: 14, H =  4.002, time:  19.09 sec.
+	Iteration #: 15, H =  4.023, time:  20.43 sec.
+	Iteration #: 16, H =  3.966, time:  21.76 sec.
+	Iteration #: 17, H =  3.928, time:  23.06 sec.
+	Iteration #: 18, H =  3.931, time:   24.4 sec.
+	Iteration #: 19, H =  3.859, time:  25.67 sec.
+Restart #: -2, H =  3.859, mean = ( 0.42457,     0), std.dev. = (      0,     0), res =  3.44E-25, time:  653.5 sec
+Stopping because residual = (3.44E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.937, time:  1.346 sec.
+	Iteration #:  2, H =  3.916, time:  2.687 sec.
+	Iteration #:  3, H =  3.957, time:   4.09 sec.
+	Iteration #:  4, H =  3.976, time:  5.481 sec.
+	Iteration #:  5, H =  3.987, time:  6.802 sec.
+	Iteration #:  6, H =  3.973, time:  8.176 sec.
+	Iteration #:  7, H =  3.981, time:  9.504 sec.
+	Iteration #:  8, H =  4.003, time:  10.79 sec.
+	Iteration #:  9, H =  3.898, time:  12.07 sec.
+	Iteration #: 10, H =  3.806, time:  13.41 sec.
+	Iteration #: 11, H =  3.885, time:  14.73 sec.
+	Iteration #: 12, H =  3.985, time:  16.02 sec.
+	Iteration #: 13, H =  4.043, time:  17.39 sec.
+	Iteration #: 14, H =  4.045, time:  18.79 sec.
+	Iteration #: 15, H =  4.003, time:   20.2 sec.
+	Iteration #: 16, H =  3.916, time:  21.61 sec.
+	Iteration #: 17, H =  3.898, time:  22.97 sec.
+	Iteration #: 18, H =  3.799, time:  24.35 sec.
+	Iteration #: 19, H =   3.78, time:  25.76 sec.
+Restart #: -1, H =   3.78, mean = ( 0.42377,0.0006), std.dev. = (      0,     0), res =  1.66E-25, time:  680.6 sec
+Stopping because residual = (1.664E-25,0) < 2.22E-16
+	Iteration #:  1, H =  4.004, time:  1.419 sec.
+	Iteration #:  2, H =  4.008, time:  2.771 sec.
+	Iteration #:  3, H =  3.919, time:  4.032 sec.
+	Iteration #:  4, H =  3.935, time:   5.44 sec.
+	Iteration #:  5, H =  3.964, time:  6.869 sec.
+	Iteration #:  6, H =  3.968, time:  8.254 sec.
+	Iteration #:  7, H =  3.987, time:  9.664 sec.
+	Iteration #:  8, H =  3.983, time:  11.03 sec.
+	Iteration #:  9, H =  3.911, time:   12.4 sec.
+	Iteration #: 10, H =  3.923, time:  13.78 sec.
+	Iteration #: 11, H =  3.939, time:  15.03 sec.
+	Iteration #: 12, H =  3.928, time:  16.38 sec.
+	Iteration #: 13, H =  3.943, time:  17.76 sec.
+	Iteration #: 14, H =   3.94, time:  19.11 sec.
+	Iteration #: 15, H =  3.932, time:  20.47 sec.
+	Iteration #: 16, H =  3.905, time:  21.82 sec.
+	Iteration #: 17, H =  3.937, time:  23.11 sec.
+	Iteration #: 18, H =  3.931, time:  24.46 sec.
+	Iteration #: 19, H =  3.932, time:   25.8 sec.
+Restart #: 0, H =  3.932, mean = ( 0.42497,     0), std.dev. = (      0,     0), res =  1.05E-24, time:  707.8 sec, FOM:        0
+Stopping because residual = (1.052E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.925, time:  1.392 sec.
+	Iteration #:  2, H =  3.921, time:  2.806 sec.
+	Iteration #:  3, H =  3.982, time:  4.187 sec.
+	Iteration #:  4, H =  3.949, time:  5.546 sec.
+	Iteration #:  5, H =  3.877, time:  6.974 sec.
+	Iteration #:  6, H =  3.899, time:  8.372 sec.
+	Iteration #:  7, H =  3.869, time:  9.806 sec.
+	Iteration #:  8, H =  3.937, time:  11.18 sec.
+	Iteration #:  9, H =  3.939, time:  12.47 sec.
+	Iteration #: 10, H =  3.936, time:  13.86 sec.
+	Iteration #: 11, H =  3.916, time:  15.23 sec.
+	Iteration #: 12, H =  3.924, time:  16.57 sec.
+	Iteration #: 13, H =  3.919, time:  17.95 sec.
+	Iteration #: 14, H =  3.938, time:   19.3 sec.
+	Iteration #: 15, H =  3.891, time:  20.62 sec.
+	Iteration #: 16, H =  3.853, time:  21.92 sec.
+	Iteration #: 17, H =  3.785, time:  23.27 sec.
+	Iteration #: 18, H =  3.825, time:  24.59 sec.
+	Iteration #: 19, H =   3.86, time:  25.88 sec.
+Restart #: 1, H =   3.86, mean = ( 0.42505,0.0001), std.dev. = (5.42E-05, 7E-05), res =  1.03E-24, time:    735 sec, FOM: 4.633E+05
+Stopping because residual = (1.028E-24,0) < 2.22E-16
+	Iteration #:  1, H =  4.041, time:  1.243 sec.
+	Iteration #:  2, H =  4.002, time:  2.576 sec.
+	Iteration #:  3, H =  3.972, time:  3.885 sec.
+	Iteration #:  4, H =  3.956, time:  5.303 sec.
+	Iteration #:  5, H =  3.994, time:   6.65 sec.
+	Iteration #:  6, H =  4.013, time:  8.041 sec.
+	Iteration #:  7, H =  3.961, time:   9.46 sec.
+	Iteration #:  8, H =  3.927, time:  10.87 sec.
+	Iteration #:  9, H =  3.963, time:  12.27 sec.
+	Iteration #: 10, H =  3.954, time:  13.66 sec.
+	Iteration #: 11, H =  3.901, time:  15.06 sec.
+	Iteration #: 12, H =  3.932, time:  16.46 sec.
+	Iteration #: 13, H =  3.923, time:  17.85 sec.
+	Iteration #: 14, H =  3.926, time:  19.19 sec.
+	Iteration #: 15, H =  3.935, time:  20.57 sec.
+	Iteration #: 16, H =  3.927, time:  21.92 sec.
+	Iteration #: 17, H =  3.929, time:  23.24 sec.
+	Iteration #: 18, H =  3.899, time:   24.6 sec.
+	Iteration #: 19, H =  3.892, time:  25.97 sec.
+Restart #: 2, H =  3.892, mean = ( 0.42481, 7E-05), std.dev. = (0.000197, 4E-05), res =  2.36E-24, time:  762.4 sec, FOM: 3.396E+04
+Stopping because residual = (2.364E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.977, time:   1.24 sec.
+	Iteration #:  2, H =  3.954, time:  2.568 sec.
+	Iteration #:  3, H =  3.967, time:    3.8 sec.
+	Iteration #:  4, H =  3.939, time:  5.274 sec.
+	Iteration #:  5, H =  4.013, time:  6.662 sec.
+	Iteration #:  6, H =  3.962, time:  7.982 sec.
+	Iteration #:  7, H =  3.902, time:  9.325 sec.
+	Iteration #:  8, H =  3.903, time:  10.71 sec.
+	Iteration #:  9, H =  3.938, time:  12.17 sec.
+	Iteration #: 10, H =  3.946, time:  13.58 sec.
+	Iteration #: 11, H =  3.933, time:  14.95 sec.
+	Iteration #: 12, H =  3.934, time:  16.37 sec.
+	Iteration #: 13, H =  3.938, time:  17.75 sec.
+	Iteration #: 14, H =  3.987, time:   19.1 sec.
+	Iteration #: 15, H =  3.992, time:  20.43 sec.
+	Iteration #: 16, H =  3.991, time:  21.82 sec.
+	Iteration #: 17, H =   3.96, time:  23.23 sec.
+	Iteration #: 18, H =  3.975, time:   24.6 sec.
+	Iteration #: 19, H =  3.963, time:  25.97 sec.
+Restart #: 3, H =  3.963, mean = ( 0.42449,0.0002), std.dev. = (0.000304,-5E-05), res =  6.22E-25, time:  789.7 sec, FOM: 1.369E+04
+Stopping because residual = (6.225E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.93, time:  1.309 sec.
+	Iteration #:  2, H =  3.914, time:  2.631 sec.
+	Iteration #:  3, H =  3.911, time:  4.053 sec.
+	Iteration #:  4, H =  3.926, time:  5.329 sec.
+	Iteration #:  5, H =  3.941, time:  6.702 sec.
+	Iteration #:  6, H =  3.926, time:   8.03 sec.
+	Iteration #:  7, H =   3.96, time:  9.399 sec.
+	Iteration #:  8, H =  3.975, time:  10.83 sec.
+	Iteration #:  9, H =  3.995, time:   12.3 sec.
+	Iteration #: 10, H =  3.942, time:  13.69 sec.
+	Iteration #: 11, H =  3.952, time:  15.09 sec.
+	Iteration #: 12, H =  3.966, time:  16.52 sec.
+	Iteration #: 13, H =  3.915, time:  17.91 sec.
+	Iteration #: 14, H =    3.9, time:  19.21 sec.
+	Iteration #: 15, H =  3.933, time:  20.58 sec.
+	Iteration #: 16, H =  3.968, time:  21.98 sec.
+	Iteration #: 17, H =  3.922, time:  23.34 sec.
+	Iteration #: 18, H =  3.972, time:   24.7 sec.
+	Iteration #: 19, H =  3.998, time:   26.1 sec.
+Restart #: 4, H =  3.998, mean = ( 0.42458,0.0001), std.dev. = (0.000254,-5E-05), res =  1.94E-25, time:  817.1 sec, FOM: 1.891E+04
+Stopping because residual = (1.937E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.88, time:  1.588 sec.
+	Iteration #:  2, H =  3.833, time:  2.983 sec.
+	Iteration #:  3, H =  3.834, time:  4.311 sec.
+	Iteration #:  4, H =   3.89, time:   5.54 sec.
+	Iteration #:  5, H =  3.951, time:  6.918 sec.
+	Iteration #:  6, H =  3.945, time:  8.245 sec.
+	Iteration #:  7, H =  3.954, time:  9.655 sec.
+	Iteration #:  8, H =  3.964, time:     11 sec.
+	Iteration #:  9, H =  3.919, time:  12.32 sec.
+	Iteration #: 10, H =  3.902, time:  13.72 sec.
+	Iteration #: 11, H =  3.929, time:  15.13 sec.
+	Iteration #: 12, H =  3.981, time:  16.54 sec.
+	Iteration #: 13, H =  4.041, time:  17.91 sec.
+	Iteration #: 14, H =  3.986, time:  19.18 sec.
+	Iteration #: 15, H =  3.937, time:  20.53 sec.
+	Iteration #: 16, H =  3.949, time:  21.89 sec.
+	Iteration #: 17, H =   3.99, time:  23.25 sec.
+	Iteration #: 18, H =  3.937, time:  24.61 sec.
+	Iteration #: 19, H =  3.918, time:  25.99 sec.
+Restart #: 5, H =  3.918, mean = ( 0.42457,0.0001), std.dev. = (0.000211,-4E-05), res =  3.14E-24, time:  844.6 sec, FOM: 2.655E+04
+Stopping because residual = (3.136E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.902, time:  1.347 sec.
+	Iteration #:  2, H =  3.953, time:  2.673 sec.
+	Iteration #:  3, H =  3.972, time:  4.089 sec.
+	Iteration #:  4, H =  3.968, time:  5.371 sec.
+	Iteration #:  5, H =  3.987, time:  6.675 sec.
+	Iteration #:  6, H =  3.971, time:  8.068 sec.
+	Iteration #:  7, H =  3.942, time:  9.407 sec.
+	Iteration #:  8, H =  3.893, time:  10.81 sec.
+	Iteration #:  9, H =  3.867, time:  12.26 sec.
+	Iteration #: 10, H =  3.902, time:   13.6 sec.
+	Iteration #: 11, H =    3.9, time:  14.93 sec.
+	Iteration #: 12, H =  3.977, time:  16.29 sec.
+	Iteration #: 13, H =  3.947, time:  17.58 sec.
+	Iteration #: 14, H =   3.97, time:  18.96 sec.
+	Iteration #: 15, H =   4.02, time:  20.33 sec.
+	Iteration #: 16, H =  3.963, time:  21.74 sec.
+	Iteration #: 17, H =  3.887, time:  23.12 sec.
+	Iteration #: 18, H =  3.938, time:  24.54 sec.
+	Iteration #: 19, H =  3.966, time:  25.93 sec.
+Restart #: 6, H =  3.966, mean = ( 0.42468, 9E-05), std.dev. = (0.000207,-4E-05), res =  4.51E-25, time:  871.9 sec, FOM: 2.682E+04
+Stopping because residual = (4.509E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.835, time:  1.313 sec.
+	Iteration #:  2, H =   3.82, time:  2.669 sec.
+	Iteration #:  3, H =   3.84, time:  4.059 sec.
+	Iteration #:  4, H =  3.897, time:  5.508 sec.
+	Iteration #:  5, H =  3.931, time:  6.865 sec.
+	Iteration #:  6, H =  3.979, time:   8.18 sec.
+	Iteration #:  7, H =  3.974, time:  9.504 sec.
+	Iteration #:  8, H =   3.98, time:  10.83 sec.
+	Iteration #:  9, H =  3.973, time:   12.1 sec.
+	Iteration #: 10, H =  3.909, time:  13.45 sec.
+	Iteration #: 11, H =  3.916, time:  14.83 sec.
+	Iteration #: 12, H =  3.828, time:  16.25 sec.
+	Iteration #: 13, H =  3.839, time:  17.67 sec.
+	Iteration #: 14, H =  3.948, time:  18.97 sec.
+	Iteration #: 15, H =  3.907, time:  20.32 sec.
+	Iteration #: 16, H =  3.944, time:  21.65 sec.
+	Iteration #: 17, H =   3.96, time:  23.04 sec.
+	Iteration #: 18, H =  3.932, time:  24.43 sec.
+	Iteration #: 19, H =  3.918, time:  25.85 sec.
+Restart #: 7, H =  3.918, mean = (  0.4247, 8E-05), std.dev. = (0.000182,-3E-05), res =  5.61E-25, time:  899.2 sec, FOM: 3.342E+04
+Stopping because residual = (5.613E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.962, time:   1.31 sec.
+	Iteration #:  2, H =  3.904, time:  2.673 sec.
+	Iteration #:  3, H =  3.979, time:  4.089 sec.
+	Iteration #:  4, H =  3.977, time:  5.467 sec.
+	Iteration #:  5, H =  3.928, time:  6.779 sec.
+	Iteration #:  6, H =  3.919, time:  8.164 sec.
+	Iteration #:  7, H =  3.917, time:  9.551 sec.
+	Iteration #:  8, H =  3.915, time:  10.87 sec.
+	Iteration #:  9, H =   3.98, time:  12.25 sec.
+	Iteration #: 10, H =  3.979, time:   13.6 sec.
+	Iteration #: 11, H =  3.979, time:  14.96 sec.
+	Iteration #: 12, H =  3.911, time:  16.31 sec.
+	Iteration #: 13, H =  3.899, time:   17.6 sec.
+	Iteration #: 14, H =  3.893, time:  18.97 sec.
+	Iteration #: 15, H =  3.908, time:  20.38 sec.
+	Iteration #: 16, H =  3.871, time:  21.75 sec.
+	Iteration #: 17, H =  3.897, time:   23.1 sec.
+	Iteration #: 18, H =  3.907, time:  24.49 sec.
+	Iteration #: 19, H =  3.907, time:  25.84 sec.
+Restart #: 8, H =  3.907, mean = ( 0.42471, 7E-05), std.dev. = (0.000162,-3E-05), res =  3.55E-25, time:  926.4 sec, FOM: 4.109E+04
+Stopping because residual = (3.553E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.845, time:  1.319 sec.
+	Iteration #:  2, H =  3.848, time:  2.652 sec.
+	Iteration #:  3, H =   3.86, time:  4.118 sec.
+	Iteration #:  4, H =  3.888, time:  5.463 sec.
+	Iteration #:  5, H =   3.88, time:  6.746 sec.
+	Iteration #:  6, H =  3.963, time:  8.006 sec.
+	Iteration #:  7, H =   3.95, time:  9.302 sec.
+	Iteration #:  8, H =  3.964, time:  10.65 sec.
+	Iteration #:  9, H =  3.948, time:  11.99 sec.
+	Iteration #: 10, H =  3.879, time:  13.39 sec.
+	Iteration #: 11, H =  3.838, time:  14.82 sec.
+	Iteration #: 12, H =  3.825, time:  16.21 sec.
+	Iteration #: 13, H =  3.871, time:  17.59 sec.
+	Iteration #: 14, H =  3.893, time:  18.94 sec.
+	Iteration #: 15, H =  3.898, time:  20.27 sec.
+	Iteration #: 16, H =  3.905, time:  21.65 sec.
+	Iteration #: 17, H =  3.904, time:  23.03 sec.
+	Iteration #: 18, H =  3.913, time:  24.38 sec.
+	Iteration #: 19, H =  3.908, time:  25.73 sec.
+Restart #: 9, H =  3.908, mean = ( 0.42466,0.0001), std.dev. = (0.000149,-4E-05), res =   5.8E-25, time:  953.5 sec, FOM: 4.704E+04
+Stopping because residual = (5.797E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.871, time:  1.144 sec.
+	Iteration #:  2, H =  3.897, time:  2.467 sec.
+	Iteration #:  3, H =  3.893, time:   3.81 sec.
+	Iteration #:  4, H =   3.86, time:  5.312 sec.
+	Iteration #:  5, H =  3.845, time:  6.574 sec.
+	Iteration #:  6, H =  3.824, time:   7.89 sec.
+	Iteration #:  7, H =   3.77, time:  9.268 sec.
+	Iteration #:  8, H =  3.861, time:  10.73 sec.
+	Iteration #:  9, H =  3.955, time:   12.1 sec.
+	Iteration #: 10, H =  3.958, time:   13.5 sec.
+	Iteration #: 11, H =  3.935, time:   14.9 sec.
+	Iteration #: 12, H =  3.948, time:  16.34 sec.
+	Iteration #: 13, H =  3.908, time:  17.67 sec.
+	Iteration #: 14, H =  3.871, time:  19.05 sec.
+	Iteration #: 15, H =  3.836, time:  20.37 sec.
+	Iteration #: 16, H =  3.867, time:  21.69 sec.
+	Iteration #: 17, H =  3.832, time:  23.01 sec.
+	Iteration #: 18, H =  3.825, time:  24.36 sec.
+	Iteration #: 19, H =  3.842, time:  25.76 sec.
+Restart #: 10, H =  3.842, mean = ( 0.42461,0.0001), std.dev. = (0.000142,-3E-05), res =  5.93E-25, time:  980.7 sec, FOM: 5.079E+04
+Stopping because residual = (5.928E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.774, time:  1.172 sec.
+	Iteration #:  2, H =  3.778, time:  2.404 sec.
+	Iteration #:  3, H =  3.762, time:  3.782 sec.
+	Iteration #:  4, H =  3.777, time:  5.203 sec.
+	Iteration #:  5, H =  3.911, time:   6.43 sec.
+	Iteration #:  6, H =  3.979, time:  7.709 sec.
+	Iteration #:  7, H =  3.968, time:  9.052 sec.
+	Iteration #:  8, H =  3.977, time:  10.51 sec.
+	Iteration #:  9, H =  3.955, time:  11.86 sec.
+	Iteration #: 10, H =  3.962, time:   13.3 sec.
+	Iteration #: 11, H =  3.939, time:   14.7 sec.
+	Iteration #: 12, H =  3.909, time:  16.12 sec.
+	Iteration #: 13, H =  3.953, time:  17.46 sec.
+	Iteration #: 14, H =  3.945, time:   18.8 sec.
+	Iteration #: 15, H =  3.921, time:  20.12 sec.
+	Iteration #: 16, H =  3.981, time:  21.43 sec.
+	Iteration #: 17, H =  3.957, time:  22.76 sec.
+	Iteration #: 18, H =  3.871, time:  24.05 sec.
+	Iteration #: 19, H =  3.899, time:  25.38 sec.
+Restart #: 11, H =  3.899, mean = ( 0.42458,0.0001), std.dev. = (0.000134,-3E-05), res =  5.17E-25, time:   1007 sec, FOM: 5.536E+04
+Stopping because residual = (5.172E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.981, time:  1.508 sec.
+	Iteration #:  2, H =  3.977, time:   2.92 sec.
+	Iteration #:  3, H =  3.944, time:  4.212 sec.
+	Iteration #:  4, H =  3.948, time:  5.624 sec.
+	Iteration #:  5, H =  3.966, time:   7.04 sec.
+	Iteration #:  6, H =  3.985, time:  8.465 sec.
+	Iteration #:  7, H =  3.964, time:  9.852 sec.
+	Iteration #:  8, H =  3.957, time:  11.24 sec.
+	Iteration #:  9, H =  3.901, time:  12.56 sec.
+	Iteration #: 10, H =  3.936, time:  13.89 sec.
+	Iteration #: 11, H =  3.889, time:  15.16 sec.
+	Iteration #: 12, H =  3.929, time:  16.46 sec.
+	Iteration #: 13, H =  3.983, time:  17.73 sec.
+	Iteration #: 14, H =  4.013, time:  19.04 sec.
+	Iteration #: 15, H =  3.978, time:  20.29 sec.
+	Iteration #: 16, H =  3.885, time:  21.65 sec.
+	Iteration #: 17, H =  3.869, time:  22.98 sec.
+	Iteration #: 18, H =  3.883, time:  24.35 sec.
+	Iteration #: 19, H =  3.956, time:  25.78 sec.
+Restart #: 12, H =  3.956, mean = ( 0.42463,0.0001), std.dev. = (0.000133,-2E-05), res =  4.73E-25, time:   1035 sec, FOM: 5.435E+04
+Stopping because residual = (4.728E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.929, time:  1.384 sec.
+	Iteration #:  2, H =  3.908, time:  2.815 sec.
+	Iteration #:  3, H =  3.907, time:  4.172 sec.
+	Iteration #:  4, H =  3.859, time:  5.496 sec.
+	Iteration #:  5, H =  3.884, time:  6.882 sec.
+	Iteration #:  6, H =  3.861, time:  8.256 sec.
+	Iteration #:  7, H =  3.873, time:   9.64 sec.
+	Iteration #:  8, H =  3.954, time:  11.13 sec.
+	Iteration #:  9, H =  3.952, time:  12.59 sec.
+	Iteration #: 10, H =  3.932, time:  14.03 sec.
+	Iteration #: 11, H =  3.916, time:  15.48 sec.
+	Iteration #: 12, H =  3.957, time:  16.89 sec.
+	Iteration #: 13, H =  3.949, time:  18.28 sec.
+	Iteration #: 14, H =  3.881, time:   19.7 sec.
+	Iteration #: 15, H =  3.862, time:  21.08 sec.
+	Iteration #: 16, H =  3.852, time:  22.38 sec.
+	Iteration #: 17, H =   3.94, time:  23.67 sec.
+	Iteration #: 18, H =   3.95, time:  25.03 sec.
+	Iteration #: 19, H =  3.911, time:  26.29 sec.
+Restart #: 13, H =  3.911, mean = ( 0.42463,0.0001), std.dev. = (0.000121,-2E-05), res =  3.58E-25, time:   1062 sec, FOM: 6.416E+04
+Stopping because residual = (3.585E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.914, time:   1.27 sec.
+	Iteration #:  2, H =  3.894, time:  2.571 sec.
+	Iteration #:  3, H =  3.933, time:  4.067 sec.
+	Iteration #:  4, H =  3.937, time:  5.364 sec.
+	Iteration #:  5, H =  3.945, time:  6.727 sec.
+	Iteration #:  6, H =  3.913, time:  8.094 sec.
+	Iteration #:  7, H =   3.92, time:  9.429 sec.
+	Iteration #:  8, H =  3.917, time:  10.74 sec.
+	Iteration #:  9, H =  3.978, time:  12.04 sec.
+	Iteration #: 10, H =  3.972, time:  13.38 sec.
+	Iteration #: 11, H =  3.991, time:  14.74 sec.
+	Iteration #: 12, H =  3.938, time:  16.09 sec.
+	Iteration #: 13, H =  3.987, time:  17.42 sec.
+	Iteration #: 14, H =  3.946, time:  18.77 sec.
+	Iteration #: 15, H =  3.881, time:  20.15 sec.
+	Iteration #: 16, H =  3.966, time:   21.5 sec.
+	Iteration #: 17, H =  3.975, time:  22.83 sec.
+	Iteration #: 18, H =  3.963, time:  24.18 sec.
+	Iteration #: 19, H =  3.991, time:  25.57 sec.
+Restart #: 14, H =  3.991, mean = ( 0.42463,0.0001), std.dev. = (0.000113,-1E-05), res =  5.68E-25, time:   1089 sec, FOM: 7.151E+04
+Stopping because residual = (5.681E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.926, time:  1.419 sec.
+	Iteration #:  2, H =  3.972, time:  2.808 sec.
+	Iteration #:  3, H =   3.97, time:  4.232 sec.
+	Iteration #:  4, H =  3.963, time:  5.544 sec.
+	Iteration #:  5, H =  3.948, time:  6.917 sec.
+	Iteration #:  6, H =  3.969, time:  8.348 sec.
+	Iteration #:  7, H =  3.989, time:  9.731 sec.
+	Iteration #:  8, H =  3.986, time:  11.04 sec.
+	Iteration #:  9, H =  3.979, time:  12.34 sec.
+	Iteration #: 10, H =  4.007, time:   13.7 sec.
+	Iteration #: 11, H =  4.008, time:  15.03 sec.
+	Iteration #: 12, H =  4.012, time:  16.33 sec.
+	Iteration #: 13, H =  3.987, time:  17.62 sec.
+	Iteration #: 14, H =  3.976, time:  18.97 sec.
+	Iteration #: 15, H =  4.005, time:   20.3 sec.
+	Iteration #: 16, H =  3.963, time:  21.62 sec.
+	Iteration #: 17, H =  3.876, time:  22.99 sec.
+	Iteration #: 18, H =  3.903, time:  24.38 sec.
+	Iteration #: 19, H =   3.89, time:  25.82 sec.
+Restart #: 15, H =   3.89, mean = ( 0.42462,0.0001), std.dev. = (0.000106,-1E-05), res =  1.99E-24, time:   1116 sec, FOM: 7.916E+04
+Stopping because residual = (1.994E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.913, time:  1.407 sec.
+	Iteration #:  2, H =  3.975, time:  2.802 sec.
+	Iteration #:  3, H =   3.97, time:  4.138 sec.
+	Iteration #:  4, H =  3.972, time:  5.493 sec.
+	Iteration #:  5, H =  3.928, time:  6.881 sec.
+	Iteration #:  6, H =  3.919, time:  8.349 sec.
+	Iteration #:  7, H =  3.893, time:  9.727 sec.
+	Iteration #:  8, H =  3.851, time:  11.12 sec.
+	Iteration #:  9, H =  3.771, time:  12.49 sec.
+	Iteration #: 10, H =  3.831, time:   13.9 sec.
+	Iteration #: 11, H =  3.901, time:  15.27 sec.
+	Iteration #: 12, H =  3.913, time:  16.56 sec.
+	Iteration #: 13, H =  3.956, time:  17.98 sec.
+	Iteration #: 14, H =  3.985, time:   19.4 sec.
+	Iteration #: 15, H =  3.998, time:   20.8 sec.
+	Iteration #: 16, H =  4.005, time:  22.19 sec.
+	Iteration #: 17, H =  3.981, time:  23.58 sec.
+	Iteration #: 18, H =  3.942, time:  24.86 sec.
+	Iteration #: 19, H =  3.942, time:  26.17 sec.
+Restart #: 16, H =  3.942, mean = ( 0.42463,0.0001), std.dev. = ( 0.0001,-1E-05), res =  2.19E-24, time:   1144 sec, FOM: 8.728E+04
+Stopping because residual = (2.186E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.958, time:  1.324 sec.
+	Iteration #:  2, H =  3.981, time:  2.697 sec.
+	Iteration #:  3, H =   3.96, time:  4.113 sec.
+	Iteration #:  4, H =  3.926, time:  5.484 sec.
+	Iteration #:  5, H =   3.94, time:  6.876 sec.
+	Iteration #:  6, H =  3.887, time:  8.257 sec.
+	Iteration #:  7, H =  3.861, time:  9.671 sec.
+	Iteration #:  8, H =  3.887, time:  10.97 sec.
+	Iteration #:  9, H =  3.978, time:  12.29 sec.
+	Iteration #: 10, H =  4.037, time:  13.63 sec.
+	Iteration #: 11, H =  3.995, time:  14.97 sec.
+	Iteration #: 12, H =  3.944, time:  16.27 sec.
+	Iteration #: 13, H =  3.948, time:  17.55 sec.
+	Iteration #: 14, H =  3.944, time:  18.84 sec.
+	Iteration #: 15, H =  3.938, time:  20.27 sec.
+	Iteration #: 16, H =  3.912, time:  21.59 sec.
+	Iteration #: 17, H =  3.914, time:  22.92 sec.
+	Iteration #: 18, H =  3.886, time:  24.17 sec.
+	Iteration #: 19, H =   3.89, time:  25.47 sec.
+Restart #: 17, H =   3.89, mean = ( 0.42465,0.0001), std.dev. = (9.86E-05,-1E-05), res =  1.22E-25, time:   1171 sec, FOM: 8.785E+04
+Stopping because residual = (1.216E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.969, time:  1.305 sec.
+	Iteration #:  2, H =  3.952, time:  2.639 sec.
+	Iteration #:  3, H =  3.898, time:  3.955 sec.
+	Iteration #:  4, H =  3.886, time:  5.306 sec.
+	Iteration #:  5, H =  3.974, time:   6.62 sec.
+	Iteration #:  6, H =  3.994, time:  7.985 sec.
+	Iteration #:  7, H =  4.011, time:  9.331 sec.
+	Iteration #:  8, H =  3.928, time:  10.66 sec.
+	Iteration #:  9, H =  3.906, time:  11.98 sec.
+	Iteration #: 10, H =  3.868, time:  13.42 sec.
+	Iteration #: 11, H =  3.905, time:  14.83 sec.
+	Iteration #: 12, H =  3.945, time:  16.16 sec.
+	Iteration #: 13, H =  3.991, time:  17.56 sec.
+	Iteration #: 14, H =  3.971, time:  18.98 sec.
+	Iteration #: 15, H =  3.948, time:  20.36 sec.
+	Iteration #: 16, H =  3.889, time:  21.77 sec.
+	Iteration #: 17, H =  3.859, time:  23.16 sec.
+	Iteration #: 18, H =  3.817, time:  24.62 sec.
+	Iteration #: 19, H =   3.84, time:  26.01 sec.
+Restart #: 18, H =   3.84, mean = ( 0.42464,0.0001), std.dev. = (9.5E-05,-1E-05), res =  7.89E-25, time:   1198 sec, FOM: 9.25E+04
+Stopping because residual = (7.889E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.947, time:   1.36 sec.
+	Iteration #:  2, H =   3.97, time:  2.698 sec.
+	Iteration #:  3, H =  3.979, time:  4.021 sec.
+	Iteration #:  4, H =  4.027, time:  5.373 sec.
+	Iteration #:  5, H =  4.014, time:  6.662 sec.
+	Iteration #:  6, H =  3.977, time:  7.956 sec.
+	Iteration #:  7, H =  3.982, time:  9.307 sec.
+	Iteration #:  8, H =  3.953, time:  10.75 sec.
+	Iteration #:  9, H =  3.882, time:  12.08 sec.
+	Iteration #: 10, H =  3.826, time:  13.43 sec.
+	Iteration #: 11, H =  3.837, time:  14.85 sec.
+	Iteration #: 12, H =  3.921, time:  16.23 sec.
+	Iteration #: 13, H =  3.915, time:  17.56 sec.
+	Iteration #: 14, H =  3.912, time:  18.92 sec.
+	Iteration #: 15, H =   3.96, time:  20.26 sec.
+	Iteration #: 16, H =  3.894, time:  21.65 sec.
+	Iteration #: 17, H =  3.846, time:  23.03 sec.
+	Iteration #: 18, H =  3.829, time:  24.37 sec.
+	Iteration #: 19, H =  3.815, time:  25.69 sec.
+Restart #: 19, H =  3.815, mean = ( 0.42459,0.0001), std.dev. = (9.91E-05,-1E-05), res =  4.05E-25, time:   1225 sec, FOM: 8.315E+04
+Stopping because residual = (4.049E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.862, time:  1.545 sec.
+	Iteration #:  2, H =  3.875, time:  2.947 sec.
+	Iteration #:  3, H =   3.85, time:  4.271 sec.
+	Iteration #:  4, H =  3.881, time:  5.549 sec.
+	Iteration #:  5, H =  3.942, time:  6.909 sec.
+	Iteration #:  6, H =  3.911, time:  8.358 sec.
+	Iteration #:  7, H =   3.88, time:  9.783 sec.
+	Iteration #:  8, H =  3.927, time:  11.18 sec.
+	Iteration #:  9, H =  3.978, time:  12.56 sec.
+	Iteration #: 10, H =  3.981, time:  13.95 sec.
+	Iteration #: 11, H =  3.942, time:   15.3 sec.
+	Iteration #: 12, H =  3.949, time:  16.61 sec.
+	Iteration #: 13, H =  3.907, time:  17.96 sec.
+	Iteration #: 14, H =  3.868, time:  19.36 sec.
+	Iteration #: 15, H =  3.861, time:  20.73 sec.
+	Iteration #: 16, H =  3.947, time:     22 sec.
+	Iteration #: 17, H =  3.925, time:  23.34 sec.
+	Iteration #: 18, H =  3.928, time:  24.72 sec.
+	Iteration #: 19, H =  3.958, time:   26.1 sec.
+Restart #: 20, H =  3.958, mean = ( 0.42462,0.0001), std.dev. = (9.65E-05,-1E-05), res =  2.58E-25, time:   1252 sec, FOM: 8.572E+04
+Stopping because residual = (2.577E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.853, time:  1.425 sec.
+	Iteration #:  2, H =  3.866, time:  2.866 sec.
+	Iteration #:  3, H =  3.814, time:  4.308 sec.
+	Iteration #:  4, H =  3.832, time:  5.584 sec.
+	Iteration #:  5, H =  3.822, time:  7.025 sec.
+	Iteration #:  6, H =  3.917, time:  8.488 sec.
+	Iteration #:  7, H =   3.91, time:  9.964 sec.
+	Iteration #:  8, H =  3.887, time:  11.35 sec.
+	Iteration #:  9, H =  3.876, time:  12.76 sec.
+	Iteration #: 10, H =  3.823, time:  14.17 sec.
+	Iteration #: 11, H =  3.815, time:  15.51 sec.
+	Iteration #: 12, H =  3.827, time:   16.8 sec.
+	Iteration #: 13, H =   3.82, time:  18.15 sec.
+	Iteration #: 14, H =  3.819, time:  19.51 sec.
+	Iteration #: 15, H =  3.759, time:  20.78 sec.
+	Iteration #: 16, H =  3.865, time:  22.09 sec.
+	Iteration #: 17, H =  3.832, time:  23.43 sec.
+	Iteration #: 18, H =  3.843, time:   24.8 sec.
+	Iteration #: 19, H =  3.809, time:  26.14 sec.
+Restart #: 21, H =  3.809, mean = ( 0.42461,0.0001), std.dev. = (9.2E-05,-2E-05), res =  4.98E-25, time:   1280 sec, FOM: 9.239E+04
+Stopping because residual = (4.985E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.911, time:  1.246 sec.
+	Iteration #:  2, H =  3.923, time:   2.56 sec.
+	Iteration #:  3, H =  3.898, time:  4.015 sec.
+	Iteration #:  4, H =  3.925, time:  5.281 sec.
+	Iteration #:  5, H =  3.921, time:   6.58 sec.
+	Iteration #:  6, H =   3.93, time:  7.879 sec.
+	Iteration #:  7, H =  3.967, time:  9.235 sec.
+	Iteration #:  8, H =  3.944, time:  10.61 sec.
+	Iteration #:  9, H =  3.978, time:     12 sec.
+	Iteration #: 10, H =  3.983, time:  13.33 sec.
+	Iteration #: 11, H =  4.003, time:  14.76 sec.
+	Iteration #: 12, H =  3.971, time:  16.17 sec.
+	Iteration #: 13, H =   3.97, time:  17.58 sec.
+	Iteration #: 14, H =  3.983, time:  18.94 sec.
+	Iteration #: 15, H =  3.984, time:   20.3 sec.
+	Iteration #: 16, H =   3.98, time:  21.66 sec.
+	Iteration #: 17, H =  3.995, time:  23.05 sec.
+	Iteration #: 18, H =  3.958, time:   24.5 sec.
+	Iteration #: 19, H =  3.939, time:  25.85 sec.
+Restart #: 22, H =  3.939, mean = ( 0.42465,0.0001), std.dev. = (9.57E-05,-2E-05), res =   3.8E-25, time:   1307 sec, FOM: 8.346E+04
+Stopping because residual = (3.802E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.921, time:  1.523 sec.
+	Iteration #:  2, H =  3.928, time:   2.94 sec.
+	Iteration #:  3, H =  3.953, time:  4.194 sec.
+	Iteration #:  4, H =  3.956, time:  5.556 sec.
+	Iteration #:  5, H =  3.978, time:  6.939 sec.
+	Iteration #:  6, H =  3.987, time:  8.322 sec.
+	Iteration #:  7, H =  3.996, time:  9.718 sec.
+	Iteration #:  8, H =  3.979, time:  11.12 sec.
+	Iteration #:  9, H =  3.895, time:  12.48 sec.
+	Iteration #: 10, H =  3.832, time:  13.94 sec.
+	Iteration #: 11, H =  3.815, time:  15.31 sec.
+	Iteration #: 12, H =  3.895, time:  16.66 sec.
+	Iteration #: 13, H =  3.923, time:  17.91 sec.
+	Iteration #: 14, H =    3.9, time:  19.26 sec.
+	Iteration #: 15, H =  3.885, time:  20.61 sec.
+	Iteration #: 16, H =  3.869, time:  21.94 sec.
+	Iteration #: 17, H =  3.889, time:  23.24 sec.
+	Iteration #: 18, H =  3.948, time:  24.46 sec.
+	Iteration #: 19, H =  3.763, time:  25.79 sec.
+Restart #: 23, H =  3.763, mean = ( 0.42466,0.0001), std.dev. = (9.35E-05,-2E-05), res =  1.67E-25, time:   1334 sec, FOM: 8.569E+04
+Stopping because residual = (1.672E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.948, time:  1.294 sec.
+	Iteration #:  2, H =  3.967, time:  2.609 sec.
+	Iteration #:  3, H =  3.947, time:  4.027 sec.
+	Iteration #:  4, H =  3.903, time:  5.305 sec.
+	Iteration #:  5, H =  3.997, time:  6.577 sec.
+	Iteration #:  6, H =  3.993, time:    7.9 sec.
+	Iteration #:  7, H =  3.996, time:  9.211 sec.
+	Iteration #:  8, H =  3.991, time:   10.6 sec.
+	Iteration #:  9, H =  3.995, time:     12 sec.
+	Iteration #: 10, H =  3.994, time:   13.4 sec.
+	Iteration #: 11, H =  3.993, time:  14.81 sec.
+	Iteration #: 12, H =   3.98, time:  16.14 sec.
+	Iteration #: 13, H =  3.966, time:  17.51 sec.
+	Iteration #: 14, H =  3.939, time:   18.8 sec.
+	Iteration #: 15, H =  3.949, time:  20.16 sec.
+	Iteration #: 16, H =  3.958, time:  21.54 sec.
+	Iteration #: 17, H =  3.963, time:   22.9 sec.
+	Iteration #: 18, H =  3.961, time:  24.26 sec.
+	Iteration #: 19, H =  3.956, time:  25.59 sec.
+Restart #: 24, H =  3.956, mean = ( 0.42464,0.0001), std.dev. = (9.18E-05,-1E-05), res =  2.08E-25, time:   1361 sec, FOM: 8.711E+04
+Stopping because residual = (2.076E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.942, time:  1.388 sec.
+	Iteration #:  2, H =   3.99, time:   2.78 sec.
+	Iteration #:  3, H =  3.953, time:  4.211 sec.
+	Iteration #:  4, H =  3.967, time:  5.568 sec.
+	Iteration #:  5, H =  4.034, time:  6.928 sec.
+	Iteration #:  6, H =  4.002, time:  8.346 sec.
+	Iteration #:  7, H =  3.972, time:   9.73 sec.
+	Iteration #:  8, H =    3.9, time:  11.08 sec.
+	Iteration #:  9, H =  3.879, time:  12.45 sec.
+	Iteration #: 10, H =  3.885, time:  13.83 sec.
+	Iteration #: 11, H =  3.984, time:  15.09 sec.
+	Iteration #: 12, H =  3.994, time:  16.41 sec.
+	Iteration #: 13, H =  3.927, time:  17.78 sec.
+	Iteration #: 14, H =  3.867, time:  19.08 sec.
+	Iteration #: 15, H =   3.89, time:  20.43 sec.
+	Iteration #: 16, H =  3.928, time:  21.81 sec.
+	Iteration #: 17, H =  3.858, time:  23.19 sec.
+	Iteration #: 18, H =  3.842, time:  24.57 sec.
+	Iteration #: 19, H =  3.828, time:  25.93 sec.
+Restart #: 25, H =  3.828, mean = ( 0.42461,0.0001), std.dev. = (9.3E-05,-1E-05), res =  6.45E-25, time:   1388 sec, FOM: 8.319E+04
+Stopping because residual = (6.452E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.951, time:  1.507 sec.
+	Iteration #:  2, H =   3.96, time:  2.924 sec.
+	Iteration #:  3, H =  3.957, time:  4.428 sec.
+	Iteration #:  4, H =   3.95, time:  5.699 sec.
+	Iteration #:  5, H =   3.94, time:  7.099 sec.
+	Iteration #:  6, H =   3.93, time:   8.55 sec.
+	Iteration #:  7, H =  3.984, time:  9.973 sec.
+	Iteration #:  8, H =  3.985, time:  11.37 sec.
+	Iteration #:  9, H =  4.013, time:  12.67 sec.
+	Iteration #: 10, H =  3.988, time:     14 sec.
+	Iteration #: 11, H =  3.948, time:  15.35 sec.
+	Iteration #: 12, H =  3.931, time:  16.66 sec.
+	Iteration #: 13, H =  3.902, time:  18.07 sec.
+	Iteration #: 14, H =  3.885, time:  19.47 sec.
+	Iteration #: 15, H =  3.914, time:  20.78 sec.
+	Iteration #: 16, H =   3.93, time:  22.16 sec.
+	Iteration #: 17, H =  3.987, time:  23.45 sec.
+	Iteration #: 18, H =  3.914, time:  24.75 sec.
+	Iteration #: 19, H =  3.912, time:  26.12 sec.
+Restart #: 26, H =  3.912, mean = (  0.4246,0.0001), std.dev. = (9.07E-05,-1E-05), res =   6.6E-25, time:   1416 sec, FOM: 8.587E+04
+Stopping because residual = (6.601E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.935, time:  1.476 sec.
+	Iteration #:  2, H =  3.928, time:  2.894 sec.
+	Iteration #:  3, H =  3.934, time:  4.209 sec.
+	Iteration #:  4, H =  3.947, time:  5.624 sec.
+	Iteration #:  5, H =  3.914, time:  7.069 sec.
+	Iteration #:  6, H =  3.893, time:  8.488 sec.
+	Iteration #:  7, H =  3.896, time:  9.905 sec.
+	Iteration #:  8, H =  3.834, time:  11.33 sec.
+	Iteration #:  9, H =  3.861, time:   12.6 sec.
+	Iteration #: 10, H =  3.885, time:  14.03 sec.
+	Iteration #: 11, H =  3.877, time:  15.41 sec.
+	Iteration #: 12, H =  3.895, time:  16.76 sec.
+	Iteration #: 13, H =  3.934, time:  18.15 sec.
+	Iteration #: 14, H =  3.941, time:  19.55 sec.
+	Iteration #: 15, H =  3.857, time:   20.9 sec.
+	Iteration #: 16, H =  3.872, time:  22.21 sec.
+	Iteration #: 17, H =  3.849, time:  23.61 sec.
+	Iteration #: 18, H =  3.816, time:  25.04 sec.
+	Iteration #: 19, H =   3.83, time:   26.4 sec.
+Restart #: 27, H =   3.83, mean = ( 0.42458,0.0001), std.dev. = (8.97E-05,-1E-05), res =  2.14E-25, time:   1444 sec, FOM: 8.606E+04
+Stopping because residual = (2.14E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.942, time:  1.168 sec.
+	Iteration #:  2, H =  3.926, time:  2.552 sec.
+	Iteration #:  3, H =  3.966, time:   4.04 sec.
+	Iteration #:  4, H =  3.967, time:  5.528 sec.
+	Iteration #:  5, H =  3.977, time:  6.938 sec.
+	Iteration #:  6, H =   3.93, time:  8.288 sec.
+	Iteration #:  7, H =  3.922, time:  9.637 sec.
+	Iteration #:  8, H =  3.943, time:   10.9 sec.
+	Iteration #:  9, H =  3.971, time:  12.18 sec.
+	Iteration #: 10, H =  3.962, time:  13.49 sec.
+	Iteration #: 11, H =  3.985, time:  14.75 sec.
+	Iteration #: 12, H =  3.922, time:  16.09 sec.
+	Iteration #: 13, H =  3.887, time:  17.48 sec.
+	Iteration #: 14, H =  3.915, time:  18.84 sec.
+	Iteration #: 15, H =  3.911, time:  20.18 sec.
+	Iteration #: 16, H =   3.96, time:  21.56 sec.
+	Iteration #: 17, H =  3.947, time:     23 sec.
+	Iteration #: 18, H =  3.927, time:  24.42 sec.
+	Iteration #: 19, H =  3.931, time:  25.78 sec.
+Restart #: 28, H =  3.931, mean = ( 0.42457,0.0001), std.dev. = (8.67E-05,-1E-05), res =   2.9E-25, time:   1471 sec, FOM: 9.04E+04
+Stopping because residual = (2.898E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.999, time:   1.27 sec.
+	Iteration #:  2, H =  3.953, time:   2.61 sec.
+	Iteration #:  3, H =  3.908, time:  4.099 sec.
+	Iteration #:  4, H =  3.947, time:  5.497 sec.
+	Iteration #:  5, H =  3.953, time:   6.88 sec.
+	Iteration #:  6, H =  3.942, time:  8.278 sec.
+	Iteration #:  7, H =  3.923, time:  9.655 sec.
+	Iteration #:  8, H =  3.827, time:  10.97 sec.
+	Iteration #:  9, H =  3.815, time:  12.32 sec.
+	Iteration #: 10, H =  3.871, time:  13.69 sec.
+	Iteration #: 11, H =  3.876, time:  14.99 sec.
+	Iteration #: 12, H =  3.937, time:  16.25 sec.
+	Iteration #: 13, H =  3.975, time:  17.56 sec.
+	Iteration #: 14, H =   3.99, time:  18.91 sec.
+	Iteration #: 15, H =  3.964, time:   20.3 sec.
+	Iteration #: 16, H =  3.977, time:  21.67 sec.
+	Iteration #: 17, H =  3.944, time:  22.96 sec.
+	Iteration #: 18, H =  3.949, time:  24.28 sec.
+	Iteration #: 19, H =   3.87, time:  25.62 sec.
+Restart #: 29, H =   3.87, mean = (  0.4246,0.0001), std.dev. = (8.86E-05,-1E-05), res =  2.45E-25, time:   1498 sec, FOM:  8.5E+04
+Stopping because residual = (2.446E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.853, time:   1.38 sec.
+	Iteration #:  2, H =  3.848, time:  2.762 sec.
+	Iteration #:  3, H =  3.891, time:  4.201 sec.
+	Iteration #:  4, H =  3.833, time:  5.504 sec.
+	Iteration #:  5, H =  3.886, time:  6.901 sec.
+	Iteration #:  6, H =  3.879, time:   8.32 sec.
+	Iteration #:  7, H =  3.865, time:  9.705 sec.
+	Iteration #:  8, H =  3.849, time:  11.03 sec.
+	Iteration #:  9, H =  3.881, time:  12.42 sec.
+	Iteration #: 10, H =  3.899, time:   13.8 sec.
+	Iteration #: 11, H =  3.861, time:  15.18 sec.
+	Iteration #: 12, H =  3.929, time:  16.48 sec.
+	Iteration #: 13, H =  3.937, time:  17.84 sec.
+	Iteration #: 14, H =  3.899, time:  19.23 sec.
+	Iteration #: 15, H =  3.865, time:   20.6 sec.
+	Iteration #: 16, H =  3.929, time:  21.96 sec.
+	Iteration #: 17, H =  3.906, time:  23.32 sec.
+	Iteration #: 18, H =  3.832, time:  24.61 sec.
+	Iteration #: 19, H =  3.839, time:   25.9 sec.
+Restart #: 30, H =  3.839, mean = ( 0.42459,0.0001), std.dev. = (8.61E-05,-1E-05), res =  8.86E-25, time:   1525 sec, FOM: 8.844E+04
+Stopping because residual = (8.863E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.884, time:   1.31 sec.
+	Iteration #:  2, H =  3.881, time:  2.658 sec.
+	Iteration #:  3, H =  3.872, time:  4.047 sec.
+	Iteration #:  4, H =   3.87, time:  5.466 sec.
+	Iteration #:  5, H =  3.869, time:   6.87 sec.
+	Iteration #:  6, H =  3.839, time:  8.176 sec.
+	Iteration #:  7, H =  3.852, time:  9.482 sec.
+	Iteration #:  8, H =  3.869, time:  10.78 sec.
+	Iteration #:  9, H =  3.941, time:  12.08 sec.
+	Iteration #: 10, H =  3.965, time:  13.37 sec.
+	Iteration #: 11, H =  3.939, time:  14.73 sec.
+	Iteration #: 12, H =  3.864, time:  16.13 sec.
+	Iteration #: 13, H =  3.884, time:  17.52 sec.
+	Iteration #: 14, H =  3.916, time:  18.92 sec.
+	Iteration #: 15, H =  3.918, time:  20.33 sec.
+	Iteration #: 16, H =  3.919, time:   21.7 sec.
+	Iteration #: 17, H =  3.906, time:  22.99 sec.
+	Iteration #: 18, H =  3.946, time:   24.3 sec.
+	Iteration #: 19, H =  3.898, time:  25.61 sec.
+Restart #: 31, H =  3.898, mean = ( 0.42461,0.0001), std.dev. = (8.5E-05,-1E-05), res =  1.98E-24, time:   1552 sec, FOM: 8.913E+04
+Stopping because residual = (1.981E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.931, time:  1.463 sec.
+	Iteration #:  2, H =  3.957, time:  2.865 sec.
+	Iteration #:  3, H =  3.932, time:  4.201 sec.
+	Iteration #:  4, H =  3.881, time:  5.475 sec.
+	Iteration #:  5, H =  3.926, time:  6.802 sec.
+	Iteration #:  6, H =   3.97, time:  8.206 sec.
+	Iteration #:  7, H =  3.956, time:  9.552 sec.
+	Iteration #:  8, H =  3.933, time:  10.94 sec.
+	Iteration #:  9, H =  3.956, time:   12.4 sec.
+	Iteration #: 10, H =  4.014, time:  13.81 sec.
+	Iteration #: 11, H =  4.001, time:  15.16 sec.
+	Iteration #: 12, H =  3.949, time:  16.56 sec.
+	Iteration #: 13, H =   3.96, time:  17.96 sec.
+	Iteration #: 14, H =  3.937, time:  19.36 sec.
+	Iteration #: 15, H =  3.922, time:   20.7 sec.
+	Iteration #: 16, H =  3.941, time:  22.03 sec.
+	Iteration #: 17, H =   3.91, time:  23.41 sec.
+	Iteration #: 18, H =  3.867, time:  24.83 sec.
+	Iteration #: 19, H =  3.865, time:  26.21 sec.
+Restart #: 32, H =  3.865, mean = ( 0.42461,0.0001), std.dev. = (8.24E-05,-1E-05), res =  4.45E-25, time:   1580 sec, FOM: 9.323E+04
+Stopping because residual = (4.455E-25,0) < 2.22E-16
+	Iteration #:  1, H =    3.9, time:  1.545 sec.
+	Iteration #:  2, H =  3.895, time:  3.002 sec.
+	Iteration #:  3, H =  3.874, time:  4.396 sec.
+	Iteration #:  4, H =  3.831, time:  5.653 sec.
+	Iteration #:  5, H =  3.891, time:  7.033 sec.
+	Iteration #:  6, H =  3.894, time:  8.293 sec.
+	Iteration #:  7, H =  3.889, time:  9.659 sec.
+	Iteration #:  8, H =  3.903, time:  11.06 sec.
+	Iteration #:  9, H =  3.921, time:  12.49 sec.
+	Iteration #: 10, H =  3.914, time:  13.88 sec.
+	Iteration #: 11, H =  3.856, time:  15.19 sec.
+	Iteration #: 12, H =  3.869, time:  16.57 sec.
+	Iteration #: 13, H =  3.872, time:  17.91 sec.
+	Iteration #: 14, H =  3.903, time:  19.29 sec.
+	Iteration #: 15, H =  3.873, time:  20.62 sec.
+	Iteration #: 16, H =  3.952, time:  21.98 sec.
+	Iteration #: 17, H =   3.94, time:  23.33 sec.
+	Iteration #: 18, H =  3.938, time:  24.74 sec.
+	Iteration #: 19, H =  3.954, time:  26.13 sec.
+Restart #: 33, H =  3.954, mean = ( 0.42461, 9E-05), std.dev. = (  8E-05,-1E-05), res =  3.51E-25, time:   1607 sec, FOM: 9.714E+04
+Stopping because residual = (3.512E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.966, time:  1.411 sec.
+	Iteration #:  2, H =  3.932, time:  2.806 sec.
+	Iteration #:  3, H =   3.94, time:  4.191 sec.
+	Iteration #:  4, H =   3.95, time:  5.531 sec.
+	Iteration #:  5, H =  3.956, time:  6.906 sec.
+	Iteration #:  6, H =  3.954, time:   8.28 sec.
+	Iteration #:  7, H =   3.98, time:  9.635 sec.
+	Iteration #:  8, H =  3.984, time:  10.95 sec.
+	Iteration #:  9, H =  3.946, time:  12.27 sec.
+	Iteration #: 10, H =   3.87, time:  13.55 sec.
+	Iteration #: 11, H =  3.891, time:   14.9 sec.
+	Iteration #: 12, H =  3.941, time:   16.2 sec.
+	Iteration #: 13, H =  3.832, time:  17.55 sec.
+	Iteration #: 14, H =  3.831, time:  18.91 sec.
+	Iteration #: 15, H =  3.795, time:  20.33 sec.
+	Iteration #: 16, H =  3.798, time:   21.7 sec.
+	Iteration #: 17, H =  3.741, time:  23.07 sec.
+	Iteration #: 18, H =  3.779, time:  24.44 sec.
+	Iteration #: 19, H =  3.863, time:  25.88 sec.
+Restart #: 34, H =  3.863, mean = (  0.4246,0.0001), std.dev. = (7.93E-05,-1E-05), res =  1.15E-24, time:   1634 sec, FOM: 9.733E+04
+Stopping because residual = (1.146E-24,0) < 2.22E-16
+	Iteration #:  1, H =   3.94, time:  1.381 sec.
+	Iteration #:  2, H =  3.992, time:  2.716 sec.
+	Iteration #:  3, H =   3.98, time:  4.116 sec.
+	Iteration #:  4, H =  3.964, time:  5.463 sec.
+	Iteration #:  5, H =  3.975, time:  6.815 sec.
+	Iteration #:  6, H =  3.996, time:  8.126 sec.
+	Iteration #:  7, H =  3.996, time:  9.425 sec.
+	Iteration #:  8, H =  3.983, time:  10.74 sec.
+	Iteration #:  9, H =  3.909, time:  12.11 sec.
+	Iteration #: 10, H =   3.88, time:  13.37 sec.
+	Iteration #: 11, H =  3.797, time:  14.71 sec.
+	Iteration #: 12, H =  3.912, time:   16.1 sec.
+	Iteration #: 13, H =  3.948, time:  17.41 sec.
+	Iteration #: 14, H =  3.878, time:  18.76 sec.
+	Iteration #: 15, H =  3.871, time:  20.14 sec.
+	Iteration #: 16, H =  3.892, time:  21.48 sec.
+	Iteration #: 17, H =  3.877, time:  22.83 sec.
+	Iteration #: 18, H =  3.909, time:  24.24 sec.
+	Iteration #: 19, H =  3.967, time:  25.64 sec.
+Restart #: 35, H =  3.967, mean = (  0.4246, 9E-05), std.dev. = (7.72E-05,-1E-05), res =  1.48E-23, time:   1661 sec, FOM: 1.01E+05
+Stopping because residual = (1.48E-23,0) < 2.22E-16
+	Iteration #:  1, H =  3.849, time:  1.218 sec.
+	Iteration #:  2, H =  3.848, time:  2.499 sec.
+	Iteration #:  3, H =  3.784, time:   3.99 sec.
+	Iteration #:  4, H =  3.885, time:  5.247 sec.
+	Iteration #:  5, H =    3.9, time:  6.657 sec.
+	Iteration #:  6, H =  3.894, time:  7.969 sec.
+	Iteration #:  7, H =   3.95, time:  9.319 sec.
+	Iteration #:  8, H =  3.942, time:  10.64 sec.
+	Iteration #:  9, H =  3.958, time:  11.91 sec.
+	Iteration #: 10, H =  3.976, time:  13.18 sec.
+	Iteration #: 11, H =  4.007, time:   14.5 sec.
+	Iteration #: 12, H =  4.024, time:  15.86 sec.
+	Iteration #: 13, H =  3.975, time:   17.3 sec.
+	Iteration #: 14, H =  3.951, time:  18.66 sec.
+	Iteration #: 15, H =  3.847, time:  20.08 sec.
+	Iteration #: 16, H =  3.871, time:  21.41 sec.
+	Iteration #: 17, H =  3.964, time:  22.76 sec.
+	Iteration #: 18, H =  3.838, time:   24.1 sec.
+	Iteration #: 19, H =  3.917, time:  25.49 sec.
+Restart #: 36, H =  3.917, mean = ( 0.42459,0.0001), std.dev. = (7.59E-05,-1E-05), res =  2.72E-25, time:   1688 sec, FOM: 1.029E+05
+Stopping because residual = (2.716E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.825, time:   1.47 sec.
+	Iteration #:  2, H =  3.829, time:  2.901 sec.
+	Iteration #:  3, H =  3.828, time:  4.324 sec.
+	Iteration #:  4, H =  3.864, time:  5.602 sec.
+	Iteration #:  5, H =  3.943, time:  7.064 sec.
+	Iteration #:  6, H =  3.992, time:   8.51 sec.
+	Iteration #:  7, H =  4.026, time:  9.932 sec.
+	Iteration #:  8, H =   4.04, time:  11.28 sec.
+	Iteration #:  9, H =  4.029, time:  12.58 sec.
+	Iteration #: 10, H =  3.922, time:     14 sec.
+	Iteration #: 11, H =  3.858, time:  15.45 sec.
+	Iteration #: 12, H =  3.872, time:  16.83 sec.
+	Iteration #: 13, H =  3.898, time:   18.1 sec.
+	Iteration #: 14, H =  3.951, time:  19.48 sec.
+	Iteration #: 15, H =  3.873, time:  20.75 sec.
+	Iteration #: 16, H =  3.854, time:  22.08 sec.
+	Iteration #: 17, H =  3.904, time:  23.44 sec.
+	Iteration #: 18, H =  3.938, time:  24.78 sec.
+	Iteration #: 19, H =  3.947, time:  26.08 sec.
+Restart #: 37, H =  3.947, mean = ( 0.42455,0.0001), std.dev. = (8.46E-05,-1E-05), res =  9.68E-25, time:   1716 sec, FOM: 8.139E+04
+Stopping because residual = (9.68E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.949, time:  1.467 sec.
+	Iteration #:  2, H =  3.959, time:  2.878 sec.
+	Iteration #:  3, H =  3.928, time:  4.179 sec.
+	Iteration #:  4, H =  3.916, time:  5.584 sec.
+	Iteration #:  5, H =  3.938, time:  6.981 sec.
+	Iteration #:  6, H =   3.95, time:  8.412 sec.
+	Iteration #:  7, H =   3.86, time:  9.839 sec.
+	Iteration #:  8, H =  3.899, time:  11.21 sec.
+	Iteration #:  9, H =  3.946, time:  12.49 sec.
+	Iteration #: 10, H =  3.939, time:  13.83 sec.
+	Iteration #: 11, H =  3.914, time:  15.18 sec.
+	Iteration #: 12, H =   3.91, time:  16.44 sec.
+	Iteration #: 13, H =  3.916, time:   17.8 sec.
+	Iteration #: 14, H =  3.898, time:  19.18 sec.
+	Iteration #: 15, H =  3.903, time:  20.59 sec.
+	Iteration #: 16, H =  3.851, time:  21.97 sec.
+	Iteration #: 17, H =  3.866, time:  23.35 sec.
+	Iteration #: 18, H =  3.858, time:  24.75 sec.
+	Iteration #: 19, H =  3.893, time:  26.15 sec.
+Restart #: 38, H =  3.893, mean = ( 0.42455,0.0001), std.dev. = (8.27E-05,-1E-05), res =  3.52E-25, time:   1743 sec, FOM: 8.395E+04
+Stopping because residual = (3.525E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.881, time:  1.545 sec.
+	Iteration #:  2, H =  3.833, time:  2.989 sec.
+	Iteration #:  3, H =  3.849, time:  4.234 sec.
+	Iteration #:  4, H =   3.85, time:  5.682 sec.
+	Iteration #:  5, H =  3.839, time:  7.092 sec.
+	Iteration #:  6, H =  3.859, time:  8.531 sec.
+	Iteration #:  7, H =  3.875, time:    9.9 sec.
+	Iteration #:  8, H =  3.841, time:  11.26 sec.
+	Iteration #:  9, H =   3.96, time:  12.56 sec.
+	Iteration #: 10, H =  3.993, time:  13.85 sec.
+	Iteration #: 11, H =  3.921, time:  15.16 sec.
+	Iteration #: 12, H =  3.926, time:  16.53 sec.
+	Iteration #: 13, H =  3.876, time:  17.89 sec.
+	Iteration #: 14, H =  3.891, time:  19.28 sec.
+	Iteration #: 15, H =  3.845, time:   20.7 sec.
+	Iteration #: 16, H =  3.898, time:   22.1 sec.
+	Iteration #: 17, H =  3.883, time:  23.52 sec.
+	Iteration #: 18, H =  3.861, time:  24.92 sec.
+	Iteration #: 19, H =  3.904, time:  26.28 sec.
+Restart #: 39, H =  3.904, mean = ( 0.42456,0.0001), std.dev. = (8.07E-05,-1E-05), res =  1.49E-25, time:   1771 sec, FOM: 8.673E+04
+Stopping because residual = (1.485E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.878, time:  1.153 sec.
+	Iteration #:  2, H =  3.929, time:   2.45 sec.
+	Iteration #:  3, H =  3.942, time:  3.959 sec.
+	Iteration #:  4, H =  3.935, time:  5.269 sec.
+	Iteration #:  5, H =  3.949, time:  6.549 sec.
+	Iteration #:  6, H =  3.964, time:  7.906 sec.
+	Iteration #:  7, H =  3.959, time:  9.253 sec.
+	Iteration #:  8, H =  3.886, time:  10.56 sec.
+	Iteration #:  9, H =  3.915, time:  11.98 sec.
+	Iteration #: 10, H =  3.956, time:  13.32 sec.
+	Iteration #: 11, H =  3.999, time:  14.64 sec.
+	Iteration #: 12, H =  3.975, time:  15.97 sec.
+	Iteration #: 13, H =  3.977, time:  17.31 sec.
+	Iteration #: 14, H =  3.973, time:  18.67 sec.
+	Iteration #: 15, H =   3.96, time:  20.02 sec.
+	Iteration #: 16, H =  3.974, time:  21.38 sec.
+	Iteration #: 17, H =  3.982, time:  22.77 sec.
+	Iteration #: 18, H =  3.966, time:  24.09 sec.
+	Iteration #: 19, H =  3.999, time:  25.41 sec.
+Restart #: 40, H =  3.999, mean = ( 0.42454,0.0001), std.dev. = (8.07E-05,-1E-05), res =  4.55E-25, time:   1798 sec, FOM: 8.543E+04
+Stopping because residual = (4.55E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.873, time:  1.221 sec.
+	Iteration #:  2, H =  3.881, time:  2.499 sec.
+	Iteration #:  3, H =  3.923, time:  3.982 sec.
+	Iteration #:  4, H =  3.927, time:  5.287 sec.
+	Iteration #:  5, H =  3.967, time:   6.71 sec.
+	Iteration #:  6, H =  3.954, time:  8.032 sec.
+	Iteration #:  7, H =  3.945, time:  9.372 sec.
+	Iteration #:  8, H =  3.992, time:  10.66 sec.
+	Iteration #:  9, H =  3.955, time:  11.91 sec.
+	Iteration #: 10, H =  3.971, time:  13.21 sec.
+	Iteration #: 11, H =  3.909, time:  14.55 sec.
+	Iteration #: 12, H =   3.88, time:  15.97 sec.
+	Iteration #: 13, H =  3.915, time:  17.28 sec.
+	Iteration #: 14, H =  3.919, time:   18.6 sec.
+	Iteration #: 15, H =  3.991, time:  19.93 sec.
+	Iteration #: 16, H =  3.958, time:  21.23 sec.
+	Iteration #: 17, H =  3.988, time:  22.62 sec.
+	Iteration #: 18, H =  3.983, time:  24.01 sec.
+	Iteration #: 19, H =  3.979, time:  25.38 sec.
+Restart #: 41, H =  3.979, mean = ( 0.42453,0.0001), std.dev. = (7.89E-05,-1E-05), res =  2.75E-25, time:   1824 sec, FOM: 8.816E+04
+Stopping because residual = (2.749E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.955, time:    1.5 sec.
+	Iteration #:  2, H =  3.983, time:   2.89 sec.
+	Iteration #:  3, H =  3.974, time:  4.097 sec.
+	Iteration #:  4, H =  3.927, time:  5.514 sec.
+	Iteration #:  5, H =  3.818, time:  6.878 sec.
+	Iteration #:  6, H =  3.821, time:  8.189 sec.
+	Iteration #:  7, H =  3.828, time:  9.551 sec.
+	Iteration #:  8, H =  3.805, time:  10.89 sec.
+	Iteration #:  9, H =  3.841, time:  12.24 sec.
+	Iteration #: 10, H =  3.915, time:  13.63 sec.
+	Iteration #: 11, H =  3.907, time:  14.98 sec.
+	Iteration #: 12, H =  3.963, time:  16.37 sec.
+	Iteration #: 13, H =  4.002, time:  17.76 sec.
+	Iteration #: 14, H =  3.985, time:  19.11 sec.
+	Iteration #: 15, H =  3.979, time:   20.5 sec.
+	Iteration #: 16, H =  4.005, time:  21.89 sec.
+	Iteration #: 17, H =  3.988, time:  23.31 sec.
+	Iteration #: 18, H =  3.975, time:  24.68 sec.
+	Iteration #: 19, H =  4.029, time:  26.06 sec.
+Restart #: 42, H =  4.029, mean = ( 0.42454,0.0001), std.dev. = (7.68E-05,-1E-05), res =  3.14E-25, time:   1852 sec, FOM: 9.144E+04
+Stopping because residual = (3.142E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.854, time:  1.266 sec.
+	Iteration #:  2, H =  3.842, time:  2.554 sec.
+	Iteration #:  3, H =  3.937, time:  4.005 sec.
+	Iteration #:  4, H =  3.931, time:  5.298 sec.
+	Iteration #:  5, H =   3.94, time:   6.54 sec.
+	Iteration #:  6, H =  3.926, time:  7.856 sec.
+	Iteration #:  7, H =  3.929, time:  9.109 sec.
+	Iteration #:  8, H =  3.939, time:  10.39 sec.
+	Iteration #:  9, H =  3.949, time:  11.82 sec.
+	Iteration #: 10, H =  3.902, time:  13.13 sec.
+	Iteration #: 11, H =  3.929, time:  14.48 sec.
+	Iteration #: 12, H =   3.92, time:  15.88 sec.
+	Iteration #: 13, H =  3.942, time:  17.22 sec.
+	Iteration #: 14, H =  3.926, time:  18.54 sec.
+	Iteration #: 15, H =  3.925, time:  19.94 sec.
+	Iteration #: 16, H =   3.86, time:  21.33 sec.
+	Iteration #: 17, H =  3.847, time:  22.73 sec.
+	Iteration #: 18, H =  3.847, time:  24.14 sec.
+	Iteration #: 19, H =  3.879, time:  25.53 sec.
+Restart #: 43, H =  3.879, mean = (  0.4245,0.0001), std.dev. = (8.12E-05,-2E-05), res =  3.23E-25, time:   1879 sec, FOM: 8.072E+04
+Stopping because residual = (3.229E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.878, time:  1.245 sec.
+	Iteration #:  2, H =  3.826, time:  2.527 sec.
+	Iteration #:  3, H =  3.778, time:  3.924 sec.
+	Iteration #:  4, H =   3.79, time:  5.437 sec.
+	Iteration #:  5, H =  3.874, time:  6.776 sec.
+	Iteration #:  6, H =    3.9, time:  8.049 sec.
+	Iteration #:  7, H =  3.933, time:  9.379 sec.
+	Iteration #:  8, H =   3.94, time:  10.64 sec.
+	Iteration #:  9, H =  4.002, time:  11.99 sec.
+	Iteration #: 10, H =  3.945, time:  13.32 sec.
+	Iteration #: 11, H =  3.895, time:  14.62 sec.
+	Iteration #: 12, H =  3.868, time:  15.98 sec.
+	Iteration #: 13, H =  3.806, time:  17.36 sec.
+	Iteration #: 14, H =  3.792, time:  18.71 sec.
+	Iteration #: 15, H =  3.803, time:  20.08 sec.
+	Iteration #: 16, H =  3.809, time:  21.47 sec.
+	Iteration #: 17, H =   3.82, time:  22.81 sec.
+	Iteration #: 18, H =   3.83, time:  24.15 sec.
+	Iteration #: 19, H =  3.844, time:  25.57 sec.
+Restart #: 44, H =  3.844, mean = ( 0.42449,0.0001), std.dev. = (8.1E-05,-1E-05), res =  6.06E-25, time:   1906 sec, FOM: 8.004E+04
+Stopping because residual = (6.057E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.935, time:  1.351 sec.
+	Iteration #:  2, H =  3.915, time:  2.663 sec.
+	Iteration #:  3, H =  3.918, time:  3.955 sec.
+	Iteration #:  4, H =  3.926, time:  5.383 sec.
+	Iteration #:  5, H =  3.982, time:  6.652 sec.
+	Iteration #:  6, H =  3.915, time:  7.934 sec.
+	Iteration #:  7, H =  3.962, time:   9.27 sec.
+	Iteration #:  8, H =  3.949, time:  10.67 sec.
+	Iteration #:  9, H =  3.889, time:  12.12 sec.
+	Iteration #: 10, H =  3.952, time:  13.49 sec.
+	Iteration #: 11, H =  4.017, time:  14.89 sec.
+	Iteration #: 12, H =  4.001, time:  16.29 sec.
+	Iteration #: 13, H =  3.914, time:  17.68 sec.
+	Iteration #: 14, H =   3.88, time:  19.01 sec.
+	Iteration #: 15, H =  3.998, time:  20.35 sec.
+	Iteration #: 16, H =      4, time:  21.69 sec.
+	Iteration #: 17, H =  3.956, time:  23.07 sec.
+	Iteration #: 18, H =   3.88, time:  24.39 sec.
+	Iteration #: 19, H =  3.909, time:  25.75 sec.
+Restart #: 45, H =  3.909, mean = ( 0.42448,0.0001), std.dev. = (  8E-05,-1E-05), res =  6.69E-25, time:   1933 sec, FOM: 8.092E+04
+Stopping because residual = (6.69E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.978, time:  1.173 sec.
+	Iteration #:  2, H =  3.946, time:  2.471 sec.
+	Iteration #:  3, H =  3.955, time:  3.996 sec.
+	Iteration #:  4, H =  3.936, time:  5.383 sec.
+	Iteration #:  5, H =  3.862, time:  6.715 sec.
+	Iteration #:  6, H =  3.902, time:  8.107 sec.
+	Iteration #:  7, H =  3.941, time:  9.418 sec.
+	Iteration #:  8, H =  3.976, time:  10.75 sec.
+	Iteration #:  9, H =  3.886, time:  12.09 sec.
+	Iteration #: 10, H =  3.916, time:  13.44 sec.
+	Iteration #: 11, H =  4.011, time:  14.76 sec.
+	Iteration #: 12, H =  4.035, time:  16.05 sec.
+	Iteration #: 13, H =  3.969, time:  17.31 sec.
+	Iteration #: 14, H =  3.928, time:  18.67 sec.
+	Iteration #: 15, H =  3.901, time:  20.02 sec.
+	Iteration #: 16, H =  3.948, time:  21.43 sec.
+	Iteration #: 17, H =   3.89, time:  22.81 sec.
+	Iteration #: 18, H =  3.852, time:   24.2 sec.
+	Iteration #: 19, H =  3.866, time:   25.6 sec.
+Restart #: 46, H =  3.866, mean = ( 0.42448,0.0001), std.dev. = (7.84E-05,-1E-05), res =  1.64E-25, time:   1960 sec, FOM: 8.302E+04
+Stopping because residual = (1.639E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.837, time:  1.512 sec.
+	Iteration #:  2, H =  3.867, time:  2.896 sec.
+	Iteration #:  3, H =    3.9, time:  4.168 sec.
+	Iteration #:  4, H =  3.961, time:  5.562 sec.
+	Iteration #:  5, H =  3.969, time:  7.003 sec.
+	Iteration #:  6, H =   3.96, time:  8.443 sec.
+	Iteration #:  7, H =   3.92, time:  9.904 sec.
+	Iteration #:  8, H =  3.982, time:  11.28 sec.
+	Iteration #:  9, H =  3.871, time:  12.55 sec.
+	Iteration #: 10, H =  3.921, time:  13.96 sec.
+	Iteration #: 11, H =  3.925, time:   15.2 sec.
+	Iteration #: 12, H =  3.914, time:  16.52 sec.
+	Iteration #: 13, H =  3.902, time:  17.83 sec.
+	Iteration #: 14, H =  3.954, time:  19.13 sec.
+	Iteration #: 15, H =  3.959, time:  20.38 sec.
+	Iteration #: 16, H =  3.943, time:  21.71 sec.
+	Iteration #: 17, H =  3.946, time:  23.04 sec.
+	Iteration #: 18, H =   3.97, time:  24.44 sec.
+	Iteration #: 19, H =  3.976, time:  25.86 sec.
+Restart #: 47, H =  3.976, mean = (  0.4245,0.0001), std.dev. = (7.83E-05,-1E-05), res =  1.98E-25, time:   1987 sec, FOM: 8.208E+04
+Stopping because residual = (1.984E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.891, time:  1.362 sec.
+	Iteration #:  2, H =  3.913, time:  2.675 sec.
+	Iteration #:  3, H =  3.913, time:  4.089 sec.
+	Iteration #:  4, H =  3.952, time:  5.333 sec.
+	Iteration #:  5, H =   3.97, time:  6.647 sec.
+	Iteration #:  6, H =  4.008, time:  7.936 sec.
+	Iteration #:  7, H =   3.95, time:  9.252 sec.
+	Iteration #:  8, H =  3.934, time:  10.59 sec.
+	Iteration #:  9, H =   3.96, time:  11.99 sec.
+	Iteration #: 10, H =  3.925, time:  13.31 sec.
+	Iteration #: 11, H =  3.917, time:  14.63 sec.
+	Iteration #: 12, H =  3.875, time:  16.03 sec.
+	Iteration #: 13, H =   3.89, time:  17.37 sec.
+	Iteration #: 14, H =  3.872, time:  18.68 sec.
+	Iteration #: 15, H =  3.853, time:  19.99 sec.
+	Iteration #: 16, H =  3.835, time:  21.39 sec.
+	Iteration #: 17, H =  3.838, time:  22.71 sec.
+	Iteration #: 18, H =  3.863, time:  24.09 sec.
+	Iteration #: 19, H =  3.831, time:  25.45 sec.
+Restart #: 48, H =  3.831, mean = ( 0.42448,0.0001), std.dev. = (7.8E-05,-1E-05), res =  7.74E-25, time:   2014 sec, FOM: 8.157E+04
+Stopping because residual = (7.742E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.901, time:  1.477 sec.
+	Iteration #:  2, H =   3.93, time:  2.884 sec.
+	Iteration #:  3, H =  3.948, time:  4.318 sec.
+	Iteration #:  4, H =  3.979, time:  5.634 sec.
+	Iteration #:  5, H =   3.97, time:  7.049 sec.
+	Iteration #:  6, H =  3.964, time:  8.476 sec.
+	Iteration #:  7, H =  3.964, time:  9.933 sec.
+	Iteration #:  8, H =  3.911, time:  11.25 sec.
+	Iteration #:  9, H =  3.978, time:  12.57 sec.
+	Iteration #: 10, H =  4.016, time:  13.98 sec.
+	Iteration #: 11, H =  4.004, time:  15.31 sec.
+	Iteration #: 12, H =  3.962, time:  16.58 sec.
+	Iteration #: 13, H =  3.924, time:  17.95 sec.
+	Iteration #: 14, H =  3.859, time:  19.34 sec.
+	Iteration #: 15, H =  3.886, time:  20.72 sec.
+	Iteration #: 16, H =  3.841, time:  22.12 sec.
+	Iteration #: 17, H =  3.839, time:  23.45 sec.
+	Iteration #: 18, H =  3.905, time:  24.83 sec.
+	Iteration #: 19, H =  3.897, time:  26.14 sec.
+Restart #: 49, H =  3.897, mean = (  0.4245,0.0001), std.dev. = (7.82E-05,-1E-05), res =  1.14E-24, time:   2041 sec, FOM: 8.016E+04
+Stopping because residual = (1.14E-24,0) < 2.22E-16
+	Iteration #:  1, H =   3.88, time:   1.42 sec.
+	Iteration #:  2, H =  3.955, time:  2.823 sec.
+	Iteration #:  3, H =  3.962, time:  4.123 sec.
+	Iteration #:  4, H =  3.955, time:  5.628 sec.
+	Iteration #:  5, H =  3.925, time:  7.043 sec.
+	Iteration #:  6, H =  3.914, time:  8.495 sec.
+	Iteration #:  7, H =  3.928, time:  9.874 sec.
+	Iteration #:  8, H =  3.917, time:  11.23 sec.
+	Iteration #:  9, H =  3.919, time:  12.57 sec.
+	Iteration #: 10, H =  3.913, time:  13.88 sec.
+	Iteration #: 11, H =  3.903, time:  15.24 sec.
+	Iteration #: 12, H =  3.893, time:  16.57 sec.
+	Iteration #: 13, H =   3.91, time:  17.83 sec.
+	Iteration #: 14, H =  3.891, time:  19.13 sec.
+	Iteration #: 15, H =  3.884, time:   20.4 sec.
+	Iteration #: 16, H =  3.873, time:  21.73 sec.
+	Iteration #: 17, H =  3.895, time:  23.01 sec.
+	Iteration #: 18, H =  3.886, time:  24.39 sec.
+	Iteration #: 19, H =  3.891, time:  25.76 sec.
+Restart #: 50, H =  3.891, mean = ( 0.42448,0.0001), std.dev. = (7.82E-05,-2E-05), res =  1.22E-25, time:   2068 sec, FOM: 7.903E+04
+Stopping because residual = (1.221E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.911, time:  1.221 sec.
+	Iteration #:  2, H =  3.951, time:  2.535 sec.
+	Iteration #:  3, H =  3.931, time:  3.942 sec.
+	Iteration #:  4, H =  3.875, time:  5.434 sec.
+	Iteration #:  5, H =  3.875, time:  6.686 sec.
+	Iteration #:  6, H =  3.961, time:  8.091 sec.
+	Iteration #:  7, H =  3.977, time:  9.496 sec.
+	Iteration #:  8, H =  3.965, time:  10.82 sec.
+	Iteration #:  9, H =  3.887, time:  12.32 sec.
+	Iteration #: 10, H =  3.874, time:  13.75 sec.
+	Iteration #: 11, H =  3.915, time:  15.16 sec.
+	Iteration #: 12, H =  3.901, time:  16.49 sec.
+	Iteration #: 13, H =  3.897, time:  17.85 sec.
+	Iteration #: 14, H =  3.909, time:  19.24 sec.
+	Iteration #: 15, H =  3.841, time:  20.53 sec.
+	Iteration #: 16, H =  3.807, time:  21.89 sec.
+	Iteration #: 17, H =  3.825, time:  23.26 sec.
+	Iteration #: 18, H =  3.851, time:  24.68 sec.
+	Iteration #: 19, H =  3.886, time:  26.14 sec.
+Restart #: 51, H =  3.886, mean = ( 0.42448,0.0001), std.dev. = (7.68E-05,-2E-05), res =  6.14E-25, time:   2096 sec, FOM: 8.091E+04
+Stopping because residual = (6.14E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.942, time:  1.192 sec.
+	Iteration #:  2, H =  3.936, time:  2.465 sec.
+	Iteration #:  3, H =  3.954, time:  3.952 sec.
+	Iteration #:  4, H =  3.932, time:  5.324 sec.
+	Iteration #:  5, H =  3.918, time:  6.747 sec.
+	Iteration #:  6, H =  3.816, time:  8.046 sec.
+	Iteration #:  7, H =  3.784, time:  9.422 sec.
+	Iteration #:  8, H =  3.838, time:  10.75 sec.
+	Iteration #:  9, H =   3.95, time:  12.01 sec.
+	Iteration #: 10, H =  3.921, time:  13.35 sec.
+	Iteration #: 11, H =  3.954, time:  14.73 sec.
+	Iteration #: 12, H =  3.949, time:  16.14 sec.
+	Iteration #: 13, H =  3.941, time:   17.5 sec.
+	Iteration #: 14, H =  3.925, time:  18.87 sec.
+	Iteration #: 15, H =  3.921, time:  20.24 sec.
+	Iteration #: 16, H =  3.912, time:   21.6 sec.
+	Iteration #: 17, H =  3.936, time:  22.98 sec.
+	Iteration #: 18, H =  3.912, time:  24.25 sec.
+	Iteration #: 19, H =  3.879, time:  25.57 sec.
+Restart #: 52, H =  3.879, mean = (  0.4245,0.0001), std.dev. = (7.69E-05,-2E-05), res =  3.45E-25, time:   2123 sec, FOM: 7.969E+04
+Stopping because residual = (3.447E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.83, time:  1.175 sec.
+	Iteration #:  2, H =  3.859, time:  2.423 sec.
+	Iteration #:  3, H =   3.86, time:  3.698 sec.
+	Iteration #:  4, H =  3.934, time:  5.143 sec.
+	Iteration #:  5, H =  3.959, time:  6.448 sec.
+	Iteration #:  6, H =  3.941, time:   7.83 sec.
+	Iteration #:  7, H =  3.917, time:  9.187 sec.
+	Iteration #:  8, H =  3.933, time:  10.64 sec.
+	Iteration #:  9, H =  3.841, time:  11.98 sec.
+	Iteration #: 10, H =  3.908, time:  13.33 sec.
+	Iteration #: 11, H =  3.953, time:  14.67 sec.
+	Iteration #: 12, H =  3.984, time:  16.05 sec.
+	Iteration #: 13, H =  3.908, time:  17.48 sec.
+	Iteration #: 14, H =  4.016, time:  18.86 sec.
+	Iteration #: 15, H =  3.987, time:  20.19 sec.
+	Iteration #: 16, H =  3.958, time:  21.49 sec.
+	Iteration #: 17, H =  3.966, time:  22.79 sec.
+	Iteration #: 18, H =  3.984, time:  24.09 sec.
+	Iteration #: 19, H =   3.97, time:  25.35 sec.
+Restart #: 53, H =   3.97, mean = ( 0.42449,0.0001), std.dev. = (7.55E-05,-2E-05), res =   5.7E-25, time:   2149 sec, FOM: 8.154E+04
+Stopping because residual = (5.7E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.904, time:    1.5 sec.
+	Iteration #:  2, H =  3.925, time:  2.925 sec.
+	Iteration #:  3, H =  3.913, time:  4.388 sec.
+	Iteration #:  4, H =  3.915, time:  5.734 sec.
+	Iteration #:  5, H =   3.93, time:  7.079 sec.
+	Iteration #:  6, H =  3.892, time:  8.515 sec.
+	Iteration #:  7, H =  3.841, time:  9.956 sec.
+	Iteration #:  8, H =  3.899, time:  11.34 sec.
+	Iteration #:  9, H =    3.9, time:   12.8 sec.
+	Iteration #: 10, H =  3.937, time:  14.07 sec.
+	Iteration #: 11, H =  3.938, time:   15.4 sec.
+	Iteration #: 12, H =  3.936, time:  16.65 sec.
+	Iteration #: 13, H =    3.9, time:  18.03 sec.
+	Iteration #: 14, H =   3.92, time:  19.43 sec.
+	Iteration #: 15, H =  3.872, time:  20.81 sec.
+	Iteration #: 16, H =  3.917, time:  22.16 sec.
+	Iteration #: 17, H =  3.925, time:  23.49 sec.
+	Iteration #: 18, H =  3.904, time:  24.81 sec.
+	Iteration #: 19, H =  3.891, time:  26.12 sec.
+Restart #: 54, H =  3.891, mean = ( 0.42449,0.0001), std.dev. = (7.42E-05,-2E-05), res =  4.26E-25, time:   2177 sec, FOM: 8.337E+04
+Stopping because residual = (4.261E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.916, time:  1.343 sec.
+	Iteration #:  2, H =  3.946, time:  2.733 sec.
+	Iteration #:  3, H =  3.947, time:  4.191 sec.
+	Iteration #:  4, H =  3.941, time:  5.611 sec.
+	Iteration #:  5, H =  3.916, time:  6.987 sec.
+	Iteration #:  6, H =  3.886, time:  8.449 sec.
+	Iteration #:  7, H =  3.907, time:  9.881 sec.
+	Iteration #:  8, H =  3.942, time:  11.26 sec.
+	Iteration #:  9, H =  3.972, time:  12.64 sec.
+	Iteration #: 10, H =  3.965, time:  13.91 sec.
+	Iteration #: 11, H =  4.013, time:  15.25 sec.
+	Iteration #: 12, H =  4.023, time:  16.57 sec.
+	Iteration #: 13, H =  4.004, time:  17.87 sec.
+	Iteration #: 14, H =  3.958, time:   19.2 sec.
+	Iteration #: 15, H =  3.944, time:  20.44 sec.
+	Iteration #: 16, H =  4.006, time:  21.77 sec.
+	Iteration #: 17, H =  3.977, time:  23.06 sec.
+	Iteration #: 18, H =  3.987, time:  24.37 sec.
+	Iteration #: 19, H =  3.997, time:  25.71 sec.
+Restart #: 55, H =  3.997, mean = ( 0.42447,0.0001), std.dev. = (7.46E-05,-1E-05), res =  8.42E-25, time:   2204 sec, FOM: 8.156E+04
+Stopping because residual = (8.421E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.853, time:  1.406 sec.
+	Iteration #:  2, H =  3.879, time:  2.772 sec.
+	Iteration #:  3, H =  3.815, time:  4.131 sec.
+	Iteration #:  4, H =  3.838, time:  5.443 sec.
+	Iteration #:  5, H =  3.896, time:  6.754 sec.
+	Iteration #:  6, H =  3.937, time:  8.196 sec.
+	Iteration #:  7, H =  3.964, time:  9.582 sec.
+	Iteration #:  8, H =  3.998, time:  10.99 sec.
+	Iteration #:  9, H =  4.019, time:  12.46 sec.
+	Iteration #: 10, H =  4.034, time:  13.87 sec.
+	Iteration #: 11, H =  3.893, time:  15.19 sec.
+	Iteration #: 12, H =  3.885, time:  16.55 sec.
+	Iteration #: 13, H =  3.932, time:  17.92 sec.
+	Iteration #: 14, H =  3.964, time:  19.32 sec.
+	Iteration #: 15, H =  3.932, time:  20.66 sec.
+	Iteration #: 16, H =  3.954, time:  22.02 sec.
+	Iteration #: 17, H =  3.955, time:  23.35 sec.
+	Iteration #: 18, H =  3.971, time:  24.66 sec.
+	Iteration #: 19, H =   3.92, time:  25.98 sec.
+Restart #: 56, H =   3.92, mean = ( 0.42447,0.0001), std.dev. = (7.35E-05,-1E-05), res =  5.21E-25, time:   2231 sec, FOM: 8.292E+04
+Stopping because residual = (5.211E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.925, time:  1.163 sec.
+	Iteration #:  2, H =  3.915, time:  2.452 sec.
+	Iteration #:  3, H =  3.933, time:  3.797 sec.
+	Iteration #:  4, H =  3.933, time:  5.275 sec.
+	Iteration #:  5, H =  3.923, time:  6.649 sec.
+	Iteration #:  6, H =  3.936, time:  8.053 sec.
+	Iteration #:  7, H =  3.859, time:  9.463 sec.
+	Iteration #:  8, H =   3.93, time:   10.9 sec.
+	Iteration #:  9, H =  3.955, time:  12.26 sec.
+	Iteration #: 10, H =  3.925, time:  13.59 sec.
+	Iteration #: 11, H =  3.951, time:  14.95 sec.
+	Iteration #: 12, H =  3.968, time:  16.29 sec.
+	Iteration #: 13, H =  3.921, time:  17.58 sec.
+	Iteration #: 14, H =  3.926, time:  18.92 sec.
+	Iteration #: 15, H =  3.975, time:  20.25 sec.
+	Iteration #: 16, H =  3.987, time:  21.58 sec.
+	Iteration #: 17, H =  3.978, time:  22.92 sec.
+	Iteration #: 18, H =   3.95, time:  24.23 sec.
+	Iteration #: 19, H =  3.937, time:  25.61 sec.
+Restart #: 57, H =  3.937, mean = ( 0.42446,0.0001), std.dev. = (7.25E-05,-1E-05), res =  4.87E-25, time:   2258 sec, FOM: 8.429E+04
+Stopping because residual = (4.867E-25,0) < 2.22E-16
+	Iteration #:  1, H =   4.03, time:  1.371 sec.
+	Iteration #:  2, H =  3.995, time:  2.738 sec.
+	Iteration #:  3, H =  4.024, time:  4.181 sec.
+	Iteration #:  4, H =  3.968, time:  5.456 sec.
+	Iteration #:  5, H =  3.991, time:   6.79 sec.
+	Iteration #:  6, H =  3.945, time:  8.076 sec.
+	Iteration #:  7, H =   3.95, time:  9.478 sec.
+	Iteration #:  8, H =  3.925, time:  10.84 sec.
+	Iteration #:  9, H =  3.972, time:  12.24 sec.
+	Iteration #: 10, H =  4.003, time:  13.64 sec.
+	Iteration #: 11, H =  3.973, time:  15.03 sec.
+	Iteration #: 12, H =  3.964, time:  16.41 sec.
+	Iteration #: 13, H =  3.916, time:  17.75 sec.
+	Iteration #: 14, H =  3.787, time:  19.05 sec.
+	Iteration #: 15, H =  3.786, time:   20.3 sec.
+	Iteration #: 16, H =  3.847, time:  21.55 sec.
+	Iteration #: 17, H =  3.977, time:  22.87 sec.
+	Iteration #: 18, H =   3.93, time:  24.17 sec.
+	Iteration #: 19, H =  3.889, time:  25.49 sec.
+Restart #: 58, H =  3.889, mean = ( 0.42445,0.0001), std.dev. = (7.22E-05,-1E-05), res =  5.05E-25, time:   2285 sec, FOM: 8.395E+04
+Stopping because residual = (5.05E-25,0) < 2.22E-16
+	Iteration #:  1, H =  4.046, time:   1.34 sec.
+	Iteration #:  2, H =  4.031, time:  2.684 sec.
+	Iteration #:  3, H =  4.016, time:  4.138 sec.
+	Iteration #:  4, H =  3.953, time:  5.473 sec.
+	Iteration #:  5, H =  3.935, time:  6.758 sec.
+	Iteration #:  6, H =  3.933, time:  8.082 sec.
+	Iteration #:  7, H =  3.913, time:  9.471 sec.
+	Iteration #:  8, H =   3.91, time:  10.82 sec.
+	Iteration #:  9, H =  3.912, time:  12.18 sec.
+	Iteration #: 10, H =  3.912, time:   13.5 sec.
+	Iteration #: 11, H =  3.918, time:  14.84 sec.
+	Iteration #: 12, H =   3.92, time:  16.26 sec.
+	Iteration #: 13, H =  3.931, time:  17.65 sec.
+	Iteration #: 14, H =  3.923, time:  19.01 sec.
+	Iteration #: 15, H =  3.856, time:  20.39 sec.
+	Iteration #: 16, H =  3.844, time:  21.75 sec.
+	Iteration #: 17, H =  3.907, time:  23.12 sec.
+	Iteration #: 18, H =  3.961, time:  24.48 sec.
+	Iteration #: 19, H =   3.96, time:  25.86 sec.
+Restart #: 59, H =   3.96, mean = ( 0.42445,0.0001), std.dev. = (7.1E-05,-1E-05), res =  1.85E-25, time:   2312 sec, FOM: 8.573E+04
+Stopping because residual = (1.848E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.97, time:  1.471 sec.
+	Iteration #:  2, H =  3.954, time:  2.846 sec.
+	Iteration #:  3, H =  3.973, time:  4.132 sec.
+	Iteration #:  4, H =  4.033, time:  5.536 sec.
+	Iteration #:  5, H =  4.034, time:  6.929 sec.
+	Iteration #:  6, H =  4.004, time:  8.293 sec.
+	Iteration #:  7, H =  3.917, time:  9.673 sec.
+	Iteration #:  8, H =  3.852, time:  11.06 sec.
+	Iteration #:  9, H =  3.953, time:  12.41 sec.
+	Iteration #: 10, H =  3.963, time:  13.77 sec.
+	Iteration #: 11, H =  3.931, time:  15.12 sec.
+	Iteration #: 12, H =  3.923, time:  16.42 sec.
+	Iteration #: 13, H =  3.926, time:  17.81 sec.
+	Iteration #: 14, H =  3.921, time:  19.18 sec.
+	Iteration #: 15, H =   3.89, time:  20.54 sec.
+	Iteration #: 16, H =  3.919, time:  21.85 sec.
+	Iteration #: 17, H =   3.93, time:  23.18 sec.
+	Iteration #: 18, H =  3.962, time:  24.51 sec.
+	Iteration #: 19, H =  3.938, time:  25.93 sec.
+Restart #: 60, H =  3.938, mean = ( 0.42445,0.0001), std.dev. = (7.01E-05,-1E-05), res =  5.51E-25, time:   2339 sec, FOM: 8.706E+04
+Stopping because residual = (5.509E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.874, time:  1.404 sec.
+	Iteration #:  2, H =  3.949, time:    2.8 sec.
+	Iteration #:  3, H =  3.937, time:  4.114 sec.
+	Iteration #:  4, H =  3.942, time:  5.498 sec.
+	Iteration #:  5, H =  3.923, time:  6.897 sec.
+	Iteration #:  6, H =  3.926, time:   8.31 sec.
+	Iteration #:  7, H =  3.947, time:  9.687 sec.
+	Iteration #:  8, H =  3.914, time:  11.06 sec.
+	Iteration #:  9, H =  3.978, time:   12.4 sec.
+	Iteration #: 10, H =  3.949, time:  13.74 sec.
+	Iteration #: 11, H =   3.95, time:  15.04 sec.
+	Iteration #: 12, H =  3.927, time:  16.43 sec.
+	Iteration #: 13, H =  3.854, time:  17.74 sec.
+	Iteration #: 14, H =  3.851, time:  19.04 sec.
+	Iteration #: 15, H =  3.944, time:  20.37 sec.
+	Iteration #: 16, H =  3.898, time:  21.69 sec.
+	Iteration #: 17, H =  3.868, time:  23.03 sec.
+	Iteration #: 18, H =  3.915, time:  24.37 sec.
+	Iteration #: 19, H =  3.912, time:  25.75 sec.
+Restart #: 61, H =  3.912, mean = ( 0.42446,0.0001), std.dev. = (6.97E-05,-1E-05), res =  1.82E-25, time:   2367 sec, FOM: 8.693E+04
+Stopping because residual = (1.816E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.917, time:  1.381 sec.
+	Iteration #:  2, H =  3.879, time:  2.769 sec.
+	Iteration #:  3, H =  3.854, time:  4.116 sec.
+	Iteration #:  4, H =  3.768, time:  5.397 sec.
+	Iteration #:  5, H =  3.852, time:  6.746 sec.
+	Iteration #:  6, H =  3.869, time:   8.15 sec.
+	Iteration #:  7, H =  3.954, time:  9.472 sec.
+	Iteration #:  8, H =  3.942, time:  10.83 sec.
+	Iteration #:  9, H =  3.921, time:  12.31 sec.
+	Iteration #: 10, H =  3.873, time:  13.75 sec.
+	Iteration #: 11, H =  3.832, time:  15.15 sec.
+	Iteration #: 12, H =  3.903, time:  16.52 sec.
+	Iteration #: 13, H =  3.936, time:  17.89 sec.
+	Iteration #: 14, H =  3.832, time:  19.23 sec.
+	Iteration #: 15, H =  3.808, time:   20.6 sec.
+	Iteration #: 16, H =  3.867, time:  21.92 sec.
+	Iteration #: 17, H =  3.914, time:  23.27 sec.
+	Iteration #: 18, H =  3.905, time:  24.64 sec.
+	Iteration #: 19, H =  3.885, time:  25.97 sec.
+Restart #: 62, H =  3.885, mean = ( 0.42445,0.0001), std.dev. = (6.97E-05,-1E-05), res =  3.18E-25, time:   2394 sec, FOM: 8.609E+04
+Stopping because residual = (3.184E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.83, time:   1.46 sec.
+	Iteration #:  2, H =  3.856, time:   2.84 sec.
+	Iteration #:  3, H =  3.928, time:  4.201 sec.
+	Iteration #:  4, H =  4.022, time:  5.482 sec.
+	Iteration #:  5, H =   4.02, time:  6.823 sec.
+	Iteration #:  6, H =   3.96, time:   8.21 sec.
+	Iteration #:  7, H =   4.02, time:  9.641 sec.
+	Iteration #:  8, H =  4.027, time:  10.92 sec.
+	Iteration #:  9, H =  3.993, time:  12.31 sec.
+	Iteration #: 10, H =   3.99, time:  13.72 sec.
+	Iteration #: 11, H =  3.893, time:  15.15 sec.
+	Iteration #: 12, H =  3.918, time:  16.57 sec.
+	Iteration #: 13, H =  3.969, time:  17.95 sec.
+	Iteration #: 14, H =  3.976, time:   19.4 sec.
+	Iteration #: 15, H =  3.933, time:  20.84 sec.
+	Iteration #: 16, H =  3.986, time:  22.28 sec.
+	Iteration #: 17, H =  3.927, time:  23.68 sec.
+	Iteration #: 18, H =  3.952, time:  25.09 sec.
+	Iteration #: 19, H =   3.92, time:  26.46 sec.
+Restart #: 63, H =   3.92, mean = ( 0.42445,0.0001), std.dev. = (6.85E-05,-1E-05), res =  4.82E-25, time:   2422 sec, FOM: 8.805E+04
+Stopping because residual = (4.817E-25,0) < 2.22E-16
+	Iteration #:  1, H =    3.9, time:   1.36 sec.
+	Iteration #:  2, H =   3.96, time:  2.727 sec.
+	Iteration #:  3, H =  3.934, time:  4.101 sec.
+	Iteration #:  4, H =  3.967, time:  5.481 sec.
+	Iteration #:  5, H =  3.954, time:  6.895 sec.
+	Iteration #:  6, H =  3.947, time:   8.23 sec.
+	Iteration #:  7, H =  3.927, time:  9.503 sec.
+	Iteration #:  8, H =  3.959, time:  10.78 sec.
+	Iteration #:  9, H =  3.997, time:   12.1 sec.
+	Iteration #: 10, H =  4.003, time:  13.46 sec.
+	Iteration #: 11, H =  3.969, time:  14.83 sec.
+	Iteration #: 12, H =  3.915, time:  16.26 sec.
+	Iteration #: 13, H =  3.941, time:  17.65 sec.
+	Iteration #: 14, H =  3.978, time:  19.02 sec.
+	Iteration #: 15, H =  3.948, time:  20.42 sec.
+	Iteration #: 16, H =  3.943, time:  21.77 sec.
+	Iteration #: 17, H =  3.912, time:  23.11 sec.
+	Iteration #: 18, H =  3.893, time:  24.44 sec.
+	Iteration #: 19, H =  3.915, time:  25.75 sec.
+Restart #: 64, H =  3.915, mean = ( 0.42444,0.0001), std.dev. = (6.67E-05,-2E-05), res =  1.76E-25, time:   2449 sec, FOM: 9.181E+04
+Stopping because residual = (1.756E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.909, time:  1.448 sec.
+	Iteration #:  2, H =  3.886, time:  2.795 sec.
+	Iteration #:  3, H =  3.841, time:  4.049 sec.
+	Iteration #:  4, H =  3.882, time:  5.366 sec.
+	Iteration #:  5, H =  3.885, time:  6.691 sec.
+	Iteration #:  6, H =  3.872, time:  7.954 sec.
+	Iteration #:  7, H =  3.854, time:  9.339 sec.
+	Iteration #:  8, H =   3.86, time:  10.73 sec.
+	Iteration #:  9, H =  3.901, time:  12.18 sec.
+	Iteration #: 10, H =  3.874, time:  13.54 sec.
+	Iteration #: 11, H =  3.877, time:  14.95 sec.
+	Iteration #: 12, H =   4.02, time:  16.35 sec.
+	Iteration #: 13, H =  4.013, time:  17.73 sec.
+	Iteration #: 14, H =  3.955, time:   19.1 sec.
+	Iteration #: 15, H =  3.936, time:  20.49 sec.
+	Iteration #: 16, H =  3.952, time:  21.89 sec.
+	Iteration #: 17, H =  3.945, time:   23.3 sec.
+	Iteration #: 18, H =  3.955, time:  24.61 sec.
+	Iteration #: 19, H =  3.962, time:  25.89 sec.
+Restart #: 65, H =  3.962, mean = ( 0.42446,0.0001), std.dev. = (6.76E-05,-2E-05), res =  2.13E-25, time:   2476 sec, FOM: 8.827E+04
+Stopping because residual = (2.132E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.933, time:  1.352 sec.
+	Iteration #:  2, H =  3.955, time:  2.729 sec.
+	Iteration #:  3, H =  3.971, time:  4.072 sec.
+	Iteration #:  4, H =  3.945, time:  5.539 sec.
+	Iteration #:  5, H =  3.929, time:  6.937 sec.
+	Iteration #:  6, H =  3.899, time:  8.338 sec.
+	Iteration #:  7, H =  3.942, time:  9.649 sec.
+	Iteration #:  8, H =  3.942, time:  10.98 sec.
+	Iteration #:  9, H =  3.892, time:  12.23 sec.
+	Iteration #: 10, H =   3.87, time:  13.45 sec.
+	Iteration #: 11, H =  3.943, time:  14.75 sec.
+	Iteration #: 12, H =  3.923, time:  16.02 sec.
+	Iteration #: 13, H =  3.951, time:   17.3 sec.
+	Iteration #: 14, H =  3.937, time:  18.65 sec.
+	Iteration #: 15, H =  3.847, time:  20.05 sec.
+	Iteration #: 16, H =  3.838, time:  21.44 sec.
+	Iteration #: 17, H =  3.849, time:  22.81 sec.
+	Iteration #: 18, H =  3.866, time:  24.24 sec.
+	Iteration #: 19, H =  3.899, time:  25.63 sec.
+Restart #: 66, H =  3.899, mean = ( 0.42446,0.0001), std.dev. = (6.66E-05,-2E-05), res =  3.99E-25, time:   2503 sec, FOM: 8.995E+04
+Stopping because residual = (3.992E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.939, time:  1.267 sec.
+	Iteration #:  2, H =  3.897, time:  2.615 sec.
+	Iteration #:  3, H =  3.946, time:  3.888 sec.
+	Iteration #:  4, H =  3.946, time:  5.336 sec.
+	Iteration #:  5, H =  3.873, time:  6.668 sec.
+	Iteration #:  6, H =  3.877, time:  7.984 sec.
+	Iteration #:  7, H =   3.94, time:  9.296 sec.
+	Iteration #:  8, H =  3.962, time:  10.61 sec.
+	Iteration #:  9, H =  3.935, time:  12.07 sec.
+	Iteration #: 10, H =  3.951, time:  13.39 sec.
+	Iteration #: 11, H =  3.931, time:  14.74 sec.
+	Iteration #: 12, H =  3.912, time:  16.13 sec.
+	Iteration #: 13, H =  3.933, time:  17.53 sec.
+	Iteration #: 14, H =  3.945, time:  18.92 sec.
+	Iteration #: 15, H =  3.905, time:  20.33 sec.
+	Iteration #: 16, H =  3.887, time:   21.7 sec.
+	Iteration #: 17, H =  3.879, time:  23.04 sec.
+	Iteration #: 18, H =  3.896, time:   24.4 sec.
+	Iteration #: 19, H =  3.885, time:  25.72 sec.
+Restart #: 67, H =  3.885, mean = ( 0.42446,0.0001), std.dev. = (6.57E-05,-2E-05), res =  8.15E-25, time:   2530 sec, FOM: 9.153E+04
+Stopping because residual = (8.154E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.955, time:    1.4 sec.
+	Iteration #:  2, H =  3.961, time:  2.719 sec.
+	Iteration #:  3, H =  3.992, time:  3.929 sec.
+	Iteration #:  4, H =  3.904, time:  5.318 sec.
+	Iteration #:  5, H =  3.979, time:  6.616 sec.
+	Iteration #:  6, H =  3.963, time:  7.887 sec.
+	Iteration #:  7, H =  3.927, time:  9.272 sec.
+	Iteration #:  8, H =  3.914, time:  10.69 sec.
+	Iteration #:  9, H =  3.878, time:  12.07 sec.
+	Iteration #: 10, H =  3.861, time:  13.42 sec.
+	Iteration #: 11, H =  3.926, time:  14.78 sec.
+	Iteration #: 12, H =  3.928, time:  16.16 sec.
+	Iteration #: 13, H =  3.892, time:  17.48 sec.
+	Iteration #: 14, H =  3.943, time:  18.75 sec.
+	Iteration #: 15, H =  3.946, time:   20.1 sec.
+	Iteration #: 16, H =  3.885, time:  21.53 sec.
+	Iteration #: 17, H =  3.897, time:  22.89 sec.
+	Iteration #: 18, H =  3.859, time:   24.3 sec.
+	Iteration #: 19, H =  3.874, time:  25.74 sec.
+Restart #: 68, H =  3.874, mean = ( 0.42446,0.0001), std.dev. = (6.48E-05,-1E-05), res =  2.13E-25, time:   2557 sec, FOM: 9.299E+04
+Stopping because residual = (2.126E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.871, time:  1.451 sec.
+	Iteration #:  2, H =  3.939, time:  2.803 sec.
+	Iteration #:  3, H =  3.941, time:  4.045 sec.
+	Iteration #:  4, H =  3.954, time:  5.319 sec.
+	Iteration #:  5, H =  3.976, time:  6.593 sec.
+	Iteration #:  6, H =  3.896, time:  7.911 sec.
+	Iteration #:  7, H =  3.949, time:  9.189 sec.
+	Iteration #:  8, H =   3.93, time:  10.51 sec.
+	Iteration #:  9, H =  3.924, time:  11.97 sec.
+	Iteration #: 10, H =  3.943, time:  13.32 sec.
+	Iteration #: 11, H =  3.893, time:  14.69 sec.
+	Iteration #: 12, H =   3.86, time:  16.03 sec.
+	Iteration #: 13, H =  3.841, time:   17.5 sec.
+	Iteration #: 14, H =  3.827, time:  18.85 sec.
+	Iteration #: 15, H =  3.783, time:  20.26 sec.
+	Iteration #: 16, H =  3.757, time:  21.68 sec.
+	Iteration #: 17, H =  3.829, time:  23.12 sec.
+	Iteration #: 18, H =  3.748, time:  24.47 sec.
+	Iteration #: 19, H =  3.743, time:  25.86 sec.
+Restart #: 69, H =  3.743, mean = ( 0.42447,0.0001), std.dev. = (6.5E-05,-1E-05), res =  2.57E-25, time:   2585 sec, FOM: 9.164E+04
+Stopping because residual = (2.568E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.932, time:  1.482 sec.
+	Iteration #:  2, H =  3.939, time:  2.866 sec.
+	Iteration #:  3, H =  3.926, time:  4.159 sec.
+	Iteration #:  4, H =   3.95, time:  5.511 sec.
+	Iteration #:  5, H =  3.922, time:  6.831 sec.
+	Iteration #:  6, H =  3.895, time:  8.184 sec.
+	Iteration #:  7, H =  3.895, time:  9.503 sec.
+	Iteration #:  8, H =  3.948, time:  10.88 sec.
+	Iteration #:  9, H =  4.012, time:  12.25 sec.
+	Iteration #: 10, H =  4.009, time:  13.66 sec.
+	Iteration #: 11, H =  3.938, time:  15.01 sec.
+	Iteration #: 12, H =  3.962, time:  16.36 sec.
+	Iteration #: 13, H =  3.971, time:  17.76 sec.
+	Iteration #: 14, H =  3.937, time:  19.14 sec.
+	Iteration #: 15, H =  3.969, time:  20.52 sec.
+	Iteration #: 16, H =  3.941, time:  21.89 sec.
+	Iteration #: 17, H =  3.985, time:  23.27 sec.
+	Iteration #: 18, H =  3.971, time:   24.6 sec.
+	Iteration #: 19, H =  3.969, time:  25.94 sec.
+Restart #: 70, H =  3.969, mean = (  0.4245,0.0001), std.dev. = (6.77E-05,-1E-05), res =   7.5E-25, time:   2612 sec, FOM: 8.359E+04
+Stopping because residual = (7.499E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.87, time:  1.142 sec.
+	Iteration #:  2, H =  3.903, time:  2.463 sec.
+	Iteration #:  3, H =  3.911, time:  3.838 sec.
+	Iteration #:  4, H =  3.939, time:  5.211 sec.
+	Iteration #:  5, H =  3.912, time:  6.509 sec.
+	Iteration #:  6, H =  3.946, time:  7.857 sec.
+	Iteration #:  7, H =  3.973, time:  9.201 sec.
+	Iteration #:  8, H =  3.984, time:  10.55 sec.
+	Iteration #:  9, H =  3.972, time:   11.9 sec.
+	Iteration #: 10, H =  3.924, time:  13.29 sec.
+	Iteration #: 11, H =  3.957, time:  14.65 sec.
+	Iteration #: 12, H =  4.024, time:  16.13 sec.
+	Iteration #: 13, H =   3.97, time:  17.49 sec.
+	Iteration #: 14, H =  3.955, time:  18.85 sec.
+	Iteration #: 15, H =  3.934, time:  20.23 sec.
+	Iteration #: 16, H =  3.925, time:  21.65 sec.
+	Iteration #: 17, H =   3.95, time:  23.06 sec.
+	Iteration #: 18, H =  3.955, time:   24.5 sec.
+	Iteration #: 19, H =  3.964, time:  25.88 sec.
+Restart #: 71, H =  3.964, mean = ( 0.42451,0.0001), std.dev. = (6.81E-05,-1E-05), res =  3.13E-25, time:   2639 sec, FOM: 8.159E+04
+Stopping because residual = (3.134E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.955, time:  1.442 sec.
+	Iteration #:  2, H =  3.991, time:  2.798 sec.
+	Iteration #:  3, H =      4, time:  4.213 sec.
+	Iteration #:  4, H =  3.953, time:  5.511 sec.
+	Iteration #:  5, H =  3.959, time:  6.881 sec.
+	Iteration #:  6, H =  3.942, time:  8.216 sec.
+	Iteration #:  7, H =  3.928, time:  9.547 sec.
+	Iteration #:  8, H =  3.931, time:  10.81 sec.
+	Iteration #:  9, H =  3.935, time:  12.12 sec.
+	Iteration #: 10, H =  3.975, time:  13.47 sec.
+	Iteration #: 11, H =  3.921, time:  14.85 sec.
+	Iteration #: 12, H =  3.903, time:  16.23 sec.
+	Iteration #: 13, H =  3.972, time:  17.61 sec.
+	Iteration #: 14, H =  4.026, time:  19.03 sec.
+	Iteration #: 15, H =  4.082, time:  20.43 sec.
+	Iteration #: 16, H =   4.05, time:   21.8 sec.
+	Iteration #: 17, H =  4.009, time:  23.21 sec.
+	Iteration #: 18, H =  4.005, time:  24.57 sec.
+	Iteration #: 19, H =  4.003, time:     26 sec.
+Restart #: 72, H =  4.003, mean = (  0.4245,0.0001), std.dev. = (6.75E-05,-1E-05), res =   1.1E-24, time:   2667 sec, FOM: 8.22E+04
+Stopping because residual = (1.097E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.957, time:  1.362 sec.
+	Iteration #:  2, H =  3.959, time:  2.716 sec.
+	Iteration #:  3, H =  3.961, time:  3.992 sec.
+	Iteration #:  4, H =  3.961, time:  5.419 sec.
+	Iteration #:  5, H =  3.953, time:  6.778 sec.
+	Iteration #:  6, H =  3.964, time:  8.213 sec.
+	Iteration #:  7, H =   3.97, time:  9.594 sec.
+	Iteration #:  8, H =  3.938, time:  10.98 sec.
+	Iteration #:  9, H =  3.997, time:  12.38 sec.
+	Iteration #: 10, H =  3.993, time:  13.78 sec.
+	Iteration #: 11, H =  3.953, time:  15.14 sec.
+	Iteration #: 12, H =  3.901, time:  16.42 sec.
+	Iteration #: 13, H =  3.874, time:  17.75 sec.
+	Iteration #: 14, H =  3.882, time:  19.04 sec.
+	Iteration #: 15, H =  3.888, time:  20.43 sec.
+	Iteration #: 16, H =  3.881, time:  21.82 sec.
+	Iteration #: 17, H =   3.89, time:  23.16 sec.
+	Iteration #: 18, H =  3.861, time:  24.52 sec.
+	Iteration #: 19, H =  3.829, time:  25.87 sec.
+Restart #: 73, H =  3.829, mean = (  0.4245,0.0001), std.dev. = (6.66E-05,-1E-05), res =  6.01E-25, time:   2694 sec, FOM: 8.366E+04
+Stopping because residual = (6.013E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.864, time:  1.229 sec.
+	Iteration #:  2, H =  3.924, time:  2.518 sec.
+	Iteration #:  3, H =   3.87, time:  3.857 sec.
+	Iteration #:  4, H =  3.838, time:  5.302 sec.
+	Iteration #:  5, H =  3.856, time:  6.629 sec.
+	Iteration #:  6, H =  3.881, time:  7.967 sec.
+	Iteration #:  7, H =  3.915, time:  9.276 sec.
+	Iteration #:  8, H =  3.916, time:  10.59 sec.
+	Iteration #:  9, H =  3.948, time:  11.93 sec.
+	Iteration #: 10, H =  3.888, time:  13.27 sec.
+	Iteration #: 11, H =  3.875, time:  14.73 sec.
+	Iteration #: 12, H =  3.905, time:  16.09 sec.
+	Iteration #: 13, H =  3.951, time:  17.51 sec.
+	Iteration #: 14, H =  3.925, time:  18.92 sec.
+	Iteration #: 15, H =   3.88, time:  20.27 sec.
+	Iteration #: 16, H =  3.891, time:  21.73 sec.
+	Iteration #: 17, H =  3.948, time:  23.13 sec.
+	Iteration #: 18, H =  3.921, time:   24.5 sec.
+	Iteration #: 19, H =  3.965, time:  25.84 sec.
+Restart #: 74, H =  3.965, mean = (  0.4245,0.0001), std.dev. = (6.57E-05,-1E-05), res =  1.41E-24, time:   2721 sec, FOM: 8.513E+04
+Stopping because residual = (1.408E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.987, time:  1.452 sec.
+	Iteration #:  2, H =  3.965, time:  2.828 sec.
+	Iteration #:  3, H =  3.938, time:  4.162 sec.
+	Iteration #:  4, H =  3.955, time:  5.409 sec.
+	Iteration #:  5, H =  3.985, time:  6.774 sec.
+	Iteration #:  6, H =  4.054, time:  8.212 sec.
+	Iteration #:  7, H =  3.995, time:  9.606 sec.
+	Iteration #:  8, H =  4.031, time:  11.05 sec.
+	Iteration #:  9, H =  3.955, time:  12.51 sec.
+	Iteration #: 10, H =  3.879, time:  13.95 sec.
+	Iteration #: 11, H =  3.922, time:  15.38 sec.
+	Iteration #: 12, H =  3.885, time:   16.8 sec.
+	Iteration #: 13, H =  3.928, time:  18.13 sec.
+	Iteration #: 14, H =  3.948, time:  19.47 sec.
+	Iteration #: 15, H =  3.947, time:  20.83 sec.
+	Iteration #: 16, H =  3.997, time:   22.2 sec.
+	Iteration #: 17, H =  3.984, time:  23.59 sec.
+	Iteration #: 18, H =  3.926, time:  24.89 sec.
+	Iteration #: 19, H =  3.901, time:  26.24 sec.
+Restart #: 75, H =  3.901, mean = (  0.4245,0.0001), std.dev. = (6.51E-05,-1E-05), res =  1.53E-24, time:   2749 sec, FOM: 8.572E+04
+Stopping because residual = (1.533E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.936, time:  1.326 sec.
+	Iteration #:  2, H =  3.931, time:  2.671 sec.
+	Iteration #:  3, H =  3.919, time:  4.049 sec.
+	Iteration #:  4, H =   3.94, time:  5.405 sec.
+	Iteration #:  5, H =  3.931, time:  6.796 sec.
+	Iteration #:  6, H =  3.911, time:  8.159 sec.
+	Iteration #:  7, H =  3.912, time:  9.496 sec.
+	Iteration #:  8, H =  3.939, time:  10.85 sec.
+	Iteration #:  9, H =  3.938, time:  12.16 sec.
+	Iteration #: 10, H =  3.922, time:  13.54 sec.
+	Iteration #: 11, H =  3.892, time:  14.92 sec.
+	Iteration #: 12, H =  3.909, time:  16.33 sec.
+	Iteration #: 13, H =    3.9, time:  17.71 sec.
+	Iteration #: 14, H =  3.855, time:   19.1 sec.
+	Iteration #: 15, H =  3.855, time:  20.41 sec.
+	Iteration #: 16, H =  3.844, time:  21.74 sec.
+	Iteration #: 17, H =  3.923, time:  23.09 sec.
+	Iteration #: 18, H =  3.943, time:  24.47 sec.
+	Iteration #: 19, H =  3.975, time:  25.85 sec.
+Restart #: 76, H =  3.975, mean = (  0.4245,0.0001), std.dev. = (6.42E-05,-1E-05), res =  6.66E-25, time:   2776 sec, FOM: 8.727E+04
+Stopping because residual = (6.656E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.883, time:  1.319 sec.
+	Iteration #:  2, H =   3.87, time:  2.631 sec.
+	Iteration #:  3, H =  3.875, time:  3.912 sec.
+	Iteration #:  4, H =  3.899, time:  5.257 sec.
+	Iteration #:  5, H =  3.924, time:   6.59 sec.
+	Iteration #:  6, H =  3.956, time:   7.97 sec.
+	Iteration #:  7, H =  3.974, time:  9.386 sec.
+	Iteration #:  8, H =  3.955, time:  10.87 sec.
+	Iteration #:  9, H =  3.934, time:  12.35 sec.
+	Iteration #: 10, H =   3.88, time:  13.76 sec.
+	Iteration #: 11, H =  3.965, time:  15.12 sec.
+	Iteration #: 12, H =  3.968, time:  16.45 sec.
+	Iteration #: 13, H =  3.875, time:  17.75 sec.
+	Iteration #: 14, H =  3.838, time:  19.13 sec.
+	Iteration #: 15, H =  3.818, time:  20.44 sec.
+	Iteration #: 16, H =   3.79, time:  21.71 sec.
+	Iteration #: 17, H =  3.797, time:  23.05 sec.
+	Iteration #: 18, H =  3.785, time:   24.4 sec.
+	Iteration #: 19, H =  3.753, time:  25.77 sec.
+Restart #: 77, H =  3.753, mean = ( 0.42451,0.0001), std.dev. = (6.36E-05,-1E-05), res =  1.37E-24, time:   2803 sec, FOM: 8.833E+04
+Stopping because residual = (1.369E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.821, time:  1.097 sec.
+	Iteration #:  2, H =  3.829, time:  2.313 sec.
+	Iteration #:  3, H =  3.812, time:  3.675 sec.
+	Iteration #:  4, H =  3.811, time:  5.154 sec.
+	Iteration #:  5, H =  3.861, time:  6.381 sec.
+	Iteration #:  6, H =  3.895, time:  7.619 sec.
+	Iteration #:  7, H =  3.884, time:  8.913 sec.
+	Iteration #:  8, H =  3.854, time:  10.29 sec.
+	Iteration #:  9, H =  3.973, time:  11.64 sec.
+	Iteration #: 10, H =  4.012, time:  12.93 sec.
+	Iteration #: 11, H =  3.991, time:  14.26 sec.
+	Iteration #: 12, H =  3.997, time:  15.69 sec.
+	Iteration #: 13, H =  3.959, time:  17.01 sec.
+	Iteration #: 14, H =  3.984, time:  18.29 sec.
+	Iteration #: 15, H =  3.962, time:  19.66 sec.
+	Iteration #: 16, H =  3.921, time:  21.01 sec.
+	Iteration #: 17, H =  3.921, time:  22.36 sec.
+	Iteration #: 18, H =  3.916, time:  23.77 sec.
+	Iteration #: 19, H =  3.941, time:  25.17 sec.
+Restart #: 78, H =  3.941, mean = (  0.4245,0.0001), std.dev. = (6.29E-05,-1E-05), res =   5.6E-25, time:   2830 sec, FOM: 8.932E+04
+Stopping because residual = (5.604E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.862, time:  1.237 sec.
+	Iteration #:  2, H =  3.863, time:  2.488 sec.
+	Iteration #:  3, H =  3.887, time:  3.882 sec.
+	Iteration #:  4, H =  3.935, time:  5.325 sec.
+	Iteration #:  5, H =  3.912, time:  6.662 sec.
+	Iteration #:  6, H =  3.901, time:  7.957 sec.
+	Iteration #:  7, H =  3.919, time:  9.212 sec.
+	Iteration #:  8, H =  3.935, time:  10.46 sec.
+	Iteration #:  9, H =  3.913, time:  11.74 sec.
+	Iteration #: 10, H =   3.94, time:     13 sec.
+	Iteration #: 11, H =  3.958, time:   14.3 sec.
+	Iteration #: 12, H =  3.924, time:  15.71 sec.
+	Iteration #: 13, H =  3.885, time:  17.07 sec.
+	Iteration #: 14, H =  3.893, time:  18.38 sec.
+	Iteration #: 15, H =  3.859, time:  19.76 sec.
+	Iteration #: 16, H =  3.922, time:  21.21 sec.
+	Iteration #: 17, H =  3.922, time:  22.61 sec.
+	Iteration #: 18, H =  3.965, time:  24.03 sec.
+	Iteration #: 19, H =   3.98, time:  25.48 sec.
+Restart #: 79, H =   3.98, mean = (  0.4245,0.0001), std.dev. = (6.22E-05,-1E-05), res =  2.95E-25, time:   2856 sec, FOM: 9.048E+04
+Stopping because residual = (2.954E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.955, time:  1.119 sec.
+	Iteration #:  2, H =  3.956, time:   2.43 sec.
+	Iteration #:  3, H =  3.968, time:  3.745 sec.
+	Iteration #:  4, H =   3.94, time:  5.232 sec.
+	Iteration #:  5, H =  3.923, time:  6.568 sec.
+	Iteration #:  6, H =  3.987, time:   7.86 sec.
+	Iteration #:  7, H =   3.99, time:   9.25 sec.
+	Iteration #:  8, H =  3.964, time:  10.64 sec.
+	Iteration #:  9, H =  3.965, time:  11.96 sec.
+	Iteration #: 10, H =  4.002, time:  13.35 sec.
+	Iteration #: 11, H =   3.93, time:  14.71 sec.
+	Iteration #: 12, H =  3.875, time:  16.09 sec.
+	Iteration #: 13, H =  3.974, time:  17.43 sec.
+	Iteration #: 14, H =  4.007, time:   18.8 sec.
+	Iteration #: 15, H =  3.975, time:  20.15 sec.
+	Iteration #: 16, H =   3.95, time:  21.51 sec.
+	Iteration #: 17, H =  3.957, time:  22.88 sec.
+	Iteration #: 18, H =  3.974, time:  24.25 sec.
+	Iteration #: 19, H =  3.928, time:  25.64 sec.
+Restart #: 80, H =  3.928, mean = ( 0.42451,0.0001), std.dev. = (6.22E-05,-1E-05), res =  2.99E-24, time:   2884 sec, FOM: 8.955E+04
+Stopping because residual = (2.991E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.978, time:  1.359 sec.
+	Iteration #:  2, H =  3.887, time:  2.721 sec.
+	Iteration #:  3, H =  3.899, time:  4.095 sec.
+	Iteration #:  4, H =  3.906, time:  5.501 sec.
+	Iteration #:  5, H =  3.968, time:  6.873 sec.
+	Iteration #:  6, H =  3.958, time:  8.254 sec.
+	Iteration #:  7, H =  3.969, time:  9.654 sec.
+	Iteration #:  8, H =  3.995, time:  11.03 sec.
+	Iteration #:  9, H =   3.98, time:  12.35 sec.
+	Iteration #: 10, H =  3.992, time:  13.66 sec.
+	Iteration #: 11, H =   3.99, time:  14.93 sec.
+	Iteration #: 12, H =  3.963, time:  16.23 sec.
+	Iteration #: 13, H =  3.908, time:  17.58 sec.
+	Iteration #: 14, H =  3.961, time:  18.94 sec.
+	Iteration #: 15, H =  3.941, time:  20.32 sec.
+	Iteration #: 16, H =   3.88, time:  21.71 sec.
+	Iteration #: 17, H =  3.921, time:  23.11 sec.
+	Iteration #: 18, H =  3.935, time:   24.5 sec.
+	Iteration #: 19, H =   3.96, time:  25.88 sec.
+Restart #: 81, H =   3.96, mean = ( 0.42451,0.0001), std.dev. = (6.1E-05,-1E-05), res =  2.68E-25, time:   2911 sec, FOM: 9.223E+04
+Stopping because residual = (2.683E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.911, time:  1.231 sec.
+	Iteration #:  2, H =  3.925, time:  2.538 sec.
+	Iteration #:  3, H =   3.94, time:  3.851 sec.
+	Iteration #:  4, H =  3.929, time:  5.302 sec.
+	Iteration #:  5, H =  3.894, time:  6.558 sec.
+	Iteration #:  6, H =  3.965, time:  7.875 sec.
+	Iteration #:  7, H =  3.979, time:  9.224 sec.
+	Iteration #:  8, H =  3.957, time:  10.59 sec.
+	Iteration #:  9, H =  3.901, time:  11.98 sec.
+	Iteration #: 10, H =  3.886, time:  13.34 sec.
+	Iteration #: 11, H =  3.913, time:  14.71 sec.
+	Iteration #: 12, H =  3.983, time:  16.05 sec.
+	Iteration #: 13, H =  3.988, time:  17.36 sec.
+	Iteration #: 14, H =  3.902, time:  18.72 sec.
+	Iteration #: 15, H =   3.96, time:  20.06 sec.
+	Iteration #: 16, H =  4.007, time:  21.43 sec.
+	Iteration #: 17, H =  3.991, time:  22.74 sec.
+	Iteration #: 18, H =  4.003, time:  24.12 sec.
+	Iteration #: 19, H =  3.994, time:  25.48 sec.
+Restart #: 82, H =  3.994, mean = (  0.4245,0.0001), std.dev. = (6.11E-05,-1E-05), res =  1.39E-24, time:   2938 sec, FOM: 9.112E+04
+Stopping because residual = (1.395E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.918, time:  1.349 sec.
+	Iteration #:  2, H =  3.964, time:  2.678 sec.
+	Iteration #:  3, H =  3.957, time:   4.03 sec.
+	Iteration #:  4, H =  3.984, time:   5.42 sec.
+	Iteration #:  5, H =  3.941, time:  6.672 sec.
+	Iteration #:  6, H =  3.939, time:   7.99 sec.
+	Iteration #:  7, H =  3.917, time:  9.366 sec.
+	Iteration #:  8, H =  3.883, time:  10.79 sec.
+	Iteration #:  9, H =  3.875, time:  12.26 sec.
+	Iteration #: 10, H =  3.836, time:  13.69 sec.
+	Iteration #: 11, H =  3.876, time:  15.07 sec.
+	Iteration #: 12, H =  3.906, time:  16.43 sec.
+	Iteration #: 13, H =  3.929, time:  17.82 sec.
+	Iteration #: 14, H =  3.982, time:  19.15 sec.
+	Iteration #: 15, H =  3.949, time:  20.41 sec.
+	Iteration #: 16, H =  3.955, time:   21.7 sec.
+	Iteration #: 17, H =  3.934, time:  23.08 sec.
+	Iteration #: 18, H =  3.914, time:  24.43 sec.
+	Iteration #: 19, H =  3.916, time:  25.79 sec.
+Restart #: 83, H =  3.916, mean = ( 0.42451,0.0001), std.dev. = (6.22E-05,-1E-05), res =  2.54E-25, time:   2965 sec, FOM: 8.726E+04
+Stopping because residual = (2.537E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.908, time:  1.305 sec.
+	Iteration #:  2, H =  3.886, time:  2.644 sec.
+	Iteration #:  3, H =  3.887, time:  4.039 sec.
+	Iteration #:  4, H =   3.93, time:   5.44 sec.
+	Iteration #:  5, H =  3.863, time:  6.743 sec.
+	Iteration #:  6, H =  3.956, time:  8.043 sec.
+	Iteration #:  7, H =  3.988, time:  9.342 sec.
+	Iteration #:  8, H =  3.959, time:  10.69 sec.
+	Iteration #:  9, H =  3.894, time:   12.1 sec.
+	Iteration #: 10, H =  3.964, time:  13.47 sec.
+	Iteration #: 11, H =  3.949, time:  14.78 sec.
+	Iteration #: 12, H =  3.958, time:  16.16 sec.
+	Iteration #: 13, H =  3.972, time:  17.58 sec.
+	Iteration #: 14, H =  3.967, time:  18.92 sec.
+	Iteration #: 15, H =  3.991, time:   20.2 sec.
+	Iteration #: 16, H =  3.939, time:  21.51 sec.
+	Iteration #: 17, H =  3.961, time:  22.87 sec.
+	Iteration #: 18, H =  3.946, time:  24.23 sec.
+	Iteration #: 19, H =  3.942, time:  25.65 sec.
+Restart #: 84, H =  3.942, mean = ( 0.42452,0.0001), std.dev. = (6.19E-05,-1E-05), res =  8.87E-25, time:   2992 sec, FOM: 8.719E+04
+Stopping because residual = (8.868E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.932, time:   1.11 sec.
+	Iteration #:  2, H =  3.901, time:  2.394 sec.
+	Iteration #:  3, H =  3.927, time:  3.692 sec.
+	Iteration #:  4, H =  3.948, time:  5.133 sec.
+	Iteration #:  5, H =  3.924, time:  6.453 sec.
+	Iteration #:  6, H =  3.994, time:  7.831 sec.
+	Iteration #:  7, H =  4.065, time:  9.154 sec.
+	Iteration #:  8, H =  4.049, time:  10.43 sec.
+	Iteration #:  9, H =  3.939, time:  11.87 sec.
+	Iteration #: 10, H =  3.901, time:  13.22 sec.
+	Iteration #: 11, H =  3.969, time:  14.56 sec.
+	Iteration #: 12, H =  3.972, time:   15.9 sec.
+	Iteration #: 13, H =  3.982, time:  17.21 sec.
+	Iteration #: 14, H =  3.938, time:  18.49 sec.
+	Iteration #: 15, H =    3.9, time:  19.83 sec.
+	Iteration #: 16, H =  3.862, time:  21.19 sec.
+	Iteration #: 17, H =  3.829, time:  22.51 sec.
+	Iteration #: 18, H =  3.811, time:  23.88 sec.
+	Iteration #: 19, H =  3.847, time:  25.31 sec.
+Restart #: 85, H =  3.847, mean = ( 0.42452,0.0001), std.dev. = (6.13E-05,-1E-05), res =  5.07E-25, time:   3019 sec, FOM: 8.83E+04
+Stopping because residual = (5.069E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.946, time:  1.341 sec.
+	Iteration #:  2, H =  3.966, time:  2.691 sec.
+	Iteration #:  3, H =   3.98, time:  4.142 sec.
+	Iteration #:  4, H =  3.922, time:  5.403 sec.
+	Iteration #:  5, H =  3.901, time:   6.74 sec.
+	Iteration #:  6, H =   3.88, time:  8.042 sec.
+	Iteration #:  7, H =  3.841, time:  9.354 sec.
+	Iteration #:  8, H =    3.9, time:  10.72 sec.
+	Iteration #:  9, H =  3.925, time:  12.09 sec.
+	Iteration #: 10, H =  3.973, time:  13.46 sec.
+	Iteration #: 11, H =  3.951, time:  14.82 sec.
+	Iteration #: 12, H =  3.988, time:  16.28 sec.
+	Iteration #: 13, H =  4.001, time:  17.66 sec.
+	Iteration #: 14, H =  3.992, time:  19.02 sec.
+	Iteration #: 15, H =  3.989, time:  20.36 sec.
+	Iteration #: 16, H =  3.966, time:  21.73 sec.
+	Iteration #: 17, H =   3.95, time:  23.15 sec.
+	Iteration #: 18, H =  3.943, time:  24.56 sec.
+	Iteration #: 19, H =  3.949, time:  25.94 sec.
+Restart #: 86, H =  3.949, mean = ( 0.42452,0.0001), std.dev. = (6.06E-05,-1E-05), res =   2.8E-25, time:   3046 sec, FOM: 8.944E+04
+Stopping because residual = (2.798E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.897, time:  1.425 sec.
+	Iteration #:  2, H =  3.859, time:  2.841 sec.
+	Iteration #:  3, H =   3.91, time:  4.196 sec.
+	Iteration #:  4, H =  3.883, time:  5.468 sec.
+	Iteration #:  5, H =  3.837, time:  6.802 sec.
+	Iteration #:  6, H =  3.858, time:  8.217 sec.
+	Iteration #:  7, H =  3.846, time:  9.612 sec.
+	Iteration #:  8, H =  3.882, time:  10.97 sec.
+	Iteration #:  9, H =  3.913, time:   12.4 sec.
+	Iteration #: 10, H =  3.917, time:  13.72 sec.
+	Iteration #: 11, H =  3.905, time:  15.04 sec.
+	Iteration #: 12, H =  3.926, time:  16.35 sec.
+	Iteration #: 13, H =  3.946, time:  17.69 sec.
+	Iteration #: 14, H =  3.937, time:  19.06 sec.
+	Iteration #: 15, H =  3.948, time:  20.46 sec.
+	Iteration #: 16, H =  3.924, time:  21.87 sec.
+	Iteration #: 17, H =  3.923, time:  23.25 sec.
+	Iteration #: 18, H =  3.961, time:  24.63 sec.
+	Iteration #: 19, H =  3.918, time:  26.01 sec.
+Restart #: 87, H =  3.918, mean = ( 0.42452,0.0001), std.dev. = (6.01E-05,-1E-05), res =  8.13E-25, time:   3073 sec, FOM: 9.021E+04
+Stopping because residual = (8.127E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.901, time:  1.285 sec.
+	Iteration #:  2, H =  3.997, time:  2.649 sec.
+	Iteration #:  3, H =  4.001, time:  4.017 sec.
+	Iteration #:  4, H =  3.981, time:  5.384 sec.
+	Iteration #:  5, H =  4.004, time:  6.655 sec.
+	Iteration #:  6, H =  3.953, time:  7.952 sec.
+	Iteration #:  7, H =   3.93, time:  9.218 sec.
+	Iteration #:  8, H =  3.939, time:  10.62 sec.
+	Iteration #:  9, H =  3.923, time:  12.02 sec.
+	Iteration #: 10, H =  3.933, time:   13.4 sec.
+	Iteration #: 11, H =  3.937, time:   14.8 sec.
+	Iteration #: 12, H =  3.958, time:  16.24 sec.
+	Iteration #: 13, H =  4.005, time:  17.65 sec.
+	Iteration #: 14, H =  3.923, time:  19.05 sec.
+	Iteration #: 15, H =  3.946, time:  20.48 sec.
+	Iteration #: 16, H =  3.939, time:  21.89 sec.
+	Iteration #: 17, H =  3.939, time:  23.26 sec.
+	Iteration #: 18, H =   3.87, time:   24.6 sec.
+	Iteration #: 19, H =  3.874, time:  25.93 sec.
+Restart #: 88, H =  3.874, mean = ( 0.42453,0.0001), std.dev. = (6.01E-05,-1E-05), res =  2.76E-25, time:   3100 sec, FOM: 8.923E+04
+Stopping because residual = (2.764E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.979, time:  1.263 sec.
+	Iteration #:  2, H =  3.973, time:  2.651 sec.
+	Iteration #:  3, H =  3.952, time:  4.087 sec.
+	Iteration #:  4, H =  3.907, time:  5.492 sec.
+	Iteration #:  5, H =   3.87, time:  6.822 sec.
+	Iteration #:  6, H =  3.931, time:  8.216 sec.
+	Iteration #:  7, H =  3.895, time:  9.593 sec.
+	Iteration #:  8, H =  3.867, time:  10.94 sec.
+	Iteration #:  9, H =  3.968, time:  12.29 sec.
+	Iteration #: 10, H =  3.974, time:  13.63 sec.
+	Iteration #: 11, H =  3.991, time:  14.95 sec.
+	Iteration #: 12, H =  3.985, time:  16.26 sec.
+	Iteration #: 13, H =  3.935, time:  17.52 sec.
+	Iteration #: 14, H =  3.935, time:  18.87 sec.
+	Iteration #: 15, H =  3.968, time:   20.2 sec.
+	Iteration #: 16, H =  3.992, time:  21.58 sec.
+	Iteration #: 17, H =  3.972, time:  22.94 sec.
+	Iteration #: 18, H =  3.954, time:  24.34 sec.
+	Iteration #: 19, H =  3.965, time:   25.7 sec.
+Restart #: 89, H =  3.965, mean = ( 0.42452,0.0001), std.dev. = (6.01E-05,-1E-05), res =  4.65E-25, time:   3128 sec, FOM: 8.856E+04
+Stopping because residual = (4.652E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.963, time:  1.265 sec.
+	Iteration #:  2, H =  3.967, time:  2.596 sec.
+	Iteration #:  3, H =  3.932, time:  3.974 sec.
+	Iteration #:  4, H =  3.966, time:    5.4 sec.
+	Iteration #:  5, H =  3.933, time:  6.754 sec.
+	Iteration #:  6, H =  3.881, time:  8.113 sec.
+	Iteration #:  7, H =  3.934, time:  9.482 sec.
+	Iteration #:  8, H =  3.951, time:   10.8 sec.
+	Iteration #:  9, H =  3.911, time:  12.19 sec.
+	Iteration #: 10, H =  3.933, time:  13.51 sec.
+	Iteration #: 11, H =  3.974, time:  14.83 sec.
+	Iteration #: 12, H =  3.915, time:  16.16 sec.
+	Iteration #: 13, H =   3.96, time:  17.45 sec.
+	Iteration #: 14, H =  3.876, time:  18.81 sec.
+	Iteration #: 15, H =   3.93, time:   20.2 sec.
+	Iteration #: 16, H =  3.978, time:  21.65 sec.
+	Iteration #: 17, H =    3.9, time:  23.02 sec.
+	Iteration #: 18, H =  3.912, time:  24.31 sec.
+	Iteration #: 19, H =  3.872, time:   25.7 sec.
+Restart #: 90, H =  3.872, mean = ( 0.42452,0.0001), std.dev. = (5.94E-05,-1E-05), res =  2.69E-25, time:   3155 sec, FOM: 8.973E+04
+Stopping because residual = (2.687E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.913, time:  1.405 sec.
+	Iteration #:  2, H =  3.938, time:  2.756 sec.
+	Iteration #:  3, H =    3.9, time:  4.056 sec.
+	Iteration #:  4, H =  3.894, time:  5.457 sec.
+	Iteration #:  5, H =   3.88, time:  6.847 sec.
+	Iteration #:  6, H =  3.881, time:   8.21 sec.
+	Iteration #:  7, H =  3.962, time:  9.566 sec.
+	Iteration #:  8, H =  3.991, time:  10.87 sec.
+	Iteration #:  9, H =  4.007, time:  12.17 sec.
+	Iteration #: 10, H =  4.006, time:  13.48 sec.
+	Iteration #: 11, H =  3.993, time:  14.83 sec.
+	Iteration #: 12, H =  4.027, time:  16.17 sec.
+	Iteration #: 13, H =  3.944, time:  17.49 sec.
+	Iteration #: 14, H =  3.974, time:  18.82 sec.
+	Iteration #: 15, H =  3.978, time:  20.23 sec.
+	Iteration #: 16, H =  3.952, time:  21.64 sec.
+	Iteration #: 17, H =  3.963, time:  23.06 sec.
+	Iteration #: 18, H =  3.916, time:   24.5 sec.
+	Iteration #: 19, H =   3.85, time:  25.91 sec.
+Restart #: 91, H =   3.85, mean = ( 0.42452,0.0001), std.dev. = (5.9E-05,-1E-05), res =  3.94E-25, time:   3182 sec, FOM: 9.038E+04
+Stopping because residual = (3.938E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.81, time:  1.567 sec.
+	Iteration #:  2, H =  3.779, time:  2.967 sec.
+	Iteration #:  3, H =  3.792, time:  4.409 sec.
+	Iteration #:  4, H =  3.861, time:  5.654 sec.
+	Iteration #:  5, H =  3.906, time:  7.024 sec.
+	Iteration #:  6, H =  3.935, time:  8.388 sec.
+	Iteration #:  7, H =  3.912, time:   9.74 sec.
+	Iteration #:  8, H =  3.906, time:  11.03 sec.
+	Iteration #:  9, H =  3.942, time:  12.36 sec.
+	Iteration #: 10, H =  3.932, time:  13.74 sec.
+	Iteration #: 11, H =  3.919, time:   15.1 sec.
+	Iteration #: 12, H =  3.907, time:   16.5 sec.
+	Iteration #: 13, H =  3.786, time:  17.89 sec.
+	Iteration #: 14, H =   3.73, time:  19.27 sec.
+	Iteration #: 15, H =  3.803, time:  20.57 sec.
+	Iteration #: 16, H =  3.909, time:  21.91 sec.
+	Iteration #: 17, H =  3.864, time:  23.26 sec.
+	Iteration #: 18, H =  3.853, time:  24.63 sec.
+	Iteration #: 19, H =  3.824, time:     26 sec.
+Restart #: 92, H =  3.824, mean = ( 0.42451,0.0001), std.dev. = (5.86E-05,-1E-05), res =   1.2E-24, time:   3209 sec, FOM: 9.088E+04
+Stopping because residual = (1.201E-24,0) < 2.22E-16
+	Iteration #:  1, H =  3.735, time:  1.538 sec.
+	Iteration #:  2, H =  3.791, time:  3.047 sec.
+	Iteration #:  3, H =  3.787, time:  4.403 sec.
+	Iteration #:  4, H =    3.8, time:  5.691 sec.
+	Iteration #:  5, H =  3.741, time:  7.161 sec.
+	Iteration #:  6, H =  3.739, time:  8.648 sec.
+	Iteration #:  7, H =  3.755, time:  10.12 sec.
+	Iteration #:  8, H =  3.767, time:  11.48 sec.
+	Iteration #:  9, H =  3.894, time:  12.78 sec.
+	Iteration #: 10, H =  3.938, time:  14.18 sec.
+	Iteration #: 11, H =  3.975, time:  15.54 sec.
+	Iteration #: 12, H =  3.901, time:  16.91 sec.
+	Iteration #: 13, H =  3.904, time:  18.31 sec.
+	Iteration #: 14, H =  3.864, time:  19.59 sec.
+	Iteration #: 15, H =  3.884, time:  20.97 sec.
+	Iteration #: 16, H =  3.866, time:  22.35 sec.
+	Iteration #: 17, H =    3.9, time:  23.74 sec.
+	Iteration #: 18, H =  4.001, time:  25.14 sec.
+	Iteration #: 19, H =  3.997, time:  26.48 sec.
+Restart #: 93, H =  3.997, mean = ( 0.42451,0.0001), std.dev. = (5.81E-05,-1E-05), res =  4.73E-25, time:   3237 sec, FOM: 9.148E+04
+Stopping because residual = (4.732E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.974, time:  1.429 sec.
+	Iteration #:  2, H =  3.962, time:  2.802 sec.
+	Iteration #:  3, H =  3.887, time:  4.134 sec.
+	Iteration #:  4, H =  3.898, time:  5.489 sec.
+	Iteration #:  5, H =  3.904, time:  6.868 sec.
+	Iteration #:  6, H =   3.89, time:  8.316 sec.
+	Iteration #:  7, H =  3.932, time:   9.74 sec.
+	Iteration #:  8, H =  3.957, time:  11.12 sec.
+	Iteration #:  9, H =  3.979, time:  12.42 sec.
+	Iteration #: 10, H =  4.014, time:  13.76 sec.
+	Iteration #: 11, H =  3.998, time:  15.09 sec.
+	Iteration #: 12, H =  4.015, time:  16.38 sec.
+	Iteration #: 13, H =  3.954, time:  17.74 sec.
+	Iteration #: 14, H =  3.981, time:  19.13 sec.
+	Iteration #: 15, H =  3.945, time:  20.47 sec.
+	Iteration #: 16, H =  3.921, time:   21.8 sec.
+	Iteration #: 17, H =  4.006, time:   23.1 sec.
+	Iteration #: 18, H =  3.926, time:  24.44 sec.
+	Iteration #: 19, H =  4.001, time:  25.83 sec.
+Restart #: 94, H =  4.001, mean = ( 0.42451,0.0001), std.dev. = (5.74E-05,-1E-05), res =  4.81E-25, time:   3264 sec, FOM: 9.298E+04
+Stopping because residual = (4.809E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.962, time:  1.561 sec.
+	Iteration #:  2, H =  3.905, time:  2.898 sec.
+	Iteration #:  3, H =  3.898, time:  4.078 sec.
+	Iteration #:  4, H =  3.931, time:  5.341 sec.
+	Iteration #:  5, H =  3.907, time:  6.695 sec.
+	Iteration #:  6, H =  3.905, time:  8.097 sec.
+	Iteration #:  7, H =  3.924, time:  9.419 sec.
+	Iteration #:  8, H =  3.934, time:  10.78 sec.
+	Iteration #:  9, H =  3.955, time:  12.21 sec.
+	Iteration #: 10, H =  3.966, time:  13.54 sec.
+	Iteration #: 11, H =  3.902, time:  14.84 sec.
+	Iteration #: 12, H =  3.959, time:   16.2 sec.
+	Iteration #: 13, H =  3.917, time:  17.55 sec.
+	Iteration #: 14, H =  3.873, time:  18.91 sec.
+	Iteration #: 15, H =  3.881, time:  20.24 sec.
+	Iteration #: 16, H =  3.915, time:  21.55 sec.
+	Iteration #: 17, H =  3.921, time:  22.89 sec.
+	Iteration #: 18, H =  3.921, time:  24.25 sec.
+	Iteration #: 19, H =  3.901, time:  25.63 sec.
+Restart #: 95, H =  3.901, mean = ( 0.42452,0.0001), std.dev. = (5.95E-05,-1E-05), res =  1.02E-25, time:   3291 sec, FOM: 8.579E+04
+Stopping because residual = (1.018E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.933, time:  1.386 sec.
+	Iteration #:  2, H =  3.958, time:  2.756 sec.
+	Iteration #:  3, H =  3.949, time:  4.135 sec.
+	Iteration #:  4, H =  3.941, time:  5.513 sec.
+	Iteration #:  5, H =  3.933, time:  6.836 sec.
+	Iteration #:  6, H =  3.944, time:   8.23 sec.
+	Iteration #:  7, H =  3.933, time:   9.56 sec.
+	Iteration #:  8, H =  3.974, time:  10.96 sec.
+	Iteration #:  9, H =   3.96, time:  12.37 sec.
+	Iteration #: 10, H =  3.984, time:  13.81 sec.
+	Iteration #: 11, H =   3.99, time:   15.2 sec.
+	Iteration #: 12, H =  3.931, time:  16.55 sec.
+	Iteration #: 13, H =  4.002, time:  17.78 sec.
+	Iteration #: 14, H =  3.953, time:  19.11 sec.
+	Iteration #: 15, H =  3.886, time:  20.38 sec.
+	Iteration #: 16, H =  3.888, time:  21.68 sec.
+	Iteration #: 17, H =  3.889, time:  22.96 sec.
+	Iteration #: 18, H =  3.879, time:  24.26 sec.
+	Iteration #: 19, H =  3.856, time:  25.62 sec.
+Restart #: 96, H =  3.856, mean = ( 0.42453,0.0001), std.dev. = (5.91E-05,-1E-05), res =  2.55E-25, time:   3318 sec, FOM: 8.641E+04
+Stopping because residual = (2.549E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.932, time:  1.329 sec.
+	Iteration #:  2, H =  3.926, time:  2.679 sec.
+	Iteration #:  3, H =  3.914, time:  4.049 sec.
+	Iteration #:  4, H =  3.877, time:  5.349 sec.
+	Iteration #:  5, H =  3.899, time:  6.717 sec.
+	Iteration #:  6, H =  3.893, time:  8.105 sec.
+	Iteration #:  7, H =  3.882, time:  9.493 sec.
+	Iteration #:  8, H =  3.915, time:  10.92 sec.
+	Iteration #:  9, H =  3.916, time:  12.38 sec.
+	Iteration #: 10, H =  3.926, time:   13.8 sec.
+	Iteration #: 11, H =  3.905, time:  15.17 sec.
+	Iteration #: 12, H =  3.903, time:  16.49 sec.
+	Iteration #: 13, H =  3.888, time:   17.9 sec.
+	Iteration #: 14, H =  3.882, time:  19.23 sec.
+	Iteration #: 15, H =  3.869, time:  20.54 sec.
+	Iteration #: 16, H =  3.885, time:   21.8 sec.
+	Iteration #: 17, H =  3.876, time:  23.11 sec.
+	Iteration #: 18, H =  3.873, time:  24.42 sec.
+	Iteration #: 19, H =  3.876, time:  25.72 sec.
+Restart #: 97, H =  3.876, mean = ( 0.42454,0.0001), std.dev. = (5.89E-05,-1E-05), res =  1.97E-25, time:   3345 sec, FOM: 8.613E+04
+Stopping because residual = (1.971E-25,0) < 2.22E-16
+	Iteration #:  1, H =  3.878, time:  1.312 sec.
+	Iteration #:  2, H =  3.913, time:  2.607 sec.
+	Iteration #:  3, H =   3.97, time:   4.05 sec.
+	Iteration #:  4, H =  3.948, time:  5.436 sec.
+	Iteration #:  5, H =  3.935, time:  6.831 sec.
+	Iteration #:  6, H =  3.955, time:  8.287 sec.
+	Iteration #:  7, H =  3.908, time:  9.665 sec.
+	Iteration #:  8, H =  3.799, time:  10.97 sec.
+	Iteration #:  9, H =  3.814, time:  12.21 sec.
+	Iteration #: 10, H =  3.874, time:  13.51 sec.
+	Iteration #: 11, H =  3.927, time:  14.87 sec.
+	Iteration #: 12, H =  3.949, time:  16.23 sec.
+	Iteration #: 13, H =  3.897, time:  17.58 sec.
+	Iteration #: 14, H =  3.901, time:  18.99 sec.
+	Iteration #: 15, H =  3.927, time:  20.36 sec.
+	Iteration #: 16, H =  3.948, time:  21.67 sec.
+	Iteration #: 17, H =  3.915, time:  22.96 sec.
+	Iteration #: 18, H =  3.882, time:  24.22 sec.
+	Iteration #: 19, H =  3.897, time:  25.61 sec.
+Restart #: 98, H =  3.897, mean = ( 0.42455,0.0001), std.dev. = (6.06E-05,-1E-05), res =  3.33E-25, time:   3372 sec, FOM: 8.08E+04
+Stopping because residual = (3.329E-25,0) < 2.22E-16
+	Iteration #:  1, H =   3.95, time:  1.287 sec.
+	Iteration #:  2, H =   3.89, time:  2.632 sec.
+	Iteration #:  3, H =  3.871, time:  4.063 sec.
+	Iteration #:  4, H =  3.925, time:  5.485 sec.
+	Iteration #:  5, H =  3.921, time:  6.808 sec.
+	Iteration #:  6, H =  3.934, time:  8.202 sec.
+	Iteration #:  7, H =  3.892, time:  9.589 sec.
+	Iteration #:  8, H =  3.913, time:  10.89 sec.
+	Iteration #:  9, H =  3.872, time:  12.22 sec.
+	Iteration #: 10, H =  3.916, time:  13.53 sec.
+	Iteration #: 11, H =  3.939, time:  14.82 sec.
+	Iteration #: 12, H =  3.829, time:  16.04 sec.
+	Iteration #: 13, H =  3.801, time:  17.29 sec.
+	Iteration #: 14, H =  3.885, time:  18.57 sec.
+	Iteration #: 15, H =  3.911, time:  19.91 sec.
+	Iteration #: 16, H =   3.97, time:  21.29 sec.
+	Iteration #: 17, H =  3.922, time:  22.62 sec.
+	Iteration #: 18, H =  3.921, time:  23.94 sec.
+	Iteration #: 19, H =  3.944, time:  25.32 sec.
+Restart #: 99, H =  3.944, mean = ( 0.42454,0.0001), std.dev. = (6.04E-05,-1E-05), res =  8.56E-25, time:   3399 sec, FOM: 8.06E+04
+Stopping because residual = (8.562E-25,0) < 2.22E-16
+set terminal dumb
+
+
+                                     Eigenvalues
+./../ArnoldiResearch --verbose 2 --width 20 --relaxed 0 --multimedia --eigenval
+ Histogram --active 100 --seed 0 --bins 300 --run --Iterations 20 -f Multimedia
+                                      = 56235249
+Mean Eigenvalues
+  0.4254 ++--------+--------+---------+--------+---------+--------+--------++
+         +  A      +A       +         +        +         +   RAM l-0 **A*** +
+  0.4252 ++      A    *                                                    ++
+   0.425 ++ A         A                                                    ++
+         |           A* **                                                  |
+  0.4248 ++  AA       A****** * *                                          ++
+         A     A  A   **AAAAAAA*AA*******                                   |
+  0.4246 ++         A *AA*AA*A*A*AAAAAAAAAA************AAAAAAAAAAAAAAA     ++
+  0.4244 ++        A   A* **   *  **   ****AAAAAAAAAAAAA*A*A*A********     ++
+         |A   A   A    **                        ** *                       |
+  0.4242 ++            *                                                   ++
+         | A A AA                                                           |
+   0.424 ++      A                                                         ++
+  0.4238 ++A    A   A                                                      ++
+         +A        A A      +         +        +         +        +         +
+  0.4236 ++--------+--------+---------+--------+---------+--------+--------++
+         0       2e+08    4e+08     6e+08    8e+08     1e+09   1.2e+09  1.4e+09
+                                  Histories Tracked
+
+                                   Eigenvectors
+./../ArnoldiResearch --verbose 2 --width 20 --relaxed 0 --multimedia --eigenval
+ Histogram --active 100 --seed 0 --bins 300 --run --Iterations 20 -f Multimedia
+                                     = 56235249
+
+  0.12 ++------+------+-------+-------+------+-------+-------+------+------++
+       +       +      +       +       +      +       +       RAM l-0+****** +
+       |                                                                    |
+   0.1 ++                                                             **** ++
+       |  ****                                                       **  ** |
+  0.08 ++**  **                                                     **    **+
+       |**    **                                                    *      *|
+       |*      *                                                    *      **
+  0.06 **      *                                                    *      +*
+       *       *                                                    *       *
+       *       *                                                    *       *
+  0.04 *+      *                                                    *      +*
+       *       *                                                    *       *
+  0.02 *+      *                                                    *      +*
+       *       *                                                    *       *
+       *       *      +       +       +      +       +       +      *       *
+     0 *+------******************************************************------+*
+       0       1      2       3       4      5       6       7      8       9
+
+                                     Eigenvalues
+./../ArnoldiResearch --verbose 2 --width 20 --relaxed 0 --multimedia --eigenval
+ Histogram --active 100 --seed 0 --bins 300 --run --Iterations 20 -f Multimedia
+                                      = 56235249
+Mean Eigenvalues
+  0.4255 ++--------+--------+---------+--------+---------+--------+--------++
+         +  A      +A       +         +        +         +   RAM l-0 **A*** +
+   0.425 ++ A    A   AA                                      RAM l-1 ##B###++
+         |   AA       A**A************                                      |
+  0.4245 A+    A  A A *AA*AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA     ++
+         |A   A  BAA  B**  *##            *******AA*A*********    *         |
+   0.424 ++ABA AA   B #*##B#BBBBB###                                       ++
+         |AAB   AA AAABBBBBB###BBBBBBBBBB##B#####################BBBBB      |
+         |    B       ######      ######BBBBBBBBBBBBBBBBBBBBBBBBBBBBB#      |
+  0.4235 ++   B      B##                                                   ++
+         |   B                                                              |
+   0.423 +BB       B                                                       ++
+         |      B B B                                                       |
+  0.4225 ++                                                                ++
+         +         +        +         +        +         +        +         +
+   0.422 ++B-------+--------+---------+--------+---------+--------+--------++
+         0       2e+08    4e+08     6e+08    8e+08     1e+09   1.2e+09  1.4e+09
+                                  Histories Tracked
+
+                                   Eigenvectors
+./../ArnoldiResearch --verbose 2 --width 20 --relaxed 0 --multimedia --eigenval
+ Histogram --active 100 --seed 0 --bins 300 --run --Iterations 20 -f Multimedia
+                                     = 56235249
+
+  0.12 ++------+------+-------+-------+------+-------+-------+------+------++
+       +       +      +       +       +      +       +       RAM l-0+****** +
+   0.1 ++ ****                                               RAM l-1 ******++
+  0.08 ++**  **                                                     **#  #**+
+       |**    **                                                    *#    #**
+  0.06 **      *                                                    *      #*
+  0.04 *+      *                                                    *      +*
+       *       *                                                    *       *
+  0.02 *+      *                                                    *      +*
+       *       *                                                    *       *
+     0 *+......******************************************************......+*
+ -0.02 #+      #                                                           ++
+       #       #                                                            |
+ -0.04 #+      #                                                           ++
+ -0.06 ###    ##                                                           ++
+       + ######+      +       +       +      +       +       +      +       +
+ -0.08 ++------+------+-------+-------+------+-------+-------+------+------++
+       0       1      2       3       4      5       6       7      8       9
+
+                                      Entropy
+./../ArnoldiResearch --verbose 2 --width 20 --relaxed 0 --multimedia --eigenval
+ Histogram --active 100 --seed 0 --bins 300 --run --Iterations 20 -f Multimedia
+                                     = 56235249
+
+  4.2 ++----------+----------+-----------+-----------+----------+----------++
+    4 ++ ** *************  ********** **********  Entropy-Iterations*******++
+      **********************************************************************|
+  3.8 ******* *** **** **** ******************************** ***  ***  ** **+
+  3.6 *+        *                                                          ++
+      *                                                                     |
+  3.4 *+                                                                   ++
+  3.2 *+                                                                   ++
+      *                                                                     |
+    3 *+                                                                   ++
+  2.8 *+                                                                   ++
+      *                                                                     |
+  2.6 *+                                                                   ++
+  2.4 *+                                                                   ++
+      *                                                                     |
+  2.2 *+          +          +           +           +          +          ++
+    2 ++----------+----------+-----------+-----------+----------+----------++
+      0         2e+08      4e+08       6e+08       8e+08      1e+09     1.2e+09
+
+                                      Entropy
+./../ArnoldiResearch --verbose 2 --width 20 --relaxed 0 --multimedia --eigenval
+ Histogram --active 100 --seed 0 --bins 300 --run --Iterations 20 -f Multimedia
+                                     = 56235249
+
+  4.2 ++--------+---------+---------+---------+---------+---------+--------++
+    4 ++ * ***********  **** ** ** ******* *******Entropy-Iterations ******++
+      **********************************************Entropy-Restarts####### |
+  3.8 *** *************** ************************** ***# **  *  *         ++
+  3.6 *+       *                                                           ++
+      *                                                                     |
+  3.4 *+                                                                   ++
+  3.2 *+                                                                   ++
+      *                                                                     |
+    3 *+                                                                   ++
+  2.8 *+                                                                   ++
+      *                                                                     |
+  2.6 *+                                                                   ++
+  2.4 *+                                                                   ++
+      *                                                                     |
+  2.2 *+        +         +         +         +         +         +        ++
+    2 ++--------+---------+---------+---------+---------+---------+--------++
+      0       2e+08     4e+08     6e+08     8e+08     1e+09    1.2e+09  1.4e+09
+

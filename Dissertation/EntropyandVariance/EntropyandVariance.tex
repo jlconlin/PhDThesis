@@ -1,0 +1,113 @@
+%!TEX root = ../Thesis.tex
+\chapter{Fission Source Convergence \label{ch:AdvancedArnoldi}}
+Monte Carlo criticality calculations have come a long way since their beginning in the 1950s.  Along with the increase in the speed and complexity of computers the problems for which Monte Carlo techniques have been used have increased.  Problems that were prohibitively expensive in the past have now become routine.  Some problems still remain, however,  with Monte Carlo criticality calculations.  Two of those problems are fission source convergence and the underestimation of the variance of the mean eigenvalue \citep[see][]{Brown:2009A-Rev-0}.  In this chapter we will discuss how a Monte Carlo application of Arnoldi's method improves the source convergence as compared with the traditional power method.
+
+\section{Shannon Entropy and Fission Source Convergence \label{sec:Entropy} }
+In \Fref{sec:PowerMethod} it was observed that a Monte Carlo code must discard initial iterations as the eigenvalue estimate converges to the fundamental eigenmode.  The number of iterations required for convergence of the power method to the fundamental depends on the dominance ratio ($\lambda_1/\lambda_0$) for the problem.  Also of concern is the convergence of the fission source.  To obtain good estimates of the fission source---or eigenfunction of the fission-transport operator---the fission source should be converged before tallying begins.
+
+Knowing how many cycles to discard can be a challenge.  One could monitor the eigenvalue estimates to see if they have converged and begin active cycles once convergence has been achieved.  \citet{Brown:2009A-Rev-0} suggests that when the dominance ratio is close to 1, the fundamental eigenvalue will converge sooner than the fission source distribution.  We must, therefore, monitor \emph{both} the convergence of the eigenvalue as well as the convergence of the fission source.  It is clear that convergence in fewer iterations is desired because fewer iterations will have to be discarded and tallying can begin sooner.  
+
+One problem for which source convergence in the power method is problematic is a geometry with multiplying regions separated by large region of a highly-absorbing material.  This is because of the particles born in one multiplying region only a few, rare, neutrons would ever transport through the absorbing region to cause fission in the other multiplying region.  In the power method, the only way in which particles can move from the initial source to a new location is through the scattering that occurs in the application of the fission-transport operator.  The fission source for the next iteration contains only the points at which neutrons induced fission in the previous iteration.
+
+When restarting, Arnoldi's method uses all of the available information about the operator applied to a source to estimate an eigenvector; the power method only uses information from the latest application of the operator to estimate the fundamental eigenvector.  Using all available information makes it possible for the fission source to be converged more quickly.  
+
+To monitor the convergence of the fission source \citet{Ueki:2003Infor-0} have used information theory to calculate the Shannon entropy, $H$, of the fission source.   The Shannon entropy of a spatially discretized fission source $S(x)$ is defined as
+\begin{equation}
+    H(S(x)) \equiv -\sum_{b=1}^B S_b\log(S_b),
+    \label{eq:ShannonEntropy}
+\end{equation}
+where $B$ is the number of spatial bins and $S_b$ is the number of fission neutrons in bin $b$.  As the calculation proceeds, the Shannon entropy will converge to some value.  The actual value of the Shannon entropy is not important in determining the fission source convergence.  What is important is that it converges to some value.
+
+To calculate the Shannon entropy when using the power method the fission source must be discretized.  This discretization is most easily performed using a first order---or histogram---approximation as described in Equations \eqref{eq:ApproximatedSource}, \eqref{eq:FirstOrderApproximation} and \eqref{eq:ConstantSpaceArnoldiVector}.  The discretization of the fission source will not bias the estimate of the eigenvalue in the power method as it does for Arnoldi's method.  The power method samples from the non-discretized source and only uses the discretized fission source for tallying bins and calculating the Shannon entropy.
+
+In Arnoldi's method, we can't calculate the Shannon entropy of the Arnoldi vectors.  We must, therefore, calculate the Ritz vectors of \A{} and use the fundamental Ritz vector as $S(x)$ in \Fref{eq:ShannonEntropy}.  With the first order approximation to the fission source 
+\begin{equation}
+	S_b = \int_{x_b}^{x_{b+1}} \left|\Px\right| \dd x.
+	\label{eq:SbFirstOrder}
+\end{equation}
+This is equivalent to calculating the Shannon entropy for the Power method.  When using a second order approximation, 
+\begin{equation}
+	S_b = \int_{x_b}^{x_{b+1}} \left|\Lx\right| \dd x.
+	\label{eq:SbSecondOrder}
+\end{equation}
+In both \Fref{eq:SbFirstOrder} and \Fref{eq:SbSecondOrder} $S_b$ is the number of neutrons that have tallied in bin $b$.
+
+
+\section{Numerical Results}
+\subsubsection{Homogeneous Slab}
+To demonstrate the eigenvalue and fission source convergence both the power method and Arnoldi's method have been run on a homogeneous slab, 50 mfp thick with \mbox{$\nu\Sigma_f = 1.0$}, \mbox{$\Sigma_a = 0.2$}, and \mbox{$\Sigma_s = 0.8$}; \mbox{$\Sigma_t = 1.0$}.  This geometry is the same as in \Fref{ch:RelaxedArnoldi}.  Arnoldi's method has 25 iterations per restart and both methods track 5E5 particles per iteration.  The dominance ratio for this problem as estimated by Arnoldi's method is 0.992201.  For this problem I have used a second order approximation to the fission source as described in \Fref{ch:SpatialDiscretization}.
+
+In \Fref{fig:50mfpPower} I show the eigenvalue estimates (red) and Shannon entropy convergence (blue) from the power method.  The solid black line shows the reference value of 0.997520 from a deterministic S$32$ code with 200 equally-spaced regions. The dashed black line shows the entropy at the end of the simulation.  \Fref{fig:50mfpArnoldi} shows the eigenvalue estimate and Shannon entropy convergence as calculated by Arnoldi's method.  In this figure, the dashed black line is the mean value of the Shannon entropy.  
+
+From \Fref{fig:50mfpPower} and \Fref{fig:50mfpArnoldi}, we see that Arnoldi's method converges immediately for both the eigenvalue estimate and the fission source.  The power method, however, requires approximately 250 iterations to converge.  We do see something different in these figures that we did not see before.  In Figures \ref{fig:SymmetricPower}--\ref{fig:AsymmetricArnoldi}, it appears that the spread in the eigenvalue estimates was approximately the same between Arnoldi's method and the power method.  For the homogeneous slab, however, the spread in the eigenvalue estimates from the power method is 0.00052 while the spread from Arnoldi's method is approximately 0.0012---the eigenvalue estimates from Arnoldi's method are less noisy than the estimates from the power method.
+
+Thus we see that Arnoldi's method is superior to the power method for eigenvalue and fission source convergence, both converge immediately.  The eigenvalue estimates from Arnoldi's method are also less noisy that those from the power method.
+
+\begin{figure}[p]\centering
+    \subfloat[Power method.]{\label{fig:50mfpPower}\input{EntropyandVariance/Data/50mfpPower} }
+
+    \subfloat[Arnoldi's method.]{\label{fig:50mfpArnoldi}\input{EntropyandVariance/Data/50mfpArnoldi} }
+    \caption{Convergence of eigenvalue estimate and Shannon entropy for 50mfp thick, homogeneous slab.  Solid black line is the S$_{\mathrm{N}}$ eigenvalue solution for the fundamental eigenvalue ($\lambda_0 = 0.997520$).}
+\end{figure}
+
+\subsubsection{Heterogeneous Slab}
+We now turn to a heterogeneous geometry used in \citet{Kornreich:2002Semi--0} and \citet{Ueki:2005Stati-0}.  Two problems are studied in these papers.  The first problem is a symmetrical, five-region slab with vacuum boundary conditions.  The slab widths (left-to-right) are 1.0, 1.0, 5.0,1.0, 1.0 cm thick.  The second problem is identical except the right most fuel slab has a width of 1.01 cm.  The materials are of three types (left-to-right): fuel, scatterer, absorber, scatterer, fuel.   The cross sections for these materials are
+\begin{description}
+    \item[Fuel] $\Sigma_t = 1.0$, $\Sigma_s = 0.8$, $\Sigma_{\gamma} = 0.1$, $\Sigma_f = 0.1$, $\nu = 3.0$,
+    \item[Scatterer] $\Sigma_t = 1.0$, $\Sigma_s = 0.8$, $\Sigma_a = 0.2$,
+    \item[Absorber] $\Sigma_t = 1.0$, $\Sigma_s = 0.1$, $\Sigma_a = 0.9$.
+\end{description}
+A graphical description of this geometry is shown in \Fref{fig:HeteroGeometry}.
+
+\begin{figure}[ht]\centering
+    \includegraphics{EntropyandVariance/Data/MultimediaCartoon}
+    \caption{Diagram of heterogeneous slab geometry.}
+    \label{fig:HeteroGeometry}
+\end{figure}
+
+This geometry is particularly difficult for source convergence.  The initial source for this problem lies entirely in the leftmost bin.  With a large highly absorbing slab in the center, it is difficult to move particles from the left to the right side and therefore it will take many histories for the fission source to converge.  The dominance ratio for the symmetric problem is 0.999566 and it is 0.992504 for the asymmetric problem.  For these simulations, 1E5 particles are tracked in each iteration; Arnoldi's method uses 10 iterations per restart and calculated 2 eigenvalues.
+
+The results for the asymmetric problem will be shown first; with a smaller dominance ratio it should be easier to converge the fission source and eigenvalue.  \Fref{fig:AsymmetricPower} shows the convergence of the eigenvalue estimates and fission source as calculated by the power method.  In \Fref{fig:AsymmetricArnoldi} are shown the eigenvalue estimates and fission source convergence for Arnoldi's method.  The solid black line again shows the reference eigenvalue from \citet{Kornreich:2002Semi--0} which is 0.427425.  The dashed line shows the Shannon entropy at the end of the simulation for the power method and the mean of the Shannon entropy for Arnoldi's method.  
+
+The differences in convergence between Arnoldi's method and the power method are easy to see by comparing \Fref{fig:AsymmetricPower} and \Fref{fig:AsymmetricArnoldi}.  We see that Arnoldi's method has converged both the eigenvalue and fission source almost immediately, just like with the homogeneous slab.  The power method however requires 800--900 iterations before the eigenvalue estimates have converged and approximately 1200 iterations before the fission source converges.
+
+\begin{figure}[p]\centering
+    \subfloat[Power method.]{\label{fig:AsymmetricPower}\input{EntropyandVariance/Data/AsymmetricPower}}
+
+    \subfloat[Arnoldi's method.]{\label{fig:AsymmetricArnoldi}\input{EntropyandVariance/Data/AsymmetricArnoldi}}
+    \caption{Convergence of eigenvalue estimate and Shannon entropy for asymmetric geometry.  Solid black line is the fundamental eigenvalue ($\lambda_0 = 0.427425$ \cite{Kornreich:2002Semi--0}); dashed black line is the entropy at the end of the simulation for the power method and mean entropy for Arnoldi's method.}
+\end{figure}
+
+The symmetric problem shows a different convergence for the power method as displayed in \Fref{fig:SymmetricPower}.  \Fref{fig:SymmetricArnoldi} shows convergence of the eigenvalue estimates and fission source as calculated by Arnoldi's method.  The solid black lines show the published eigenvalue \cite{Kornreich:2002Semi--0}, 0.424316.  The dashed black line for the power method shows the final value of the Shannon entropy.  The dashed black line for Arnoldi's method shows the mean value of the Shannon entropy.
+
+In the power method we see that the eigenvalue estimate has converged almost immediately, but the fission source takes much longer to converge.  The power method ran for an extra 2000 iterations and it looks like the fission source might be converged after 4500 iterations, but it looks like the Shannon entropy may still be trending upwards and therefore still has not converged.  In Arnoldi's method both the eigenvalue estimate and the fission source from Arnoldi's method have converged almost immediately.
+
+\begin{figure}[p]\centering
+    \subfloat[Power Method]{\label{fig:SymmetricPower}\input{EntropyandVariance/Data/SymmetricPower}}
+
+    \subfloat[Arnoldi's Method]{\label{fig:SymmetricArnoldi}\input{EntropyandVariance/Data/SymmetricArnoldi}}
+    \caption{Convergence of eigenvalue estimate and Shannon entropy for symmetric geometry.  Solid black line is the fundamental eigenvalue ($\lambda_0 = 0.424316$ \cite{Kornreich:2002Semi--0}); dashed black line is the entropy at the end of the simulation for the power method and mean entropy for Arnoldi's method.}
+\end{figure}
+
+In \Fref{fig:SymmetricVectors} is shown the fundamental eigenvector estimates of the symmetric, heterogeneous problem from the power method and Arnoldi's method.  These eigenvectors are the mean of the last 1250 power iterations or 125 Arnoldi restarts.  We can see that height of the eigenvector in the fuel regions is not the same, but we know that they must be because the slab is symmetric.  Not enough particles are being transported into the right fuel region causing the eigenvector estimate to be smaller in that region.  
+
+In \Fref{fig:SymmetricVector1E7} is shown the fundamental eigenvector for the same symmetric, heterogeneous problem, but this time 1E7 particles were tracked in each iteration.  The results for the previous problem are included for comparison.  We can see that when more particles are used, more particles reach the right fuel region and the eigenvector estimate becomes larger.  We expect that if enough particles are tracked, the eigenvector will become symmetric.  
+
+\begin{sidewaysfigure} \centering
+    \input{EntropyandVariance/Data/SymmetricVectors}
+    \caption{Fundamental eigenvector estimates for the symmetric, heterogeneous problem from the power method and Arnoldi's method.}
+    \label{fig:SymmetricVectors}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure} \centering
+    \input{EntropyandVariance/Data/SymmetricVectors1E7}
+    \caption{Fundamental eigenvector estimates for the symmetric, heterogeneous problem from Arnoldi's method using 1E6 and 1E7 particles per iteration.}
+    \label{fig:SymmetricVector1E7}
+\end{sidewaysfigure}
+
+\section{Summary}
+When doing Monte Carlo particle transport, it is important that the eigenvalue estimates and fission source have converged before we begin tallying.  If convergence has not been achieved then estimates of the eigenvalue (or some other tally) which are wrong will be used thus affecting the final result.  Using the Shannon entropy of the fission source, it is easy to monitor the convergence of both the eigenvalue estimate and fission source.  \citet{Brown:2009A-Rev-0} suggests that the number of inactive iterations can be estimated by running the simulation with a small number of particles tracked in an iteration and see how many iterations are required for convergence.
+
+Regardless of how the number of necessary inactive iterations is determined, the inactive iterations must still be performed; for Arnoldi's method only one inactive restart is required.  Because of its rapid convergence, Arnoldi's method can save computational expense because it does not require the many hundreds of inactive iterations to converge like the power method.    Arnoldi's method converges immediately for the three problems shown in this chapter and does not appear to need any inactive iterations.
+
+

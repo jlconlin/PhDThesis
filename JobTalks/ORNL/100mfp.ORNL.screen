@@ -1,0 +1,977 @@
+Running ArnoldivsPower.
+Arguments:
+	filename = 100mfp.ORNL.dat
+	run = true
+	power = true
+	Arnoldi = true
+	storevectors = 0
+	raw = false
+	evectors = 2
+	evalues = 2
+	residual = false
+	arnoldimethod = explicit
+	tol = 2.22045e-16
+	verbose = 1
+	seed = 0
+	width = 100
+	bins = 100
+	acycles = 750
+	incycles = 150
+	active = 25
+	inactive = 5
+	Iterations = 30
+	numValues = 2
+	relaxed = 0
+	tracks = 10000000
+	ignore_rest = false
+	version = false
+	help = false
+Master seed: 248927125
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+[(nu: 1, xF: 0.5, xG: 0, xS: 0.5) , xA: 0.5, xT: 1]
+
+==============================
+---Running Explicit Arnoldi---
+==============================
+
+Restart #: -5, mean eigvalue = (   0.99941,         0), std.dev. eigvalue = (        0,        0), res = ( 0.000964,        0), time:   1173 sec.
+Restart #: -4, mean eigvalue = (    0.9994,         0), std.dev. eigvalue = (        0,        0), res = ( 0.000804,        0), time:   2355 sec.
+Restart #: -3, mean eigvalue = (   0.99924,         0), std.dev. eigvalue = (        0,        0), res = ( 0.000382,        0), time:   3529 sec.
+Restart #: -2, mean eigvalue = (   0.99945,         0), std.dev. eigvalue = (        0,        0), res = ( 3.52E-05,        0), time:   4701 sec.
+Restart #: -1, mean eigvalue = (    0.9988,         0), std.dev. eigvalue = (        0,        0), res = ( 0.000656,        0), time:   5875 sec.
+Restart #: 0, mean eigvalue = (   0.99905,         0), std.dev. eigvalue = (        0,        0), res = ( 0.000279,        0), time:   7058 sec.
+Restart #: 1, mean eigvalue = (   0.99907,        -0), std.dev. eigvalue = ( 1.23E-05,        0), res = ( 0.000159,        0), time:   8230 sec.
+Restart #: 2, mean eigvalue = (   0.99904,        -0), std.dev. eigvalue = ( 2.53E-05,        0), res = ( 0.000275,        0), time:   9409 sec.
+Restart #: 3, mean eigvalue = (   0.99917,        -0), std.dev. eigvalue = ( 0.000118,        0), res = ( 0.000291,        0), time: 1.059E+04 sec.
+Restart #: 4, mean eigvalue = (   0.99911,        -0), std.dev. eigvalue = ( 0.000112,        0), res = ( 0.000712,        0), time: 1.176E+04 sec.
+Restart #: 5, mean eigvalue = (   0.99908,        -0), std.dev. eigvalue = ( 9.67E-05,        0), res = ( 0.000208,        0), time: 1.294E+04 sec.
+Restart #: 6, mean eigvalue = (   0.99904,        -0), std.dev. eigvalue = ( 9.04E-05,        0), res = ( 0.000532,        0), time: 1.411E+04 sec.
+Restart #: 7, mean eigvalue = (   0.99907,        -0), std.dev. eigvalue = ( 8.32E-05,        0), res = ( 0.000147,        0), time: 1.528E+04 sec.
+Restart #: 8, mean eigvalue = (   0.99912,        -0), std.dev. eigvalue = ( 8.97E-05,        0), res = ( 0.000347,        0), time: 1.645E+04 sec.
+Restart #: 9, mean eigvalue = (    0.9992,        -0), std.dev. eigvalue = ( 0.000109,        0), res = ( 0.000309,        0), time: 1.763E+04 sec.
+Restart #: 10, mean eigvalue = (   0.99921,        -0), std.dev. eigvalue = ( 9.99E-05,        0), res = ( 0.000153,        0), time: 1.88E+04 sec.
+Restart #: 11, mean eigvalue = (   0.99918,        -0), std.dev. eigvalue = ( 9.73E-05,        0), res = (  0.00131,        0), time: 1.997E+04 sec.
+Restart #: 12, mean eigvalue = (   0.99917,        -0), std.dev. eigvalue = ( 8.99E-05,        0), res = ( 0.000162,        0), time: 2.115E+04 sec.
+Restart #: 13, mean eigvalue = (   0.99918,        -0), std.dev. eigvalue = ( 8.43E-05,        0), res = ( 0.000257,        0), time: 2.231E+04 sec.
+Restart #: 14, mean eigvalue = (   0.99919,        -0), std.dev. eigvalue = ( 7.92E-05,        0), res = ( 0.000333,        0), time: 2.348E+04 sec.
+Restart #: 15, mean eigvalue = (   0.99919,        -0), std.dev. eigvalue = ( 7.45E-05,        0), res = ( 0.000198,        0), time: 2.466E+04 sec.
+Restart #: 16, mean eigvalue = (   0.99921,        -0), std.dev. eigvalue = ( 7.48E-05,        0), res = ( 0.000255,        0), time: 2.584E+04 sec.
+Restart #: 17, mean eigvalue = (   0.99925,        -0), std.dev. eigvalue = ( 7.91E-05,        0), res = ( 0.000221,        0), time: 2.701E+04 sec.
+Restart #: 18, mean eigvalue = (   0.99924,        -0), std.dev. eigvalue = ( 7.56E-05,        0), res = (  0.00044,        0), time: 2.819E+04 sec.
+Restart #: 19, mean eigvalue = (   0.99927,        -0), std.dev. eigvalue = ( 7.69E-05,        0), res = (  0.00025,        0), time: 2.937E+04 sec.
+Restart #: 20, mean eigvalue = (   0.99927,        -0), std.dev. eigvalue = ( 7.34E-05,        0), res = ( 0.000207,        0), time: 3.055E+04 sec.
+Restart #: 21, mean eigvalue = (   0.99926,        -0), std.dev. eigvalue = ( 7.09E-05,        0), res = ( 0.000471,        0), time: 3.171E+04 sec.
+Restart #: 22, mean eigvalue = (   0.99927,        -0), std.dev. eigvalue = ( 6.79E-05,        0), res = ( 0.000121,        0), time: 3.289E+04 sec.
+Restart #: 23, mean eigvalue = (   0.99925,        -0), std.dev. eigvalue = ( 6.72E-05,        0), res = ( 0.000201,        0), time: 3.407E+04 sec.
+Restart #: 24, mean eigvalue = (   0.99926,        -0), std.dev. eigvalue = ( 6.57E-05,        0), res = ( 0.000169,        0), time: 3.524E+04 sec.
+
+
+
+==============================
+-----Running Power method-----
+==============================
+
+inactive:   0, k =   0.992, time =  130.4
+inactive:   1, k =  0.9936, time =  235.2
+inactive:   2, k =   0.995, time =  315.9
+inactive:   3, k =  0.9961, time =  361.4
+inactive:   4, k =   0.996, time =    407
+inactive:   5, k =  0.9957, time =  452.6
+inactive:   6, k =  0.9964, time =  498.2
+inactive:   7, k =  0.9966, time =  543.9
+inactive:   8, k =  0.9969, time =  589.6
+inactive:   9, k =  0.9966, time =  635.1
+inactive:  10, k =   0.997, time =  680.8
+inactive:  11, k =  0.9971, time =  726.2
+inactive:  12, k =  0.9967, time =  771.9
+inactive:  13, k =  0.9972, time =  817.5
+inactive:  14, k =  0.9977, time =  863.1
+inactive:  15, k =  0.9975, time =  908.5
+inactive:  16, k =  0.9977, time =  954.2
+inactive:  17, k =  0.9976, time =  999.9
+inactive:  18, k =  0.9977, time =   1046
+inactive:  19, k =  0.9981, time =   1092
+inactive:  20, k =   0.998, time =   1137
+inactive:  21, k =   0.998, time =   1183
+inactive:  22, k =  0.9979, time =   1229
+inactive:  23, k =  0.9979, time =   1275
+inactive:  24, k =  0.9986, time =   1321
+inactive:  25, k =  0.9978, time =   1366
+inactive:  26, k =  0.9979, time =   1412
+inactive:  27, k =  0.9975, time =   1458
+inactive:  28, k =  0.9977, time =   1504
+inactive:  29, k =  0.9981, time =   1550
+inactive:  30, k =  0.9984, time =   1596
+inactive:  31, k =  0.9982, time =   1641
+inactive:  32, k =  0.9981, time =   1687
+inactive:  33, k =  0.9987, time =   1733
+inactive:  34, k =   0.998, time =   1779
+inactive:  35, k =  0.9983, time =   1825
+inactive:  36, k =  0.9986, time =   1870
+inactive:  37, k =  0.9985, time =   1916
+inactive:  38, k =  0.9988, time =   1962
+inactive:  39, k =  0.9987, time =   2008
+inactive:  40, k =  0.9984, time =   2053
+inactive:  41, k =  0.9987, time =   2099
+inactive:  42, k =  0.9984, time =   2145
+inactive:  43, k =  0.9987, time =   2191
+inactive:  44, k =  0.9984, time =   2236
+inactive:  45, k =  0.9984, time =   2282
+inactive:  46, k =  0.9983, time =   2328
+inactive:  47, k =  0.9983, time =   2374
+inactive:  48, k =  0.9981, time =   2419
+inactive:  49, k =  0.9981, time =   2465
+inactive:  50, k =  0.9986, time =   2511
+inactive:  51, k =  0.9988, time =   2557
+inactive:  52, k =  0.9984, time =   2602
+inactive:  53, k =  0.9984, time =   2648
+inactive:  54, k =  0.9989, time =   2694
+inactive:  55, k =  0.9984, time =   2740
+inactive:  56, k =  0.9981, time =   2785
+inactive:  57, k =  0.9986, time =   2831
+inactive:  58, k =   0.999, time =   2877
+inactive:  59, k =  0.9987, time =   2922
+inactive:  60, k =  0.9984, time =   2968
+inactive:  61, k =  0.9989, time =   3014
+inactive:  62, k =  0.9983, time =   3060
+inactive:  63, k =  0.9984, time =   3105
+inactive:  64, k =  0.9986, time =   3151
+inactive:  65, k =  0.9983, time =   3197
+inactive:  66, k =  0.9984, time =   3243
+inactive:  67, k =  0.9988, time =   3288
+inactive:  68, k =  0.9989, time =   3334
+inactive:  69, k =  0.9983, time =   3380
+inactive:  70, k =  0.9993, time =   3426
+inactive:  71, k =  0.9986, time =   3471
+inactive:  72, k =  0.9983, time =   3517
+inactive:  73, k =  0.9987, time =   3563
+inactive:  74, k =  0.9988, time =   3609
+inactive:  75, k =  0.9991, time =   3654
+inactive:  76, k =  0.9982, time =   3700
+inactive:  77, k =  0.9991, time =   3746
+inactive:  78, k =  0.9986, time =   3792
+inactive:  79, k =  0.9983, time =   3837
+inactive:  80, k =  0.9987, time =   3883
+inactive:  81, k =  0.9987, time =   3929
+inactive:  82, k =  0.9988, time =   3975
+inactive:  83, k =  0.9988, time =   4020
+inactive:  84, k =  0.9987, time =   4066
+inactive:  85, k =  0.9984, time =   4112
+inactive:  86, k =  0.9985, time =   4158
+inactive:  87, k =  0.9992, time =   4203
+inactive:  88, k =  0.9993, time =   4249
+inactive:  89, k =   0.999, time =   4295
+inactive:  90, k =  0.9988, time =   4341
+inactive:  91, k =  0.9984, time =   4386
+inactive:  92, k =   0.999, time =   4432
+inactive:  93, k =  0.9992, time =   4478
+inactive:  94, k =  0.9993, time =   4524
+inactive:  95, k =  0.9991, time =   4569
+inactive:  96, k =  0.9991, time =   4615
+inactive:  97, k =  0.9996, time =   4661
+inactive:  98, k =  0.9988, time =   4707
+inactive:  99, k =  0.9989, time =   4753
+inactive: 100, k =  0.9993, time =   4798
+inactive: 101, k =  0.9989, time =   4844
+inactive: 102, k =  0.9992, time =   4890
+inactive: 103, k =  0.9991, time =   4936
+inactive: 104, k =  0.9986, time =   4981
+inactive: 105, k =  0.9987, time =   5027
+inactive: 106, k =  0.9992, time =   5073
+inactive: 107, k =  0.9991, time =   5119
+inactive: 108, k =  0.9992, time =   5165
+inactive: 109, k =  0.9989, time =   5210
+inactive: 110, k =  0.9989, time =   5256
+inactive: 111, k =  0.9987, time =   5302
+inactive: 112, k =   0.999, time =   5348
+inactive: 113, k =  0.9986, time =   5393
+inactive: 114, k =  0.9989, time =   5439
+inactive: 115, k =  0.9988, time =   5485
+inactive: 116, k =  0.9992, time =   5531
+inactive: 117, k =  0.9989, time =   5577
+inactive: 118, k =  0.9988, time =   5623
+inactive: 119, k =  0.9986, time =   5668
+inactive: 120, k =  0.9992, time =   5714
+inactive: 121, k =   0.999, time =   5760
+inactive: 122, k =   0.999, time =   5806
+inactive: 123, k =  0.9991, time =   5851
+inactive: 124, k =  0.9992, time =   5897
+inactive: 125, k =  0.9989, time =   5943
+inactive: 126, k =  0.9988, time =   5989
+inactive: 127, k =  0.9992, time =   6035
+inactive: 128, k =  0.9984, time =   6081
+inactive: 129, k =  0.9987, time =   6126
+inactive: 130, k =  0.9987, time =   6172
+inactive: 131, k =  0.9996, time =   6218
+inactive: 132, k =  0.9991, time =   6264
+inactive: 133, k =  0.9989, time =   6310
+inactive: 134, k =  0.9993, time =   6356
+inactive: 135, k =  0.9993, time =   6401
+inactive: 136, k =   0.999, time =   6447
+inactive: 137, k =  0.9987, time =   6493
+inactive: 138, k =  0.9989, time =   6539
+inactive: 139, k =  0.9988, time =   6585
+inactive: 140, k =  0.9992, time =   6631
+inactive: 141, k =  0.9991, time =   6677
+inactive: 142, k =  0.9988, time =   6723
+inactive: 143, k =  0.9991, time =   6768
+inactive: 144, k =  0.9995, time =   6814
+inactive: 145, k =  0.9994, time =   6860
+inactive: 146, k =  0.9989, time =   6906
+inactive: 147, k =  0.9991, time =   6952
+inactive: 148, k =  0.9991, time =   6998
+inactive: 149, k =  0.9992, time =   7043
+--------------ACTIVE ITERATIONS--------------------------
+active:    0, k =  0.9994, mean k =  0.9994, std.dev. =     NAN, time:   7089
+active:    1, k =  0.9992, mean k =  0.9993, std.dev. = 7.06E-05, time:   7137
+active:    2, k =  0.9992, mean k =  0.9992, std.dev. = 5.13E-05, time:   7185
+active:    3, k =       1, mean k =  0.9995, std.dev. = 0.000193, time:   7233
+active:    4, k =  0.9991, mean k =  0.9994, std.dev. = 0.000165, time:   7281
+active:    5, k =  0.9988, mean k =  0.9993, std.dev. = 0.000162, time:   7328
+active:    6, k =  0.9994, mean k =  0.9993, std.dev. = 0.00014, time:   7376
+active:    7, k =   0.999, mean k =  0.9993, std.dev. = 0.000127, time:   7423
+active:    8, k =  0.9995, mean k =  0.9993, std.dev. = 0.000115, time:   7471
+active:    9, k =   0.999, mean k =  0.9993, std.dev. = 0.000108, time:   7519
+active:   10, k =  0.9988, mean k =  0.9992, std.dev. = 0.000107, time:   7566
+active:   11, k =  0.9992, mean k =  0.9992, std.dev. = 9.84E-05, time:   7614
+active:   12, k =  0.9987, mean k =  0.9992, std.dev. = 9.8E-05, time:   7661
+active:   13, k =  0.9991, mean k =  0.9992, std.dev. = 9.1E-05, time:   7709
+active:   14, k =  0.9989, mean k =  0.9992, std.dev. = 8.63E-05, time:   7756
+active:   15, k =  0.9991, mean k =  0.9992, std.dev. = 8.1E-05, time:   7804
+active:   16, k =  0.9994, mean k =  0.9992, std.dev. = 7.74E-05, time:   7851
+active:   17, k =  0.9991, mean k =  0.9992, std.dev. = 7.32E-05, time:   7899
+active:   18, k =   0.999, mean k =  0.9992, std.dev. = 6.99E-05, time:   7946
+active:   19, k =  0.9989, mean k =  0.9991, std.dev. = 6.8E-05, time:   7994
+active:   20, k =  0.9991, mean k =  0.9991, std.dev. = 6.47E-05, time:   8042
+active:   21, k =  0.9992, mean k =  0.9991, std.dev. = 6.18E-05, time:   8089
+active:   22, k =  0.9991, mean k =  0.9991, std.dev. = 5.92E-05, time:   8137
+active:   23, k =  0.9992, mean k =  0.9991, std.dev. = 5.68E-05, time:   8185
+active:   24, k =  0.9992, mean k =  0.9991, std.dev. = 5.46E-05, time:   8233
+active:   25, k =  0.9991, mean k =  0.9991, std.dev. = 5.26E-05, time:   8280
+active:   26, k =  0.9987, mean k =  0.9991, std.dev. = 5.3E-05, time:   8328
+active:   27, k =  0.9994, mean k =  0.9991, std.dev. = 5.18E-05, time:   8376
+active:   28, k =  0.9991, mean k =  0.9991, std.dev. = 5.01E-05, time:   8423
+active:   29, k =  0.9986, mean k =  0.9991, std.dev. = 5.19E-05, time:   8471
+active:   30, k =  0.9994, mean k =  0.9991, std.dev. = 5.12E-05, time:   8519
+active:   31, k =   0.999, mean k =  0.9991, std.dev. = 4.99E-05, time:   8566
+active:   32, k =  0.9988, mean k =  0.9991, std.dev. = 4.93E-05, time:   8614
+active:   33, k =  0.9994, mean k =  0.9991, std.dev. = 4.83E-05, time:   8662
+active:   34, k =  0.9994, mean k =  0.9991, std.dev. = 4.77E-05, time:   8709
+active:   35, k =  0.9991, mean k =  0.9991, std.dev. = 4.64E-05, time:   8757
+active:   36, k =  0.9992, mean k =  0.9991, std.dev. = 4.51E-05, time:   8804
+active:   37, k =   0.999, mean k =  0.9991, std.dev. = 4.41E-05, time:   8852
+active:   38, k =  0.9992, mean k =  0.9991, std.dev. = 4.3E-05, time:   8900
+active:   39, k =  0.9986, mean k =  0.9991, std.dev. = 4.37E-05, time:   8947
+active:   40, k =   0.999, mean k =  0.9991, std.dev. = 4.28E-05, time:   8995
+active:   41, k =  0.9992, mean k =  0.9991, std.dev. = 4.18E-05, time:   9042
+active:   42, k =  0.9995, mean k =  0.9991, std.dev. = 4.17E-05, time:   9090
+active:   43, k =  0.9996, mean k =  0.9991, std.dev. = 4.19E-05, time:   9137
+active:   44, k =  0.9987, mean k =  0.9991, std.dev. = 4.22E-05, time:   9185
+active:   45, k =  0.9988, mean k =  0.9991, std.dev. = 4.17E-05, time:   9232
+active:   46, k =  0.9992, mean k =  0.9991, std.dev. = 4.09E-05, time:   9280
+active:   47, k =  0.9987, mean k =  0.9991, std.dev. = 4.1E-05, time:   9328
+active:   48, k =  0.9991, mean k =  0.9991, std.dev. = 4.02E-05, time:   9375
+active:   49, k =  0.9993, mean k =  0.9991, std.dev. = 3.96E-05, time:   9423
+active:   50, k =   0.999, mean k =  0.9991, std.dev. = 3.89E-05, time:   9470
+active:   51, k =  0.9994, mean k =  0.9991, std.dev. = 3.85E-05, time:   9518
+active:   52, k =  0.9988, mean k =  0.9991, std.dev. = 3.82E-05, time:   9566
+active:   53, k =   0.999, mean k =  0.9991, std.dev. = 3.75E-05, time:   9613
+active:   54, k =  0.9993, mean k =  0.9991, std.dev. = 3.69E-05, time:   9661
+active:   55, k =  0.9993, mean k =  0.9991, std.dev. = 3.65E-05, time:   9708
+active:   56, k =  0.9989, mean k =  0.9991, std.dev. = 3.61E-05, time:   9756
+active:   57, k =  0.9992, mean k =  0.9991, std.dev. = 3.54E-05, time:   9804
+active:   58, k =   0.999, mean k =  0.9991, std.dev. = 3.49E-05, time:   9851
+active:   59, k =  0.9992, mean k =  0.9991, std.dev. = 3.43E-05, time:   9899
+active:   60, k =  0.9988, mean k =  0.9991, std.dev. = 3.41E-05, time:   9946
+active:   61, k =  0.9992, mean k =  0.9991, std.dev. = 3.36E-05, time:   9994
+active:   62, k =  0.9989, mean k =  0.9991, std.dev. = 3.32E-05, time: 1.004E+04
+active:   63, k =  0.9991, mean k =  0.9991, std.dev. = 3.26E-05, time: 1.009E+04
+active:   64, k =  0.9987, mean k =  0.9991, std.dev. = 3.26E-05, time: 1.014E+04
+active:   65, k =  0.9987, mean k =  0.9991, std.dev. = 3.26E-05, time: 1.018E+04
+active:   66, k =  0.9991, mean k =  0.9991, std.dev. = 3.22E-05, time: 1.023E+04
+active:   67, k =   0.999, mean k =  0.9991, std.dev. = 3.18E-05, time: 1.028E+04
+active:   68, k =  0.9992, mean k =  0.9991, std.dev. = 3.13E-05, time: 1.033E+04
+active:   69, k =  0.9986, mean k =  0.9991, std.dev. = 3.16E-05, time: 1.037E+04
+active:   70, k =  0.9989, mean k =  0.9991, std.dev. = 3.12E-05, time: 1.042E+04
+active:   71, k =  0.9994, mean k =  0.9991, std.dev. = 3.11E-05, time: 1.047E+04
+active:   72, k =  0.9988, mean k =  0.9991, std.dev. = 3.09E-05, time: 1.052E+04
+active:   73, k =  0.9991, mean k =  0.9991, std.dev. = 3.04E-05, time: 1.056E+04
+active:   74, k =  0.9999, mean k =  0.9991, std.dev. = 3.18E-05, time: 1.061E+04
+active:   75, k =  0.9994, mean k =  0.9991, std.dev. = 3.18E-05, time: 1.066E+04
+active:   76, k =  0.9991, mean k =  0.9991, std.dev. = 3.13E-05, time: 1.071E+04
+active:   77, k =  0.9992, mean k =  0.9991, std.dev. = 3.1E-05, time: 1.075E+04
+active:   78, k =  0.9988, mean k =  0.9991, std.dev. = 3.07E-05, time: 1.08E+04
+active:   79, k =  0.9996, mean k =  0.9991, std.dev. = 3.1E-05, time: 1.085E+04
+active:   80, k =  0.9992, mean k =  0.9991, std.dev. = 3.06E-05, time: 1.09E+04
+active:   81, k =  0.9995, mean k =  0.9991, std.dev. = 3.06E-05, time: 1.094E+04
+active:   82, k =  0.9992, mean k =  0.9991, std.dev. = 3.02E-05, time: 1.099E+04
+active:   83, k =  0.9998, mean k =  0.9991, std.dev. = 3.08E-05, time: 1.104E+04
+active:   84, k =  0.9992, mean k =  0.9991, std.dev. = 3.05E-05, time: 1.109E+04
+active:   85, k =  0.9994, mean k =  0.9991, std.dev. = 3.03E-05, time: 1.114E+04
+active:   86, k =  0.9999, mean k =  0.9991, std.dev. = 3.14E-05, time: 1.118E+04
+active:   87, k =  0.9994, mean k =  0.9991, std.dev. = 3.12E-05, time: 1.123E+04
+active:   88, k =  0.9992, mean k =  0.9991, std.dev. = 3.08E-05, time: 1.128E+04
+active:   89, k =  0.9993, mean k =  0.9991, std.dev. = 3.06E-05, time: 1.133E+04
+active:   90, k =   0.999, mean k =  0.9991, std.dev. = 3.03E-05, time: 1.137E+04
+active:   91, k =  0.9993, mean k =  0.9991, std.dev. =   3E-05, time: 1.142E+04
+active:   92, k =  0.9993, mean k =  0.9991, std.dev. = 2.97E-05, time: 1.147E+04
+active:   93, k =  0.9994, mean k =  0.9991, std.dev. = 2.95E-05, time: 1.152E+04
+active:   94, k =  0.9991, mean k =  0.9991, std.dev. = 2.92E-05, time: 1.156E+04
+active:   95, k =  0.9995, mean k =  0.9991, std.dev. = 2.9E-05, time: 1.161E+04
+active:   96, k =  0.9996, mean k =  0.9991, std.dev. = 2.91E-05, time: 1.166E+04
+active:   97, k =  0.9993, mean k =  0.9991, std.dev. = 2.88E-05, time: 1.171E+04
+active:   98, k =  0.9991, mean k =  0.9991, std.dev. = 2.85E-05, time: 1.175E+04
+active:   99, k =  0.9994, mean k =  0.9991, std.dev. = 2.84E-05, time: 1.18E+04
+active:  100, k =  0.9993, mean k =  0.9992, std.dev. = 2.81E-05, time: 1.185E+04
+active:  101, k =   0.999, mean k =  0.9991, std.dev. = 2.79E-05, time: 1.19E+04
+active:  102, k =  0.9996, mean k =  0.9992, std.dev. = 2.8E-05, time: 1.194E+04
+active:  103, k =  0.9993, mean k =  0.9992, std.dev. = 2.78E-05, time: 1.199E+04
+active:  104, k =  0.9988, mean k =  0.9992, std.dev. = 2.77E-05, time: 1.204E+04
+active:  105, k =  0.9995, mean k =  0.9992, std.dev. = 2.76E-05, time: 1.209E+04
+active:  106, k =  0.9992, mean k =  0.9992, std.dev. = 2.73E-05, time: 1.213E+04
+active:  107, k =  0.9992, mean k =  0.9992, std.dev. = 2.71E-05, time: 1.218E+04
+active:  108, k =   0.999, mean k =  0.9992, std.dev. = 2.69E-05, time: 1.223E+04
+active:  109, k =  0.9992, mean k =  0.9992, std.dev. = 2.66E-05, time: 1.228E+04
+active:  110, k =  0.9994, mean k =  0.9992, std.dev. = 2.65E-05, time: 1.232E+04
+active:  111, k =   0.999, mean k =  0.9992, std.dev. = 2.63E-05, time: 1.237E+04
+active:  112, k =  0.9994, mean k =  0.9992, std.dev. = 2.62E-05, time: 1.242E+04
+active:  113, k =  0.9996, mean k =  0.9992, std.dev. = 2.62E-05, time: 1.247E+04
+active:  114, k =  0.9995, mean k =  0.9992, std.dev. = 2.62E-05, time: 1.251E+04
+active:  115, k =  0.9989, mean k =  0.9992, std.dev. = 2.6E-05, time: 1.256E+04
+active:  116, k =  0.9993, mean k =  0.9992, std.dev. = 2.58E-05, time: 1.261E+04
+active:  117, k =  0.9996, mean k =  0.9992, std.dev. = 2.59E-05, time: 1.266E+04
+active:  118, k =  0.9996, mean k =  0.9992, std.dev. = 2.59E-05, time: 1.27E+04
+active:  119, k =  0.9996, mean k =  0.9992, std.dev. = 2.6E-05, time: 1.275E+04
+active:  120, k =  0.9994, mean k =  0.9992, std.dev. = 2.58E-05, time: 1.28E+04
+active:  121, k =  0.9991, mean k =  0.9992, std.dev. = 2.56E-05, time: 1.285E+04
+active:  122, k =  0.9991, mean k =  0.9992, std.dev. = 2.55E-05, time: 1.289E+04
+active:  123, k =  0.9992, mean k =  0.9992, std.dev. = 2.52E-05, time: 1.294E+04
+active:  124, k =   0.999, mean k =  0.9992, std.dev. = 2.51E-05, time: 1.299E+04
+active:  125, k =  0.9991, mean k =  0.9992, std.dev. = 2.49E-05, time: 1.304E+04
+active:  126, k =  0.9996, mean k =  0.9992, std.dev. = 2.49E-05, time: 1.308E+04
+active:  127, k =  0.9996, mean k =  0.9992, std.dev. = 2.5E-05, time: 1.313E+04
+active:  128, k =  0.9992, mean k =  0.9992, std.dev. = 2.48E-05, time: 1.318E+04
+active:  129, k =  0.9988, mean k =  0.9992, std.dev. = 2.48E-05, time: 1.323E+04
+active:  130, k =  0.9993, mean k =  0.9992, std.dev. = 2.46E-05, time: 1.328E+04
+active:  131, k =  0.9991, mean k =  0.9992, std.dev. = 2.45E-05, time: 1.332E+04
+active:  132, k =  0.9989, mean k =  0.9992, std.dev. = 2.43E-05, time: 1.337E+04
+active:  133, k =  0.9992, mean k =  0.9992, std.dev. = 2.42E-05, time: 1.342E+04
+active:  134, k =  0.9985, mean k =  0.9992, std.dev. = 2.45E-05, time: 1.347E+04
+active:  135, k =  0.9992, mean k =  0.9992, std.dev. = 2.43E-05, time: 1.351E+04
+active:  136, k =  0.9993, mean k =  0.9992, std.dev. = 2.42E-05, time: 1.356E+04
+active:  137, k =  0.9993, mean k =  0.9992, std.dev. = 2.4E-05, time: 1.361E+04
+active:  138, k =  0.9998, mean k =  0.9992, std.dev. = 2.43E-05, time: 1.366E+04
+active:  139, k =  0.9991, mean k =  0.9992, std.dev. = 2.41E-05, time: 1.37E+04
+active:  140, k =  0.9994, mean k =  0.9992, std.dev. = 2.4E-05, time: 1.375E+04
+active:  141, k =  0.9992, mean k =  0.9992, std.dev. = 2.38E-05, time: 1.38E+04
+active:  142, k =  0.9994, mean k =  0.9992, std.dev. = 2.37E-05, time: 1.385E+04
+active:  143, k =  0.9993, mean k =  0.9992, std.dev. = 2.36E-05, time: 1.389E+04
+active:  144, k =   0.999, mean k =  0.9992, std.dev. = 2.34E-05, time: 1.394E+04
+active:  145, k =  0.9989, mean k =  0.9992, std.dev. = 2.33E-05, time: 1.399E+04
+active:  146, k =  0.9992, mean k =  0.9992, std.dev. = 2.32E-05, time: 1.404E+04
+active:  147, k =  0.9987, mean k =  0.9992, std.dev. = 2.33E-05, time: 1.408E+04
+active:  148, k =  0.9994, mean k =  0.9992, std.dev. = 2.32E-05, time: 1.413E+04
+active:  149, k =  0.9992, mean k =  0.9992, std.dev. = 2.3E-05, time: 1.418E+04
+active:  150, k =   0.999, mean k =  0.9992, std.dev. = 2.29E-05, time: 1.423E+04
+active:  151, k =  0.9992, mean k =  0.9992, std.dev. = 2.27E-05, time: 1.427E+04
+active:  152, k =  0.9996, mean k =  0.9992, std.dev. = 2.27E-05, time: 1.432E+04
+active:  153, k =  0.9993, mean k =  0.9992, std.dev. = 2.26E-05, time: 1.437E+04
+active:  154, k =  0.9989, mean k =  0.9992, std.dev. = 2.25E-05, time: 1.442E+04
+active:  155, k =  0.9995, mean k =  0.9992, std.dev. = 2.25E-05, time: 1.446E+04
+active:  156, k =   0.999, mean k =  0.9992, std.dev. = 2.23E-05, time: 1.451E+04
+active:  157, k =   0.999, mean k =  0.9992, std.dev. = 2.22E-05, time: 1.456E+04
+active:  158, k =  0.9996, mean k =  0.9992, std.dev. = 2.22E-05, time: 1.461E+04
+active:  159, k =  0.9992, mean k =  0.9992, std.dev. = 2.21E-05, time: 1.465E+04
+active:  160, k =  0.9994, mean k =  0.9992, std.dev. = 2.2E-05, time: 1.47E+04
+active:  161, k =  0.9995, mean k =  0.9992, std.dev. = 2.2E-05, time: 1.475E+04
+active:  162, k =  0.9993, mean k =  0.9992, std.dev. = 2.19E-05, time: 1.48E+04
+active:  163, k =  0.9995, mean k =  0.9992, std.dev. = 2.18E-05, time: 1.485E+04
+active:  164, k =  0.9994, mean k =  0.9992, std.dev. = 2.17E-05, time: 1.489E+04
+active:  165, k =  0.9987, mean k =  0.9992, std.dev. = 2.18E-05, time: 1.494E+04
+active:  166, k =       1, mean k =  0.9992, std.dev. = 2.22E-05, time: 1.499E+04
+active:  167, k =  0.9992, mean k =  0.9992, std.dev. = 2.21E-05, time: 1.504E+04
+active:  168, k =  0.9992, mean k =  0.9992, std.dev. = 2.19E-05, time: 1.508E+04
+active:  169, k =  0.9993, mean k =  0.9992, std.dev. = 2.18E-05, time: 1.513E+04
+active:  170, k =  0.9994, mean k =  0.9992, std.dev. = 2.17E-05, time: 1.518E+04
+active:  171, k =  0.9993, mean k =  0.9992, std.dev. = 2.16E-05, time: 1.523E+04
+active:  172, k =  0.9997, mean k =  0.9992, std.dev. = 2.17E-05, time: 1.527E+04
+active:  173, k =  0.9991, mean k =  0.9992, std.dev. = 2.16E-05, time: 1.532E+04
+active:  174, k =  0.9995, mean k =  0.9992, std.dev. = 2.15E-05, time: 1.537E+04
+active:  175, k =       1, mean k =  0.9992, std.dev. = 2.2E-05, time: 1.542E+04
+active:  176, k =  0.9992, mean k =  0.9992, std.dev. = 2.19E-05, time: 1.546E+04
+active:  177, k =  0.9989, mean k =  0.9992, std.dev. = 2.18E-05, time: 1.551E+04
+active:  178, k =  0.9993, mean k =  0.9992, std.dev. = 2.17E-05, time: 1.556E+04
+active:  179, k =  0.9991, mean k =  0.9992, std.dev. = 2.16E-05, time: 1.561E+04
+active:  180, k =  0.9991, mean k =  0.9992, std.dev. = 2.15E-05, time: 1.565E+04
+active:  181, k =  0.9993, mean k =  0.9992, std.dev. = 2.14E-05, time: 1.57E+04
+active:  182, k =  0.9987, mean k =  0.9992, std.dev. = 2.14E-05, time: 1.575E+04
+active:  183, k =   0.999, mean k =  0.9992, std.dev. = 2.13E-05, time: 1.58E+04
+active:  184, k =  0.9991, mean k =  0.9992, std.dev. = 2.12E-05, time: 1.584E+04
+active:  185, k =  0.9993, mean k =  0.9992, std.dev. = 2.11E-05, time: 1.589E+04
+active:  186, k =  0.9994, mean k =  0.9992, std.dev. = 2.11E-05, time: 1.594E+04
+active:  187, k =  0.9994, mean k =  0.9992, std.dev. = 2.1E-05, time: 1.599E+04
+active:  188, k =   0.999, mean k =  0.9992, std.dev. = 2.09E-05, time: 1.603E+04
+active:  189, k =   0.999, mean k =  0.9992, std.dev. = 2.08E-05, time: 1.608E+04
+active:  190, k =  0.9997, mean k =  0.9992, std.dev. = 2.09E-05, time: 1.613E+04
+active:  191, k =  0.9995, mean k =  0.9992, std.dev. = 2.08E-05, time: 1.618E+04
+active:  192, k =  0.9992, mean k =  0.9992, std.dev. = 2.07E-05, time: 1.622E+04
+active:  193, k =   0.999, mean k =  0.9992, std.dev. = 2.07E-05, time: 1.627E+04
+active:  194, k =  0.9997, mean k =  0.9992, std.dev. = 2.07E-05, time: 1.632E+04
+active:  195, k =  0.9993, mean k =  0.9992, std.dev. = 2.06E-05, time: 1.637E+04
+active:  196, k =   0.999, mean k =  0.9992, std.dev. = 2.05E-05, time: 1.642E+04
+active:  197, k =   0.999, mean k =  0.9992, std.dev. = 2.04E-05, time: 1.646E+04
+active:  198, k =  0.9991, mean k =  0.9992, std.dev. = 2.03E-05, time: 1.651E+04
+active:  199, k =  0.9992, mean k =  0.9992, std.dev. = 2.02E-05, time: 1.656E+04
+active:  200, k =   0.999, mean k =  0.9992, std.dev. = 2.02E-05, time: 1.661E+04
+active:  201, k =  0.9988, mean k =  0.9992, std.dev. = 2.01E-05, time: 1.665E+04
+active:  202, k =  0.9993, mean k =  0.9992, std.dev. = 2.01E-05, time: 1.67E+04
+active:  203, k =  0.9989, mean k =  0.9992, std.dev. =   2E-05, time: 1.675E+04
+active:  204, k =  0.9991, mean k =  0.9992, std.dev. = 1.99E-05, time: 1.68E+04
+active:  205, k =  0.9996, mean k =  0.9992, std.dev. = 1.99E-05, time: 1.684E+04
+active:  206, k =  0.9994, mean k =  0.9992, std.dev. = 1.98E-05, time: 1.689E+04
+active:  207, k =  0.9993, mean k =  0.9992, std.dev. = 1.97E-05, time: 1.694E+04
+active:  208, k =  0.9993, mean k =  0.9992, std.dev. = 1.96E-05, time: 1.699E+04
+active:  209, k =  0.9995, mean k =  0.9992, std.dev. = 1.96E-05, time: 1.703E+04
+active:  210, k =  0.9991, mean k =  0.9992, std.dev. = 1.95E-05, time: 1.708E+04
+active:  211, k =  0.9992, mean k =  0.9992, std.dev. = 1.94E-05, time: 1.713E+04
+active:  212, k =  0.9994, mean k =  0.9992, std.dev. = 1.94E-05, time: 1.718E+04
+active:  213, k =  0.9994, mean k =  0.9992, std.dev. = 1.93E-05, time: 1.722E+04
+active:  214, k =  0.9996, mean k =  0.9992, std.dev. = 1.93E-05, time: 1.727E+04
+active:  215, k =  0.9993, mean k =  0.9992, std.dev. = 1.92E-05, time: 1.732E+04
+active:  216, k =   0.999, mean k =  0.9992, std.dev. = 1.92E-05, time: 1.737E+04
+active:  217, k =  0.9998, mean k =  0.9992, std.dev. = 1.93E-05, time: 1.741E+04
+active:  218, k =  0.9994, mean k =  0.9992, std.dev. = 1.92E-05, time: 1.746E+04
+active:  219, k =  0.9996, mean k =  0.9992, std.dev. = 1.92E-05, time: 1.751E+04
+active:  220, k =  0.9994, mean k =  0.9992, std.dev. = 1.91E-05, time: 1.756E+04
+active:  221, k =  0.9994, mean k =  0.9992, std.dev. = 1.91E-05, time: 1.76E+04
+active:  222, k =  0.9993, mean k =  0.9992, std.dev. = 1.9E-05, time: 1.765E+04
+active:  223, k =  0.9991, mean k =  0.9992, std.dev. = 1.89E-05, time: 1.77E+04
+active:  224, k =  0.9992, mean k =  0.9992, std.dev. = 1.88E-05, time: 1.775E+04
+active:  225, k =  0.9994, mean k =  0.9992, std.dev. = 1.88E-05, time: 1.779E+04
+active:  226, k =  0.9988, mean k =  0.9992, std.dev. = 1.88E-05, time: 1.784E+04
+active:  227, k =  0.9993, mean k =  0.9992, std.dev. = 1.87E-05, time: 1.789E+04
+active:  228, k =  0.9993, mean k =  0.9992, std.dev. = 1.86E-05, time: 1.794E+04
+active:  229, k =  0.9992, mean k =  0.9992, std.dev. = 1.86E-05, time: 1.799E+04
+active:  230, k =  0.9994, mean k =  0.9992, std.dev. = 1.85E-05, time: 1.803E+04
+active:  231, k =  0.9993, mean k =  0.9992, std.dev. = 1.84E-05, time: 1.808E+04
+active:  232, k =  0.9995, mean k =  0.9992, std.dev. = 1.84E-05, time: 1.813E+04
+active:  233, k =  0.9996, mean k =  0.9992, std.dev. = 1.84E-05, time: 1.818E+04
+active:  234, k =  0.9992, mean k =  0.9992, std.dev. = 1.83E-05, time: 1.823E+04
+active:  235, k =  0.9999, mean k =  0.9992, std.dev. = 1.84E-05, time: 1.827E+04
+active:  236, k =   0.999, mean k =  0.9992, std.dev. = 1.84E-05, time: 1.832E+04
+active:  237, k =  0.9992, mean k =  0.9992, std.dev. = 1.83E-05, time: 1.837E+04
+active:  238, k =  0.9994, mean k =  0.9992, std.dev. = 1.83E-05, time: 1.842E+04
+active:  239, k =  0.9991, mean k =  0.9992, std.dev. = 1.82E-05, time: 1.846E+04
+active:  240, k =  0.9991, mean k =  0.9992, std.dev. = 1.81E-05, time: 1.851E+04
+active:  241, k =   0.999, mean k =  0.9992, std.dev. = 1.81E-05, time: 1.856E+04
+active:  242, k =  0.9994, mean k =  0.9992, std.dev. = 1.8E-05, time: 1.861E+04
+active:  243, k =  0.9991, mean k =  0.9992, std.dev. = 1.79E-05, time: 1.865E+04
+active:  244, k =   0.999, mean k =  0.9992, std.dev. = 1.79E-05, time: 1.87E+04
+active:  245, k =  0.9991, mean k =  0.9992, std.dev. = 1.78E-05, time: 1.875E+04
+active:  246, k =  0.9996, mean k =  0.9992, std.dev. = 1.78E-05, time: 1.88E+04
+active:  247, k =  0.9992, mean k =  0.9992, std.dev. = 1.78E-05, time: 1.884E+04
+active:  248, k =  0.9991, mean k =  0.9992, std.dev. = 1.77E-05, time: 1.889E+04
+active:  249, k =  0.9996, mean k =  0.9992, std.dev. = 1.77E-05, time: 1.894E+04
+active:  250, k =  0.9995, mean k =  0.9992, std.dev. = 1.77E-05, time: 1.899E+04
+active:  251, k =  0.9994, mean k =  0.9992, std.dev. = 1.76E-05, time: 1.903E+04
+active:  252, k =  0.9994, mean k =  0.9992, std.dev. = 1.75E-05, time: 1.908E+04
+active:  253, k =   0.999, mean k =  0.9992, std.dev. = 1.75E-05, time: 1.913E+04
+active:  254, k =  0.9989, mean k =  0.9992, std.dev. = 1.75E-05, time: 1.918E+04
+active:  255, k =  0.9991, mean k =  0.9992, std.dev. = 1.74E-05, time: 1.922E+04
+active:  256, k =  0.9996, mean k =  0.9992, std.dev. = 1.74E-05, time: 1.927E+04
+active:  257, k =  0.9989, mean k =  0.9992, std.dev. = 1.74E-05, time: 1.932E+04
+active:  258, k =  0.9993, mean k =  0.9992, std.dev. = 1.73E-05, time: 1.937E+04
+active:  259, k =   0.999, mean k =  0.9992, std.dev. = 1.73E-05, time: 1.941E+04
+active:  260, k =   0.999, mean k =  0.9992, std.dev. = 1.72E-05, time: 1.946E+04
+active:  261, k =  0.9992, mean k =  0.9992, std.dev. = 1.71E-05, time: 1.951E+04
+active:  262, k =  0.9992, mean k =  0.9992, std.dev. = 1.71E-05, time: 1.956E+04
+active:  263, k =  0.9993, mean k =  0.9992, std.dev. = 1.7E-05, time: 1.961E+04
+active:  264, k =  0.9993, mean k =  0.9992, std.dev. = 1.7E-05, time: 1.965E+04
+active:  265, k =  0.9994, mean k =  0.9992, std.dev. = 1.69E-05, time: 1.97E+04
+active:  266, k =  0.9991, mean k =  0.9992, std.dev. = 1.69E-05, time: 1.975E+04
+active:  267, k =  0.9993, mean k =  0.9992, std.dev. = 1.68E-05, time: 1.98E+04
+active:  268, k =  0.9998, mean k =  0.9992, std.dev. = 1.69E-05, time: 1.984E+04
+active:  269, k =  0.9994, mean k =  0.9992, std.dev. = 1.68E-05, time: 1.989E+04
+active:  270, k =  0.9995, mean k =  0.9992, std.dev. = 1.68E-05, time: 1.994E+04
+active:  271, k =  0.9992, mean k =  0.9992, std.dev. = 1.67E-05, time: 1.999E+04
+active:  272, k =  0.9994, mean k =  0.9992, std.dev. = 1.67E-05, time: 2.003E+04
+active:  273, k =  0.9992, mean k =  0.9992, std.dev. = 1.66E-05, time: 2.008E+04
+active:  274, k =  0.9991, mean k =  0.9992, std.dev. = 1.66E-05, time: 2.013E+04
+active:  275, k =  0.9993, mean k =  0.9992, std.dev. = 1.65E-05, time: 2.018E+04
+active:  276, k =   0.999, mean k =  0.9992, std.dev. = 1.65E-05, time: 2.022E+04
+active:  277, k =  0.9987, mean k =  0.9992, std.dev. = 1.65E-05, time: 2.027E+04
+active:  278, k =  0.9995, mean k =  0.9992, std.dev. = 1.65E-05, time: 2.032E+04
+active:  279, k =  0.9992, mean k =  0.9992, std.dev. = 1.64E-05, time: 2.037E+04
+active:  280, k =  0.9994, mean k =  0.9992, std.dev. = 1.64E-05, time: 2.042E+04
+active:  281, k =  0.9993, mean k =  0.9992, std.dev. = 1.63E-05, time: 2.046E+04
+active:  282, k =  0.9988, mean k =  0.9992, std.dev. = 1.63E-05, time: 2.051E+04
+active:  283, k =  0.9995, mean k =  0.9992, std.dev. = 1.63E-05, time: 2.056E+04
+active:  284, k =  0.9999, mean k =  0.9992, std.dev. = 1.64E-05, time: 2.061E+04
+active:  285, k =  0.9996, mean k =  0.9992, std.dev. = 1.64E-05, time: 2.065E+04
+active:  286, k =  0.9993, mean k =  0.9992, std.dev. = 1.63E-05, time: 2.07E+04
+active:  287, k =   0.999, mean k =  0.9992, std.dev. = 1.63E-05, time: 2.075E+04
+active:  288, k =  0.9994, mean k =  0.9992, std.dev. = 1.63E-05, time: 2.08E+04
+active:  289, k =  0.9993, mean k =  0.9992, std.dev. = 1.62E-05, time: 2.084E+04
+active:  290, k =   0.999, mean k =  0.9992, std.dev. = 1.62E-05, time: 2.089E+04
+active:  291, k =  0.9997, mean k =  0.9992, std.dev. = 1.62E-05, time: 2.094E+04
+active:  292, k =  0.9992, mean k =  0.9992, std.dev. = 1.61E-05, time: 2.099E+04
+active:  293, k =  0.9992, mean k =  0.9992, std.dev. = 1.61E-05, time: 2.103E+04
+active:  294, k =  0.9996, mean k =  0.9992, std.dev. = 1.61E-05, time: 2.108E+04
+active:  295, k =  0.9993, mean k =  0.9992, std.dev. = 1.6E-05, time: 2.113E+04
+active:  296, k =  0.9988, mean k =  0.9992, std.dev. = 1.6E-05, time: 2.118E+04
+active:  297, k =  0.9995, mean k =  0.9992, std.dev. = 1.6E-05, time: 2.123E+04
+active:  298, k =  0.9989, mean k =  0.9992, std.dev. = 1.6E-05, time: 2.127E+04
+active:  299, k =  0.9992, mean k =  0.9992, std.dev. = 1.59E-05, time: 2.132E+04
+active:  300, k =  0.9994, mean k =  0.9992, std.dev. = 1.59E-05, time: 2.137E+04
+active:  301, k =  0.9998, mean k =  0.9992, std.dev. = 1.6E-05, time: 2.142E+04
+active:  302, k =  0.9993, mean k =  0.9992, std.dev. = 1.59E-05, time: 2.146E+04
+active:  303, k =  0.9991, mean k =  0.9992, std.dev. = 1.59E-05, time: 2.151E+04
+active:  304, k =  0.9997, mean k =  0.9992, std.dev. = 1.59E-05, time: 2.156E+04
+active:  305, k =  0.9989, mean k =  0.9992, std.dev. = 1.59E-05, time: 2.161E+04
+active:  306, k =  0.9988, mean k =  0.9992, std.dev. = 1.59E-05, time: 2.165E+04
+active:  307, k =  0.9992, mean k =  0.9992, std.dev. = 1.58E-05, time: 2.17E+04
+active:  308, k =  0.9993, mean k =  0.9992, std.dev. = 1.58E-05, time: 2.175E+04
+active:  309, k =  0.9993, mean k =  0.9992, std.dev. = 1.57E-05, time: 2.18E+04
+active:  310, k =  0.9991, mean k =  0.9992, std.dev. = 1.57E-05, time: 2.185E+04
+active:  311, k =  0.9994, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.189E+04
+active:  312, k =  0.9996, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.194E+04
+active:  313, k =  0.9994, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.199E+04
+active:  314, k =  0.9992, mean k =  0.9992, std.dev. = 1.55E-05, time: 2.204E+04
+active:  315, k =  0.9992, mean k =  0.9992, std.dev. = 1.55E-05, time: 2.208E+04
+active:  316, k =  0.9991, mean k =  0.9992, std.dev. = 1.54E-05, time: 2.213E+04
+active:  317, k =  0.9997, mean k =  0.9992, std.dev. = 1.55E-05, time: 2.218E+04
+active:  318, k =  0.9984, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.223E+04
+active:  319, k =   0.999, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.227E+04
+active:  320, k =  0.9996, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.232E+04
+active:  321, k =  0.9995, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.237E+04
+active:  322, k =   0.999, mean k =  0.9992, std.dev. = 1.56E-05, time: 2.242E+04
+active:  323, k =  0.9989, mean k =  0.9992, std.dev. = 1.55E-05, time: 2.246E+04
+active:  324, k =  0.9994, mean k =  0.9992, std.dev. = 1.55E-05, time: 2.251E+04
+active:  325, k =  0.9992, mean k =  0.9992, std.dev. = 1.54E-05, time: 2.256E+04
+active:  326, k =  0.9996, mean k =  0.9992, std.dev. = 1.54E-05, time: 2.261E+04
+active:  327, k =  0.9994, mean k =  0.9992, std.dev. = 1.54E-05, time: 2.266E+04
+active:  328, k =   0.999, mean k =  0.9992, std.dev. = 1.54E-05, time: 2.27E+04
+active:  329, k =   0.999, mean k =  0.9992, std.dev. = 1.54E-05, time: 2.275E+04
+active:  330, k =  0.9991, mean k =  0.9992, std.dev. = 1.53E-05, time: 2.28E+04
+active:  331, k =  0.9996, mean k =  0.9992, std.dev. = 1.53E-05, time: 2.285E+04
+active:  332, k =  0.9992, mean k =  0.9992, std.dev. = 1.53E-05, time: 2.289E+04
+active:  333, k =  0.9992, mean k =  0.9992, std.dev. = 1.52E-05, time: 2.294E+04
+active:  334, k =  0.9993, mean k =  0.9992, std.dev. = 1.52E-05, time: 2.299E+04
+active:  335, k =  0.9992, mean k =  0.9992, std.dev. = 1.51E-05, time: 2.304E+04
+active:  336, k =  0.9993, mean k =  0.9992, std.dev. = 1.51E-05, time: 2.308E+04
+active:  337, k =  0.9992, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.313E+04
+active:  338, k =  0.9994, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.318E+04
+active:  339, k =  0.9993, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.323E+04
+active:  340, k =  0.9996, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.328E+04
+active:  341, k =  0.9993, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.332E+04
+active:  342, k =  0.9997, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.337E+04
+active:  343, k =   0.999, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.342E+04
+active:  344, k =  0.9999, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.347E+04
+active:  345, k =  0.9995, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.351E+04
+active:  346, k =  0.9993, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.356E+04
+active:  347, k =  0.9998, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.361E+04
+active:  348, k =  0.9996, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.366E+04
+active:  349, k =       1, mean k =  0.9992, std.dev. = 1.51E-05, time: 2.37E+04
+active:  350, k =  0.9995, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.375E+04
+active:  351, k =  0.9997, mean k =  0.9992, std.dev. = 1.51E-05, time: 2.38E+04
+active:  352, k =  0.9991, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.385E+04
+active:  353, k =  0.9991, mean k =  0.9992, std.dev. = 1.5E-05, time: 2.389E+04
+active:  354, k =  0.9992, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.394E+04
+active:  355, k =  0.9991, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.399E+04
+active:  356, k =  0.9993, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.404E+04
+active:  357, k =  0.9997, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.409E+04
+active:  358, k =  0.9992, mean k =  0.9992, std.dev. = 1.48E-05, time: 2.413E+04
+active:  359, k =  0.9997, mean k =  0.9992, std.dev. = 1.49E-05, time: 2.418E+04
+active:  360, k =  0.9993, mean k =  0.9992, std.dev. = 1.48E-05, time: 2.423E+04
+active:  361, k =  0.9995, mean k =  0.9992, std.dev. = 1.48E-05, time: 2.428E+04
+active:  362, k =  0.9993, mean k =  0.9992, std.dev. = 1.48E-05, time: 2.432E+04
+active:  363, k =  0.9994, mean k =  0.9992, std.dev. = 1.47E-05, time: 2.437E+04
+active:  364, k =  0.9994, mean k =  0.9992, std.dev. = 1.47E-05, time: 2.442E+04
+active:  365, k =   0.999, mean k =  0.9992, std.dev. = 1.47E-05, time: 2.447E+04
+active:  366, k =  0.9994, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.452E+04
+active:  367, k =  0.9997, mean k =  0.9992, std.dev. = 1.47E-05, time: 2.456E+04
+active:  368, k =   0.999, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.461E+04
+active:  369, k =  0.9987, mean k =  0.9992, std.dev. = 1.47E-05, time: 2.466E+04
+active:  370, k =  0.9991, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.471E+04
+active:  371, k =  0.9998, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.476E+04
+active:  372, k =  0.9994, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.48E+04
+active:  373, k =  0.9997, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.485E+04
+active:  374, k =  0.9996, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.49E+04
+active:  375, k =  0.9993, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.495E+04
+active:  376, k =  0.9994, mean k =  0.9992, std.dev. = 1.45E-05, time: 2.5E+04
+active:  377, k =  0.9996, mean k =  0.9992, std.dev. = 1.45E-05, time: 2.504E+04
+active:  378, k =  0.9988, mean k =  0.9992, std.dev. = 1.46E-05, time: 2.509E+04
+active:  379, k =  0.9991, mean k =  0.9992, std.dev. = 1.45E-05, time: 2.514E+04
+active:  380, k =  0.9993, mean k =  0.9992, std.dev. = 1.45E-05, time: 2.519E+04
+active:  381, k =  0.9998, mean k =  0.9992, std.dev. = 1.45E-05, time: 2.524E+04
+active:  382, k =  0.9993, mean k =  0.9992, std.dev. = 1.45E-05, time: 2.528E+04
+active:  383, k =  0.9995, mean k =  0.9992, std.dev. = 1.45E-05, time: 2.533E+04
+active:  384, k =  0.9994, mean k =  0.9992, std.dev. = 1.44E-05, time: 2.538E+04
+active:  385, k =  0.9993, mean k =  0.9992, std.dev. = 1.44E-05, time: 2.543E+04
+active:  386, k =  0.9993, mean k =  0.9992, std.dev. = 1.44E-05, time: 2.548E+04
+active:  387, k =  0.9989, mean k =  0.9992, std.dev. = 1.43E-05, time: 2.552E+04
+active:  388, k =  0.9992, mean k =  0.9992, std.dev. = 1.43E-05, time: 2.557E+04
+active:  389, k =  0.9994, mean k =  0.9992, std.dev. = 1.43E-05, time: 2.562E+04
+active:  390, k =  0.9998, mean k =  0.9992, std.dev. = 1.43E-05, time: 2.567E+04
+active:  391, k =  0.9995, mean k =  0.9993, std.dev. = 1.43E-05, time: 2.572E+04
+active:  392, k =  0.9993, mean k =  0.9993, std.dev. = 1.43E-05, time: 2.576E+04
+active:  393, k =  0.9996, mean k =  0.9993, std.dev. = 1.42E-05, time: 2.581E+04
+active:  394, k =  0.9998, mean k =  0.9993, std.dev. = 1.43E-05, time: 2.586E+04
+active:  395, k =  0.9995, mean k =  0.9993, std.dev. = 1.43E-05, time: 2.591E+04
+active:  396, k =  0.9991, mean k =  0.9993, std.dev. = 1.42E-05, time: 2.596E+04
+active:  397, k =  0.9993, mean k =  0.9993, std.dev. = 1.42E-05, time: 2.6E+04
+active:  398, k =  0.9996, mean k =  0.9993, std.dev. = 1.42E-05, time: 2.605E+04
+active:  399, k =  0.9995, mean k =  0.9993, std.dev. = 1.42E-05, time: 2.61E+04
+active:  400, k =  0.9994, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.615E+04
+active:  401, k =  0.9997, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.62E+04
+active:  402, k =   0.999, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.624E+04
+active:  403, k =  0.9994, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.629E+04
+active:  404, k =  0.9997, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.634E+04
+active:  405, k =  0.9996, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.639E+04
+active:  406, k =  0.9995, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.644E+04
+active:  407, k =  0.9994, mean k =  0.9993, std.dev. = 1.41E-05, time: 2.648E+04
+active:  408, k =  0.9994, mean k =  0.9993, std.dev. = 1.4E-05, time: 2.653E+04
+active:  409, k =  0.9989, mean k =  0.9993, std.dev. = 1.4E-05, time: 2.658E+04
+active:  410, k =  0.9994, mean k =  0.9993, std.dev. = 1.4E-05, time: 2.663E+04
+active:  411, k =   0.999, mean k =  0.9993, std.dev. = 1.4E-05, time: 2.668E+04
+active:  412, k =  0.9991, mean k =  0.9993, std.dev. = 1.39E-05, time: 2.673E+04
+active:  413, k =  0.9992, mean k =  0.9993, std.dev. = 1.39E-05, time: 2.677E+04
+active:  414, k =  0.9998, mean k =  0.9993, std.dev. = 1.39E-05, time: 2.682E+04
+active:  415, k =  0.9997, mean k =  0.9993, std.dev. = 1.39E-05, time: 2.687E+04
+active:  416, k =  0.9992, mean k =  0.9993, std.dev. = 1.39E-05, time: 2.692E+04
+active:  417, k =  0.9996, mean k =  0.9993, std.dev. = 1.39E-05, time: 2.697E+04
+active:  418, k =  0.9993, mean k =  0.9993, std.dev. = 1.38E-05, time: 2.701E+04
+active:  419, k =  0.9995, mean k =  0.9993, std.dev. = 1.38E-05, time: 2.706E+04
+active:  420, k =   0.999, mean k =  0.9993, std.dev. = 1.38E-05, time: 2.711E+04
+active:  421, k =  0.9989, mean k =  0.9993, std.dev. = 1.38E-05, time: 2.716E+04
+active:  422, k =  0.9989, mean k =  0.9993, std.dev. = 1.38E-05, time: 2.721E+04
+active:  423, k =  0.9993, mean k =  0.9993, std.dev. = 1.38E-05, time: 2.725E+04
+active:  424, k =  0.9995, mean k =  0.9993, std.dev. = 1.37E-05, time: 2.73E+04
+active:  425, k =  0.9992, mean k =  0.9993, std.dev. = 1.37E-05, time: 2.735E+04
+active:  426, k =  0.9993, mean k =  0.9993, std.dev. = 1.37E-05, time: 2.74E+04
+active:  427, k =  0.9989, mean k =  0.9993, std.dev. = 1.37E-05, time: 2.745E+04
+active:  428, k =  0.9996, mean k =  0.9993, std.dev. = 1.37E-05, time: 2.749E+04
+active:  429, k =  0.9995, mean k =  0.9993, std.dev. = 1.36E-05, time: 2.754E+04
+active:  430, k =  0.9994, mean k =  0.9993, std.dev. = 1.36E-05, time: 2.759E+04
+active:  431, k =  0.9993, mean k =  0.9993, std.dev. = 1.36E-05, time: 2.764E+04
+active:  432, k =  0.9996, mean k =  0.9993, std.dev. = 1.36E-05, time: 2.769E+04
+active:  433, k =  0.9991, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.773E+04
+active:  434, k =  0.9992, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.778E+04
+active:  435, k =  0.9996, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.783E+04
+active:  436, k =  0.9994, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.788E+04
+active:  437, k =  0.9997, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.793E+04
+active:  438, k =  0.9993, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.797E+04
+active:  439, k =  0.9999, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.802E+04
+active:  440, k =  0.9999, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.807E+04
+active:  441, k =  0.9999, mean k =  0.9993, std.dev. = 1.36E-05, time: 2.812E+04
+active:  442, k =  0.9994, mean k =  0.9993, std.dev. = 1.36E-05, time: 2.817E+04
+active:  443, k =   0.999, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.821E+04
+active:  444, k =   0.999, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.826E+04
+active:  445, k =  0.9994, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.831E+04
+active:  446, k =  0.9988, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.836E+04
+active:  447, k =  0.9993, mean k =  0.9993, std.dev. = 1.35E-05, time: 2.841E+04
+active:  448, k =  0.9992, mean k =  0.9993, std.dev. = 1.34E-05, time: 2.845E+04
+active:  449, k =   0.999, mean k =  0.9993, std.dev. = 1.34E-05, time: 2.85E+04
+active:  450, k =   0.999, mean k =  0.9993, std.dev. = 1.34E-05, time: 2.855E+04
+active:  451, k =  0.9992, mean k =  0.9993, std.dev. = 1.34E-05, time: 2.86E+04
+active:  452, k =  0.9995, mean k =  0.9993, std.dev. = 1.34E-05, time: 2.865E+04
+active:  453, k =  0.9993, mean k =  0.9993, std.dev. = 1.33E-05, time: 2.869E+04
+active:  454, k =  0.9989, mean k =  0.9993, std.dev. = 1.33E-05, time: 2.874E+04
+active:  455, k =  0.9994, mean k =  0.9993, std.dev. = 1.33E-05, time: 2.879E+04
+active:  456, k =  0.9997, mean k =  0.9993, std.dev. = 1.33E-05, time: 2.884E+04
+active:  457, k =  0.9994, mean k =  0.9993, std.dev. = 1.33E-05, time: 2.889E+04
+active:  458, k =  0.9992, mean k =  0.9993, std.dev. = 1.32E-05, time: 2.893E+04
+active:  459, k =  0.9997, mean k =  0.9993, std.dev. = 1.32E-05, time: 2.898E+04
+active:  460, k =  0.9994, mean k =  0.9993, std.dev. = 1.32E-05, time: 2.903E+04
+active:  461, k =  0.9992, mean k =  0.9993, std.dev. = 1.32E-05, time: 2.908E+04
+active:  462, k =  0.9992, mean k =  0.9993, std.dev. = 1.32E-05, time: 2.913E+04
+active:  463, k =  0.9996, mean k =  0.9993, std.dev. = 1.31E-05, time: 2.917E+04
+active:  464, k =  0.9999, mean k =  0.9993, std.dev. = 1.32E-05, time: 2.922E+04
+active:  465, k =  0.9991, mean k =  0.9993, std.dev. = 1.32E-05, time: 2.927E+04
+active:  466, k =  0.9993, mean k =  0.9993, std.dev. = 1.31E-05, time: 2.932E+04
+active:  467, k =  0.9994, mean k =  0.9993, std.dev. = 1.31E-05, time: 2.937E+04
+active:  468, k =  0.9995, mean k =  0.9993, std.dev. = 1.31E-05, time: 2.941E+04
+active:  469, k =  0.9997, mean k =  0.9993, std.dev. = 1.31E-05, time: 2.946E+04
+active:  470, k =  0.9995, mean k =  0.9993, std.dev. = 1.31E-05, time: 2.951E+04
+active:  471, k =   0.999, mean k =  0.9993, std.dev. = 1.31E-05, time: 2.956E+04
+active:  472, k =  0.9993, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.961E+04
+active:  473, k =  0.9992, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.965E+04
+active:  474, k =  0.9991, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.97E+04
+active:  475, k =  0.9998, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.975E+04
+active:  476, k =  0.9993, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.98E+04
+active:  477, k =  0.9996, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.985E+04
+active:  478, k =  0.9992, mean k =  0.9993, std.dev. = 1.29E-05, time: 2.989E+04
+active:  479, k =       1, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.994E+04
+active:  480, k =  0.9989, mean k =  0.9993, std.dev. = 1.3E-05, time: 2.999E+04
+active:  481, k =  0.9993, mean k =  0.9993, std.dev. = 1.3E-05, time: 3.004E+04
+active:  482, k =  0.9995, mean k =  0.9993, std.dev. = 1.3E-05, time: 3.009E+04
+active:  483, k =  0.9993, mean k =  0.9993, std.dev. = 1.29E-05, time: 3.013E+04
+active:  484, k =  0.9992, mean k =  0.9993, std.dev. = 1.29E-05, time: 3.018E+04
+active:  485, k =  0.9992, mean k =  0.9993, std.dev. = 1.29E-05, time: 3.023E+04
+active:  486, k =  0.9996, mean k =  0.9993, std.dev. = 1.29E-05, time: 3.028E+04
+active:  487, k =  0.9994, mean k =  0.9993, std.dev. = 1.28E-05, time: 3.033E+04
+active:  488, k =  0.9996, mean k =  0.9993, std.dev. = 1.28E-05, time: 3.037E+04
+active:  489, k =  0.9992, mean k =  0.9993, std.dev. = 1.28E-05, time: 3.042E+04
+active:  490, k =  0.9994, mean k =  0.9993, std.dev. = 1.28E-05, time: 3.047E+04
+active:  491, k =  0.9995, mean k =  0.9993, std.dev. = 1.28E-05, time: 3.052E+04
+active:  492, k =  0.9991, mean k =  0.9993, std.dev. = 1.28E-05, time: 3.057E+04
+active:  493, k =  0.9994, mean k =  0.9993, std.dev. = 1.27E-05, time: 3.061E+04
+active:  494, k =  0.9993, mean k =  0.9993, std.dev. = 1.27E-05, time: 3.066E+04
+active:  495, k =   0.999, mean k =  0.9993, std.dev. = 1.27E-05, time: 3.071E+04
+active:  496, k =  0.9993, mean k =  0.9993, std.dev. = 1.27E-05, time: 3.076E+04
+active:  497, k =  0.9993, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.081E+04
+active:  498, k =  0.9994, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.086E+04
+active:  499, k =   0.999, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.09E+04
+active:  500, k =  0.9992, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.095E+04
+active:  501, k =  0.9995, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.1E+04
+active:  502, k =  0.9999, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.105E+04
+active:  503, k =  0.9991, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.11E+04
+active:  504, k =   0.999, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.114E+04
+active:  505, k =  0.9997, mean k =  0.9993, std.dev. = 1.26E-05, time: 3.119E+04
+active:  506, k =  0.9994, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.124E+04
+active:  507, k =   0.999, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.129E+04
+active:  508, k =  0.9991, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.134E+04
+active:  509, k =  0.9991, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.138E+04
+active:  510, k =  0.9988, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.143E+04
+active:  511, k =  0.9995, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.148E+04
+active:  512, k =  0.9993, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.153E+04
+active:  513, k =  0.9989, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.157E+04
+active:  514, k =  0.9998, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.162E+04
+active:  515, k =   0.999, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.167E+04
+active:  516, k =  0.9995, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.172E+04
+active:  517, k =  0.9998, mean k =  0.9993, std.dev. = 1.25E-05, time: 3.177E+04
+active:  518, k =  0.9995, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.181E+04
+active:  519, k =  0.9995, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.186E+04
+active:  520, k =  0.9994, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.191E+04
+active:  521, k =  0.9995, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.196E+04
+active:  522, k =  0.9991, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.2E+04
+active:  523, k =  0.9989, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.205E+04
+active:  524, k =  0.9995, mean k =  0.9993, std.dev. = 1.24E-05, time: 3.21E+04
+active:  525, k =  0.9992, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.215E+04
+active:  526, k =  0.9997, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.219E+04
+active:  527, k =  0.9996, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.224E+04
+active:  528, k =  0.9993, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.229E+04
+active:  529, k =  0.9992, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.234E+04
+active:  530, k =  0.9999, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.238E+04
+active:  531, k =  0.9995, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.243E+04
+active:  532, k =  0.9993, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.248E+04
+active:  533, k =  0.9993, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.253E+04
+active:  534, k =  0.9996, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.258E+04
+active:  535, k =   0.999, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.262E+04
+active:  536, k =       1, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.267E+04
+active:  537, k =  0.9994, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.272E+04
+active:  538, k =  0.9993, mean k =  0.9993, std.dev. = 1.23E-05, time: 3.277E+04
+active:  539, k =  0.9993, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.281E+04
+active:  540, k =  0.9993, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.286E+04
+active:  541, k =  0.9991, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.291E+04
+active:  542, k =  0.9992, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.296E+04
+active:  543, k =   0.999, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.3E+04
+active:  544, k =  0.9996, mean k =  0.9993, std.dev. = 1.22E-05, time: 3.305E+04
+active:  545, k =  0.9992, mean k =  0.9993, std.dev. = 1.21E-05, time: 3.31E+04
+active:  546, k =  0.9998, mean k =  0.9993, std.dev. = 1.21E-05, time: 3.315E+04
+active:  547, k =  0.9993, mean k =  0.9993, std.dev. = 1.21E-05, time: 3.319E+04
+active:  548, k =  0.9994, mean k =  0.9993, std.dev. = 1.21E-05, time: 3.324E+04
+active:  549, k =  0.9994, mean k =  0.9993, std.dev. = 1.21E-05, time: 3.329E+04
+active:  550, k =  0.9993, mean k =  0.9993, std.dev. = 1.21E-05, time: 3.334E+04
+active:  551, k =  0.9992, mean k =  0.9993, std.dev. = 1.2E-05, time: 3.338E+04
+active:  552, k =  0.9994, mean k =  0.9993, std.dev. = 1.2E-05, time: 3.343E+04
+active:  553, k =  0.9993, mean k =  0.9993, std.dev. = 1.2E-05, time: 3.348E+04
+active:  554, k =  0.9993, mean k =  0.9993, std.dev. = 1.2E-05, time: 3.353E+04
+active:  555, k =  0.9991, mean k =  0.9993, std.dev. = 1.2E-05, time: 3.357E+04
+active:  556, k =  0.9994, mean k =  0.9993, std.dev. = 1.19E-05, time: 3.362E+04
+active:  557, k =  0.9993, mean k =  0.9993, std.dev. = 1.19E-05, time: 3.367E+04
+active:  558, k =  0.9992, mean k =  0.9993, std.dev. = 1.19E-05, time: 3.372E+04
+active:  559, k =  0.9994, mean k =  0.9993, std.dev. = 1.19E-05, time: 3.377E+04
+active:  560, k =  0.9993, mean k =  0.9993, std.dev. = 1.19E-05, time: 3.381E+04
+active:  561, k =  0.9992, mean k =  0.9993, std.dev. = 1.18E-05, time: 3.386E+04
+active:  562, k =  0.9991, mean k =  0.9993, std.dev. = 1.18E-05, time: 3.391E+04
+active:  563, k =       1, mean k =  0.9993, std.dev. = 1.19E-05, time: 3.396E+04
+active:  564, k =  0.9991, mean k =  0.9993, std.dev. = 1.19E-05, time: 3.4E+04
+active:  565, k =  0.9995, mean k =  0.9993, std.dev. = 1.18E-05, time: 3.405E+04
+active:  566, k =  0.9995, mean k =  0.9993, std.dev. = 1.18E-05, time: 3.41E+04
+active:  567, k =  0.9993, mean k =  0.9993, std.dev. = 1.18E-05, time: 3.415E+04
+active:  568, k =  0.9993, mean k =  0.9993, std.dev. = 1.18E-05, time: 3.419E+04
+active:  569, k =  0.9991, mean k =  0.9993, std.dev. = 1.18E-05, time: 3.424E+04
+active:  570, k =  0.9992, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.429E+04
+active:  571, k =  0.9993, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.434E+04
+active:  572, k =   0.999, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.438E+04
+active:  573, k =  0.9993, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.443E+04
+active:  574, k =  0.9995, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.448E+04
+active:  575, k =  0.9992, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.453E+04
+active:  576, k =  0.9987, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.457E+04
+active:  577, k =  0.9994, mean k =  0.9993, std.dev. = 1.17E-05, time: 3.462E+04
+active:  578, k =  0.9994, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.467E+04
+active:  579, k =  0.9994, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.472E+04
+active:  580, k =   0.999, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.477E+04
+active:  581, k =  0.9988, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.481E+04
+active:  582, k =  0.9994, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.486E+04
+active:  583, k =  0.9994, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.491E+04
+active:  584, k =  0.9987, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.496E+04
+active:  585, k =  0.9995, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.5E+04
+active:  586, k =  0.9997, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.505E+04
+active:  587, k =   0.999, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.51E+04
+active:  588, k =  0.9997, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.515E+04
+active:  589, k =  0.9993, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.519E+04
+active:  590, k =  0.9994, mean k =  0.9993, std.dev. = 1.16E-05, time: 3.524E+04
+active:  591, k =  0.9995, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.529E+04
+active:  592, k =  0.9995, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.534E+04
+active:  593, k =  0.9992, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.538E+04
+active:  594, k =  0.9994, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.543E+04
+active:  595, k =  0.9991, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.548E+04
+active:  596, k =  0.9996, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.553E+04
+active:  597, k =  0.9995, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.557E+04
+active:  598, k =  0.9995, mean k =  0.9993, std.dev. = 1.15E-05, time: 3.562E+04
+active:  599, k =  0.9991, mean k =  0.9993, std.dev. = 1.14E-05, time: 3.567E+04
+active:  600, k =  0.9992, mean k =  0.9993, std.dev. = 1.14E-05, time: 3.572E+04
+active:  601, k =  0.9993, mean k =  0.9993, std.dev. = 1.14E-05, time: 3.577E+04
+active:  602, k =  0.9993, mean k =  0.9993, std.dev. = 1.14E-05, time: 3.581E+04
+active:  603, k =  0.9992, mean k =  0.9993, std.dev. = 1.14E-05, time: 3.586E+04
+active:  604, k =  0.9994, mean k =  0.9993, std.dev. = 1.13E-05, time: 3.591E+04
+active:  605, k =  0.9995, mean k =  0.9993, std.dev. = 1.13E-05, time: 3.596E+04
+active:  606, k =  0.9995, mean k =  0.9993, std.dev. = 1.13E-05, time: 3.6E+04
+active:  607, k =  0.9993, mean k =  0.9993, std.dev. = 1.13E-05, time: 3.605E+04
+active:  608, k =  0.9991, mean k =  0.9993, std.dev. = 1.13E-05, time: 3.61E+04
+active:  609, k =  0.9994, mean k =  0.9993, std.dev. = 1.13E-05, time: 3.615E+04
+active:  610, k =  0.9991, mean k =  0.9993, std.dev. = 1.13E-05, time: 3.619E+04
+active:  611, k =  0.9993, mean k =  0.9993, std.dev. = 1.12E-05, time: 3.624E+04
+active:  612, k =  0.9992, mean k =  0.9993, std.dev. = 1.12E-05, time: 3.629E+04
+active:  613, k =  0.9996, mean k =  0.9993, std.dev. = 1.12E-05, time: 3.634E+04
+active:  614, k =  0.9994, mean k =  0.9993, std.dev. = 1.12E-05, time: 3.638E+04
+active:  615, k =  0.9992, mean k =  0.9993, std.dev. = 1.12E-05, time: 3.643E+04
+active:  616, k =  0.9994, mean k =  0.9993, std.dev. = 1.12E-05, time: 3.648E+04
+active:  617, k =  0.9994, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.653E+04
+active:  618, k =  0.9989, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.657E+04
+active:  619, k =  0.9995, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.662E+04
+active:  620, k =  0.9993, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.667E+04
+active:  621, k =   0.999, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.672E+04
+active:  622, k =  0.9994, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.677E+04
+active:  623, k =  0.9994, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.681E+04
+active:  624, k =  0.9991, mean k =  0.9993, std.dev. = 1.11E-05, time: 3.686E+04
+active:  625, k =  0.9993, mean k =  0.9993, std.dev. = 1.1E-05, time: 3.691E+04
+active:  626, k =   0.999, mean k =  0.9993, std.dev. = 1.1E-05, time: 3.696E+04
+active:  627, k =  0.9993, mean k =  0.9993, std.dev. = 1.1E-05, time: 3.7E+04
+active:  628, k =   0.999, mean k =  0.9993, std.dev. = 1.1E-05, time: 3.705E+04
+active:  629, k =  0.9994, mean k =  0.9993, std.dev. = 1.1E-05, time: 3.71E+04
+active:  630, k =  0.9992, mean k =  0.9993, std.dev. = 1.1E-05, time: 3.715E+04
+active:  631, k =  0.9991, mean k =  0.9993, std.dev. = 1.1E-05, time: 3.719E+04
+active:  632, k =  0.9991, mean k =  0.9993, std.dev. = 1.09E-05, time: 3.724E+04
+active:  633, k =  0.9992, mean k =  0.9993, std.dev. = 1.09E-05, time: 3.729E+04
+active:  634, k =  0.9993, mean k =  0.9993, std.dev. = 1.09E-05, time: 3.734E+04
+active:  635, k =  0.9994, mean k =  0.9993, std.dev. = 1.09E-05, time: 3.738E+04
+active:  636, k =  0.9994, mean k =  0.9993, std.dev. = 1.09E-05, time: 3.743E+04
+active:  637, k =  0.9991, mean k =  0.9993, std.dev. = 1.09E-05, time: 3.748E+04
+active:  638, k =  0.9993, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.753E+04
+active:  639, k =  0.9991, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.757E+04
+active:  640, k =   0.999, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.762E+04
+active:  641, k =  0.9996, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.767E+04
+active:  642, k =  0.9996, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.772E+04
+active:  643, k =  0.9992, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.777E+04
+active:  644, k =  0.9996, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.781E+04
+active:  645, k =  0.9993, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.786E+04
+active:  646, k =  0.9996, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.791E+04
+active:  647, k =  0.9996, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.796E+04
+active:  648, k =  0.9998, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.8E+04
+active:  649, k =  0.9991, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.805E+04
+active:  650, k =   0.999, mean k =  0.9993, std.dev. = 1.08E-05, time: 3.81E+04
+active:  651, k =  0.9994, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.815E+04
+active:  652, k =  0.9991, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.819E+04
+active:  653, k =  0.9995, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.824E+04
+active:  654, k =  0.9996, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.829E+04
+active:  655, k =  0.9993, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.834E+04
+active:  656, k =  0.9993, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.838E+04
+active:  657, k =  0.9993, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.843E+04
+active:  658, k =  0.9995, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.848E+04
+active:  659, k =   0.999, mean k =  0.9993, std.dev. = 1.07E-05, time: 3.853E+04
+active:  660, k =  0.9996, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.857E+04
+active:  661, k =  0.9992, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.862E+04
+active:  662, k =  0.9991, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.867E+04
+active:  663, k =  0.9996, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.872E+04
+active:  664, k =  0.9989, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.877E+04
+active:  665, k =  0.9991, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.881E+04
+active:  666, k =  0.9994, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.886E+04
+active:  667, k =  0.9995, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.891E+04
+active:  668, k =  0.9994, mean k =  0.9993, std.dev. = 1.06E-05, time: 3.896E+04
+active:  669, k =  0.9991, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.9E+04
+active:  670, k =  0.9993, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.905E+04
+active:  671, k =  0.9993, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.91E+04
+active:  672, k =  0.9997, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.915E+04
+active:  673, k =  0.9997, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.919E+04
+active:  674, k =  0.9993, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.924E+04
+active:  675, k =  0.9998, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.929E+04
+active:  676, k =  0.9994, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.934E+04
+active:  677, k =  0.9999, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.938E+04
+active:  678, k =  0.9988, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.943E+04
+active:  679, k =   0.999, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.948E+04
+active:  680, k =  0.9992, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.953E+04
+active:  681, k =  0.9996, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.958E+04
+active:  682, k =  0.9991, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.962E+04
+active:  683, k =  0.9995, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.967E+04
+active:  684, k =  0.9992, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.972E+04
+active:  685, k =  0.9994, mean k =  0.9993, std.dev. = 1.04E-05, time: 3.977E+04
+active:  686, k =  0.9991, mean k =  0.9993, std.dev. = 1.04E-05, time: 3.981E+04
+active:  687, k =  0.9999, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.986E+04
+active:  688, k =  0.9999, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.991E+04
+active:  689, k =  0.9996, mean k =  0.9993, std.dev. = 1.05E-05, time: 3.996E+04
+active:  690, k =  0.9994, mean k =  0.9993, std.dev. = 1.05E-05, time:  4E+04
+active:  691, k =  0.9999, mean k =  0.9993, std.dev. = 1.05E-05, time: 4.005E+04
+active:  692, k =  0.9995, mean k =  0.9993, std.dev. = 1.05E-05, time: 4.01E+04
+active:  693, k =  0.9992, mean k =  0.9993, std.dev. = 1.05E-05, time: 4.015E+04
+active:  694, k =  0.9993, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.02E+04
+active:  695, k =  0.9988, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.024E+04
+active:  696, k =  0.9991, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.029E+04
+active:  697, k =  0.9995, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.034E+04
+active:  698, k =  0.9992, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.039E+04
+active:  699, k =  0.9996, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.043E+04
+active:  700, k =  0.9993, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.048E+04
+active:  701, k =  0.9993, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.053E+04
+active:  702, k =  0.9998, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.058E+04
+active:  703, k =  0.9996, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.062E+04
+active:  704, k =  0.9995, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.067E+04
+active:  705, k =   0.999, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.072E+04
+active:  706, k =  0.9993, mean k =  0.9993, std.dev. = 1.04E-05, time: 4.077E+04
+active:  707, k =  0.9992, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.082E+04
+active:  708, k =   0.999, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.086E+04
+active:  709, k =  0.9994, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.091E+04
+active:  710, k =  0.9996, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.096E+04
+active:  711, k =  0.9988, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.101E+04
+active:  712, k =  0.9992, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.105E+04
+active:  713, k =  0.9994, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.11E+04
+active:  714, k =  0.9994, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.115E+04
+active:  715, k =  0.9994, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.12E+04
+active:  716, k =  0.9993, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.124E+04
+active:  717, k =  0.9999, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.129E+04
+active:  718, k =  0.9989, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.134E+04
+active:  719, k =   0.999, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.139E+04
+active:  720, k =  0.9994, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.143E+04
+active:  721, k =   0.999, mean k =  0.9993, std.dev. = 1.03E-05, time: 4.148E+04
+active:  722, k =  0.9995, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.153E+04
+active:  723, k =  0.9992, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.158E+04
+active:  724, k =  0.9998, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.163E+04
+active:  725, k =  0.9995, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.167E+04
+active:  726, k =  0.9993, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.172E+04
+active:  727, k =  0.9993, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.177E+04
+active:  728, k =  0.9992, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.182E+04
+active:  729, k =  0.9991, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.186E+04
+active:  730, k =  0.9997, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.191E+04
+active:  731, k =  0.9996, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.196E+04
+active:  732, k =  0.9987, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.201E+04
+active:  733, k =  0.9992, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.205E+04
+active:  734, k =  0.9995, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.21E+04
+active:  735, k =  0.9996, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.215E+04
+active:  736, k =  0.9988, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.22E+04
+active:  737, k =  0.9997, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.224E+04
+active:  738, k =  0.9995, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.229E+04
+active:  739, k =   0.999, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.234E+04
+active:  740, k =  0.9997, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.239E+04
+active:  741, k =  0.9993, mean k =  0.9993, std.dev. = 1.02E-05, time: 4.244E+04
+active:  742, k =  0.9992, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.248E+04
+active:  743, k =  0.9995, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.253E+04
+active:  744, k =  0.9991, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.258E+04
+active:  745, k =  0.9996, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.263E+04
+active:  746, k =  0.9993, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.267E+04
+active:  747, k =  0.9993, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.272E+04
+active:  748, k =  0.9996, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.277E+04
+active:  749, k =  0.9992, mean k =  0.9993, std.dev. = 1.01E-05, time: 4.282E+04

@@ -1,0 +1,364 @@
+#! /usr/local/bin/python
+"""
+This code will calculate the eigenvalue of a homogeneous cube using a traditional Power 
+Method and Weilandt's Method.
+"""
+
+import math, random, Gnuplot, copy, os
+import Numeric, time
+
+def main():
+    # Set up initial Data
+    Width = 10.0  # Width of cube
+    SigmaS = 1.0
+    SigmaG = 2.5
+    SigmaF = 2.5
+    nu = 2.5  # Average number of fission neutrons
+    (kEstimates1, FBank1) = Eigenvalue(10000, 100, Width, SigmaS, SigmaG, SigmaF,
+                                        nu, "Power")
+#   (kEstimates2, FBank2) = Eigenvalue(1000, 100, Width, SigmaS, SigmaG, SigmaF, 
+#                                       nu, "Weilandt")
+#   Plotk(kEstimates1, kEstimates2)
+    BankForPlotting = BinBank(FBank1, Width)
+    PlotBank(BankForPlotting)
+
+
+def Eigenvalue(Histories, Cycles, Width, xS, xG, xF, nu, method):
+    """
+    This function will return a list of estimated eigenvalues.  These are the 
+    eigenvalues calculated at ecah cycle of the Monte Carlo simulation.  It also
+    returns the fission bank so it can be plotted
+    
+    Histories: Number of histories to sample from fission source for each cycle
+    Cycles: Number of cycles to run, this is also the length of the returned 
+        list
+    Width: The width of the multiplying slab
+    xS, xG, xF: Scattering, Radiative Capture, and Fission cross sections
+    nu: Average number of fission neutrons
+    method: a flag to determine which method to use.
+    """
+
+    xA = xG + xF  # Absorption cross section
+    xT = xA + xS  # Total cross section
+
+    random.seed(1)  # Initialize random number generator
+    kEstimates = [random.random()] # First eigenvalue estimate is random (!=0)
+    FBank = [[]]
+
+    for x in xrange(Histories):   
+        # Initialize first fission bank to be uniform across slab
+#       FBank[0].append(random.uniform(0, Width))
+        FBank[0].append((Width/2, Width/2, Width/2))    # Inital point source
+
+    for x in xrange(Cycles):
+        Cycle(kEstimates, FBank, Histories, Width, xS, xG, xF, nu, xT, 
+                                xA, method, x)
+
+    return (kEstimates, FBank)
+
+
+def Cycle(kEigen, FBank, Histories, Width, xS, xG, xF, nu, xT, xA, method,
+        prevCycle):
+    """
+    This function will call the appropriate function to calculate the estimate
+    of the eigenvalue for the given method
+
+    kEigen: A list of previous k-eigenvalue estimates
+    FBank: The fission bank for previous eigenvalue estimates
+    Histories: The number of histories to run in this cycle
+    Width: The width of the multiplying slab
+    xS, xG, xF: Scattering, Radiative Capture, and Fission cross sections
+    xA, xT: Absorptiona and Total cross sections
+    nu: Average number of fission neutrons
+    method: a flag to determine which method to use.
+    prevCycle: The previous cycle number
+    """
+    curCycle = prevCycle + 1  # Current Cycle number
+    FixBank(FBank, Histories)
+    
+    if method =="Power":
+        PowerMethod(prevCycle, curCycle, kEigen, FBank, Histories, Width, xS,
+                xG, xF, nu, xT, xA)
+    else:  # method == Weilandt
+        WeilandtMethod(prevCycle, curCycle, kEigen, FBank, Histories, Width, xS,
+                xG, xF, nu, xT, xA)
+
+
+def PowerMethod(prevCycle, curCycle, kEigen, FBank, Histories, Width, xS, xG, 
+                xF, nu, xT, xA):
+    """
+    This function will *append* the estimated eigenvalue after one cycle, and 
+        the fission bank used for that cycle.  It uses the Power method for
+        calculating the eigenvalue
+
+    prevCycle: The previous cycle number
+    curCycle: The current cycle number
+    kEigen: A list of previous k-eigenvalue estimates
+    FBank: The fission bank for previous eigenvalue estimates
+    Histories: The number of histories to run in this cycle
+    Width: The width of the multiplying slab
+    xS, xG, xF: Scattering, Radiative Capture, and Fission cross sections
+    xA, xT: Absorptiona and Total cross sections
+    nu: Average number of fission neutrons
+    """
+    FBank.append([])
+#   Directions = [-1, 1]    # List of possible neutron directions
+
+    for x in xrange(Histories):
+        # Sample birth location from previous fission bank
+        Location = random.choice(FBank[prevCycle])
+#       Direction = random.choice([-1, 1])
+        # Transport Particle
+        (Location, Escaped, Absorbed) = Transport(Width, xS, xA, xT, Location) 
+
+        if not Escaped:
+            if Absorbed:  # Particle was absorbed
+                Interaction = random.random()
+
+                fissionNeutrons = int(nu/kEigen[prevCycle]*(xF/xA) +
+                        random.random())
+
+                for y in xrange(fissionNeutrons):
+                    # Fission neutrons to fission bank
+                    FBank[curCycle].append(Location)
+            #else:  Particle was not absorbed.  Do nothing.
+       #else     Particle leaked out.  Do nothing with fission bank
+
+    # New eigenvalue estimate
+    kEigen.append(kEigen[prevCycle]*(len(FBank[curCycle]))/Histories)
+            
+
+def WeilandtMethod(prevCycle, curCycle, kEigen, FBank, Histories, Width, xS, xG, 
+                xF, nu, xT, xA):
+    """
+    This function will *append* the estimated eigenvalue after one cycle, and 
+        the fission bank used for that cycle.  It uses Weilandt's method for
+        calculation the eigenvalue and
+        therefore will also add to the next fission bank as well
+
+    prevCycle: The previous cycle number
+    curCycle: The current cycle number
+    kEigen: A list of previous k-eigenvalue estimates
+    FBank: The fission bank for previous eigenvalue estimates
+    Histories: The number of histories to run in this cycle
+    Width: The width of the multiplying slab
+    xS, xG, xF: Scattering, Radiative Capture, and Fission cross sections
+    xA, xT: Absorptiona and Total cross sections
+    nu: Average number of fission neutrons
+    """
+    kWeilandt = 2
+    FBank.append([])
+
+    WeilandtBank = []
+    for Location in FBank[prevCycle]:
+        SolveBoltzman(kEigen, kWeilandt, prevCycle, FBank[prevCycle + 1],
+                WeilandtBank, Location, Width, xS, xG, xF, nu, xT,
+                xA, "Normal")
+
+    for Location in WeilandtBank:
+        SolveBoltzman(kEigen, kWeilandt, prevCycle, FBank[prevCycle + 1],
+                WeilandtBank, Location, Width, xS, xG, xF, nu, xT,
+                xA, "Weilandt")
+
+    # New eigenvalue estimate
+    kEigen.append(kEigen[prevCycle]*(len(FBank[curCycle]))/(Histories+len(WeilandtBank)))
+
+
+def SolveBoltzman(kEigen, kWeilandt, curCycle, FBank, WBank, Location, Width, 
+        xS, xG, xF, nu, xT, xA, ParticleType):
+    """
+    This function will perform the necessary steps to solve the Boltzman
+    equation for the current history.
+
+    kEigen: A list of previous k-eigenvalue estimates
+    kWeilandt: The Weilandt multiplication number
+    curCycle: The cycle from which we are currently sampling 
+    FBank: The fission bank for the next cycle
+    WBank: Weilandt Bank
+    Location: Location of particle
+    Histories: The number of histories to run in this cycle
+    Width: The width of the multiplying slab
+    xS, xG, xF: Scattering, Radiative Capture, and Fission cross sections
+    xA, xT: Absorptiona and Total cross sections
+    nu: Average number of fission neutrons
+    ParticleType: Either "Normal" or "Weilandt" 
+    """
+    # Transport Particle
+    (Location, Escaped, Absorbed) = Transport(Width, xS, xA, xT, Location) 
+
+    if not Escaped:
+        if Absorbed:   # Particle was absorbed
+            nextBankNeutrons = int((1/kEigen[curCycle] - 1/kWeilandt)*
+                    (nu*xF/xA) + random.random())
+            WeilandtNeutrons = int(1/kWeilandt*(nu*xF/xA) +
+                    random.random())
+
+            for y in xrange(WeilandtNeutrons):
+                # Fission neutrons to previous fission bank
+                FBank.append(Location)
+
+            if ParticleType == "Normal":
+                for y in xrange(nextBankNeutrons):
+                    # Fission neutrons to next fission bank
+                    FBank.append(Location)
+            else:   # ParticleType == "Weilandt"
+                for y in xrange(nextBankNeutrons):
+                    # Fission neutrons to next fission bank
+                    WBank.append(Location)
+
+        #else:  Particle was not absorbed.  Do nothing.
+   #else     Particle leaked out.  Do nothing with fission bank
+            
+
+
+def Transport(Width, xS, xA, xT, Location):
+    """
+    This function will transport a particle. The function returns three things
+    in a tuple; the location of the particle, whether the particle escaped the
+    geometry and whether or not the particle was absorbed. 
+
+    Width: The width of the multiplying slab
+    xS, xA, xT: Scattering, Absorption, and Total cross sections
+    Location: The location of the particle
+    Direction: The direction of the particle
+    """
+    for i in xrange(100):
+        # Move particle
+#       Location =  Location - Direction*(xT*math.log(random.random()))
+        Location = Move(Location, xT)
+        if not Escaped(Location, Width):  # Particle still in system
+            Interaction = random.random()
+            if Interaction*xT > xA:   # Scatter
+                Direction = random.choice([-1,1])   # Pick new direction
+            else:   # Absorption
+                return (Location, False, True)
+        else:   # Particle has "left the building"
+            return (Location, True, False)
+    return (Location, False, False)  # Particle remained in system, but scatter
+
+
+def Escaped(Location, Width):
+    """
+    This function will return a true if the particle has esacped the cubic
+    geometry defined by 
+    Width: The width of the cube
+    Location: A tuple defining where the particle is located
+    """
+    for coordinate in Location:
+        if coordinate < 0 or coordinate > Width:
+            return True
+    
+    return False    # Return this if particle is still in cube
+
+
+def Move(Location, xT):
+    """
+    This function will return the new location (as a tuple) of a particle after it has
+    isotropically scattered
+
+    Location: Location of particle before scattering
+    xT: Total cross section of medium
+    """
+    # Sample distance to collision
+    Distance = (1/xT)*math.log(random.random())
+
+    # Sample new direction
+    phi = 2*math.pi*random.random()
+    u = 2*random.random() - 1
+    v = math.sqrt(1-u*u)*math.cos(phi)
+    w = math.sqrt(1-u*u)*math.sin(phi)
+
+    # Move particle
+    x = Location[0] + Distance*u
+    y = Location[1] + Distance*v
+    z = Location[2] + Distance*w
+
+    return (x, y, z)
+
+
+def FixBank(Bank, Histories, x=-1):
+    """
+    This function will 'fix' the fission bank and make it an appropriate length.
+    The bank will be fixed by reducing the number of entries to Histories.  If
+    len(Bank[x]) < Histories, the bank will be expanded until 
+    len(Bank[x]) == Histories by randomly picking from the existing bank.
+
+    Bank: The bank to be fixed
+    Histories: The number of histories to be run in each cycle
+    x: The index of the bank corresponding to a monte carlo cycle.  If no x is
+        provided, assume last bank in list is to be fixed
+    """
+    Difference = len(Bank[x]) - Histories
+#   print "Len of Bank: %s" %len(Bank)
+#   print "Difference: %s" %Difference
+#   print "Len of Bank[x]: %s" %len(Bank[x])
+    if Difference < 0:  # More histories than entries in bank
+        AddToBank = []
+        for i in xrange(abs(Difference)):
+            AddToBank.append(random.choice(Bank[x]))  # Pick randomly from Bank
+        Bank[x].extend(AddToBank) # Add new (copied) sources to Bank[x]
+#       print "Len of AddToBank: %s" %len(AddToBank)
+
+    elif Difference > 0:  # More entries in bank than histories
+        # Pick histories randomly from bank
+        NewBank = random.sample(Bank[x], Histories)
+        Bank[x] = NewBank # Reassign new bank
+#   print "Post processing, Len of Bank[x]: %s\n" %len(Bank[x])
+        
+
+def Plotk(kEstimate1, kEstimate2):
+    Gplot1 = Gnuplot.Data(kEstimate1, with="lines", title='Power-3D')
+    Gplot2 = Gnuplot.Data(kEstimate2, with="lines", title='Weilandt-3D')
+    G = Gnuplot.Gnuplot(debug=1)
+#   G.set_range('yrange',(1.1,1.4))
+    plots = (Gplot1, Gplot2)
+    G.plot(Gplot1, Gplot2)
+
+def PlotBank(Bank):
+    Graph = Gnuplot.Gnuplot()
+    Graph("set pm3d")
+    os.mkdir("Plots")
+    i = 0
+    for entry in Bank:
+        i = i+1
+        BankPlot = Gnuplot.GridData(entry)
+        Graph.splot(BankPlot)
+        Graph.hardcopy("Bank%i.ps" %i, color=True)
+        os.system("ps2pdf Bank%i.ps Plots/Bank%i.pdf" %(i,i))
+        os.system("rm -f Bank*.ps")
+        Graph.clear
+#       time.sleep(.1)
+
+def BinBank(FissionBank, Width):
+    """
+    This function will take a fission bank and "bin it" into a 10x10x10 matrix
+    so it can be plotted.  
+
+    FissionBank: Fission bank
+    Width:  The width of the geometry
+    """
+
+    NumBins = 100
+
+    BinnedBank = []
+    for Bank in FissionBank:
+#       Coordinates = Numeric.zeros((NumBins,NumBins,NumBins))
+        Coordinates = Numeric.zeros((NumBins,NumBins))
+        for Location in Bank:
+            xBin = int((Location[0]/Width)*NumBins)
+            yBin = int((Location[1]/Width)*NumBins)
+#           zBin = int((Location[2]/Width)*NumBins)
+#           Coordinates[xBin,yBin,zBin] = Coordinates[xBin,yBin,zBin] + 1
+            Coordinates[xBin,yBin] = Coordinates[xBin,yBin] + 1
+#           print Coordinates[xBin,yBin,zBin]
+#       print Coordinates[-1]
+        BinnedBank.append(Coordinates)
+
+#   print BinnedBank[-1]
+    return BinnedBank
+
+
+
+
+
+main()

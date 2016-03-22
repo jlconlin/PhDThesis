@@ -1,0 +1,1293 @@
+
+------------------------------------------
+Don't Forget the following two commands:
+
+kinit -5 jlconlin
+aklog
+------------------------------------------
+
+I ran on:  /var/spool/PBS/aux//2639068.nyx.engin.umich.edu
+Running PowerResearch.
+
+Arguments:
+	source = Bank
+	run = true
+	filename = PowerBasic-w20.dat
+	multimedia = false
+	terminal = dumb
+	tol = 2.22045e-16
+	verbose = 2
+	seed = 0
+	width = 20
+	bins = 75
+	active = 1000
+	inactive = 250
+	tracks = 100000
+	ignore_rest = false
+	version = false
+	help = false
+
+Running the power method
+Master seed: 360076562
+Materials:
+[(nu: 5, xF: 0.2, xG: 0, xS: 0.8) , xA: 0.2, xT: 1]
+inactive:   0, H = 2.472, k =  2.053, time = 0.3237
+inactive:   1, H = 3.056, k =  3.287, time = 0.6535
+inactive:   2, H = 3.326, k =  3.904, time = 0.9863
+inactive:   3, H = 3.498, k =  4.241, time =  1.322
+inactive:   4, H = 3.617, k =  4.422, time =  1.663
+inactive:   5, H = 3.718, k =  4.529, time =  2.023
+inactive:   6, H =   3.8, k =  4.607, time =  2.383
+inactive:   7, H = 3.862, k =  4.656, time =  2.736
+inactive:   8, H = 3.916, k =  4.681, time =    3.1
+inactive:   9, H = 3.957, k =  4.718, time =  3.477
+inactive:  10, H = 3.999, k =   4.74, time =  3.854
+inactive:  11, H = 4.043, k =  4.765, time =  4.229
+inactive:  12, H = 4.069, k =  4.792, time =  4.606
+inactive:  13, H = 4.094, k =  4.776, time =  4.976
+inactive:  14, H = 4.114, k =  4.786, time =  5.341
+inactive:  15, H = 4.131, k =  4.805, time =   5.72
+inactive:  16, H = 4.144, k =  4.795, time =  6.097
+inactive:  17, H = 4.157, k =  4.802, time =  6.468
+inactive:  18, H =  4.17, k =  4.791, time =  6.841
+inactive:  19, H = 4.177, k =  4.822, time =  7.209
+inactive:  20, H = 4.184, k =   4.81, time =  7.577
+inactive:  21, H = 4.193, k =  4.819, time =  7.943
+inactive:  22, H = 4.195, k =  4.829, time =  8.311
+inactive:  23, H = 4.202, k =  4.871, time =  8.681
+inactive:  24, H = 4.207, k =  4.835, time =  9.043
+inactive:  25, H = 4.206, k =  4.862, time =  9.414
+inactive:  26, H = 4.211, k =  4.844, time =  9.789
+inactive:  27, H = 4.213, k =  4.801, time =  10.16
+inactive:  28, H = 4.213, k =  4.811, time =  10.53
+inactive:  29, H = 4.216, k =  4.836, time =   10.9
+inactive:  30, H = 4.215, k =  4.805, time =  11.27
+inactive:  31, H = 4.215, k =  4.826, time =  11.64
+inactive:  32, H = 4.215, k =  4.824, time =  12.01
+inactive:  33, H = 4.217, k =  4.841, time =  12.37
+inactive:  34, H = 4.219, k =   4.83, time =  12.74
+inactive:  35, H = 4.223, k =   4.84, time =  13.12
+inactive:  36, H = 4.224, k =  4.808, time =  13.49
+inactive:  37, H = 4.224, k =  4.778, time =  13.85
+inactive:  38, H = 4.224, k =  4.821, time =  14.22
+inactive:  39, H = 4.223, k =  4.834, time =  14.59
+inactive:  40, H = 4.222, k =  4.804, time =  14.97
+inactive:  41, H =  4.22, k =  4.825, time =  15.34
+inactive:  42, H =  4.22, k =  4.833, time =   15.7
+inactive:  43, H = 4.218, k =  4.851, time =  16.07
+inactive:  44, H =  4.22, k =  4.833, time =  16.44
+inactive:  45, H = 4.218, k =  4.794, time =  16.81
+inactive:  46, H = 4.216, k =  4.806, time =  17.18
+inactive:  47, H = 4.217, k =  4.836, time =  17.55
+inactive:  48, H = 4.216, k =  4.827, time =  17.92
+inactive:  49, H = 4.222, k =  4.802, time =  18.28
+inactive:  50, H = 4.224, k =  4.859, time =  18.65
+inactive:  51, H = 4.222, k =  4.781, time =  19.01
+inactive:  52, H = 4.224, k =  4.819, time =  19.37
+inactive:  53, H = 4.222, k =  4.801, time =  19.74
+inactive:  54, H = 4.224, k =  4.841, time =  20.11
+inactive:  55, H = 4.224, k =  4.817, time =  20.47
+inactive:  56, H = 4.224, k =  4.795, time =  20.84
+inactive:  57, H = 4.226, k =  4.798, time =  21.21
+inactive:  58, H = 4.225, k =  4.827, time =  21.57
+inactive:  59, H = 4.227, k =  4.821, time =  21.95
+inactive:  60, H = 4.223, k =   4.83, time =  22.31
+inactive:  61, H =  4.22, k =  4.866, time =  22.68
+inactive:  62, H =  4.22, k =  4.845, time =  23.04
+inactive:  63, H = 4.219, k =  4.804, time =  23.41
+inactive:  64, H = 4.219, k =  4.846, time =  23.77
+inactive:  65, H =  4.22, k =  4.827, time =  24.14
+inactive:  66, H =  4.22, k =  4.839, time =   24.5
+inactive:  67, H = 4.217, k =  4.851, time =  24.87
+inactive:  68, H = 4.221, k =  4.854, time =  25.23
+inactive:  69, H =  4.22, k =  4.827, time =  25.59
+inactive:  70, H = 4.225, k =  4.833, time =  25.96
+inactive:  71, H = 4.225, k =  4.826, time =  26.32
+inactive:  72, H = 4.223, k =  4.824, time =  26.69
+inactive:  73, H = 4.222, k =  4.802, time =  27.05
+inactive:  74, H = 4.221, k =  4.818, time =  27.41
+inactive:  75, H = 4.221, k =  4.793, time =  27.77
+inactive:  76, H = 4.216, k =  4.828, time =  28.13
+inactive:  77, H = 4.216, k =  4.823, time =   28.5
+inactive:  78, H = 4.216, k =  4.843, time =  28.86
+inactive:  79, H = 4.215, k =   4.82, time =  29.23
+inactive:  80, H = 4.214, k =  4.833, time =  29.59
+inactive:  81, H = 4.215, k =  4.833, time =  29.96
+inactive:  82, H = 4.217, k =  4.838, time =  30.32
+inactive:  83, H =  4.22, k =  4.816, time =   30.7
+inactive:  84, H = 4.221, k =  4.782, time =  31.06
+inactive:  85, H = 4.221, k =  4.831, time =  31.42
+inactive:  86, H = 4.221, k =   4.82, time =  31.78
+inactive:  87, H = 4.221, k =    4.8, time =  32.15
+inactive:  88, H = 4.217, k =  4.829, time =  32.52
+inactive:  89, H = 4.218, k =  4.866, time =  32.91
+inactive:  90, H =  4.22, k =  4.787, time =  33.28
+inactive:  91, H = 4.221, k =  4.845, time =  33.67
+inactive:  92, H = 4.222, k =  4.809, time =  34.06
+inactive:  93, H = 4.219, k =  4.826, time =  34.45
+inactive:  94, H =  4.22, k =  4.836, time =  34.84
+inactive:  95, H =  4.22, k =  4.801, time =  35.23
+inactive:  96, H = 4.218, k =  4.833, time =   35.6
+inactive:  97, H = 4.217, k =  4.802, time =  35.96
+inactive:  98, H = 4.219, k =  4.827, time =  36.34
+inactive:  99, H = 4.218, k =  4.792, time =   36.7
+inactive: 100, H =  4.22, k =  4.821, time =  37.07
+inactive: 101, H =  4.22, k =  4.834, time =  37.45
+inactive: 102, H = 4.217, k =  4.825, time =  37.83
+inactive: 103, H =  4.22, k =  4.839, time =  38.21
+inactive: 104, H = 4.221, k =  4.783, time =  38.58
+inactive: 105, H = 4.219, k =  4.821, time =  38.95
+inactive: 106, H = 4.219, k =  4.846, time =  39.32
+inactive: 107, H = 4.222, k =  4.845, time =  39.69
+inactive: 108, H = 4.223, k =  4.825, time =  40.06
+inactive: 109, H = 4.225, k =  4.851, time =  40.43
+inactive: 110, H = 4.224, k =  4.797, time =   40.8
+inactive: 111, H =  4.22, k =  4.813, time =  41.16
+inactive: 112, H = 4.219, k =  4.808, time =  41.52
+inactive: 113, H = 4.221, k =  4.835, time =  41.89
+inactive: 114, H = 4.222, k =  4.799, time =  42.28
+inactive: 115, H = 4.223, k =  4.841, time =  42.65
+inactive: 116, H = 4.221, k =  4.807, time =  43.02
+inactive: 117, H = 4.221, k =  4.803, time =  43.39
+inactive: 118, H =  4.22, k =   4.85, time =  43.76
+inactive: 119, H = 4.222, k =  4.814, time =  44.13
+inactive: 120, H = 4.224, k =  4.792, time =  44.51
+inactive: 121, H = 4.224, k =  4.828, time =  44.89
+inactive: 122, H = 4.221, k =  4.848, time =  45.27
+inactive: 123, H = 4.221, k =  4.828, time =  45.65
+inactive: 124, H = 4.222, k =  4.842, time =  46.03
+inactive: 125, H = 4.221, k =  4.814, time =  46.41
+inactive: 126, H = 4.223, k =  4.823, time =  46.78
+inactive: 127, H = 4.221, k =  4.832, time =  47.15
+inactive: 128, H = 4.223, k =  4.819, time =  47.52
+inactive: 129, H = 4.223, k =  4.798, time =  47.89
+inactive: 130, H = 4.226, k =  4.848, time =  48.26
+inactive: 131, H = 4.225, k =  4.807, time =  48.62
+inactive: 132, H = 4.218, k =  4.867, time =     49
+inactive: 133, H = 4.219, k =  4.828, time =  49.38
+inactive: 134, H = 4.219, k =  4.813, time =  49.75
+inactive: 135, H = 4.216, k =  4.826, time =  50.14
+inactive: 136, H = 4.219, k =  4.801, time =  50.52
+inactive: 137, H = 4.221, k =  4.844, time =  50.91
+inactive: 138, H =  4.22, k =  4.843, time =  51.29
+inactive: 139, H =  4.22, k =  4.831, time =  51.66
+inactive: 140, H = 4.218, k =  4.862, time =  52.04
+inactive: 141, H =  4.22, k =  4.818, time =  52.41
+inactive: 142, H =  4.22, k =  4.847, time =  52.79
+inactive: 143, H =  4.22, k =  4.805, time =  53.16
+inactive: 144, H = 4.221, k =    4.8, time =  53.54
+inactive: 145, H = 4.222, k =  4.829, time =  53.91
+inactive: 146, H = 4.222, k =  4.837, time =  54.29
+inactive: 147, H = 4.221, k =  4.841, time =  54.66
+inactive: 148, H = 4.223, k =  4.786, time =  55.04
+inactive: 149, H = 4.222, k =  4.804, time =  55.41
+inactive: 150, H =  4.22, k =   4.84, time =  55.78
+inactive: 151, H = 4.218, k =  4.858, time =  56.15
+inactive: 152, H = 4.219, k =   4.83, time =  56.51
+inactive: 153, H =  4.22, k =  4.842, time =  56.88
+inactive: 154, H = 4.221, k =   4.81, time =  57.25
+inactive: 155, H = 4.219, k =  4.808, time =  57.62
+inactive: 156, H = 4.218, k =  4.843, time =  57.98
+inactive: 157, H =  4.22, k =  4.806, time =  58.35
+inactive: 158, H = 4.221, k =   4.84, time =  58.72
+inactive: 159, H =  4.22, k =  4.819, time =  59.09
+inactive: 160, H = 4.222, k =  4.844, time =  59.46
+inactive: 161, H = 4.223, k =  4.842, time =  59.83
+inactive: 162, H = 4.225, k =  4.809, time =  60.19
+inactive: 163, H = 4.223, k =  4.807, time =  60.56
+inactive: 164, H = 4.221, k =  4.817, time =  60.93
+inactive: 165, H =  4.22, k =  4.854, time =  61.29
+inactive: 166, H = 4.222, k =  4.793, time =  61.66
+inactive: 167, H = 4.225, k =  4.835, time =  62.02
+inactive: 168, H = 4.223, k =  4.806, time =  62.39
+inactive: 169, H =  4.22, k =  4.832, time =  62.76
+inactive: 170, H =  4.22, k =  4.819, time =  63.12
+inactive: 171, H = 4.219, k =  4.828, time =  63.49
+inactive: 172, H =  4.22, k =  4.834, time =  63.85
+inactive: 173, H = 4.218, k =  4.822, time =  64.22
+inactive: 174, H =  4.22, k =  4.855, time =  64.58
+inactive: 175, H = 4.221, k =  4.814, time =  64.95
+inactive: 176, H = 4.222, k =  4.823, time =  65.31
+inactive: 177, H =  4.22, k =  4.827, time =  65.69
+inactive: 178, H = 4.221, k =  4.823, time =  66.06
+inactive: 179, H =  4.22, k =  4.835, time =  66.44
+inactive: 180, H =  4.22, k =  4.831, time =  66.83
+inactive: 181, H = 4.219, k =  4.845, time =  67.21
+inactive: 182, H = 4.216, k =   4.81, time =  67.59
+inactive: 183, H = 4.219, k =  4.821, time =  67.98
+inactive: 184, H = 4.217, k =  4.839, time =  68.37
+inactive: 185, H = 4.216, k =  4.808, time =  68.75
+inactive: 186, H = 4.217, k =  4.849, time =  69.12
+inactive: 187, H = 4.217, k =  4.834, time =   69.5
+inactive: 188, H = 4.218, k =   4.81, time =  69.88
+inactive: 189, H = 4.219, k =  4.821, time =  70.25
+inactive: 190, H = 4.222, k =  4.825, time =  70.63
+inactive: 191, H = 4.224, k =  4.837, time =     71
+inactive: 192, H = 4.225, k =  4.868, time =  71.37
+inactive: 193, H = 4.222, k =  4.833, time =  71.75
+inactive: 194, H = 4.218, k =  4.811, time =  72.12
+inactive: 195, H = 4.216, k =  4.849, time =   72.5
+inactive: 196, H = 4.216, k =  4.816, time =  72.87
+inactive: 197, H = 4.217, k =  4.831, time =  73.24
+inactive: 198, H = 4.215, k =  4.823, time =  73.61
+inactive: 199, H = 4.215, k =  4.824, time =  73.98
+inactive: 200, H = 4.214, k =  4.866, time =  74.35
+inactive: 201, H = 4.216, k =  4.852, time =  74.71
+inactive: 202, H = 4.216, k =  4.859, time =  75.09
+inactive: 203, H =  4.22, k =  4.824, time =  75.46
+inactive: 204, H = 4.219, k =  4.847, time =  75.83
+inactive: 205, H =  4.22, k =   4.86, time =  76.21
+inactive: 206, H = 4.219, k =  4.828, time =  76.59
+inactive: 207, H = 4.221, k =  4.825, time =  76.96
+inactive: 208, H =  4.22, k =  4.816, time =  77.33
+inactive: 209, H = 4.222, k =  4.826, time =   77.7
+inactive: 210, H = 4.219, k =  4.848, time =  78.08
+inactive: 211, H = 4.225, k =  4.827, time =  78.45
+inactive: 212, H = 4.226, k =  4.813, time =  78.83
+inactive: 213, H = 4.226, k =  4.853, time =  79.21
+inactive: 214, H = 4.223, k =  4.789, time =  79.59
+inactive: 215, H = 4.222, k =  4.812, time =  79.96
+inactive: 216, H = 4.223, k =  4.839, time =  80.33
+inactive: 217, H =  4.22, k =  4.838, time =   80.7
+inactive: 218, H = 4.216, k =  4.843, time =  81.08
+inactive: 219, H = 4.217, k =  4.847, time =  81.45
+inactive: 220, H =  4.22, k =  4.846, time =  81.81
+inactive: 221, H = 4.221, k =  4.822, time =  82.18
+inactive: 222, H = 4.222, k =  4.829, time =  82.57
+inactive: 223, H = 4.227, k =  4.833, time =  82.96
+inactive: 224, H = 4.224, k =  4.814, time =  83.33
+inactive: 225, H = 4.224, k =  4.827, time =  83.71
+inactive: 226, H = 4.224, k =  4.858, time =  84.09
+inactive: 227, H = 4.224, k =  4.808, time =  84.46
+inactive: 228, H = 4.223, k =  4.815, time =  84.83
+inactive: 229, H = 4.224, k =  4.829, time =   85.2
+inactive: 230, H = 4.226, k =  4.835, time =  85.57
+inactive: 231, H = 4.222, k =  4.812, time =  85.94
+inactive: 232, H = 4.222, k =  4.849, time =   86.3
+inactive: 233, H = 4.223, k =  4.826, time =  86.67
+inactive: 234, H = 4.221, k =  4.847, time =  87.05
+inactive: 235, H = 4.223, k =  4.842, time =  87.43
+inactive: 236, H =  4.22, k =  4.855, time =  87.82
+inactive: 237, H = 4.222, k =  4.829, time =  88.19
+inactive: 238, H =  4.22, k =  4.829, time =  88.55
+inactive: 239, H = 4.215, k =  4.849, time =  88.93
+inactive: 240, H = 4.215, k =   4.85, time =   89.3
+inactive: 241, H = 4.221, k =  4.831, time =  89.67
+inactive: 242, H = 4.221, k =  4.855, time =  90.04
+inactive: 243, H = 4.222, k =  4.811, time =  90.41
+inactive: 244, H = 4.219, k =  4.814, time =  90.77
+inactive: 245, H = 4.221, k =  4.797, time =  91.14
+inactive: 246, H = 4.223, k =  4.815, time =  91.51
+inactive: 247, H = 4.224, k =  4.836, time =  91.88
+inactive: 248, H = 4.224, k =  4.839, time =  92.25
+inactive: 249, H = 4.223, k =   4.78, time =  92.62
+--------------ACTIVE ITERATIONS--------------------------
+active:    0, H = 4.225, k =  4.845, mean k =  4.845, std.dev. =       0, time:  92.98, FOM =      0
+active:    1, H = 4.225, k =  4.789, mean k =  4.817, std.dev. =  0.0198, time:  93.35, FOM =  27.32
+active:    2, H = 4.225, k =  4.824, mean k =   4.82, std.dev. =  0.0133, time:  93.72, FOM =  59.94
+active:    3, H = 4.225, k =  4.837, mean k =  4.824, std.dev. =  0.0107, time:  94.09, FOM =  92.67
+active:    4, H = 4.226, k =  4.846, mean k =  4.828, std.dev. =  0.0094, time:  94.46, FOM =  119.8
+active:    5, H = 4.225, k =  4.828, mean k =  4.828, std.dev. = 0.00783, time:  94.82, FOM =  171.8
+active:    6, H = 4.224, k =   4.85, mean k =  4.831, std.dev. = 0.00731, time:   95.2, FOM =  196.6
+active:    7, H = 4.223, k =  4.846, mean k =  4.833, std.dev. = 0.00661, time:  95.57, FOM =  239.5
+active:    8, H = 4.224, k =   4.82, mean k =  4.832, std.dev. = 0.00604, time:  95.95, FOM =    286
+active:    9, H = 4.222, k =  4.853, mean k =  4.834, std.dev. = 0.00581, time:  96.33, FOM =  307.3
+active:   10, H = 4.224, k =  4.807, mean k =  4.831, std.dev. = 0.00579, time:   96.7, FOM =  308.6
+active:   11, H = 4.224, k =  4.846, mean k =  4.833, std.dev. = 0.00544, time:  97.08, FOM =  348.5
+active:   12, H = 4.223, k =  4.827, mean k =  4.832, std.dev. = 0.00503, time:  97.45, FOM =  404.8
+active:   13, H =  4.22, k =  4.829, mean k =  4.832, std.dev. = 0.00468, time:  97.82, FOM =  466.5
+active:   14, H = 4.222, k =  4.803, mean k =   4.83, std.dev. = 0.00475, time:   98.2, FOM =  451.9
+active:   15, H = 4.221, k =  4.837, mean k =   4.83, std.dev. = 0.00447, time:  98.57, FOM =  507.3
+active:   16, H = 4.218, k =   4.81, mean k =  4.829, std.dev. = 0.00437, time:  98.94, FOM =    530
+active:   17, H = 4.222, k =  4.824, mean k =  4.829, std.dev. = 0.00413, time:  99.32, FOM =  589.3
+active:   18, H = 4.222, k =  4.815, mean k =  4.828, std.dev. = 0.00398, time:  99.69, FOM =    634
+active:   19, H = 4.224, k =  4.825, mean k =  4.828, std.dev. = 0.00378, time:  100.1, FOM =  698.5
+active:   20, H = 4.224, k =  4.825, mean k =  4.828, std.dev. = 0.00361, time:  100.4, FOM =  765.8
+active:   21, H = 4.225, k =  4.843, mean k =  4.829, std.dev. = 0.00351, time:  100.8, FOM =  804.8
+active:   22, H = 4.224, k =  4.823, mean k =  4.828, std.dev. = 0.00337, time:  101.2, FOM =  871.2
+active:   23, H = 4.224, k =    4.8, mean k =  4.827, std.dev. = 0.00343, time:  101.6, FOM =  835.3
+active:   24, H = 4.223, k =  4.796, mean k =  4.826, std.dev. = 0.00352, time:    102, FOM =  790.8
+active:   25, H = 4.223, k =  4.778, mean k =  4.824, std.dev. = 0.00383, time:  102.4, FOM =  664.8
+active:   26, H =  4.22, k =  4.814, mean k =  4.824, std.dev. = 0.00371, time:  102.7, FOM =  707.9
+active:   27, H = 4.223, k =  4.808, mean k =  4.823, std.dev. = 0.00362, time:  103.1, FOM =  741.7
+active:   28, H = 4.222, k =  4.818, mean k =  4.823, std.dev. =  0.0035, time:  103.5, FOM =  790.5
+active:   29, H =  4.22, k =  4.846, mean k =  4.824, std.dev. = 0.00346, time:  103.9, FOM =  803.7
+active:   30, H = 4.218, k =  4.837, mean k =  4.824, std.dev. = 0.00338, time:  104.2, FOM =  840.9
+active:   31, H =  4.22, k =   4.81, mean k =  4.824, std.dev. =  0.0033, time:  104.6, FOM =  876.9
+active:   32, H = 4.218, k =  4.833, mean k =  4.824, std.dev. = 0.00321, time:    105, FOM =  922.6
+active:   33, H = 4.216, k =  4.835, mean k =  4.824, std.dev. = 0.00313, time:  105.4, FOM =  965.8
+active:   34, H = 4.216, k =  4.824, mean k =  4.824, std.dev. = 0.00305, time:  105.7, FOM =   1020
+active:   35, H = 4.217, k =  4.804, mean k =  4.824, std.dev. = 0.00301, time:  106.1, FOM =   1038
+active:   36, H = 4.217, k =  4.828, mean k =  4.824, std.dev. = 0.00293, time:  106.5, FOM =   1091
+active:   37, H = 4.219, k =  4.816, mean k =  4.824, std.dev. = 0.00286, time:  106.8, FOM =   1141
+active:   38, H = 4.221, k =  4.826, mean k =  4.824, std.dev. = 0.00279, time:  107.2, FOM =   1197
+active:   39, H = 4.224, k =  4.852, mean k =  4.824, std.dev. = 0.00281, time:  107.6, FOM =   1176
+active:   40, H = 4.219, k =  4.795, mean k =  4.824, std.dev. = 0.00283, time:    108, FOM =   1154
+active:   41, H = 4.219, k =  4.851, mean k =  4.824, std.dev. = 0.00284, time:  108.4, FOM =   1147
+active:   42, H =  4.22, k =   4.81, mean k =  4.824, std.dev. = 0.00279, time:  108.7, FOM =   1182
+active:   43, H =  4.22, k =  4.829, mean k =  4.824, std.dev. = 0.00273, time:  109.1, FOM =   1231
+active:   44, H =  4.22, k =  4.832, mean k =  4.824, std.dev. = 0.00267, time:  109.5, FOM =   1278
+active:   45, H = 4.221, k =  4.869, mean k =  4.825, std.dev. = 0.00278, time:  109.8, FOM =   1175
+active:   46, H = 4.219, k =  4.835, mean k =  4.826, std.dev. = 0.00273, time:  110.2, FOM =   1216
+active:   47, H =  4.22, k =  4.869, mean k =  4.826, std.dev. = 0.00282, time:  110.6, FOM =   1134
+active:   48, H = 4.224, k =   4.83, mean k =  4.826, std.dev. = 0.00277, time:    111, FOM =   1177
+active:   49, H = 4.222, k =  4.864, mean k =  4.827, std.dev. = 0.00281, time:  111.3, FOM =   1134
+active:   50, H = 4.223, k =  4.832, mean k =  4.827, std.dev. = 0.00276, time:  111.7, FOM =   1175
+active:   51, H = 4.224, k =  4.844, mean k =  4.828, std.dev. = 0.00273, time:  112.1, FOM =   1201
+active:   52, H = 4.222, k =  4.816, mean k =  4.827, std.dev. = 0.00268, time:  112.4, FOM =   1235
+active:   53, H = 4.221, k =  4.852, mean k =  4.828, std.dev. = 0.00267, time:  112.8, FOM =   1241
+active:   54, H =  4.22, k =   4.83, mean k =  4.828, std.dev. = 0.00262, time:  113.2, FOM =   1283
+active:   55, H = 4.219, k =  4.812, mean k =  4.828, std.dev. = 0.00259, time:  113.6, FOM =   1309
+active:   56, H =  4.22, k =  4.838, mean k =  4.828, std.dev. = 0.00256, time:  113.9, FOM =   1345
+active:   57, H = 4.221, k =  4.813, mean k =  4.828, std.dev. = 0.00252, time:  114.3, FOM =   1374
+active:   58, H = 4.222, k =  4.812, mean k =  4.827, std.dev. = 0.00249, time:  114.7, FOM =   1401
+active:   59, H = 4.219, k =  4.845, mean k =  4.828, std.dev. = 0.00247, time:    115, FOM =   1425
+active:   60, H =  4.22, k =  4.836, mean k =  4.828, std.dev. = 0.00243, time:  115.4, FOM =   1463
+active:   61, H = 4.219, k =  4.818, mean k =  4.828, std.dev. =  0.0024, time:  115.8, FOM =   1501
+active:   62, H = 4.218, k =  4.825, mean k =  4.828, std.dev. = 0.00236, time:  116.1, FOM =   1544
+active:   63, H = 4.214, k =  4.835, mean k =  4.828, std.dev. = 0.00233, time:  116.5, FOM =   1585
+active:   64, H = 4.217, k =   4.84, mean k =  4.828, std.dev. =  0.0023, time:  116.9, FOM =   1619
+active:   65, H = 4.217, k =  4.807, mean k =  4.828, std.dev. = 0.00229, time:  117.3, FOM =   1632
+active:   66, H = 4.217, k =   4.88, mean k =  4.828, std.dev. = 0.00238, time:  117.7, FOM =   1498
+active:   67, H =  4.22, k =  4.821, mean k =  4.828, std.dev. = 0.00235, time:  118.1, FOM =   1535
+active:   68, H = 4.221, k =  4.845, mean k =  4.828, std.dev. = 0.00233, time:  118.5, FOM =   1559
+active:   69, H = 4.219, k =  4.809, mean k =  4.828, std.dev. = 0.00231, time:  118.8, FOM =   1576
+active:   70, H = 4.222, k =  4.833, mean k =  4.828, std.dev. = 0.00228, time:  119.2, FOM =   1615
+active:   71, H = 4.219, k =  4.806, mean k =  4.828, std.dev. = 0.00227, time:  119.6, FOM =   1624
+active:   72, H = 4.219, k =  4.787, mean k =  4.827, std.dev. = 0.00231, time:  119.9, FOM =   1566
+active:   73, H = 4.221, k =  4.791, mean k =  4.827, std.dev. = 0.00233, time:  120.3, FOM =   1535
+active:   74, H = 4.219, k =  4.822, mean k =  4.827, std.dev. =  0.0023, time:  120.7, FOM =   1571
+active:   75, H = 4.218, k =  4.853, mean k =  4.827, std.dev. = 0.00229, time:  121.1, FOM =   1571
+active:   76, H = 4.214, k =  4.835, mean k =  4.827, std.dev. = 0.00227, time:  121.4, FOM =   1605
+active:   77, H = 4.214, k =  4.842, mean k =  4.827, std.dev. = 0.00224, time:  121.8, FOM =   1630
+active:   78, H = 4.214, k =  4.842, mean k =  4.828, std.dev. = 0.00222, time:  122.2, FOM =   1656
+active:   79, H =  4.22, k =   4.82, mean k =  4.828, std.dev. =  0.0022, time:  122.6, FOM =   1690
+active:   80, H = 4.217, k =  4.842, mean k =  4.828, std.dev. = 0.00218, time:  122.9, FOM =   1716
+active:   81, H = 4.222, k =  4.806, mean k =  4.827, std.dev. = 0.00217, time:  123.3, FOM =   1728
+active:   82, H = 4.223, k =   4.82, mean k =  4.827, std.dev. = 0.00214, time:  123.6, FOM =   1763
+active:   83, H = 4.221, k =  4.836, mean k =  4.827, std.dev. = 0.00212, time:    124, FOM =   1796
+active:   84, H =  4.22, k =  4.823, mean k =  4.827, std.dev. = 0.00209, time:  124.4, FOM =   1832
+active:   85, H =  4.22, k =   4.82, mean k =  4.827, std.dev. = 0.00207, time:  124.8, FOM =   1867
+active:   86, H = 4.221, k =  4.846, mean k =  4.828, std.dev. = 0.00206, time:  125.1, FOM =   1885
+active:   87, H = 4.221, k =  4.826, mean k =  4.828, std.dev. = 0.00204, time:  125.5, FOM =   1923
+active:   88, H = 4.219, k =  4.815, mean k =  4.827, std.dev. = 0.00202, time:  125.9, FOM =   1951
+active:   89, H = 4.219, k =  4.818, mean k =  4.827, std.dev. =   0.002, time:  126.2, FOM =   1984
+active:   90, H =  4.22, k =  4.799, mean k =  4.827, std.dev. =   0.002, time:  126.6, FOM =   1974
+active:   91, H = 4.223, k =  4.811, mean k =  4.827, std.dev. = 0.00199, time:    127, FOM =   1997
+active:   92, H = 4.225, k =   4.85, mean k =  4.827, std.dev. = 0.00198, time:  127.3, FOM =   2002
+active:   93, H = 4.224, k =  4.823, mean k =  4.827, std.dev. = 0.00196, time:  127.7, FOM =   2038
+active:   94, H = 4.225, k =  4.831, mean k =  4.827, std.dev. = 0.00194, time:  128.1, FOM =   2075
+active:   95, H = 4.223, k =  4.842, mean k =  4.827, std.dev. = 0.00193, time:  128.4, FOM =   2099
+active:   96, H = 4.225, k =  4.844, mean k =  4.827, std.dev. = 0.00191, time:  128.8, FOM =   2119
+active:   97, H = 4.224, k =  4.832, mean k =  4.827, std.dev. =  0.0019, time:  129.1, FOM =   2156
+active:   98, H = 4.226, k =  4.804, mean k =  4.827, std.dev. = 0.00189, time:  129.5, FOM =   2159
+active:   99, H = 4.225, k =  4.836, mean k =  4.827, std.dev. = 0.00187, time:  129.9, FOM =   2192
+active:  100, H = 4.226, k =  4.837, mean k =  4.827, std.dev. = 0.00186, time:  130.3, FOM =   2223
+active:  101, H = 4.226, k =   4.78, mean k =  4.827, std.dev. =  0.0019, time:  130.6, FOM =   2125
+active:  102, H = 4.225, k =  4.852, mean k =  4.827, std.dev. = 0.00189, time:    131, FOM =   2127
+active:  103, H = 4.223, k =  4.814, mean k =  4.827, std.dev. = 0.00188, time:  131.4, FOM =   2153
+active:  104, H = 4.221, k =  4.816, mean k =  4.827, std.dev. = 0.00187, time:  131.8, FOM =   2181
+active:  105, H = 4.221, k =  4.797, mean k =  4.827, std.dev. = 0.00187, time:  132.1, FOM =   2167
+active:  106, H = 4.221, k =  4.868, mean k =  4.827, std.dev. = 0.00189, time:  132.5, FOM =   2111
+active:  107, H = 4.221, k =  4.808, mean k =  4.827, std.dev. = 0.00188, time:  132.9, FOM =   2126
+active:  108, H = 4.217, k =  4.802, mean k =  4.827, std.dev. = 0.00188, time:  133.2, FOM =   2129
+active:  109, H = 4.217, k =  4.864, mean k =  4.827, std.dev. = 0.00189, time:  133.6, FOM =   2094
+active:  110, H = 4.218, k =  4.837, mean k =  4.827, std.dev. = 0.00188, time:    134, FOM =   2122
+active:  111, H = 4.217, k =  4.819, mean k =  4.827, std.dev. = 0.00186, time:  134.4, FOM =   2151
+active:  112, H = 4.219, k =   4.84, mean k =  4.827, std.dev. = 0.00185, time:  134.7, FOM =   2175
+active:  113, H =  4.22, k =  4.819, mean k =  4.827, std.dev. = 0.00183, time:  135.1, FOM =   2204
+active:  114, H = 4.222, k =  4.821, mean k =  4.827, std.dev. = 0.00182, time:  135.5, FOM =   2235
+active:  115, H = 4.222, k =  4.821, mean k =  4.827, std.dev. =  0.0018, time:  135.8, FOM =   2266
+active:  116, H = 4.223, k =  4.803, mean k =  4.827, std.dev. =  0.0018, time:  136.2, FOM =   2269
+active:  117, H = 4.223, k =  4.785, mean k =  4.826, std.dev. = 0.00182, time:  136.6, FOM =   2214
+active:  118, H = 4.222, k =  4.834, mean k =  4.826, std.dev. =  0.0018, time:    137, FOM =   2243
+active:  119, H = 4.223, k =  4.818, mean k =  4.826, std.dev. = 0.00179, time:  137.4, FOM =   2271
+active:  120, H = 4.221, k =  4.829, mean k =  4.826, std.dev. = 0.00178, time:  137.7, FOM =   2302
+active:  121, H = 4.221, k =  4.837, mean k =  4.826, std.dev. = 0.00176, time:  138.1, FOM =   2328
+active:  122, H = 4.219, k =  4.827, mean k =  4.826, std.dev. = 0.00175, time:  138.5, FOM =   2360
+active:  123, H = 4.218, k =  4.831, mean k =  4.826, std.dev. = 0.00174, time:  138.9, FOM =   2391
+active:  124, H = 4.221, k =   4.81, mean k =  4.826, std.dev. = 0.00173, time:  139.2, FOM =   2409
+active:  125, H = 4.221, k =  4.813, mean k =  4.826, std.dev. = 0.00172, time:  139.6, FOM =   2432
+active:  126, H = 4.224, k =  4.812, mean k =  4.826, std.dev. = 0.00171, time:    140, FOM =   2453
+active:  127, H = 4.223, k =    4.8, mean k =  4.826, std.dev. =  0.0017, time:  140.3, FOM =   2451
+active:  128, H = 4.223, k =  4.839, mean k =  4.826, std.dev. = 0.00169, time:  140.7, FOM =   2475
+active:  129, H = 4.226, k =  4.787, mean k =  4.826, std.dev. = 0.00171, time:  141.1, FOM =   2428
+active:  130, H = 4.226, k =  4.798, mean k =  4.826, std.dev. = 0.00171, time:  141.5, FOM =   2421
+active:  131, H = 4.226, k =  4.806, mean k =  4.825, std.dev. =  0.0017, time:  141.8, FOM =   2433
+active:  132, H = 4.226, k =  4.813, mean k =  4.825, std.dev. = 0.00169, time:  142.2, FOM =   2456
+active:  133, H = 4.223, k =   4.86, mean k =  4.826, std.dev. =  0.0017, time:  142.6, FOM =   2429
+active:  134, H = 4.221, k =  4.824, mean k =  4.826, std.dev. = 0.00169, time:    143, FOM =   2458
+active:  135, H = 4.224, k =  4.806, mean k =  4.825, std.dev. = 0.00168, time:  143.3, FOM =   2471
+active:  136, H = 4.222, k =  4.846, mean k =  4.826, std.dev. = 0.00167, time:  143.7, FOM =   2480
+active:  137, H = 4.219, k =  4.789, mean k =  4.825, std.dev. = 0.00168, time:  144.1, FOM =   2448
+active:  138, H = 4.218, k =  4.843, mean k =  4.825, std.dev. = 0.00168, time:  144.5, FOM =   2464
+active:  139, H = 4.219, k =  4.809, mean k =  4.825, std.dev. = 0.00167, time:  144.8, FOM =   2481
+active:  140, H = 4.216, k =  4.866, mean k =  4.826, std.dev. = 0.00168, time:  145.2, FOM =   2436
+active:  141, H = 4.218, k =   4.84, mean k =  4.826, std.dev. = 0.00167, time:  145.6, FOM =   2456
+active:  142, H = 4.221, k =  4.809, mean k =  4.826, std.dev. = 0.00166, time:    146, FOM =   2472
+active:  143, H = 4.221, k =   4.79, mean k =  4.825, std.dev. = 0.00167, time:  146.3, FOM =   2445
+active:  144, H = 4.221, k =  4.822, mean k =  4.825, std.dev. = 0.00166, time:  146.7, FOM =   2473
+active:  145, H = 4.218, k =  4.851, mean k =  4.825, std.dev. = 0.00166, time:  147.1, FOM =   2473
+active:  146, H = 4.219, k =  4.825, mean k =  4.825, std.dev. = 0.00165, time:  147.4, FOM =   2501
+active:  147, H = 4.216, k =  4.842, mean k =  4.826, std.dev. = 0.00164, time:  147.8, FOM =   2516
+active:  148, H = 4.216, k =  4.839, mean k =  4.826, std.dev. = 0.00163, time:  148.2, FOM =   2536
+active:  149, H = 4.218, k =  4.807, mean k =  4.826, std.dev. = 0.00163, time:  148.5, FOM =   2548
+active:  150, H = 4.217, k =  4.801, mean k =  4.825, std.dev. = 0.00162, time:  148.9, FOM =   2550
+active:  151, H = 4.218, k =  4.872, mean k =  4.826, std.dev. = 0.00164, time:  149.3, FOM =   2487
+active:  152, H = 4.218, k =  4.856, mean k =  4.826, std.dev. = 0.00164, time:  149.6, FOM =   2478
+active:  153, H = 4.218, k =  4.848, mean k =  4.826, std.dev. = 0.00164, time:    150, FOM =   2485
+active:  154, H = 4.217, k =  4.807, mean k =  4.826, std.dev. = 0.00163, time:  150.4, FOM =   2497
+active:  155, H = 4.216, k =  4.821, mean k =  4.826, std.dev. = 0.00162, time:  150.7, FOM =   2522
+active:  156, H = 4.218, k =  4.852, mean k =  4.826, std.dev. = 0.00162, time:  151.1, FOM =   2521
+active:  157, H = 4.221, k =  4.824, mean k =  4.826, std.dev. = 0.00161, time:  151.5, FOM =   2547
+active:  158, H = 4.221, k =  4.811, mean k =  4.826, std.dev. =  0.0016, time:  151.9, FOM =   2564
+active:  159, H = 4.223, k =  4.817, mean k =  4.826, std.dev. = 0.00159, time:  152.3, FOM =   2587
+active:  160, H = 4.222, k =  4.832, mean k =  4.826, std.dev. = 0.00158, time:  152.6, FOM =   2611
+active:  161, H = 4.225, k =  4.822, mean k =  4.826, std.dev. = 0.00157, time:    153, FOM =   2637
+active:  162, H = 4.225, k =   4.81, mean k =  4.826, std.dev. = 0.00157, time:  153.4, FOM =   2653
+active:  163, H = 4.223, k =  4.825, mean k =  4.826, std.dev. = 0.00156, time:  153.7, FOM =   2679
+active:  164, H = 4.222, k =  4.845, mean k =  4.826, std.dev. = 0.00155, time:  154.1, FOM =   2691
+active:  165, H = 4.221, k =  4.803, mean k =  4.826, std.dev. = 0.00155, time:  154.5, FOM =   2695
+active:  166, H = 4.225, k =   4.86, mean k =  4.826, std.dev. = 0.00155, time:  154.8, FOM =   2673
+active:  167, H = 4.223, k =  4.827, mean k =  4.826, std.dev. = 0.00155, time:  155.2, FOM =   2699
+active:  168, H = 4.221, k =  4.826, mean k =  4.826, std.dev. = 0.00154, time:  155.6, FOM =   2724
+active:  169, H = 4.223, k =  4.809, mean k =  4.826, std.dev. = 0.00153, time:  155.9, FOM =   2739
+active:  170, H = 4.227, k =  4.849, mean k =  4.826, std.dev. = 0.00153, time:  156.3, FOM =   2743
+active:  171, H = 4.229, k =  4.843, mean k =  4.826, std.dev. = 0.00152, time:  156.7, FOM =   2757
+active:  172, H = 4.222, k =   4.82, mean k =  4.826, std.dev. = 0.00151, time:    157, FOM =   2781
+active:  173, H = 4.225, k =  4.875, mean k =  4.826, std.dev. = 0.00153, time:  157.4, FOM =   2712
+active:  174, H = 4.222, k =  4.793, mean k =  4.826, std.dev. = 0.00153, time:  157.8, FOM =   2694
+active:  175, H = 4.221, k =  4.826, mean k =  4.826, std.dev. = 0.00153, time:  158.1, FOM =   2718
+active:  176, H = 4.222, k =  4.814, mean k =  4.826, std.dev. = 0.00152, time:  158.5, FOM =   2738
+active:  177, H = 4.218, k =  4.828, mean k =  4.826, std.dev. = 0.00151, time:  158.9, FOM =   2762
+active:  178, H =  4.22, k =  4.826, mean k =  4.826, std.dev. =  0.0015, time:  159.3, FOM =   2787
+active:  179, H = 4.223, k =  4.786, mean k =  4.826, std.dev. = 0.00151, time:  159.6, FOM =   2751
+active:  180, H = 4.222, k =  4.838, mean k =  4.826, std.dev. =  0.0015, time:    160, FOM =   2770
+active:  181, H = 4.223, k =  4.821, mean k =  4.826, std.dev. = 0.00149, time:  160.4, FOM =   2794
+active:  182, H = 4.227, k =  4.822, mean k =  4.826, std.dev. = 0.00149, time:  160.7, FOM =   2818
+active:  183, H = 4.227, k =  4.827, mean k =  4.826, std.dev. = 0.00148, time:  161.1, FOM =   2842
+active:  184, H = 4.222, k =  4.843, mean k =  4.826, std.dev. = 0.00147, time:  161.5, FOM =   2855
+active:  185, H = 4.224, k =  4.803, mean k =  4.826, std.dev. = 0.00147, time:  161.8, FOM =   2858
+active:  186, H = 4.223, k =  4.825, mean k =  4.826, std.dev. = 0.00146, time:  162.2, FOM =   2883
+active:  187, H = 4.223, k =  4.819, mean k =  4.826, std.dev. = 0.00146, time:  162.6, FOM =   2905
+active:  188, H = 4.222, k =   4.84, mean k =  4.826, std.dev. = 0.00145, time:  162.9, FOM =   2922
+active:  189, H =  4.22, k =  4.837, mean k =  4.826, std.dev. = 0.00144, time:  163.3, FOM =   2941
+active:  190, H = 4.219, k =  4.818, mean k =  4.826, std.dev. = 0.00144, time:  163.7, FOM =   2963
+active:  191, H = 4.219, k =  4.795, mean k =  4.826, std.dev. = 0.00144, time:    164, FOM =   2948
+active:  192, H = 4.218, k =  4.796, mean k =  4.826, std.dev. = 0.00144, time:  164.4, FOM =   2939
+active:  193, H = 4.219, k =  4.813, mean k =  4.826, std.dev. = 0.00143, time:  164.8, FOM =   2957
+active:  194, H = 4.218, k =    4.8, mean k =  4.825, std.dev. = 0.00143, time:  165.2, FOM =   2956
+active:  195, H = 4.218, k =  4.846, mean k =  4.826, std.dev. = 0.00143, time:  165.5, FOM =   2963
+active:  196, H = 4.219, k =  4.813, mean k =  4.825, std.dev. = 0.00142, time:  165.9, FOM =   2981
+active:  197, H = 4.219, k =  4.777, mean k =  4.825, std.dev. = 0.00144, time:  166.3, FOM =   2919
+active:  198, H = 4.216, k =  4.818, mean k =  4.825, std.dev. = 0.00143, time:  166.6, FOM =   2940
+active:  199, H =  4.22, k =  4.822, mean k =  4.825, std.dev. = 0.00142, time:    167, FOM =   2962
+active:  200, H = 4.218, k =  4.784, mean k =  4.825, std.dev. = 0.00143, time:  167.4, FOM =   2924
+active:  201, H = 4.219, k =  4.829, mean k =  4.825, std.dev. = 0.00142, time:  167.8, FOM =   2946
+active:  202, H = 4.218, k =  4.808, mean k =  4.825, std.dev. = 0.00142, time:  168.1, FOM =   2959
+active:  203, H = 4.217, k =  4.842, mean k =  4.825, std.dev. = 0.00141, time:  168.5, FOM =   2970
+active:  204, H = 4.216, k =  4.801, mean k =  4.825, std.dev. = 0.00141, time:  168.9, FOM =   2973
+active:  205, H = 4.218, k =  4.855, mean k =  4.825, std.dev. = 0.00141, time:  169.3, FOM =   2963
+active:  206, H =  4.22, k =  4.824, mean k =  4.825, std.dev. = 0.00141, time:  169.7, FOM =   2985
+active:  207, H =  4.22, k =  4.817, mean k =  4.825, std.dev. =  0.0014, time:  170.1, FOM =   3005
+active:  208, H = 4.218, k =    4.8, mean k =  4.825, std.dev. =  0.0014, time:  170.4, FOM =   3005
+active:  209, H = 4.218, k =  4.811, mean k =  4.825, std.dev. = 0.00139, time:  170.8, FOM =   3020
+active:  210, H =  4.22, k =  4.864, mean k =  4.825, std.dev. =  0.0014, time:  171.2, FOM =   2990
+active:  211, H = 4.218, k =  4.822, mean k =  4.825, std.dev. = 0.00139, time:  171.5, FOM =   3012
+active:  212, H = 4.219, k =  4.824, mean k =  4.825, std.dev. = 0.00138, time:  171.9, FOM =   3034
+active:  213, H =  4.22, k =  4.776, mean k =  4.825, std.dev. =  0.0014, time:  172.3, FOM =   2976
+active:  214, H = 4.219, k =  4.831, mean k =  4.825, std.dev. = 0.00139, time:  172.6, FOM =   2996
+active:  215, H = 4.218, k =  4.835, mean k =  4.825, std.dev. = 0.00138, time:    173, FOM =   3013
+active:  216, H = 4.217, k =    4.8, mean k =  4.825, std.dev. = 0.00138, time:  173.4, FOM =   3013
+active:  217, H = 4.223, k =  4.814, mean k =  4.825, std.dev. = 0.00138, time:  173.8, FOM =   3031
+active:  218, H = 4.221, k =  4.811, mean k =  4.825, std.dev. = 0.00137, time:  174.1, FOM =   3046
+active:  219, H = 4.218, k =   4.79, mean k =  4.824, std.dev. = 0.00138, time:  174.5, FOM =   3027
+active:  220, H = 4.221, k =  4.808, mean k =  4.824, std.dev. = 0.00137, time:  174.9, FOM =   3039
+active:  221, H = 4.222, k =  4.825, mean k =  4.824, std.dev. = 0.00137, time:  175.3, FOM =   3060
+active:  222, H = 4.221, k =  4.849, mean k =  4.824, std.dev. = 0.00136, time:  175.6, FOM =   3061
+active:  223, H = 4.223, k =  4.822, mean k =  4.824, std.dev. = 0.00136, time:    176, FOM =   3081
+active:  224, H = 4.224, k =  4.801, mean k =  4.824, std.dev. = 0.00136, time:  176.4, FOM =   3084
+active:  225, H = 4.221, k =  4.813, mean k =  4.824, std.dev. = 0.00135, time:  176.7, FOM =   3101
+active:  226, H = 4.222, k =  4.819, mean k =  4.824, std.dev. = 0.00135, time:  177.1, FOM =   3120
+active:  227, H = 4.221, k =  4.797, mean k =  4.824, std.dev. = 0.00134, time:  177.5, FOM =   3117
+active:  228, H = 4.222, k =  4.828, mean k =  4.824, std.dev. = 0.00134, time:  177.9, FOM =   3137
+active:  229, H = 4.224, k =  4.787, mean k =  4.824, std.dev. = 0.00134, time:  178.2, FOM =   3113
+active:  230, H = 4.224, k =  4.807, mean k =  4.824, std.dev. = 0.00134, time:  178.6, FOM =   3124
+active:  231, H = 4.221, k =  4.816, mean k =  4.824, std.dev. = 0.00133, time:    179, FOM =   3142
+active:  232, H = 4.222, k =  4.808, mean k =  4.824, std.dev. = 0.00133, time:  179.4, FOM =   3155
+active:  233, H = 4.219, k =  4.825, mean k =  4.824, std.dev. = 0.00132, time:  179.7, FOM =   3175
+active:  234, H = 4.217, k =  4.801, mean k =  4.824, std.dev. = 0.00132, time:  180.1, FOM =   3178
+active:  235, H = 4.218, k =   4.85, mean k =  4.824, std.dev. = 0.00132, time:  180.5, FOM =   3176
+active:  236, H = 4.217, k =  4.832, mean k =  4.824, std.dev. = 0.00132, time:  180.8, FOM =   3194
+active:  237, H =  4.22, k =  4.835, mean k =  4.824, std.dev. = 0.00131, time:  181.2, FOM =   3210
+active:  238, H = 4.219, k =  4.822, mean k =  4.824, std.dev. = 0.00131, time:  181.6, FOM =   3231
+active:  239, H = 4.221, k =  4.823, mean k =  4.824, std.dev. =  0.0013, time:    182, FOM =   3251
+active:  240, H = 4.221, k =  4.858, mean k =  4.824, std.dev. =  0.0013, time:  182.3, FOM =   3233
+active:  241, H = 4.222, k =  4.815, mean k =  4.824, std.dev. =  0.0013, time:  182.7, FOM =   3250
+active:  242, H = 4.221, k =  4.806, mean k =  4.824, std.dev. = 0.00129, time:  183.1, FOM =   3260
+active:  243, H =  4.22, k =  4.824, mean k =  4.824, std.dev. = 0.00129, time:  183.5, FOM =   3281
+active:  244, H = 4.215, k =  4.861, mean k =  4.824, std.dev. = 0.00129, time:  183.8, FOM =   3256
+active:  245, H = 4.216, k =  4.836, mean k =  4.824, std.dev. = 0.00129, time:  184.2, FOM =   3272
+active:  246, H = 4.221, k =  4.829, mean k =  4.824, std.dev. = 0.00128, time:  184.6, FOM =   3291
+active:  247, H = 4.223, k =  4.864, mean k =  4.824, std.dev. = 0.00129, time:    185, FOM =   3261
+active:  248, H = 4.222, k =   4.82, mean k =  4.824, std.dev. = 0.00128, time:  185.3, FOM =   3280
+active:  249, H = 4.223, k =  4.803, mean k =  4.824, std.dev. = 0.00128, time:  185.7, FOM =   3285
+active:  250, H = 4.222, k =  4.847, mean k =  4.824, std.dev. = 0.00128, time:  186.1, FOM =   3288
+active:  251, H = 4.219, k =   4.82, mean k =  4.824, std.dev. = 0.00127, time:  186.4, FOM =   3307
+active:  252, H =  4.22, k =  4.819, mean k =  4.824, std.dev. = 0.00127, time:  186.8, FOM =   3326
+active:  253, H = 4.222, k =  4.842, mean k =  4.824, std.dev. = 0.00127, time:  187.2, FOM =   3335
+active:  254, H = 4.221, k =  4.806, mean k =  4.824, std.dev. = 0.00126, time:  187.5, FOM =   3343
+active:  255, H = 4.222, k =   4.84, mean k =  4.824, std.dev. = 0.00126, time:  187.9, FOM =   3355
+active:  256, H = 4.225, k =  4.805, mean k =  4.824, std.dev. = 0.00126, time:  188.3, FOM =   3362
+active:  257, H = 4.224, k =  4.855, mean k =  4.824, std.dev. = 0.00126, time:  188.7, FOM =   3352
+active:  258, H = 4.222, k =  4.839, mean k =  4.824, std.dev. = 0.00125, time:    189, FOM =   3364
+active:  259, H = 4.222, k =  4.821, mean k =  4.824, std.dev. = 0.00125, time:  189.4, FOM =   3383
+active:  260, H =  4.22, k =  4.863, mean k =  4.825, std.dev. = 0.00125, time:  189.8, FOM =   3356
+active:  261, H = 4.219, k =  4.824, mean k =  4.825, std.dev. = 0.00125, time:  190.1, FOM =   3376
+active:  262, H = 4.219, k =  4.846, mean k =  4.825, std.dev. = 0.00125, time:  190.5, FOM =   3381
+active:  263, H = 4.219, k =  4.841, mean k =  4.825, std.dev. = 0.00124, time:  190.9, FOM =   3391
+active:  264, H = 4.221, k =  4.823, mean k =  4.825, std.dev. = 0.00124, time:  191.2, FOM =   3411
+active:  265, H = 4.222, k =  4.867, mean k =  4.825, std.dev. = 0.00124, time:  191.6, FOM =   3375
+active:  266, H = 4.223, k =  4.844, mean k =  4.825, std.dev. = 0.00124, time:    192, FOM =   3383
+active:  267, H = 4.222, k =  4.797, mean k =  4.825, std.dev. = 0.00124, time:  192.3, FOM =   3378
+active:  268, H = 4.226, k =  4.811, mean k =  4.825, std.dev. = 0.00124, time:  192.7, FOM =   3391
+active:  269, H = 4.225, k =   4.83, mean k =  4.825, std.dev. = 0.00123, time:  193.1, FOM =   3409
+active:  270, H = 4.224, k =  4.833, mean k =  4.825, std.dev. = 0.00123, time:  193.4, FOM =   3425
+active:  271, H = 4.226, k =  4.828, mean k =  4.825, std.dev. = 0.00122, time:  193.8, FOM =   3444
+active:  272, H = 4.224, k =  4.843, mean k =  4.825, std.dev. = 0.00122, time:  194.2, FOM =   3452
+active:  273, H = 4.224, k =  4.829, mean k =  4.825, std.dev. = 0.00122, time:  194.5, FOM =   3470
+active:  274, H = 4.224, k =  4.811, mean k =  4.825, std.dev. = 0.00121, time:  194.9, FOM =   3484
+active:  275, H =  4.22, k =  4.793, mean k =  4.825, std.dev. = 0.00121, time:  195.3, FOM =   3471
+active:  276, H =  4.22, k =  4.831, mean k =  4.825, std.dev. = 0.00121, time:  195.6, FOM =   3489
+active:  277, H = 4.219, k =  4.842, mean k =  4.825, std.dev. = 0.00121, time:    196, FOM =   3498
+active:  278, H = 4.218, k =  4.847, mean k =  4.825, std.dev. = 0.00121, time:  196.4, FOM =   3501
+active:  279, H =  4.22, k =  4.846, mean k =  4.825, std.dev. =  0.0012, time:  196.7, FOM =   3506
+active:  280, H = 4.218, k =  4.805, mean k =  4.825, std.dev. =  0.0012, time:  197.1, FOM =   3512
+active:  281, H = 4.218, k =  4.812, mean k =  4.825, std.dev. =  0.0012, time:  197.5, FOM =   3525
+active:  282, H = 4.217, k =  4.838, mean k =  4.825, std.dev. =  0.0012, time:  197.8, FOM =   3538
+active:  283, H = 4.215, k =  4.851, mean k =  4.825, std.dev. = 0.00119, time:  198.2, FOM =   3536
+active:  284, H = 4.213, k =  4.834, mean k =  4.825, std.dev. = 0.00119, time:  198.6, FOM =   3552
+active:  285, H = 4.215, k =  4.833, mean k =  4.825, std.dev. = 0.00119, time:  198.9, FOM =   3568
+active:  286, H = 4.218, k =  4.826, mean k =  4.825, std.dev. = 0.00118, time:  199.3, FOM =   3587
+active:  287, H = 4.217, k =  4.811, mean k =  4.825, std.dev. = 0.00118, time:  199.7, FOM =   3599
+active:  288, H = 4.217, k =  4.833, mean k =  4.825, std.dev. = 0.00118, time:    200, FOM =   3615
+active:  289, H = 4.217, k =  4.864, mean k =  4.825, std.dev. = 0.00118, time:  200.4, FOM =   3587
+active:  290, H = 4.216, k =  4.854, mean k =  4.825, std.dev. = 0.00118, time:  200.8, FOM =   3579
+active:  291, H =  4.22, k =  4.822, mean k =  4.825, std.dev. = 0.00118, time:  201.2, FOM =   3597
+active:  292, H = 4.223, k =  4.813, mean k =  4.825, std.dev. = 0.00117, time:  201.6, FOM =   3609
+active:  293, H = 4.221, k =  4.788, mean k =  4.825, std.dev. = 0.00118, time:    202, FOM =   3584
+active:  294, H = 4.222, k =  4.831, mean k =  4.825, std.dev. = 0.00117, time:  202.4, FOM =   3601
+active:  295, H = 4.224, k =  4.819, mean k =  4.825, std.dev. = 0.00117, time:  202.8, FOM =   3616
+active:  296, H = 4.224, k =  4.845, mean k =  4.825, std.dev. = 0.00117, time:  203.2, FOM =   3622
+active:  297, H = 4.223, k =  4.853, mean k =  4.825, std.dev. = 0.00117, time:  203.5, FOM =   3616
+active:  298, H = 4.222, k =  4.805, mean k =  4.825, std.dev. = 0.00116, time:  203.9, FOM =   3622
+active:  299, H = 4.219, k =  4.852, mean k =  4.825, std.dev. = 0.00116, time:  204.3, FOM =   3617
+active:  300, H = 4.214, k =  4.843, mean k =  4.825, std.dev. = 0.00116, time:  204.6, FOM =   3626
+active:  301, H = 4.217, k =  4.855, mean k =  4.825, std.dev. = 0.00116, time:    205, FOM =   3617
+active:  302, H = 4.217, k =  4.808, mean k =  4.825, std.dev. = 0.00116, time:  205.4, FOM =   3625
+active:  303, H = 4.218, k =  4.832, mean k =  4.825, std.dev. = 0.00116, time:  205.8, FOM =   3642
+active:  304, H = 4.217, k =  4.853, mean k =  4.826, std.dev. = 0.00115, time:  206.1, FOM =   3636
+active:  305, H = 4.219, k =  4.817, mean k =  4.825, std.dev. = 0.00115, time:  206.5, FOM =   3651
+active:  306, H = 4.217, k =  4.833, mean k =  4.826, std.dev. = 0.00115, time:  206.9, FOM =   3666
+active:  307, H = 4.219, k =  4.857, mean k =  4.826, std.dev. = 0.00115, time:  207.3, FOM =   3654
+active:  308, H = 4.219, k =  4.834, mean k =  4.826, std.dev. = 0.00115, time:  207.7, FOM =   3669
+active:  309, H = 4.219, k =  4.802, mean k =  4.826, std.dev. = 0.00114, time:    208, FOM =   3671
+active:  310, H = 4.218, k =  4.816, mean k =  4.826, std.dev. = 0.00114, time:  208.4, FOM =   3685
+active:  311, H = 4.221, k =  4.838, mean k =  4.826, std.dev. = 0.00114, time:  208.8, FOM =   3698
+active:  312, H = 4.219, k =  4.858, mean k =  4.826, std.dev. = 0.00114, time:  209.1, FOM =   3685
+active:  313, H = 4.218, k =  4.815, mean k =  4.826, std.dev. = 0.00114, time:  209.5, FOM =   3699
+active:  314, H = 4.218, k =  4.786, mean k =  4.826, std.dev. = 0.00114, time:  209.9, FOM =   3672
+active:  315, H = 4.219, k =  4.839, mean k =  4.826, std.dev. = 0.00114, time:  210.3, FOM =   3683
+active:  316, H =  4.22, k =  4.834, mean k =  4.826, std.dev. = 0.00113, time:  210.6, FOM =   3698
+active:  317, H = 4.221, k =  4.805, mean k =  4.826, std.dev. = 0.00113, time:    211, FOM =   3702
+active:  318, H =  4.22, k =   4.83, mean k =  4.826, std.dev. = 0.00113, time:  211.4, FOM =   3719
+active:  319, H = 4.221, k =  4.803, mean k =  4.825, std.dev. = 0.00113, time:  211.8, FOM =   3721
+active:  320, H = 4.221, k =  4.809, mean k =  4.825, std.dev. = 0.00112, time:  212.1, FOM =   3730
+active:  321, H = 4.219, k =  4.826, mean k =  4.825, std.dev. = 0.00112, time:  212.5, FOM =   3747
+active:  322, H = 4.217, k =  4.823, mean k =  4.825, std.dev. = 0.00112, time:  212.9, FOM =   3763
+active:  323, H = 4.214, k =  4.815, mean k =  4.825, std.dev. = 0.00111, time:  213.2, FOM =   3777
+active:  324, H = 4.216, k =  4.822, mean k =  4.825, std.dev. = 0.00111, time:  213.6, FOM =   3793
+active:  325, H =  4.22, k =  4.827, mean k =  4.825, std.dev. = 0.00111, time:    214, FOM =   3810
+active:  326, H = 4.221, k =  4.865, mean k =  4.825, std.dev. = 0.00111, time:  214.4, FOM =   3781
+active:  327, H = 4.222, k =  4.834, mean k =  4.826, std.dev. = 0.00111, time:  214.7, FOM =   3795
+active:  328, H = 4.224, k =  4.805, mean k =  4.825, std.dev. = 0.00111, time:  215.1, FOM =   3799
+active:  329, H = 4.222, k =  4.803, mean k =  4.825, std.dev. =  0.0011, time:  215.5, FOM =   3802
+active:  330, H = 4.218, k =   4.81, mean k =  4.825, std.dev. =  0.0011, time:  215.8, FOM =   3811
+active:  331, H = 4.218, k =  4.786, mean k =  4.825, std.dev. = 0.00111, time:  216.2, FOM =   3784
+active:  332, H =  4.22, k =  4.795, mean k =  4.825, std.dev. = 0.00111, time:  216.6, FOM =   3774
+active:  333, H = 4.221, k =  4.855, mean k =  4.825, std.dev. = 0.00111, time:    217, FOM =   3766
+active:  334, H = 4.222, k =  4.825, mean k =  4.825, std.dev. =  0.0011, time:  217.3, FOM =   3782
+active:  335, H = 4.222, k =  4.831, mean k =  4.825, std.dev. =  0.0011, time:  217.7, FOM =   3797
+active:  336, H = 4.222, k =  4.823, mean k =  4.825, std.dev. =  0.0011, time:  218.1, FOM =   3813
+active:  337, H = 4.221, k =  4.829, mean k =  4.825, std.dev. = 0.00109, time:  218.4, FOM =   3829
+active:  338, H = 4.221, k =  4.821, mean k =  4.825, std.dev. = 0.00109, time:  218.8, FOM =   3845
+active:  339, H = 4.219, k =  4.828, mean k =  4.825, std.dev. = 0.00109, time:  219.2, FOM =   3860
+active:  340, H = 4.221, k =  4.846, mean k =  4.825, std.dev. = 0.00109, time:  219.6, FOM =   3865
+active:  341, H =  4.22, k =  4.821, mean k =  4.825, std.dev. = 0.00108, time:  219.9, FOM =   3880
+active:  342, H = 4.222, k =  4.829, mean k =  4.825, std.dev. = 0.00108, time:  220.3, FOM =   3896
+active:  343, H = 4.222, k =  4.829, mean k =  4.825, std.dev. = 0.00108, time:  220.7, FOM =   3912
+active:  344, H =  4.22, k =  4.818, mean k =  4.825, std.dev. = 0.00107, time:    221, FOM =   3926
+active:  345, H = 4.221, k =  4.832, mean k =  4.825, std.dev. = 0.00107, time:  221.4, FOM =   3941
+active:  346, H = 4.221, k =   4.82, mean k =  4.825, std.dev. = 0.00107, time:  221.8, FOM =   3956
+active:  347, H = 4.219, k =  4.844, mean k =  4.825, std.dev. = 0.00107, time:  222.2, FOM =   3962
+active:  348, H =  4.22, k =  4.805, mean k =  4.825, std.dev. = 0.00106, time:  222.5, FOM =   3966
+active:  349, H = 4.218, k =  4.813, mean k =  4.825, std.dev. = 0.00106, time:  222.9, FOM =   3978
+active:  350, H = 4.216, k =  4.872, mean k =  4.825, std.dev. = 0.00107, time:  223.3, FOM =   3932
+active:  351, H = 4.217, k =  4.842, mean k =  4.825, std.dev. = 0.00107, time:  223.7, FOM =   3940
+active:  352, H = 4.218, k =  4.802, mean k =  4.825, std.dev. = 0.00106, time:    224, FOM =   3941
+active:  353, H = 4.218, k =  4.845, mean k =  4.825, std.dev. = 0.00106, time:  224.4, FOM =   3946
+active:  354, H = 4.218, k =  4.804, mean k =  4.825, std.dev. = 0.00106, time:  224.8, FOM =   3949
+active:  355, H = 4.218, k =   4.82, mean k =  4.825, std.dev. = 0.00106, time:  225.1, FOM =   3964
+active:  356, H = 4.222, k =  4.856, mean k =  4.825, std.dev. = 0.00106, time:  225.5, FOM =   3954
+active:  357, H = 4.221, k =  4.826, mean k =  4.825, std.dev. = 0.00106, time:  225.9, FOM =   3969
+active:  358, H = 4.221, k =  4.803, mean k =  4.825, std.dev. = 0.00106, time:  226.3, FOM =   3971
+active:  359, H = 4.221, k =   4.81, mean k =  4.825, std.dev. = 0.00105, time:  226.6, FOM =   3980
+active:  360, H = 4.221, k =  4.839, mean k =  4.825, std.dev. = 0.00105, time:    227, FOM =   3990
+active:  361, H = 4.221, k =  4.844, mean k =  4.825, std.dev. = 0.00105, time:  227.4, FOM =   3996
+active:  362, H = 4.224, k =   4.81, mean k =  4.825, std.dev. = 0.00105, time:  227.7, FOM =   4005
+active:  363, H = 4.222, k =   4.84, mean k =  4.825, std.dev. = 0.00104, time:  228.1, FOM =   4015
+active:  364, H = 4.221, k =  4.809, mean k =  4.825, std.dev. = 0.00104, time:  228.5, FOM =   4024
+active:  365, H = 4.221, k =  4.872, mean k =  4.825, std.dev. = 0.00105, time:  228.8, FOM =   3979
+active:  366, H = 4.221, k =  4.822, mean k =  4.825, std.dev. = 0.00105, time:  229.2, FOM =   3994
+active:  367, H = 4.218, k =  4.858, mean k =  4.826, std.dev. = 0.00105, time:  229.5, FOM =   3981
+active:  368, H = 4.218, k =  4.797, mean k =  4.825, std.dev. = 0.00105, time:  229.9, FOM =   3973
+active:  369, H = 4.218, k =  4.831, mean k =  4.826, std.dev. = 0.00104, time:  230.3, FOM =   3988
+active:  370, H =  4.22, k =  4.853, mean k =  4.826, std.dev. = 0.00104, time:  230.7, FOM =   3982
+active:  371, H = 4.223, k =  4.794, mean k =  4.825, std.dev. = 0.00104, time:    231, FOM =   3971
+active:  372, H = 4.225, k =  4.799, mean k =  4.825, std.dev. = 0.00104, time:  231.4, FOM =   3967
+active:  373, H = 4.224, k =  4.823, mean k =  4.825, std.dev. = 0.00104, time:  231.8, FOM =   3982
+active:  374, H = 4.221, k =  4.834, mean k =  4.825, std.dev. = 0.00104, time:  232.1, FOM =   3995
+active:  375, H = 4.222, k =  4.836, mean k =  4.825, std.dev. = 0.00104, time:  232.5, FOM =   4006
+active:  376, H = 4.222, k =  4.794, mean k =  4.825, std.dev. = 0.00104, time:  232.9, FOM =   3995
+active:  377, H = 4.223, k =   4.83, mean k =  4.825, std.dev. = 0.00103, time:  233.3, FOM =   4009
+active:  378, H = 4.225, k =  4.815, mean k =  4.825, std.dev. = 0.00103, time:  233.6, FOM =   4021
+active:  379, H = 4.225, k =  4.827, mean k =  4.825, std.dev. = 0.00103, time:    234, FOM =   4036
+active:  380, H = 4.227, k =   4.81, mean k =  4.825, std.dev. = 0.00103, time:  234.4, FOM =   4044
+active:  381, H = 4.224, k =  4.862, mean k =  4.825, std.dev. = 0.00103, time:  234.8, FOM =   4023
+active:  382, H = 4.219, k =   4.84, mean k =  4.825, std.dev. = 0.00103, time:  235.2, FOM =   4032
+active:  383, H = 4.219, k =  4.819, mean k =  4.825, std.dev. = 0.00102, time:  235.5, FOM =   4046
+active:  384, H = 4.218, k =  4.806, mean k =  4.825, std.dev. = 0.00102, time:  235.9, FOM =   4050
+active:  385, H = 4.215, k =  4.815, mean k =  4.825, std.dev. = 0.00102, time:  236.3, FOM =   4062
+active:  386, H = 4.215, k =  4.828, mean k =  4.825, std.dev. = 0.00102, time:  236.7, FOM =   4076
+active:  387, H = 4.217, k =   4.83, mean k =  4.825, std.dev. = 0.00102, time:  237.1, FOM =   4090
+active:  388, H = 4.218, k =  4.824, mean k =  4.825, std.dev. = 0.00101, time:  237.4, FOM =   4105
+active:  389, H =  4.22, k =  4.863, mean k =  4.825, std.dev. = 0.00101, time:  237.8, FOM =   4083
+active:  390, H =  4.22, k =  4.837, mean k =  4.826, std.dev. = 0.00101, time:  238.2, FOM =   4094
+active:  391, H = 4.222, k =  4.804, mean k =  4.825, std.dev. = 0.00101, time:  238.6, FOM =   4097
+active:  392, H = 4.221, k =  4.824, mean k =  4.825, std.dev. = 0.00101, time:  238.9, FOM =   4111
+active:  393, H = 4.221, k =  4.828, mean k =  4.825, std.dev. = 0.00101, time:  239.3, FOM =   4125
+active:  394, H = 4.219, k =  4.837, mean k =  4.825, std.dev. =   0.001, time:  239.7, FOM =   4136
+active:  395, H = 4.217, k =  4.836, mean k =  4.826, std.dev. =   0.001, time:  240.1, FOM =   4147
+active:  396, H = 4.214, k =   4.84, mean k =  4.826, std.dev. =   0.001, time:  240.4, FOM =   4156
+active:  397, H = 4.216, k =  4.836, mean k =  4.826, std.dev. = 0.000998, time:  240.8, FOM =   4168
+active:  398, H = 4.219, k =  4.829, mean k =  4.826, std.dev. = 0.000996, time:  241.2, FOM =   4182
+active:  399, H = 4.217, k =  4.837, mean k =  4.826, std.dev. = 0.000994, time:  241.6, FOM =   4193
+active:  400, H =  4.22, k =  4.862, mean k =  4.826, std.dev. = 0.000995, time:    242, FOM =   4173
+active:  401, H = 4.219, k =  4.851, mean k =  4.826, std.dev. = 0.000995, time:  242.3, FOM =   4171
+active:  402, H = 4.217, k =  4.836, mean k =  4.826, std.dev. = 0.000993, time:  242.7, FOM =   4183
+active:  403, H = 4.219, k =  4.846, mean k =  4.826, std.dev. = 0.000991, time:  243.1, FOM =   4186
+active:  404, H = 4.217, k =  4.829, mean k =  4.826, std.dev. = 0.000989, time:  243.5, FOM =   4200
+active:  405, H =  4.22, k =  4.813, mean k =  4.826, std.dev. = 0.000987, time:  243.8, FOM =   4211
+active:  406, H = 4.221, k =  4.838, mean k =  4.826, std.dev. = 0.000985, time:  244.2, FOM =   4221
+active:  407, H = 4.221, k =  4.851, mean k =  4.826, std.dev. = 0.000984, time:  244.6, FOM =   4219
+active:  408, H = 4.225, k =  4.826, mean k =  4.826, std.dev. = 0.000982, time:  244.9, FOM =   4234
+active:  409, H = 4.222, k =  4.818, mean k =  4.826, std.dev. = 0.00098, time:  245.3, FOM =   4246
+active:  410, H = 4.222, k =  4.855, mean k =  4.826, std.dev. = 0.00098, time:  245.7, FOM =   4238
+active:  411, H = 4.221, k =  4.858, mean k =  4.826, std.dev. = 0.000981, time:  246.1, FOM =   4225
+active:  412, H = 4.222, k =  4.846, mean k =  4.826, std.dev. = 0.00098, time:  246.4, FOM =   4229
+active:  413, H = 4.223, k =  4.852, mean k =  4.826, std.dev. = 0.000979, time:  246.8, FOM =   4226
+active:  414, H = 4.224, k =  4.824, mean k =  4.826, std.dev. = 0.000977, time:  247.2, FOM =   4240
+active:  415, H = 4.226, k =  4.792, mean k =  4.826, std.dev. = 0.000978, time:  247.5, FOM =   4225
+active:  416, H = 4.223, k =  4.816, mean k =  4.826, std.dev. = 0.000976, time:  247.9, FOM =   4236
+active:  417, H = 4.223, k =  4.816, mean k =  4.826, std.dev. = 0.000974, time:  248.3, FOM =   4247
+active:  418, H =  4.22, k =  4.816, mean k =  4.826, std.dev. = 0.000972, time:  248.7, FOM =   4259
+active:  419, H = 4.221, k =  4.832, mean k =  4.826, std.dev. = 0.00097, time:    249, FOM =   4271
+active:  420, H = 4.217, k =  4.829, mean k =  4.826, std.dev. = 0.000967, time:  249.4, FOM =   4285
+active:  421, H = 4.223, k =  4.843, mean k =  4.826, std.dev. = 0.000966, time:  249.8, FOM =   4292
+active:  422, H = 4.222, k =  4.851, mean k =  4.826, std.dev. = 0.000965, time:  250.2, FOM =   4290
+active:  423, H = 4.221, k =  4.852, mean k =  4.826, std.dev. = 0.000965, time:  250.5, FOM =   4287
+active:  424, H = 4.222, k =  4.827, mean k =  4.826, std.dev. = 0.000963, time:  250.9, FOM =   4301
+active:  425, H = 4.222, k =  4.816, mean k =  4.826, std.dev. = 0.000961, time:  251.3, FOM =   4312
+active:  426, H = 4.217, k =  4.791, mean k =  4.826, std.dev. = 0.000962, time:  251.6, FOM =   4294
+active:  427, H =  4.22, k =  4.817, mean k =  4.826, std.dev. = 0.00096, time:    252, FOM =   4306
+active:  428, H = 4.223, k =  4.795, mean k =  4.826, std.dev. = 0.000961, time:  252.4, FOM =   4295
+active:  429, H = 4.223, k =  4.813, mean k =  4.826, std.dev. = 0.000959, time:  252.8, FOM =   4304
+active:  430, H = 4.223, k =  4.834, mean k =  4.826, std.dev. = 0.000957, time:  253.1, FOM =   4316
+active:  431, H = 4.224, k =  4.848, mean k =  4.826, std.dev. = 0.000956, time:  253.5, FOM =   4318
+active:  432, H = 4.221, k =  4.857, mean k =  4.826, std.dev. = 0.000956, time:  253.9, FOM =   4308
+active:  433, H = 4.219, k =  4.804, mean k =  4.826, std.dev. = 0.000955, time:  254.2, FOM =   4309
+active:  434, H =  4.22, k =  4.805, mean k =  4.826, std.dev. = 0.000954, time:  254.6, FOM =   4311
+active:  435, H = 4.219, k =  4.825, mean k =  4.826, std.dev. = 0.000952, time:    255, FOM =   4324
+active:  436, H = 4.219, k =  4.809, mean k =  4.826, std.dev. = 0.000951, time:  255.4, FOM =   4330
+active:  437, H = 4.218, k =  4.834, mean k =  4.826, std.dev. = 0.000949, time:  255.8, FOM =   4342
+active:  438, H =  4.22, k =  4.817, mean k =  4.826, std.dev. = 0.000947, time:  256.1, FOM =   4354
+active:  439, H =  4.22, k =  4.822, mean k =  4.826, std.dev. = 0.000945, time:  256.5, FOM =   4367
+active:  440, H = 4.221, k =   4.83, mean k =  4.826, std.dev. = 0.000943, time:  256.9, FOM =   4380
+active:  441, H = 4.223, k =  4.896, mean k =  4.826, std.dev. = 0.000954, time:  257.2, FOM =   4273
+active:  442, H = 4.222, k =  4.819, mean k =  4.826, std.dev. = 0.000952, time:  257.6, FOM =   4285
+active:  443, H = 4.221, k =   4.81, mean k =  4.826, std.dev. = 0.00095, time:    258, FOM =   4292
+active:  444, H = 4.225, k =  4.784, mean k =  4.826, std.dev. = 0.000953, time:  258.3, FOM =   4264
+active:  445, H = 4.222, k =  4.871, mean k =  4.826, std.dev. = 0.000956, time:  258.7, FOM =   4229
+active:  446, H = 4.221, k =  4.824, mean k =  4.826, std.dev. = 0.000954, time:  259.1, FOM =   4242
+active:  447, H = 4.222, k =  4.863, mean k =  4.826, std.dev. = 0.000955, time:  259.5, FOM =   4223
+active:  448, H = 4.221, k =  4.813, mean k =  4.826, std.dev. = 0.000954, time:  259.8, FOM =   4232
+active:  449, H = 4.222, k =  4.837, mean k =  4.826, std.dev. = 0.000952, time:  260.2, FOM =   4242
+active:  450, H =  4.22, k =  4.803, mean k =  4.826, std.dev. = 0.000951, time:  260.6, FOM =   4242
+active:  451, H = 4.219, k =  4.799, mean k =  4.826, std.dev. = 0.000951, time:    261, FOM =   4238
+active:  452, H = 4.218, k =  4.816, mean k =  4.826, std.dev. = 0.000949, time:  261.3, FOM =   4249
+active:  453, H = 4.217, k =  4.843, mean k =  4.826, std.dev. = 0.000948, time:  261.7, FOM =   4255
+active:  454, H =  4.22, k =  4.854, mean k =  4.826, std.dev. = 0.000947, time:  262.1, FOM =   4250
+active:  455, H = 4.221, k =  4.829, mean k =  4.826, std.dev. = 0.000945, time:  262.4, FOM =   4263
+active:  456, H = 4.224, k =  4.803, mean k =  4.826, std.dev. = 0.000945, time:  262.8, FOM =   4263
+active:  457, H = 4.223, k =  4.819, mean k =  4.826, std.dev. = 0.000943, time:  263.2, FOM =   4275
+active:  458, H = 4.227, k =  4.835, mean k =  4.826, std.dev. = 0.000941, time:  263.5, FOM =   4286
+active:  459, H = 4.224, k =  4.802, mean k =  4.826, std.dev. = 0.00094, time:  263.9, FOM =   4285
+active:  460, H = 4.227, k =  4.835, mean k =  4.826, std.dev. = 0.000938, time:  264.3, FOM =   4297
+active:  461, H = 4.227, k =  4.807, mean k =  4.826, std.dev. = 0.000937, time:  264.6, FOM =   4301
+active:  462, H = 4.226, k =   4.82, mean k =  4.826, std.dev. = 0.000935, time:    265, FOM =   4313
+active:  463, H = 4.224, k =  4.851, mean k =  4.826, std.dev. = 0.000935, time:  265.4, FOM =   4311
+active:  464, H = 4.221, k =  4.834, mean k =  4.826, std.dev. = 0.000933, time:  265.7, FOM =   4322
+active:  465, H = 4.221, k =  4.848, mean k =  4.826, std.dev. = 0.000932, time:  266.1, FOM =   4324
+active:  466, H = 4.219, k =  4.833, mean k =  4.826, std.dev. = 0.00093, time:  266.5, FOM =   4335
+active:  467, H = 4.221, k =   4.85, mean k =  4.826, std.dev. = 0.00093, time:  266.8, FOM =   4335
+active:  468, H = 4.221, k =  4.819, mean k =  4.826, std.dev. = 0.000928, time:  267.2, FOM =   4346
+active:  469, H = 4.223, k =  4.823, mean k =  4.826, std.dev. = 0.000926, time:  267.6, FOM =   4358
+active:  470, H = 4.222, k =  4.833, mean k =  4.826, std.dev. = 0.000924, time:    268, FOM =   4370
+active:  471, H = 4.221, k =  4.826, mean k =  4.826, std.dev. = 0.000922, time:  268.3, FOM =   4383
+active:  472, H = 4.218, k =  4.823, mean k =  4.826, std.dev. = 0.00092, time:  268.7, FOM =   4395
+active:  473, H = 4.215, k =  4.813, mean k =  4.826, std.dev. = 0.000919, time:  269.1, FOM =   4404
+active:  474, H = 4.216, k =  4.844, mean k =  4.826, std.dev. = 0.000918, time:  269.4, FOM =   4409
+active:  475, H = 4.217, k =  4.829, mean k =  4.826, std.dev. = 0.000916, time:  269.8, FOM =   4421
+active:  476, H = 4.217, k =  4.804, mean k =  4.826, std.dev. = 0.000915, time:  270.2, FOM =   4422
+active:  477, H = 4.219, k =  4.857, mean k =  4.826, std.dev. = 0.000915, time:  270.5, FOM =   4412
+active:  478, H =  4.22, k =  4.824, mean k =  4.826, std.dev. = 0.000913, time:  270.9, FOM =   4425
+active:  479, H = 4.219, k =  4.829, mean k =  4.826, std.dev. = 0.000912, time:  271.3, FOM =   4437
+active:  480, H = 4.218, k =  4.851, mean k =  4.826, std.dev. = 0.000911, time:  271.6, FOM =   4435
+active:  481, H =  4.22, k =   4.84, mean k =  4.826, std.dev. = 0.00091, time:    272, FOM =   4442
+active:  482, H = 4.221, k =  4.831, mean k =  4.826, std.dev. = 0.000908, time:  272.4, FOM =   4454
+active:  483, H = 4.219, k =   4.82, mean k =  4.826, std.dev. = 0.000906, time:  272.8, FOM =   4466
+active:  484, H =  4.22, k =  4.833, mean k =  4.826, std.dev. = 0.000904, time:  273.1, FOM =   4477
+active:  485, H = 4.218, k =  4.842, mean k =  4.826, std.dev. = 0.000903, time:  273.5, FOM =   4484
+active:  486, H = 4.219, k =  4.837, mean k =  4.826, std.dev. = 0.000901, time:  273.9, FOM =   4493
+active:  487, H =  4.22, k =  4.832, mean k =  4.826, std.dev. =  0.0009, time:  274.2, FOM =   4505
+active:  488, H = 4.225, k =  4.839, mean k =  4.826, std.dev. = 0.000898, time:  274.6, FOM =   4513
+active:  489, H = 4.225, k =  4.835, mean k =  4.826, std.dev. = 0.000897, time:    275, FOM =   4524
+active:  490, H = 4.221, k =  4.836, mean k =  4.826, std.dev. = 0.000895, time:  275.3, FOM =   4534
+active:  491, H = 4.221, k =  4.793, mean k =  4.826, std.dev. = 0.000896, time:  275.7, FOM =   4521
+active:  492, H = 4.222, k =  4.843, mean k =  4.826, std.dev. = 0.000895, time:  276.1, FOM =   4526
+active:  493, H =  4.22, k =  4.804, mean k =  4.826, std.dev. = 0.000894, time:  276.5, FOM =   4527
+active:  494, H = 4.226, k =  4.829, mean k =  4.826, std.dev. = 0.000892, time:  276.8, FOM =   4540
+active:  495, H = 4.223, k =  4.793, mean k =  4.826, std.dev. = 0.000893, time:  277.2, FOM =   4526
+active:  496, H = 4.223, k =  4.842, mean k =  4.826, std.dev. = 0.000892, time:  277.6, FOM =   4532
+active:  497, H = 4.223, k =  4.823, mean k =  4.826, std.dev. = 0.00089, time:  277.9, FOM =   4544
+active:  498, H = 4.223, k =  4.802, mean k =  4.826, std.dev. = 0.000889, time:  278.3, FOM =   4542
+active:  499, H = 4.222, k =  4.815, mean k =  4.826, std.dev. = 0.000888, time:  278.7, FOM =   4552
+active:  500, H = 4.223, k =  4.852, mean k =  4.826, std.dev. = 0.000888, time:    279, FOM =   4549
+active:  501, H = 4.223, k =  4.844, mean k =  4.826, std.dev. = 0.000886, time:  279.4, FOM =   4554
+active:  502, H = 4.221, k =  4.802, mean k =  4.826, std.dev. = 0.000886, time:  279.8, FOM =   4552
+active:  503, H = 4.218, k =   4.79, mean k =  4.826, std.dev. = 0.000887, time:  280.2, FOM =   4535
+active:  504, H = 4.218, k =  4.819, mean k =  4.826, std.dev. = 0.000886, time:  280.5, FOM =   4546
+active:  505, H = 4.217, k =  4.831, mean k =  4.826, std.dev. = 0.000884, time:  280.9, FOM =   4557
+active:  506, H = 4.216, k =  4.845, mean k =  4.826, std.dev. = 0.000883, time:  281.3, FOM =   4561
+active:  507, H = 4.218, k =  4.781, mean k =  4.826, std.dev. = 0.000886, time:  281.6, FOM =   4527
+active:  508, H = 4.214, k =  4.835, mean k =  4.826, std.dev. = 0.000884, time:    282, FOM =   4537
+active:  509, H = 4.218, k =  4.852, mean k =  4.826, std.dev. = 0.000884, time:  282.4, FOM =   4534
+active:  510, H = 4.219, k =  4.813, mean k =  4.826, std.dev. = 0.000882, time:  282.7, FOM =   4542
+active:  511, H = 4.219, k =  4.882, mean k =  4.826, std.dev. = 0.000887, time:  283.1, FOM =   4486
+active:  512, H = 4.219, k =  4.825, mean k =  4.826, std.dev. = 0.000886, time:  283.5, FOM =   4498
+active:  513, H =  4.22, k =  4.811, mean k =  4.826, std.dev. = 0.000884, time:  283.9, FOM =   4505
+active:  514, H = 4.222, k =   4.85, mean k =  4.826, std.dev. = 0.000884, time:  284.2, FOM =   4504
+active:  515, H = 4.225, k =  4.816, mean k =  4.826, std.dev. = 0.000882, time:  284.6, FOM =   4514
+active:  516, H = 4.224, k =  4.824, mean k =  4.826, std.dev. = 0.000881, time:    285, FOM =   4526
+active:  517, H = 4.221, k =  4.804, mean k =  4.826, std.dev. = 0.00088, time:  285.3, FOM =   4526
+active:  518, H = 4.222, k =   4.82, mean k =  4.826, std.dev. = 0.000878, time:  285.7, FOM =   4537
+active:  519, H =  4.22, k =  4.844, mean k =  4.826, std.dev. = 0.000877, time:  286.1, FOM =   4542
+active:  520, H = 4.219, k =  4.823, mean k =  4.826, std.dev. = 0.000876, time:  286.4, FOM =   4553
+active:  521, H = 4.219, k =  4.814, mean k =  4.826, std.dev. = 0.000874, time:  286.8, FOM =   4561
+active:  522, H = 4.218, k =  4.828, mean k =  4.826, std.dev. = 0.000873, time:  287.2, FOM =   4573
+active:  523, H =  4.22, k =  4.852, mean k =  4.826, std.dev. = 0.000872, time:  287.5, FOM =   4570
+active:  524, H =  4.22, k =  4.812, mean k =  4.826, std.dev. = 0.000871, time:  287.9, FOM =   4577
+active:  525, H = 4.218, k =  4.816, mean k =  4.826, std.dev. = 0.00087, time:  288.3, FOM =   4586
+active:  526, H = 4.218, k =  4.835, mean k =  4.826, std.dev. = 0.000868, time:  288.7, FOM =   4596
+active:  527, H = 4.216, k =  4.828, mean k =  4.826, std.dev. = 0.000867, time:    289, FOM =   4608
+active:  528, H = 4.215, k =  4.851, mean k =  4.826, std.dev. = 0.000866, time:  289.4, FOM =   4606
+active:  529, H = 4.216, k =  4.812, mean k =  4.826, std.dev. = 0.000865, time:  289.8, FOM =   4613
+active:  530, H = 4.219, k =  4.826, mean k =  4.826, std.dev. = 0.000863, time:  290.1, FOM =   4625
+active:  531, H = 4.219, k =  4.842, mean k =  4.826, std.dev. = 0.000862, time:  290.5, FOM =   4631
+active:  532, H = 4.221, k =  4.872, mean k =  4.826, std.dev. = 0.000865, time:  290.9, FOM =   4596
+active:  533, H = 4.224, k =  4.812, mean k =  4.826, std.dev. = 0.000864, time:  291.2, FOM =   4603
+active:  534, H = 4.224, k =  4.842, mean k =  4.826, std.dev. = 0.000863, time:  291.6, FOM =   4609
+active:  535, H = 4.219, k =  4.803, mean k =  4.826, std.dev. = 0.000862, time:    292, FOM =   4609
+active:  536, H = 4.218, k =  4.848, mean k =  4.826, std.dev. = 0.000861, time:  292.3, FOM =   4610
+active:  537, H = 4.218, k =  4.831, mean k =  4.826, std.dev. = 0.00086, time:  292.7, FOM =   4621
+active:  538, H = 4.221, k =  4.809, mean k =  4.826, std.dev. = 0.000859, time:  293.1, FOM =   4626
+active:  539, H = 4.219, k =  4.784, mean k =  4.826, std.dev. = 0.000861, time:  293.5, FOM =   4598
+active:  540, H = 4.217, k =  4.804, mean k =  4.826, std.dev. = 0.00086, time:  293.8, FOM =   4599
+active:  541, H = 4.216, k =  4.808, mean k =  4.826, std.dev. = 0.000859, time:  294.2, FOM =   4603
+active:  542, H = 4.219, k =  4.823, mean k =  4.826, std.dev. = 0.000858, time:  294.6, FOM =   4614
+active:  543, H = 4.221, k =  4.807, mean k =  4.826, std.dev. = 0.000857, time:  294.9, FOM =   4617
+active:  544, H = 4.223, k =  4.828, mean k =  4.826, std.dev. = 0.000855, time:  295.3, FOM =   4628
+active:  545, H = 4.221, k =  4.821, mean k =  4.826, std.dev. = 0.000854, time:  295.7, FOM =   4639
+active:  546, H = 4.223, k =  4.833, mean k =  4.826, std.dev. = 0.000852, time:    296, FOM =   4649
+active:  547, H = 4.223, k =  4.839, mean k =  4.826, std.dev. = 0.000851, time:  296.4, FOM =   4657
+active:  548, H = 4.221, k =  4.794, mean k =  4.826, std.dev. = 0.000852, time:  296.8, FOM =   4646
+active:  549, H = 4.218, k =  4.816, mean k =  4.826, std.dev. = 0.00085, time:  297.1, FOM =   4654
+active:  550, H = 4.215, k =   4.79, mean k =  4.826, std.dev. = 0.000851, time:  297.5, FOM =   4637
+active:  551, H = 4.218, k =  4.816, mean k =  4.826, std.dev. = 0.00085, time:  297.9, FOM =   4646
+active:  552, H =  4.22, k =   4.81, mean k =  4.826, std.dev. = 0.000849, time:  298.2, FOM =   4652
+active:  553, H = 4.216, k =  4.816, mean k =  4.826, std.dev. = 0.000848, time:  298.6, FOM =   4661
+active:  554, H = 4.218, k =  4.821, mean k =  4.826, std.dev. = 0.000846, time:    299, FOM =   4672
+active:  555, H = 4.217, k =  4.842, mean k =  4.826, std.dev. = 0.000845, time:  299.3, FOM =   4677
+active:  556, H = 4.215, k =  4.853, mean k =  4.826, std.dev. = 0.000845, time:  299.7, FOM =   4673
+active:  557, H = 4.213, k =  4.862, mean k =  4.826, std.dev. = 0.000846, time:  300.1, FOM =   4656
+active:  558, H = 4.215, k =  4.845, mean k =  4.826, std.dev. = 0.000845, time:  300.4, FOM =   4660
+active:  559, H = 4.216, k =  4.803, mean k =  4.826, std.dev. = 0.000845, time:  300.8, FOM =   4660
+active:  560, H = 4.215, k =  4.799, mean k =  4.826, std.dev. = 0.000844, time:  301.2, FOM =   4656
+active:  561, H = 4.217, k =   4.88, mean k =  4.826, std.dev. = 0.000848, time:  301.6, FOM =   4607
+active:  562, H = 4.218, k =   4.84, mean k =  4.826, std.dev. = 0.000847, time:  301.9, FOM =   4614
+active:  563, H = 4.219, k =  4.849, mean k =  4.826, std.dev. = 0.000847, time:  302.3, FOM =   4614
+active:  564, H = 4.218, k =  4.871, mean k =  4.826, std.dev. = 0.000849, time:  302.7, FOM =   4585
+active:  565, H = 4.215, k =  4.812, mean k =  4.826, std.dev. = 0.000848, time:    303, FOM =   4592
+active:  566, H = 4.216, k =  4.816, mean k =  4.826, std.dev. = 0.000846, time:  303.4, FOM =   4600
+active:  567, H = 4.217, k =  4.853, mean k =  4.826, std.dev. = 0.000846, time:  303.8, FOM =   4597
+active:  568, H = 4.218, k =  4.815, mean k =  4.826, std.dev. = 0.000845, time:  304.1, FOM =   4605
+active:  569, H = 4.219, k =  4.809, mean k =  4.826, std.dev. = 0.000844, time:  304.5, FOM =   4609
+active:  570, H = 4.219, k =  4.836, mean k =  4.826, std.dev. = 0.000843, time:  304.9, FOM =   4618
+active:  571, H = 4.216, k =  4.846, mean k =  4.826, std.dev. = 0.000842, time:  305.2, FOM =   4621
+active:  572, H =  4.22, k =  4.812, mean k =  4.826, std.dev. = 0.000841, time:  305.6, FOM =   4627
+active:  573, H = 4.218, k =   4.88, mean k =  4.826, std.dev. = 0.000845, time:    306, FOM =   4581
+active:  574, H = 4.222, k =  4.856, mean k =  4.826, std.dev. = 0.000845, time:  306.3, FOM =   4574
+active:  575, H = 4.222, k =  4.812, mean k =  4.826, std.dev. = 0.000844, time:  306.7, FOM =   4580
+active:  576, H = 4.222, k =  4.797, mean k =  4.826, std.dev. = 0.000844, time:  307.1, FOM =   4574
+active:  577, H = 4.221, k =  4.818, mean k =  4.826, std.dev. = 0.000842, time:  307.5, FOM =   4583
+active:  578, H =  4.22, k =  4.814, mean k =  4.826, std.dev. = 0.000841, time:  307.8, FOM =   4590
+active:  579, H = 4.219, k =  4.817, mean k =  4.826, std.dev. = 0.00084, time:  308.2, FOM =   4599
+active:  580, H = 4.222, k =  4.856, mean k =  4.826, std.dev. = 0.00084, time:  308.6, FOM =   4593
+active:  581, H =  4.22, k =   4.81, mean k =  4.826, std.dev. = 0.000839, time:  308.9, FOM =   4598
+active:  582, H = 4.221, k =  4.833, mean k =  4.826, std.dev. = 0.000838, time:  309.3, FOM =   4608
+active:  583, H =  4.22, k =    4.8, mean k =  4.826, std.dev. = 0.000837, time:  309.7, FOM =   4605
+active:  584, H = 4.224, k =  4.882, mean k =  4.826, std.dev. = 0.000841, time:    310, FOM =   4556
+active:  585, H = 4.223, k =  4.818, mean k =  4.826, std.dev. = 0.00084, time:  310.4, FOM =   4565
+active:  586, H = 4.224, k =  4.837, mean k =  4.826, std.dev. = 0.000839, time:  310.8, FOM =   4573
+active:  587, H = 4.223, k =  4.809, mean k =  4.826, std.dev. = 0.000838, time:  311.2, FOM =   4577
+active:  588, H = 4.223, k =  4.845, mean k =  4.826, std.dev. = 0.000837, time:  311.5, FOM =   4580
+active:  589, H = 4.221, k =  4.823, mean k =  4.826, std.dev. = 0.000836, time:  311.9, FOM =   4590
+active:  590, H =  4.22, k =  4.814, mean k =  4.826, std.dev. = 0.000835, time:  312.3, FOM =   4597
+active:  591, H = 4.215, k =  4.853, mean k =  4.826, std.dev. = 0.000834, time:  312.6, FOM =   4594
+active:  592, H = 4.218, k =  4.878, mean k =  4.826, std.dev. = 0.000837, time:    313, FOM =   4555
+active:  593, H = 4.219, k =  4.823, mean k =  4.826, std.dev. = 0.000836, time:  313.4, FOM =   4565
+active:  594, H =  4.22, k =  4.864, mean k =  4.827, std.dev. = 0.000837, time:  313.8, FOM =   4548
+active:  595, H = 4.223, k =  4.841, mean k =  4.827, std.dev. = 0.000836, time:  314.1, FOM =   4554
+active:  596, H = 4.226, k =  4.852, mean k =  4.827, std.dev. = 0.000836, time:  314.5, FOM =   4553
+active:  597, H = 4.224, k =  4.832, mean k =  4.827, std.dev. = 0.000834, time:  314.9, FOM =   4562
+active:  598, H = 4.225, k =  4.835, mean k =  4.827, std.dev. = 0.000833, time:  315.3, FOM =   4570
+active:  599, H = 4.222, k =   4.81, mean k =  4.827, std.dev. = 0.000832, time:  315.6, FOM =   4576
+active:  600, H = 4.221, k =  4.854, mean k =  4.827, std.dev. = 0.000832, time:    316, FOM =   4572
+active:  601, H = 4.219, k =  4.837, mean k =  4.827, std.dev. = 0.000831, time:  316.4, FOM =   4580
+active:  602, H = 4.219, k =  4.788, mean k =  4.827, std.dev. = 0.000832, time:  316.7, FOM =   4562
+active:  603, H = 4.217, k =  4.804, mean k =  4.827, std.dev. = 0.000831, time:  317.1, FOM =   4563
+active:  604, H = 4.216, k =  4.829, mean k =  4.827, std.dev. = 0.00083, time:  317.5, FOM =   4573
+active:  605, H = 4.217, k =  4.838, mean k =  4.827, std.dev. = 0.000829, time:  317.8, FOM =   4580
+active:  606, H =  4.22, k =  4.842, mean k =  4.827, std.dev. = 0.000828, time:  318.2, FOM =   4586
+active:  607, H = 4.217, k =  4.824, mean k =  4.827, std.dev. = 0.000826, time:  318.6, FOM =   4595
+active:  608, H =  4.22, k =  4.823, mean k =  4.827, std.dev. = 0.000825, time:  318.9, FOM =   4605
+active:  609, H = 4.224, k =  4.816, mean k =  4.827, std.dev. = 0.000824, time:  319.3, FOM =   4613
+active:  610, H = 4.225, k =  4.833, mean k =  4.827, std.dev. = 0.000823, time:  319.7, FOM =   4622
+active:  611, H = 4.224, k =  4.839, mean k =  4.827, std.dev. = 0.000822, time:    320, FOM =   4629
+active:  612, H = 4.224, k =  4.826, mean k =  4.827, std.dev. = 0.00082, time:  320.4, FOM =   4639
+active:  613, H = 4.225, k =  4.814, mean k =  4.827, std.dev. = 0.000819, time:  320.8, FOM =   4646
+active:  614, H = 4.225, k =  4.841, mean k =  4.827, std.dev. = 0.000818, time:  321.1, FOM =   4652
+active:  615, H = 4.224, k =  4.842, mean k =  4.827, std.dev. = 0.000817, time:  321.5, FOM =   4657
+active:  616, H = 4.222, k =  4.833, mean k =  4.827, std.dev. = 0.000816, time:  321.9, FOM =   4666
+active:  617, H = 4.218, k =  4.835, mean k =  4.827, std.dev. = 0.000815, time:  322.2, FOM =   4675
+active:  618, H =  4.22, k =  4.805, mean k =  4.827, std.dev. = 0.000814, time:  322.6, FOM =   4677
+active:  619, H = 4.219, k =  4.798, mean k =  4.827, std.dev. = 0.000814, time:    323, FOM =   4671
+active:  620, H =  4.22, k =  4.845, mean k =  4.827, std.dev. = 0.000813, time:  323.4, FOM =   4674
+active:  621, H = 4.218, k =  4.859, mean k =  4.827, std.dev. = 0.000814, time:  323.7, FOM =   4665
+active:  622, H = 4.221, k =  4.834, mean k =  4.827, std.dev. = 0.000813, time:  324.1, FOM =   4673
+active:  623, H = 4.222, k =  4.828, mean k =  4.827, std.dev. = 0.000811, time:  324.5, FOM =   4683
+active:  624, H = 4.219, k =  4.818, mean k =  4.827, std.dev. = 0.00081, time:  324.8, FOM =   4691
+active:  625, H = 4.218, k =  4.831, mean k =  4.827, std.dev. = 0.000809, time:  325.2, FOM =   4700
+active:  626, H = 4.219, k =  4.828, mean k =  4.827, std.dev. = 0.000808, time:  325.6, FOM =   4710
+active:  627, H = 4.219, k =  4.848, mean k =  4.827, std.dev. = 0.000807, time:    326, FOM =   4711
+active:  628, H =  4.22, k =  4.807, mean k =  4.827, std.dev. = 0.000806, time:  326.3, FOM =   4714
+active:  629, H = 4.222, k =  4.815, mean k =  4.827, std.dev. = 0.000805, time:  326.7, FOM =   4721
+active:  630, H =  4.22, k =  4.818, mean k =  4.827, std.dev. = 0.000804, time:  327.1, FOM =   4729
+active:  631, H =  4.22, k =  4.859, mean k =  4.827, std.dev. = 0.000804, time:  327.4, FOM =   4719
+active:  632, H = 4.219, k =  4.838, mean k =  4.827, std.dev. = 0.000803, time:  327.8, FOM =   4726
+active:  633, H = 4.217, k =  4.808, mean k =  4.827, std.dev. = 0.000803, time:  328.2, FOM =   4730
+active:  634, H = 4.218, k =    4.8, mean k =  4.827, std.dev. = 0.000802, time:  328.6, FOM =   4726
+active:  635, H =  4.22, k =  4.818, mean k =  4.827, std.dev. = 0.000801, time:  328.9, FOM =   4734
+active:  636, H = 4.219, k =  4.844, mean k =  4.827, std.dev. = 0.000801, time:  329.3, FOM =   4738
+active:  637, H = 4.217, k =  4.824, mean k =  4.827, std.dev. = 0.000799, time:  329.7, FOM =   4748
+active:  638, H = 4.218, k =  4.839, mean k =  4.827, std.dev. = 0.000798, time:  330.1, FOM =   4754
+active:  639, H = 4.216, k =  4.843, mean k =  4.827, std.dev. = 0.000797, time:  330.4, FOM =   4759
+active:  640, H = 4.219, k =  4.837, mean k =  4.827, std.dev. = 0.000796, time:  330.8, FOM =   4767
+active:  641, H = 4.222, k =  4.831, mean k =  4.827, std.dev. = 0.000795, time:  331.2, FOM =   4776
+active:  642, H = 4.221, k =  4.803, mean k =  4.827, std.dev. = 0.000795, time:  331.6, FOM =   4775
+active:  643, H = 4.221, k =  4.842, mean k =  4.827, std.dev. = 0.000794, time:  331.9, FOM =   4781
+active:  644, H =  4.22, k =  4.812, mean k =  4.827, std.dev. = 0.000793, time:  332.3, FOM =   4786
+active:  645, H = 4.219, k =  4.838, mean k =  4.827, std.dev. = 0.000792, time:  332.7, FOM =   4793
+active:  646, H = 4.217, k =  4.826, mean k =  4.827, std.dev. = 0.000791, time:    333, FOM =   4803
+active:  647, H = 4.219, k =  4.819, mean k =  4.827, std.dev. = 0.00079, time:  333.4, FOM =   4811
+active:  648, H = 4.218, k =  4.825, mean k =  4.827, std.dev. = 0.000788, time:  333.8, FOM =   4821
+active:  649, H =  4.22, k =  4.847, mean k =  4.827, std.dev. = 0.000788, time:  334.1, FOM =   4822
+active:  650, H = 4.222, k =  4.836, mean k =  4.827, std.dev. = 0.000787, time:  334.5, FOM =   4830
+active:  651, H = 4.223, k =  4.827, mean k =  4.827, std.dev. = 0.000785, time:  334.9, FOM =   4840
+active:  652, H = 4.222, k =  4.822, mean k =  4.827, std.dev. = 0.000784, time:  335.2, FOM =   4849
+active:  653, H = 4.224, k =   4.85, mean k =  4.827, std.dev. = 0.000784, time:  335.6, FOM =   4848
+active:  654, H = 4.225, k =    4.8, mean k =  4.827, std.dev. = 0.000784, time:    336, FOM =   4845
+active:  655, H = 4.223, k =  4.883, mean k =  4.827, std.dev. = 0.000787, time:  336.3, FOM =   4797
+active:  656, H = 4.223, k =  4.807, mean k =  4.827, std.dev. = 0.000787, time:  336.7, FOM =   4799
+active:  657, H = 4.225, k =  4.814, mean k =  4.827, std.dev. = 0.000786, time:  337.1, FOM =   4805
+active:  658, H = 4.223, k =  4.846, mean k =  4.827, std.dev. = 0.000785, time:  337.4, FOM =   4808
+active:  659, H = 4.224, k =  4.836, mean k =  4.827, std.dev. = 0.000784, time:  337.8, FOM =   4816
+active:  660, H = 4.225, k =  4.813, mean k =  4.827, std.dev. = 0.000783, time:  338.2, FOM =   4822
+active:  661, H = 4.225, k =  4.835, mean k =  4.827, std.dev. = 0.000782, time:  338.5, FOM =   4830
+active:  662, H = 4.221, k =  4.828, mean k =  4.827, std.dev. = 0.000781, time:  338.9, FOM =   4839
+active:  663, H =  4.22, k =   4.83, mean k =  4.827, std.dev. = 0.00078, time:  339.3, FOM =   4849
+active:  664, H =  4.22, k =    4.8, mean k =  4.827, std.dev. = 0.00078, time:  339.6, FOM =   4845
+active:  665, H =  4.22, k =   4.85, mean k =  4.827, std.dev. = 0.000779, time:    340, FOM =   4845
+active:  666, H = 4.222, k =  4.833, mean k =  4.827, std.dev. = 0.000778, time:  340.4, FOM =   4853
+active:  667, H = 4.221, k =  4.775, mean k =  4.827, std.dev. = 0.000781, time:  340.8, FOM =   4814
+active:  668, H = 4.222, k =  4.836, mean k =  4.827, std.dev. = 0.00078, time:  341.1, FOM =   4822
+active:  669, H = 4.223, k =  4.846, mean k =  4.827, std.dev. = 0.000779, time:  341.5, FOM =   4824
+active:  670, H = 4.221, k =  4.812, mean k =  4.827, std.dev. = 0.000778, time:  341.9, FOM =   4830
+active:  671, H =  4.22, k =  4.804, mean k =  4.827, std.dev. = 0.000778, time:  342.2, FOM =   4830
+active:  672, H = 4.219, k =  4.841, mean k =  4.827, std.dev. = 0.000777, time:  342.6, FOM =   4835
+active:  673, H =  4.22, k =  4.836, mean k =  4.827, std.dev. = 0.000776, time:    343, FOM =   4843
+active:  674, H = 4.221, k =  4.852, mean k =  4.827, std.dev. = 0.000776, time:  343.3, FOM =   4841
+active:  675, H = 4.222, k =  4.823, mean k =  4.827, std.dev. = 0.000775, time:  343.7, FOM =   4849
+active:  676, H = 4.217, k =  4.812, mean k =  4.827, std.dev. = 0.000774, time:  344.1, FOM =   4855
+active:  677, H = 4.215, k =   4.85, mean k =  4.827, std.dev. = 0.000773, time:  344.4, FOM =   4854
+active:  678, H = 4.218, k =  4.864, mean k =  4.827, std.dev. = 0.000774, time:  344.8, FOM =   4839
+active:  679, H = 4.221, k =  4.818, mean k =  4.827, std.dev. = 0.000773, time:  345.2, FOM =   4847
+active:  680, H = 4.223, k =  4.826, mean k =  4.827, std.dev. = 0.000772, time:  345.5, FOM =   4856
+active:  681, H = 4.221, k =  4.824, mean k =  4.827, std.dev. = 0.000771, time:  345.9, FOM =   4865
+active:  682, H =  4.22, k =  4.807, mean k =  4.827, std.dev. = 0.00077, time:  346.3, FOM =   4867
+active:  683, H = 4.216, k =  4.814, mean k =  4.827, std.dev. = 0.000769, time:  346.6, FOM =   4874
+active:  684, H = 4.215, k =  4.816, mean k =  4.827, std.dev. = 0.000768, time:    347, FOM =   4881
+active:  685, H = 4.218, k =  4.802, mean k =  4.827, std.dev. = 0.000768, time:  347.4, FOM =   4879
+active:  686, H =  4.22, k =  4.852, mean k =  4.827, std.dev. = 0.000768, time:  347.7, FOM =   4877
+active:  687, H = 4.222, k =  4.838, mean k =  4.827, std.dev. = 0.000767, time:  348.1, FOM =   4884
+active:  688, H = 4.225, k =  4.829, mean k =  4.827, std.dev. = 0.000766, time:  348.5, FOM =   4892
+active:  689, H = 4.226, k =  4.861, mean k =  4.827, std.dev. = 0.000766, time:  348.9, FOM =   4881
+active:  690, H = 4.227, k =  4.808, mean k =  4.827, std.dev. = 0.000766, time:  349.2, FOM =   4884
+active:  691, H = 4.225, k =  4.778, mean k =  4.827, std.dev. = 0.000768, time:  349.6, FOM =   4851
+active:  692, H = 4.222, k =  4.823, mean k =  4.827, std.dev. = 0.000767, time:    350, FOM =   4859
+active:  693, H = 4.221, k =  4.813, mean k =  4.827, std.dev. = 0.000766, time:  350.3, FOM =   4865
+active:  694, H = 4.222, k =  4.823, mean k =  4.827, std.dev. = 0.000765, time:  350.7, FOM =   4873
+active:  695, H =  4.22, k =  4.784, mean k =  4.827, std.dev. = 0.000766, time:  351.1, FOM =   4851
+active:  696, H = 4.219, k =  4.861, mean k =  4.827, std.dev. = 0.000767, time:  351.4, FOM =   4840
+active:  697, H =  4.22, k =  4.834, mean k =  4.827, std.dev. = 0.000766, time:  351.8, FOM =   4848
+active:  698, H = 4.219, k =  4.829, mean k =  4.827, std.dev. = 0.000765, time:  352.2, FOM =   4857
+active:  699, H = 4.219, k =  4.857, mean k =  4.827, std.dev. = 0.000765, time:  352.6, FOM =   4850
+active:  700, H = 4.215, k =  4.812, mean k =  4.827, std.dev. = 0.000764, time:  352.9, FOM =   4855
+active:  701, H = 4.216, k =  4.818, mean k =  4.827, std.dev. = 0.000763, time:  353.3, FOM =   4863
+active:  702, H = 4.214, k =  4.851, mean k =  4.827, std.dev. = 0.000763, time:  353.7, FOM =   4861
+active:  703, H = 4.214, k =  4.844, mean k =  4.827, std.dev. = 0.000762, time:    354, FOM =   4865
+active:  704, H = 4.214, k =    4.8, mean k =  4.827, std.dev. = 0.000762, time:  354.4, FOM =   4861
+active:  705, H = 4.213, k =   4.86, mean k =  4.827, std.dev. = 0.000762, time:  354.8, FOM =   4852
+active:  706, H = 4.214, k =   4.84, mean k =  4.827, std.dev. = 0.000761, time:  355.1, FOM =   4858
+active:  707, H =  4.22, k =  4.878, mean k =  4.827, std.dev. = 0.000764, time:  355.5, FOM =   4823
+active:  708, H =  4.22, k =  4.818, mean k =  4.827, std.dev. = 0.000763, time:  355.9, FOM =   4831
+active:  709, H = 4.218, k =  4.827, mean k =  4.827, std.dev. = 0.000762, time:  356.2, FOM =   4840
+active:  710, H = 4.222, k =  4.822, mean k =  4.827, std.dev. = 0.000761, time:  356.6, FOM =   4848
+active:  711, H =  4.22, k =   4.85, mean k =  4.827, std.dev. = 0.00076, time:    357, FOM =   4848
+active:  712, H = 4.224, k =  4.851, mean k =  4.827, std.dev. = 0.00076, time:  357.3, FOM =   4846
+active:  713, H = 4.223, k =  4.846, mean k =  4.827, std.dev. = 0.000759, time:  357.7, FOM =   4849
+active:  714, H = 4.222, k =  4.824, mean k =  4.827, std.dev. = 0.000758, time:  358.1, FOM =   4858
+active:  715, H =  4.22, k =  4.822, mean k =  4.827, std.dev. = 0.000757, time:  358.4, FOM =   4866
+active:  716, H =  4.22, k =  4.858, mean k =  4.827, std.dev. = 0.000757, time:  358.8, FOM =   4858
+active:  717, H = 4.219, k =  4.853, mean k =  4.827, std.dev. = 0.000757, time:  359.1, FOM =   4856
+active:  718, H = 4.219, k =  4.817, mean k =  4.827, std.dev. = 0.000756, time:  359.5, FOM =   4863
+active:  719, H =  4.22, k =  4.842, mean k =  4.827, std.dev. = 0.000756, time:  359.9, FOM =   4868
+active:  720, H = 4.219, k =  4.828, mean k =  4.827, std.dev. = 0.000754, time:  360.2, FOM =   4877
+active:  721, H =  4.22, k =  4.842, mean k =  4.827, std.dev. = 0.000754, time:  360.6, FOM =   4882
+active:  722, H = 4.223, k =  4.852, mean k =  4.827, std.dev. = 0.000753, time:    361, FOM =   4880
+active:  723, H = 4.221, k =   4.84, mean k =  4.827, std.dev. = 0.000753, time:  361.3, FOM =   4886
+active:  724, H = 4.223, k =  4.799, mean k =  4.827, std.dev. = 0.000753, time:  361.7, FOM =   4881
+active:  725, H = 4.223, k =  4.809, mean k =  4.827, std.dev. = 0.000752, time:  362.1, FOM =   4884
+active:  726, H = 4.222, k =  4.843, mean k =  4.827, std.dev. = 0.000751, time:  362.4, FOM =   4889
+active:  727, H = 4.221, k =  4.799, mean k =  4.827, std.dev. = 0.000751, time:  362.8, FOM =   4884
+active:  728, H = 4.221, k =  4.837, mean k =  4.827, std.dev. = 0.00075, time:  363.1, FOM =   4891
+active:  729, H = 4.221, k =  4.802, mean k =  4.827, std.dev. = 0.00075, time:  363.5, FOM =   4889
+active:  730, H = 4.223, k =  4.846, mean k =  4.827, std.dev. = 0.00075, time:  363.9, FOM =   4891
+active:  731, H =  4.22, k =  4.837, mean k =  4.827, std.dev. = 0.000749, time:  364.2, FOM =   4898
+active:  732, H = 4.219, k =  4.818, mean k =  4.827, std.dev. = 0.000748, time:  364.6, FOM =   4906
+active:  733, H = 4.221, k =  4.849, mean k =  4.827, std.dev. = 0.000747, time:    365, FOM =   4906
+active:  734, H = 4.217, k =  4.837, mean k =  4.827, std.dev. = 0.000746, time:  365.3, FOM =   4913
+active:  735, H = 4.216, k =  4.843, mean k =  4.827, std.dev. = 0.000746, time:  365.7, FOM =   4917
+active:  736, H = 4.218, k =  4.845, mean k =  4.827, std.dev. = 0.000745, time:  366.1, FOM =   4920
+active:  737, H = 4.221, k =  4.818, mean k =  4.827, std.dev. = 0.000744, time:  366.5, FOM =   4927
+active:  738, H = 4.219, k =  4.856, mean k =  4.827, std.dev. = 0.000744, time:  366.8, FOM =   4922
+active:  739, H = 4.222, k =  4.855, mean k =  4.827, std.dev. = 0.000744, time:  367.2, FOM =   4918
+active:  740, H = 4.221, k =   4.85, mean k =  4.827, std.dev. = 0.000744, time:  367.6, FOM =   4918
+active:  741, H = 4.216, k =  4.806, mean k =  4.827, std.dev. = 0.000743, time:  367.9, FOM =   4920
+active:  742, H =  4.22, k =  4.851, mean k =  4.827, std.dev. = 0.000743, time:  368.3, FOM =   4919
+active:  743, H = 4.219, k =  4.846, mean k =  4.827, std.dev. = 0.000742, time:  368.7, FOM =   4921
+active:  744, H = 4.222, k =  4.819, mean k =  4.827, std.dev. = 0.000742, time:    369, FOM =   4928
+active:  745, H = 4.224, k =  4.817, mean k =  4.827, std.dev. = 0.000741, time:  369.4, FOM =   4935
+active:  746, H = 4.223, k =  4.812, mean k =  4.827, std.dev. = 0.00074, time:  369.8, FOM =   4939
+active:  747, H =  4.22, k =  4.829, mean k =  4.827, std.dev. = 0.000739, time:  370.2, FOM =   4947
+active:  748, H = 4.219, k =   4.83, mean k =  4.827, std.dev. = 0.000738, time:  370.5, FOM =   4956
+active:  749, H = 4.219, k =  4.812, mean k =  4.827, std.dev. = 0.000737, time:  370.9, FOM =   4960
+active:  750, H =  4.22, k =  4.828, mean k =  4.827, std.dev. = 0.000736, time:  371.3, FOM =   4968
+active:  751, H = 4.217, k =  4.831, mean k =  4.827, std.dev. = 0.000735, time:  371.6, FOM =   4976
+active:  752, H = 4.218, k =  4.862, mean k =  4.827, std.dev. = 0.000736, time:    372, FOM =   4965
+active:  753, H = 4.219, k =  4.839, mean k =  4.827, std.dev. = 0.000735, time:  372.4, FOM =   4971
+active:  754, H = 4.222, k =  4.857, mean k =  4.827, std.dev. = 0.000735, time:  372.7, FOM =   4965
+active:  755, H = 4.222, k =  4.807, mean k =  4.827, std.dev. = 0.000735, time:  373.1, FOM =   4966
+active:  756, H = 4.222, k =  4.794, mean k =  4.827, std.dev. = 0.000735, time:  373.5, FOM =   4957
+active:  757, H = 4.221, k =  4.827, mean k =  4.827, std.dev. = 0.000734, time:  373.9, FOM =   4965
+active:  758, H = 4.221, k =  4.826, mean k =  4.827, std.dev. = 0.000733, time:  374.2, FOM =   4973
+active:  759, H = 4.223, k =  4.838, mean k =  4.827, std.dev. = 0.000732, time:  374.6, FOM =   4980
+active:  760, H = 4.221, k =  4.822, mean k =  4.827, std.dev. = 0.000731, time:  374.9, FOM =   4987
+active:  761, H = 4.218, k =  4.817, mean k =  4.827, std.dev. = 0.00073, time:  375.3, FOM =   4994
+active:  762, H = 4.218, k =  4.805, mean k =  4.827, std.dev. = 0.00073, time:  375.7, FOM =   4995
+active:  763, H = 4.218, k =  4.854, mean k =  4.827, std.dev. = 0.00073, time:    376, FOM =   4992
+active:  764, H = 4.217, k =  4.806, mean k =  4.827, std.dev. = 0.000729, time:  376.4, FOM =   4992
+active:  765, H = 4.219, k =  4.836, mean k =  4.827, std.dev. = 0.000729, time:  376.8, FOM =   4999
+active:  766, H = 4.219, k =  4.818, mean k =  4.827, std.dev. = 0.000728, time:  377.1, FOM =   5006
+active:  767, H = 4.223, k =   4.83, mean k =  4.827, std.dev. = 0.000727, time:  377.5, FOM =   5014
+active:  768, H = 4.219, k =  4.795, mean k =  4.827, std.dev. = 0.000727, time:  377.9, FOM =   5005
+active:  769, H = 4.218, k =  4.838, mean k =  4.827, std.dev. = 0.000726, time:  378.3, FOM =   5012
+active:  770, H = 4.221, k =  4.809, mean k =  4.827, std.dev. = 0.000726, time:  378.6, FOM =   5015
+active:  771, H =  4.22, k =  4.848, mean k =  4.827, std.dev. = 0.000725, time:    379, FOM =   5016
+active:  772, H = 4.223, k =  4.825, mean k =  4.827, std.dev. = 0.000724, time:  379.4, FOM =   5024
+active:  773, H = 4.221, k =  4.815, mean k =  4.827, std.dev. = 0.000724, time:  379.7, FOM =   5029
+active:  774, H = 4.222, k =  4.835, mean k =  4.827, std.dev. = 0.000723, time:  380.1, FOM =   5036
+active:  775, H = 4.219, k =  4.839, mean k =  4.827, std.dev. = 0.000722, time:  380.5, FOM =   5042
+active:  776, H = 4.221, k =  4.837, mean k =  4.827, std.dev. = 0.000721, time:  380.9, FOM =   5049
+active:  777, H = 4.223, k =  4.842, mean k =  4.827, std.dev. = 0.00072, time:  381.2, FOM =   5054
+active:  778, H = 4.221, k =  4.845, mean k =  4.827, std.dev. = 0.00072, time:  381.6, FOM =   5056
+active:  779, H = 4.222, k =  4.787, mean k =  4.827, std.dev. = 0.000721, time:    382, FOM =   5038
+active:  780, H = 4.223, k =  4.837, mean k =  4.827, std.dev. = 0.00072, time:  382.3, FOM =   5045
+active:  781, H =  4.22, k =  4.818, mean k =  4.827, std.dev. = 0.000719, time:  382.7, FOM =   5051
+active:  782, H = 4.221, k =   4.82, mean k =  4.827, std.dev. = 0.000718, time:  383.1, FOM =   5059
+active:  783, H = 4.218, k =  4.829, mean k =  4.827, std.dev. = 0.000717, time:  383.4, FOM =   5067
+active:  784, H =  4.22, k =  4.837, mean k =  4.827, std.dev. = 0.000717, time:  383.8, FOM =   5073
+active:  785, H = 4.218, k =  4.837, mean k =  4.827, std.dev. = 0.000716, time:  384.2, FOM =   5080
+active:  786, H =  4.22, k =  4.822, mean k =  4.827, std.dev. = 0.000715, time:  384.5, FOM =   5087
+active:  787, H = 4.222, k =  4.839, mean k =  4.827, std.dev. = 0.000714, time:  384.9, FOM =   5093
+active:  788, H = 4.223, k =  4.829, mean k =  4.827, std.dev. = 0.000713, time:  385.3, FOM =   5101
+active:  789, H = 4.221, k =  4.795, mean k =  4.827, std.dev. = 0.000714, time:  385.6, FOM =   5093
+active:  790, H =  4.22, k =   4.83, mean k =  4.827, std.dev. = 0.000713, time:    386, FOM =   5101
+active:  791, H =  4.22, k =  4.809, mean k =  4.827, std.dev. = 0.000712, time:  386.4, FOM =   5103
+active:  792, H = 4.218, k =  4.842, mean k =  4.827, std.dev. = 0.000711, time:  386.8, FOM =   5108
+active:  793, H = 4.217, k =  4.825, mean k =  4.827, std.dev. = 0.000711, time:  387.1, FOM =   5116
+active:  794, H = 4.221, k =  4.823, mean k =  4.827, std.dev. = 0.00071, time:  387.5, FOM =   5124
+active:  795, H = 4.218, k =  4.833, mean k =  4.827, std.dev. = 0.000709, time:  387.8, FOM =   5131
+active:  796, H = 4.218, k =  4.838, mean k =  4.827, std.dev. = 0.000708, time:  388.2, FOM =   5137
+active:  797, H = 4.217, k =  4.828, mean k =  4.827, std.dev. = 0.000707, time:  388.6, FOM =   5145
+active:  798, H = 4.218, k =  4.816, mean k =  4.827, std.dev. = 0.000706, time:  388.9, FOM =   5151
+active:  799, H = 4.219, k =  4.822, mean k =  4.827, std.dev. = 0.000706, time:  389.3, FOM =   5159
+active:  800, H = 4.221, k =  4.851, mean k =  4.827, std.dev. = 0.000705, time:  389.7, FOM =   5158
+active:  801, H = 4.218, k =  4.828, mean k =  4.827, std.dev. = 0.000704, time:    390, FOM =   5166
+active:  802, H = 4.218, k =  4.822, mean k =  4.827, std.dev. = 0.000704, time:  390.4, FOM =   5174
+active:  803, H = 4.217, k =  4.837, mean k =  4.827, std.dev. = 0.000703, time:  390.8, FOM =   5180
+active:  804, H = 4.214, k =  4.815, mean k =  4.827, std.dev. = 0.000702, time:  391.1, FOM =   5186
+active:  805, H = 4.217, k =  4.817, mean k =  4.827, std.dev. = 0.000701, time:  391.5, FOM =   5192
+active:  806, H = 4.217, k =  4.833, mean k =  4.827, std.dev. = 0.000701, time:  391.9, FOM =   5200
+active:  807, H = 4.217, k =  4.826, mean k =  4.827, std.dev. =  0.0007, time:  392.2, FOM =   5208
+active:  808, H =  4.22, k =  4.812, mean k =  4.827, std.dev. = 0.000699, time:  392.6, FOM =   5212
+active:  809, H =  4.22, k =  4.825, mean k =  4.827, std.dev. = 0.000698, time:    393, FOM =   5220
+active:  810, H = 4.218, k =  4.804, mean k =  4.827, std.dev. = 0.000698, time:  393.3, FOM =   5220
+active:  811, H =  4.22, k =  4.813, mean k =  4.827, std.dev. = 0.000697, time:  393.7, FOM =   5224
+active:  812, H = 4.221, k =  4.828, mean k =  4.827, std.dev. = 0.000696, time:  394.1, FOM =   5232
+active:  813, H =  4.22, k =  4.818, mean k =  4.827, std.dev. = 0.000696, time:  394.4, FOM =   5239
+active:  814, H =  4.22, k =  4.812, mean k =  4.827, std.dev. = 0.000695, time:  394.8, FOM =   5243
+active:  815, H = 4.221, k =  4.827, mean k =  4.827, std.dev. = 0.000694, time:  395.2, FOM =   5251
+active:  816, H = 4.221, k =  4.817, mean k =  4.827, std.dev. = 0.000693, time:  395.5, FOM =   5258
+active:  817, H = 4.219, k =  4.826, mean k =  4.827, std.dev. = 0.000693, time:  395.9, FOM =   5266
+active:  818, H = 4.218, k =  4.803, mean k =  4.827, std.dev. = 0.000692, time:  396.3, FOM =   5264
+active:  819, H = 4.218, k =  4.804, mean k =  4.827, std.dev. = 0.000692, time:  396.6, FOM =   5263
+active:  820, H = 4.216, k =  4.832, mean k =  4.827, std.dev. = 0.000691, time:    397, FOM =   5271
+active:  821, H = 4.217, k =   4.86, mean k =  4.827, std.dev. = 0.000692, time:  397.4, FOM =   5261
+active:  822, H = 4.215, k =  4.817, mean k =  4.827, std.dev. = 0.000691, time:  397.7, FOM =   5267
+active:  823, H = 4.216, k =  4.822, mean k =  4.827, std.dev. = 0.00069, time:  398.1, FOM =   5275
+active:  824, H = 4.218, k =  4.828, mean k =  4.827, std.dev. = 0.000689, time:  398.4, FOM =   5283
+active:  825, H =  4.22, k =  4.849, mean k =  4.827, std.dev. = 0.000689, time:  398.8, FOM =   5283
+active:  826, H = 4.221, k =  4.809, mean k =  4.827, std.dev. = 0.000688, time:  399.2, FOM =   5285
+active:  827, H =  4.22, k =  4.848, mean k =  4.827, std.dev. = 0.000688, time:  399.6, FOM =   5286
+active:  828, H = 4.223, k =  4.827, mean k =  4.827, std.dev. = 0.000687, time:  399.9, FOM =   5294
+active:  829, H = 4.222, k =  4.782, mean k =  4.827, std.dev. = 0.000689, time:  400.3, FOM =   5269
+active:  830, H =  4.22, k =  4.815, mean k =  4.827, std.dev. = 0.000688, time:  400.7, FOM =   5274
+active:  831, H = 4.217, k =  4.799, mean k =  4.827, std.dev. = 0.000688, time:  401.1, FOM =   5270
+active:  832, H = 4.219, k =  4.856, mean k =  4.827, std.dev. = 0.000688, time:  401.4, FOM =   5264
+active:  833, H =  4.22, k =  4.863, mean k =  4.827, std.dev. = 0.000688, time:  401.8, FOM =   5251
+active:  834, H =  4.22, k =  4.846, mean k =  4.827, std.dev. = 0.000688, time:  402.2, FOM =   5253
+active:  835, H = 4.219, k =  4.827, mean k =  4.827, std.dev. = 0.000687, time:  402.6, FOM =   5261
+active:  836, H =  4.22, k =  4.798, mean k =  4.827, std.dev. = 0.000687, time:  402.9, FOM =   5256
+active:  837, H = 4.219, k =  4.819, mean k =  4.827, std.dev. = 0.000686, time:  403.3, FOM =   5262
+active:  838, H = 4.219, k =  4.815, mean k =  4.827, std.dev. = 0.000686, time:  403.7, FOM =   5268
+active:  839, H = 4.219, k =  4.863, mean k =  4.827, std.dev. = 0.000686, time:    404, FOM =   5255
+active:  840, H =  4.22, k =  4.808, mean k =  4.827, std.dev. = 0.000686, time:  404.4, FOM =   5257
+active:  841, H = 4.223, k =    4.8, mean k =  4.827, std.dev. = 0.000686, time:  404.8, FOM =   5252
+active:  842, H = 4.221, k =  4.825, mean k =  4.827, std.dev. = 0.000685, time:  405.1, FOM =   5260
+active:  843, H = 4.219, k =  4.811, mean k =  4.827, std.dev. = 0.000684, time:  405.5, FOM =   5264
+active:  844, H = 4.218, k =  4.831, mean k =  4.827, std.dev. = 0.000684, time:  405.9, FOM =   5271
+active:  845, H = 4.219, k =  4.858, mean k =  4.827, std.dev. = 0.000684, time:  406.3, FOM =   5263
+active:  846, H = 4.216, k =  4.812, mean k =  4.827, std.dev. = 0.000683, time:  406.6, FOM =   5267
+active:  847, H = 4.219, k =  4.849, mean k =  4.827, std.dev. = 0.000683, time:    407, FOM =   5267
+active:  848, H = 4.222, k =  4.845, mean k =  4.827, std.dev. = 0.000683, time:  407.4, FOM =   5269
+active:  849, H =  4.22, k =  4.794, mean k =  4.827, std.dev. = 0.000683, time:  407.8, FOM =   5260
+active:  850, H = 4.218, k =  4.841, mean k =  4.827, std.dev. = 0.000682, time:  408.1, FOM =   5264
+active:  851, H = 4.219, k =   4.83, mean k =  4.827, std.dev. = 0.000681, time:  408.5, FOM =   5272
+active:  852, H = 4.223, k =  4.798, mean k =  4.827, std.dev. = 0.000681, time:  408.9, FOM =   5267
+active:  853, H =  4.22, k =  4.839, mean k =  4.827, std.dev. = 0.000681, time:  409.2, FOM =   5272
+active:  854, H = 4.221, k =  4.849, mean k =  4.827, std.dev. = 0.00068, time:  409.6, FOM =   5272
+active:  855, H = 4.219, k =  4.823, mean k =  4.827, std.dev. = 0.00068, time:    410, FOM =   5280
+active:  856, H = 4.223, k =  4.796, mean k =  4.827, std.dev. = 0.00068, time:  410.3, FOM =   5272
+active:  857, H = 4.224, k =  4.827, mean k =  4.827, std.dev. = 0.000679, time:  410.7, FOM =   5279
+active:  858, H = 4.223, k =  4.796, mean k =  4.827, std.dev. = 0.000679, time:  411.1, FOM =   5272
+active:  859, H = 4.225, k =  4.838, mean k =  4.827, std.dev. = 0.000679, time:  411.5, FOM =   5277
+active:  860, H = 4.224, k =   4.85, mean k =  4.827, std.dev. = 0.000678, time:  411.8, FOM =   5277
+active:  861, H = 4.221, k =  4.824, mean k =  4.827, std.dev. = 0.000678, time:  412.2, FOM =   5285
+active:  862, H =  4.22, k =  4.849, mean k =  4.827, std.dev. = 0.000677, time:  412.5, FOM =   5285
+active:  863, H = 4.222, k =   4.82, mean k =  4.827, std.dev. = 0.000677, time:  412.9, FOM =   5292
+active:  864, H = 4.223, k =  4.851, mean k =  4.827, std.dev. = 0.000676, time:  413.3, FOM =   5291
+active:  865, H =  4.22, k =  4.796, mean k =  4.827, std.dev. = 0.000676, time:  413.6, FOM =   5284
+active:  866, H =  4.22, k =  4.833, mean k =  4.827, std.dev. = 0.000676, time:    414, FOM =   5290
+active:  867, H = 4.223, k =  4.845, mean k =  4.827, std.dev. = 0.000675, time:  414.4, FOM =   5293
+active:  868, H = 4.222, k =  4.838, mean k =  4.827, std.dev. = 0.000675, time:  414.7, FOM =   5299
+active:  869, H = 4.223, k =  4.849, mean k =  4.827, std.dev. = 0.000674, time:  415.1, FOM =   5299
+active:  870, H = 4.221, k =   4.83, mean k =  4.827, std.dev. = 0.000673, time:  415.5, FOM =   5306
+active:  871, H = 4.223, k =  4.828, mean k =  4.827, std.dev. = 0.000673, time:  415.9, FOM =   5314
+active:  872, H = 4.222, k =  4.827, mean k =  4.827, std.dev. = 0.000672, time:  416.2, FOM =   5321
+active:  873, H = 4.222, k =  4.823, mean k =  4.827, std.dev. = 0.000671, time:  416.6, FOM =   5328
+active:  874, H = 4.219, k =  4.858, mean k =  4.827, std.dev. = 0.000671, time:    417, FOM =   5321
+active:  875, H = 4.219, k =  4.828, mean k =  4.827, std.dev. = 0.000671, time:  417.3, FOM =   5329
+active:  876, H = 4.221, k =  4.857, mean k =  4.827, std.dev. = 0.000671, time:  417.7, FOM =   5322
+active:  877, H = 4.219, k =  4.864, mean k =  4.827, std.dev. = 0.000671, time:  418.1, FOM =   5309
+active:  878, H = 4.219, k =  4.832, mean k =  4.827, std.dev. = 0.00067, time:  418.4, FOM =   5316
+active:  879, H = 4.219, k =  4.871, mean k =  4.827, std.dev. = 0.000672, time:  418.8, FOM =   5294
+active:  880, H = 4.219, k =  4.854, mean k =  4.827, std.dev. = 0.000672, time:  419.2, FOM =   5290
+active:  881, H = 4.218, k =  4.882, mean k =  4.827, std.dev. = 0.000674, time:  419.6, FOM =   5253
+active:  882, H =  4.22, k =  4.863, mean k =  4.827, std.dev. = 0.000674, time:  419.9, FOM =   5242
+active:  883, H =  4.22, k =  4.843, mean k =  4.827, std.dev. = 0.000674, time:  420.3, FOM =   5245
+active:  884, H = 4.219, k =  4.826, mean k =  4.827, std.dev. = 0.000673, time:  420.7, FOM =   5252
+active:  885, H = 4.218, k =   4.84, mean k =  4.827, std.dev. = 0.000672, time:  421.1, FOM =   5257
+active:  886, H =  4.22, k =  4.823, mean k =  4.827, std.dev. = 0.000671, time:  421.4, FOM =   5264
+active:  887, H = 4.221, k =  4.789, mean k =  4.827, std.dev. = 0.000672, time:  421.8, FOM =   5249
+active:  888, H =  4.22, k =  4.846, mean k =  4.827, std.dev. = 0.000672, time:  422.2, FOM =   5251
+active:  889, H = 4.218, k =  4.778, mean k =  4.827, std.dev. = 0.000673, time:  422.5, FOM =   5223
+active:  890, H = 4.219, k =  4.851, mean k =  4.827, std.dev. = 0.000673, time:  422.9, FOM =   5222
+active:  891, H = 4.219, k =   4.84, mean k =  4.827, std.dev. = 0.000672, time:  423.3, FOM =   5227
+active:  892, H = 4.217, k =  4.823, mean k =  4.827, std.dev. = 0.000672, time:  423.6, FOM =   5234
+active:  893, H = 4.218, k =  4.825, mean k =  4.827, std.dev. = 0.000671, time:    424, FOM =   5241
+active:  894, H = 4.219, k =  4.837, mean k =  4.827, std.dev. = 0.00067, time:  424.4, FOM =   5247
+active:  895, H = 4.219, k =  4.848, mean k =  4.827, std.dev. = 0.00067, time:  424.7, FOM =   5247
+active:  896, H = 4.219, k =  4.812, mean k =  4.827, std.dev. = 0.000669, time:  425.1, FOM =   5251
+active:  897, H = 4.219, k =  4.816, mean k =  4.827, std.dev. = 0.000669, time:  425.5, FOM =   5256
+active:  898, H = 4.219, k =  4.852, mean k =  4.827, std.dev. = 0.000669, time:  425.8, FOM =   5255
+active:  899, H =  4.22, k =  4.835, mean k =  4.827, std.dev. = 0.000668, time:  426.2, FOM =   5261
+active:  900, H =  4.22, k =   4.82, mean k =  4.827, std.dev. = 0.000667, time:  426.5, FOM =   5267
+active:  901, H =  4.22, k =   4.84, mean k =  4.827, std.dev. = 0.000667, time:  426.9, FOM =   5272
+active:  902, H = 4.218, k =  4.811, mean k =  4.827, std.dev. = 0.000666, time:  427.3, FOM =   5275
+active:  903, H =  4.22, k =  4.848, mean k =  4.827, std.dev. = 0.000666, time:  427.6, FOM =   5276
+active:  904, H = 4.219, k =  4.847, mean k =  4.827, std.dev. = 0.000665, time:    428, FOM =   5278
+active:  905, H = 4.215, k =  4.811, mean k =  4.827, std.dev. = 0.000665, time:  428.4, FOM =   5281
+active:  906, H = 4.217, k =  4.808, mean k =  4.827, std.dev. = 0.000664, time:  428.7, FOM =   5283
+active:  907, H = 4.218, k =  4.832, mean k =  4.827, std.dev. = 0.000664, time:  429.1, FOM =   5290
+active:  908, H = 4.215, k =  4.807, mean k =  4.827, std.dev. = 0.000663, time:  429.5, FOM =   5291
+active:  909, H = 4.213, k =   4.87, mean k =  4.827, std.dev. = 0.000664, time:  429.8, FOM =   5272
+active:  910, H = 4.211, k =  4.821, mean k =  4.827, std.dev. = 0.000664, time:  430.2, FOM =   5278
+active:  911, H = 4.216, k =  4.865, mean k =  4.827, std.dev. = 0.000664, time:  430.6, FOM =   5266
+active:  912, H = 4.217, k =  4.814, mean k =  4.827, std.dev. = 0.000664, time:  430.9, FOM =   5270
+active:  913, H = 4.216, k =  4.827, mean k =  4.827, std.dev. = 0.000663, time:  431.3, FOM =   5277
+active:  914, H = 4.219, k =  4.831, mean k =  4.827, std.dev. = 0.000662, time:  431.7, FOM =   5284
+active:  915, H = 4.218, k =  4.815, mean k =  4.827, std.dev. = 0.000662, time:    432, FOM =   5289
+active:  916, H = 4.218, k =  4.804, mean k =  4.827, std.dev. = 0.000661, time:  432.4, FOM =   5288
+active:  917, H = 4.219, k =  4.844, mean k =  4.827, std.dev. = 0.000661, time:  432.8, FOM =   5291
+active:  918, H = 4.218, k =  4.824, mean k =  4.827, std.dev. = 0.00066, time:  433.2, FOM =   5298
+active:  919, H = 4.217, k =  4.829, mean k =  4.827, std.dev. = 0.000659, time:  433.5, FOM =   5305
+active:  920, H = 4.222, k =   4.83, mean k =  4.827, std.dev. = 0.000659, time:  433.9, FOM =   5312
+active:  921, H = 4.216, k =  4.815, mean k =  4.827, std.dev. = 0.000658, time:  434.3, FOM =   5317
+active:  922, H = 4.218, k =  4.845, mean k =  4.827, std.dev. = 0.000658, time:  434.6, FOM =   5319
+active:  923, H = 4.219, k =  4.806, mean k =  4.827, std.dev. = 0.000657, time:    435, FOM =   5320
+active:  924, H = 4.218, k =  4.846, mean k =  4.827, std.dev. = 0.000657, time:  435.4, FOM =   5322
+active:  925, H = 4.217, k =  4.868, mean k =  4.827, std.dev. = 0.000658, time:  435.7, FOM =   5306
+active:  926, H = 4.217, k =    4.8, mean k =  4.827, std.dev. = 0.000658, time:  436.1, FOM =   5302
+active:  927, H = 4.217, k =  4.812, mean k =  4.827, std.dev. = 0.000657, time:  436.5, FOM =   5306
+active:  928, H = 4.216, k =  4.815, mean k =  4.827, std.dev. = 0.000657, time:  436.8, FOM =   5311
+active:  929, H = 4.217, k =  4.842, mean k =  4.827, std.dev. = 0.000656, time:  437.2, FOM =   5315
+active:  930, H = 4.215, k =  4.877, mean k =  4.827, std.dev. = 0.000657, time:  437.6, FOM =   5287
+active:  931, H = 4.219, k =  4.829, mean k =  4.827, std.dev. = 0.000657, time:  437.9, FOM =   5294
+active:  932, H = 4.219, k =  4.825, mean k =  4.827, std.dev. = 0.000656, time:  438.3, FOM =   5300
+active:  933, H =  4.22, k =  4.811, mean k =  4.827, std.dev. = 0.000656, time:  438.7, FOM =   5304
+active:  934, H = 4.222, k =  4.791, mean k =  4.827, std.dev. = 0.000656, time:    439, FOM =   5291
+active:  935, H = 4.223, k =  4.821, mean k =  4.827, std.dev. = 0.000655, time:  439.4, FOM =   5298
+active:  936, H = 4.223, k =  4.808, mean k =  4.827, std.dev. = 0.000655, time:  439.8, FOM =   5299
+active:  937, H = 4.224, k =  4.842, mean k =  4.827, std.dev. = 0.000655, time:  440.1, FOM =   5303
+active:  938, H = 4.225, k =  4.794, mean k =  4.827, std.dev. = 0.000655, time:  440.5, FOM =   5295
+active:  939, H = 4.222, k =  4.813, mean k =  4.827, std.dev. = 0.000654, time:  440.9, FOM =   5299
+active:  940, H =  4.22, k =  4.836, mean k =  4.827, std.dev. = 0.000654, time:  441.3, FOM =   5304
+active:  941, H =  4.22, k =  4.825, mean k =  4.827, std.dev. = 0.000653, time:  441.6, FOM =   5311
+active:  942, H = 4.218, k =  4.835, mean k =  4.827, std.dev. = 0.000652, time:    442, FOM =   5317
+active:  943, H = 4.217, k =  4.855, mean k =  4.827, std.dev. = 0.000652, time:  442.4, FOM =   5313
+active:  944, H = 4.219, k =  4.822, mean k =  4.827, std.dev. = 0.000652, time:  442.7, FOM =   5320
+active:  945, H = 4.219, k =  4.786, mean k =  4.827, std.dev. = 0.000652, time:  443.1, FOM =   5303
+active:  946, H =  4.22, k =  4.801, mean k =  4.827, std.dev. = 0.000652, time:  443.5, FOM =   5300
+active:  947, H = 4.222, k =  4.803, mean k =  4.827, std.dev. = 0.000652, time:  443.8, FOM =   5299
+active:  948, H = 4.223, k =  4.817, mean k =  4.827, std.dev. = 0.000651, time:  444.2, FOM =   5304
+active:  949, H = 4.225, k =  4.836, mean k =  4.827, std.dev. = 0.000651, time:  444.6, FOM =   5309
+active:  950, H = 4.223, k =  4.826, mean k =  4.827, std.dev. = 0.00065, time:  444.9, FOM =   5316
+active:  951, H = 4.223, k =  4.811, mean k =  4.827, std.dev. = 0.00065, time:  445.3, FOM =   5319
+active:  952, H = 4.221, k =  4.844, mean k =  4.827, std.dev. = 0.000649, time:  445.7, FOM =   5322
+active:  953, H = 4.218, k =  4.849, mean k =  4.827, std.dev. = 0.000649, time:    446, FOM =   5323
+active:  954, H =  4.22, k =  4.782, mean k =  4.827, std.dev. = 0.00065, time:  446.4, FOM =   5301
+active:  955, H =  4.22, k =  4.871, mean k =  4.827, std.dev. = 0.000651, time:  446.8, FOM =   5282
+active:  956, H =  4.22, k =  4.848, mean k =  4.827, std.dev. = 0.000651, time:  447.1, FOM =   5283
+active:  957, H = 4.221, k =   4.84, mean k =  4.827, std.dev. = 0.00065, time:  447.5, FOM =   5288
+active:  958, H = 4.222, k =  4.834, mean k =  4.827, std.dev. = 0.000649, time:  447.9, FOM =   5294
+active:  959, H = 4.223, k =   4.83, mean k =  4.827, std.dev. = 0.000649, time:  448.2, FOM =   5301
+active:  960, H = 4.225, k =  4.802, mean k =  4.827, std.dev. = 0.000649, time:  448.6, FOM =   5298
+active:  961, H = 4.225, k =  4.816, mean k =  4.827, std.dev. = 0.000648, time:    449, FOM =   5303
+active:  962, H = 4.225, k =  4.848, mean k =  4.827, std.dev. = 0.000648, time:  449.4, FOM =   5304
+active:  963, H = 4.223, k =  4.833, mean k =  4.827, std.dev. = 0.000647, time:  449.7, FOM =   5310
+active:  964, H = 4.225, k =  4.815, mean k =  4.827, std.dev. = 0.000647, time:  450.1, FOM =   5315
+active:  965, H = 4.225, k =  4.843, mean k =  4.827, std.dev. = 0.000646, time:  450.5, FOM =   5318
+active:  966, H =  4.22, k =  4.836, mean k =  4.827, std.dev. = 0.000645, time:  450.8, FOM =   5324
+active:  967, H = 4.219, k =   4.85, mean k =  4.827, std.dev. = 0.000645, time:  451.2, FOM =   5324
+active:  968, H = 4.222, k =  4.813, mean k =  4.827, std.dev. = 0.000645, time:  451.6, FOM =   5328
+active:  969, H = 4.227, k =  4.829, mean k =  4.827, std.dev. = 0.000644, time:  451.9, FOM =   5334
+active:  970, H = 4.223, k =  4.844, mean k =  4.827, std.dev. = 0.000644, time:  452.3, FOM =   5337
+active:  971, H = 4.223, k =  4.825, mean k =  4.827, std.dev. = 0.000643, time:  452.7, FOM =   5344
+active:  972, H =  4.22, k =  4.801, mean k =  4.827, std.dev. = 0.000643, time:    453, FOM =   5341
+active:  973, H = 4.218, k =  4.811, mean k =  4.827, std.dev. = 0.000642, time:  453.4, FOM =   5344
+active:  974, H = 4.219, k =  4.792, mean k =  4.827, std.dev. = 0.000643, time:  453.8, FOM =   5334
+active:  975, H = 4.219, k =  4.846, mean k =  4.827, std.dev. = 0.000642, time:  454.1, FOM =   5336
+active:  976, H = 4.218, k =  4.804, mean k =  4.827, std.dev. = 0.000642, time:  454.5, FOM =   5335
+active:  977, H = 4.219, k =  4.809, mean k =  4.827, std.dev. = 0.000642, time:  454.8, FOM =   5337
+active:  978, H = 4.218, k =  4.808, mean k =  4.827, std.dev. = 0.000641, time:  455.2, FOM =   5339
+active:  979, H = 4.219, k =  4.841, mean k =  4.827, std.dev. = 0.000641, time:  455.6, FOM =   5343
+active:  980, H =  4.22, k =  4.851, mean k =  4.827, std.dev. = 0.000641, time:  455.9, FOM =   5342
+active:  981, H = 4.221, k =   4.84, mean k =  4.827, std.dev. = 0.00064, time:  456.3, FOM =   5346
+active:  982, H = 4.222, k =  4.821, mean k =  4.827, std.dev. = 0.00064, time:  456.7, FOM =   5352
+active:  983, H = 4.221, k =  4.809, mean k =  4.827, std.dev. = 0.000639, time:  457.1, FOM =   5354
+active:  984, H =  4.22, k =  4.846, mean k =  4.827, std.dev. = 0.000639, time:  457.4, FOM =   5356
+active:  985, H =  4.22, k =  4.836, mean k =  4.827, std.dev. = 0.000638, time:  457.8, FOM =   5362
+active:  986, H = 4.217, k =  4.828, mean k =  4.827, std.dev. = 0.000638, time:  458.2, FOM =   5368
+active:  987, H = 4.217, k =  4.838, mean k =  4.827, std.dev. = 0.000637, time:  458.5, FOM =   5373
+active:  988, H =  4.22, k =  4.831, mean k =  4.827, std.dev. = 0.000636, time:  458.9, FOM =   5380
+active:  989, H = 4.219, k =  4.802, mean k =  4.827, std.dev. = 0.000636, time:  459.3, FOM =   5378
+active:  990, H = 4.221, k =  4.806, mean k =  4.827, std.dev. = 0.000636, time:  459.6, FOM =   5378
+active:  991, H =  4.22, k =  4.851, mean k =  4.827, std.dev. = 0.000636, time:    460, FOM =   5377
+active:  992, H = 4.221, k =  4.807, mean k =  4.827, std.dev. = 0.000636, time:  460.4, FOM =   5378
+active:  993, H = 4.218, k =  4.883, mean k =  4.827, std.dev. = 0.000637, time:  460.7, FOM =   5342
+active:  994, H = 4.218, k =  4.829, mean k =  4.827, std.dev. = 0.000637, time:  461.1, FOM =   5349
+active:  995, H = 4.222, k =  4.847, mean k =  4.827, std.dev. = 0.000636, time:  461.5, FOM =   5350
+active:  996, H =  4.22, k =  4.816, mean k =  4.827, std.dev. = 0.000636, time:  461.9, FOM =   5355
+active:  997, H = 4.224, k =  4.828, mean k =  4.827, std.dev. = 0.000635, time:  462.2, FOM =   5362
+active:  998, H = 4.221, k =  4.835, mean k =  4.827, std.dev. = 0.000635, time:  462.6, FOM =   5367
+active:  999, H = 4.221, k =   4.82, mean k =  4.827, std.dev. = 0.000634, time:    463, FOM =   5373
+
+gnuplot: unable to open display ':0'
+gnuplot: X11 aborted.
+
+gnuplot: unable to open display ':0'
+gnuplot: X11 aborted.
+
+gnuplot: unable to open display ':0'
+gnuplot: X11 aborted.

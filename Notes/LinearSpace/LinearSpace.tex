@@ -1,0 +1,317 @@
+% LinearSpace.tex
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{verbatim}
+
+\newcommand{\xmax}{x_{\max}}
+\newcommand{\xmin}{x_{\min}}
+\newcommand{\xmid}{x_{\mathrm{mid}}}
+\newcommand{\xt}{x-\xmid}
+\newcommand{\xg}{2\left[ \frac{x-\xmin}{\xmax - \xmin} \right] - 1}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\Pc}{\overline{Pc}}
+
+\title{Hand Calculation of a Linear Space Source Scoring}
+\author{Jeremy Lloyd Conlin}
+
+\begin{document}
+\maketitle
+In this document, I will try to figure out why my LinearSpace scoring isn't working properly.  The calculations will be done ``by hand'' or at least manually instead of a C++ code.
+
+\section{Approximating $f(x)$}
+We will approximate $f(x)$ as a linear combination of polynomials
+\begin{equation}
+    \tilde{f}(x) = \sum_{n=1}^N a_n \Psi_n(x) \hspace{0.5in} \xmin \leq x \leq \xmax
+    \label{eq:fApproximation}
+\end{equation}
+where $a_n$ is an expansion coefficient and $\Psi_n(x)$ is some polynomial which has a few properties
+\begin{equation}
+    \int_{\xmin}^{\xmax} \Psi_m(x)\Psi_n(x) \dd x = 
+    \begin{cases}
+        1 & m = n \\
+        0 & m \neq n.
+    \end{cases}
+    \label{eq:Orthonormalized}
+\end{equation}
+Equation \ref{eq:Orthonormalized} states that the polynomials $\Psi_n(x)$ must be normalized and orthogonal to each other.  
+
+We will make our polynomials the Legendre polynomials $\Psi_n(x) = P_n(x)$.
+
+\subsection{Determining the Expansion Coefficients}
+We can determine the expansion coefficients as 
+\begin{align}
+    \begin{split}
+        \int_{\xmin}^{\xmax} P_m(x)\tilde{f}(x) \dd x  &=\\
+        &= \int_{\xmin}^{\xmax} P_m(x)\sum_{n=1}^{N_p} a_n \Psi_n(x)\dd x \\
+        &= \int_{\xmin}^{\xmax} P_m(x)\sum_{n=1}^{N_p} a_n P_n(x)\dd x \\
+        &= \sum_{n=1}^{N_p}a_n\int_{\xmin}^{\xmax} P_m(x) P_n(x)\dd x \\
+        &= a_n\int_{\xmin}^{\xmax}P_n(x)^2 \dd x.
+    \end{split}
+    \intertext{Therefore}
+    a_n &= \frac{1}{k_n}\int_{\xmin}^{\xmax} P_n(x)\tilde{f}(x) \dd x,
+    \label{eq:CoefficientDefined}
+    \intertext{where}
+    k_n &= \left( \int_{\xmin}^{\xmax} P_n(x)^2 \dd x \right)^{1/2}.
+    \label{eq:NormalizingConstant}
+\end{align}
+Equation \ref{eq:CoefficientDefined} uses the orthonormalizing definition in equation \ref{eq:Orthonormalized}.
+
+Equation \ref{eq:CoefficientDefined} is---by definition---the expected value of the function $P_n(x)/k_n$ where samples of $x$ are taken from $\tilde{f}(x)$.  It is much simpler to sample from a uniform distribution.  It is a simple change of variable to allow this;
+\begin{equation}
+        a_n = \frac{1}{k_n}\int_{\xmin}^{\xmax} P_n(x)\omega(x)U(x) \dd x \\
+    \label{eq:WeightedCoefficient}
+\end{equation}
+where 
+\begin{subequations}
+    \begin{align}
+        \omega(x) &= \frac{\tilde{f}(x)}{U(x)}
+        \label{eq:WeightingFunction}
+        \intertext{is a weighting function, and}
+        U(x) &= \frac{1}{\xmax-\xmin}
+        \label{eq:UniformDistribution}
+    \end{align}
+\end{subequations}
+is a uniformly distributed PDF.  
+
+A careful comparison between equations \ref{eq:CoefficientDefined} and \ref{eq:WeightedCoefficient} reveals we have only multiplied the integrand by $U(x)/U(x) = 1$, but we have changed the nature of the problem to make it simpler; we can now sample from a uniform distribution and score the weighted Legendre polynomial $P_n(x)\omega(x)$.  We can sample and score $N_i$ times; the mean of these evaluations is an estimate of the expansion coefficient:
+\begin{equation}
+    \hat{a}_n = \frac{1}{N_i}\frac{1}{k_n} \sum_{i=1}^{N_i} P_n(x_i) \omega(x_i).
+    \label{eq:MCCoefficient}
+\end{equation}
+
+In this paper I will only use expansions with two basis functions, $N=2$ so we can write out the functions that we will need.
+\begin{subequations}
+    \begin{align}
+        P_0(x) & = 1 \\
+        P_1(x) & = x \\
+    \end{align}
+    \label{eq:LegendrePolynomials}
+\end{subequations}
+\begin{subequations}
+    \begin{align}
+        k_0 = \int_{\xmin}^{\xmax} P_0(x) \dd x = \int_{\xmin}^{\xmax}  \dd x &= \boxed{\left(\xmax - \xmin\right) = k_0} \\
+        k_1 = \int_{\xmin}^{\xmax} P_1(x) \dd x = \int_{\xmin}^{\xmax} x^2 \dd x &= \boxed{\frac{1}{3}\left(\xmax^3 - \xmin^3\right) = k_1}
+    \end{align}
+    \label{eq:ConstantsDefined}
+\end{subequations}
+
+\section{Simple Example}
+\begin{equation}
+    f(x) = \frac{1}{2}\left( x+1 \right), \hspace{0.5in} -1 \leq x \leq 1.
+    \label{eq:original}
+\end{equation}
+$f(x)$ is already normalized so it is ready for sampling.  The normalization constants for this problem are
+\begin{subequations}
+    \begin{align}
+        k_0 &= \int_{\xmin}^{\xmax}  \dd x = \left(\xmax - \xmin\right) = \left(1 - (-1)\right) = 2 \\
+        k_1 &= \int_{\xmin}^{\xmax} x^2 \dd x = \frac{1}{3}\left(\xmax^3 - \xmin^3\right) = \frac{1}{3}\left(1^3 - (-1)^3\right) = \frac{2}{3}.
+    \end{align}
+\end{subequations}
+We can also define the uniform distribution and weighting functions, respectively
+\begin{subequations}
+    \begin{align}
+        U(x) &= \frac{1}{\xmax - \xmin} = \frac{1}{2} \\
+        \omega(x) &= \frac{\tilde{f}(x)}{U(x)} = x+1.
+    \end{align}
+\end{subequations}
+The expansion coefficients:
+\begin{subequations}
+    \begin{align}
+        \hat{a}_0 &= \frac{1}{N_i}\frac{1}{k_0} \sum_{i=1}^{N_i} P_0(x_i)\omega(x_i) = \frac{1}{N_i}\frac{1}{2} \sum_{i=1}^{N_i} \omega(x_i) \\
+        \hat{a}_1 &= \frac{1}{N_i}\frac{1}{k_1} \sum_{i=1}^{N_i} P_1(x_i)\omega(x_i) = \frac{1}{N_i}\frac{3}{2} \sum_{i=1}^{N_i} x_i\,\omega(x_i).
+    \end{align}
+    \label{eq:MCCoeffSimple}
+\end{subequations}
+
+We learned that you can't perform a simulation by performing this calculation by hand, that is, you can't do just a few points and expect the answer to be correct.  The variance of this is just too large.  We can evaluate the coefficients many times easily with a computer then we can have enough data points to make it good enough.  
+    
+It works!
+
+\section{Harder Example}
+This section has a function that is not on the traditional range $[-1,1]$.  The function used for this example is:
+\begin{equation}
+    f(x) = x-1, \hspace{0.5in} 1 \leq x \leq 5.
+    \label{eq:original}
+\end{equation}
+Normalized such that 
+\begin{equation}
+    \int_1^5 f(x)^2 \dd x = 1,
+\end{equation}
+Equation \ref{eq:original} becomes
+\begin{equation}
+    f(x) = 0.125\left( x-1 \right) \hspace{0.5in} 1 \leq x \leq 5.
+    \label{eq:normalized}
+\end{equation}
+The midpoint of this ``bin'' is
+\begin{equation}
+    \xmid = \frac{\xmax + \xmin}{2.0} = \frac{5 + 1}{2.0} = 3.0
+    \label{eq:xmid}
+\end{equation}
+and we will define
+\begin{equation}
+    \tilde{x} \equiv x - \xmid. \label{eq:xTilde}
+\end{equation}
+
+The thing that makes this function more difficult is the fact that the Legendre polynomials are not naturally orthogonal to each other on the range $[1,5]$.  We can show that they are orthogonal to each other if the range is centered at 0 (at least we can show that the 0th and 1st basis functions are orthogonal to each other if they are centered at 0).  To do so, we shift the Legendre polynomial by subtracting the midpoint of the range from the x point and then we can integrate:
+
+Now we need to be a bit more careful with this new derivation.  So I'll try to be a bit more formal.
+
+\subsection{More formal}
+We can define our function as an expansion of basis functions as before,
+\begin{equation}
+    \tilde{f}(x) = \sum a_m P_m(x).
+    \label{eq:fExpansion}
+\end{equation}
+
+Finding the expansion coefficients is similar to how this is done before, but we must shift our Legendre polynomials and $\tilde{f}(x)$ so that the range is centered about zero.  The simplest way to do this is to subtract the midpoint of the original range as I defined as $\tilde{x}$.  Now we can proceed as usual:
+\begin{equation}
+    \begin{split}
+        \int_{\xmin}^{\xmin} P_n(\xt)\tilde{f}(\xt) \dd x &= \\
+        &= \int_{\xmin}^{\xmin} P_n(\tilde{x})\tilde{f}(\tilde{x}) \dd x \\
+        &= \int_{\xmin}^{\xmin} P_n(\tilde{x})\sum a_m P_m(\tilde{x}) \dd x \\
+        &= \sum a_m \int_{\xmin}^{\xmin} P_n(\tilde{x})P_m(\tilde{x}) \dd x \\
+        &= a_n k_n
+    \end{split}
+    \label{eq:Coefficients}
+\end{equation}
+where
+\begin{equation}
+    k_n = \int_{\xmin}^{\xmax} P_n(\xt)^2 \dd x.
+    \label{eq:knDefined}
+\end{equation}
+Solving equation \eqref{eq:Coefficients} for $a_n$ we get
+\begin{equation}
+    a_n = \frac{1}{k_n}\int_{\xmin}^{\xmin} P_n(\xt)\tilde{f}(\xt) \dd x.
+    \label{eq:CoeffDefined}
+\end{equation}
+Of course we want to be able to sample from a uniform distribution when doing our Monte Carlo so now we rewrite equation \eqref{eq:CoeffDefined} as
+\begin{equation}
+    a_n = \frac{1}{k_n}\int_{\xmin}^{\xmin} P_n(\xt)\underbrace{\frac{\tilde{f}(\xt)}{U(\xt)}}_{\omega(\xt)}U(\xt) \dd x.
+    \label{eq:CoeffDefined}
+\end{equation}
+Our Monte Carlo approximation for this coefficient is then
+\begin{equation}
+    \hat{a}_n = \frac{1}{k_n}\frac{1}{N} \sum_{i=1}^N P_n(x_i - \xmid) \omega(x_i - \xmid)
+    \label{eq:MCCoefficients}
+\end{equation}
+where the $x_i$s are sampled from the uniform distribution $U(x)$.
+
+This derivation requires that the shifted Legendre polynomials are orthogonal to each other on the range $[\xmin, \xmax]$.  We can do this for $n=1$ and $m=0$:
+\begin{equation}
+    \begin{split}
+        \int_{\xmin}^{\xmax} P_0(x-\xmid)P_1(x-\xmid) \dd x &= \\
+         &=\int_{\xmin}^{\xmax} (1) \left( x-\xmid \right) \dd x \\
+         &=\int_{\xmin}^{\xmax} \left( x-\xmid \right) \dd x \\
+         &=\left[\frac{1}{2}x^2-\xmid\; x\right]_{\xmin}^{\xmax} \\
+         &=\frac{1}{2}\left(\xmax^2 - \xmin^2\right)-\xmid\left(\xmax-\xmin\right)\\
+         &=\frac{1}{2}\left(\xmax^2 - \xmin^2\right)-\left(\frac{\xmax+\xmin}{2}\right)\left(\xmax-\xmin\right)\\
+         &=\frac{1}{2}\left(\xmax^2 - \xmin^2\right)-\frac{1}{2}\left(\xmax^2-\xmin^2\right)\\
+         &= 0.
+    \end{split}
+\end{equation}
+This can be done in general as
+\begin{equation}
+    \int_{\xmin}^{\xmax}P_n(\xt)P_m(\xt) \dd x.
+\end{equation}
+We first need to make a change of variable
+\begin{equation}
+   u = \xt, \qquad  \dd u = \dd x
+   \label{eq:VariableChange}
+\end{equation}
+\begin{subequations}
+    \label{eq:uLimits}
+    \begin{alignat}{4}
+        u_{max} &= u(\xmax) &= \xmax - \xmid &= \frac{\xmax - \xmin}{2} & &=t \\
+        u_{min} &= u(\xmin) &= \xmin - \xmid &= \frac{\xmin - \xmax}{2} &=-\frac{\xmax - \xmin}{2} &= -t
+    \end{alignat}
+\end{subequations}
+Inserting equations \eqref{eq:VariableChange} and \eqref{eq:uLimits} we obtain
+\begin{equation}
+    \int_{-t}^{t}P_n(u)P_m(u) \dd u.
+    \label{eq:NewIntegral}
+\end{equation}
+Equation \eqref{eq:NewIntegral} is valid for any value of $t$.  We know that for $t=1$ this integral evaluates to zero.  However this is not true for any $n$ and $m$.  It is true for $n+m = 2i+1 = \mathrm{odd}$.  This can be seen by noting that $P_n(x)$ is a polynomial of degree $n$ and that $P_n(x)P_m(x)$ is a polynomial of degree $n+m$.  A polynomial with an odd degree is an odd function and therefore will integrate to zero if the limits of integration are centered about zero.  If the degree is even, the polynomial is an even function and the integral will not be zero.  Therefore shifting the Legendre polynomials will not work in general this way.  I will have to move to David Griesheimer's version of the shifted polynomials.  My method will work if I am just using a second order expansion.
+
+\section{Griesheimer's Method of Shifting}
+Griesheimer defined his expansion not too differently from what I have been doing;
+\begin{equation}
+    \tilde{f}(x) = \sum a_mP_m\!\left(\hat{x}(x)(x)\right).
+    \label{eq:GrExpansion}
+\end{equation}
+In Dave's thesis, he (correctly) shifts his Legendre polynomials so that they are not only centered at zero, but also fall in the range $[-1,1]$.  To do this it is a simple scaling
+\begin{equation}
+    \hat{x}(x) = \xg.
+    \label{eq:xScaled}
+\end{equation}
+With this scaling it is easy to see that the range of $\hat{x}(x)$ is what we desire.
+
+We can determine our expansion coefficients similarly to what we have already done
+\begin{equation}
+    \begin{split}
+        \int_{\xmin}^{\xmax} P_n\!\left[\hat{x}(x)\right]\tilde{f}(x) \dd x &= \\
+        &= \int_{\xmin}^{\xmax} P_n\!\left[\hat{x}(x)\right] \sum a_mP_m\!\left[ \hat{x}(x) \right] \dd x \\
+         &=  \sum a_m\int_{\xmin}^{\xmax} P_n\!\left[ \hat{x}(x) \right]P_m\!\left[ \hat{x}(x) \right] \dd x \\
+         &=  a_nk_n.
+    \end{split}
+    \label{eq:CoeffsG}
+\end{equation}
+Now $k_n$ is non-zero whenever $m = n$.  We can evaluate the integral by a change of variable from $x$ to $\hat{x}(x)$.
+\begin{equation}
+    k_n = \int_{\xmin}^{\xmax} P_n^2\left[ \hat{x}(x) \right] \dd x \label{eq:kn}
+\end{equation}
+Let 
+\begin{alignat}{2}
+    y &= \hat{x}(x) & \qquad y\!\left(\xmin\right) &= -1 \\
+    \dd y &= \frac{2}{\xmax - \xmin} \dd x & \qquad y\!\left(\xmax\right) &= 1.
+\end{alignat}
+Equation \eqref{eq:kn} becomes
+\begin{equation}
+    k_n = \frac{\xmax-\xmin}{2}\int_{-1}^{1} P_n^2\left( y \right) \dd y = \frac{\xmax-\xmin}{2}\frac{2}{2n+1} = \frac{\xmax-\xmin}{2n+1}.
+\end{equation}
+
+Solving equation \eqref{eq:CoeffsG} for $a_n$ we obtain
+\begin{equation}
+    \begin{split}
+        a_n &= \frac{1}{k_n}\int_{\xmin}^{\xmax}P_n(\hat{x}(x))\tilde{f}(x) \dd x \\
+         &= \frac{1}{k_n}\int_{\xmin}^{\xmax}P_n\!\left( \xg \right)\tilde{f}(x) \dd x \\
+    \end{split}
+\end{equation}
+We want this weighted as before so we can sample from a uniform distribution
+\begin{equation}
+    a_n = \frac{1}{k_n} \int_{\xmin}^{\xmax} P_n\left[ \hat{x}(x) \right] \underbrace{\frac{\tilde{f}(x)}{U(x)} U(x)}_{\omega(x)} \dd x \\
+\end{equation}
+
+\begin{equation}
+    a_n = \frac{1}{k_n}\frac{1}{N}\sum_{i=1}^{N}P_n\!\left( 2\left[\frac{x_i-\xmin}{\xmax-\xmin}\right]-1 \right)\omega_n\!\left(x_i\right)
+\end{equation}
+where of course the $x_i$s have been sampled from the uniform distribution $U(x)$.
+
+Now we want our expansion to use just the first two Legendre polynomials, $P_0(x)$ and $P_1(x)$.  We need two expansion coefficients
+\begin{subequations}
+    \begin{align}
+        \begin{split}
+            a_0 &= \frac{1}{k_0}\frac{1}{N}\sum_{i=1}^N P_0\!\left( 2\left[\frac{x_i-\xmin}{\xmax-\xmin}\right]-1 \right)\omega(x_i) \\
+             &=  \frac{1}{k_0}\frac{1}{N}\sum_{i=1}^N \omega(x_i) \\
+        \end{split}\\
+        \begin{split}
+            a_1 &= \frac{1}{k_1}\frac{1}{N}\sum_{i=1}^N P_1\!\left( 2\left[\frac{x_i-\xmin}{\xmax-\xmin}\right]-1 \right)\omega(x_i) \\
+             &= \frac{1}{k_1}\frac{1}{N}\sum_{i=1}^N  \left( 2\left[\frac{x_i-\xmin}{\xmax-\xmin}\right]-1 \right)\omega(x_i)\\
+        \end{split}
+    \end{align}
+\end{subequations}
+Our expanded function becomes
+\begin{equation}
+    \begin{split}
+        \tilde{f}(x) &= a_0P_0\left(\hat{x}\right) + a_1P_1\left(\hat{x}\right) \\
+         &= a_0 + a_1\left( \xg \right).
+    \end{split}
+    \label{eq:2TermExpansion}
+\end{equation}
+What we would really like is a function of the traditional form \[ \tilde{f}(x) = mx+b.\]  This can be obtained from equation \eqref{eq:2TermExpansion} with just a bit of algebra
+\begin{equation}
+    \tilde{f}(x) = a_1\left(\frac{2}{\xmax-\xmin}\right)x + \left[a_0 - a_1\left(\frac{\xmax+\xmin}{\xmax-\xmin}\right)\right].
+    \label{eq:2TermPointSlope}
+\end{equation}
+\end{document}
